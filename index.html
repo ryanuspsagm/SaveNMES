@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saving North Middletown Elementary | The Data</title>
+<meta name="description" content="An interactive, source-linked analysis of the proposal to close North Middletown Elementary School in Bourbon County, Kentucky. Every figure traces to a public record.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --navy:#1F3864; --royal:#2E75B6; --paper:#FAFBFD; --chalk:#FFFFFF;
+  --slate:#3A4356; --mist:#8A93A6; --line:#E3E8F0; --gold:#C9A227; --red:#9C3D3D;
+  --serif:"Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:var(--sans);color:var(--slate);background:var(--paper);line-height:1.6;font-size:16px}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+a{color:var(--royal)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* Nav */
+nav{position:sticky;top:0;background:var(--navy);z-index:50;box-shadow:0 2px 8px rgba(31,56,100,.25)}
+nav .wrap{display:flex;gap:4px;overflow-x:auto;padding:0 12px;-webkit-overflow-scrolling:touch}
+nav a{color:#C9D4E8;text-decoration:none;padding:14px 12px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;border-bottom:3px solid transparent}
+nav a:hover,nav a:focus{color:var(--chalk);border-bottom-color:var(--gold)}
+
+/* Hero */
+header{background:var(--navy);color:var(--chalk);padding:64px 0 56px;position:relative}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,5.6vw,50px);line-height:1.16;max-width:760px}
+h1 em{font-style:normal;color:var(--gold)}
+.hero-sub{margin-top:22px;color:#C9D4E8;max-width:640px;font-size:17px}
+.goldrule{width:72px;height:3px;background:var(--gold);margin:26px 0}
+.factstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.18);margin-top:36px;border:1px solid rgba(255,255,255,.18)}
+.fact{background:var(--navy);padding:18px 16px}
+.fact b{display:block;font-family:var(--serif);font-size:26px;color:var(--chalk);font-weight:400}
+.fact span{font-size:12.5px;color:#AFC0DC;letter-spacing:.04em}
+.disclose{margin-top:30px;font-size:13.5px;color:#AFC0DC;border-left:3px solid var(--gold);padding-left:14px;max-width:640px}
+@media(max-width:620px){.factstrip{grid-template-columns:1fr}}
+
+/* Sections */
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,4vw,32px);color:var(--navy);margin-bottom:6px}
+.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:600}
+.lede{max-width:680px;margin-bottom:26px;font-size:16.5px}
+p+p{margin-top:14px}
+.card{background:var(--chalk);border:1px solid var(--line);border-radius:6px;padding:22px;margin:22px 0;box-shadow:0 1px 3px rgba(31,56,100,.06)}
+.card h3{font-family:var(--serif);font-weight:400;font-size:20px;color:var(--navy);margin-bottom:4px}
+.chartbox{position:relative;height:300px;margin-top:14px}
+.chartbox.tall{height:360px}
+.checkrow{display:flex;flex-wrap:wrap;gap:14px;margin:10px 0 4px;font-size:14px}
+.checkrow label{display:flex;align-items:center;gap:6px;cursor:pointer}
+.checkme{display:inline-block;margin-top:12px;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--mist)}
+.checkme a{color:var(--royal);text-decoration:none;border-bottom:1px dotted var(--royal)}
+.checkme::before{content:"\2713";color:var(--gold);margin-right:6px;font-weight:700}
+.note{font-size:13.5px;color:var(--mist);margin-top:10px}
+.quote{font-family:var(--serif);font-size:19px;color:var(--navy);border-left:3px solid var(--gold);padding:6px 0 6px 18px;margin:22px 0;max-width:640px}
+.quote small{display:block;font-family:var(--sans);font-size:13px;color:var(--mist);margin-top:8px}
+
+/* Calculator */
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:720px){.calc-grid{grid-template-columns:1fr}}
+.slider-row{margin:18px 0}
+.slider-row label{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px}
+.slider-row label output{font-weight:700;color:var(--navy)}
+input[type=range]{width:100%;accent-color:var(--royal)}
+.result{background:var(--navy);color:var(--chalk);border-radius:6px;padding:20px;margin-top:16px;text-align:center}
+.result .big{font-family:var(--serif);font-size:34px;color:var(--gold)}
+.result .sub{font-size:14px;color:#C9D4E8;margin-top:4px}
+.verdict{font-size:14px;margin-top:10px;color:var(--chalk)}
+.bar-vs{height:14px;background:rgba(255,255,255,.15);border-radius:7px;margin-top:14px;overflow:hidden}
+.bar-vs i{display:block;height:100%;background:var(--gold);border-radius:7px;transition:width .25s}
+@media (prefers-reduced-motion:reduce){.bar-vs i{transition:none}}
+
+/* Alternatives table */
+.alt{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:14px}
+.alt th{background:var(--navy);color:var(--chalk);text-align:left;padding:10px 12px;font-weight:600;font-size:13px;letter-spacing:.04em}
+.alt td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.alt td:last-child{white-space:nowrap;font-weight:600;color:var(--navy)}
+.totalstrip{background:var(--gold);color:var(--navy);font-family:var(--serif);font-size:19px;padding:14px 18px;border-radius:6px;margin-top:16px;text-align:center}
+
+/* Questions */
+details{border:1px solid var(--line);border-radius:6px;background:var(--chalk);margin:10px 0}
+summary{cursor:pointer;padding:14px 18px;font-weight:600;color:var(--navy);list-style:none;display:flex;gap:12px}
+summary::before{content:counter(q,decimal-leading-zero);counter-increment:q;color:var(--gold);font-family:var(--serif)}
+#questions{counter-reset:q}
+details p{padding:0 18px 16px 18px;font-size:15px}
+details[open] summary{border-bottom:1px solid var(--line)}
+
+/* Act */
+.act-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:720px){.act-grid{grid-template-columns:1fr}}
+.act{background:var(--chalk);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:20px}
+.act h3{font-family:var(--serif);font-weight:400;color:var(--navy);font-size:19px}
+.act .when{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);margin:4px 0 10px}
+.btn{display:inline-block;background:var(--navy);color:var(--chalk);text-decoration:none;padding:11px 20px;border-radius:5px;font-size:14.5px;margin-top:10px;border:none;cursor:pointer;font-family:var(--sans)}
+.btn:hover{background:#16294a}
+.btn.gold{background:var(--gold);color:var(--navy);font-weight:700}
+.btn.gold:hover{background:#b8931f}
+
+/* Sources */
+.src{font-size:14px;columns:2;column-gap:34px}
+@media(max-width:720px){.src{columns:1}}
+.src li{margin-bottom:10px;break-inside:avoid}
+footer{background:var(--navy);color:#AFC0DC;padding:40px 0;font-size:14px}
+footer .kings{font-family:var(--serif);color:var(--gold);font-size:18px;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<nav aria-label="Sections"><div class="wrap">
+<a href="#case">The Case</a><a href="#money">The Money</a><a href="#school">The School</a>
+<a href="#math">Try the Math</a><a href="#alternatives">Alternatives</a><a href="#questions">Ten Questions</a>
+<a href="#act">Act Now</a><a href="#sources">Sources</a>
+</div></nav>
+
+<header id="case"><div class="wrap">
+<div class="eyebrow">North Middletown, Kentucky &bull; Est. 1948 &bull; Home of the Kings</div>
+<h1>The district's <em>best elementary school</em> is the one on the chopping block.</h1>
+<div class="goldrule"></div>
+<p class="hero-sub">On July 15, 2026, a planning committee voted to reclassify North Middletown Elementary as transitional, the first step toward closing it. I went through the district's own audits, state data, and two decades of public records. Here is what the numbers say. Every one of them is checkable, and I want you to check them.</p>
+<div class="factstrip">
+<div class="fact"><b>58.2 vs 26.5</b><span>NMES score vs the school set to receive its students (2024-25)</span></div>
+<div class="fact"><b>~24% at best</b><span>share of the $2.65M deficit that closure would solve, on generous assumptions</span></div>
+<div class="fact"><b>610 people</b><span>the town that loses its heartbeat if the school closes</span></div>
+</div>
+<p class="disclose">Written by Dr. Ryan Bradley, a former NMES King, with the help of an AI research assistant. Built from public records only. Full report and financial model at the bottom of this page.</p>
+</div></header>
+
+<section id="money"><div class="wrap">
+<div class="kicker">Part One</div>
+<h2>The money problem is real. Closing NMES does not solve it.</h2>
+<p class="lede">The district ran a General Fund deficit of $2.65 million last year before transfers, and reserves are falling by about $1.1 million a year. I do not dispute any of that. The question is whether closing a 128-student school fixes it. It does not come close.</p>
+
+<div class="card">
+<h3>The General Fund, from the district's own audits</h3>
+<div class="chartbox"><canvas id="chartGF" role="img" aria-label="Bar chart of the operating deficit and fund balance, fiscal 2023 to 2025"></canvas></div>
+<span class="checkme">Check my work: <a href="https://www.education.ky.gov/districts/FinRept/Documents/FY2024-2025%20FA%20Bourbon%20Co%20Rev.pdf">FY2025 audit</a> &middot; <a href="https://www.education.ky.gov/districts/FinRept/Documents/FY2023-2024%20FA%20Bourbon%20Co.pdf">FY2024 audit</a></span>
+</div>
+
+<div class="card">
+<h3>What actually drove the deficit</h3>
+<p>Federal pandemic aid wound down, taking about $2.95 million a year with it, and attendance-based state funding fell as roughly 248 students left the rolls. Meanwhile, costs the district controls grew fast: central-office administration rose 44.8 percent in two years.</p>
+<div class="chartbox"><canvas id="chartAdmin" role="img" aria-label="Bar chart of district administration expense rising from 1.0 to 1.45 million dollars"></canvas></div>
+<p class="note">A fair caution I print beside this number: Kentucky audits fold state pension allocations into these expense lines, so some share may be accounting rather than hiring. That is why the report asks for a position-by-position accounting instead of assuming the worst.</p>
+<span class="checkme"><a href="https://www.education.ky.gov/districts/FinRept/Documents/FY2024-2025%20FA%20Bourbon%20Co%20Rev.pdf">Statement of Activities, both audits</a></span>
+</div>
+
+<div class="card">
+<h3>The tax picture the budget talk leaves out</h3>
+<p>Bourbon County Schools taxes real estate at 52.4 cents per $100, second lowest of nine area districts and roughly 13 cents below the statewide school average. The board also holds a no-recall option to raise revenue 4 percent a year. The math is simple and it does not bend: either spending comes down or revenue goes up. Standing idle is the one answer I rule out.</p>
+<div class="chartbox tall"><canvas id="chartTax" role="img" aria-label="Horizontal bar chart comparing school tax rates across nine area districts"></canvas></div>
+<span class="checkme"><a href="https://revenue.ky.gov/News/Publications/Property%20Tax%20Rate%20Books/2025%20Property%20Tax%20Rate%20Book.pdf">KY Dept. of Revenue 2025 rate book</a> &middot; Fayette and Clark from board-vote reporting</span>
+</div>
+</div></section>
+
+<section id="school"><div class="wrap">
+<div class="kicker">Part Two</div>
+<h2>The school they want to close is the one that works.</h2>
+<p class="lede">Toggle the schools below. North Middletown outscores every elementary in the county, in either district, and every one in neighboring Clark County. The schools designated to receive its students sit in the bottom quarter of the state.</p>
+
+<div class="card">
+<h3>Two decades of scores, every district elementary</h3>
+<div class="checkrow">
+<label><input type="checkbox" id="tgNMES" checked> North Middletown</label>
+<label><input type="checkbox" id="tgBC" checked> Bourbon Central</label>
+<label><input type="checkbox" id="tgCR" checked> Cane Ridge</label>
+<label><input type="checkbox" id="tgPE"> Paris Elementary</label>
+</div>
+<div class="chartbox tall"><canvas id="chartScores" role="img" aria-label="Line chart of elementary school scores from 2007 to 2025"></canvas></div>
+<p class="note">SchoolDigger's normalized 0-100 score computed from state test data, a consistent cross-year yardstick, not KDE's official rating. No statewide tests in 2020; NMES 2021 not reported.</p>
+<span class="checkme"><a href="https://www.schooldigger.com/go/KY/schools/0054000096/school.aspx">SchoolDigger, NMES year table</a></span>
+</div>
+
+<div class="card">
+<h3>Room to grow: enrollment since 1989</h3>
+<p>The building held 261 children at its peak. It holds 128 today against a rated capacity of 174. The seats exist; the plan to fill them, through redistricting and cross-county enrollment on quality, is in the full report.</p>
+<div class="chartbox"><canvas id="chartEnroll" role="img" aria-label="Line chart of NMES enrollment from 1989 to 2025 against a capacity of 174"></canvas></div>
+<span class="checkme"><a href="https://www.publicschoolreview.com/north-middletown-elementary-school-profile">Federal enrollment history</a> &middot; <a href="https://education.ky.gov/districts/fac/Documents/Bourbon%20Co%20DFP.pdf">2021 state facility plan (capacity 174)</a></span>
+</div>
+
+<div class="quote">"There is always a solution to a problem if you persist through it."
+<small>What Mrs. Mitchell's classroom taught me, 24 years ago, in this building. A 2011 National Blue Ribbon School, and climbing back toward that standard today under its current staff.</small></div>
+</div></section>
+
+<section id="math"><div class="wrap">
+<div class="kicker">Part Three &bull; Interactive</div>
+<h2>Do not take my word for it. Run the numbers yourself.</h2>
+<p class="lede">These are the same models from the report's companion workbook. Move the sliders. Use the district's assumptions or your own. The conclusion is hard to escape either way.</p>
+
+<div class="calc-grid">
+<div class="card">
+<h3>The closure calculator</h3>
+<p class="note">What does closing NMES actually save, once teachers follow students, buses roll farther, and some families leave the district and take state funding with them?</p>
+<div class="slider-row"><label>Teaching positions actually eliminated <output id="oPos">3</output></label>
+<input type="range" id="sPos" min="2" max="6" value="3" step="1"></div>
+<div class="slider-row"><label>Added busing cost per year <output id="oBus">$137,500</output></label>
+<input type="range" id="sBus" min="75000" max="200000" value="137500" step="2500"></div>
+<div class="slider-row"><label>Students whose families leave the district <output id="oLeav">10</output></label>
+<input type="range" id="sLeav" min="0" max="30" value="10" step="1"></div>
+<div class="result">
+<div class="big" id="rNet">$361,240</div>
+<div class="sub">estimated net recurring saving per year</div>
+<div class="bar-vs" aria-hidden="true"><i id="rBar" style="width:13.6%"></i></div>
+<div class="verdict" id="rVerdict">That covers 13.6% of the $2.65M structural deficit.</div>
+</div>
+</div>
+
+<div class="card">
+<h3>The 4 percent option</h3>
+<p class="note">State law lets the board raise property-tax revenue 4 percent a year from existing property, no recall exposure. It compounds. Slide the years.</p>
+<div class="slider-row"><label>Years the board takes the 4 percent option <output id="oYrs">3</output></label>
+<input type="range" id="sYrs" min="1" max="3" value="3" step="1"></div>
+<div class="result">
+<div class="big" id="rLevy">$1,203,816</div>
+<div class="sub">added recurring revenue per year, by that point</div>
+<div class="bar-vs" aria-hidden="true"><i id="rLevyBar" style="width:45.5%"></i></div>
+<div class="verdict" id="rLevyVerdict">That covers 45.5% of the structural deficit. Bourbon would still tax below six of its eight neighbors.</div>
+</div>
+<p class="note" style="margin-top:14px">Basis: KRS 160.470, applied to fiscal 2025 collections of $9,641,017. The levy is one option, not the only one. But revenue or reductions, the board must choose one and own it.</p>
+</div>
+</div>
+<span class="checkme">Every formula here matches the downloadable workbook, tab by tab.</span>
+</div></section>
+
+<section id="alternatives"><div class="wrap">
+<div class="kicker">Part Four</div>
+<h2>A menu worth more than closure.</h2>
+<p class="lede">Conservative, sourced, and adjustable in the workbook. Even the low end beats the most generous closure estimate, and none of it takes a school from a town.</p>
+<table class="alt">
+<tr><th>Measure</th><th>Estimated annual value</th></tr>
+<tr><td>Take the 4 percent revenue option (year one; compounds thereafter)</td><td>$386,000</td></tr>
+<tr><td>Trim central-office growth back toward its FY2023 level</td><td>$200,000 to $450,000</td></tr>
+<tr><td>Transportation efficiency review (routing, fleet, fuel)</td><td>$150,000 to $300,000</td></tr>
+<tr><td>Medicaid billing, energy performance, and shared services</td><td>$170,000 to $400,000</td></tr>
+<tr><td>Grow NMES enrollment across county lines (state funding follows the student)</td><td>$150,000 to $300,000</td></tr>
+<tr><td>Recover part of ordinary tax delinquencies</td><td>$60,000 to $120,000</td></tr>
+</table>
+<div class="totalstrip">Conservative combined range: $1.1 to $2.1 million a year &bull; Closure, at best: about $640,000</div>
+<p class="note">Figures are estimates with stated assumptions; the exact basis for each sits in the report and the workbook. Ranges overlap and are haircut in the combined total.</p>
+</div></section>
+
+<section id="questions"><div class="wrap">
+<div class="kicker">Part Five</div>
+<h2>Ten questions the board should answer in writing before any vote.</h2>
+<p class="lede">These are not rhetorical. Each has a document behind it that the administration either already holds or should be required to produce. Tap to read.</p>
+<details><summary>What is inside the "over a million dollars" figure?</summary><p>How does it reconcile with the state's published per-student spending, and which enrollment count is being used? Federal data show 128 students, while public statements have ranged lower.</p></details>
+<details><summary>What is the projected net saving, published as a worksheet?</summary><p>Costs that truly disappear, minus added transportation, transition costs, and revenue lost with departing students, signed by the finance officer.</p></details>
+<details><summary>What happens to the per-student cost argument when SEEK follows the student?</summary><p>State funding travels with children. Show the revenue side of the ledger, not just the cost side.</p></details>
+<details><summary>Where will the students go, and what are those schools' capacities and scores?</summary><p>The designated receiving schools scored 26.5 and 19.3 last year. Publish capacity, class sizes, and the transition plan.</p></details>
+<details><summary>How long will the youngest children ride the bus?</summary><p>Publish modeled route times for the students of North Middletown, by age, before any vote.</p></details>
+<details><summary>Why did central-office administration grow 44.8 percent in two years?</summary><p>Position by position, dollar by dollar, including how much is state pension allocation versus local decisions.</p></details>
+<details><summary>What is the stated purpose of the 2024 $6.055 million bond issue?</summary><p>Publish the official statement and the BG-1, and state when NMES last received meaningful capital investment.</p></details>
+<details><summary>What would it cost to keep the empty building?</summary><p>Closed schools still need insurance, heat, and maintenance. Publish the carrying cost and the disposition plan.</p></details>
+<details><summary>What alternatives were modeled before "transitional" reached a vote?</summary><p>If a menu like the one above was never priced, the community deserves to know that too.</p></details>
+<details><summary>What does the district project for enrollment, using the levers it controls?</summary><p>Redistricting and cross-county enrollment are board decisions, not demographic fate. Show the projection with and without them.</p></details>
+</div></section>
+
+<section id="act"><div class="wrap">
+<div class="kicker">Part Six</div>
+<h2>What you can do this week.</h2>
+<div class="act-grid">
+<div class="act"><h3>Show up Thursday</h3><div class="when">July 23 &bull; 6:30 p.m. &bull; at the school</div>
+<p>Community meeting at North Middletown Elementary. Children are invited to write a love letter to the school. Bring your neighbors.</p></div>
+<div class="act"><h3>Show up to the forum</h3><div class="when">July 29 &bull; Local Planning Committee</div>
+<p>The committee that voted "transitional" meets again on the draft facility plan. Its vote is advisory; the audience is not.</p></div>
+<div class="act"><h3>Sign and share</h3><div class="when">Two minutes</div>
+<p>Add your name to the petition asking the board to pause any vote until the ten questions are answered in writing.</p>
+<a class="btn gold" href="https://www.change.org/p/sos-save-our-school-north-middletown-elementary" id="petitionBtn">Sign the petition</a></div>
+<div class="act"><h3>Write the board</h3><div class="when">Five minutes</div>
+<p>Superintendent Larry Begley and board members Todd Earlywine, Thomas Talbot, Lana Fryman, Randy Sparks, and Kandice Wells. Email addresses for each are on the <a href="https://www.bourbon.kyschools.us/page/board-of-education">district board page</a>. Ask for one thing: answers in writing before any vote.</p>
+<a class="btn" href="mailto:?subject=Please%20pause%20the%20North%20Middletown%20Elementary%20vote&body=I%20am%20asking%20the%20Board%20to%20pause%20any%20vote%20on%20North%20Middletown%20Elementary%20until%20the%20ten%20questions%20in%20the%20community%20report%20are%20answered%20in%20writing%20and%20in%20public.">Start an email</a>
+&nbsp;<a class="btn" href="tel:8599872180">Call the central office</a></div>
+</div>
+<div class="card" style="margin-top:26px">
+<h3>Read the full case</h3>
+<p>The 22-page report and the complete financial model behind every number on this page.</p>
+<a class="btn" href="https://drive.google.com/file/d/1__e21OCE2HIkTrsrUtimk5tz2vIsUdZy/view?usp=drivesdk">Download the report (PDF)</a>
+&nbsp;<a class="btn" href="https://docs.google.com/spreadsheets/d/1q6YNJKLPIQnRkCQW3E30u4NXSI4racsg/edit?usp=drivesdk&amp;ouid=116291959340657645094&amp;rtpof=true&amp;sd=true">Download the model (Excel)</a>
+</div>
+</div></section>
+
+<section id="sources"><div class="wrap">
+<div class="kicker">Check My Work</div>
+<h2>Sources</h2>
+<p class="lede">Every figure on this page traces to one of these. If you find an error, tell me and I will correct it publicly.</p>
+<ul class="src">
+<li><a href="https://www.education.ky.gov/districts/FinRept/Documents/FY2024-2025%20FA%20Bourbon%20Co%20Rev.pdf">Bourbon County Schools audited financial statements, FY2025</a></li>
+<li><a href="https://www.education.ky.gov/districts/FinRept/Documents/FY2023-2024%20FA%20Bourbon%20Co.pdf">Audited financial statements, FY2024</a></li>
+<li><a href="https://education.ky.gov/districts/fac/Documents/Bourbon%20Co%20DFP.pdf">2021 KBE-approved District Facility Plan</a></li>
+<li><a href="https://revenue.ky.gov/News/Publications/pages/property-tax-rate-books.aspx">Kentucky Dept. of Revenue property tax rate books</a></li>
+<li><a href="https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&ID=210054000096">NCES school data, North Middletown Elementary</a></li>
+<li><a href="https://www.schooldigger.com/go/KY/schools/0054000096/school.aspx">SchoolDigger score history (KDE data)</a></li>
+<li><a href="https://www.kentuckyteacher.org/features/2011/11/blue-ribbon-school-shares-keys-to-success/">Kentucky Teacher, 2011 Blue Ribbon feature</a></li>
+<li><a href="https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=51320">KRS 160.470, the 4 percent option</a></li>
+<li><a href="https://www.education.ky.gov/districts/SEEK/Pages/Taxes.aspx">KDE local district tax levies</a></li>
+<li><a href="https://jrre.psu.edu/sites/default/files/2019-08/17-3_1.pdf">Lyson (2002), what a school means to a community</a></li>
+<li><a href="https://edworkingpapers.com/sites/default/files/ai22-530.pdf">Smith &amp; Zimmer (2022), consolidation impacts</a></li>
+<li><a href="https://www.pew.org/~/media/assets/2013/02/11/philadelphia_school_closings_report.pdf">Pew (2013), shuttered public schools</a></li>
+<li><a href="https://consortium.uchicago.edu/publications/school-closings-chicago-staff-and-student-experiences-and-academic-outcomes">UChicago Consortium (2018), Chicago closings</a></li>
+<li><a href="https://www.wkyt.com/2026/07/16/residents-alumni-defend-small-town-school-closure-bourbon-county/">WKYT coverage, July 2026</a></li>
+<li><a href="https://www.bourboncountycitizen.com/2026/07/16/bourbon-county-schools-local-planning-committee-hosts-public-forum-regarding-nmes/">The Bourbon County Citizen, July 2026</a></li>
+</ul>
+</div></section>
+
+<footer><div class="wrap">
+<div class="kings">Once a King, always a King.</div>
+<p>Written by Dr. Ryan Bradley, alumnus of Bourbon County Schools and North Middletown Elementary, with the help of an AI research assistant. This site criticizes decisions and asks for documents. It attributes no motive and alleges no wrongdoing to anyone. Estimates are labeled and adjustable in the workbook. Corrections welcome.</p>
+</div></footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+if(typeof Chart==='undefined'){return}
+var NAVY='#1F3864',ROYAL='#2E75B6',GRAY='#8A93A6',LGRAY='#C9CDD4',GOLD='#C9A227',RED='#9C3D3D';
+Chart.defaults.font.family='-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif';
+Chart.defaults.color='#3A4356';
+
+/* GF chart */
+new Chart(document.getElementById('chartGF'),{type:'bar',data:{labels:['FY2023','FY2024','FY2025'],
+datasets:[{label:'Result before transfers ($M)',data:[-0.237,-2.535,-2.648],backgroundColor:RED},
+{label:'Year-end fund balance ($M)',data:[6.583,5.516,4.291],backgroundColor:NAVY}]},
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{grid:{color:'#E3E8F0'}}}}});
+
+/* Admin chart */
+new Chart(document.getElementById('chartAdmin'),{type:'bar',data:{labels:['FY2023','FY2024','FY2025'],
+datasets:[{label:'District administration ($M)',data:[0.9997,1.2321,1.4472],backgroundColor:NAVY},
+{label:'School administration ($M)',data:[2.110,2.519,2.581],backgroundColor:ROYAL}]},
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{grid:{color:'#E3E8F0'}}}}});
+
+/* Tax chart */
+new Chart(document.getElementById('chartTax'),{type:'bar',data:{
+labels:['Fayette','Paris Independent','Clark','Bath','Scott','Harrison','Montgomery','Bourbon County','Nicholas'],
+datasets:[{label:'School real estate rate (cents per $100)',
+data:[80.9,71.5,66.8,63.4,62.9,57.7,52.5,52.4,43.1],
+backgroundColor:['#C9CDD4','#C9CDD4','#C9CDD4','#C9CDD4','#C9CDD4','#C9CDD4','#C9CDD4',NAVY,'#C9CDD4']}]},
+options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(c){return c.label==='Bourbon County'?'Second lowest of nine. KY average: 65.1':''}}}},
+scales:{x:{grid:{color:'#E3E8F0'},max:90}}}});
+
+/* Scores chart with toggles */
+var yrs=[]; for(var y=2007;y<=2025;y++){yrs.push(y)}
+var S={
+NMES:{label:'North Middletown',color:NAVY,w:3,data:[56.5,63.9,68.6,87.9,85.8,72.5,67.6,56.6,56.9,48.7,49.3,40.0,50.4,null,null,47.7,32.1,54.1,58.2]},
+BC:{label:'Bourbon Central',color:ROYAL,w:2,data:[77.5,81.9,72.6,69.6,63.0,74.7,67.6,51.8,52.1,30.0,34.0,32.8,39.9,null,20.0,29.9,29.0,23.8,26.5]},
+CR:{label:'Cane Ridge',color:GRAY,w:2,data:[35.2,50.9,56.2,65.5,34.5,34.0,49.6,51.0,51.1,57.5,50.4,41.4,38.8,null,23.8,38.7,34.6,35.8,19.3]},
+PE:{label:'Paris Elementary',color:'#AEB4BE',w:2,data:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,16.8,12.2]}
+};
+function mkDs(k){return{label:S[k].label,data:S[k].data,borderColor:S[k].color,backgroundColor:S[k].color,borderWidth:S[k].w,pointRadius:2.5,spanGaps:false,tension:0.15}}
+var scoreChart=new Chart(document.getElementById('chartScores'),{type:'line',
+data:{labels:yrs,datasets:[mkDs('NMES'),mkDs('BC'),mkDs('CR')]},
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},
+scales:{y:{min:0,max:95,grid:{color:'#E3E8F0'}},x:{ticks:{maxTicksLimit:10}}}}});
+function syncToggles(){
+var want=[['tgNMES','NMES'],['tgBC','BC'],['tgCR','CR'],['tgPE','PE']];
+scoreChart.data.datasets=[];
+want.forEach(function(p){if(document.getElementById(p[0]).checked){scoreChart.data.datasets.push(mkDs(p[1]))}});
+scoreChart.update();
+}
+['tgNMES','tgBC','tgCR','tgPE'].forEach(function(id){document.getElementById(id).addEventListener('change',syncToggles)});
+
+/* Enrollment chart */
+var eyrs=[]; for(var y2=1989;y2<=2025;y2++){eyrs.push(y2)}
+var evals=[261,255,234,225,202,203,182,196,208,198,205,195,195,203,196,206,204,199,211,224,217,177,165,167,154,154,155,154,131,131,160,160,148,153,145,135,128];
+var cap=eyrs.map(function(){return 174});
+new Chart(document.getElementById('chartEnroll'),{type:'line',data:{labels:eyrs,
+datasets:[{label:'Enrollment',data:evals,borderColor:NAVY,backgroundColor:NAVY,borderWidth:2.5,pointRadius:1.8,tension:0.15},
+{label:'Rated capacity (174)',data:cap,borderColor:GOLD,borderWidth:2,borderDash:[6,5],pointRadius:0}]},
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},
+scales:{y:{min:0,max:290,grid:{color:'#E3E8F0'}},x:{ticks:{maxTicksLimit:10}}}}});
+
+/* Closure calculator */
+var DEFICIT=2648086;
+function money(n){return '$'+Math.round(n).toLocaleString('en-US')}
+function calc(){
+var p=+document.getElementById('sPos').value,
+b=+document.getElementById('sBus').value,
+l=+document.getElementById('sLeav').value;
+document.getElementById('oPos').textContent=p;
+document.getElementById('oBus').textContent=money(b);
+document.getElementById('oLeav').textContent=l;
+var net=290000+p*85000-b-l*4626;
+var pct=Math.max(0,net/DEFICIT*100);
+document.getElementById('rNet').textContent=money(net);
+document.getElementById('rBar').style.width=Math.min(100,pct).toFixed(1)+'%';
+document.getElementById('rVerdict').textContent='That covers '+pct.toFixed(1)+'% of the $2.65M structural deficit.'+(pct<50?' The other '+(100-pct).toFixed(0)+'% still has to come from somewhere.':'');
+}
+['sPos','sBus','sLeav'].forEach(function(id){document.getElementById(id).addEventListener('input',calc)});
+calc();
+
+/* Levy compounder */
+function levy(){
+var yr=+document.getElementById('sYrs').value;
+document.getElementById('oYrs').textContent=yr;
+var base=9641017,add=0,cum=0;
+for(var i=0;i<yr;i++){add=(base+cum)*0.04;cum+=add}
+var pct=cum/DEFICIT*100;
+document.getElementById('rLevy').textContent=money(cum);
+document.getElementById('rLevyBar').style.width=Math.min(100,pct).toFixed(1)+'%';
+document.getElementById('rLevyVerdict').textContent='That covers '+pct.toFixed(1)+'% of the structural deficit. Bourbon would still tax below six of its eight neighbors.';
+}
+document.getElementById('sYrs').addEventListener('input',levy);
+levy();
+
+/* Petition placeholder */
+document.getElementById('petitionBtn').addEventListener('click',function(e){
+if(this.getAttribute('href')==='#'){e.preventDefault();alert('Petition link coming soon. For now: come Thursday, July 23 at 6:30 p.m., and email the board.')}
+});
+});
+</script>
+</body>
+</html>
