@@ -26,7 +26,7 @@ h1 = ParagraphStyle("h1", fontName="Helvetica-Bold", fontSize=14.5, leading=17.5
 h2 = ParagraphStyle("h2", fontName="Helvetica-Bold", fontSize=11.2, leading=14,
                     textColor=colors.HexColor("#2E5395"), spaceBefore=10, spaceAfter=5, keepWithNext=1)
 cap = ParagraphStyle("cap", fontName="Helvetica-Oblique", fontSize=8.2, leading=10.5,
-                     textColor=GRAY, spaceBefore=3, spaceAfter=12, keepWithNext=1)
+                     textColor=GRAY, spaceBefore=3, spaceAfter=12)
 tcell = ParagraphStyle("tcell", fontName="Helvetica", fontSize=8.4, leading=10.6,
                        textColor=colors.HexColor("#1A1A1A"))
 tcellb = ParagraphStyle("tcellb", parent=tcell, fontName="Helvetica-Bold")
@@ -85,8 +85,11 @@ def tbl(header, rows, widths, caption=None, bold_first_col=False, align_right_fr
         ("RIGHTPADDING", (0, 0), (-1, -1), 5),
     ]
     t.setStyle(TableStyle(style))
-    if caption:
+    if caption and len(rows) <= 8:
         A(KeepTogether([t, Paragraph(caption, cap)]))
+    elif caption:
+        A(t)
+        A(Paragraph(caption, cap))
     else:
         A(t)
 
@@ -585,7 +588,8 @@ fig("chart_enroll.png",
     "Figure 11. NMES enrollment from 1989 through 2025 against its current state-rated capacity of 174. The "
     "school held 261 students at its 1988-89 peak, roughly double today's official count of 128. History "
     "compiled from federal school-level data. The long decline mirrors the county's flat population, which is "
-    "exactly why this plan relies on boundary decisions and cross-county enrollment rather than demographics.")
+    "exactly why this plan relies on boundary decisions and cross-county enrollment rather than demographics.",
+    width=6.1 * inch)
 H2("A worked example: rebalance the map, fill the school")
 P("Here is one concrete scenario, arithmetic anyone can check, run in the workbook's Redistricting tab. Rezone "
   "30 students to North Middletown from the eastern edges of the two Paris-area attendance zones, drawing only "
@@ -605,7 +609,7 @@ P("Here is one concrete scenario, arithmetic anyone can check, run in the workbo
 fig("chart_balance.png",
     "Figure 12. One rebalancing scenario: North Middletown fills to its rated 174 while Bourbon Central and Cane "
     "Ridge each ease by about fifteen students. Enrollment counts as cited in Sections 4 and 9; the scenario "
-    "levers (30 rezoned, 16 cross-county transfers) are adjustable in the companion workbook's Redistricting tab.")
+    "levers (30 rezoned, 16 cross-county transfers) are adjustable in the companion workbook's Redistricting tab.", width=6.0 * inch)
 H2("The transportation map, estimated from public geography")
 P("The district has not published its zone map, its geocoded student counts, or its annual T-1 transportation "
   "report, so what follows is built from public geography and labeled accordingly; every input sits in yellow "
@@ -633,7 +637,7 @@ fig("chart_map.png",
     "Figure 13. Where the students are: the three elementary attendance zones traced from the district's "
     "published zone view onto the U.S. Census county outline. Paris holds half the county's people and both "
     "receiving schools; Millersburg sits in the northern zone; the NMES zone runs about 1.2 students per "
-    "square mile across roughly 105 square miles of the county's southeast.")
+    "square mile across roughly 105 square miles of the county's southeast.", width=5.2 * inch)
 P("Now the closure arithmetic, bottom up. North Middletown sits about ten miles from the Paris schools on US "
   "460. Roughly 109 of the school's 128 students ride the bus on an estimated three rural routes. Extend "
   "those routes to Paris and each one adds about 40 bus-miles a day, out and back, morning and afternoon: "
@@ -1076,7 +1080,7 @@ srcs = [
  "cited as an open records item)",
 ]
 for i, s in enumerate(srcs, 1):
-    A(Paragraph(f"{i}. {s}", ParagraphStyle("src", parent=note, fontSize=8.6, leading=11.4, spaceAfter=4)))
+    A(Paragraph(f"{i}. {s}", ParagraphStyle("src", parent=note, fontSize=8.4, leading=11.0, spaceAfter=3.2)))
 
 # ================= GLOSSARY =================
 A(PageBreak())
@@ -1115,8 +1119,8 @@ gt = Table(rows, colWidths=[1.95 * inch, 4.75 * inch], hAlign="LEFT")
 gt.setStyle(TableStyle([
     ("ROWBACKGROUNDS", (0, 0), (-1, -1), [colors.white, ROWBG]),
     ("VALIGN", (0, 0), (-1, -1), "TOP"),
-    ("TOPPADDING", (0, 0), (-1, -1), 3.2),
-    ("BOTTOMPADDING", (0, 0), (-1, -1), 3.2),
+    ("TOPPADDING", (0, 0), (-1, -1), 2.5),
+    ("BOTTOMPADDING", (0, 0), (-1, -1), 2.5),
     ("LEFTPADDING", (0, 0), (-1, -1), 5),
     ("RIGHTPADDING", (0, 0), (-1, -1), 5),
     ("LINEBELOW", (0, -1), (-1, -1), 0.6, LINE),
@@ -1127,52 +1131,50 @@ A(gt)
 # ================= APPENDIX B: OPEN RECORDS =================
 A(PageBreak())
 H("Appendix B: The Open Records Checklist")
-P("Kentucky's Open Records Act (KRS 61.870 to 61.884) entitles any resident to these documents on request to "
-  "the district's official records custodian at the central office, with a response due within five business "
-  "days. Each request below names the analysis it would replace or sharpen; every one corresponds to a "
-  "labeled estimate in this report or its companion workbook. I will publish, and correct against, whatever "
-  "comes back.")
+P("Kentucky's Open Records Act (KRS 61.870 to 61.884) entitles any resident to these documents on request "
+  "to the district's records custodian, with a response due within five business days. Each request names "
+  "the labeled estimate in this report or the companion workbook that it would replace. Nothing here seeks "
+  "student-identifiable information, and I will publish, and correct against, whatever comes back.")
 tbl(["Request", "What it settles"],
-    [["The line-item net-savings worksheet behind the “over a million dollars” statement",
-      "Replaces the $250,000 to $600,000 planning range with the district's own number (Sections 1 and 4)"],
-     ["Grade-by-grade capacity, sections, and available space at Bourbon Central and Cane Ridge",
-      "Receiving-school absorption costs, and the rebalancing scenario's relief estimate (Sections 4 and 9)"],
-     ["Geocoded student counts by attendance area or planning zone",
-      "Validates the density map and enables a real boundary optimization (Section 9, Figure 13)"],
-     ["The district's GIS attendance-zone map",
-      "Replaces the traced zones in Figure 13"],
-     ["The T-1 annual transportation report, route sheets, and cost per bus-mile",
-      "Replaces every yellow busing input in the workbook's Transport_Geo tab"],
-     ["Modeled post-closure bus routes and the longest one-way ride for the youngest riders",
-      "Question 4's answer in minutes rather than adjectives"],
-     ["The architect-and-engineer condition assessment for North Middletown, with its author and assumptions",
-      "The building case, if one exists (Section 7)"],
-     ["The room-by-room utilization worksheet behind the 174 capacity rating, and the pre-2021 facility plans",
-      "Whether the capacity number is a wall or a room schedule (Section 7)"],
-     ["The 2024 bond's official statement and BG-1, and the 2023 issue's stated purpose",
-      "Where $6.9 million of recent borrowing actually went (Section 6)"],
-     ["KDE's bonding potential statement for the district",
-      "The real borrowing headroom beside the audit's $23.5 million (Section 6)"],
-     ["The administrator salary schedule and five years of administrator compensation, position by position",
-      "How much of the 44.8 percent central-office growth is people versus accounting (Section 8)"],
-     ["The written academic transition plan and Title I reallocation analysis for displaced students",
-      "What happens to the children academically (Section 5)"],
+    [["<b>The money.</b> The net-savings worksheet behind the \u201cover a million dollars\u201d statement",
+      "Replaces the $250,000 to $600,000 planning range (Sections 1, 4)"],
      ["Any alternatives modeling the administration has performed",
-      "Whether closure was ever compared to anything (Section 9)"],
-     ["KDE levy files: the rate type elected each year, and the General Fund versus building fund cent split",
+      "Whether closure was compared to anything (Section 9)"],
+     ["Administrator salary schedule and five years of compensation, position by position",
+      "How much of the 44.8 percent central-office growth is people versus accounting (Section 8)"],
+     ["KDE levy files: rate type elected each year; General Fund versus building fund cent split",
       "The two open cells in the tax history (Section 9)"],
+     ["<b>The buildings and bonds.</b> The 2024 bond's official statement and BG-1; the 2023 issue's purpose",
+      "Where $6.9 million of recent borrowing went (Section 6)"],
+     ["KDE's bonding potential statement for the district",
+      "Real borrowing headroom beside the audit's $23.5 million (Section 6)"],
+     ["The architect-and-engineer condition assessment for North Middletown, with author and assumptions",
+      "The building case, if one exists (Section 7)"],
+     ["The room-by-room worksheet behind the 174 capacity rating; the pre-2021 facility plans",
+      "Whether capacity is a wall or a room schedule (Section 7)"],
+     ["<b>The boundaries and buses.</b> The district's GIS attendance-zone map",
+      "Replaces the traced zones in Figure 13"],
+     ["Geocoded student counts by attendance area or planning zone",
+      "Validates the density analysis; enables real boundary optimization (Section 9)"],
+     ["The T-1 annual transportation report, route sheets, and cost per bus-mile",
+      "Replaces every yellow busing input in the Transport_Geo tab"],
+     ["Modeled post-closure routes and the longest one-way ride for the youngest riders",
+      "Question 4's answer in minutes rather than adjectives"],
+     ["<b>The students.</b> The written academic transition plan and Title I reallocation analysis",
+      "What happens to the children academically (Section 5)"],
+     ["Grade-by-grade capacity, sections, and space at Bourbon Central and Cane Ridge",
+      "Absorption costs, and the rebalancing scenario's relief estimate (Sections 4, 9)"],
      ["School-level climate and safety survey results for all three elementaries",
       "The state's own measure of the school communities involved (Section 5)"]],
-    [3.4 * inch, 3.3 * inch],
-    caption="Each item cites the section whose labeled estimate it would replace. Requests go to the district's "
-            "records custodian under KRS 61.870; nothing here seeks student-identifiable information.",
+    [3.5 * inch, 3.2 * inch],
+    caption="Fifteen requests in four groups. Each cites the section whose labeled estimate it replaces.",
     bold_first_col=False)
 H2("Already public, no request needed")
-B("School Attendance Boundary Survey (NCES EDGE, 2015-16): the district's actual attendance-zone GIS files, "
-  "free download; also queryable at nces.ed.gov/opengis (SABS_1516 service, school 210054000096).")
-B("NCES EDGE geocoded school locations and Common Core of Data enrollment files: nces.ed.gov/programs/edge.")
-B("U.S. Census TIGER county boundaries and block-level population counts: census.gov/geographies.")
-B("KDE SEEK transportation calculation files and district funding detail: education.ky.gov/districts/SEEK.")
+B("School Attendance Boundary Survey (NCES EDGE, 2015-16): the district's attendance-zone GIS files, "
+  "queryable at nces.ed.gov/opengis (SABS_1516 service, school 210054000096); geocoded school locations and "
+  "enrollment files at nces.ed.gov/programs/edge.")
+B("U.S. Census TIGER county boundaries and block-level population counts (census.gov/geographies); KDE SEEK "
+  "transportation calculation files and district funding detail (education.ky.gov/districts/SEEK).")
 
 # ---------------- build ----------------
 def footer(canvas, doc):
