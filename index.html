@@ -20,7 +20,7 @@
 <style>
 :root{
   --navy:#1F3864; --royal:#2E75B6; --paper:#FAFBFD; --chalk:#FFFFFF;
-  --slate:#3A4356; --mist:#8A93A6; --line:#E3E8F0; --ice:#9DC3E6; --red:#9C3D3D;
+  --slate:#3A4356; --mist:#8A93A6; --line:#E3E8F0; --ice:#9DC3E6;
   --serif:"Iowan Old Style","Palatino Linotype",Georgia,serif;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
@@ -327,13 +327,13 @@ footer a{color:var(--ice)}
 <script>
 document.addEventListener('DOMContentLoaded',function(){
 if(typeof Chart==='undefined'){return}
-var NAVY='#1F3864',ROYAL='#2E75B6',GRAY='#8A93A6',LGRAY='#C9CDD4',RED='#9C3D3D';
+var NAVY='#1F3864',ROYAL='#2E75B6',GRAY='#8A93A6',LGRAY='#C9CDD4',ICE='#9DC3E6';
 Chart.defaults.font.family='-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif';
 Chart.defaults.color='#3A4356';
 
 /* GF chart */
 new Chart(document.getElementById('chartGF'),{type:'bar',data:{labels:['FY2023','FY2024','FY2025'],
-datasets:[{label:'Result before transfers ($M)',data:[-0.237,-2.535,-2.648],backgroundColor:RED},
+datasets:[{label:'Result before transfers ($M)',data:[-0.237,-2.535,-2.648],backgroundColor:ICE},
 {label:'Year-end fund balance ($M)',data:[6.583,5.516,4.291],backgroundColor:NAVY}]},
 options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{grid:{color:'#E3E8F0'}}}}});
 
