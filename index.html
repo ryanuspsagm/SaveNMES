@@ -9,7 +9,7 @@
 <style>
 :root{
   --navy:#1F3864; --royal:#2E75B6; --paper:#FAFBFD; --chalk:#FFFFFF;
-  --slate:#3A4356; --mist:#8A93A6; --line:#E3E8F0; --gold:#C9A227; --red:#9C3D3D;
+  --slate:#3A4356; --mist:#8A93A6; --line:#E3E8F0; --ice:#9DC3E6; --red:#9C3D3D;
   --serif:"Iowan Old Style","Palatino Linotype",Georgia,serif;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
@@ -19,32 +19,32 @@ html{scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--slate);background:var(--paper);line-height:1.6;font-size:16px}
 .wrap{max-width:880px;margin:0 auto;padding:0 20px}
 a{color:var(--royal)}
-a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #6EA3D8;outline-offset:2px}
 
 /* Nav */
 nav{position:sticky;top:0;background:var(--navy);z-index:50;box-shadow:0 2px 8px rgba(31,56,100,.25)}
 nav .wrap{display:flex;gap:4px;overflow-x:auto;padding:0 12px;-webkit-overflow-scrolling:touch}
 nav a{color:#C9D4E8;text-decoration:none;padding:14px 12px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;border-bottom:3px solid transparent}
-nav a:hover,nav a:focus{color:var(--chalk);border-bottom-color:var(--gold)}
+nav a:hover,nav a:focus{color:var(--chalk);border-bottom-color:var(--ice)}
 
 /* Hero */
 header{background:var(--navy);color:var(--chalk);padding:64px 0 56px;position:relative}
-.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ice);margin-bottom:18px}
 h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,5.6vw,50px);line-height:1.16;max-width:760px}
-h1 em{font-style:normal;color:var(--gold)}
+h1 em{font-style:normal;color:var(--ice)}
 .hero-sub{margin-top:22px;color:#C9D4E8;max-width:640px;font-size:17px}
-.goldrule{width:72px;height:3px;background:var(--gold);margin:26px 0}
+.bluerule{width:72px;height:3px;background:var(--ice);margin:26px 0}
 .factstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.18);margin-top:36px;border:1px solid rgba(255,255,255,.18)}
 .fact{background:var(--navy);padding:18px 16px}
 .fact b{display:block;font-family:var(--serif);font-size:26px;color:var(--chalk);font-weight:400}
 .fact span{font-size:12.5px;color:#AFC0DC;letter-spacing:.04em}
-.disclose{margin-top:30px;font-size:13.5px;color:#AFC0DC;border-left:3px solid var(--gold);padding-left:14px;max-width:640px}
+.disclose{margin-top:30px;font-size:13.5px;color:#AFC0DC;border-left:3px solid var(--ice);padding-left:14px;max-width:640px}
 @media(max-width:620px){.factstrip{grid-template-columns:1fr}}
 
 /* Sections */
 section{padding:56px 0;border-bottom:1px solid var(--line)}
 h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,4vw,32px);color:var(--navy);margin-bottom:6px}
-.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:600}
+.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--royal);margin-bottom:10px;font-weight:600}
 .lede{max-width:680px;margin-bottom:26px;font-size:16.5px}
 p+p{margin-top:14px}
 .card{background:var(--chalk);border:1px solid var(--line);border-radius:6px;padding:22px;margin:22px 0;box-shadow:0 1px 3px rgba(31,56,100,.06)}
@@ -55,9 +55,9 @@ p+p{margin-top:14px}
 .checkrow label{display:flex;align-items:center;gap:6px;cursor:pointer}
 .checkme{display:inline-block;margin-top:12px;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--mist)}
 .checkme a{color:var(--royal);text-decoration:none;border-bottom:1px dotted var(--royal)}
-.checkme::before{content:"\2713";color:var(--gold);margin-right:6px;font-weight:700}
+.checkme::before{content:"\2713";color:var(--royal);margin-right:6px;font-weight:700}
 .note{font-size:13.5px;color:var(--mist);margin-top:10px}
-.quote{font-family:var(--serif);font-size:19px;color:var(--navy);border-left:3px solid var(--gold);padding:6px 0 6px 18px;margin:22px 0;max-width:640px}
+.quote{font-family:var(--serif);font-size:19px;color:var(--navy);border-left:3px solid var(--royal);padding:6px 0 6px 18px;margin:22px 0;max-width:640px}
 .quote small{display:block;font-family:var(--sans);font-size:13px;color:var(--mist);margin-top:8px}
 
 /* Calculator */
@@ -68,11 +68,11 @@ p+p{margin-top:14px}
 .slider-row label output{font-weight:700;color:var(--navy)}
 input[type=range]{width:100%;accent-color:var(--royal)}
 .result{background:var(--navy);color:var(--chalk);border-radius:6px;padding:20px;margin-top:16px;text-align:center}
-.result .big{font-family:var(--serif);font-size:34px;color:var(--gold)}
+.result .big{font-family:var(--serif);font-size:34px;color:var(--ice)}
 .result .sub{font-size:14px;color:#C9D4E8;margin-top:4px}
 .verdict{font-size:14px;margin-top:10px;color:var(--chalk)}
 .bar-vs{height:14px;background:rgba(255,255,255,.15);border-radius:7px;margin-top:14px;overflow:hidden}
-.bar-vs i{display:block;height:100%;background:var(--gold);border-radius:7px;transition:width .25s}
+.bar-vs i{display:block;height:100%;background:var(--ice);border-radius:7px;transition:width .25s}
 @media (prefers-reduced-motion:reduce){.bar-vs i{transition:none}}
 
 /* Alternatives table */
@@ -80,12 +80,12 @@ input[type=range]{width:100%;accent-color:var(--royal)}
 .alt th{background:var(--navy);color:var(--chalk);text-align:left;padding:10px 12px;font-weight:600;font-size:13px;letter-spacing:.04em}
 .alt td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 .alt td:last-child{white-space:nowrap;font-weight:600;color:var(--navy)}
-.totalstrip{background:var(--gold);color:var(--navy);font-family:var(--serif);font-size:19px;padding:14px 18px;border-radius:6px;margin-top:16px;text-align:center}
+.totalstrip{background:var(--royal);color:var(--chalk);font-family:var(--serif);font-size:19px;padding:14px 18px;border-radius:6px;margin-top:16px;text-align:center}
 
 /* Questions */
 details{border:1px solid var(--line);border-radius:6px;background:var(--chalk);margin:10px 0}
 summary{cursor:pointer;padding:14px 18px;font-weight:600;color:var(--navy);list-style:none;display:flex;gap:12px}
-summary::before{content:counter(q,decimal-leading-zero);counter-increment:q;color:var(--gold);font-family:var(--serif)}
+summary::before{content:counter(q,decimal-leading-zero);counter-increment:q;color:var(--royal);font-family:var(--serif)}
 #questions{counter-reset:q}
 details p{padding:0 18px 16px 18px;font-size:15px}
 details[open] summary{border-bottom:1px solid var(--line)}
@@ -93,21 +93,21 @@ details[open] summary{border-bottom:1px solid var(--line)}
 /* Act */
 .act-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 @media(max-width:720px){.act-grid{grid-template-columns:1fr}}
-.act{background:var(--chalk);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:20px}
+.act{background:var(--chalk);border:1px solid var(--line);border-left:4px solid var(--royal);border-radius:6px;padding:20px}
 .act h3{font-family:var(--serif);font-weight:400;color:var(--navy);font-size:19px}
 .act .when{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);margin:4px 0 10px}
 .btn{display:inline-block;background:var(--navy);color:var(--chalk);text-decoration:none;padding:11px 20px;border-radius:5px;font-size:14.5px;margin-top:10px;border:none;cursor:pointer;font-family:var(--sans)}
 .btn:hover{background:#16294a}
-.btn.gold{background:var(--gold);color:var(--navy);font-weight:700}
-.btn.gold:hover{background:#b8931f}
+.btn.blue{background:var(--royal);color:var(--chalk);font-weight:700}
+.btn.blue:hover{background:#256199}
 
 /* Sources */
 .src{font-size:14px;columns:2;column-gap:34px}
 @media(max-width:720px){.src{columns:1}}
 .src li{margin-bottom:10px;break-inside:avoid}
 footer{background:var(--navy);color:#AFC0DC;padding:40px 0;font-size:14px}
-footer .kings{font-family:var(--serif);color:var(--gold);font-size:18px;margin-bottom:8px}
-footer a{color:var(--gold)}
+footer .kings{font-family:var(--serif);color:var(--ice);font-size:18px;margin-bottom:8px}
+footer a{color:var(--ice)}
 </style>
 </head>
 <body>
@@ -121,7 +121,7 @@ footer a{color:var(--gold)}
 <header id="case"><div class="wrap">
 <div class="eyebrow">North Middletown, Kentucky &bull; Est. 1948 &bull; Home of the Kings</div>
 <h1><em>Save</em> North Middletown Elementary School.</h1>
-<div class="goldrule"></div>
+<div class="bluerule"></div>
 <p class="hero-sub">The district's best elementary school is the one on the chopping block. On July 15, 2026, a planning committee voted to reclassify North Middletown Elementary as transitional, the first step toward closing it. I went through the district's own audits, state data, and two decades of public records. Here is what the numbers say. Every one of them is checkable, and I want you to check them.</p>
 <div class="factstrip">
 <div class="fact"><b>58.2 vs 26.5</b><span>NMES score vs the school set to receive its students (2024-25)</span></div>
@@ -270,7 +270,7 @@ footer a{color:var(--gold)}
 <p>The committee that voted "transitional" meets again on the draft facility plan. Its vote is advisory; the audience is not.</p></div>
 <div class="act"><h3>Sign and share</h3><div class="when">Two minutes</div>
 <p>Add your name to the petition asking the board to pause any vote until the ten questions are answered in writing.</p>
-<a class="btn gold" href="https://www.change.org/p/sos-save-our-school-north-middletown-elementary" id="petitionBtn">Sign the petition</a></div>
+<a class="btn blue" href="https://www.change.org/p/sos-save-our-school-north-middletown-elementary" id="petitionBtn">Sign the petition</a></div>
 <div class="act"><h3>Write the board</h3><div class="when">Five minutes</div>
 <p>Superintendent Larry Begley and board members Bradley Purcell (chairman), Jonathan Ott (vice chairman), Mandy Thornberry, Miranda Wyles, and Shane Buckler. The button below starts an email to the superintendent and all five board members; addresses are also on the <a href="https://www.bourbon.kyschools.us/page/board-of-education">district board page</a>. Ask for one thing: answers in writing before any vote.</p>
 <a class="btn" href="mailto:larry.begley@bourbon.kyschools.us,bradley.purcell@bourbon.kyschools.us,jonathan.ott@bourbon.kyschools.us,mandy.thornberry@bourbon.kyschools.us,miranda.wyles@bourbon.kyschools.us,shane.buckler@bourbon.kyschools.us?subject=Please%20pause%20the%20North%20Middletown%20Elementary%20vote&body=I%20am%20asking%20the%20Board%20to%20pause%20any%20vote%20on%20North%20Middletown%20Elementary%20until%20the%20ten%20questions%20in%20the%20community%20report%20are%20answered%20in%20writing%20and%20in%20public.">Start an email</a>
@@ -316,7 +316,7 @@ footer a{color:var(--gold)}
 <script>
 document.addEventListener('DOMContentLoaded',function(){
 if(typeof Chart==='undefined'){return}
-var NAVY='#1F3864',ROYAL='#2E75B6',GRAY='#8A93A6',LGRAY='#C9CDD4',GOLD='#C9A227',RED='#9C3D3D';
+var NAVY='#1F3864',ROYAL='#2E75B6',GRAY='#8A93A6',LGRAY='#C9CDD4',RED='#9C3D3D';
 Chart.defaults.font.family='-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif';
 Chart.defaults.color='#3A4356';
 
@@ -369,7 +369,7 @@ var evals=[261,255,234,225,202,203,182,196,208,198,205,195,195,203,196,206,204,1
 var cap=eyrs.map(function(){return 174});
 new Chart(document.getElementById('chartEnroll'),{type:'line',data:{labels:eyrs,
 datasets:[{label:'Enrollment',data:evals,borderColor:NAVY,backgroundColor:NAVY,borderWidth:2.5,pointRadius:1.8,tension:0.15},
-{label:'Rated capacity (174)',data:cap,borderColor:GOLD,borderWidth:2,borderDash:[6,5],pointRadius:0}]},
+{label:'Rated capacity (174)',data:cap,borderColor:ROYAL,borderWidth:2,borderDash:[6,5],pointRadius:0}]},
 options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},
 scales:{y:{min:0,max:290,grid:{color:'#E3E8F0'}},x:{ticks:{maxTicksLimit:10}}}}});
 
