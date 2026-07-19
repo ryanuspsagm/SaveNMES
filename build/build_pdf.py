@@ -192,8 +192,8 @@ tbl(["Date (2026)", "Event"],
       "Superintendent Larry Begley states the school serves about 100 students (federal records show 128), that "
       "keeping it open \u201ccost over a million dollars last school year,\u201d and that \u201cthe decision is not final.\u201d"],
      ["July 23 (scheduled)",
-      "Community meeting set at the school for 6:30 p.m.; students and alumni invited to write letters of "
-      "support."],
+      "Community meeting set for 6:30 p.m. at the North Middletown Community Center; students and alumni "
+      "invited to write letters of support."],
      ["July 29 (scheduled)",
       "Next Local Planning Committee public forum on the draft facility plan."]],
     [1.05 * inch, 5.65 * inch],
