@@ -58,7 +58,9 @@ rows = [
  "  SEEK base amounts: Kentucky 2024-2026 and 2026-2028 state budgets. Enrollment/capacity: NCES; 2021 KBE-approved facility plan.",
  "  Multi-year school scores and NMES enrollment history: School_Data tab (backs report Figures 6, 7, and 11).",
  "  County demographics and the full 1989-2025 NMES enrollment series: Demographics tab (backs Section 9 and Figure 11).",
- "  Tax rates, fund split, delinquency check, and the 4% three-year path: Tax_History tab (backs Figure 13).",
+ "  Tax rates, fund split, delinquency check, and the 4% three-year path: Tax_History tab (backs Figure 14).",
+ "  Boundary rebalancing and fill-to-capacity scenario: Redistricting tab (backs the Section 9 worked example and Figure 12).",
+ "  Bonding capacity components and what closure can and cannot change: Debt_Service tab (backs Section 6).",
  "",
  "CAVEAT",
  "Prepared by a former NMES King working alongside Fable 5, an AI research assistant from Anthropic. Estimates are labeled; every figure",
@@ -249,6 +251,53 @@ put(gr, "B12", "=B11", BLK, CUR); put(gr, "C12", "=B12+C11", BLK, CUR); put(gr, 
 put(gr, "A14", "Upside excluded from this model: tuition, SEEK add-on weights, preschool and day-care expansion, and in-county boundary redistricting, which fills seats with students the district already serves.", NOTE, wrap=True)
 put(gr, "A15", "Context: NMES enrolled 160 students as recently as 2019-20 (see School_Data) - the growth targets restore recent history, they do not exceed it.", NOTE, wrap=True)
 
+# ================= REDISTRICTING =================
+rd = sheet("Redistricting", [56, 15, 58])
+put(rd, "A1", "Fill the Kings' Seats: Boundary Rebalancing and Cross-County Scenario", TITLE)
+put(rd, "A2", "A planning scenario, not a routing study. The district holds the geocoded student counts and routing data a true optimization needs; releasing them is a records ask in the report.", NOTE, wrap=True)
+
+put(rd, "A4", "CURRENT ELEMENTARY MAP (2024-25 counts as cited in report Sections 4 and 9)", SEC)
+put(rd, "A5", "NMES enrollment"); put(rd, "B5", "=Assumptions!B11", GRN, NUM)
+put(rd, "A6", "NMES rated capacity"); put(rd, "B6", "=Assumptions!B12", GRN, NUM)
+put(rd, "A7", "NMES open seats"); put(rd, "B7", "=B6-B5", BLK, NUM)
+put(rd, "A8", "Bourbon Central enrollment"); put(rd, "B8", 459, BLUE, NUM); put(rd, "C8", "Report Section 4; confirm against current-year infinite campus counts", NOTE)
+put(rd, "A9", "Cane Ridge enrollment"); put(rd, "B9", 453, BLUE, NUM); put(rd, "C9", "Report Section 4", NOTE)
+
+put(rd, "A11", "SCENARIO LEVERS (yellow = judgment calls the district's data should replace)", SEC)
+put(rd, "A12", "Students rezoned to NMES from the eastern edges of the Paris-area zones", )
+put(rd, "B12", 30, BLUE, NUM, fill=YEL); put(rd, "C12", "Chosen from families already living closer to NMES than to their assigned school; requires the geocoded counts", NOTE, wrap=True)
+put(rd, "A13", "Cross-county transfers under HB 563 (KRS 157.350)")
+put(rd, "B13", 16, BLUE, NUM, fill=YEL); put(rd, "C13", "SEEK funding follows each transfer; no home-district agreement required since July 2022", NOTE, wrap=True)
+put(rd, "A14", "NMES enrollment after"); put(rd, "B14", "=B5+B12+B13", BLK, NUM)
+put(rd, "A15", "Fill check vs capacity"); put(rd, "B15", "=B6-B14", BLK, NUM); put(rd, "C15", "Zero = exactly full", NOTE)
+put(rd, "A16", "Bourbon Central after (half the rezone)"); put(rd, "B16", "=B8-B12/2", BLK, NUM)
+put(rd, "A17", "Cane Ridge after (half the rezone)"); put(rd, "B17", "=B9-B12/2", BLK, NUM)
+
+put(rd, "A19", "CLASSROOMS", SEC)
+put(rd, "A20", "NMES classroom sections"); put(rd, "B20", 9, BLUE, NUM); put(rd, "C20", "9.41 classroom FTE, NCES; K-5 across nine homerooms", NOTE)
+put(rd, "A21", "Average class size today"); put(rd, "B21", "=B5/B20", BLK, '0.0')
+put(rd, "A22", "Average class size at capacity"); put(rd, "B22", "=B14/B20", BLK, '0.0')
+put(rd, "A23", "Statutory caps (KRS 157.360): 24 in K-3, 28 in grade 4, 29 in grades 5-6. The scenario adds no NMES teachers.", NOTE)
+
+put(rd, "A25", "RECURRING DOLLARS", SEC)
+put(rd, "A26", "New SEEK revenue from cross-county transfers (FY2027 base)"); put(rd, "B26", "=B13*Assumptions!B6", GRN, CUR)
+put(rd, "A27", "Variable cost of all added students"); put(rd, "B27", "=(B12+B13)*Assumptions!B62", GRN, CUR)
+put(rd, "A28", "Sections avoided or redeployed at receiving schools, low (count)"); put(rd, "B28", 1, BLUE, NUM, fill=YEL)
+put(rd, "A29", "Sections avoided or redeployed at receiving schools, high (count)"); put(rd, "B29", 2, BLUE, NUM, fill=YEL)
+put(rd, "A30", "Net recurring benefit, low", bold=True); b30 = put(rd, "B30", "=B26-B27+B28*Assumptions!B41", BLK, CUR, bold=True); b30.border = TOPLINE
+put(rd, "A31", "Net recurring benefit, high", bold=True); put(rd, "B31", "=B26-B27+B29*Assumptions!B41", BLK, CUR, bold=True)
+
+put(rd, "A33", "PER-STUDENT ARITHMETIC (the number the closure argument leans on)", SEC)
+put(rd, "A34", "NMES site spending today"); put(rd, "B34", "=Assumptions!B14*Assumptions!B11", GRN, CUR)
+put(rd, "A35", "Per student today"); put(rd, "B35", "=Assumptions!B14", GRN, CUR)
+put(rd, "A36", "Per student at capacity (site cost plus variable cost, over 174)")
+put(rd, "B36", "=(B34+(B12+B13)*Assumptions!B62)/B14", BLK, CUR)
+put(rd, "A37", "Change"); put(rd, "B37", "=B36/B35-1", BLK, PCT)
+put(rd, "A39", "ASSUMPTIONS THE DISTRICT'S DATA SHOULD REPLACE", SEC)
+put(rd, "A40", "Rezoned students are drawn only from homes closer to NMES than to their assigned school, so bus routes shorten or hold even; the district's routing data would settle it.", NOTE, wrap=True)
+put(rd, "A41", "Receiving-school relief is booked only as one to two avoided or redeployed sections; grade-by-grade capacities at Bourbon Central and Cane Ridge are a records ask (report Question 3).", NOTE, wrap=True)
+put(rd, "A42", "SEEK for rezoned in-county students is unchanged (same district); only cross-county transfers add revenue.", NOTE, wrap=True)
+
 # ================= ALTERNATIVES =================
 al = sheet("Alternatives", [46, 14, 14, 52])
 put(al, "A1", "Revenue and Cost Alternatives (no school closed)", TITLE)
@@ -265,7 +314,7 @@ alts = [
  ("Medicaid billing, E-rate, meal reimbursements", 100000, 250000, "Typical under-collected federal reimbursements", BLUE, BLUE),
  ("Energy performance contracting", 50000, 150000, "10-25% of utilities; authorized by 702 KAR 4:160", BLUE, BLUE),
  ("Shared services with Paris Independent", 100000, 300000, "Transport, food service, back office", BLUE, BLUE),
- ("Grow NMES (net, Year 1 to Year 3)", "=Growth_Model!B11", "=Growth_Model!D11", "Nonresident enrollment model, this workbook", GRN, GRN),
+ ("Fill NMES to capacity (rebalance + transfers, net)", "=Redistricting!B30", "=Redistricting!B31", "Boundary rebalancing and cross-county scenario, Redistricting tab", GRN, GRN),
  ("NMES multi-age reorganization", 170000, 255000, "Six or seven sections instead of nine, via attrition", BLUE, BLUE),
 ]
 r = 4
@@ -321,6 +370,23 @@ put(d, f"A{r}", "District-paid, FY2026"); put(d, f"B{r}", 1578700, BLUE, CUR); r
 put(d, f"A{r}", "Increase, FY2025 to FY2026"); put(d, f"B{r}", f"=B{r-1}-B{r-2}", BLK, CUR); r += 1
 put(d, f"A{r}", "FY2026 total including state (SFCC) share"); put(d, f"B{r}", 1846159, BLUE, CUR); r += 1
 put(d, f"A{r}", "SFCC-paid principal over life of bonds"); put(d, f"B{r}", 1568809, BLUE, CUR)
+r += 2
+put(d, f"A{r}", "BONDING CAPACITY: WHAT CLOSURE CAN AND CANNOT CHANGE", SEC); r += 1
+put(d, f"A{r}", "Average Daily Attendance, FY2025 (SEEK basis)"); put(d, f"B{r}", 2242.5, BLUE, '0.0'); put(d, f"F{r}", "FY2025 audit", NOTE); ada_r = r; r += 1
+put(d, f"A{r}", "Capital outlay allotment per year (KRS 157.420, $100 per ADA)"); put(d, f"B{r}", f"=100*B{ada_r}", BLK, CUR); co_r = r; r += 1
+put(d, f"A{r}", "Bondable share of capital outlay (702 KAR 4:160 safety factor)"); put(d, f"B{r}", 0.8, BLUE, PCT); sh_r = r; r += 1
+put(d, f"A{r}", "Building-fund and debt-fund property tax, FY2025 (the 'nickel' stream)"); put(d, f"B{r}", "=Tax_History!B33", GRN, CUR); bf_r = r; r += 1
+put(d, f"A{r}", "District-paid debt service, FY2026"); put(d, f"B{r}", 1578700, BLUE, CUR); ds_r = r; r += 1
+put(d, f"A{r}", "Annual restricted margin available for new debt (illustrative)")
+mm = put(d, f"B{r}", f"=B{co_r}*B{sh_r}+B{bf_r}-B{ds_r}", BLK, CUR); mm.border = TOPLINE
+put(d, f"F{r}", "Simplified: KDE's official bonding potential statement is the authority and should be published", NOTE, wrap=True); r += 1
+put(d, f"A{r}", "Unused bonding capacity stated in the FY2024 audit"); put(d, f"B{r}", 23500000, BLUE, CUR); put(d, f"F{r}", "FY2024 audit note", NOTE); r += 2
+put(d, f"A{r}", "Why closing NMES does not create bonding capacity: capacity is built from the streams above, none of which", NOTE); r += 1
+put(d, f"A{r}", "grows when a school closes. Each student who leaves the district subtracts $100 per year from capital outlay", NOTE); r += 1
+put(d, f"A{r}", "and the SEEK base from operations. Sale proceeds are one-time and restricted to capital use. What a closure", NOTE); r += 1
+put(d, f"A{r}", "changes is the facility plan's priority list, which steers SFCC offers (KRS 157.622) toward other projects.", NOTE); r += 1
+put(d, f"A{r}", "That is a choice about priorities, not a gain in capacity, and it should be argued openly with the BG-1,", NOTE); r += 1
+put(d, f"A{r}", "the official statement, and the bonding potential statement all public.", NOTE)
 
 # ================= RUNWAY =================
 rw = sheet("Runway", [52, 14, 14, 14, 14])
@@ -353,7 +419,7 @@ put(rw, "A10", "Reading: the alternatives package restores balance faster than c
 # ================= TAX_HISTORY =================
 th = sheet("Tax_History", [36, 13, 13, 13, 6, 13, 48])
 put(th, "A1", "Property Tax Rates, Fund Split, Delinquency, and the 4% Option", TITLE)
-put(th, "A2", "Backs Section 9 and Figure 13 of the report. Rates in cents per $100. DOR rate books primary for 2023-2025; 2018-2022 verified secondary; 2005-2017 not retrieved and not interpolated.", NOTE)
+put(th, "A2", "Backs Section 9 and Figure 14 of the report. Rates in cents per $100. DOR rate books primary for 2023-2025; 2018-2022 verified secondary; 2005-2017 not retrieved and not interpolated.", NOTE)
 
 put(th, "A4", "BOURBON COUNTY SCHOOLS, REAL ESTATE RATE BY TAX YEAR", SEC)
 trates = [("2018", 61.3), ("2019", 60.6), ("2020", 55.9), ("2021", 54.2),

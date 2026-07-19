@@ -284,7 +284,8 @@ P("Put together, a defensible planning estimate of the net recurring General Fun
   "at the low end, and not one family leaving, the arithmetic tops out in the low $600,000s, still under a "
   "quarter of the structural deficit (the companion workbook shows this case explicitly). The reason for "
   "skepticism about even that number is not theoretical. Districts across the country have run exactly this "
-  "play, and the results are on the record.")
+  "play, and the results are on the record. One more thing closure does not buy: borrowing room. Bonding "
+  "capacity is built from restricted revenue streams that do not grow when a school closes (Section 6).")
 H2("What happened when other districts tried this")
 B("<b>Chicago, 2013.</b> The district closed about fifty schools projecting roughly $1 billion over a decade, "
   "including $43 million a year in operations. A 2023 Sun-Times and WBEZ analysis found actual labor savings of "
@@ -431,6 +432,36 @@ B("<b>The construction fund ran a negative $1.43 million restricted balance at J
   "prioritized and cash-flowed in the same years the operating budget went into deficit. The fiscal 2024 audit also "
   "notes the district held $23.5 million in unused bonding capacity, borrowing room for buildings that, again, "
   "cannot pay teachers either way.")
+H2("What closing a school does, and does not do, to bonding capacity")
+P("A district's ability to borrow for buildings is arithmetic set by statute and regulation, and it is worth "
+  "walking through, because “bonding capacity” is likely to surface in the closure debate. Kentucky districts "
+  "build capacity from two restricted streams: the capital outlay allotment of $100 per student in average daily "
+  "attendance (KRS 157.420), of which regulation lets a district pledge 80 percent, the rest held back as a "
+  "safety factor (702 KAR 4:160), and the restricted building-fund levy, the “nickel,” with its state FSPK "
+  "equalization (KRS 157.440). Set existing debt payments against those streams and what remains is the room for "
+  "new debt. On the fiscal 2025 numbers: roughly $224,000 a year of capital outlay, about $2.05 million of "
+  "building-fund tax, and $1.58 million of district-paid debt service in fiscal 2026. The fiscal 2024 audit "
+  "states the bottom line plainly: about $23.5 million of unused bonding capacity. The companion workbook lays "
+  "the components side by side on the Debt_Service tab.")
+P("Nothing in that arithmetic grows when a school closes. Closing North Middletown adds no assessment, no "
+  "attendance, and no levy. What it changes is the plan, not the capacity: a “transitional” label removes the "
+  "school's modest listed needs from the priority list and steers future SFCC offers of assistance (KRS "
+  "157.622), and the district's own borrowing, toward other projects, such as the career-and-technical center "
+  "ambition in the district's planning documents. That is a choice about priorities, and it deserves to be "
+  "argued openly as one, with the bonding potential statement on the table. The arithmetic can also run against "
+  "the district: every family that responds to closure by leaving takes $100 a year out of capital outlay and "
+  "the SEEK base out of operations, permanently. Nor is an emptied building a windfall: the Pew study in "
+  "Section 4 found districts typically realized $200,000 to $1 million on sales, one-time money that is itself "
+  "restricted to capital use.")
+P("As for where the 2024 borrowing went: the $6.055 million issue, at 4.00 to 5.00 percent interest through "
+  "2044, flowed into the Construction Fund, where construction in progress grew from $3.65 million to $7.41 "
+  "million during fiscal 2025, matching that fund's spending almost to the dollar, and it added roughly "
+  "$430,000 a year of debt payments, which is why the district's share of debt service jumps from $1.15 "
+  "million in fiscal 2025 to $1.58 million in fiscal 2026. The state's SFCC participates in the qualifying "
+  "issues, paying $1,568,809 of principal over the life of the bonds. None of the seven outstanding issues "
+  "names North Middletown Elementary. The two documents that would settle the 2024 bond's purpose beyond "
+  "argument, the official statement and the BG-1 project application, are standard public records, and "
+  "Question 7 asks for both.")
 
 # ================= 7. THE BUILDING =================
 H("7. The North Middletown Building Itself")
@@ -534,6 +565,26 @@ fig("chart_enroll.png",
     "school held 261 students at its 1988-89 peak, roughly double today's official count of 128. History "
     "compiled from federal school-level data. The long decline mirrors the county's flat population, which is "
     "exactly why this plan relies on boundary decisions and cross-county enrollment rather than demographics.")
+H2("A worked example: rebalance the map, fill the school")
+P("Here is one concrete scenario, arithmetic anyone can check, run in the workbook's Redistricting tab. Rezone "
+  "30 students to North Middletown from the eastern edges of the two Paris-area attendance zones, drawing only "
+  "from families who already live closer to North Middletown than to their assigned school, and recruit 16 "
+  "cross-county transfers under House Bill 563. The school reaches exactly its rated 174. Bourbon Central eases "
+  "from 459 to about 444 and Cane Ridge from 453 to about 438. No teacher is added at North Middletown: its "
+  "nine classroom sections go from an average of about 14 students to about 19, still under the statutory caps "
+  "of 24 in the primary grades (KRS 157.360). The 16 transfers bring roughly $74,000 a year of new SEEK "
+  "revenue, supplies for all 46 added students cost about $18,000, and if the relief lets the receiving schools "
+  "avoid or redeploy even one to two sections as the Paris side grows, the package is worth roughly <b>$140,000 "
+  "to $225,000 a year, recurring</b>, while cutting North Middletown's much-cited cost per student from $19,348 "
+  "to about $14,340, a 26 percent drop, purely by filling seats. Two assumptions are flagged in yellow in the "
+  "workbook for the district to replace with real data: that rezoned students' bus routes shorten or hold even "
+  "because they are chosen by proximity, and the receiving schools' grade-by-grade capacities, already a records "
+  "ask in Question 3. This is what an unbiased boundary study looks like in miniature. The district holds the "
+  "geocoded student counts and the routing data to run the full version, and it should, before any vote.")
+fig("chart_balance.png",
+    "Figure 12. One rebalancing scenario: North Middletown fills to its rated 174 while Bourbon Central and Cane "
+    "Ridge each ease by about fifteen students. Enrollment counts as cited in Sections 4 and 9; the scenario "
+    "levers (30 rezoned, 16 cross-county transfers) are adjustable in the companion workbook's Redistricting tab.")
 tbl(["Measure", "Estimated annual value", "How it works"],
     [["Take the annual 4% property-tax adjustment",
       "$350,000-$450,000, recurring",
@@ -574,13 +625,13 @@ tbl(["Measure", "Estimated annual value", "How it works"],
       "$100,000-$300,000",
       "Two school districts operate in one small county. Shared transportation, food service, and back-office "
       "functions deserve a serious, public study."],
-     ["Grow North Middletown instead of closing it",
-      "$211,000+ new revenue, plus $170,000-$255,000 in efficiencies",
-      "Fill the school's 46 open seats through nonresident enrollment and a premier-school strategy (House Bill "
-      "563), reorganize into multi-age classrooms, and add a preschool or day-care satellite, using spare "
-      "capacity to relieve the crowded Paris-area elementaries rather than adding 128 children to them."]],
+     ["Fill North Middletown to capacity instead of closing it",
+      "$140,000 to $225,000 net, recurring",
+      "Rebalance eastern attendance boundaries and recruit cross-county transfers under House Bill 563 to fill "
+      "all 46 open seats; the worked example above and the workbook's Redistricting tab show the arithmetic. "
+      "Multi-age reorganization and a preschool or day-care satellite are additional levers on top."]],
     [1.75 * inch, 1.35 * inch, 3.6 * inch],
-    caption="Figure 12. Revenue and cost measures available without closing a school. Values are estimates derived "
+    caption="Figure 13. Revenue and cost measures available without closing a school. Values are estimates derived "
             "from the district's audited figures and state data; ranges overlap and are not additive to the penny. "
             "A conservative combination totals roughly $1.1 to $2.1 million a year, against an annual reserve "
             "drawdown of $1.1 to $1.2 million.",
@@ -591,7 +642,7 @@ P("The rate history strengthens rather than weakens the community's hand. Bourbo
   "cents per $100 on real estate, second lowest among nine area districts and roughly 13 cents below the "
   "statewide school average of 65.1. Fayette levies 80.9, Paris Independent, in this same county, 71.5, Clark "
   "66.8, Bath 63.4, Scott 62.9, and Harrison 57.7; only Nicholas County, at 43.1, sits lower, and Montgomery is "
-  "essentially tied at 52.5 (Figure 13). The trend runs the same direction: the levied rate has fallen from 61.3 "
+  "essentially tied at 52.5 (Figure 14). The trend runs the same direction: the levied rate has fallen from 61.3 "
   "cents in 2018 to 52.4 today, a decline that largely reflects Kentucky's rollback mechanics, in which a rising "
   "assessment base pushes the cent rate down to hold revenue roughly level. The one year with a documented "
   "rate-type decision, 2019, shows the board taking the full four percent revenue option, and nothing in the "
@@ -619,7 +670,7 @@ P("What remains is the option the board controls every August. Under KRS 160.470
   "chosen path, in writing, with the work shown. What they do not owe anyone is the closure of the district's "
   "best performing school dressed up as the only choice.")
 fig("chart_tax.png",
-    "Figure 13. Left: the Bourbon County Schools real estate rate by tax year, from Kentucky Department of "
+    "Figure 14. Left: the Bourbon County Schools real estate rate by tax year, from Kentucky Department of "
     "Revenue rate books; years before 2018 could not be retrieved and are not interpolated. Right: current "
     "levied real estate rates across nine area districts against the statewide school average of 65.1 cents. "
     "Fayette and Clark are from local reporting of their board votes; all other rates are Department of Revenue "
@@ -710,7 +761,9 @@ qs = [
  "published per-student spending data for the school? And which enrollment count is the administration using, "
  "federal data show 128 students, while public statements have ranged lower.",
  "Grade by grade, what is the real capacity at Bourbon Central and Cane Ridge, and what staff, sections, or space "
- "must be added to absorb 128 more children, at what cost, from which fund?",
+ "must be added to absorb 128 more children, at what cost, from which fund? And publish the geocoded student "
+ "counts by attendance area that any honest boundary study, including the rebalancing scenario in Section 9, "
+ "needs.",
  "What are the modeled bus routes, and what is the longest one-way ride a North Middletown kindergartner would "
  "face?",
  "What does the new architect-and-engineer condition assessment say about the North Middletown building, what "
@@ -803,7 +856,10 @@ P("I built this report from public records, and I want it held to that standard.
   "projections as reported in county planning documents, and the county's Envision 2040 plan. Enrollment counts "
   "from 1989 through 2014 are compiled from federal data by PublicSchoolReview; the 2015 through 2025 counts "
   "match the federal figures directly. Every dollar range labeled an estimate is mine, its assumptions are "
-  "stated where it appears, and every one of them is adjustable in the companion workbook.", note)
+  "stated where it appears, and every one of them is adjustable in the companion workbook. The boundary "
+  "rebalancing scenario in Section 9 is arithmetic on the cited enrollment counts, not a routing study; the "
+  "geocoded student counts and routing data a full study needs are held by the district and requested in "
+  "Question 3.", note)
 P("A few items in the record need the district, not me, to resolve. The real-estate tax rate appears as 52.4 "
   "confusion is resolved in Section 9: 52.4 cents is the levied rate, 54.2 a transposition typo, 54.7 the "
   "motor vehicle rate; still open are the General Fund versus building fund cent split, the levied rate type "
@@ -843,7 +899,8 @@ srcs = [
  "702 KAR 4:180, Kentucky School Facilities Planning Manual; 702 KAR 4:160, Capital Construction Process: "
  "apps.legislature.ky.gov/law/kar/titles/702/004",
  "Kentucky Revised Statutes 160.470 and 132.017 (school property-tax rates); 157.350 (nonresident students); "
- "157.420 and 157.440 (capital outlay and building funds)",
+ "157.420 and 157.440 (capital outlay and building funds); 157.360 (class-size caps); 157.622 (SFCC offers "
+ "of assistance)",
  "Kentucky Department of Education, SEEK funding files and Local District Tax Levies: education.ky.gov/districts/SEEK "
  "and education.ky.gov (Taxes)",
  "Kentucky Department of Revenue, 2025 Property Tax Rate Book",
@@ -916,6 +973,7 @@ gl = [
  ["ADA (Average Daily Attendance)", "The average number of students actually present each day; the main driver of state funding."],
  ["BG-1", "The state form that authorizes a school construction project's scope and budget."],
  ["Bond / debt service", "Borrowing for buildings, and the annual principal-and-interest payments that repay it."],
+ ["Bonding potential / capacity", "The new building debt a district's restricted revenues can support, as computed by KDE; built from the capital outlay and nickel streams, minus existing debt service. See Section 6."],
  ["Capital outlay", "A state allotment restricted to buildings and equipment; it cannot pay salaries."],
  ["Compensating rate", "The property-tax rate that produces the same revenue as the year before."],
  ["Contingency", "The required budget cushion; Kentucky law sets a two-percent minimum."],

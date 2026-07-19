@@ -136,7 +136,7 @@ footer a{color:var(--ice)}
 <p class="hero-sub">The district's best elementary school is the one on the chopping block. On July 15, 2026, a planning committee voted to reclassify North Middletown Elementary as transitional, the first step toward closing it. I went through the district's own audits, state data, and two decades of public records. Here is what the numbers say. Every one of them is checkable, and I want you to check them.</p>
 <div class="factstrip">
 <div class="fact"><b>58.2 vs 26.5</b><span>NMES score vs the school set to receive its students (2024-25)</span></div>
-<div class="fact"><b>~24% at best</b><span>share of the $2.65M deficit that closure would solve, on generous assumptions</span></div>
+<div class="fact"><b>$250K to $600K</b><span>the realistic range of yearly closure savings: 9 to 23% of the $2.65M deficit</span></div>
 <div class="fact"><b>610 people</b><span>the town that loses its heartbeat if the school closes</span></div>
 </div>
 <p class="disclose">Written by Dr. Ryan Bradley, a former NMES King, with the help of an AI research assistant. Built from public records only. Full report and financial model at the bottom of this page.</p>
@@ -166,6 +166,13 @@ footer a{color:var(--ice)}
 <p>Bourbon County Schools taxes real estate at 52.4 cents per $100, second lowest of nine area districts and roughly 13 cents below the statewide school average. The board also holds a no-recall option to raise revenue 4 percent a year. The math is simple and it does not bend: either spending comes down or revenue goes up. Standing idle is the one answer I rule out.</p>
 <div class="chartbox tall"><canvas id="chartTax" role="img" aria-label="Horizontal bar chart comparing school tax rates across nine area districts"></canvas></div>
 <span class="checkme"><a href="https://revenue.ky.gov/News/Publications/Property%20Tax%20Rate%20Books/2025%20Property%20Tax%20Rate%20Book.pdf">KY Dept. of Revenue 2025 rate book</a> &middot; Fayette and Clark from board-vote reporting</span>
+</div>
+
+<div class="card">
+<h3>The bonds: a different pot of money</h3>
+<p>Kentucky law walls building money off from operating money; none of it can pay teachers. The $6.055 million bond issued in 2024 flowed into the construction fund, where construction in progress grew from $3.65 million to $7.41 million in one year, and it is why the district's debt payments jump this year. No bond on record names NMES. And closing a school creates no borrowing room: bonding capacity is built from restricted streams, a $100 per student state allotment and the nickel building tax, that do not grow when a school closes. The FY2024 audit already showed about $23.5 million in unused capacity. The report's Section 6 walks the statute; the workbook's Debt_Service tab lays out the components.</p>
+<div class="chartbox" style="height:240px"><canvas id="chartDebt" role="img" aria-label="Bar chart of annual bond payments rising from 1.15 to 1.58 million dollars district share, 1.85 million including the state share"></canvas></div>
+<span class="checkme"><a href="https://www.education.ky.gov/districts/FinRept/Documents/FY2024-2025%20FA%20Bourbon%20Co%20Rev.pdf">FY2025 audit, Note 4</a> &middot; <a href="https://apps.legislature.ky.gov/law/kar/titles/702/004/160/">702 KAR 4:160</a> &middot; KRS 157.420</span>
 </div>
 </div></section>
 
@@ -248,10 +255,10 @@ footer a{color:var(--ice)}
 <tr><td>Trim central-office growth back toward its FY2023 level</td><td>$200,000 to $450,000</td></tr>
 <tr><td>Transportation efficiency review (routing, fleet, fuel)</td><td>$145,000 to $290,000</td></tr>
 <tr><td>Medicaid billing, energy performance, and shared services</td><td>$170,000 to $400,000</td></tr>
-<tr><td>Grow NMES enrollment across county lines (state funding follows the student)</td><td>$150,000 to $300,000</td></tr>
+<tr><td>Fill NMES to capacity: rebalance boundaries and recruit cross-county transfers</td><td>$140,000 to $225,000</td></tr>
 <tr><td>Recover part of ordinary tax delinquencies</td><td>$60,000 to $120,000</td></tr>
 </table>
-<div class="totalstrip">Conservative combined range: $1.1 to $2.1 million a year &bull; Closure, at best: about $640,000</div>
+<div class="totalstrip">Conservative combined range: $1.1 to $2.1 million a year &bull; Closure: $250,000 to $600,000 a year</div>
 <p class="note">Figures are estimates with stated assumptions; the exact basis for each sits in the report and the workbook. Ranges overlap and are haircut in the combined total.</p>
 </div></section>
 
@@ -289,7 +296,7 @@ footer a{color:var(--ice)}
 </div>
 <div class="card" style="margin-top:26px">
 <h3>Read the full case</h3>
-<p>The 22-page report and the complete financial model behind every number on this page.</p>
+<p>The 25-page report and the complete financial model behind every number on this page.</p>
 <a class="btn" href="https://drive.google.com/file/d/1__e21OCE2HIkTrsrUtimk5tz2vIsUdZy/view?usp=drivesdk">Download the report (PDF)</a>
 &nbsp;<a class="btn" href="https://docs.google.com/spreadsheets/d/1q6YNJKLPIQnRkCQW3E30u4NXSI4racsg/edit?usp=drivesdk&amp;ouid=116291959340657645094&amp;rtpof=true&amp;sd=true">Download the model (Excel)</a>
 </div>
@@ -352,6 +359,14 @@ backgroundColor:['#C9CDD4','#C9CDD4','#C9CDD4','#C9CDD4','#C9CDD4','#C9CDD4','#C
 options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
 plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(c){return c.label==='Bourbon County'?'Second lowest of nine. KY average: 65.1':''}}}},
 scales:{x:{grid:{color:'#E3E8F0'},max:90}}}});
+
+/* Debt service chart */
+new Chart(document.getElementById('chartDebt'),{type:'bar',data:{
+labels:['FY2025 district share','FY2026 district share','FY2026 total incl. state SFCC'],
+datasets:[{label:'Annual bond payments ($M)',data:[1.150,1.579,1.846],
+backgroundColor:[LGRAY,NAVY,ROYAL]}]},
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+scales:{y:{grid:{color:'#E3E8F0'},max:2.2}}}});
 
 /* Scores chart with toggles */
 var yrs=[]; for(var y=2007;y<=2025;y++){yrs.push(y)}

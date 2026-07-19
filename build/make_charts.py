@@ -197,6 +197,28 @@ clean(ax)
 fig.tight_layout()
 save(fig, "chart_enroll.png")
 
+# ---- J: elementary rebalancing scenario -----------------------------------
+fig, ax = plt.subplots(figsize=(6.7, 2.8))
+import numpy as np
+schools_b = ["North Middletown", "Bourbon Central", "Cane Ridge"]
+today = [128, 459, 453]
+after = [174, 444, 438]
+x = np.arange(3); w = 0.36
+b1 = ax.bar(x - w/2, today, w, color=LGRAY, label="Today")
+b2 = ax.bar(x + w/2, after, w, color=NAVY, label="Rebalanced (30 rezoned + 16 transfers)")
+for r, v in list(zip(b1, today)) + list(zip(b2, after)):
+    ax.text(r.get_x() + r.get_width()/2, v + 8, f"{v}", ha="center", fontsize=8.6,
+            fontweight="bold", color="#333333")
+ax.plot([x[0] - w, x[0] + w], [174, 174], color=BLUE, linewidth=1.4, linestyle="--")
+ax.text(x[0] + w + 0.05, 174, "NMES capacity 174", fontsize=8, color=BLUE, va="center")
+ax.set_xticks(x); ax.set_xticklabels(schools_b)
+ax.set_title("One rebalancing scenario: fill NMES, relieve the Paris-area schools")
+ax.set_ylim(0, 540)
+ax.legend(loc="upper left", frameon=False, fontsize=8.2)
+clean(ax)
+fig.tight_layout()
+save(fig, "chart_balance.png")
+
 # ---- I: tax rates ---------------------------------------------------------
 fig, (a1, a2) = plt.subplots(1, 2, figsize=(6.7, 3.0), gridspec_kw={"width_ratios": [1, 1.3]})
 tyrs = [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]
