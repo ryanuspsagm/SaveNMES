@@ -237,25 +237,33 @@ ax.text(paris[0] - 0.006, paris[1] + 0.013, "Paris (10,171)", fontsize=8.8, font
 ax.text(paris[0] - 0.03, paris[1] - 0.014, "Bourbon Central 459\nCane Ridge 453", fontsize=7.4,
         color="#1F3864", ha="center", va="top")
 ax.plot(*mills, "o", color=NAVY, markersize=5, zorder=5)
-ax.text(mills[0] - 0.012, mills[1] + 0.006, "Millersburg (747)", fontsize=7.4, color="#1F3864", ha="right")
+ax.text(mills[0] + 0.004, mills[1] - 0.017, "Millersburg (747)", fontsize=7.4, color="#1F3864", ha="center")
 ax.plot(nmid[0], nmid[1], "*", color="#1F3864", markersize=16, zorder=5)
 ax.text(nmid[0] - 0.01, nmid[1] - 0.022, "North Middletown (610)\nNMES: 128 of 174 seats",
         fontsize=8.2, fontweight="bold", color="#1F3864", ha="center", va="top")
 ax.plot([paris[0], nmid[0]], [paris[1], nmid[1]], color=GRAY, linewidth=1.1, linestyle=":", zorder=4)
 ax.text(-84.158, 38.163, "US 460, ~10 mi", fontsize=7.2, color="#555555", ha="center", rotation=-20)
-ax.text(-84.335, 38.30, "North zone", fontsize=8.0, color="#1F3864", fontweight="bold", ha="center")
+ax.text(-84.365, 38.305, "North zone", fontsize=8.0, color="#1F3864", fontweight="bold", ha="center")
 ax.text(-84.335, 38.13, "Southwest zone", fontsize=8.0, color="#1F3864", fontweight="bold", ha="center")
-ax.text(-83.945, 38.352, "NMES zone\n~105 sq mi\n128 students\n~1.2 per sq mi",
-        fontsize=8.2, color="#1F3864", fontweight="bold", ha="right")
+ax.text(-83.906, 38.29, "NMES zone\n~105 sq mi\n128 students\n~1.2 per sq mi",
+        fontsize=8.7, color="#1F3864", fontweight="bold", ha="right", va="top")
 ax.text(-84.415, 38.052, "Paris-area zones (north + southwest):\n~185 sq mi, 912 students, ~4.9 per sq mi",
         fontsize=8.0, color="#FFFFFF", fontweight="bold", ha="left",
         bbox=dict(facecolor="#1F3864", edgecolor="none", boxstyle="round,pad=0.35"))
-ax.set_title("Bourbon County elementary zones: where the students are")
-ax.text(-84.205, 38.008, "County outline: U.S. Census (simplified). Zones traced from the district's published "
-        "attendance-zone view; areas approximate.", fontsize=7.2, color="#777777", ha="center")
+ax.set_title("Bourbon County elementary zones: where the students are", fontsize=11.5, pad=14)
+ax.text(-84.462, 38.398, "Traced from the district's published attendance-zone view\non the U.S. Census county outline",
+        fontsize=7.6, color="#555555", ha="left", va="top")
+sb_y = 38.022; sb_x0 = -84.455; sb_x1 = sb_x0 + 0.1832
+ax.plot([sb_x0, sb_x1], [sb_y, sb_y], color="#1F3864", linewidth=2.2, solid_capstyle="butt")
+for xx in (sb_x0, sb_x1):
+    ax.plot([xx, xx], [sb_y - 0.004, sb_y + 0.004], color="#1F3864", linewidth=1.6)
+ax.text((sb_x0 + sb_x1) / 2, sb_y + 0.008, "10 miles", fontsize=7.4, color="#1F3864", ha="center")
+ax.annotate("N", xy=(-83.925, 38.385), fontsize=10, fontweight="bold", color="#1F3864", ha="center")
+ax.annotate("", xy=(-83.925, 38.383), xytext=(-83.925, 38.355),
+            arrowprops=dict(arrowstyle="-|>", color="#1F3864", lw=1.4))
 import numpy as np
 ax.set_aspect(1 / np.cos(np.radians(38.2)))
-ax.set_xlim(-84.47, -83.94); ax.set_ylim(37.99, 38.40)
+ax.set_xlim(-84.47, -83.90); ax.set_ylim(38.005, 38.425)
 ax.axis("off")
 fig.tight_layout()
 save(fig, "chart_map.png")

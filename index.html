@@ -266,6 +266,15 @@ footer a{color:var(--ice)}
 <div class="kicker">Part Four</div>
 <h2>A menu worth more than closure.</h2>
 <p class="lede">Conservative, sourced, and adjustable in the workbook. Even the low end beats the most generous closure estimate, and none of it takes a school from a town.</p>
+
+<div class="card">
+<h3>The map the rebalancing plan stands on</h3>
+<p>Half the county's people live in Paris, where both receiving schools sit. The NMES zone covers about 36 percent of the county at roughly 1.2 students per square mile, the exact variable state law funds busing on. Closing the one eastern school keeps every square mile of that territory and serves it with ten-mile-longer rides; rebalancing shortens them. Boston proved the routing upside is real: an MIT algorithm made its routes 20 percent more efficient and saved $5 million in one year.</p>
+<img src="map.png" alt="Map of Bourbon County's three elementary attendance zones traced from the district's published zone view: the north and southwest zones around Paris with 912 students, and the NMES zone covering the southeast at about 1.2 students per square mile" style="width:100%;height:auto;margin-top:12px" loading="lazy">
+<img src="balance.png" alt="Bar chart of one rebalancing scenario: NMES fills from 128 to its 174 capacity while Bourbon Central eases from 459 to 444 and Cane Ridge from 453 to 438" style="width:100%;height:auto;margin-top:16px" loading="lazy">
+<span class="checkme">Zones traced from the district's published attendance-zone view &middot; county outline: U.S. Census &middot; <a href="https://www.the74million.org/article/building-a-smarter-and-cheaper-school-bus-system-how-a-boston-mit-partnership-led-to-new-routes-that-are-20-more-efficient-use-400-fewer-buses-save-5-million/">Boston-MIT routing study</a></span>
+</div>
+
 <table class="alt">
 <tr><th>Measure</th><th>Estimated annual value</th></tr>
 <tr><td>Take the 4 percent revenue option (year one; compounds thereafter)</td><td>$386,000</td></tr>
@@ -293,6 +302,29 @@ footer a{color:var(--ice)}
 <details><summary>What would it cost to keep the empty building?</summary><p>Closed schools still need insurance, heat, and maintenance. Publish the carrying cost and the disposition plan.</p></details>
 <details><summary>What alternatives were modeled before "transitional" reached a vote?</summary><p>If a menu like the one above was never priced, the community deserves to know that too.</p></details>
 <details><summary>What does the district project for enrollment, using the levers it controls?</summary><p>Redistricting and cross-county enrollment are board decisions, not demographic fate. Show the projection with and without them.</p></details>
+
+<div class="card" style="margin-top:26px">
+<h3>The open records checklist</h3>
+<p>Every estimate in this analysis is built to be replaced by a district document. Kentucky's Open Records Act (KRS 61.870) entitles any resident to these on request to the district's records custodian, with a response due in five business days. The report's Appendix B carries the full table.</p>
+<ul class="src" style="margin-top:12px">
+<li>The net-savings worksheet behind the "over a million dollars" statement</li>
+<li>Grade-by-grade capacity and space at Bourbon Central and Cane Ridge</li>
+<li>Geocoded student counts by attendance area</li>
+<li>The district's GIS attendance-zone map</li>
+<li>The T-1 transportation report, route sheets, and cost per bus-mile</li>
+<li>Modeled post-closure bus routes and the longest one-way ride</li>
+<li>The building condition assessment for NMES, with its author</li>
+<li>The room-by-room worksheet behind the 174 capacity rating, and the pre-2021 facility plans</li>
+<li>The 2024 bond official statement and BG-1, and the 2023 bond's purpose</li>
+<li>KDE's bonding potential statement for the district</li>
+<li>Administrator compensation, position by position, five years</li>
+<li>The academic transition plan and Title I reallocation analysis</li>
+<li>Any alternatives modeling the administration has performed</li>
+<li>Levy rate-type history and the General Fund vs building fund cent split</li>
+<li>School-level climate and safety survey results</li>
+</ul>
+<p class="note">Nothing here seeks student-identifiable information. Some checks need no request at all: the federal School Attendance Boundary Survey published the district's zone boundaries as free GIS files, and NCES publishes geocoded school locations.</p>
+</div>
 </div></section>
 
 <section id="act"><div class="wrap">
@@ -313,7 +345,7 @@ footer a{color:var(--ice)}
 </div>
 <div class="card" style="margin-top:26px">
 <h3>Read the full case</h3>
-<p>The 28-page report and the complete financial model behind every number on this page.</p>
+<p>The 31-page report and the complete financial model behind every number on this page.</p>
 <a class="btn" href="Saving_North_Middletown_Elementary.pdf">Download the report (PDF)</a>
 &nbsp;<a class="btn" href="NMES_Financial_Model.xlsx" download>Download the model (Excel)</a>
 </div>
@@ -462,7 +494,7 @@ var net=t*4626-(r+t)*400+s*85000;
 var enroll=128+r+t;
 var pp=Math.round((2476544+(r+t)*400)/enroll);
 document.getElementById('rFill').textContent=money(net);
-document.getElementById('rFillVerdict').textContent='NMES at '+enroll+' of 174 seats. Cost per student falls from $19,348 to '+money(pp)+'.'+(r>0?' Busing trims by roughly '+money(r*340)+' to '+money(r*612)+' a year on top.':' No rezoning; busing unchanged.');
+document.getElementById('rFillVerdict').textContent=(r+t===0)?'No students moved. NMES stays at 128 of 174 seats and nothing changes.':'NMES at '+enroll+' of 174 seats. Cost per student falls from $19,348 to '+money(pp)+'.'+(r>0?' Busing trims by roughly '+money(r*340)+' to '+money(r*612)+' a year on top.':' No rezoning; busing unchanged.');
 }
 ['sRez','sTr','sSec'].forEach(function(id){document.getElementById(id).addEventListener('input',fillCalc)});
 fillCalc();

@@ -672,6 +672,16 @@ P("None of this requires inventing anything. The method is standard: geocode enr
   "needs. The tools are commodity software; the working group is a policy choice. A district facing a "
   "closure vote over money owes the public this study first, and the workbook's Transport_Geo and "
   "Redistricting tabs are built to receive its outputs.")
+P("The savings from doing this well are documented, not hypothetical. Boston Public Schools ran the "
+  "signature version in 2017: an MIT-built routing algorithm produced bus routes 20 percent more efficient "
+  "than the hand-built ones, cut 50 buses, about 8 percent of the fleet, eliminated a million bus-miles in "
+  "the first year, and saved roughly $5 million that the district returned to classrooms. Bourbon County's "
+  "transportation line is $2.9 million; the 5 to 10 percent captured in the menu below is $145,000 to "
+  "$290,000 a year, and Boston's 20 percent shows the ceiling sits higher than the menu assumes. One more "
+  "check anyone can run without waiting on the district: the federal School Attendance Boundary Survey "
+  "(NCES EDGE) published the district's actual attendance-zone boundaries as free GIS files in its 2015-16 "
+  "collection, and NCES publishes geocoded school locations. Figure 13 should be tested against those "
+  "files, and Appendix B lists them alongside the records only the district can produce.")
 tbl(["Measure", "Estimated annual value", "How it works"],
     [["Take the annual 4% property-tax adjustment",
       "$350,000-$450,000, recurring",
@@ -1023,6 +1033,11 @@ srcs = [
  "by LINK nky and Kentucky Public Radio, 2024",
  "Fayette County Public Schools, school rezoning working groups and boundary maps: fcps.net/zones; "
  "Jefferson County Public Schools, assignment boundary documents: jefferson.kyschools.us",
+ "Boston Public Schools bus-route optimization (Bertsimas, Delarue, and Martin, MIT Operations Research "
+ "Center, 2017): 20 percent route efficiency, 50 buses cut, about $5 million saved in year one; MIT Sloan, "
+ "Route Fifty, The 74, and U.S. DOT ITS case documentation",
+ "National Center for Education Statistics, School Attendance Boundary Survey 2015-16 (district "
+ "attendance-zone GIS files) and EDGE geocoded school locations: nces.ed.gov/programs/edge",
  "U.S. Census Bureau, 2020 decennial counts and land area: Bourbon County (289.7 land square miles), Paris "
  "(10,171), Millersburg (747), North Middletown (610); U.S. Route 460 mileage, North Middletown to Paris",
  "Chicago Sun-Times and WBEZ, analysis of the 2013 Chicago school closings, June 2023; University of Chicago "
@@ -1065,7 +1080,7 @@ for i, s in enumerate(srcs, 1):
 
 # ================= GLOSSARY =================
 A(PageBreak())
-H("Appendix: Plain-Language Glossary")
+H("Appendix A: Plain-Language Glossary")
 gl = [
  ["ADA (Average Daily Attendance)", "The average number of students actually present each day; the main driver of state funding."],
  ["BG-1", "The state form that authorizes a school construction project's scope and budget."],
@@ -1108,6 +1123,56 @@ gt.setStyle(TableStyle([
     ("LINEABOVE", (0, 0), (-1, 0), 0.6, LINE),
 ]))
 A(gt)
+
+# ================= APPENDIX B: OPEN RECORDS =================
+A(PageBreak())
+H("Appendix B: The Open Records Checklist")
+P("Kentucky's Open Records Act (KRS 61.870 to 61.884) entitles any resident to these documents on request to "
+  "the district's official records custodian at the central office, with a response due within five business "
+  "days. Each request below names the analysis it would replace or sharpen; every one corresponds to a "
+  "labeled estimate in this report or its companion workbook. I will publish, and correct against, whatever "
+  "comes back.")
+tbl(["Request", "What it settles"],
+    [["The line-item net-savings worksheet behind the “over a million dollars” statement",
+      "Replaces the $250,000 to $600,000 planning range with the district's own number (Sections 1 and 4)"],
+     ["Grade-by-grade capacity, sections, and available space at Bourbon Central and Cane Ridge",
+      "Receiving-school absorption costs, and the rebalancing scenario's relief estimate (Sections 4 and 9)"],
+     ["Geocoded student counts by attendance area or planning zone",
+      "Validates the density map and enables a real boundary optimization (Section 9, Figure 13)"],
+     ["The district's GIS attendance-zone map",
+      "Replaces the traced zones in Figure 13"],
+     ["The T-1 annual transportation report, route sheets, and cost per bus-mile",
+      "Replaces every yellow busing input in the workbook's Transport_Geo tab"],
+     ["Modeled post-closure bus routes and the longest one-way ride for the youngest riders",
+      "Question 4's answer in minutes rather than adjectives"],
+     ["The architect-and-engineer condition assessment for North Middletown, with its author and assumptions",
+      "The building case, if one exists (Section 7)"],
+     ["The room-by-room utilization worksheet behind the 174 capacity rating, and the pre-2021 facility plans",
+      "Whether the capacity number is a wall or a room schedule (Section 7)"],
+     ["The 2024 bond's official statement and BG-1, and the 2023 issue's stated purpose",
+      "Where $6.9 million of recent borrowing actually went (Section 6)"],
+     ["KDE's bonding potential statement for the district",
+      "The real borrowing headroom beside the audit's $23.5 million (Section 6)"],
+     ["The administrator salary schedule and five years of administrator compensation, position by position",
+      "How much of the 44.8 percent central-office growth is people versus accounting (Section 8)"],
+     ["The written academic transition plan and Title I reallocation analysis for displaced students",
+      "What happens to the children academically (Section 5)"],
+     ["Any alternatives modeling the administration has performed",
+      "Whether closure was ever compared to anything (Section 9)"],
+     ["KDE levy files: the rate type elected each year, and the General Fund versus building fund cent split",
+      "The two open cells in the tax history (Section 9)"],
+     ["School-level climate and safety survey results for all three elementaries",
+      "The state's own measure of the school communities involved (Section 5)"]],
+    [3.4 * inch, 3.3 * inch],
+    caption="Each item cites the section whose labeled estimate it would replace. Requests go to the district's "
+            "records custodian under KRS 61.870; nothing here seeks student-identifiable information.",
+    bold_first_col=False)
+H2("Already public, no request needed")
+B("School Attendance Boundary Survey (NCES EDGE, 2015-16): the district's actual attendance-zone GIS files, "
+  "free download; also queryable at nces.ed.gov/opengis (SABS_1516 service, school 210054000096).")
+B("NCES EDGE geocoded school locations and Common Core of Data enrollment files: nces.ed.gov/programs/edge.")
+B("U.S. Census TIGER county boundaries and block-level population counts: census.gov/geographies.")
+B("KDE SEEK transportation calculation files and district funding detail: education.ky.gov/districts/SEEK.")
 
 # ---------------- build ----------------
 def footer(canvas, doc):
