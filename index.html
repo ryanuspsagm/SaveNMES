@@ -241,6 +241,23 @@ footer a{color:var(--ice)}
 </div>
 <p class="note" style="margin-top:14px">Basis: KRS 160.470, applied to fiscal 2025 collections of $9,641,017. The levy is one option, not the only one. But revenue or reductions, the board must choose one and own it.</p>
 </div>
+
+<div class="card">
+<h3>The fill-the-seats planner</h3>
+<p class="note">Rebalance attendance boundaries and recruit cross-county transfers until NMES reaches its rated 174. Same arithmetic as the workbook's Redistricting and Transport_Geo tabs.</p>
+<div class="slider-row"><label>Students rezoned from the Paris-area zones <output id="oRez">30</output></label>
+<input type="range" id="sRez" min="0" max="46" value="30" step="1"></div>
+<div class="slider-row"><label>Cross-county transfers under HB 563 <output id="oTr">16</output></label>
+<input type="range" id="sTr" min="0" max="46" value="16" step="1"></div>
+<div class="slider-row"><label>Sections avoided at the receiving schools <output id="oSec">1</output></label>
+<input type="range" id="sSec" min="0" max="2" value="1" step="1"></div>
+<div class="result">
+<div class="big" id="rFill">$140,616</div>
+<div class="sub">net new recurring dollars per year</div>
+<div class="verdict" id="rFillVerdict"></div>
+</div>
+<p class="note" style="margin-top:14px">Rezoned students already ride district buses about ten miles to the Paris schools today; moving them to the school they live closest to shortens routes, it does not lengthen them. Transfers bring the state SEEK base with them, and the district sets its own busing policy for them. The state's frozen transportation budget reimburses nothing on new miles, which is closure's problem, not this plan's.</p>
+</div>
 </div>
 <span class="checkme">Every formula here matches the downloadable workbook, tab by tab.</span>
 </div></section>
@@ -296,7 +313,7 @@ footer a{color:var(--ice)}
 </div>
 <div class="card" style="margin-top:26px">
 <h3>Read the full case</h3>
-<p>The 26-page report and the complete financial model behind every number on this page.</p>
+<p>The 28-page report and the complete financial model behind every number on this page.</p>
 <a class="btn" href="Saving_North_Middletown_Elementary.pdf">Download the report (PDF)</a>
 &nbsp;<a class="btn" href="NMES_Financial_Model.xlsx" download>Download the model (Excel)</a>
 </div>
@@ -431,6 +448,24 @@ document.getElementById('rLevyVerdict').textContent='That covers '+pct.toFixed(1
 }
 document.getElementById('sYrs').addEventListener('input',levy);
 levy();
+
+/* Fill-the-seats planner */
+function fillCalc(){
+var r=+document.getElementById('sRez').value,
+t=+document.getElementById('sTr').value,
+s=+document.getElementById('sSec').value;
+if(r+t>46){t=46-r;document.getElementById('sTr').value=t}
+document.getElementById('oRez').textContent=r;
+document.getElementById('oTr').textContent=t;
+document.getElementById('oSec').textContent=s;
+var net=t*4626-(r+t)*400+s*85000;
+var enroll=128+r+t;
+var pp=Math.round((2476544+(r+t)*400)/enroll);
+document.getElementById('rFill').textContent=money(net);
+document.getElementById('rFillVerdict').textContent='NMES at '+enroll+' of 174 seats. Cost per student falls from $19,348 to '+money(pp)+'.'+(r>0?' Busing trims by roughly '+money(r*340)+' to '+money(r*612)+' a year on top.':' No rezoning; busing unchanged.');
+}
+['sRez','sTr','sSec'].forEach(function(id){document.getElementById(id).addEventListener('input',fillCalc)});
+fillCalc();
 
 /* Petition placeholder */
 document.getElementById('petitionBtn').addEventListener('click',function(e){

@@ -228,6 +228,13 @@ fig("chart_gf.png",
     "Figure 3. The operating gap and the drawdown. The district spends roughly $2.5 to $2.6 million more from its "
     "General Fund than it takes in before transfers, and reserves have fallen about $2.3 million in two years. "
     "Source: audited financial statements, FY2024 and FY2025.")
+P("A reading note on the transfers line, because it softens the optics without changing the arithmetic: "
+  "“net transfers and other sources” of roughly $1.4 million a year are moves between the district's own "
+  "funds, indirect cost recoveries from grants and self-supporting operations and similar interfund items "
+  "detailed in the audits' fund statements, not new money from outside. They cushion the General Fund's "
+  "reported change in fund balance, which is why the honest measure of the structural problem is the "
+  "operating result before transfers: the district spends about $2.6 million more than it takes in, and "
+  "internal shuffling covers roughly half the gap while reserves absorb the rest.")
 H2("Why it happened")
 fig("chart_cliff.png",
     "Figure 4. The two revenue shocks. Federal revenue in the governmental funds fell $2.95 million from FY2023 to "
@@ -473,6 +480,20 @@ P("If the closure case rests on the building, the record so far does not support
   "(a sprinkler system, exit and emergency lighting), an accessibility ramp and elevator, and renovation of space "
   "for a vocal-music classroom. The plan's district-wide capital need of roughly $43.4 million is concentrated at "
   "the high school and middle school, not at North Middletown.")
+P("The capacity number itself deserves scrutiny before anyone treats it as a wall. The 2021 plan rates North "
+  "Middletown at 174 students; the same building, the same 1948, 1963, and 1964 sections, held 261 students "
+  "at its 1988-89 peak, half again the current rating, and enrollment histories show it above 200 for most "
+  "of the 1990s and 2000s. Nothing about the walls shrank. What changes a rated capacity under the state's "
+  "facilities planning manual (702 KAR 4:180) is how rooms are counted: capacity is computed from the "
+  "classrooms in regular homeroom use, at program class-size caps, discounted by a utilization factor, so "
+  "every room reassigned over the years to preschool, intervention, special education services, or a "
+  "computer lab quietly lowers the school's official capacity without a brick moving. Rated capacity, in "
+  "other words, is a policy output the district itself controls, and it can be raised the same way it was "
+  "lowered: by returning rooms to homeroom use as enrollment fills. Two records would settle the history, "
+  "and Section 12 requests both: the pre-2021 facility plans, which carry the building's earlier rated "
+  "capacities, and the room-by-room utilization worksheet behind the current 174. A closure case that "
+  "leans on a capacity figure should first explain who set that figure, from what room assignments, and "
+  "why the community should treat as fixed a number the administration can change with a room schedule.")
 P("The 2026 planning cycle is supposed to rest on a fresh architect-and-engineer condition assessment of every "
   "building. If that assessment attaches a large renovation figure to North Middletown, the public has yet to see "
   "it, its author, or its assumptions, and it should be published before any \u201ctransitional\u201d designation is "
@@ -576,7 +597,7 @@ P("Here is one concrete scenario, arithmetic anyone can check, run in the workbo
   "revenue, supplies for all 46 added students cost about $18,000, and if the relief lets the receiving schools "
   "avoid or redeploy even one to two sections as the Paris side grows, the package is worth roughly <b>$140,000 "
   "to $225,000 a year, recurring</b>, while cutting North Middletown's much-cited cost per student from $19,348 "
-  "to about $14,340, a 26 percent drop, purely by filling seats. Two assumptions are flagged in yellow in the "
+  "to about $14,339, a 26 percent drop, purely by filling seats. Two assumptions are flagged in yellow in the "
   "workbook for the district to replace with real data: that rezoned students' bus routes shorten or hold even "
   "because they are chosen by proximity, and the receiving schools' grade-by-grade capacities, already a records "
   "ask in Question 3. This is what an unbiased boundary study looks like in miniature. The district holds the "
@@ -590,22 +611,29 @@ P("The district has not published its zone map, its geocoded student counts, or 
   "report, so what follows is built from public geography and labeled accordingly; every input sits in yellow "
   "in the workbook's Transport_Geo tab for the district to replace. Bourbon County is about 290 square miles "
   "of land. Its people cluster west: Paris holds 10,171 of the county's 20,252 residents, against 747 in "
-  "Millersburg and 610 in North Middletown. Assign the eastern portion of the county, roughly a third of its "
-  "area, to the North Middletown zone and the arithmetic follows: about 1.4 elementary students per square "
-  "mile in the east, against roughly 4.6 in the Paris-area zones and 3.6 district-wide. That density gap is "
+  "Millersburg and 610 in North Middletown. The district's own published attendance-zone view assigns the "
+  "county's southeast, about 36 percent of its area, to North Middletown, with Millersburg in the northern "
+  "zone, and the arithmetic follows: about 1.2 elementary students per square "
+  "mile in the NMES zone, against roughly 4.9 in the two Paris-area zones and 3.6 district-wide. That density gap is "
   "not a detail; it is the exact variable state law funds on. KRS 157.370 sets transportation aid by "
   "transported pupils per square mile, paying more where density is low because low density costs more to "
-  "serve, and the statutory calculation has been funded below its own formula in every state budget since "
-  "2005. A district that closes its one eastern school keeps every square mile of that coverage area and "
-  "serves it with longer rides.")
+  "serve. The funding history sharpens the point: the formula ran underfunded for two decades, the 2024-2026 "
+  "state budget restored it to 90 and then 100 percent, computed on lagged fiscal 2023 costs, and the "
+  "2026-2028 budget froze it again below the statute. A district that closes its one eastern school keeps "
+  "every square mile of that coverage area and serves it with longer rides.")
 tbl(["Zone", "Approx. area (sq mi)", "Elementary students", "Students per sq mi"],
-    [["North Middletown zone (eastern county)", "~93", "128", "~1.4"],
-     ["Paris-area zones (Bourbon Central, Cane Ridge)", "~197", "912", "~4.6"],
+    [["North Middletown zone (southeast)", "~105", "128", "~1.2"],
+     ["Paris-area zones (north and southwest)", "~185", "912", "~4.9"],
      ["District overall", "290", "1,040", "3.6"]],
     [2.6 * inch, 1.35 * inch, 1.45 * inch, 1.3 * inch],
-    caption="Estimated from county land area, town census counts, and the enrollment figures cited in Section 4. "
-            "These are placeholders for the district's zone map and geocoded counts, which Question 3 requests.",
+    caption="Zone areas traced from the district's published attendance-zone view onto the Census county outline; "
+            "student counts as cited in Section 4. Approximate until the district releases its zone map and geocoded counts (Question 3).",
     bold_first_col=True)
+fig("chart_map.png",
+    "Figure 13. Where the students are: the three elementary attendance zones traced from the district's "
+    "published zone view onto the U.S. Census county outline. Paris holds half the county's people and both "
+    "receiving schools; Millersburg sits in the northern zone; the NMES zone runs about 1.2 students per "
+    "square mile across roughly 105 square miles of the county's southeast.")
 P("Now the closure arithmetic, bottom up. North Middletown sits about ten miles from the Paris schools on US "
   "460. Roughly 109 of the school's 128 students ride the bus on an estimated three rural routes. Extend "
   "those routes to Paris and each one adds about 40 bus-miles a day, out and back, morning and afternoon: "
@@ -615,13 +643,35 @@ P("Now the closure arithmetic, bottom up. North Middletown sits about ten miles 
   "the $75,000 to $200,000 planning range this report has used from the start, and it validates the $137,500 "
   "midpoint in the closure model. It also prices the quieter cost: those are 15 to 20 added minutes each way "
   "for the county's easternmost children, on rides families already call long.")
-P("Run the same arithmetic on the rebalancing scenario and the sign flips. Rezoned students are chosen "
-  "precisely because they live closer to North Middletown than to their assigned school, so the affected "
-  "routes shorten by an estimated $10,000 to $18,000 a year. Rebalancing is transport-neutral at worst and "
-  "modestly positive at best, while closure is a guaranteed transport increase. District-wide, the "
-  "optimization lever in the menu above, routing software, tiered bells, and a right-sized fleet, remains "
-  "worth 5 to 10 percent of the $2.9 million line, $145,000 to $290,000 a year, whichever way the boundary "
-  "question is decided.")
+P("Run the same arithmetic on the rebalancing scenario and the sign flips. Rezoned students already ride "
+  "district buses today, ten miles west to the Paris schools; rezoning moves them to the school they live "
+  "closest to, so the affected routes shorten, an estimated $10,000 to $18,000 a year saved. Rebalancing is "
+  "transport-neutral at worst and modestly positive at best, while closure is a guaranteed transport "
+  "increase. District-wide, the optimization lever in the menu below, routing software, tiered bells, and a "
+  "right-sized fleet, remains worth 5 to 10 percent of the $2.9 million line, $145,000 to $290,000 a year, "
+  "whichever way the boundary question is decided.")
+P("The state-revenue side seals the comparison. Because the 2026-2028 appropriation is frozen at flat "
+  "dollars computed on old costs, the marginal state reimbursement on any NEW busing mile is zero: every "
+  "dollar of closure's added routes is district money. Rebalancing changes no transported-pupil count, so "
+  "the district's KRS 157.370 allotment is untouched, and its SEEK revenue is untouched because the same "
+  "students attend the same district. Cross-county transfer students add SEEK revenue while adding no "
+  "required busing at all: under KRS 157.350 the receiving district sets its own transportation policy for "
+  "nonresident students, and most Kentucky districts have families drive or meet routes at the county line. "
+  "Redistricting, in short, does not raise transportation costs; on this arithmetic it trims them while the "
+  "revenue side only gains.")
+H2("How a real optimization would run, and who already runs them")
+P("None of this requires inventing anything. The method is standard: geocode enrolled students from the "
+  "student information system; aggregate to small planning zones; build a travel-time matrix from each zone "
+  "to each school on the actual road network; then assign zones to schools to minimize total ride time, "
+  "subject to building capacities, statutory class sizes, and keeping neighborhoods together, with bus "
+  "routes re-optimized afterward. Kentucky districts already do versions of this. Fayette County convenes "
+  "boundary working groups of parents, staff, and community members over GIS scenarios whenever it opens or "
+  "rebalances schools, and publishes the maps. Jefferson County publishes its assignment boundary documents "
+  "and has contracted route-optimization modeling for its bus system. Every district, Bourbon County "
+  "included, already files the T-1 annual transportation report and keeps the address data the analysis "
+  "needs. The tools are commodity software; the working group is a policy choice. A district facing a "
+  "closure vote over money owes the public this study first, and the workbook's Transport_Geo and "
+  "Redistricting tabs are built to receive its outputs.")
 tbl(["Measure", "Estimated annual value", "How it works"],
     [["Take the annual 4% property-tax adjustment",
       "$350,000-$450,000, recurring",
@@ -668,7 +718,7 @@ tbl(["Measure", "Estimated annual value", "How it works"],
       "all 46 open seats; the worked example above and the workbook's Redistricting tab show the arithmetic. "
       "Multi-age reorganization and a preschool or day-care satellite are additional levers on top."]],
     [1.75 * inch, 1.35 * inch, 3.6 * inch],
-    caption="Figure 13. Revenue and cost measures available without closing a school. Values are estimates derived "
+    caption="Figure 14. Revenue and cost measures available without closing a school. Values are estimates derived "
             "from the district's audited figures and state data; ranges overlap and are not additive to the penny. "
             "A conservative combination totals roughly $1.1 to $2.1 million a year, against an annual reserve "
             "drawdown of $1.1 to $1.2 million.",
@@ -679,7 +729,7 @@ P("The rate history strengthens rather than weakens the community's hand. Bourbo
   "cents per $100 on real estate, second lowest among nine area districts and roughly 13 cents below the "
   "statewide school average of 65.1. Fayette levies 80.9, Paris Independent, in this same county, 71.5, Clark "
   "66.8, Bath 63.4, Scott 62.9, and Harrison 57.7; only Nicholas County, at 43.1, sits lower, and Montgomery is "
-  "essentially tied at 52.5 (Figure 14). The trend runs the same direction: the levied rate has fallen from 61.3 "
+  "essentially tied at 52.5 (Figure 15). The trend runs the same direction: the levied rate has fallen from 61.3 "
   "cents in 2018 to 52.4 today, a decline that largely reflects Kentucky's rollback mechanics, in which a rising "
   "assessment base pushes the cent rate down to hold revenue roughly level. The one year with a documented "
   "rate-type decision, 2019, shows the board taking the full four percent revenue option, and nothing in the "
@@ -707,7 +757,7 @@ P("What remains is the option the board controls every August. Under KRS 160.470
   "chosen path, in writing, with the work shown. What they do not owe anyone is the closure of the district's "
   "best performing school dressed up as the only choice.")
 fig("chart_tax.png",
-    "Figure 14. Left: the Bourbon County Schools real estate rate by tax year, from Kentucky Department of "
+    "Figure 15. Left: the Bourbon County Schools real estate rate by tax year, from Kentucky Department of "
     "Revenue rate books; years before 2018 could not be retrieved and are not interpolated. Right: current "
     "levied real estate rates across nine area districts against the statewide school average of 65.1 cents. "
     "Fayette and Clark are from local reporting of their board votes; all other rates are Department of Revenue "
@@ -968,8 +1018,11 @@ srcs = [
  "Kentucky Department of Education, Non-Resident Student Policy guidance under House Bill 563 (2021) and KRS "
  "157.350: education.ky.gov/districts/enrol",
  "KRS 157.370 and 702 KAR 3:270 (SEEK transportation add-on, calculated on transported pupils per square "
- "mile); Kentucky Association of School Superintendents, on transportation funding below the statutory "
- "formula since 2005: kysupts.org",
+ "mile); Kentucky Association of School Superintendents on the funding history: kysupts.org; 2024-2026 "
+ "Kentucky budget (HB 6) restoring pupil transportation to 90 and then 100 percent of formula, as reported "
+ "by LINK nky and Kentucky Public Radio, 2024",
+ "Fayette County Public Schools, school rezoning working groups and boundary maps: fcps.net/zones; "
+ "Jefferson County Public Schools, assignment boundary documents: jefferson.kyschools.us",
  "U.S. Census Bureau, 2020 decennial counts and land area: Bourbon County (289.7 land square miles), Paris "
  "(10,171), Millersburg (747), North Middletown (610); U.S. Route 460 mileage, North Middletown to Paris",
  "Chicago Sun-Times and WBEZ, analysis of the 2013 Chicago school closings, June 2023; University of Chicago "

@@ -219,6 +219,47 @@ clean(ax)
 fig.tight_layout()
 save(fig, "chart_balance.png")
 
+# ---- K: density map on the real county outline, traced zones --------------
+fig, ax = plt.subplots(figsize=(6.7, 4.4))
+from matplotlib.patches import Polygon as MplPolygon
+COUNTY = [(-84.4438,38.2831),(-84.3792,38.2779),(-84.2787,38.3148),(-84.1926,38.3715),(-84.1674,38.3552),(-84.0957,38.2590),(-84.0562,38.2564),(-84.0634,38.2350),(-84.0275,38.2143),(-83.9880,38.2186),(-83.9772,38.1920),(-84.0813,38.1155),(-84.2859,38.0674),(-84.3792,38.1138),(-84.3541,38.1783),(-84.3720,38.2083),(-84.4007,38.2075),(-84.4438,38.2831)]
+NORTH = [(-84.4438,38.2831),(-84.3792,38.2779),(-84.2787,38.3148),(-84.1926,38.3715),(-84.1674,38.3552),(-84.0957,38.259),(-84.0562,38.2564),(-84.0634,38.235),(-84.0323,38.2171),(-84.1,38.245),(-84.245,38.212),(-84.3,38.235),(-84.4204,38.2421),(-84.4438,38.2831)]
+SW = [(-84.2428,38.0775),(-84.2859,38.0674),(-84.3792,38.1138),(-84.3541,38.1783),(-84.372,38.2083),(-84.4007,38.2075),(-84.4204,38.2421),(-84.3,38.235),(-84.245,38.212),(-84.235,38.14),(-84.2428,38.0775)]
+EAST = [(-84.0323,38.2171),(-84.0275,38.2143),(-84.026,38.2145),(-84.02,38.212),(-83.9823,38.2045),(-83.9772,38.192),(-84.0813,38.1155),(-84.2428,38.0775),(-84.235,38.14),(-84.245,38.212),(-84.1,38.245),(-84.0323,38.2171)]
+ax.add_patch(MplPolygon(NORTH, closed=True, facecolor="#8FAEDC", edgecolor="#FFFFFF", linewidth=1.0))
+ax.add_patch(MplPolygon(SW, closed=True, facecolor="#C5D7EC", edgecolor="#FFFFFF", linewidth=1.0))
+ax.add_patch(MplPolygon(EAST, closed=True, facecolor="#E8EDF5", edgecolor="#FFFFFF", linewidth=1.0))
+ax.add_patch(MplPolygon(COUNTY, closed=True, facecolor="none", edgecolor="#1F3864", linewidth=1.6))
+paris = (-84.2529, 38.2098); nmid = (-84.1122, 38.1446); mills = (-84.1467, 38.3022)
+ax.plot(*paris, "o", color=NAVY, markersize=9, zorder=5)
+ax.text(paris[0] - 0.006, paris[1] + 0.013, "Paris (10,171)", fontsize=8.8, fontweight="bold",
+        color="#1F3864", ha="center")
+ax.text(paris[0] - 0.03, paris[1] - 0.014, "Bourbon Central 459\nCane Ridge 453", fontsize=7.4,
+        color="#1F3864", ha="center", va="top")
+ax.plot(*mills, "o", color=NAVY, markersize=5, zorder=5)
+ax.text(mills[0] - 0.012, mills[1] + 0.006, "Millersburg (747)", fontsize=7.4, color="#1F3864", ha="right")
+ax.plot(nmid[0], nmid[1], "*", color="#1F3864", markersize=16, zorder=5)
+ax.text(nmid[0] - 0.01, nmid[1] - 0.022, "North Middletown (610)\nNMES: 128 of 174 seats",
+        fontsize=8.2, fontweight="bold", color="#1F3864", ha="center", va="top")
+ax.plot([paris[0], nmid[0]], [paris[1], nmid[1]], color=GRAY, linewidth=1.1, linestyle=":", zorder=4)
+ax.text(-84.158, 38.163, "US 460, ~10 mi", fontsize=7.2, color="#555555", ha="center", rotation=-20)
+ax.text(-84.335, 38.30, "North zone", fontsize=8.0, color="#1F3864", fontweight="bold", ha="center")
+ax.text(-84.335, 38.13, "Southwest zone", fontsize=8.0, color="#1F3864", fontweight="bold", ha="center")
+ax.text(-83.945, 38.352, "NMES zone\n~105 sq mi\n128 students\n~1.2 per sq mi",
+        fontsize=8.2, color="#1F3864", fontweight="bold", ha="right")
+ax.text(-84.415, 38.052, "Paris-area zones (north + southwest):\n~185 sq mi, 912 students, ~4.9 per sq mi",
+        fontsize=8.0, color="#FFFFFF", fontweight="bold", ha="left",
+        bbox=dict(facecolor="#1F3864", edgecolor="none", boxstyle="round,pad=0.35"))
+ax.set_title("Bourbon County elementary zones: where the students are")
+ax.text(-84.205, 38.008, "County outline: U.S. Census (simplified). Zones traced from the district's published "
+        "attendance-zone view; areas approximate.", fontsize=7.2, color="#777777", ha="center")
+import numpy as np
+ax.set_aspect(1 / np.cos(np.radians(38.2)))
+ax.set_xlim(-84.47, -83.94); ax.set_ylim(37.99, 38.40)
+ax.axis("off")
+fig.tight_layout()
+save(fig, "chart_map.png")
+
 # ---- I: tax rates ---------------------------------------------------------
 fig, (a1, a2) = plt.subplots(1, 2, figsize=(6.7, 3.0), gridspec_kw={"width_ratios": [1, 1.3]})
 tyrs = [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]

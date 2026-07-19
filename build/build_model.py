@@ -58,7 +58,7 @@ rows = [
  "  SEEK base amounts: Kentucky 2024-2026 and 2026-2028 state budgets. Enrollment/capacity: NCES; 2021 KBE-approved facility plan.",
  "  Multi-year school scores and NMES enrollment history: School_Data tab (backs report Figures 6, 7, and 11).",
  "  County demographics and the full 1989-2025 NMES enrollment series: Demographics tab (backs Section 9 and Figure 11).",
- "  Tax rates, fund split, delinquency check, and the 4% three-year path: Tax_History tab (backs Figure 14).",
+ "  Tax rates, fund split, delinquency check, and the 4% three-year path: Tax_History tab (backs Figure 15).",
  "  Boundary rebalancing and fill-to-capacity scenario: Redistricting tab (backs the Section 9 worked example and Figure 12).",
  "  Bonding capacity components and what closure can and cannot change: Debt_Service tab (backs Section 6).",
  "  Student density, route-mile arithmetic, and busing cost scenarios: Transport_Geo tab (backs Section 9).",
@@ -99,7 +99,7 @@ arow(8,  "SEEK base, FY2029 (held flat at FY2028)", "=B7", CUR, "Assumption", fo
 
 put(a, "A10", "NORTH MIDDLETOWN ELEMENTARY", SEC)
 arow(11, "Enrollment, 2024-25", 128, NUM, "NCES CCD official count. Supt. has said 'around 100'; a '118' figure could not be verified in any official record")
-arow(12, "Rated capacity", 174, NUM, "2021 KBE-approved District Facility Plan")
+arow(12, "Rated capacity", 174, NUM, "2021 KBE-approved District Facility Plan. A policy output, not a physical constant: the same building held 261 students in 1988-89. See report Section 7")
 arow(13, "Open seats", "=B12-B11", NUM, "", formula=True)
 arow(14, "Per-pupil spending, total (2023-24)", 19348, CUR, "KY School Report Card, ESSA school-level data")
 arow(15, "Per-pupil spending, state/local share", 14173, CUR, "KY School Report Card, ESSA school-level data")
@@ -185,6 +185,7 @@ put(g, "A15", "Unassigned balance above the floor"); put(g, "D15", "=Assumptions
 put(g, "A16", "Average annual drawdown (FY2024-25)"); put(g, "D16", "=-AVERAGE(C8:D8)", BLK, CUR)
 put(g, "A17", "Years of runway at current pace"); put(g, "D17", "=IFERROR(D15/D16,0)", BLK, '0.0')
 put(g, "A19", "Source: FY2023-24 and FY2024-25 audited financial statements. FY2023 shown as reported in the FY2024 audit's comparative statement.", NOTE)
+put(g, "A20", "What the transfers are: moves between the district's own funds (indirect cost recoveries from grants and self-supporting operations, fund closeouts, and similar interfund items detailed in the audits' fund statements). They cushion the General Fund's bottom line but are not new district revenue, which is why the operating result BEFORE transfers is the honest measure of the structural deficit.", NOTE, wrap=True)
 
 # ================= CLOSURE_MODEL =================
 c = sheet("Closure_Model", [54, 16, 46])
@@ -309,7 +310,7 @@ put(tg, "A5", "Bourbon County land area (square miles)"); put(tg, "B5", 290, BLU
 put(tg, "A6", "Paris city population, 2020"); put(tg, "B6", 10171, BLUE, NUM); put(tg, "C6", "2020 Census", NOTE)
 put(tg, "A7", "Millersburg population, 2020"); put(tg, "B7", 747, BLUE, NUM); put(tg, "C7", "2020 Census", NOTE)
 put(tg, "A8", "North Middletown population, 2020"); put(tg, "B8", "=Demographics!B29", GRN, NUM); put(tg, "C8", "Demographics tab", NOTE)
-put(tg, "A9", "NMES zone share of county area"); put(tg, "B9", 0.32, BLUE, PCT, fill=YEL); put(tg, "C9", "Eastern portion of the county; replace with the district's actual zone map", NOTE)
+put(tg, "A9", "NMES zone share of county area"); put(tg, "B9", 0.36, BLUE, PCT, fill=YEL); put(tg, "C9", "Traced from the district's published attendance-zone view (southeast zone); approximate", NOTE)
 put(tg, "A10", "NMES zone area (sq mi)"); put(tg, "B10", "=B5*B9", BLK, '0')
 put(tg, "A11", "Paris-area zones (sq mi)"); put(tg, "B11", "=B5-B10", BLK, '0')
 put(tg, "A12", "NMES elementary students"); put(tg, "B12", "=Assumptions!B11", GRN, NUM)
@@ -317,7 +318,8 @@ put(tg, "A13", "Paris-area elementary students"); put(tg, "B13", "=Redistricting
 put(tg, "A14", "Students per square mile, NMES zone"); put(tg, "B14", "=B12/B10", BLK, '0.0')
 put(tg, "A15", "Students per square mile, Paris-area zones"); put(tg, "B15", "=B13/B11", BLK, '0.0')
 put(tg, "A16", "Students per square mile, district elementary overall"); put(tg, "B16", "=(B12+B13)/B5", BLK, '0.0')
-put(tg, "A17", "State law (KRS 157.370) funds transportation on transported pupils per square mile: low density earns a higher per-pupil allotment because it costs more to serve. The statutory calculation has been funded below its own formula in every budget since 2005.", NOTE, wrap=True)
+put(tg, "A17", "State law (KRS 157.370) funds transportation on transported pupils per square mile: low density earns a higher per-pupil allotment because it costs more to serve. Funding history: below the formula for two decades, restored to 90 then 100 percent (on lagged FY2023 costs) in the 2024-2026 budget, then frozen again below formula in the 2026-2028 budget.", NOTE, wrap=True)
+put(tg, "A18", "STATE REVENUE EFFECT: with the appropriation frozen at flat dollars computed on lagged costs, the marginal state reimbursement on NEW busing miles is zero, so closure's added routes are district money. Rebalancing changes no transported-pupil count, so the add-on is unchanged; and the district is not required to transport nonresident transfer students at all (board policy decides).", NOTE, wrap=True)
 
 put(tg, "A19", "WHAT CLOSURE ADDS: ROUTE-MILE ARITHMETIC (yellow = replace with district T-1 data)", SEC)
 put(tg, "A20", "Share of NMES students riding the bus"); put(tg, "B20", 0.85, BLUE, PCT, fill=YEL)
@@ -475,7 +477,7 @@ put(rw, "A10", "Reading: the alternatives package restores balance faster than c
 # ================= TAX_HISTORY =================
 th = sheet("Tax_History", [36, 13, 13, 13, 6, 13, 48])
 put(th, "A1", "Property Tax Rates, Fund Split, Delinquency, and the 4% Option", TITLE)
-put(th, "A2", "Backs Section 9 and Figure 14 of the report. Rates in cents per $100. DOR rate books primary for 2023-2025; 2018-2022 verified secondary; 2005-2017 not retrieved and not interpolated.", NOTE)
+put(th, "A2", "Backs Section 9 and Figure 15 of the report. Rates in cents per $100. DOR rate books primary for 2023-2025; 2018-2022 verified secondary; 2005-2017 not retrieved and not interpolated.", NOTE)
 
 put(th, "A4", "BOURBON COUNTY SCHOOLS, REAL ESTATE RATE BY TAX YEAR", SEC)
 trates = [("2018", 61.3), ("2019", 60.6), ("2020", 55.9), ("2021", 54.2),
