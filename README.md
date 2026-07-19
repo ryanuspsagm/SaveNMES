@@ -19,7 +19,7 @@ public source cited in the report and on the site.
 ## Live links wired into the site
 
 - Petition: https://www.change.org/p/sos-save-our-school-north-middletown-elementary
-- Report and model downloads point to Google Drive copies.
+- Report and model downloads are served from this repo via GitHub Pages.
 - Board contacts: https://www.bourbon.kyschools.us/page/board-of-education
 
 ## Hosting
