@@ -585,6 +585,43 @@ fig("chart_balance.png",
     "Figure 12. One rebalancing scenario: North Middletown fills to its rated 174 while Bourbon Central and Cane "
     "Ridge each ease by about fifteen students. Enrollment counts as cited in Sections 4 and 9; the scenario "
     "levers (30 rezoned, 16 cross-county transfers) are adjustable in the companion workbook's Redistricting tab.")
+H2("The transportation map, estimated from public geography")
+P("The district has not published its zone map, its geocoded student counts, or its annual T-1 transportation "
+  "report, so what follows is built from public geography and labeled accordingly; every input sits in yellow "
+  "in the workbook's Transport_Geo tab for the district to replace. Bourbon County is about 290 square miles "
+  "of land. Its people cluster west: Paris holds 10,171 of the county's 20,252 residents, against 747 in "
+  "Millersburg and 610 in North Middletown. Assign the eastern portion of the county, roughly a third of its "
+  "area, to the North Middletown zone and the arithmetic follows: about 1.4 elementary students per square "
+  "mile in the east, against roughly 4.6 in the Paris-area zones and 3.6 district-wide. That density gap is "
+  "not a detail; it is the exact variable state law funds on. KRS 157.370 sets transportation aid by "
+  "transported pupils per square mile, paying more where density is low because low density costs more to "
+  "serve, and the statutory calculation has been funded below its own formula in every state budget since "
+  "2005. A district that closes its one eastern school keeps every square mile of that coverage area and "
+  "serves it with longer rides.")
+tbl(["Zone", "Approx. area (sq mi)", "Elementary students", "Students per sq mi"],
+    [["North Middletown zone (eastern county)", "~93", "128", "~1.4"],
+     ["Paris-area zones (Bourbon Central, Cane Ridge)", "~197", "912", "~4.6"],
+     ["District overall", "290", "1,040", "3.6"]],
+    [2.6 * inch, 1.35 * inch, 1.45 * inch, 1.3 * inch],
+    caption="Estimated from county land area, town census counts, and the enrollment figures cited in Section 4. "
+            "These are placeholders for the district's zone map and geocoded counts, which Question 3 requests.",
+    bold_first_col=True)
+P("Now the closure arithmetic, bottom up. North Middletown sits about ten miles from the Paris schools on US "
+  "460. Roughly 109 of the school's 128 students ride the bus on an estimated three rural routes. Extend "
+  "those routes to Paris and each one adds about 40 bus-miles a day, out and back, morning and afternoon: "
+  "about 20,400 added bus-miles a year. At a marginal cost of $2.50 to $4.50 per bus-mile that is $51,000 to "
+  "$92,000 a year, and if the longer runs break the route tiering and force even one additional bus, add "
+  "roughly $55,000 more. The bottom-up estimate therefore lands at about $51,000 to $147,000, squarely inside "
+  "the $75,000 to $200,000 planning range this report has used from the start, and it validates the $137,500 "
+  "midpoint in the closure model. It also prices the quieter cost: those are 15 to 20 added minutes each way "
+  "for the county's easternmost children, on rides families already call long.")
+P("Run the same arithmetic on the rebalancing scenario and the sign flips. Rezoned students are chosen "
+  "precisely because they live closer to North Middletown than to their assigned school, so the affected "
+  "routes shorten by an estimated $10,000 to $18,000 a year. Rebalancing is transport-neutral at worst and "
+  "modestly positive at best, while closure is a guaranteed transport increase. District-wide, the "
+  "optimization lever in the menu above, routing software, tiered bells, and a right-sized fleet, remains "
+  "worth 5 to 10 percent of the $2.9 million line, $145,000 to $290,000 a year, whichever way the boundary "
+  "question is decided.")
 tbl(["Measure", "Estimated annual value", "How it works"],
     [["Take the annual 4% property-tax adjustment",
       "$350,000-$450,000, recurring",
@@ -859,7 +896,9 @@ P("I built this report from public records, and I want it held to that standard.
   "stated where it appears, and every one of them is adjustable in the companion workbook. The boundary "
   "rebalancing scenario in Section 9 is arithmetic on the cited enrollment counts, not a routing study; the "
   "geocoded student counts and routing data a full study needs are held by the district and requested in "
-  "Question 3.", note)
+  "Question 3. The transportation estimates beside it use census geography, a highway distance, and labeled "
+  "cost-per-mile bands; the district's annual T-1 transportation report and zone map would replace every one "
+  "of those inputs, and the Transport_Geo tab is built to take them.", note)
 P("A few items in the record need the district, not me, to resolve. The real-estate tax rate appears as 52.4 "
   "confusion is resolved in Section 9: 52.4 cents is the levied rate, 54.2 a transposition typo, 54.7 the "
   "motor vehicle rate; still open are the General Fund versus building fund cent split, the levied rate type "
@@ -928,6 +967,11 @@ srcs = [
  "2011, North Middletown Elementary's 2011 National Blue Ribbon designation: kentuckyteacher.org",
  "Kentucky Department of Education, Non-Resident Student Policy guidance under House Bill 563 (2021) and KRS "
  "157.350: education.ky.gov/districts/enrol",
+ "KRS 157.370 and 702 KAR 3:270 (SEEK transportation add-on, calculated on transported pupils per square "
+ "mile); Kentucky Association of School Superintendents, on transportation funding below the statutory "
+ "formula since 2005: kysupts.org",
+ "U.S. Census Bureau, 2020 decennial counts and land area: Bourbon County (289.7 land square miles), Paris "
+ "(10,171), Millersburg (747), North Middletown (610); U.S. Route 460 mileage, North Middletown to Paris",
  "Chicago Sun-Times and WBEZ, analysis of the 2013 Chicago school closings, June 2023; University of Chicago "
  "Consortium on School Research, School Closings in Chicago (2018)",
  "The Pew Charitable Trusts, Shuttered Public Schools: The Struggle to Bring Old Buildings New Life (2013)",

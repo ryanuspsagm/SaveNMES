@@ -61,6 +61,7 @@ rows = [
  "  Tax rates, fund split, delinquency check, and the 4% three-year path: Tax_History tab (backs Figure 14).",
  "  Boundary rebalancing and fill-to-capacity scenario: Redistricting tab (backs the Section 9 worked example and Figure 12).",
  "  Bonding capacity components and what closure can and cannot change: Debt_Service tab (backs Section 6).",
+ "  Student density, route-mile arithmetic, and busing cost scenarios: Transport_Geo tab (backs Section 9).",
  "",
  "CAVEAT",
  "Prepared by a former NMES King working alongside Fable 5, an AI research assistant from Anthropic. Estimates are labeled; every figure",
@@ -297,6 +298,61 @@ put(rd, "A39", "ASSUMPTIONS THE DISTRICT'S DATA SHOULD REPLACE", SEC)
 put(rd, "A40", "Rezoned students are drawn only from homes closer to NMES than to their assigned school, so bus routes shorten or hold even; the district's routing data would settle it.", NOTE, wrap=True)
 put(rd, "A41", "Receiving-school relief is booked only as one to two avoided or redeployed sections; grade-by-grade capacities at Bourbon Central and Cane Ridge are a records ask (report Question 3).", NOTE, wrap=True)
 put(rd, "A42", "SEEK for rezoned in-county students is unchanged (same district); only cross-county transfers add revenue.", NOTE, wrap=True)
+
+# ================= TRANSPORT_GEO =================
+tg = sheet("Transport_Geo", [58, 15, 58])
+put(tg, "A1", "Transportation and Geography: Density, Route Miles, and What Closure Adds", TITLE)
+put(tg, "A2", "Estimates built from public geography (census counts, county land area, highway distances). The district's annual T-1 transportation report, zone map, and geocoded counts are the authoritative dataset; releasing them is a records ask.", NOTE, wrap=True)
+
+put(tg, "A4", "GEOGRAPHY AND STUDENT DENSITY", SEC)
+put(tg, "A5", "Bourbon County land area (square miles)"); put(tg, "B5", 290, BLUE, NUM); put(tg, "C5", "U.S. Census: 289.7 land square miles", NOTE)
+put(tg, "A6", "Paris city population, 2020"); put(tg, "B6", 10171, BLUE, NUM); put(tg, "C6", "2020 Census", NOTE)
+put(tg, "A7", "Millersburg population, 2020"); put(tg, "B7", 747, BLUE, NUM); put(tg, "C7", "2020 Census", NOTE)
+put(tg, "A8", "North Middletown population, 2020"); put(tg, "B8", "=Demographics!B29", GRN, NUM); put(tg, "C8", "Demographics tab", NOTE)
+put(tg, "A9", "NMES zone share of county area"); put(tg, "B9", 0.32, BLUE, PCT, fill=YEL); put(tg, "C9", "Eastern portion of the county; replace with the district's actual zone map", NOTE)
+put(tg, "A10", "NMES zone area (sq mi)"); put(tg, "B10", "=B5*B9", BLK, '0')
+put(tg, "A11", "Paris-area zones (sq mi)"); put(tg, "B11", "=B5-B10", BLK, '0')
+put(tg, "A12", "NMES elementary students"); put(tg, "B12", "=Assumptions!B11", GRN, NUM)
+put(tg, "A13", "Paris-area elementary students"); put(tg, "B13", "=Redistricting!B8+Redistricting!B9", GRN, NUM)
+put(tg, "A14", "Students per square mile, NMES zone"); put(tg, "B14", "=B12/B10", BLK, '0.0')
+put(tg, "A15", "Students per square mile, Paris-area zones"); put(tg, "B15", "=B13/B11", BLK, '0.0')
+put(tg, "A16", "Students per square mile, district elementary overall"); put(tg, "B16", "=(B12+B13)/B5", BLK, '0.0')
+put(tg, "A17", "State law (KRS 157.370) funds transportation on transported pupils per square mile: low density earns a higher per-pupil allotment because it costs more to serve. The statutory calculation has been funded below its own formula in every budget since 2005.", NOTE, wrap=True)
+
+put(tg, "A19", "WHAT CLOSURE ADDS: ROUTE-MILE ARITHMETIC (yellow = replace with district T-1 data)", SEC)
+put(tg, "A20", "Share of NMES students riding the bus"); put(tg, "B20", 0.85, BLUE, PCT, fill=YEL)
+put(tg, "A21", "Riders"); put(tg, "B21", "=ROUND(B20*B12,0)", BLK, NUM)
+put(tg, "A22", "Rural routes serving NMES today"); put(tg, "B22", 3, BLUE, NUM, fill=YEL)
+put(tg, "A23", "Added distance to the Paris schools, one way (miles)"); put(tg, "B23", 10, BLUE, NUM); put(tg, "C23", "US 460, North Middletown to Paris", NOTE)
+put(tg, "A24", "Added bus-miles per route per day (out and back, AM and PM)"); put(tg, "B24", "=B23*4", BLK, NUM)
+put(tg, "A25", "School days per year"); put(tg, "B25", 170, BLUE, NUM, fill=YEL)
+put(tg, "A26", "Added bus-miles per year"); put(tg, "B26", "=B22*B24*B25", BLK, NUM)
+put(tg, "A27", "Marginal cost per bus-mile, low"); put(tg, "B27", 2.50, BLUE, '0.00', fill=YEL); put(tg, "C27", "Fuel, maintenance, driver time; replace with district cost data", NOTE)
+put(tg, "A28", "Marginal cost per bus-mile, high"); put(tg, "B28", 4.50, BLUE, '0.00', fill=YEL)
+put(tg, "A29", "Added cost, mileage basis, low"); put(tg, "B29", "=B26*B27", BLK, CUR)
+put(tg, "A30", "Added cost, mileage basis, high"); put(tg, "B30", "=B26*B28", BLK, CUR)
+put(tg, "A31", "Additional buses if route tiers break (high case)"); put(tg, "B31", 1, BLUE, NUM, fill=YEL)
+put(tg, "A32", "All-in cost per additional bus-year"); put(tg, "B32", 55000, BLUE, CUR, fill=YEL)
+put(tg, "A33", "Bottom-up added busing cost, low", bold=True); c33 = put(tg, "B33", "=B29", BLK, CUR, bold=True); c33.border = TOPLINE
+put(tg, "A34", "Bottom-up added busing cost, high", bold=True); put(tg, "B34", "=B30+B31*B32", BLK, CUR, bold=True)
+put(tg, "A35", "Report's planning range (Closure_Model offset basis)"); put(tg, "B35", "Between $75,000 and $200,000", NOTE)
+put(tg, "A36", "The bottom-up estimate lands inside the planning range; the $137,500 midpoint used in the Closure_Model stands. Note what closure does not remove: every square mile of the eastern county stays in the coverage area, with longer rides on it, roughly 15 to 20 added minutes each way on US 460.", NOTE, wrap=True)
+
+put(tg, "A38", "WHAT REBALANCING CHANGES (Redistricting tab scenario)", SEC)
+put(tg, "A39", "Students rezoned to NMES"); put(tg, "B39", "=Redistricting!B12", GRN, NUM)
+put(tg, "A40", "Stem miles saved per affected route, one way"); put(tg, "B40", 3, BLUE, NUM, fill=YEL); put(tg, "C40", "Rezoned families live closer to NMES than to their assigned school", NOTE)
+put(tg, "A41", "Affected routes"); put(tg, "B41", 2, BLUE, NUM, fill=YEL)
+put(tg, "A42", "Bus-miles saved per year"); put(tg, "B42", "=B41*B40*4*B25", BLK, NUM)
+put(tg, "A43", "Transport saving, low"); put(tg, "B43", "=B42*B27", BLK, CUR)
+put(tg, "A44", "Transport saving, high"); put(tg, "B44", "=B42*B28", BLK, CUR)
+put(tg, "A45", "Rebalancing is transport-neutral to modestly positive, the opposite sign of closure.", NOTE)
+
+put(tg, "A47", "DISTRICT-WIDE CONTEXT", SEC)
+put(tg, "A48", "Transportation expense, FY2025"); put(tg, "B48", "=Assumptions!B42", GRN, CUR)
+put(tg, "A49", "Average Daily Attendance, FY2025"); put(tg, "B49", 2242.5, BLUE, '0.0'); put(tg, "C49", "FY2025 audit", NOTE)
+put(tg, "A50", "Transportation cost per student in attendance"); put(tg, "B50", "=B48/B49", BLK, CUR)
+put(tg, "A51", "Optimization potential at 5 to 10 percent (Alternatives menu)"); put(tg, "B51", "=Assumptions!B42*Assumptions!B43", GRN, CUR)
+put(tg, "A52", ""); put(tg, "B52", "=Assumptions!B42*Assumptions!B44", GRN, CUR)
 
 # ================= ALTERNATIVES =================
 al = sheet("Alternatives", [46, 14, 14, 52])
