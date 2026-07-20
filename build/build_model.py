@@ -772,6 +772,36 @@ put(fp, "A34", "NMES fill rate even at the draft's own 154 rating"); put(fp, "B3
 put(fp, "A35", "As presented, the draft still listed North Middletown as Permanent (PS-5). Its headline 2026-28 priority is an $18,600,946 major renovation "
                "of the high school's 1968 and 1981 sections. Annotated attendee copy archived as build/dfp_2026_draft_excerpt.png.", NOTE, wrap=True)
 
+put(fp, "A37", "KFICS ASSESSMENT (RossTarrant Architects, presented July 2026; slides archived as build/kfics_assessment.pdf)", SEC)
+khdrs = ["Facility", "Condition need", "Instructional deficiency", "Total (as printed)", "Slide capacity"]
+for i, h in enumerate(khdrs):
+    put(fp, f"{get_column_letter(i+1)}38", h, BOLDW, fill=HDR)
+krows = [
+ ("Bourbon County High School", 22300342, 5188113, 27488455, 704),
+ ("Bourbon County Middle School", 19132586, 3286105, 22418692, 544),
+ ("Cane Ridge Elementary", 10313658, 4073936, 14387595, 397),
+ ("Bourbon Central Elementary", 7214895, 1615951, 8840267, 499),
+ ("North Middletown Elementary", 5648434, 2881659, 8530093, 154),
+ ("Preschool/Head Start Center", 1518664, 6343032, 7861696, 160),
+ ("Agriculture Building (part of BCHS)", 1825444, 0, 1825444, ""),
+]
+r = 39
+for name, cond, instr, tot, cap in krows:
+    put(fp, f"A{r}", name)
+    put(fp, f"B{r}", cond, BLUE, CUR); put(fp, f"C{r}", instr, BLUE, CUR)
+    put(fp, f"D{r}", tot, BLUE, CUR)
+    if cap != "":
+        put(fp, f"E{r}", cap, BLUE, NUM)
+    r += 1
+put(fp, "A46", "School centers total"); put(fp, "B46", "=SUM(D39:D45)", BLK, CUR, bold=True)
+put(fp, "A47", "Support facilities total (slide)"); put(fp, "B47", 7089052, BLUE, CUR)
+put(fp, "A48", "District total need"); put(fp, "B48", "=B46+B47", BLK, CUR, bold=True)
+put(fp, "A49", "Receiving schools combined (Bourbon Central + Cane Ridge)"); put(fp, "B49", "=D41+D42", BLK, CUR, bold=True)
+put(fp, "A50", "Net receiving seats at the slides' own capacities (499 and 397)"); put(fp, "B50", "=(499-Redistricting!B8)-(Redistricting!B9-397)", BLK, NUM, bold=True)
+put(fp, "A52", "Notes: components and totals as printed on the slides; Bourbon Central's printed components sum $9,421 below its printed total. "
+               "The slides' receiving-school capacities (499, 397) differ from the 2026 draft DFP table (640, 547) and from the approved 2021 plan "
+               "(549 with addition, 422): three documents, three capacity sets for the same buildings. NMES total need is second lowest among the district's schools.", NOTE, wrap=True)
+
 put(fp, "A26", "Reading: the receiving schools' rated capacities are 549 (Bourbon Central) and 422 (Cane Ridge). At current enrollment that is 90 open at Bourbon Central and 31 over at Cane Ridge, "
                "a net 59 uncommitted seats for 128 children. NMES's major renovation was priced in 2013 and re-priced higher in 2021, each time scheduled after the then-current biennium. "
                "Its rated capacity fell 198 to 174 between the same two plans while its enrollment fell 169 to 128.", NOTE, wrap=True)

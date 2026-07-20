@@ -80,7 +80,7 @@ def main():
 
     # facility-plan capacity analysis (DFP documents archived in build/)
     for f in ["dfp_current.pdf", "dfp_2013_excerpt.png", "dfp_2026_draft_excerpt.png",
-              "dfp_manifest.json"]:
+              "kfics_assessment.pdf", "dfp_manifest.json"]:
         chk((REPO / "build" / f).exists(), f"DFP archive present: build/{f}")
     fp = wb["Facility_Plans"]
     chk(fp["E7"].value == 521 and fp["E8"].value == 422 and fp["E9"].value == 174,
@@ -95,6 +95,12 @@ def main():
         "PDF carries the 2026 draft re-ratings and the 83 percent fill")
     chk("547" in html and "154" in html and "83 percent full" in html,
         "site carries the 2026 draft re-ratings and the 83 percent fill")
+    chk("RossTarrant" in t and "$98,441,294" in t and "$8,530,093" in t,
+        "PDF carries the KFICS assessment: author, district total, NMES total")
+    chk("RossTarrant" in html and "98.4" in html and "$8.5 million" in html,
+        "site carries the KFICS assessment figures")
+    chk("yet to see" not in t,
+        "stale assessment-not-published language removed from PDF")
 
     # pagination quality (optional dependency)
     try:

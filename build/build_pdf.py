@@ -118,7 +118,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 2.3 &nbsp;\u2022&nbsp; July 20, 2026",
+A(Paragraph("Version 2.4 &nbsp;\u2022&nbsp; July 20, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
@@ -172,7 +172,10 @@ P("<b>Second, North Middletown Elementary did not cause the problem, and closing
   "students over its rating. A realistic net recurring saving, estimated in Section 4, is on the order of $250,000 to "
   "$600,000, a fraction of the deficit, and less than several alternatives that harm no one.")
 P("<b>Third, the district has not yet shown its work.</b> No line-item net-savings analysis, transportation model, "
-  "receiving-school capacity study, building condition assessment, or alternatives comparison has been published. "
+  "receiving-school capacity study, or alternatives comparison has been published. The one technical document that "
+  "has surfaced, the architect's KFICS condition assessment presented in July, strengthens the keep-open case: it "
+  "prices North Middletown's needs at $8.5 million, second lowest of the district's schools, against $23.2 million "
+  "at the two receiving schools combined and $98.4 million districtwide (Section 7). "
   "Meanwhile the school proposed for closure is, on the state's own accountability composite, the district's "
   "highest-performing elementary, scoring 58.2 in 2024-25 against 26.5 and 19.3 at the two schools that would "
   "receive its students.")
@@ -560,10 +563,20 @@ P("The investment record runs alongside. The 2013 plan priced a $1.92 million ma
   "requested in Appendix B would show. A fair question for the administration follows: when the same needs are "
   "priced in two consecutive plans, eight years apart, and the capital program builds elsewhere both times, at "
   "what point does deferred investment itself become the closure case?")
-P("The 2026 planning cycle is supposed to rest on a fresh architect-and-engineer condition assessment of every "
-  "building. If that assessment attaches a large renovation figure to North Middletown, the public has yet to see "
-  "it, its author, or its assumptions, and it should be published before any \u201ctransitional\u201d designation is "
-  "adopted. Two further points keep the building question in proportion. First, whatever renovation the school "
+P("The fresh architect-and-engineer assessment this cycle rests on has now surfaced: the KFICS Facilities "
+  "Assessment prepared by RossTarrant Architects and presented in slides at the July meeting, archived in this "
+  "repository. Earlier versions of this report asked for exactly this document, and its numbers deserve to be "
+  "read aloud. North Middletown's total need is <b>$8,530,093</b>: $5,648,434 of building condition work (led by "
+  "exterior walls, windows, electrical service, and water distribution) plus $2,881,659 of instructional-space "
+  "items. That is the <b>second lowest</b> of the district's schools. The two receiving schools need $23.2 "
+  "million combined: $8,840,267 at Bourbon Central and $14,387,595 at Cane Ridge, a 1992 building that needs "
+  "two thirds more than the 1948 one proposed for closure. The high school needs $27.5 million, the middle "
+  "school $22.4 million, and the districtwide total is <b>$98,441,294</b>, more than four times the unused "
+  "bonding capacity in Section 6. The assessment thus answers one question and raises a better one: closing "
+  "the district's second-least-needy building avoids $8.5 million of restricted-fund need while moving its "
+  "children into buildings that need $23.2 million, and it does nothing about a $98 million problem. The full "
+  "report behind the slides, with its room-by-room data and assumptions, remains unpublished and remains "
+  "requested in Appendix B. Two further points keep the building question in proportion. First, whatever renovation the school "
   "needs would be paid from the restricted facility funds described in Section 6, money that cannot close the "
   "operating deficit whether the school stays open or not. Second, the receiving schools have no room to spare: "
   "the rated capacities are 549 at Bourbon Central and 422 at Cane Ridge. At "
@@ -572,7 +585,10 @@ P("The 2026 planning cycle is supposed to rest on a fresh architect-and-engineer
   "the administration's answer is that ratings can be adjusted with room assignments, that concedes the point: "
   "the same adjustment raises North Middletown's capacity and makes the room for growth there instead. The 2026 "
   "draft, which adds 216 paper seats in Paris and subtracts 20 at North Middletown with no construction anywhere "
-  "in it, demonstrates the pencil at work. "
+  "in it, demonstrates the pencil at work. The architect's own KFICS slides print a third set entirely: 499 at "
+  "Bourbon Central and 397 at Cane Ridge, capacities at which the receiving schools have <b>negative</b> net "
+  "room at today's enrollment. Three documents, three sets of capacities for the same unchanged buildings; "
+  "under two of the three, the seats for 128 children are not there. "
   "Moving 128 children into those schools is not free of capital cost. An empty "
   "building, finally, is not free: it must be secured, insured, minimally heated, and eventually disposed of, while "
   "the town loses its largest civic anchor, a community of about 610 people whose residents told the planning "
@@ -973,8 +989,9 @@ qs = [
  "in Section 9, needs.",
  "What are the modeled bus routes, and what is the longest one-way ride a North Middletown kindergartner would "
  "face?",
- "What does the new architect-and-engineer condition assessment say about the North Middletown building, what "
- "renovation figure does it attach, and who prepared it?",
+ "Where is the full report behind the KFICS assessment slides? The presentation, prepared by RossTarrant "
+ "Architects, attaches $8.5 million to North Middletown, second lowest of the district's schools, against $98.4 "
+ "million districtwide; publish the complete assessment, its room-by-room data, and its assumptions.",
  "Which of the claimed savings are General Fund dollars that can pay teachers, and which are restricted facility "
  "dollars that cannot?",
  "What is the stated purpose of the 2024 $6.055 million bond issue? Publish the official statement and the "
@@ -1036,8 +1053,8 @@ H2("Before the July 29 forum and any Board action")
 B("Adopt a formal Board position that closure is a last resort, to be considered only after the ten questions above "
   "are answered in writing and the alternatives in Section 9 have been costed.")
 B("Decline to adopt any facility plan carrying a \u201ctransitional\u201d designation for North Middletown until the "
-  "net-savings worksheet, the building condition assessment, the 2024 bond documents, and the school-level "
-  "climate-and-safety survey results are public.")
+  "net-savings worksheet, the complete KFICS assessment behind the July slides, the 2024 bond documents, and the "
+  "school-level climate-and-safety survey results are public.")
 B("A working threshold for the Board: if documented net recurring General Fund savings fall below roughly "
   "$400,000 to $500,000 a year, a range the four percent revenue option alone nearly matches in its first "
   "year, closure "
@@ -1292,8 +1309,8 @@ tbl(["Request", "What it settles"],
       "Where $6.9 million of recent borrowing went (Section 6)"],
      ["KDE's bonding potential statement for the district",
       "Real borrowing headroom beside the audit's $23.5 million (Section 6)"],
-     ["The architect-and-engineer condition assessment for North Middletown, with author and assumptions",
-      "The building case, if one exists (Section 7)"],
+     ["The complete KFICS assessment behind the RossTarrant slides, with room-by-room data and assumptions",
+      "The slides are public (archived on this site); the full report is not (Section 7)"],
      ["The room-by-room worksheet behind the 174 capacity rating; the pre-2021 facility plans",
       "Whether capacity is a wall or a room schedule (Section 7)"],
      ["<b>The boundaries and buses.</b> The district's current GIS attendance-zone map",
@@ -1328,7 +1345,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Deep Dive into Bourbon County Schools  \u2022  Version 2.3, July 20, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Deep Dive into Bourbon County Schools  \u2022  Version 2.4, July 20, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 
