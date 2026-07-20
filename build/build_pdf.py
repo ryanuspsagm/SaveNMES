@@ -952,10 +952,6 @@ B("A working threshold for the Board: if documented net recurring General Fund s
   "$400,000 to $500,000 a year, a range the four percent revenue option alone nearly matches in its first "
   "year, closure "
   "fails on its own financial terms.")
-B("Request from the Kentucky Department of Education and the district's own archives the pre-2021 facility "
-  "plan cycles and board minutes. They would settle the school's planning history, including whether an "
-  "earlier transitional designation was proposed and reversed, and recover the building's earlier rated "
-  "capacities.")
 B("Face the levy each August with the numbers on the table: the four percent option adds roughly $386,000 of "
   "recurring revenue in year one and about $1.2 million a year by year three if taken three years running, "
   "while Bourbon would still tax below six of its eight neighbors. Take it or reject it, but decide on the "
