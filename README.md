@@ -18,7 +18,12 @@ public source cited in the report and on the site.
   official 2015-16 federal attendance boundaries (NCES SABS) into
   `build/sabs_zones.json`, already committed here; the map figure redraws from
   them automatically; `python build/zone_distances.py` then computes the
-  actual zone distances the busing math uses. The fetch script uses a saved
+  actual zone distances the busing math uses. `python build/fetch_dfp.py` (run it on a machine with
+  normal internet access) downloads the district's current District Facility
+  Plan from KDE plus every distinct historical version held by the Wayback
+  Machine, the documents that set each school's rated capacity and
+  classification; commit the resulting `dfp_*.pdf` files and the capacity
+  analysis picks them up. The SABS fetch script uses a saved
   `sabs_zones_raw.json` if present, then tries the NCES REST endpoint, and falls
   back to the EDGE bulk download (`SABS_1516_SchoolLevels.zip` in `~/Downloads`,
   or set `SABS_ZIP`), so it works without a reachable NCES server - which
