@@ -60,3 +60,5 @@ Use the site as a **source-linked briefing**, not as the final scorecard. Before
 ---
 
 *Method note: This report restates findings from a second review pass (plain-language rewrite plus a skeptical “brief the board in five minutes” check), grounded in the earlier six-agent adversarial review and local spot-checks of the model and facility-plan figures. Automated sync tests pass; they check that the site, PDF, and spreadsheet match each other—not that every claim matches the outside world.*
+
+**Next read:** [`DEEP_REVIEW_AND_SOLUTIONS.md`](./DEEP_REVIEW_AND_SOLUTIONS.md) — multi-agent number/logic audit, live school rankings, and a fix for every hole.
