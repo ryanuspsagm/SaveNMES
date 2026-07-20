@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+build/sabs_cache/
+build/sabs_zones_raw.json

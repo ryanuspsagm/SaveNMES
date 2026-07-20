@@ -14,9 +14,13 @@ public source cited in the report and on the site.
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
   Requires: `pip install reportlab openpyxl matplotlib`. Run
   `python build/make_charts.py`, then `python build/build_pdf.py`,
-  and `python build/build_model.py`. Run `python build/fetch_sabs.py` on a
-  machine with open internet to pull the official 2015-16 federal attendance
-  boundaries (NCES SABS); the map figure redraws from them automatically.
+  and `python build/build_model.py`. `python build/fetch_sabs.py` pulls the
+  official 2015-16 federal attendance boundaries (NCES SABS) into
+  `build/sabs_zones.json`, already committed here; the map figure redraws from
+  them automatically. The script tries the NCES REST endpoint first and falls
+  back to the EDGE bulk download (`SABS_1516_SchoolLevels.zip` in `~/Downloads`,
+  or set `SABS_ZIP`), so it works without a reachable NCES server - which
+  matters, because that endpoint is currently returning HTTP 500.
 
 ## Tests
 
