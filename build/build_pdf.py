@@ -982,9 +982,9 @@ P("I prepared this report myself, with Fable 5, an AI research assistant from An
   "alongside me, and I disclose that on purpose: check my work. Every figure traces to a source below, and every "
   "school and district named is the Kentucky one. Before release I stress-tested this report against its own bias, "
   "which is why the cautions on pension allocations inside expense lines, one-time swings, single-year score "
-  "noise, and the tax cost of the levy option sit beside the numbers they qualify. The Kings mascot is confirmed "
-  "by the school's spirit-wear listings, and the blue and white on these pages are the school's colors as this "
-  "community knows them. Last: this report criticizes decisions and asks for documents. It attributes no motive "
+  "noise, and the tax cost of the levy option sit beside the numbers they qualify. The Kings mascot and the "
+  "blue and white of these pages are the school's own, as every King knows. "
+  "Last: this report criticizes decisions and asks for documents. It attributes no motive "
   "and alleges no wrongdoing to the superintendent, the finance office, the Board, or any member of the planning "
   "committee, and nothing in it should be read otherwise.", note)
 
@@ -1055,8 +1055,6 @@ srcs = [
  "undergraduate economics thesis)",
  "Pearman, F., The Fiscal Consequences of School Closures in California, Stanford University / Getting Down to "
  "Facts (2026), as summarized in Education Next and Education Week",
- "Prep Sportswear, North Middletown Elementary School Kings spirit-wear listing (school mascot): "
- "prepsportswear.com",
  "Lyson, T., \u201cWhat Does a School Mean to a Community?\u201d Journal of Research in Rural Education 17(3), 2002",
  "Sell, R., Leistritz, F., and Thompson, J., Socio-Economic Impacts of School Consolidation on Host and Vacated "
  "Communities, North Dakota State University, Agricultural Economics Report No. 347 (1996)",
