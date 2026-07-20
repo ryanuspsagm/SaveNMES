@@ -125,7 +125,7 @@ scope = ("This review draws exclusively on public records: the district's audite
          "by any person; both years of the district's financial statements received clean opinions from its independent "
          "auditors. Its purpose is narrower and simpler: to lay out what the public record shows, and what it does not "
          "yet show, before an irreversible decision is made about a community's school. I am an alumnus of this school, "
-         "and I wrote this report with the help of Fable 5, an AI research assistant from Anthropic; every figure "
+         "and I wrote this report with the help of Claude, an AI research assistant from Anthropic; every figure "
          "should be re-verified against the cited primary sources before formal submission or republication.")
 st = Table([[Paragraph(scope, ParagraphStyle("scope", fontName="Times-Roman", fontSize=9.3,
                                              leading=12.6, textColor=colors.HexColor("#333333")))]],
@@ -228,13 +228,15 @@ tbl(["General Fund (audited)", "FY2023", "FY2024", "FY2025"],
     [2.55 * inch, 1.38 * inch, 1.38 * inch, 1.39 * inch],
     caption="Figure 2. Three-year General Fund summary, from the district's audited financial statements for the "
             "years ended June 30, 2024 and June 30, 2025. The fiscal 2023 revenue figure reflects a different "
-            "presentation of state pension payments made on the district's behalf and is shown for context.",
+            "presentation of state pension payments made on the district's behalf and is shown for context. The "
+            "fiscal 2024 change line differs from the balance movement by $840, a residual carried in the audit "
+            "and noted in the companion workbook.",
     bold_first_col=True)
 fig("chart_gf.png",
     "Figure 3. The operating gap and the drawdown. The district spends roughly $2.5 to $2.6 million more from its "
     "General Fund than it takes in before transfers, and reserves have fallen about $2.3 million in two years. "
     "Source: audited financial statements, FY2024 and FY2025.")
-P("A reading note on the transfers line, because it softens the optics without changing the math: "
+P("A reading note on the transfers line, because it changes the presentation without changing the math: "
   "“net transfers and other sources” of roughly $1.4 million a year are moves between the district's own "
   "funds, indirect cost recoveries from grants and self-supporting operations and similar interfund items "
   "detailed in the audits' fund statements, not new money from outside. They cushion the General Fund's "
@@ -249,7 +251,7 @@ fig("chart_cliff.png",
 P("Three forces converged. One-time federal pandemic relief, the ESSER programs, wound down, taking about "
   "$2.95 million a year with it while the staff and programs it paid for remained. Average Daily Attendance, the "
   "basis of Kentucky's SEEK funding formula, fell from a pandemic hold-harmless figure of 2,490 to 2,243, a "
-  "recurring revenue loss on the order of $1.1 million a year at the current base guarantee of $4,586 per student. "
+  "recurring revenue loss on the order of $1.1 million a year at the fiscal 2026 base guarantee of $4,586 per student. "
   "And the state's new two-year budget offers little relief: the SEEK base rises less than one percent in fiscal "
   "2027, and state school-bus funding is frozen roughly $90 million a year below what Kentucky statute calls for, "
   "statewide.")
@@ -289,12 +291,13 @@ P("The 128 children would still need teachers, about eight to nine classrooms' w
   "is sold or fully repurposed rather than mothballed. Against those savings run the new costs: longer bus routes "
   "in the district's fastest-growing and worst-reimbursed budget line (families have warned of rides exceeding two "
   "hours a day), any staffing or space additions at the receiving schools, transition costs, and the quiet revenue "
-  "risk that some families leave the district altogether, each departure taking at least $4,586 a year in base "
-  "state funding with it, permanently.")
+  "risk that some families leave the district altogether, each departure taking at least $4,626 a year in base "
+  "state funding with it, permanently (the fiscal 2027 base, the first year a closure could take effect; this "
+  "report uses the fiscal 2027 figure for anything that would happen after a closure).")
 P("Put together, a defensible planning estimate of the net recurring General Fund saving is roughly <b>$250,000 to "
   "$600,000 a year</b>, an estimate, clearly labeled as such, that the district could replace tomorrow with a real "
   "worksheet. Even on assumptions generous to the district, five positions eliminated instead of three, busing "
-  "at the low end, and not one family leaving, the math tops out in the low $600,000s, still under a "
+  "at the low end, and not one family leaving, the math tops out around $640,000, still under a "
   "quarter of the structural deficit (the companion workbook shows this case explicitly). The reason for "
   "skepticism about even that number is not theoretical. Districts across the country have run exactly this "
   "play, and the results are on the record. One more thing closure does not buy: borrowing room. Bonding "
@@ -438,8 +441,9 @@ B("<b>The 2024 borrowing funds an active project that has not been publicly tied
   "state project application (the BG-1) would say definitively, and should be published alongside any closure "
   "discussion.")
 B("<b>No bond issue on record names North Middletown Elementary.</b> The capital program has flowed elsewhere for "
-  "years, which raises a fairness question the administration should answer directly: was the school passed over "
-  "for investment before being described as too costly to keep?")
+  "years, which raises a fairness question the administration should answer directly: how much has been invested "
+  "in this building compared with the district's other elementary schools over the past decade? The records "
+  "requested in Appendix B would answer it.")
 B("<b>The construction fund ran a negative $1.43 million restricted balance at June 30, 2024</b>, project spending "
   "ran ahead of the borrowing that later covered it. Not improper in itself, but it shows a capital program being "
   "prioritized and cash-flowed in the same years the operating budget went into deficit. The fiscal 2024 audit also "
@@ -553,13 +557,13 @@ P("The strongest alternative is not defensive. Kentucky law already supplies the
   "Bill 563 (2021), codified at KRS 157.350, a district that adopts a nonresident-student policy may, since July "
   "2022, enroll students from other counties and count them in its attendance for state SEEK funding, with no "
   "agreement from the child's home district required and tuition at the board's discretion. Every family North "
-  "Middletown attracts brings at least the $4,586 base guarantee, plus applicable add-ons.")
+  "Middletown attracts brings at least the $4,626 base guarantee (fiscal 2027), plus applicable add-ons.")
 P("North Middletown is built to compete for those families. It is a 2011 National Blue Ribbon school with a "
   "gifted-and-talented program, a 13.6-to-1 student-teacher ratio, and a 58.2 accountability composite that beats "
   "every elementary school in Bourbon County and every one in neighboring Clark County and Paris Independent "
   "(Conkwright 17.5, Strode Station 34.2, Justice 39.3, Shearer 42.3, Paris Elementary 12.2). Its state-approved "
   "capacity is 174 against 128 enrolled: forty-six open seats which, filled with transfer students at the base "
-  "guarantee alone, represent roughly $211,000 a year in new recurring revenue at little marginal cost, before "
+  "guarantee alone, represent roughly $213,000 a year in new recurring revenue at little marginal cost, before "
   "tuition, add-ons, or the further growth a themed program, a preschool satellite, and a serious marketing effort "
   "could generate along the U.S. 460 corridor, within a short drive of five surrounding counties. The question for "
   "the administration is why the district's only nationally honored school is slated for closure instead of "
@@ -781,7 +785,7 @@ P("What remains is the option the board controls every August. Under KRS 160.470
   "does not bend. Either spending comes down or revenue goes up, and a district drawing down a million "
   "dollars of reserves a year does not get to choose neither. The board and superintendent owe the public a "
   "chosen path, in writing, with the work shown. What they do not owe anyone is the closure of the district's "
-  "best performing school dressed up as the only choice.")
+  "best performing school presented as the only choice.")
 fig("chart_tax.png",
     "Figure 15. Left: the Bourbon County Schools real estate rate by tax year, from Kentucky Department of "
     "Revenue rate books; years before 2018 could not be retrieved and are not interpolated. Right: current "
@@ -792,8 +796,7 @@ fig("chart_tax.png",
 
 # ================= 10. WHAT CAN'T BE QUANTIFIED =================
 H("10. What Can't Be Quantified: A Town and Its Heartbeat")
-moontext = ("<i>\u201cThe school is the heartbeat of our small, but vital community... Small, rural communities are "
-            "often overlooked... they're ignored in favor of larger institutions in bigger cities and towns.\u201d</i>"
+moontext = ("<i>\u201cThe school is the heartbeat of our small, but vital community.\u201d</i>"
             "<br/><font size=8.6 color='#555555'>Rev. Dr. Stephanie Moon, North Middletown pastor, July 2026</font>")
 mbox = Table([[Paragraph(moontext, ParagraphStyle(
     "moon", fontName="Times-Roman", fontSize=10.6, leading=14.6, textColor=colors.HexColor("#1A1A1A")))]],
@@ -954,7 +957,7 @@ P("The district holds about $4.3 million in General Fund balance and is drawing 
   "county's best elementary school, in the town that would lose the most, on the strength of an unpublished number, "
   "would be a permanent answer to a solvable problem. The community is not asking the Board to ignore the deficit. "
   "It is asking the administration to show its work. Revenue or reductions, the Board must choose one and own it; standing still simply spends the "
-  "reserves and blames a school. Pause the vote. Answer the questions. Then decide with "
+  "reserves and settles nothing. Pause the vote. Answer the questions. Then decide with "
   "the whole record on the table.")
 
 # ================= NOTES =================
@@ -988,7 +991,7 @@ P("A few items in the record need the district, not me, to resolve. The real-est
   "Middletown; it is offered as memory, and the pre-2021 planning records that would confirm it are requested "
   "in Section 12. One more for the record: the fiscal 2025 audit misprints the prior year's attendance as "
   "2,278.527; the correct figure, 2,278.537, comes from the fiscal 2024 audit itself.", note)
-P("I prepared this report myself, with Fable 5, an AI research assistant from Anthropic, doing the digging "
+P("I prepared this report myself, with Claude, an AI research assistant from Anthropic, doing the digging "
   "alongside me, and I disclose that on purpose: check my work. Every figure traces to a source below, and every "
   "school and district named is the Kentucky one. Before release I stress-tested this report against its own bias, "
   "which is why the cautions on pension allocations inside expense lines, one-time swings, single-year score "
@@ -1009,6 +1012,9 @@ srcs = [
  "Kentucky School Report Card, school-level per-pupil expenditure data (2023-24) and assessment and accountability "
  "datasets (2021-22 through 2024-25), Kentucky Department of Education: kyschoolreportcard.com; "
  "education.ky.gov/Open-House",
+ "SchoolDigger, normalized 0-100 school test-score histories and statewide rankings built from Kentucky "
+ "Department of Education assessment data: schooldigger.com (used for Figure 6 and the statewide ranks; "
+ "not KDE's official rating)",
  "Bourbon County Schools District Facility Plan, approved by the Kentucky Board of Education, 2021: "
  "education.ky.gov/districts/fac/documents/bourbon co dfp.pdf",
  "702 KAR 4:180, Kentucky School Facilities Planning Manual; 702 KAR 4:160, Capital Construction Process: "
@@ -1117,7 +1123,7 @@ gl = [
  ["LPC (Local Planning Committee)", "The citizen-and-staff committee that drafts the facility plan; it recommends, but cannot close a school."],
  ["Official statement", "A bond's public prospectus describing its purpose, projects, and repayment terms."],
  ["On-behalf payments", "Pension and benefit costs the state pays directly for district employees, shown in the audit as both revenue and expense."],
- ["SEEK", "Support Education Excellence in Kentucky, the state's per-student funding formula ($4,586 base in fiscal 2026)."],
+ ["SEEK", "Support Education Excellence in Kentucky, the state's per-student funding formula ($4,586 base in fiscal 2026, rising to $4,626 in fiscal 2027)."],
  ["SFCC", "The School Facilities Construction Commission, a state body that pays part of qualifying school-construction debt."],
  ["Tier I", "An optional layer of local tax effort that the state partially matches."],
  ["Title I", "Federal funding for schools serving many low-income students."],

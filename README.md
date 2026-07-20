@@ -18,8 +18,8 @@ public source cited in the report and on the site.
   official 2015-16 federal attendance boundaries (NCES SABS) into
   `build/sabs_zones.json`, already committed here; the map figure redraws from
   them automatically; `python build/zone_distances.py` then computes the
-  actual zone distances the busing math uses. The fetch script tries the NCES
-  REST endpoint first and falls
+  actual zone distances the busing math uses. The fetch script uses a saved
+  `sabs_zones_raw.json` if present, then tries the NCES REST endpoint, and falls
   back to the EDGE bulk download (`SABS_1516_SchoolLevels.zip` in `~/Downloads`,
   or set `SABS_ZIP`), so it works without a reachable NCES server - which
   matters, because that endpoint is currently returning HTTP 500.

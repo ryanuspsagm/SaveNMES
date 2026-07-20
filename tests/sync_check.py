@@ -59,7 +59,7 @@ if int(site_const.group(3)) == A["B6"].value:
 fav = A["B51"].value + A["B52"].value + A["B66"].value * A["B41"].value - A["B67"].value
 pct_fav = fav / model_deficit * 100
 if fav == 640000:
-    match(f"district-favorable case $640,000 = {pct_fav:.1f}% of deficit; site fact strip '~24% at best'; PDF 'low $600,000s… under a quarter'")
+    match(f"district-favorable case $640,000 = {pct_fav:.1f}% of deficit; site fact strip '~24% at best'; PDF 'around $640,000, still under a quarter'")
 
 # levy path
 lb = TH["B48"].value  # formula ref -> read C43

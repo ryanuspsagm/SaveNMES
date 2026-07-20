@@ -69,6 +69,14 @@ def main():
     # forbidden dashes
     chk(not re.search(r"[–—]", t) and not re.search(r"[–—]", html),
         "zero en/em dashes in PDF and site")
+    cells = [c.value for ws in wb for row in ws.iter_rows() for c in row
+             if isinstance(c.value, str)]
+    chk(not any(re.search(r"[–—]", v) for v in cells),
+        "zero en/em dashes in workbook cells")
+    chk(not any("Fable" in v for v in cells) and "Fable" not in t,
+        "no model identifier in workbook or PDF")
+    chk("$4,626" in t and "fiscal 2027" in t,
+        "PDF states the $4,626 FY2027 SEEK base")
 
     # pagination quality (optional dependency)
     try:

@@ -37,7 +37,7 @@ def put(ws, cell, val, font=BLK, fmt=None, fill=None, bold=False, wrap=False):
 
 # ================= README =================
 rm = sheet("ReadMe", [110])
-put(rm, "A1", "Saving North Middletown Elementary School — Financial Model", TITLE)
+put(rm, "A1", "Saving North Middletown Elementary School: Financial Model", TITLE)
 put(rm, "A2", "Companion workbook to the July 2026 report 'A Deep Dive into Bourbon County Schools' (Bourbon County, Kentucky)", NOTE)
 rows = [
  "",
@@ -64,7 +64,7 @@ rows = [
  "  Student density, route-mile math, and busing cost scenarios: Transport_Geo tab (backs Section 9).",
  "",
  "CAVEAT",
- "Prepared by a former NMES King working alongside Fable 5, an AI research assistant from Anthropic. Estimates are labeled; every figure",
+ "Prepared by a former NMES King working alongside Claude, an AI research assistant from Anthropic. Estimates are labeled; every figure",
  "should be re-verified against the cited primary sources before formal use. Nothing here alleges misconduct by any official.",
 ]
 r = 3
@@ -84,7 +84,7 @@ for t in rows:
 # ================= ASSUMPTIONS =================
 a = sheet("Assumptions", [52, 16, 60])
 put(a, "A1", "Assumptions & Inputs", TITLE)
-put(a, "A2", "Edit blue cells. Yellow cells are judgment calls/estimates — the district should replace them with actuals.", NOTE)
+put(a, "A2", "Edit blue cells. Yellow cells are judgment calls/estimates; the district should replace them with actuals.", NOTE)
 
 def arow(rr, label, val, fmt=CUR, src="", font=BLUE, fill=None, formula=False):
     put(a, f"A{rr}", label)
@@ -128,7 +128,7 @@ arow(37, "Uncollected (delinquent) property tax, FY2024", 387840, CUR, "Calc yie
 arow(38, "Uncollected (delinquent) property tax, FY2025", 239126, CUR, "Calc yield $9,880,143 vs actual $9,641,017; ~2.4% delinquency, not foregone levy authority")
 
 put(a, "A40", "COST STRUCTURE", SEC)
-arow(41, "Loaded cost per certified position (est.)", 85000, CUR, "Estimate — replace with district payroll data", fill=YEL)
+arow(41, "Loaded cost per certified position (est.)", 85000, CUR, "Estimate; replace with district payroll data", fill=YEL)
 arow(42, "Transportation expense, FY2025", 2913654, CUR, "FY2025 audit")
 arow(43, "Transport optimization, low", 0.05, PCT, "Estimate", fill=YEL)
 arow(44, "Transport optimization, high", 0.10, PCT, "Estimate", fill=YEL)
@@ -137,19 +137,19 @@ arow(46, "District administration expense, FY2025", 1447164, CUR, "FY2025 audit"
 arow(47, "Administrative rollback share of 2-yr growth", 0.5, PCT, "Judgment call", fill=YEL)
 arow(48, "Attrition positions, district-wide", 4, NUM, "Judgment call", fill=YEL)
 
-put(a, "A50", "CLOSURE SCENARIO JUDGMENTS (estimates — district must replace with actuals)", SEC)
+put(a, "A50", "CLOSURE SCENARIO JUDGMENTS (estimates; district must replace with actuals)", SEC)
 arow(51, "Principal & office costs avoided", 175000, CUR, "Estimate", fill=YEL)
-arow(52, "Plant/utilities/insurance avoided, net of carrying cost", 115000, CUR, "Estimate — assumes building sold or repurposed", fill=YEL)
-arow(53, "Teaching positions truly eliminated", 3, NUM, "Estimate — via attrition only", fill=YEL)
-arow(54, "Added busing cost per year", 137500, CUR, "Estimate — midpoint of $75K-$200K", fill=YEL)
-arow(55, "Students leaving the district on closure", 10, NUM, "Judgment call — see sensitivity table", fill=YEL)
+arow(52, "Plant/utilities/insurance avoided, net of carrying cost", 115000, CUR, "Estimate; assumes building sold or repurposed", fill=YEL)
+arow(53, "Teaching positions truly eliminated", 3, NUM, "Estimate; via attrition only", fill=YEL)
+arow(54, "Added busing cost per year", 137500, CUR, "Estimate; midpoint of $75K-$200K", fill=YEL)
+arow(55, "Students leaving the district on closure", 10, NUM, "Judgment call; see sensitivity table", fill=YEL)
 arow(56, "One-time transition cost", 100000, CUR, "Estimate", fill=YEL)
 
 put(a, "A58", "GROWTH SCENARIO (nonresident enrollment under HB 563 / KRS 157.350)", SEC)
 arow(59, "Transfer students, Year 1 (FY2027)", 15, NUM, "Scenario lever")
 arow(60, "Transfer students, Year 2 (FY2028)", 30, NUM, "Scenario lever")
-arow(61, "Transfer students, Year 3 (FY2029)", 46, NUM, "Scenario lever — capped at open seats in model")
-arow(62, "Variable cost per transfer student", 400, CUR, "Estimate — supplies/materials", fill=YEL)
+arow(61, "Transfer students, Year 3 (FY2029)", 46, NUM, "Scenario lever; capped at open seats in model")
+arow(62, "Variable cost per transfer student", 400, CUR, "Estimate; supplies/materials", fill=YEL)
 arow(63, "Added teacher once transfers exceed", 30, NUM, "Judgment call", fill=YEL)
 
 put(a, "A65", "DISTRICT-FAVORABLE CLOSURE CASE (red-team upper bound)", SEC)
@@ -190,10 +190,10 @@ put(g, "A20", "What the transfers are: moves between the district's own funds (i
 # ================= CLOSURE_MODEL =================
 c = sheet("Closure_Model", [54, 16, 46])
 put(c, "A1", "Closure of NMES: Net-Savings Test", TITLE)
-put(c, "A2", "Gross site cost is not net saving — students, teachers, and their SEEK funding move to receiving schools.", NOTE)
+put(c, "A2", "Gross site cost is not net saving; students, teachers, and their SEEK funding move to receiving schools.", NOTE)
 put(c, "A4", "THE CLAIM AND THE OFFICIAL DATA", SEC)
 put(c, "A5", "Superintendent's stated gross cost (public statement, not yet documented)")
-put(c, "B5", 1000000, BLUE, CUR); put(c, "C5", "WKYT, July 2026 — treated as a claim to verify", NOTE)
+put(c, "B5", 1000000, BLUE, CUR); put(c, "C5", "WKYT, July 2026; treated as a claim to verify", NOTE)
 put(c, "A6", "Total site spending (state ESSA basis)"); put(c, "B6", "=Assumptions!B14*Assumptions!B11", GRN, CUR)
 put(c, "A7", "State/local share of site spending"); put(c, "B7", "=Assumptions!B15*Assumptions!B11", GRN, CUR)
 put(c, "A9", "RECURRING SAVINGS (costs that truly disappear)", SEC)
@@ -358,11 +358,11 @@ put(tg, "A51", "Optimization potential at 5 to 10 percent (Alternatives menu)");
 put(tg, "A52", ""); put(tg, "B52", "=Assumptions!B42*Assumptions!B44", GRN, CUR)
 
 put(tg, "A54", "ACTUAL DISTANCES, COMPUTED FROM THE OFFICIAL ZONE GEOMETRY (build/zone_distances.py)", SEC)
-put(tg, "A55", "Straight-line, NMES to the Paris schools (miles)"); put(tg, "B55", 8.9, BLUE, '0.0'); put(tg, "C55", "Great-circle between the school points", NOTE)
+put(tg, "A55", "Straight-line, NMES to the Paris schools (miles)"); put(tg, "B55", 8.871, BLUE, '0.0'); put(tg, "C55", "Great-circle between the school points; unrounded so derived cells match build/zone_distances.json", NOTE)
 put(tg, "A56", "Measured road distance, US 460 (miles)"); put(tg, "B56", 10.0, BLUE, '0.0'); put(tg, "C56", "The one pair that can be measured exactly", NOTE)
 put(tg, "A57", "Implied road factor on the measured pair"); put(tg, "B57", "=B56/B55", BLK, '0.00')
-put(tg, "A58", "Road factor applied elsewhere (conservative)"); put(tg, "B58", 1.2, BLUE, '0.00', fill=YEL)
-put(tg, "A59", "Area-average added distance under closure, one way, straight-line"); put(tg, "B59", 3.3, BLUE, '0.0'); put(tg, "C59", "Grid average over the official NMES zone (812 sample points)", NOTE)
+put(tg, "A58", "Road factor applied elsewhere (the measured US 460 pair implies 1.13)"); put(tg, "B58", 1.2, BLUE, '0.00', fill=YEL)
+put(tg, "A59", "Area-average added distance under closure, one way, straight-line"); put(tg, "B59", 3.271, BLUE, '0.0'); put(tg, "C59", "Grid average over the official NMES zone (812 sample points); unrounded input, displays to one decimal", NOTE)
 put(tg, "A60", "Area-average added distance, road"); put(tg, "B60", "=B59*B58", BLK, '0.0')
 put(tg, "A61", "Farthest corner of the zone, straight-line to Paris / to NMES"); put(tg, "B61", 15.1, BLUE, '0.0'); put(tg, "C61", "8.3 miles to NMES; near the Nicholas County line", NOTE)
 put(tg, "A62", "Farthest corner by road: to Paris / to NMES (miles)"); put(tg, "B62", "=ROUND(B61*B58,0)", BLK, '0'); put(tg, "C62", "About 18 versus 10; the district's routing data would give exact times", NOTE)
@@ -408,13 +408,13 @@ put(al, f"A{tot+8}", "Closure net saving (base case)"); put(al, f"B{tot+8}", "=C
 
 # ================= DEBT_SERVICE =================
 d = sheet("Debt_Service", [16, 16, 14, 12, 18, 44])
-put(d, "A1", "Outstanding Bonds — Bourbon County School District Finance Corporation", TITLE)
+put(d, "A1", "Outstanding Bonds: Bourbon County School District Finance Corporation", TITLE)
 put(d, "A2", "Source: FY2025 audited financial statements, Note 4. Facility funds and debt are restricted; they cannot pay operating costs.", NOTE)
 for i, h in enumerate(["Series", "Original", "Rate", "Maturity", "Outstanding 6/30/25", "Note"]):
     put(d, f"{get_column_letter(i+1)}4", h, BOLDW, fill=HDR)
 bonds = [
  ("2013", 2255000, "1.90-2.10%", "2026", 348000, ""),
- ("2013R", 468000, "2.75-4.05%", "2033", 585000, "Audit figures internally inconsistent; maturity typo in audit — district to correct"),
+ ("2013R", 468000, "2.75-4.05%", "2033", 585000, "Audit figures internally inconsistent; maturity typo in audit; district to correct"),
  ("2016", 5700000, "1.00-3.00%", "2029", 3145000, "Refunded $5,315,000 of 2009 bonds; NPV savings $314,834"),
  ("2018", 1850000, "3.50%", "2038", 1560000, ""),
  ("2020", 3620000, "0.50-1.85%", "2031", 3405000, "Refunded $3,410,000 of 2011 bonds; NPV savings $106,627"),

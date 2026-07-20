@@ -103,7 +103,8 @@ for name, ys, col, ls, mk, lw in series:
 for xv in (2011.5, 2020):
     ax.axvline(xv, color="#D5D9E0", linewidth=1.1, linestyle="--", zorder=0)
 ax.axhline(50, color=GRAY, linewidth=0.9, linestyle=":")
-ax.text(2007.0, 51.6, "Kentucky median (approx. 50)", fontsize=7.8, color=GRAY)
+ax.text(2007.0, 51.6, "Kentucky median (approx. 50)", fontsize=7.8, color=GRAY,
+        bbox=dict(facecolor="white", alpha=0.85, edgecolor="none", pad=0.8))
 ax.text(2007.1, 92.6, "Blue Ribbon era: 2010 and 2011", fontsize=7.8, color=NAVY, fontweight="bold")
 ax.set_title("Elementary school scores by year, 2007-2025")
 ax.set_xticks(list(range(2007, 2026, 2)))
@@ -258,20 +259,24 @@ ax.text(mills[0] - 0.018, mills[1] - 0.004, "Millersburg (747)", fontsize=7.4, c
         ha="right", va="center")
 ax.plot(nmid[0], nmid[1], "*", color="#1F3864", markersize=16, zorder=5)
 ax.text(nmid[0] + 0.005, nmid[1] - 0.022, "North Middletown (610)\nNMES: 128 of 174 seats",
-        fontsize=8.2, fontweight="bold", color="#1F3864", ha="center", va="top")
+        fontsize=8.2, fontweight="bold", color="#1F3864", ha="center", va="top",
+        bbox=dict(facecolor="white", alpha=0.88, edgecolor="none", pad=1.6), zorder=6)
 ax.plot([paris[0], nmid[0]], [paris[1], nmid[1]], color=GRAY, linewidth=1.1, linestyle=":", zorder=4)
 if SABS:
     _nm = next(x for x in SABS["schools"] if "North Middletown" in x["name"])
     _north_lbl, _sw_lbl = "Cane Ridge zone", "Bourbon Central\nzone"
-    _nm_stats = "NMES zone\n%.0f sq mi\n128 students\n~%.1f per sq mi" % (_nm["area_sq_mi"], 128/_nm["area_sq_mi"])
+    _tot = sum(x["area_sq_mi"] for x in SABS["schools"])
+    _nm_stats = "NMES zone\n%.0f sq mi\n%.0f%% of county\n128 students\n~%.1f per sq mi" % (
+        _nm["area_sq_mi"], 100 * _nm["area_sq_mi"] / _tot, 128/_nm["area_sq_mi"])
 else:
     _north_lbl, _sw_lbl = "North zone", "Southwest\nzone"
     _nm_stats = "NMES zone\n~105 sq mi\n128 students\n~1.2 per sq mi"
-ax.text(-84.360, 38.262, _north_lbl, fontsize=7.8, color="#1F3864", fontweight="bold", ha="center")
+ax.text(-84.350, 38.262, _north_lbl, fontsize=7.8, color="#1F3864", fontweight="bold", ha="center")
 ax.text(-84.302, 38.128, _sw_lbl, fontsize=7.6, color="#1F3864", fontweight="bold",
         ha="center", va="top")
 ax.text(-83.906, 38.29, _nm_stats,
-        fontsize=8.7, color="#1F3864", fontweight="bold", ha="right", va="top")
+        fontsize=8.7, color="#1F3864", fontweight="bold", ha="right", va="top",
+        bbox=dict(facecolor="white", alpha=0.88, edgecolor="none", pad=1.6), zorder=6)
 ax.set_title("Bourbon County elementary zones: where the students are", fontsize=11.5, pad=14)
 _sub = ("Official attendance boundaries: NCES School Attendance\nBoundary Survey, 2015-16 collection" if SABS
         else "Traced from the district's published attendance-zone view\non the U.S. Census county outline")
@@ -312,8 +317,9 @@ dcols[7] = NAVY
 bars = a2.barh(dnames[::-1], dvals[::-1], color=dcols[::-1], height=0.58)
 for r, v in zip(bars, dvals[::-1]):
     a2.text(v + 1.0, r.get_y() + r.get_height() / 2, f"{v}", va="center",
-            fontsize=8.2, color="#333333", fontweight="bold")
-a2.axvline(65.1, color=GRAY, linewidth=1.0, linestyle="--")
+            fontsize=8.2, color="#333333", fontweight="bold",
+            bbox=dict(facecolor="white", alpha=0.85, edgecolor="none", pad=0.8))
+a2.axvline(65.1, color=GRAY, linewidth=1.0, linestyle="--", zorder=0)
 a2.text(66.0, 0.1, "KY school avg 65.1", fontsize=7.6, color=GRAY)
 a2.set_title("2024-25 levied rate, area districts")
 a2.set_xlim(0, 90)

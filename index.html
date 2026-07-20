@@ -155,7 +155,7 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>What actually drove the deficit</h3>
-<p>Federal pandemic aid wound down, taking about $2.95 million a year with it, and attendance-based state funding fell as roughly 248 students left the rolls. Meanwhile, costs the district controls grew fast: central-office administration rose 44.8 percent in two years.</p>
+<p>Federal pandemic aid wound down, taking about $2.95 million a year with it, and attendance-based state funding fell with roughly 248 fewer funded students in average daily attendance once the pandemic hold-harmless ended. Meanwhile, costs the district controls grew fast: central-office administration rose 44.8 percent in two years.</p>
 <div class="chartbox"><canvas id="chartAdmin" role="img" aria-label="Bar chart of district administration expense rising from 1.0 to 1.45 million dollars"></canvas></div>
 <p class="note">A fair caution I print beside this number: Kentucky audits fold state pension allocations into these expense lines, so some share may be accounting rather than hiring. That is why the report asks for a position-by-position accounting instead of assuming the worst.</p>
 <span class="checkme"><a href="https://www.education.ky.gov/districts/FinRept/Documents/FY2024-2025%20FA%20Bourbon%20Co%20Rev.pdf">Statement of Activities, both audits</a></span>
@@ -201,8 +201,8 @@ footer a{color:var(--ice)}
 <span class="checkme"><a href="https://www.publicschoolreview.com/north-middletown-elementary-school-profile">Federal enrollment history</a> &middot; <a href="https://education.ky.gov/districts/fac/Documents/Bourbon%20Co%20DFP.pdf">2021 state facility plan (capacity 174)</a></span>
 </div>
 
-<div class="quote">"There is always a solution to a problem if you persist through it."
-<small>What Mrs. Mitchell's classroom taught me, 24 years ago, in this building. A 2011 National Blue Ribbon School, and climbing back toward that standard today under its current staff.</small></div>
+<div class="quote">There is always a solution to a problem if you persist through it.
+<small>The lesson Mrs. Mitchell's classroom taught me, 24 years ago, in this building. A 2011 National Blue Ribbon School, and climbing back toward that standard today under its current staff.</small></div>
 </div></section>
 
 <section id="math"><div class="wrap">
@@ -213,7 +213,7 @@ footer a{color:var(--ice)}
 <div class="calc-grid">
 <div class="card">
 <h3>The closure calculator</h3>
-<p class="note">What does closing NMES actually save, once teachers follow students, buses roll farther, and some families leave the district and take state funding with them?</p>
+<p class="note">What does closing NMES actually save, once teachers follow students, buses roll farther, and some families leave the district and take state funding with them? Departures are costed at the $4,626 SEEK base for fiscal 2027, the first year a closure could take effect.</p>
 <div class="slider-row"><label>Teaching positions actually eliminated <output id="oPos">3</output></label>
 <input type="range" id="sPos" min="2" max="6" value="3" step="1"></div>
 <div class="slider-row"><label>Added busing cost per year <output id="oBus">$137,500</output></label>
@@ -244,7 +244,7 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>The fill-the-seats planner</h3>
-<p class="note">Rebalance attendance boundaries and recruit cross-county transfers until NMES reaches its rated 174. Same math as the workbook's Redistricting and Transport_Geo tabs.</p>
+<p class="note">Rebalance attendance boundaries and recruit cross-county transfers until NMES reaches its rated 174. Same math as the workbook's Redistricting and Transport_Geo tabs; transfers bring the $4,626 fiscal 2027 SEEK base each.</p>
 <div class="slider-row"><label>Students rezoned from the Paris-area zones <output id="oRez">30</output></label>
 <input type="range" id="sRez" min="0" max="46" value="30" step="1"></div>
 <div class="slider-row"><label>Cross-county transfers under HB 563 <output id="oTr">16</output></label>
@@ -256,7 +256,7 @@ footer a{color:var(--ice)}
 <div class="sub">net new recurring dollars per year</div>
 <div class="verdict" id="rFillVerdict"></div>
 </div>
-<p class="note" style="margin-top:14px">Rezoned students already ride district buses about ten miles to the Paris schools today; moving them to the school they live closest to shortens routes, it does not lengthen them. Transfers bring the state SEEK base with them, and the district sets its own busing policy for them. The state's frozen transportation budget reimburses nothing on new miles, which is closure's problem, not this plan's.</p>
+<p class="note" style="margin-top:14px">Rezoned students already ride district buses about ten miles to the Paris schools today; moving them to the school they live closest to should shorten routes, not lengthen them; the workbook marks that as an assumption for the district to test against its real routing data. Transfers bring the state SEEK base with them, and the district sets its own busing policy for them. The state's frozen transportation budget reimburses nothing on new miles, which is closure's problem, not this plan's.</p>
 </div>
 </div>
 <span class="checkme">Every formula here matches the downloadable workbook, tab by tab.</span>
@@ -269,7 +269,7 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>The map the rebalancing plan stands on</h3>
-<p>Half the county's people live in Paris, where both receiving schools sit. The official federal boundary file (School Attendance Boundary Survey, 2015-16) puts the NMES zone at 110 square miles, 38 percent of the county, at roughly 1.2 students per square mile, the exact variable state law funds busing on. Cane Ridge's zone serves the north, Bourbon Central's the southwest. Closing the one eastern school keeps every square mile of that territory and serves it with ten-mile-longer rides; rebalancing shortens them. Boston proved the routing upside is real: an MIT algorithm made its routes 20 percent more efficient and saved $5 million in one year.</p>
+<p>Half the county's people live in Paris, where both receiving schools sit. The official federal boundary file (School Attendance Boundary Survey, 2015-16) puts the NMES zone at 110 square miles, 38 percent of the county, at roughly 1.2 students per square mile, the exact variable state law funds busing on. Cane Ridge's zone serves the north, Bourbon Central's the southwest. Closing the one eastern school keeps every square mile of that territory and serves it with longer rides, about four road miles more each way on average and up to ten from town; rebalancing shortens them. Boston proved the routing upside is real: an MIT algorithm made its routes 20 percent more efficient and saved $5 million in one year.</p>
 <img src="map.png" alt="Map of Bourbon County's three official elementary attendance zones from the federal School Attendance Boundary Survey: Cane Ridge's northern zone, Bourbon Central's southwestern zone, 912 students between them, and the NMES zone covering 110 square miles of the southeast at about 1.2 students per square mile" style="width:100%;height:auto;margin-top:12px" loading="lazy">
 <img src="balance.png" alt="Bar chart of one rebalancing scenario: NMES fills from 128 to its 174 capacity while Bourbon Central eases from 459 to 444 and Cane Ridge from 453 to 438" style="width:100%;height:auto;margin-top:16px" loading="lazy">
 <span class="checkme">Official zones: NCES School Attendance Boundary Survey, 2015-16 &middot; fetched by <a href="https://github.com/ryanuspsagm/SaveNMES/blob/main/build/fetch_sabs.py">the repo's query script</a> &middot; <a href="https://www.the74million.org/article/building-a-smarter-and-cheaper-school-bus-system-how-a-boston-mit-partnership-led-to-new-routes-that-are-20-more-efficient-use-400-fewer-buses-save-5-million/">Boston-MIT routing study</a></span>
@@ -328,10 +328,10 @@ footer a{color:var(--ice)}
 <div class="act"><h3>Write the board</h3><div class="when">Five minutes</div>
 <p>Superintendent Larry Begley and board members Bradley Purcell (chairman), Jonathan Ott (vice chairman), Mandy Thornberry, Miranda Wyles, and Shane Buckler. The button below starts an email to the superintendent and all five board members; addresses are also on the <a href="https://www.bourbon.kyschools.us/page/board-of-education">district board page</a>. Ask for one thing: answers in writing before any vote.</p>
 <a class="btn" href="mailto:larry.begley@bourbon.kyschools.us,bradley.purcell@bourbon.kyschools.us,jonathan.ott@bourbon.kyschools.us,mandy.thornberry@bourbon.kyschools.us,miranda.wyles@bourbon.kyschools.us,shane.buckler@bourbon.kyschools.us?subject=Please%20pause%20the%20North%20Middletown%20Elementary%20vote&body=I%20am%20asking%20the%20Board%20to%20pause%20any%20vote%20on%20North%20Middletown%20Elementary%20until%20the%20ten%20questions%20in%20the%20community%20report%20are%20answered%20in%20writing%20and%20in%20public.">Start an email</a>
-&nbsp;<a class="btn" href="tel:8599872180">Call the central office</a></div>
+&nbsp;<a class="btn" href="tel:8599872180">Call the central office: 859-987-2180</a></div>
 <div class="act"><h3>Share your NMES story</h3><div class="when">Alumni, parents, teachers</div>
 <p>What did this school mean to you? Real stories from real Kings belong in this record. Every story is reviewed and verified before anything appears anywhere; include your name, your connection to the school, and a phone number so we can confirm it is really you. Nothing is published without your permission.</p>
-<a class="btn" href="mailto:ryanuspsagm@gmail.com?subject=My%20NMES%20story&body=Full name:%0A%0AMy connection to NMES (student, parent, teacher, and which years):%0A%0ATown where I live now:%0A%0APhone number (for verification only, never published):%0A%0AMy story:%0A%0A%0AMay we publish your story and first name on savenmes.org? (yes or no):">Share your story</a></div>
+<a class="btn" href="mailto:ryanuspsagm@gmail.com?subject=My%20NMES%20story&body=Full%20name%3A%0A%0AMy%20connection%20to%20NMES%20%28student%2C%20parent%2C%20teacher%2C%20and%20which%20years%29%3A%0A%0ATown%20where%20I%20live%20now%3A%0A%0APhone%20number%20%28for%20verification%20only%2C%20never%20published%29%3A%0A%0AMy%20story%3A%0A%0A%0AMay%20we%20publish%20your%20story%20and%20first%20name%20on%20savenmes.org%3F%20%28yes%20or%20no%29%3A">Share your story</a></div>
 </div>
 <div class="card" style="margin-top:26px">
 <h3>Read the full case</h3>
@@ -484,15 +484,10 @@ var net=t*4626-(r+t)*400+s*85000;
 var enroll=128+r+t;
 var pp=Math.round((2476544+(r+t)*400)/enroll);
 document.getElementById('rFill').textContent=money(net);
-document.getElementById('rFillVerdict').textContent=(r+t===0)?'No students moved. NMES stays at 128 of 174 seats and nothing changes.':'NMES at '+enroll+' of 174 seats. Cost per student falls from $19,348 to '+money(pp)+'.'+(r>0?' Busing trims by roughly '+money(r*340)+' to '+money(r*612)+' a year on top.':' No rezoning; busing unchanged.');
+document.getElementById('rFillVerdict').textContent=(r+t===0)?(s>0?'No students moved: the section savings above assume enrollment relief at the receiving schools, so move students first.':'No students moved. NMES stays at 128 of 174 seats and nothing changes.'):'NMES at '+enroll+' of 174 seats. Cost per student falls from $19,348 to '+money(pp)+'.'+(r>0?' Busing trims by roughly '+money(r*340)+' to '+money(r*612)+' a year on top.':' No rezoning; busing unchanged.');
 }
 ['sRez','sTr','sSec'].forEach(function(id){document.getElementById(id).addEventListener('input',fillCalc)});
 fillCalc();
-
-/* Petition placeholder */
-document.getElementById('petitionBtn').addEventListener('click',function(e){
-if(this.getAttribute('href')==='#'){e.preventDefault();alert('Petition link coming soon. For now: come Thursday, July 23 at 6:30 p.m., and email the board.')}
-});
 });
 </script>
 </body>
