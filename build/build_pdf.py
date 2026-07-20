@@ -112,6 +112,9 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
                            textColor=GRAY, spaceAfter=6)))
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
+                           textColor=GRAY, spaceAfter=5)))
+A(Paragraph("Version 2 &nbsp;\u2022&nbsp; July 19, 2026",
+            ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
 scope = ("This review draws exclusively on public records: the district's audited financial statements for the "
@@ -610,7 +613,7 @@ fig("chart_balance.png",
     "Figure 12. One rebalancing scenario: North Middletown fills to its rated 174 while Bourbon Central and Cane "
     "Ridge each ease by about fifteen students. Enrollment counts as cited in Sections 4 and 9; the scenario "
     "levers (30 rezoned, 16 cross-county transfers) are adjustable in the companion workbook's Redistricting tab.", width=6.0 * inch)
-H2("The transportation map, estimated from public geography")
+H2("The transportation map, drawn from the official boundaries")
 P("The zone geometry here is official: the federal School Attendance Boundary Survey (2015-16, the last "
   "national collection) published the district's actual attendance boundaries, and this report draws them "
   "directly. The district has still not published its geocoded student counts or its annual T-1 "
@@ -1192,7 +1195,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Deep Dive into Bourbon County Schools  \u2022  July 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Deep Dive into Bourbon County Schools  \u2022  Version 2, July 19, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 

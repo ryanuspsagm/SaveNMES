@@ -213,7 +213,7 @@ ax.plot([x[0] - w, x[0] + w], [174, 174], color=BLUE, linewidth=1.4, linestyle="
 ax.text(x[0] + w + 0.05, 174, "NMES capacity 174", fontsize=8, color=BLUE, va="center")
 ax.set_xticks(x); ax.set_xticklabels(schools_b)
 ax.set_title("One rebalancing scenario: fill NMES, relieve the Paris-area schools")
-ax.set_ylim(0, 540)
+ax.set_ylim(0, 640)
 ax.legend(loc="upper left", frameon=False, fontsize=8.2)
 clean(ax)
 fig.tight_layout()
