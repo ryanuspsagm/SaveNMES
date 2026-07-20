@@ -515,18 +515,14 @@ put(sc, "B6", "=Closure_Model!B20", GRN, CUR)
 put(sc, "C6", "=Runway!E7", BLK, CUR)
 put(sc, "D6", "Unpublished", NOTE)
 put(sc, "E6", "Closure vote; covers 13.6% of the gap (24.2% in the district-favorable case); longer rides; enrollment-loss risk", NOTE)
-put(sc, "A7", "3. Keep NMES open, rebalance and grow")
-put(sc, "B7", "=Redistricting!B30", GRN, CUR)
-put(sc, "C7", "=GF_Summary!D9-4*GF_Summary!D16+3*Redistricting!B30", BLK, CUR)
-put(sc, "D7", "Minimal (boundary process)", NOTE)
-put(sc, "E7", "Board boundary action and HB 563 recruitment; academic upside; does not close the gap alone", NOTE)
-put(sc, "A8", "4. Districtwide recovery plan (menu plus levy)")
-put(sc, "B8", "=Alternatives!B21", GRN, CUR)
-put(sc, "C8", "=Runway!E6", BLK, CUR)
-put(sc, "D8", "Varies by measure", NOTE)
-put(sc, "E8", "Revenue votes, administrative rollback, and implementation discipline; keeps every school open", NOTE)
-put(sc, "A10", "Reading: the question before the board is not closure versus no closure. It is which complete plan produces the best verified five-year result. "
-               "Plan 2 buys roughly one extra year of runway; Plan 4 restores balance. Plans 3 and 4 combine.", NOTE, wrap=True)
+put(sc, "A7", "3. Districtwide recovery plan (menu plus levy; includes rebalancing and growing NMES)")
+put(sc, "B7", "=Alternatives!B21", GRN, CUR)
+put(sc, "C7", "=Runway!E6", BLK, CUR)
+put(sc, "D7", "Varies by measure", NOTE)
+put(sc, "E7", "Revenue votes, administrative rollback, boundary action and HB 563 recruitment, implementation discipline; every school stays open", NOTE)
+put(sc, "A9", "Reading: the question before the board is not closure versus no closure. It is which complete plan produces the best verified five-year result. "
+              "Plan 2 buys roughly one extra year of runway; Plan 3 restores balance while keeping every school open. The rebalance-and-grow scenario "
+              "(Redistricting tab) is one line inside Plan 3's menu.", NOTE, wrap=True)
 
 
 

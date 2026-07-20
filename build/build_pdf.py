@@ -907,7 +907,7 @@ P("The decision before the Board is often framed as closure versus no closure. T
   "deficit is a districtwide problem: every school stays on the same trajectory under Plan 1, and North "
   "Middletown, whose realistic closure saving covers under a quarter of the gap, did not cause it. The "
   "real question is which complete operating plan produces the best verified five-year result, and there are at "
-  "least four on the table. The comparison below is illustrative, built on this report's stated assumptions and "
+  "least three on the table. The comparison below is illustrative, built on this report's stated assumptions and "
   "a straight-line projection from the fiscal 2025 balance; the workbook's Scenarios tab carries the math, and "
   "the district should replace every assumption with actuals. One-time closure transition costs, which the "
   "district has not published, are not included and would reduce Plan 2's early-year figures.")
@@ -916,13 +916,14 @@ tbl(["Plan", "Recurring impact by yr 3", "Projected FY2029 balance", "What it re
       "No decisions; the districtwide gap drains reserves with or without North Middletown"],
      ["2. Close NMES and consolidate", "$250,000-$600,000 a year", "About $0.8 million",
       "Closure vote; covers under a quarter of the gap; longer rides; enrollment-loss risk"],
-     ["3. Keep NMES open, rebalance and grow", "$140,000-$225,000 a year", "About $0.1 million",
-      "Boundary action and HB 563 recruitment; academic upside; not sufficient alone"],
-     ["4. Districtwide recovery plan (menu plus levy)", "$1.1-$2.1 million a year", "About $3.7 million",
-      "Revenue votes, administrative rollback, implementation discipline; every school stays open"]],
+     ["3. Districtwide recovery plan (menu plus levy)", "$1.1-$2.1 million a year", "About $3.7 million",
+      "Revenue votes, administrative rollback, boundary action and HB 563 recruitment, implementation "
+      "discipline; every school stays open"]],
     [1.85 * inch, 1.45 * inch, 1.35 * inch, 2.05 * inch],
-    caption="Four complete plans, compared on the same assumptions. Plan 2 buys roughly one extra year of runway; "
-            "Plan 4 restores balance; Plans 3 and 4 combine. Scenarios tab of the companion workbook.",
+    caption="Three complete plans, compared on the same assumptions. Plan 2 buys roughly one extra year of runway; "
+            "Plan 3 restores balance while keeping every school open, and rebalancing and growing North Middletown "
+            "($140,000 to $225,000 a year, Section 9) is one line inside its menu. Scenarios tab of the companion "
+            "workbook.",
     bold_first_col=True)
 asktext = ("<b>The ask, plainly stated:</b> the community requests that the Board of Education pause any vote on "
            "the facility plan, or on the future of North Middletown Elementary, until the ten questions in Section "
