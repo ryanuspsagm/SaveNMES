@@ -369,30 +369,44 @@ put(tg, "A62", "Farthest corner by road: to Paris / to NMES (miles)"); put(tg, "
 put(tg, "A63", "Share of the zone's area closer to NMES than to Paris"); put(tg, "B63", 0.78, BLUE, PCT); put(tg, "C63", "Computed on the official boundary; the map's whole point in one number", NOTE)
 
 # ================= ALTERNATIVES =================
-al = sheet("Alternatives", [46, 14, 14, 52])
+al = sheet("Alternatives", [46, 14, 14, 52, 20, 42])
 put(al, "A1", "Revenue and Cost Alternatives (no school closed)", TITLE)
-hdrs = ["Measure", "Low ($/yr)", "High ($/yr)", "Basis"]
+put(al, "A2", "Type separates new recurring revenue from recurring cost reductions; confidence names what would move each line from estimate to plan.", NOTE)
+hdrs = ["Measure", "Low ($/yr)", "High ($/yr)", "Basis", "Type", "Confidence / what firms it up"]
 for i, h in enumerate(hdrs):
     put(al, f"{get_column_letter(i+1)}3", h, BOLDW, fill=HDR)
 alts = [
- ("4% property-tax adjustment (KRS 160.470)", "=Assumptions!B35*Assumptions!B36", 450000, "Low = 4% of FY2025 GF property tax; high allows base growth", GRN, BLUE),
- ("Improve delinquent-tax recovery (partial)", 60000, 120000, "25-50% of FY2025 delinquency of $239,126 (2.4% of certified yield)", BLUE, BLUE),
- ("Attendance recovery (+1-2% ADA)", 100000, 200000, "Approx. SEEK value per 1% of ADA", BLUE, BLUE),
- ("Attrition-based staffing alignment", "=Assumptions!B48*Assumptions!B41", 425000, "Low = positions x loaded cost", GRN, BLUE),
- ("Administrative restraint", "=Assumptions!B47*(Assumptions!B46-Assumptions!B45)", 450000, "Low = rollback share of 2-yr district-admin growth", GRN, BLUE),
- ("Transportation optimization", "=Assumptions!B42*Assumptions!B43", "=Assumptions!B42*Assumptions!B44", "5-10% of FY2025 transport expense", GRN, GRN),
- ("Medicaid billing, E-rate, meal reimbursements", 100000, 250000, "Typical under-collected federal reimbursements", BLUE, BLUE),
- ("Energy performance contracting", 50000, 150000, "10-25% of utilities; authorized by 702 KAR 4:160", BLUE, BLUE),
- ("Shared services with Paris Independent", 100000, 300000, "Transport, food service, back office", BLUE, BLUE),
- ("Fill NMES to capacity (rebalance + transfers, net)", "=Redistricting!B30", "=Redistricting!B31", "Boundary rebalancing and cross-county scenario, Redistricting tab", GRN, GRN),
- ("NMES multi-age reorganization", 170000, 255000, "Six or seven sections instead of nine, via attrition", BLUE, BLUE),
+ ("4% property-tax adjustment (KRS 160.470)", "=Assumptions!B35*Assumptions!B36", 450000, "Low = 4% of FY2025 GF property tax; high allows base growth", GRN, BLUE,
+  "New revenue", "High; board authority every August, no recall exposure"),
+ ("Improve delinquent-tax recovery (partial)", 60000, 120000, "25-50% of FY2025 delinquency of $239,126 (2.4% of certified yield)", BLUE, BLUE,
+  "New revenue", "Medium; needs an aging and collection analysis"),
+ ("Attendance recovery (+1-2% ADA)", 100000, 200000, "Approx. SEEK value per 1% of ADA", BLUE, BLUE,
+  "New revenue", "Medium; needs an attendance improvement plan"),
+ ("Attrition-based staffing alignment", "=Assumptions!B48*Assumptions!B41", 425000, "Low = positions x loaded cost", GRN, BLUE,
+  "Cost reduction", "Medium; needs a position-level staffing plan"),
+ ("Administrative restraint", "=Assumptions!B47*(Assumptions!B46-Assumptions!B45)", 450000, "Low = rollback share of 2-yr district-admin growth", GRN, BLUE,
+  "Cost reduction", "Medium; needs position- and vendor-level detail"),
+ ("Transportation optimization", "=Assumptions!B42*Assumptions!B43", "=Assumptions!B42*Assumptions!B44", "5-10% of FY2025 transport expense", GRN, GRN,
+  "Cost reduction", "Medium; needs a local route model (T-1 data requested)"),
+ ("Medicaid billing, E-rate, meal reimbursements", 100000, 250000, "Typical under-collected federal reimbursements", BLUE, BLUE,
+  "New revenue", "Low; needs evidence current claims are being missed"),
+ ("Energy performance contracting", 50000, 150000, "10-25% of utilities; authorized by 702 KAR 4:160", BLUE, BLUE,
+  "Cost reduction", "Medium; contracts are structured to self-fund"),
+ ("Shared services with Paris Independent", 100000, 300000, "Transport, food service, back office", BLUE, BLUE,
+  "Cost reduction", "Low; needs an interlocal feasibility study"),
+ ("Fill NMES to capacity (rebalance + transfers, net)", "=Redistricting!B30", "=Redistricting!B31", "Boundary rebalancing and cross-county scenario, Redistricting tab", GRN, GRN,
+  "New revenue, net of costs", "High; board boundary authority, math on Redistricting tab"),
+ ("NMES multi-age reorganization", 170000, 255000, "Six or seven sections instead of nine, via attrition", BLUE, BLUE,
+  "Cost reduction", "Medium; needs a staffing and grade-band plan"),
 ]
 r = 4
-for label, lo, hi, basis, flo, fhi in alts:
+for label, lo, hi, basis, flo, fhi, typ, conf in alts:
     put(al, f"A{r}", label)
     put(al, f"B{r}", lo, flo, CUR)
     put(al, f"C{r}", hi, fhi, CUR)
     put(al, f"D{r}", basis, NOTE)
+    put(al, f"E{r}", typ, NOTE)
+    put(al, f"F{r}", conf, NOTE)
     r += 1
 put(al, f"A{r}", "Total identified (ranges overlap; not additive to the penny)", bold=True)
 b = put(al, f"B{r}", f"=SUM(B4:B{r-1})", BLK, CUR, bold=True); b.border = TOPLINE
@@ -482,6 +496,37 @@ put(rw, "A8", "2% contingency floor (approx., FY2025 basis)")
 for col in "BCDE":
     put(rw, f"{col}8", "=GF_Summary!$D$14", GRN, CUR)
 put(rw, "A10", "Reading: the alternatives package restores balance faster than closure, keeps every school open, and adds enrollment revenue rather than risking it.", NOTE, wrap=True)
+
+# ================= SCENARIOS =================
+sc = sheet("Scenarios", [50, 18, 18, 26, 52])
+put(sc, "A1", "Four Complete Plans, Compared (illustrative five-year view)", TITLE)
+put(sc, "A2", "Each row is a full operating plan under this workbook's stated assumptions; the district should replace them with actuals. "
+              "One-time closure transition costs (moving, receiving-school additions, building carrying or disposal) have not been published and are not included.", NOTE, wrap=True)
+schdrs = ["Plan", "Recurring GF impact ($/yr, by yr 3)", "Projected FY2029 balance", "One-time costs", "What it requires and risks"]
+for i, h in enumerate(schdrs):
+    put(sc, f"{get_column_letter(i+1)}4", h, BOLDW, fill=HDR)
+put(sc, "A5", "1. Keep NMES open, current trajectory")
+put(sc, "B5", 0, BLUE, CUR)
+put(sc, "C5", "=Runway!E5", BLK, CUR)
+put(sc, "D5", "None", NOTE)
+put(sc, "E5", "No decisions; reserves cross below zero on the straight line and the gap remains unaddressed", NOTE)
+put(sc, "A6", "2. Close NMES and consolidate")
+put(sc, "B6", "=Closure_Model!B20", GRN, CUR)
+put(sc, "C6", "=Runway!E7", BLK, CUR)
+put(sc, "D6", "Unpublished", NOTE)
+put(sc, "E6", "Closure vote; covers 13.6% of the gap (24.2% in the district-favorable case); longer rides; enrollment-loss risk", NOTE)
+put(sc, "A7", "3. Keep NMES open, rebalance and grow")
+put(sc, "B7", "=Redistricting!B30", GRN, CUR)
+put(sc, "C7", "=GF_Summary!D9-4*GF_Summary!D16+3*Redistricting!B30", BLK, CUR)
+put(sc, "D7", "Minimal (boundary process)", NOTE)
+put(sc, "E7", "Board boundary action and HB 563 recruitment; academic upside; does not close the gap alone", NOTE)
+put(sc, "A8", "4. Districtwide recovery plan (menu plus levy)")
+put(sc, "B8", "=Alternatives!B21", GRN, CUR)
+put(sc, "C8", "=Runway!E6", BLK, CUR)
+put(sc, "D8", "Varies by measure", NOTE)
+put(sc, "E8", "Revenue votes, administrative rollback, and implementation discipline; keeps every school open", NOTE)
+put(sc, "A10", "Reading: the question before the board is not closure versus no closure. It is which complete plan produces the best verified five-year result. "
+               "Plan 2 buys roughly one extra year of runway; Plan 4 restores balance. Plans 3 and 4 combine.", NOTE, wrap=True)
 
 
 

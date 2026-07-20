@@ -113,7 +113,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 2 &nbsp;\u2022&nbsp; July 19, 2026",
+A(Paragraph("Version 2.1 &nbsp;\u2022&nbsp; July 20, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
@@ -242,7 +242,9 @@ P("A reading note on the transfers line, because it changes the presentation wit
   "detailed in the audits' fund statements, not new money from outside. They cushion the General Fund's "
   "reported change in fund balance, which is why the honest measure of the structural problem is the "
   "operating result before transfers: the district spends about $2.6 million more than it takes in, and "
-  "internal shuffling covers roughly half the gap while reserves absorb the rest.")
+  "interfund transfers, some of them recurring and legitimate resources, some of them not sustainable, cover "
+  "roughly half the gap while reserves absorb the rest. Which transfers can be sustained is itself a question "
+  "the district's finance office should answer in writing.")
 H2("Why it happened")
 fig("chart_cliff.png",
     "Figure 4. The two revenue shocks. Federal revenue in the governmental funds fell $2.95 million from FY2023 to "
@@ -748,10 +750,12 @@ tbl(["Measure", "Estimated annual value", "How it works"],
       "all 46 open seats; the worked example above and the workbook's Redistricting tab show the math. "
       "Multi-age reorganization and a preschool or day-care satellite are additional levers on top."]],
     [1.75 * inch, 1.35 * inch, 3.6 * inch],
-    caption="Figure 14. Revenue and cost measures available without closing a school. Values are estimates derived "
-            "from the district's audited figures and state data; ranges overlap and are not additive to the penny. "
-            "A conservative combination totals roughly $1.1 to $2.1 million a year, against an annual reserve "
-            "drawdown of $1.1 to $1.2 million.",
+    caption="Figure 14. Measures available without closing a school. The menu deliberately mixes two kinds of lines, "
+            "new recurring revenue and recurring cost reductions, and the workbook's Alternatives tab labels each one "
+            "by type with a confidence rating and what would firm it up. Values are estimates derived from the "
+            "district's audited figures and state data; ranges overlap and are not additive to the penny. A "
+            "conservative combination totals roughly $1.1 to $2.1 million a year of combined revenue and savings, "
+            "against an annual reserve drawdown of $1.1 to $1.2 million.",
     bold_first_col=True)
 
 H2("The tax question, faced squarely")
@@ -899,6 +903,25 @@ for i, q in enumerate(qs, 1):
 
 # ================= 12. RECOMMENDATIONS =================
 H("12. Recommendations")
+P("The decision before the Board is often framed as closure versus no closure. That is the wrong frame. The "
+  "real question is which complete operating plan produces the best verified five-year result, and there are at "
+  "least four on the table. The comparison below is illustrative, built on this report's stated assumptions and "
+  "a straight-line projection from the fiscal 2025 balance; the workbook's Scenarios tab carries the math, and "
+  "the district should replace every assumption with actuals. One-time closure transition costs, which the "
+  "district has not published, are not included and would reduce Plan 2's early-year figures.")
+tbl(["Plan", "Recurring impact by yr 3", "Projected FY2029 balance", "What it requires"],
+    [["1. Keep NMES open, current trajectory", "None", "Below zero",
+      "No decisions; reserves run out and the gap remains"],
+     ["2. Close NMES and consolidate", "$250,000-$600,000 a year", "About $0.8 million",
+      "Closure vote; covers under a quarter of the gap; longer rides; enrollment-loss risk"],
+     ["3. Keep NMES open, rebalance and grow", "$140,000-$225,000 a year", "About $0.1 million",
+      "Boundary action and HB 563 recruitment; academic upside; not sufficient alone"],
+     ["4. Districtwide recovery plan (menu plus levy)", "$1.1-$2.1 million a year", "About $3.7 million",
+      "Revenue votes, administrative rollback, implementation discipline; every school stays open"]],
+    [1.85 * inch, 1.45 * inch, 1.35 * inch, 2.05 * inch],
+    caption="Four complete plans, compared on the same assumptions. Plan 2 buys roughly one extra year of runway; "
+            "Plan 4 restores balance; Plans 3 and 4 combine. Scenarios tab of the companion workbook.",
+    bold_first_col=True)
 asktext = ("<b>The ask, plainly stated:</b> the community requests that the Board of Education pause any vote on "
            "the facility plan, or on the future of North Middletown Elementary, until the ten questions in Section "
            "11 are answered in writing and in public. A pause is fully within the Board's power: boards control "
@@ -956,7 +979,10 @@ P("The district holds about $4.3 million in General Fund balance and is drawing 
   "year. That is a serious problem, and roughly three budget cycles in which to fix it properly. Closing the "
   "county's best elementary school, in the town that would lose the most, on the strength of an unpublished number, "
   "would be a permanent answer to a solvable problem. The community is not asking the Board to ignore the deficit. "
-  "It is asking the administration to show its work. Revenue or reductions, the Board must choose one and own it; standing still simply spends the "
+  "It is asking the administration to show its work. Before an irreversible decision, the district should publish "
+  "the staffing, receiving-school capacity, transportation, building, enrollment-retention, tax, and "
+  "interfund-transfer analyses needed to compare closure against complete keep-open and districtwide recovery "
+  "plans. Revenue or reductions, the Board must choose one and own it; standing still simply spends the "
   "reserves and settles nothing. Pause the vote. Answer the questions. Then decide with "
   "the whole record on the table.")
 
@@ -1000,6 +1026,12 @@ P("I prepared this report myself, with Claude, an AI research assistant from Ant
   "Last: this report criticizes decisions and asks for documents. It attributes no motive "
   "and alleges no wrongdoing to the superintendent, the finance office, the Board, or any member of the planning "
   "committee, and nothing in it should be read otherwise.", note)
+P("Corrections policy: errors identified in this report will be corrected publicly and promptly, and each "
+  "corrected version will carry a new version number and date. Every version, and the complete line-by-line "
+  "history of every change to the report, the model, and the website, is archived in the public repository at "
+  "github.com/ryanuspsagm/SaveNMES. Send corrections, with the source that supports them, to "
+  "ryanuspsagm@gmail.com. The same standard is asked of the district: publish the worksheet, and if this "
+  "report's numbers are wrong, its own records are the fastest way to show it.", note)
 
 # ================= SOURCES =================
 H("Sources")
@@ -1096,7 +1128,7 @@ srcs = [
  "cited as an open records item)",
 ]
 for i, s in enumerate(srcs, 1):
-    A(Paragraph(f"{i}. {s}", ParagraphStyle("src", parent=note, fontSize=8.4, leading=11.0, spaceAfter=3.2)))
+    A(Paragraph(f"{i}. {s}", ParagraphStyle("src", parent=note, fontSize=8.4, leading=10.8, spaceAfter=2.7)))
 
 # ================= GLOSSARY =================
 A(PageBreak())
@@ -1147,7 +1179,8 @@ A(gt)
 # ================= APPENDIX B: OPEN RECORDS =================
 A(PageBreak())
 H("Appendix B: The Open Records Checklist")
-P("Kentucky's Open Records Act (KRS 61.870 to 61.884) entitles any resident to these documents on request "
+P("Kentucky's Open Records Act (KRS 61.870 to 61.884; inspection rights and request procedures in KRS 61.872, "
+  "agency response requirements in KRS 61.880) entitles any resident to these documents on request "
   "to the district's records custodian, with a response due within five business days. Each request names "
   "the labeled estimate in this report or the companion workbook that it would replace. Nothing here seeks "
   "student-identifiable information, and I will publish, and correct against, whatever comes back.")
@@ -1186,11 +1219,10 @@ tbl(["Request", "What it settles"],
     caption="Fifteen requests in four groups. Each cites the section whose labeled estimate it replaces.",
     bold_first_col=False)
 H2("Already public, no request needed")
-B("School Attendance Boundary Survey (NCES EDGE, 2015-16): the district's attendance-zone GIS files; the "
-  "prepared query ships in this repository as build/fetch_sabs.py; school locations and enrollment files at "
-  "nces.ed.gov/programs/edge.")
-B("U.S. Census TIGER county boundaries and block-level population counts (census.gov/geographies); KDE SEEK "
-  "transportation calculation files and district funding detail (education.ky.gov/districts/SEEK).")
+B("School Attendance Boundary Survey (NCES EDGE, 2015-16): the district's attendance-zone GIS files, school "
+  "locations, and enrollment files at nces.ed.gov/programs/edge, with the prepared query in this repository as "
+  "build/fetch_sabs.py. Also public: U.S. Census TIGER county boundaries and block-level population counts "
+  "(census.gov/geographies), and KDE SEEK transportation calculation files (education.ky.gov/districts/SEEK).")
 
 # ---------------- build ----------------
 def footer(canvas, doc):
@@ -1201,7 +1233,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Deep Dive into Bourbon County Schools  \u2022  Version 2, July 19, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Deep Dive into Bourbon County Schools  \u2022  Version 2.1, July 20, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 
