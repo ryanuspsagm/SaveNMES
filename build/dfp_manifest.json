@@ -24,5 +24,10 @@
   "what": "KFICS Facilities Assessment for Bourbon County Schools, prepared by RossTarrant Architects, presented at the July 2026 facility planning meeting (38 slides). Per-school needs (building condition plus instructional deficiency): BCHS $27,488,455; BCMS $22,418,692; Cane Ridge $14,387,595; Bourbon Central $8,840,267; North Middletown $8,530,093 ($5,648,434 condition + $2,881,659 instructional); Preschool $7,861,696; Agriculture Building $1,825,444. District total $98,441,294 ($91,352,242 school centers + $7,089,052 support). Slide capacities: BCHS 704, BCMS 544, Bourbon Central 499, Cane Ridge 397, North Middletown 154, Preschool 160 (note: the 2026 draft DFP table prints 640 and 547 for the two Paris elementaries, a discrepancy between the district's own documents).",
   "source": "presentation file shared from the district facility planning process",
   "retrieved": "2026-07-20"
+ },
+ "kde_ksa_2024_25.json": {
+  "what": "Extract of the KDE School Report Card assessment dataset, 2024-25 KSA, school level, all students: the four Bourbon County elementary schools plus statewide elementary averages (P/D percentages and content index by subject).",
+  "source": "kyschoolreportcard.com datasets (full state CSV, 47 MB); extract generated 2026-07-20",
+  "retrieved": "2026-07-20"
  }
 }

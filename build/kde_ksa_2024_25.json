@@ -1,0 +1,191 @@
+{
+ "source": "Kentucky Department of Education School Report Card assessment dataset, 2024-25 KSA, all students; suppressed cells marked *",
+ "retrieved": "2026-07-20",
+ "schools": {
+  "Bourbon Central Elementary School": {
+   "Reading": {
+    "P": "28",
+    "D": "10",
+    "PD": "38",
+    "CI": "55.5",
+    "suppressed": "N"
+   },
+   "Mathematics": {
+    "P": "25",
+    "D": "3",
+    "PD": "28",
+    "CI": "45.4",
+    "suppressed": "N"
+   },
+   "Science": {
+    "P": "18",
+    "D": "8",
+    "PD": "26",
+    "CI": "57.6",
+    "suppressed": "N"
+   },
+   "Social Studies": {
+    "P": "28",
+    "D": "3",
+    "PD": "31",
+    "CI": "44.6",
+    "suppressed": "N"
+   },
+   "Combined Writing": {
+    "P": "28",
+    "D": "12",
+    "PD": "40",
+    "CI": "60.8",
+    "suppressed": "N"
+   }
+  },
+  "Cane Ridge Elementary School": {
+   "Reading": {
+    "P": "26",
+    "D": "11",
+    "PD": "37",
+    "CI": "56.5",
+    "suppressed": "N"
+   },
+   "Mathematics": {
+    "P": "23",
+    "D": "4",
+    "PD": "27",
+    "CI": "47.9",
+    "suppressed": "N"
+   },
+   "Science": {
+    "P": "*",
+    "D": "*",
+    "PD": "*",
+    "CI": "62.9",
+    "suppressed": "Y"
+   },
+   "Social Studies": {
+    "P": "19",
+    "D": "8",
+    "PD": "27",
+    "CI": "38.7",
+    "suppressed": "N"
+   },
+   "Combined Writing": {
+    "P": "16",
+    "D": "11",
+    "PD": "27",
+    "CI": "48.7",
+    "suppressed": "N"
+   }
+  },
+  "North Middletown Elementary School": {
+   "Reading": {
+    "P": "24",
+    "D": "17",
+    "PD": "41",
+    "CI": "58.5",
+    "suppressed": "N"
+   },
+   "Mathematics": {
+    "P": "22",
+    "D": "8",
+    "PD": "31",
+    "CI": "48.7",
+    "suppressed": "N"
+   },
+   "Science": {
+    "P": "47",
+    "D": "7",
+    "PD": "53",
+    "CI": "75.0",
+    "suppressed": "N"
+   },
+   "Social Studies": {
+    "P": "24",
+    "D": "12",
+    "PD": "36",
+    "CI": "47.0",
+    "suppressed": "N"
+   },
+   "Combined Writing": {
+    "P": "36",
+    "D": "20",
+    "PD": "56",
+    "CI": "77.0",
+    "suppressed": "N"
+   }
+  },
+  "Paris Elementary School": {
+   "Reading": {
+    "P": "17",
+    "D": "7",
+    "PD": "25",
+    "CI": "42.6",
+    "suppressed": "N"
+   },
+   "Mathematics": {
+    "P": "22",
+    "D": "7",
+    "PD": "29",
+    "CI": "46.9",
+    "suppressed": "N"
+   },
+   "Science": {
+    "P": "*",
+    "D": "*",
+    "PD": "*",
+    "CI": "50.0",
+    "suppressed": "Y"
+   },
+   "Social Studies": {
+    "P": "16",
+    "D": "6",
+    "PD": "22",
+    "CI": "32.6",
+    "suppressed": "N"
+   },
+   "Combined Writing": {
+    "P": "3",
+    "D": "1",
+    "PD": "4",
+    "CI": "25.7",
+    "suppressed": "N"
+   }
+  }
+ },
+ "state_elementary": {
+  "Reading": {
+   "P": "30",
+   "D": "19",
+   "PD": "49",
+   "CI": "67.7",
+   "suppressed": "N"
+  },
+  "Mathematics": {
+   "P": "31",
+   "D": "12",
+   "PD": "43",
+   "CI": "61.5",
+   "suppressed": "N"
+  },
+  "Science": {
+   "P": "29",
+   "D": "8",
+   "PD": "37",
+   "CI": "65.9",
+   "suppressed": "N"
+  },
+  "Social Studies": {
+   "P": "24",
+   "D": "15",
+   "PD": "38",
+   "CI": "55.7",
+   "suppressed": "N"
+  },
+  "Combined Writing": {
+   "P": "30",
+   "D": "13",
+   "PD": "43",
+   "CI": "64.4",
+   "suppressed": "N"
+  }
+ }
+}

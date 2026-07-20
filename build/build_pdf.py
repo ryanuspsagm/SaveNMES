@@ -118,7 +118,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 2.5 &nbsp;\u2022&nbsp; July 20, 2026",
+A(Paragraph("Version 2.6 &nbsp;\u2022&nbsp; July 20, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
@@ -176,9 +176,10 @@ P("<b>Third, the district has not yet shown its work.</b> No line-item net-savin
   "has surfaced, the architect's KFICS condition assessment presented in July, strengthens the keep-open case: it "
   "prices North Middletown's needs at $8.5 million, second lowest of the district's schools, against $23.2 million "
   "at the two receiving schools combined and $98.4 million districtwide (Section 7). "
-  "Meanwhile the school proposed for closure is, on the state's own accountability composite, the district's "
-  "highest-performing elementary, scoring 58.2 in 2024-25 against 26.5 and 19.3 at the two schools that would "
-  "receive its students.")
+  "Meanwhile the school proposed for closure is, on the state's official 2024-25 assessments, the county's "
+  "highest-performing elementary: first among all four elementary schools in Bourbon County in every tested "
+  "subject, reading, mathematics, science, social studies, and writing, and above the statewide elementary "
+  "average in science and writing (Section 5).")
 P("The report closes with ten questions the administration should be required to answer in writing before any vote, "
   "a menu of revenue and cost measures worth an estimated $1.1 to $2.1 million a year without closing a school, and "
   "staged recommendations with clear decision thresholds. The district retains roughly $4.3 million in General Fund "
@@ -359,11 +360,29 @@ fig("chart_district.png",
     "Dashed markers show where the underlying state assessment changed (2012 and 2021-22); no statewide tests were "
     "given in 2020, and North Middletown's 2021 result was not reported.")
 fig("chart_compare.png",
-    "Figure 7. The 2024-25 accountability composite for elementary schools across the region. Only Montgomery "
+    "Figure 7. SchoolDigger's normalized 0-100 index for 2024-25 across the region's elementary schools, computed from state test data (not KDE's official rating). Only Montgomery "
     "County's two elementaries outscore North Middletown; every elementary in Bourbon County, Clark County, and "
     "Paris Independent trails it.")
+H2("The state's own numbers, first")
+P("Before any index or ranking, here is the primary record: the Kentucky Department of Education's school-level "
+  "assessment file for the 2024-25 Kentucky Summative Assessments, archived in this repository "
+  "(build/kde_ksa_2024_25.json) so anyone can check it. On the state's own tests, North Middletown is first "
+  "among all four elementary schools in Bourbon County, county district and Paris Independent alike, in every "
+  "tested subject, and it beats the <b>statewide</b> elementary average in science and writing.")
+tbl(["Subject (percent proficient or distinguished)", "NMES", "Bourbon Central", "Cane Ridge", "Paris Elem.", "KY average"],
+    [["Reading", "41", "38", "37", "25", "49"],
+     ["Mathematics", "31", "28", "27", "29", "43"],
+     ["Science", "53", "26", "*", "*", "37"],
+     ["Social Studies", "36", "31", "27", "22", "38"],
+     ["Combined Writing", "56", "40", "27", "4", "43"]],
+    [2.35 * inch, 0.85 * inch, 1.15 * inch, 0.95 * inch, 0.85 * inch, 0.9 * inch],
+    caption="Kentucky Summative Assessment results, 2024-25, all students, percent scoring proficient or "
+            "distinguished. Source: KDE School Report Card assessment dataset, archived in this repository. "
+            "Asterisks are cells the state suppresses for small groups; the Kentucky average is the statewide "
+            "elementary level. North Middletown leads all four county schools in all five subjects.",
+    bold_first_col=True)
 P("The pattern is hard to miss, and it runs in opposite directions. After a pandemic-era dip in 2023, North "
-  "Middletown rebounded to 54.1 in 2024 and 58.2 in 2025, back above the state median, around the 60th "
+  "Middletown rebounded to 54.1 in 2024 and 58.2 in 2025 on SchoolDigger's index, back above the state median, around the 60th "
   "percentile of Kentucky elementary schools, ranking 272nd of 685 statewide. Over the same stretch the receiving "
   "schools moved the other way: Bourbon Central has slid from 39.9 (2019) to 26.5, and Cane Ridge fell from 35.8 "
   "to 19.3 in a single year, both now in the bottom quarter of the state, alongside Paris Elementary at 12.2. "
@@ -638,7 +657,7 @@ P("The strongest alternative is not defensive. Kentucky law already supplies the
   "agreement from the child's home district required and tuition at the board's discretion. Every family North "
   "Middletown attracts brings at least the $4,626 base guarantee (fiscal 2027), plus applicable add-ons.")
 P("North Middletown is built to compete for those families. It is a 2011 National Blue Ribbon school with a "
-  "gifted-and-talented program, a 13.6-to-1 student-teacher ratio, and a 58.2 accountability composite that beats "
+  "gifted-and-talented program, a 13.6-to-1 student-teacher ratio, and a 58.2 SchoolDigger index that beats "
   "every elementary school in Bourbon County and every one in neighboring Clark County and Paris Independent "
   "(Conkwright 17.5, Strode Station 34.2, Justice 39.3, Shearer 42.3, Paris Elementary 12.2). Its state-approved "
   "capacity is 174 against 128 enrolled: forty-six open seats which, filled with transfer students at the base "
@@ -668,7 +687,7 @@ P("But a school's enrollment does not have to wait on a county's birth rate, bec
   "region's best small elementary has empty seats within a short drive of families across four counties whose current "
   "options score a third as high.")
 P("The seats deserve a destination, not just a headcount, and the school already holds the ingredients: a "
-  "National Blue Ribbon history, the region's top accountability composite, an existing gifted-and-talented "
+  "National Blue Ribbon history, the county's top results on the state's 2024-25 assessments, an existing gifted-and-talented "
   "program, and open seats no other school in the area can offer. Build on them and North Middletown becomes "
   "the region's premier elementary. One natural path, though not the only one, is a specialized program for "
   "advanced learners that families apply into from across the district and, under House Bill 563, from the "
@@ -1001,8 +1020,9 @@ qs = [
  "BG-1, and state when North Middletown Elementary last received meaningful capital investment.",
  "Why did central-office administration grow 44.8 percent in two years while attendance fell, and what rollback "
  "is on the table before a school closes? Publish administrator compensation from the official state records.",
- "What is the written plan to protect the academic outcomes of students moved from a school scoring 58.2 into "
- "schools scoring 26.5 and 19.3, and what happens to the district's Title I allocations when they move?",
+ "What is the written plan to protect the academic outcomes of students moved from the school that leads the "
+ "county in every tested subject on the state's 2024-25 assessments into the two schools it outscores, and "
+ "what happens to the district's Title I allocations when they move?",
  "Which alternatives in Section 9 has the administration actually modeled, with what results, and if none, why "
  "is closure first on the list rather than last?"]
 for i, q in enumerate(qs, 1):
@@ -1103,7 +1123,10 @@ P("I built this report from public records, and I want it held to that standard.
   "clean opinions. Per-student spending is the state's published school-level data for 2023-24, the most recent "
   "full year posted, and should be refreshed when the next year appears. The multi-year score series in Figure 6 "
   "is SchoolDigger's normalized 0-100 rendering of Kentucky Department of Education test data, a consistent "
-  "yardstick across years but not KDE's official rating; the underlying state assessments changed in 2012 and "
+  "yardstick across years but not KDE's official rating. Where this report says first in every tested subject, "
+  "that is the state's own 2024-25 assessment file, archived in the repository; third-party rankings built on "
+  "older data or different weights may order schools differently, and the state's current file is the primary "
+  "academic record here; the underlying state assessments changed in 2012 and "
   "again in 2021-22. Demographic figures come from the U.S. Census Bureau, the Kentucky State Data Center's "
   "projections as reported in county planning documents, and the county's Envision 2040 plan. Enrollment counts "
   "from 1989 through 2014 are compiled from federal data by PublicSchoolReview; the 2015 through 2025 counts "
@@ -1156,8 +1179,12 @@ srcs = [
  "datasets (2021-22 through 2024-25), Kentucky Department of Education: kyschoolreportcard.com; "
  "education.ky.gov/Open-House",
  "SchoolDigger, normalized 0-100 school test-score histories and statewide rankings built from Kentucky "
- "Department of Education assessment data: schooldigger.com (used for Figure 6 and the statewide ranks; "
+ "Department of Education assessment data: schooldigger.com (used for Figures 6 and 7 and the statewide ranks; "
  "not KDE's official rating)",
+ "Kentucky Department of Education, School Report Card assessment dataset, 2024-25 Kentucky Summative "
+ "Assessments, school-level, all students: kyschoolreportcard.com datasets; the rows for the four Bourbon "
+ "County elementary schools and the statewide elementary averages are archived in this repository as "
+ "build/kde_ksa_2024_25.json",
  "Bourbon County Schools District Facility Plan, approved by the Kentucky Board of Education, August 2021: "
  "education.ky.gov/districts/fac/documents/bourbon co dfp.pdf (archived in this repository as build/dfp_current.pdf)",
  "Bourbon County Schools District Facilities Plan, approved by the Kentucky Board of Education, June 2013, "
@@ -1352,7 +1379,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Deep Dive into Bourbon County Schools  \u2022  Version 2.5, July 20, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Deep Dive into Bourbon County Schools  \u2022  Version 2.6, July 20, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 

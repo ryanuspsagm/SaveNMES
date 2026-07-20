@@ -101,6 +101,11 @@ def main():
         "site carries the KFICS assessment figures")
     chk("yet to see" not in t,
         "stale assessment-not-published language removed from PDF")
+    chk((REPO / "build" / "kde_ksa_2024_25.json").exists(), "KDE assessment extract archived")
+    chk("first among all four" in t and "SchoolDigger index" in t,
+        "PDF leads with KDE results and labels the SchoolDigger index")
+    chk("1st in all 5 subjects" in html and "state" in html,
+        "site hero tile carries the KDE first-in-county claim")
 
     # pagination quality (optional dependency)
     try:

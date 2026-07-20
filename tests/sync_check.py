@@ -153,7 +153,7 @@ if alt_low == 1100000 and alt_high == 2100000:
     match("alternatives conservative range $1.1M-$2.1M hardcoded identically in model and quoted in PDF and site")
 
 # site text spot checks
-for s, label in [("58.2 vs 26.5", "hero fact scores"), ("$250K to $640K", "hero fact closure range"),
+for s, label in [("1st in all 5 subjects", "hero fact scores"), ("$250K to $640K", "hero fact closure range"),
                  ("$9,641,017", "levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),
                  ("128 students", "enrollment in prose"), ("rated capacity of 174", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")

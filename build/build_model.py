@@ -723,6 +723,20 @@ for label, nm, ky, fmt in detail:
     rr += 1
 put(sd, "T30", "SchoolDigger/KDE; economically disadvantaged composite = 62nd percentile statewide; female = 91st", NOTE, wrap=True)
 
+put(sd, "A33", "KDE 2024-25 KSA, PERCENT PROFICIENT OR DISTINGUISHED, ALL STUDENTS (build/kde_ksa_2024_25.json)", SEC)
+kde_hdrs = ["Subject", "NMES", "Bourbon Central", "Cane Ridge", "Paris Elem.", "KY elementary avg"]
+for i, h in enumerate(kde_hdrs):
+    put(sd, f"{get_column_letter(i+1)}34", h, BOLDW, fill=HDR)
+kde_rows = [("Reading", 41, 38, 37, 25, 49), ("Mathematics", 31, 28, 27, 29, 43),
+            ("Science", 53, 26, "*", "*", 37), ("Social Studies", 36, 31, 27, 22, 38),
+            ("Combined Writing", 56, 40, 27, 4, 43)]
+rr = 35
+for row in kde_rows:
+    for i, v in enumerate(row):
+        put(sd, f"{get_column_letter(i+1)}{rr}", v, NOTE if i == 0 else BLUE, None if isinstance(v, str) else NUM)
+    rr += 1
+put(sd, "A41", "NMES is first among all four county elementary schools in every subject and beats the statewide elementary average in science and writing. Asterisks = state-suppressed cells.", NOTE, wrap=True)
+
 # ================= FACILITY_PLANS =================
 fp = sheet("Facility_Plans", [42, 12, 12, 12, 12, 50])
 put(fp, "A1", "What the District's Own Facility Plans Show", TITLE)

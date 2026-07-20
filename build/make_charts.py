@@ -131,7 +131,7 @@ for r, v in zip(bars, vals[::-1]):
             fontsize=8.8, color="#333333", fontweight="bold")
 ax.axvline(50, color=GRAY, linewidth=1.0, linestyle="--")
 ax.text(50.7, 0.15, "KY median", fontsize=8, color=GRAY)
-ax.set_title("2024-25 accountability composite: elementary schools across the region")
+ax.set_title("2024-25 school index across the region (SchoolDigger 0-100, from state test data)")
 ax.set_xlim(0, 79)
 ax.tick_params(axis="y", labelsize=8.6)
 clean(ax, ygrid=False, xgrid=True)
