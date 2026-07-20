@@ -519,7 +519,7 @@ put(sc, "A7", "3. Districtwide recovery plan (menu plus levy; includes rebalanci
 put(sc, "B7", "=Alternatives!B21", GRN, CUR)
 put(sc, "C7", "=Runway!E6", BLK, CUR)
 put(sc, "D7", "Varies by measure", NOTE)
-put(sc, "E7", "Revenue votes, administrative rollback, boundary action, HB 563 recruitment and a signature advanced-learners program at NMES, implementation discipline; every school stays open", NOTE)
+put(sc, "E7", "Revenue votes, administrative rollback, boundary action, HB 563 recruitment and a signature program at NMES (advanced learners is one option), implementation discipline; every school stays open", NOTE)
 put(sc, "A9", "Reading: the question before the board is not closure versus no closure. It is which complete plan produces the best verified five-year result. "
               "Plan 2 buys roughly one extra year of runway; Plan 3 restores balance while keeping every school open. The rebalance-and-grow scenario "
               "(Redistricting tab) is one line inside Plan 3's menu.", NOTE, wrap=True)

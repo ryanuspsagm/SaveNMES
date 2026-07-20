@@ -614,7 +614,7 @@ P("North Middletown is built to compete for those families. It is a 2011 Nationa
   "(Conkwright 17.5, Strode Station 34.2, Justice 39.3, Shearer 42.3, Paris Elementary 12.2). Its state-approved "
   "capacity is 174 against 128 enrolled: forty-six open seats which, filled with transfer students at the base "
   "guarantee alone, represent roughly $213,000 a year in new recurring revenue at little marginal cost, before "
-  "tuition, add-ons, or the further growth a signature program for advanced learners, a preschool satellite, and a serious marketing effort "
+  "tuition, add-ons, or the further growth a signature program (advanced learners is one natural fit), a preschool satellite, and a serious marketing effort "
   "could generate along the U.S. 460 corridor, within a short drive of five surrounding counties. The question for "
   "the administration is why the district's only nationally honored school is proposed for reclassification instead of "
   "expansion.")
@@ -641,11 +641,14 @@ P("But a school's enrollment does not have to wait on a county's birth rate, bec
 P("The seats deserve a destination, not just a headcount, and the school already holds the ingredients: a "
   "National Blue Ribbon history, the region's top accountability composite, an existing gifted-and-talented "
   "program, and open seats no other school in the area can offer. Build on them and North Middletown becomes "
-  "the region's premier elementary: a specialized program for advanced learners that families apply into from "
-  "across the district and, under House Bill 563, from the surrounding counties. This is not exotic. Kentucky's "
-  "larger districts have run magnet and specialized-program schools for decades precisely because a distinctive "
-  "program pulls enrollment to the building that hosts it, and a district that needs students has every reason "
-  "to run that play at the school best credentialed to anchor it.")
+  "the region's premier elementary. One natural path, though not the only one, is a specialized program for "
+  "advanced learners that families apply into from across the district and, under House Bill 563, from the "
+  "surrounding counties; Kentucky's larger districts have run magnet and specialized-program schools for "
+  "decades precisely because a distinctive program pulls enrollment to the building that hosts it. A preschool "
+  "satellite, a multi-age model, or simply growing the neighborhood school it has always been would serve the "
+  "same end. Under any of them, every child in the zone keeps their seat; the program adds students, it never "
+  "displaces one. A district that needs students has every reason to run a growth play at the school best "
+  "credentialed to anchor it, whichever form the community and the Board choose together.")
 P("Growth framed this way is reallocation and recruitment on quality, not a bet on a population rebound, and "
   "the near-term target is modest: returning to the 160 students the school enrolled as recently as 2019-20 "
   "takes just 32 children from a district of 2,600 and four neighboring counties.")
