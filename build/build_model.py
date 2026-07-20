@@ -499,7 +499,7 @@ put(rw, "A10", "Reading: the alternatives package restores balance faster than c
 
 # ================= SCENARIOS =================
 sc = sheet("Scenarios", [50, 18, 18, 26, 52])
-put(sc, "A1", "Four Complete Plans, Compared (illustrative five-year view)", TITLE)
+put(sc, "A1", "Three Complete Plans, Compared (illustrative five-year view)", TITLE)
 put(sc, "A2", "Each row is a full operating plan under this workbook's stated assumptions; the district should replace them with actuals. "
               "One-time closure transition costs (moving, receiving-school additions, building carrying or disposal) have not been published and are not included.", NOTE, wrap=True)
 schdrs = ["Plan", "Recurring GF impact ($/yr, by yr 3)", "Projected FY2029 balance", "One-time costs", "What it requires and risks"]
@@ -732,7 +732,7 @@ fhdrs = ["School", "2013 enr", "2013 cap", "2021 enr", "2021 cap", "Note"]
 for i, h in enumerate(fhdrs):
     put(fp, f"{get_column_letter(i+1)}4", h, BOLDW, fill=HDR)
 frows = [
- ("Bourbon County High School", 881, 637, 799, 704, "Expansion built; CTC addition was the 2022-24 in-biennium priority"),
+ ("Bourbon County High School", 881, 637, 799, 704, "Rating rose 637 to 704 between plans; the CTC addition was the 2022-24 in-biennium priority"),
  ("Bourbon County Middle School", 616, 515, 640, 641, ""),
  ("Bourbon Central Elementary", 602, 564, 535, 521, "Rated capacity 549, reflecting the addition in the 2021 plan"),
  ("Cane Ridge Elementary", 461, 500, 480, 422, "Rated capacity written down 78 seats between plans"),
@@ -756,12 +756,12 @@ put(fp, "B21", 1594872, BLUE, CUR); put(fp, "C21", 239139, BLUE, CUR); put(fp, "
 put(fp, "E21", "=SUM(B21:D21)", BLK, CUR); put(fp, "F21", "Base renovation + special ed classroom + family resource center", NOTE)
 put(fp, "A22", "2021 plan: NMES need re-priced (life safety + accessibility ramp/elevator + major renovation)")
 put(fp, "B22", 317660, BLUE, CUR); put(fp, "C22", 325000, BLUE, CUR); put(fp, "D22", 3617530, BLUE, CUR)
-put(fp, "E22", "=SUM(B22:D22)", BLK, CUR); put(fp, "F22", "All scheduled after the 2022-24 biennium; the in-biennium priority was the HS Career & Technical Center", NOTE)
+put(fp, "E22", "=SUM(B22:D22)", BLK, CUR); put(fp, "F22", "Life safety and accessibility ($642,660) within the 2022-24 biennium; the $3.62M major renovation after it; the biennium's headline priority was the HS Career & Technical Center", NOTE)
 put(fp, "A23", "2021 plan: HS Career & Technical Center, in-biennium new construction")
 put(fp, "B23", "=227149+1447694+1150886+1075170+772305+832878+1150886", BLK, CUR)
 put(fp, "A24", "2021 plan: total district facility need"); put(fp, "B24", 43389464, BLUE, CUR)
 put(fp, "A26", "Reading: the receiving schools' rated capacities are 549 (Bourbon Central) and 422 (Cane Ridge). At current enrollment that is 90 open at Bourbon Central and 31 over at Cane Ridge, "
-               "a net 59 uncommitted seats for 128 children. NMES renovation needs were priced in 2013 and re-priced higher in 2021, each time scheduled behind other work. "
+               "a net 59 uncommitted seats for 128 children. NMES's major renovation was priced in 2013 and re-priced higher in 2021, each time scheduled after the then-current biennium. "
                "Its rated capacity fell 198 to 174 between the same two plans while its enrollment fell 169 to 128.", NOTE, wrap=True)
 
 # ---- finish ----
