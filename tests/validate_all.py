@@ -79,7 +79,8 @@ def main():
         "PDF states the $4,626 FY2027 SEEK base")
 
     # facility-plan capacity analysis (DFP documents archived in build/)
-    for f in ["dfp_current.pdf", "dfp_2013_excerpt.png", "dfp_manifest.json"]:
+    for f in ["dfp_current.pdf", "dfp_2013_excerpt.png", "dfp_2026_draft_excerpt.png",
+              "dfp_manifest.json"]:
         chk((REPO / "build" / f).exists(), f"DFP archive present: build/{f}")
     fp = wb["Facility_Plans"]
     chk(fp["E7"].value == 521 and fp["E8"].value == 422 and fp["E9"].value == 174,
@@ -90,6 +91,10 @@ def main():
         "PDF states receiving capacities 549/422 and the net 59 seats")
     chk("549" in html and "422" in html and "198" in html and "59" in html,
         "site shows capacities 549/422, the 198 history, and the net 59")
+    chk("547" in t and "154" in t and "83 percent full" in t,
+        "PDF carries the 2026 draft re-ratings and the 83 percent fill")
+    chk("547" in html and "154" in html and "83 percent full" in html,
+        "site carries the 2026 draft re-ratings and the 83 percent fill")
 
     # pagination quality (optional dependency)
     try:

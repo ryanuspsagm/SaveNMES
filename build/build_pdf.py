@@ -118,7 +118,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 2.2 &nbsp;\u2022&nbsp; July 20, 2026",
+A(Paragraph("Version 2.3 &nbsp;\u2022&nbsp; July 20, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
@@ -540,6 +540,17 @@ P("Three facts fall out of that table. First, the rated capacity of North Middle
   "permanent, with a long-range plan to reorganize it as a grade-band center, and the 2021 plan classified it as "
   "permanent with no change proposed at all. The transitional label in the 2026 draft is a reversal of two "
   "consecutive state-approved plans, which is precisely why the community is entitled to the analysis behind it.")
+P("The 2026 planning cycle sharpens the point to a fine edge. The draft plan presented at the July 15 forum, an "
+  "annotated attendee copy of which is archived in this repository, carries no KDE approval date yet and re-rates "
+  "the same buildings again, this time on the state facilities inventory (KFICS) basis: Cane Ridge rises from 422 "
+  "to 547 and Bourbon Central to 640, while North Middletown falls again, from 174 to 154. The draft's own "
+  "new-construction sections read <b>None</b>, so not one of those 216 new paper seats at the receiving schools "
+  "comes from a brick. Ratings that can move 125 seats in a single planning cycle are policy, not walls, which "
+  "has been this section's argument all along. Two more details sit on the same page: even at its reduced 154 "
+  "rating, North Middletown stands 83 percent full today, and the draft as presented that day, before the "
+  "committee's amendment, still listed the school as <b>permanent</b>. Its headline capital priority is an $18.6 "
+  "million major renovation of the high school's 1968 and 1981 sections, the same direction the two approved "
+  "plans already show.")
 P("The investment record runs alongside. The 2013 plan priced a $1.92 million major renovation for North "
   "Middletown: a security vestibule, enlarged music and computer classrooms, media center and kitchen, gymnasium "
   "upgrades, new flooring, window and door replacement, electrical upgrades, and HVAC replacement. The 2021 plan "
@@ -559,7 +570,9 @@ P("The 2026 planning cycle is supposed to rest on a fresh architect-and-engineer
   "today's enrollments of 459 and 453 that leaves 90 seats open at Bourbon Central and puts Cane Ridge 31 "
   "students <b>over</b> its rating, a net 59 uncommitted seats for 128 children. The seats are not there. And if "
   "the administration's answer is that ratings can be adjusted with room assignments, that concedes the point: "
-  "the same adjustment raises North Middletown's capacity and makes the room for growth there instead. "
+  "the same adjustment raises North Middletown's capacity and makes the room for growth there instead. The 2026 "
+  "draft, which adds 216 paper seats in Paris and subtracts 20 at North Middletown with no construction anywhere "
+  "in it, demonstrates the pencil at work. "
   "Moving 128 children into those schools is not free of capital cost. An empty "
   "building, finally, is not free: it must be secured, insured, minimally heated, and eventually disposed of, while "
   "the town loses its largest civic anchor, a community of about 610 people whose residents told the planning "
@@ -953,7 +966,9 @@ qs = [
  "federal data show 128 students, while public statements have ranged lower.",
  "Grade by grade, what is the real capacity at Bourbon Central and Cane Ridge, and what staff, sections, or space "
  "must be added to absorb 128 more children, at what cost, from which fund? The district's own 2021 facility plan "
- "rates them at 549 and 422; at today's 459 and 453 enrolled, that is a net 59 uncommitted seats. And publish the "
+ "rates them at 549 and 422; at today's 459 and 453 enrolled, that is a net 59 uncommitted seats. Reconcile the "
+ "ratings while at it: the approved plans and the 2026 draft print three different capacities for the same "
+ "unchanged buildings. And publish the "
  "geocoded student counts by attendance area that any honest boundary study, including the rebalancing scenario "
  "in Section 9, needs.",
  "What are the modeled bus routes, and what is the longest one-way ride a North Middletown kindergartner would "
@@ -1124,6 +1139,10 @@ srcs = [
  "Bourbon County Schools District Facilities Plan, approved by the Kentucky Board of Education, June 2013, "
  "recovered from the Internet Archive's Wayback Machine captures of the same KDE address (24 captures, 2015-2025): "
  "web.archive.org; excerpt archived in this repository as build/dfp_2013_excerpt.png with provenance in "
+ "build/dfp_manifest.json",
+ "Bourbon County Schools District Facility Plan, 2026 planning-cycle draft as presented at the July 15, 2026 "
+ "Local Planning Committee forum, before the committee's amendment (KDE approval date listed TBD); annotated "
+ "attendee copy archived in this repository as build/dfp_2026_draft_excerpt.png with provenance in "
  "build/dfp_manifest.json",
  "702 KAR 4:180, Kentucky School Facilities Planning Manual; 702 KAR 4:160, Capital Construction Process: "
  "apps.legislature.ky.gov/law/kar/titles/702/004",
@@ -1309,7 +1328,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Deep Dive into Bourbon County Schools  \u2022  Version 2.2, July 20, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Deep Dive into Bourbon County Schools  \u2022  Version 2.3, July 20, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 
