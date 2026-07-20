@@ -238,37 +238,45 @@ if SABS:
     for _sch in SABS["schools"]:
         for _ring in _sch["rings"]:
             ax.add_patch(MplPolygon([tuple(p) for p in _ring], closed=True,
-                         facecolor=_zone_color(_sch["name"]), edgecolor="#FFFFFF", linewidth=1.0))
+                         facecolor=_zone_color(_sch["name"]), edgecolor="#1F3864", linewidth=1.1))
 else:
     ax.add_patch(MplPolygon(NORTH, closed=True, facecolor="#8FAEDC", edgecolor="#FFFFFF", linewidth=1.0))
     ax.add_patch(MplPolygon(SW, closed=True, facecolor="#C5D7EC", edgecolor="#FFFFFF", linewidth=1.0))
     ax.add_patch(MplPolygon(EAST, closed=True, facecolor="#E8EDF5", edgecolor="#FFFFFF", linewidth=1.0))
-ax.add_patch(MplPolygon(COUNTY, closed=True, facecolor="none", edgecolor="#1F3864", linewidth=1.6))
+if not SABS:
+    ax.add_patch(MplPolygon(COUNTY, closed=True, facecolor="none", edgecolor="#1F3864", linewidth=1.6))
 paris = (-84.2529, 38.2098); nmid = (-84.1122, 38.1446); mills = (-84.1467, 38.3022)
 ax.plot(*paris, "o", color=NAVY, markersize=9, zorder=5)
-ax.text(paris[0] - 0.006, paris[1] + 0.013, "Paris (10,171)", fontsize=8.8, fontweight="bold",
-        color="#1F3864", ha="center")
-ax.text(paris[0] - 0.03, paris[1] - 0.014, "Bourbon Central 459\nCane Ridge 453", fontsize=7.4,
-        color="#1F3864", ha="center", va="top")
+ax.text(-84.610, 38.252, "Paris (10,171)", fontsize=8.8, fontweight="bold",
+        color="#1F3864", ha="left", va="top")
+ax.text(-84.610, 38.233, "Bourbon Central 459\nCane Ridge 453", fontsize=7.4,
+        color="#1F3864", ha="left", va="top")
+ax.plot([-84.468, paris[0] - 0.010], [38.231, paris[1] + 0.005],
+        color=GRAY, linewidth=0.8, linestyle=":", zorder=3)
 ax.plot(*mills, "o", color=NAVY, markersize=5, zorder=5)
-ax.text(mills[0] + 0.004, mills[1] - 0.023, "Millersburg (747)", fontsize=7.4, color="#1F3864", ha="center")
+ax.text(mills[0] - 0.018, mills[1] - 0.004, "Millersburg (747)", fontsize=7.4, color="#1F3864",
+        ha="right", va="center")
 ax.plot(nmid[0], nmid[1], "*", color="#1F3864", markersize=16, zorder=5)
-ax.text(nmid[0] - 0.01, nmid[1] - 0.022, "North Middletown (610)\nNMES: 128 of 174 seats",
+ax.text(nmid[0] + 0.005, nmid[1] - 0.022, "North Middletown (610)\nNMES: 128 of 174 seats",
         fontsize=8.2, fontweight="bold", color="#1F3864", ha="center", va="top")
 ax.plot([paris[0], nmid[0]], [paris[1], nmid[1]], color=GRAY, linewidth=1.1, linestyle=":", zorder=4)
-ax.text(-84.168, 38.172, "US 460, ~10 mi", fontsize=7.2, color="#555555", ha="center", rotation=-20)
-ax.text(-84.365, 38.305, "North zone", fontsize=8.0, color="#1F3864", fontweight="bold", ha="center")
-ax.text(-84.335, 38.13, "Southwest zone", fontsize=8.0, color="#1F3864", fontweight="bold", ha="center")
-ax.text(-83.906, 38.29, "NMES zone\n~105 sq mi\n128 students\n~1.2 per sq mi",
+if SABS:
+    _nm = next(x for x in SABS["schools"] if "North Middletown" in x["name"])
+    _north_lbl, _sw_lbl = "Cane Ridge zone", "Bourbon Central\nzone"
+    _nm_stats = "NMES zone\n%.0f sq mi\n128 students\n~%.1f per sq mi" % (_nm["area_sq_mi"], 128/_nm["area_sq_mi"])
+else:
+    _north_lbl, _sw_lbl = "North zone", "Southwest\nzone"
+    _nm_stats = "NMES zone\n~105 sq mi\n128 students\n~1.2 per sq mi"
+ax.text(-84.360, 38.262, _north_lbl, fontsize=7.8, color="#1F3864", fontweight="bold", ha="center")
+ax.text(-84.302, 38.128, _sw_lbl, fontsize=7.6, color="#1F3864", fontweight="bold",
+        ha="center", va="top")
+ax.text(-83.906, 38.29, _nm_stats,
         fontsize=8.7, color="#1F3864", fontweight="bold", ha="right", va="top")
-ax.text(-84.415, 38.052, "Paris-area zones (north + southwest):\n~185 sq mi, 912 students, ~4.9 per sq mi",
-        fontsize=8.0, color="#FFFFFF", fontweight="bold", ha="left",
-        bbox=dict(facecolor="#1F3864", edgecolor="none", boxstyle="round,pad=0.35"))
 ax.set_title("Bourbon County elementary zones: where the students are", fontsize=11.5, pad=14)
 _sub = ("Official attendance boundaries: NCES School Attendance\nBoundary Survey, 2015-16 collection" if SABS
         else "Traced from the district's published attendance-zone view\non the U.S. Census county outline")
-ax.text(-84.462, 38.398, _sub, fontsize=7.6, color="#555555", ha="left", va="top")
-sb_y = 38.022; sb_x0 = -84.455; sb_x1 = sb_x0 + 0.1832
+ax.text(-84.610, 38.398, _sub, fontsize=7.6, color="#555555", ha="left", va="top")
+sb_y = 38.022; sb_x0 = -84.600; sb_x1 = sb_x0 + 0.1832
 ax.plot([sb_x0, sb_x1], [sb_y, sb_y], color="#1F3864", linewidth=2.2, solid_capstyle="butt")
 for xx in (sb_x0, sb_x1):
     ax.plot([xx, xx], [sb_y - 0.004, sb_y + 0.004], color="#1F3864", linewidth=1.6)
@@ -278,7 +286,7 @@ ax.annotate("", xy=(-83.925, 38.383), xytext=(-83.925, 38.355),
             arrowprops=dict(arrowstyle="-|>", color="#1F3864", lw=1.4))
 import numpy as np
 ax.set_aspect(1 / np.cos(np.radians(38.2)))
-ax.set_xlim(-84.47, -83.90); ax.set_ylim(38.005, 38.425)
+ax.set_xlim(-84.615, -83.90); ax.set_ylim(38.005, 38.425)
 ax.axis("off")
 fig.tight_layout()
 save(fig, "chart_map.png")

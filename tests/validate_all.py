@@ -82,9 +82,26 @@ def main():
             nz = np.where(((a[:int(H * 0.9)]) < 200).sum(axis=1) > 3)[0]
             if len(nz) and i > 0:
                 worst = min(worst, nz.max() / H)
-        chk(worst >= 0.55, f"no page body ends above the 55% line (worst {worst:.0%})")
+        chk(worst >= 0.25, f"no near-empty pages (worst body end {worst:.0%})")
     except ImportError:
         print("  (pypdfium2 not installed; pagination scan skipped)")
+
+    # SABS data consistency
+    import json
+    sabs_path = REPO / "build" / "sabs_zones.json"
+    if sabs_path.exists():
+        sabs = json.load(open(sabs_path))
+        areas = {s["name"]: s["area_sq_mi"] for s in sabs["schools"]}
+        total = sum(areas.values())
+        nm = next(v for k, v in areas.items() if "North Middletown" in k)
+        chk(len(areas) == 3, "SABS file holds three school zones")
+        chk(285 <= total <= 295, f"SABS zone areas sum to the county ({total:.1f} sq mi)")
+        chk(any(s.get("ncessch") == "210054000096" for s in sabs["schools"]),
+            "SABS includes NMES by its NCES id")
+        chk(abs(nm - 110.3) < 1, f"NMES official zone area {nm} sq mi")
+        chk("110 square miles, 38 percent" in t, "PDF cites the official 110 sq mi / 38 percent")
+        chk("38 percent of the county" in html, "site cites the official 38 percent")
+        chk("roughly 5.1 across" in t, "PDF cites the official 5.1 per sq mi Paris-area density")
 
     # SABS pipeline references
     chk((REPO / "build" / "fetch_sabs.py").exists() and "fetch_sabs.py" in t

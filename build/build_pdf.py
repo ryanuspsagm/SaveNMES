@@ -592,7 +592,7 @@ fig("chart_enroll.png",
     width=6.1 * inch)
 H2("A worked example: rebalance the map, fill the school")
 P("Here is one concrete scenario, math anyone can check, run in the workbook's Redistricting tab. Rezone "
-  "30 students to North Middletown from the eastern edges of the two Paris-area attendance zones, drawing only "
+  "30 students to North Middletown from the adjacent edges of the Cane Ridge and Bourbon Central zones, drawing only "
   "from families who already live closer to North Middletown than to their assigned school, and recruit 16 "
   "cross-county transfers under House Bill 563. The school reaches exactly its rated 174. Bourbon Central eases "
   "from 459 to about 444 and Cane Ridge from 453 to about 438. No teacher is added at North Middletown: its "
@@ -611,14 +611,15 @@ fig("chart_balance.png",
     "Ridge each ease by about fifteen students. Enrollment counts as cited in Sections 4 and 9; the scenario "
     "levers (30 rezoned, 16 cross-county transfers) are adjustable in the companion workbook's Redistricting tab.", width=6.0 * inch)
 H2("The transportation map, estimated from public geography")
-P("The district has not published its zone map, its geocoded student counts, or its annual T-1 transportation "
-  "report, so what follows is built from public geography and labeled accordingly; every input sits in yellow "
-  "in the workbook's Transport_Geo tab for the district to replace. Bourbon County is about 290 square miles "
+P("The zone geometry here is official: the federal School Attendance Boundary Survey (2015-16, the last "
+  "national collection) published the district's actual attendance boundaries, and this report draws them "
+  "directly. The district has still not published its geocoded student counts or its annual T-1 "
+  "transportation report, so the cost inputs sit in yellow in the workbook's Transport_Geo tab. Bourbon County is about 290 square miles "
   "of land. Its people cluster west: Paris holds 10,171 of the county's 20,252 residents, against 747 in "
-  "Millersburg and 610 in North Middletown. The district's own published attendance-zone view assigns the "
-  "county's southeast, about 36 percent of its area, to North Middletown, with Millersburg in the northern "
-  "zone, and the math follows: about 1.2 elementary students per square "
-  "mile in the NMES zone, against roughly 4.9 in the two Paris-area zones and 3.6 district-wide. That density gap is "
+  "Millersburg and 610 in North Middletown. The federal boundary file settles the map: North Middletown's "
+  "zone covers 110 square miles, 38 percent of the county, Cane Ridge serves the north including "
+  "Millersburg, and Bourbon Central the southwest. The math follows: about 1.2 elementary students per square "
+  "mile in the NMES zone, against roughly 5.1 across the two Paris-based schools' zones and 3.6 district-wide. That density gap is "
   "not a detail; it is the exact variable state law funds on. KRS 157.370 sets transportation aid by "
   "transported pupils per square mile, paying more where density is low because low density costs more to "
   "serve. The funding history sharpens the point: the formula ran underfunded for two decades, the 2024-2026 "
@@ -626,18 +627,19 @@ P("The district has not published its zone map, its geocoded student counts, or 
   "2026-2028 budget froze it again below the statute. A district that closes its one eastern school keeps "
   "every square mile of that coverage area and serves it with longer rides.")
 tbl(["Zone", "Approx. area (sq mi)", "Elementary students", "Students per sq mi"],
-    [["North Middletown zone (southeast)", "~105", "128", "~1.2"],
-     ["Paris-area zones (north and southwest)", "~185", "912", "~4.9"],
-     ["District overall", "290", "1,040", "3.6"]],
+    [["North Middletown zone (southeast)", "110", "128", "~1.2"],
+     ["Cane Ridge zone (north)", "120", "453", "~3.8"],
+     ["Bourbon Central zone (southwest)", "59", "459", "~7.8"],
+     ["District overall", "289", "1,040", "3.6"]],
     [2.6 * inch, 1.35 * inch, 1.45 * inch, 1.3 * inch],
-    caption="Zone areas traced from the district's published attendance-zone view onto the Census county outline; "
-            "student counts as cited in Section 4. Approximate until the district releases its zone map and geocoded counts (Question 3).",
+    caption="Official zone areas from the federal School Attendance Boundary Survey (2015-16 collection); "
+            "students shown are each school's cited enrollment. The vintage is the caveat: the district should confirm nothing has moved since (Appendix B).",
     bold_first_col=True)
 fig("chart_map.png",
-    "Figure 13. Where the students are: the three elementary attendance zones traced from the district's "
-    "published zone view onto the U.S. Census county outline. Paris holds half the county's people and both "
-    "receiving schools; Millersburg sits in the northern zone; the NMES zone runs about 1.2 students per "
-    "square mile across roughly 105 square miles of the county's southeast.", width=5.2 * inch)
+    "Figure 13. Where the students are: the district's official attendance zones from the federal School "
+    "Attendance Boundary Survey (2015-16 collection), fetched by the repository's build/fetch_sabs.py. Paris "
+    "holds half the county's people and both receiving schools; Millersburg sits in Cane Ridge's northern "
+    "zone; the NMES zone runs about 1.2 students per square mile across 110 square miles of the southeast.", width=5.2 * inch)
 P("Now the closure math, from the bottom up. North Middletown sits about ten miles from the Paris schools on US "
   "460. Roughly 109 of the school's 128 students ride the bus on an estimated three rural routes. Extend "
   "those routes to Paris and each one adds about 40 bus-miles a day, out and back, morning and afternoon: "
@@ -684,9 +686,8 @@ P("The savings from doing this well are documented, not hypothetical. Boston Pub
   "$290,000 a year, and Boston's 20 percent shows the ceiling sits higher than the menu assumes. One more "
   "check anyone can run without waiting on the district: the federal School Attendance Boundary Survey "
   "(NCES EDGE) published the district's actual attendance-zone boundaries as free GIS files in its 2015-16 "
-  "collection, and NCES publishes geocoded school locations. Figure 13 should be tested against those "
-  "files, and the repository ships the prepared federal query, build/fetch_sabs.py, so anyone can redraw "
-  "Figure 13 from the official boundaries in one step. Appendix B lists the datasets alongside the records "
+  "collection, and NCES publishes geocoded school locations. Figure 13 is drawn directly from that file, "
+  "fetched by the repository's build/fetch_sabs.py, so anyone can reproduce it in one step. Appendix B lists the datasets alongside the records "
   "only the district can produce.")
 tbl(["Measure", "Estimated annual value", "How it works"],
     [["Take the annual 4% property-tax adjustment",
@@ -962,9 +963,9 @@ P("I built this report from public records, and I want it held to that standard.
   "stated where it appears, and every one of them is adjustable in the companion workbook. The boundary "
   "rebalancing scenario in Section 9 is simple math on the cited enrollment counts, not a routing study; the "
   "geocoded student counts and routing data a full study needs are held by the district and requested in "
-  "Question 3. The transportation estimates beside it use census geography, a highway distance, and labeled "
-  "cost-per-mile bands; the district's annual T-1 transportation report and zone map would replace every one "
-  "of those inputs, and the Transport_Geo tab is built to take them.", note)
+  "Question 3. The transportation estimates beside it use the official federal zone boundaries (SABS, "
+  "2015-16), a highway distance, and labeled cost-per-mile bands; the district's annual T-1 transportation "
+  "report would replace the cost inputs, and the Transport_Geo tab is built to take them.", note)
 P("A few items in the record need the district, not me, to resolve. The real-estate tax rate appears as 52.4 "
   "confusion is resolved in Section 9: 52.4 cents is the levied rate, 54.2 a transposition typo, 54.7 the "
   "motor vehicle rate; still open are the General Fund versus building fund cent split, the levied rate type "
@@ -1152,8 +1153,8 @@ tbl(["Request", "What it settles"],
       "The building case, if one exists (Section 7)"],
      ["The room-by-room worksheet behind the 174 capacity rating; the pre-2021 facility plans",
       "Whether capacity is a wall or a room schedule (Section 7)"],
-     ["<b>The boundaries and buses.</b> The district's GIS attendance-zone map",
-      "Replaces the traced zones in Figure 13"],
+     ["<b>The boundaries and buses.</b> The district's current GIS attendance-zone map",
+      "Confirms the official 2015-16 federal boundaries in Figure 13 are still in force"],
      ["Geocoded student counts by attendance area or planning zone",
       "Validates the density analysis; enables real boundary optimization (Section 9)"],
      ["The T-1 annual transportation report, route sheets, and cost per bus-mile",
