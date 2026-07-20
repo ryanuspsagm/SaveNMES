@@ -173,9 +173,9 @@ P("<b>Second, North Middletown Elementary did not cause the problem, and closing
   "$600,000, a fraction of the deficit, and less than several alternatives that harm no one.")
 P("<b>Third, the district has not yet shown its work.</b> No line-item net-savings analysis, transportation model, "
   "receiving-school capacity study, building condition assessment, or alternatives comparison has been published. "
-  "Meanwhile the school proposed for closure is, on the state's own accountability composite, the district's "
-  "highest-performing elementary, scoring 58.2 in 2024-25 against 26.5 and 19.3 at the two schools that would "
-  "receive its students.")
+  "Meanwhile the school proposed for closure is the district's highest-performing elementary on a normalized "
+  "composite of the state's test results (SchoolDigger's 0-100 rendering of KDE data), scoring 58.2 in 2024-25, "
+  "272nd of 685 Kentucky elementaries, against 26.5 and 19.3 at the two schools that would receive its students.")
 P("The report closes with ten questions the administration should be required to answer in writing before any vote, "
   "a menu of revenue and cost measures worth an estimated $1.1 to $2.1 million a year without closing a school, and "
   "staged recommendations with clear decision thresholds. The district retains roughly $4.3 million in General Fund "
@@ -352,18 +352,20 @@ H("5. Academic Performance: The District Would Be Closing Its Best Elementary Sc
 fig("chart_district.png",
     "Figure 6. The full two-decade score history for every elementary school in the district, with Paris "
     "Independent's Paris Elementary for county context (reported from 2024). Values are SchoolDigger's normalized "
-    "0-100 score computed from state test data, a consistent cross-year yardstick, not KDE's official rating. "
+    "0-100 score computed from state test data, a same-year comparison across schools, not KDE's official rating. "
     "Dashed markers show where the underlying state assessment changed (2012 and 2021-22); no statewide tests were "
     "given in 2020, and North Middletown's 2021 result was not reported.")
 fig("chart_compare.png",
-    "Figure 7. The 2024-25 accountability composite for elementary schools across the region. Only Montgomery "
+    "Figure 7. The 2024-25 normalized test-score composite (SchoolDigger, from KDE data) for elementary schools "
+    "across the region. Only Montgomery "
     "County's two elementaries outscore North Middletown; every elementary in Bourbon County, Clark County, and "
     "Paris Independent trails it.")
 P("The pattern is hard to miss, and it runs in opposite directions. After a pandemic-era dip in 2023, North "
   "Middletown rebounded to 54.1 in 2024 and 58.2 in 2025, back above the state median, around the 60th "
   "percentile of Kentucky elementary schools, ranking 272nd of 685 statewide. Over the same stretch the receiving "
-  "schools moved the other way: Bourbon Central has slid from 39.9 (2019) to 26.5, and Cane Ridge fell from 35.8 "
-  "to 19.3 in a single year, both now in the bottom quarter of the state, alongside Paris Elementary at 12.2. "
+  "schools moved the other way: Bourbon Central has slid from 39.9 (2019) to 26.5, ranking 545th of 685, and "
+  "Cane Ridge fell from 35.8 to 19.3 in a single year, ranking 575th, both now in the bottom quarter of the "
+  "state, alongside Paris Elementary at 12.2. "
   "Across the wider region (Figure 7), only Montgomery County's Northview and Mapleton outscore North Middletown; "
   "every elementary in Clark County and Paris Independent trails it. The two-decade record in Figure 6 "
   "deepens the contrast: around its Blue Ribbon years North Middletown scored 87.9 and 85.8, the top tier of "
@@ -609,7 +611,7 @@ P("The strongest alternative is not defensive. Kentucky law already supplies the
   "agreement from the child's home district required and tuition at the board's discretion. Every family North "
   "Middletown attracts brings at least the $4,626 base guarantee (fiscal 2027), plus applicable add-ons.")
 P("North Middletown is built to compete for those families. It is a 2011 National Blue Ribbon school with a "
-  "gifted-and-talented program, a 13.6-to-1 student-teacher ratio, and a 58.2 accountability composite that beats "
+  "gifted-and-talented program, a 13.6-to-1 student-teacher ratio, and a 58.2 normalized test-score composite that beats "
   "every elementary school in Bourbon County and every one in neighboring Clark County and Paris Independent "
   "(Conkwright 17.5, Strode Station 34.2, Justice 39.3, Shearer 42.3, Paris Elementary 12.2). Its state-approved "
   "capacity is 174 against 128 enrolled: forty-six open seats which, filled with transfer students at the base "
@@ -639,7 +641,7 @@ P("But a school's enrollment does not have to wait on a county's birth rate, bec
   "region's best small elementary has empty seats within a short drive of families across four counties whose current "
   "options score a third as high.")
 P("The seats deserve a destination, not just a headcount, and the school already holds the ingredients: a "
-  "National Blue Ribbon history, the region's top accountability composite, an existing gifted-and-talented "
+  "National Blue Ribbon history, the region's top test-score composite, an existing gifted-and-talented "
   "program, and open seats no other school in the area can offer. Build on them and North Middletown becomes "
   "the region's premier elementary. One natural path, though not the only one, is a specialized program for "
   "advanced learners that families apply into from across the district and, under House Bill 563, from the "
@@ -1063,9 +1065,9 @@ P("I built this report from public records, and I want it held to that standard.
   "the district's financial statements for the years ended June 30, 2024 and June 30, 2025, both of which carry "
   "clean opinions. Per-student spending is the state's published school-level data for 2023-24, the most recent "
   "full year posted, and should be refreshed when the next year appears. The multi-year score series in Figure 6 "
-  "is SchoolDigger's normalized 0-100 rendering of Kentucky Department of Education test data, a consistent "
-  "yardstick across years but not KDE's official rating; the underlying state assessments changed in 2012 and "
-  "again in 2021-22. Demographic figures come from the U.S. Census Bureau, the Kentucky State Data Center's "
+  "is SchoolDigger's normalized 0-100 rendering of Kentucky Department of Education test data, a same-year "
+  "comparison across schools but not KDE's official rating; the underlying state assessments changed in 2012 and "
+  "again in 2021-22, so scores from different assessment eras are not on the same scale. Demographic figures come from the U.S. Census Bureau, the Kentucky State Data Center's "
   "projections as reported in county planning documents, and the county's Envision 2040 plan. Enrollment counts "
   "from 1989 through 2014 are compiled from federal data by PublicSchoolReview; the 2015 through 2025 counts "
   "match the federal figures directly. Every dollar range labeled an estimate is mine, its assumptions are "
