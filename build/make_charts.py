@@ -29,12 +29,12 @@ yrs = ["FY2023", "FY2024", "FY2025"]
 # ---- A: General Fund (deficit + balance) ----------------------------------
 fig, (a1, a2) = plt.subplots(1, 2, figsize=(6.7, 2.7))
 d = [-0.237, -2.535, -2.648]
-b1 = a1.bar(yrs, d, color=RED, width=0.52)
+b1 = a1.bar(yrs, d, color="#9DC3E6", width=0.52)
 a1.set_title("Operating result before transfers  ($M)")
 a1.axhline(0, color="#444444", linewidth=0.8)
 for r, v in zip(b1, d):
     a1.text(r.get_x() + r.get_width()/2, v - 0.18, f"{v:+.2f}", ha="center", va="top",
-            fontsize=9, color=RED, fontweight="bold")
+            fontsize=9, color=NAVY, fontweight="bold")
 a1.set_ylim(-3.7, 0.45); clean(a1)
 fb = [6.583, 5.516, 4.291]
 b2 = a2.bar(yrs, fb, color=NAVY, width=0.52)
@@ -77,9 +77,9 @@ colors = [NAVY, LGRAY, LGRAY]
 bars = ax.barh(schools[::-1], pp[::-1], color=colors[::-1], height=0.52)
 ax.set_title("Spending per student, 2023-24  (Kentucky School Report Card)")
 ax.xaxis.set_major_formatter(FuncFormatter(lambda v, p: f"${v:,.0f}"))
-for r, v in zip(bars, pp[::-1]):
+for r, v, c in zip(bars, pp[::-1], colors[::-1]):
     ax.text(v - 400, r.get_y() + r.get_height()/2, f"${v:,.0f}", ha="right", va="center",
-            fontsize=9, color="white", fontweight="bold")
+            fontsize=9, color="white" if c == NAVY else "#333333", fontweight="bold")
 ax.set_xlim(0, 21200)
 clean(ax, ygrid=False, xgrid=True)
 fig.tight_layout()
@@ -147,7 +147,7 @@ for r, v in zip(b1, da):
             fontsize=9, color=NAVY, fontweight="bold")
 a1.set_ylim(0, 1.85); clean(a1)
 a1.text(0.03, 0.93, "+44.8% in two years", transform=a1.transAxes,
-        fontsize=9, color=RED, fontweight="bold")
+        fontsize=9, color=BLUE, fontweight="bold")
 sa = [2.1100, 2.5188, 2.5814]
 b2 = a2.bar(yrs, sa, color=BLUE, width=0.52)
 a2.set_title("School administration expense  ($M)")
@@ -156,7 +156,7 @@ for r, v in zip(b2, sa):
             fontsize=9, color=DBLUE, fontweight="bold")
 a2.set_ylim(0, 3.25); clean(a2)
 a2.text(0.03, 0.93, "+22.3% in two years", transform=a2.transAxes,
-        fontsize=9, color=RED, fontweight="bold")
+        fontsize=9, color=BLUE, fontweight="bold")
 fig.tight_layout(w_pad=2.6)
 save(fig, "chart_admin.png")
 
@@ -226,9 +226,23 @@ COUNTY = [(-84.4438,38.2831),(-84.3792,38.2779),(-84.2787,38.3148),(-84.1926,38.
 NORTH = [(-84.4438,38.2831),(-84.3792,38.2779),(-84.2787,38.3148),(-84.1926,38.3715),(-84.1674,38.3552),(-84.0957,38.259),(-84.0562,38.2564),(-84.0634,38.235),(-84.0323,38.2171),(-84.1,38.245),(-84.245,38.212),(-84.3,38.235),(-84.4204,38.2421),(-84.4438,38.2831)]
 SW = [(-84.2428,38.0775),(-84.2859,38.0674),(-84.3792,38.1138),(-84.3541,38.1783),(-84.372,38.2083),(-84.4007,38.2075),(-84.4204,38.2421),(-84.3,38.235),(-84.245,38.212),(-84.235,38.14),(-84.2428,38.0775)]
 EAST = [(-84.0323,38.2171),(-84.0275,38.2143),(-84.026,38.2145),(-84.02,38.212),(-83.9823,38.2045),(-83.9772,38.192),(-84.0813,38.1155),(-84.2428,38.0775),(-84.235,38.14),(-84.245,38.212),(-84.1,38.245),(-84.0323,38.2171)]
-ax.add_patch(MplPolygon(NORTH, closed=True, facecolor="#8FAEDC", edgecolor="#FFFFFF", linewidth=1.0))
-ax.add_patch(MplPolygon(SW, closed=True, facecolor="#C5D7EC", edgecolor="#FFFFFF", linewidth=1.0))
-ax.add_patch(MplPolygon(EAST, closed=True, facecolor="#E8EDF5", edgecolor="#FFFFFF", linewidth=1.0))
+import os as _os, json as _json
+_sabs_path = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "sabs_zones.json")
+SABS = _json.load(open(_sabs_path)) if _os.path.exists(_sabs_path) else None
+def _zone_color(nm):
+    n = nm.lower()
+    if "middletown" in n: return "#E8EDF5"
+    if "cane" in n: return "#C5D7EC"
+    return "#8FAEDC"
+if SABS:
+    for _sch in SABS["schools"]:
+        for _ring in _sch["rings"]:
+            ax.add_patch(MplPolygon([tuple(p) for p in _ring], closed=True,
+                         facecolor=_zone_color(_sch["name"]), edgecolor="#FFFFFF", linewidth=1.0))
+else:
+    ax.add_patch(MplPolygon(NORTH, closed=True, facecolor="#8FAEDC", edgecolor="#FFFFFF", linewidth=1.0))
+    ax.add_patch(MplPolygon(SW, closed=True, facecolor="#C5D7EC", edgecolor="#FFFFFF", linewidth=1.0))
+    ax.add_patch(MplPolygon(EAST, closed=True, facecolor="#E8EDF5", edgecolor="#FFFFFF", linewidth=1.0))
 ax.add_patch(MplPolygon(COUNTY, closed=True, facecolor="none", edgecolor="#1F3864", linewidth=1.6))
 paris = (-84.2529, 38.2098); nmid = (-84.1122, 38.1446); mills = (-84.1467, 38.3022)
 ax.plot(*paris, "o", color=NAVY, markersize=9, zorder=5)
@@ -237,12 +251,12 @@ ax.text(paris[0] - 0.006, paris[1] + 0.013, "Paris (10,171)", fontsize=8.8, font
 ax.text(paris[0] - 0.03, paris[1] - 0.014, "Bourbon Central 459\nCane Ridge 453", fontsize=7.4,
         color="#1F3864", ha="center", va="top")
 ax.plot(*mills, "o", color=NAVY, markersize=5, zorder=5)
-ax.text(mills[0] + 0.004, mills[1] - 0.017, "Millersburg (747)", fontsize=7.4, color="#1F3864", ha="center")
+ax.text(mills[0] + 0.004, mills[1] - 0.023, "Millersburg (747)", fontsize=7.4, color="#1F3864", ha="center")
 ax.plot(nmid[0], nmid[1], "*", color="#1F3864", markersize=16, zorder=5)
 ax.text(nmid[0] - 0.01, nmid[1] - 0.022, "North Middletown (610)\nNMES: 128 of 174 seats",
         fontsize=8.2, fontweight="bold", color="#1F3864", ha="center", va="top")
 ax.plot([paris[0], nmid[0]], [paris[1], nmid[1]], color=GRAY, linewidth=1.1, linestyle=":", zorder=4)
-ax.text(-84.158, 38.163, "US 460, ~10 mi", fontsize=7.2, color="#555555", ha="center", rotation=-20)
+ax.text(-84.168, 38.172, "US 460, ~10 mi", fontsize=7.2, color="#555555", ha="center", rotation=-20)
 ax.text(-84.365, 38.305, "North zone", fontsize=8.0, color="#1F3864", fontweight="bold", ha="center")
 ax.text(-84.335, 38.13, "Southwest zone", fontsize=8.0, color="#1F3864", fontweight="bold", ha="center")
 ax.text(-83.906, 38.29, "NMES zone\n~105 sq mi\n128 students\n~1.2 per sq mi",
@@ -251,8 +265,9 @@ ax.text(-84.415, 38.052, "Paris-area zones (north + southwest):\n~185 sq mi, 912
         fontsize=8.0, color="#FFFFFF", fontweight="bold", ha="left",
         bbox=dict(facecolor="#1F3864", edgecolor="none", boxstyle="round,pad=0.35"))
 ax.set_title("Bourbon County elementary zones: where the students are", fontsize=11.5, pad=14)
-ax.text(-84.462, 38.398, "Traced from the district's published attendance-zone view\non the U.S. Census county outline",
-        fontsize=7.6, color="#555555", ha="left", va="top")
+_sub = ("Official attendance boundaries: NCES School Attendance\nBoundary Survey, 2015-16 collection" if SABS
+        else "Traced from the district's published attendance-zone view\non the U.S. Census county outline")
+ax.text(-84.462, 38.398, _sub, fontsize=7.6, color="#555555", ha="left", va="top")
 sb_y = 38.022; sb_x0 = -84.455; sb_x1 = sb_x0 + 0.1832
 ax.plot([sb_x0, sb_x1], [sb_y, sb_y], color="#1F3864", linewidth=2.2, solid_capstyle="butt")
 for xx in (sb_x0, sb_x1):
@@ -273,8 +288,9 @@ fig, (a1, a2) = plt.subplots(1, 2, figsize=(6.7, 3.0), gridspec_kw={"width_ratio
 tyrs = [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]
 trates = [61.3, 60.6, 55.9, 54.2, 49.2, 52.4, 52.4, 52.4]
 a1.plot(tyrs, trates, color=NAVY, marker="o", markersize=4.5, linewidth=2)
-for x, v in zip(tyrs, trates):
-    a1.text(x, v + 0.9, f"{v}", ha="center", fontsize=7.8, color=NAVY, fontweight="bold")
+for x, v in [(2018, 61.3), (2022, 49.2), (2025, 52.4)]:
+    a1.text(x, v + 1.1 if v != 49.2 else v - 2.4, f"{v}", ha="center", fontsize=8.2,
+            color=NAVY, fontweight="bold")
 a1.set_title("Bourbon Co. Schools rate by tax year\n(real estate, cents per $100)")
 a1.set_ylim(43, 67)
 a1.set_xticks(tyrs)
@@ -290,7 +306,7 @@ for r, v in zip(bars, dvals[::-1]):
     a2.text(v + 1.0, r.get_y() + r.get_height() / 2, f"{v}", va="center",
             fontsize=8.2, color="#333333", fontweight="bold")
 a2.axvline(65.1, color=GRAY, linewidth=1.0, linestyle="--")
-a2.text(65.8, 0.05, "KY school avg 65.1", fontsize=7.6, color=GRAY)
+a2.text(66.0, 0.1, "KY school avg 65.1", fontsize=7.6, color=GRAY)
 a2.set_title("2024-25 levied rate, area districts")
 a2.set_xlim(0, 90)
 a2.tick_params(axis="y", labelsize=8.2)

@@ -685,7 +685,9 @@ P("The savings from doing this well are documented, not hypothetical. Boston Pub
   "check anyone can run without waiting on the district: the federal School Attendance Boundary Survey "
   "(NCES EDGE) published the district's actual attendance-zone boundaries as free GIS files in its 2015-16 "
   "collection, and NCES publishes geocoded school locations. Figure 13 should be tested against those "
-  "files, and Appendix B lists them alongside the records only the district can produce.")
+  "files, and the repository ships the prepared federal query, build/fetch_sabs.py, so anyone can redraw "
+  "Figure 13 from the official boundaries in one step. Appendix B lists the datasets alongside the records "
+  "only the district can produce.")
 tbl(["Measure", "Estimated annual value", "How it works"],
     [["Take the annual 4% property-tax adjustment",
       "$350,000-$450,000, recurring",
@@ -1170,9 +1172,9 @@ tbl(["Request", "What it settles"],
     caption="Fifteen requests in four groups. Each cites the section whose labeled estimate it replaces.",
     bold_first_col=False)
 H2("Already public, no request needed")
-B("School Attendance Boundary Survey (NCES EDGE, 2015-16): the district's attendance-zone GIS files, "
-  "queryable at nces.ed.gov/opengis (SABS_1516 service, school 210054000096); geocoded school locations and "
-  "enrollment files at nces.ed.gov/programs/edge.")
+B("School Attendance Boundary Survey (NCES EDGE, 2015-16): the district's attendance-zone GIS files; the "
+  "prepared query ships in this repository as build/fetch_sabs.py; school locations and enrollment files at "
+  "nces.ed.gov/programs/edge.")
 B("U.S. Census TIGER county boundaries and block-level population counts (census.gov/geographies); KDE SEEK "
   "transportation calculation files and district funding detail (education.ky.gov/districts/SEEK).")
 
