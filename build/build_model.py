@@ -376,7 +376,7 @@ hdrs = ["Measure", "Low ($/yr)", "High ($/yr)", "Basis", "Type", "Confidence / w
 for i, h in enumerate(hdrs):
     put(al, f"{get_column_letter(i+1)}3", h, BOLDW, fill=HDR)
 alts = [
- ("4% property-tax adjustment (KRS 160.470)", "=Assumptions!B35*Assumptions!B36", 450000, "Low = 4% of FY2025 GF property tax; high allows base growth", GRN, BLUE,
+ ("4% property-tax adjustment (KRS 160.470)", "=Tax_History!B50", 450000, "Low = year-one 4% option on the full levied base (matches the levy analysis); high allows base growth", GRN, BLUE,
   "New revenue", "High; board authority every August, no recall exposure"),
  ("Improve delinquent-tax recovery (partial)", 60000, 120000, "25-50% of FY2025 delinquency of $239,126 (2.4% of certified yield)", BLUE, BLUE,
   "New revenue", "Medium; needs an aging and collection analysis"),
@@ -419,6 +419,7 @@ put(al, f"A{tot+5}", "Conservative combined estimate, high"); put(al, f"B{tot+5}
 put(al, f"A{tot+6}", "Conservative midpoint (used in Runway sheet)"); put(al, f"B{tot+6}", f"=(B{tot+4}+B{tot+5})/2", BLK, CUR)
 put(al, f"A{tot+7}", "Average annual GF drawdown (FY2024-25)"); put(al, f"B{tot+7}", "=GF_Summary!D16", GRN, CUR)
 put(al, f"A{tot+8}", "Closure net saving (base case)"); put(al, f"B{tot+8}", "=Closure_Model!B20", GRN, CUR)
+put(al, f"A{tot+10}", "Reading: raw row sums run about $1.8M to $3.1M; the published $1.1M to $2.1M band takes roughly two thirds of them as a haircut for overlap and implementation risk. Coverage percentages elsewhere measure against the $2.65M gap before transfers; the Runway and Scenarios tabs run on the net drawdown after transfers.", NOTE, wrap=True)
 
 # ================= DEBT_SERVICE =================
 d = sheet("Debt_Service", [16, 16, 14, 12, 18, 44])
@@ -501,7 +502,7 @@ put(rw, "A10", "Reading: the alternatives package restores balance faster than c
 sc = sheet("Scenarios", [50, 18, 18, 26, 52])
 put(sc, "A1", "Three Complete Plans, Compared (illustrative five-year view)", TITLE)
 put(sc, "A2", "Each row is a full operating plan under this workbook's stated assumptions; the district should replace them with actuals. "
-              "One-time closure transition costs (moving, receiving-school additions, building carrying or disposal) have not been published and are not included.", NOTE, wrap=True)
+              "One-time closure transition costs (moving, receiving-school additions, building carrying or disposal) have not been published and are not included. Coverage percentages use the $2.65M before-transfers gap; these balance projections use the net drawdown after transfers.", NOTE, wrap=True)
 schdrs = ["Plan", "Recurring GF impact ($/yr, by yr 3)", "Projected FY2029 balance", "One-time costs", "What it requires and risks"]
 for i, h in enumerate(schdrs):
     put(sc, f"{get_column_letter(i+1)}4", h, BOLDW, fill=HDR)

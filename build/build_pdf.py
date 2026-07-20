@@ -118,7 +118,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 2.4 &nbsp;\u2022&nbsp; July 20, 2026",
+A(Paragraph("Version 2.5 &nbsp;\u2022&nbsp; July 20, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
@@ -170,7 +170,7 @@ P("<b>Second, North Middletown Elementary did not cause the problem, and closing
   "pay teachers in any case. The receiving schools' rated capacities are 549 at Bourbon Central and 422 at Cane "
   "Ridge; at today's enrollment that is a net 59 uncommitted seats for 128 children, with Cane Ridge already 31 "
   "students over its rating. A realistic net recurring saving, estimated in Section 4, is on the order of $250,000 to "
-  "$600,000, a fraction of the deficit, and less than several alternatives that harm no one.")
+  "$640,000, a fraction of the deficit, and less than several alternatives that harm no one.")
 P("<b>Third, the district has not yet shown its work.</b> No line-item net-savings analysis, transportation model, "
   "receiving-school capacity study, or alternatives comparison has been published. The one technical document that "
   "has surfaced, the architect's KFICS condition assessment presented in July, strengthens the keep-open case: it "
@@ -307,7 +307,7 @@ P("The 128 children would still need teachers, about eight to nine classrooms' w
   "state funding with it, permanently (the fiscal 2027 base, the first year a closure could take effect; this "
   "report uses the fiscal 2027 figure for anything that would happen after a closure).")
 P("Put together, a defensible planning estimate of the net recurring General Fund saving is roughly <b>$250,000 to "
-  "$600,000 a year</b>, an estimate, clearly labeled as such, that the district could replace tomorrow with a real "
+  "$640,000 a year</b>, an estimate, clearly labeled as such, that the district could replace tomorrow with a real "
   "worksheet. Even on assumptions generous to the district, five positions eliminated instead of three, busing "
   "at the low end, and not one family leaving, the math tops out around $640,000, still under a "
   "quarter of the structural deficit (the companion workbook shows this case explicitly). The reason for "
@@ -461,7 +461,7 @@ B("<b>No bond issue on record names North Middletown Elementary.</b> The capital
 B("<b>The construction fund ran a negative $1.43 million restricted balance at June 30, 2024</b>, project spending "
   "ran ahead of the borrowing that later covered it. Not improper in itself, but it shows a capital program being "
   "prioritized and cash-flowed in the same years the operating budget went into deficit. The fiscal 2024 audit also "
-  "notes the district held $23.5 million in unused bonding capacity, borrowing room for buildings that, again, "
+  "notes the district held $23.5 million in unused bonding capacity as of June 30, 2024, borrowing room for buildings that, again, "
   "cannot pay teachers either way.")
 H2("What closing a school does, and does not do, to bonding capacity")
 P("A district's ability to borrow for buildings is simple math set by statute and regulation, and it is worth "
@@ -472,7 +472,7 @@ P("A district's ability to borrow for buildings is simple math set by statute an
   "equalization (KRS 157.440). Set existing debt payments against those streams and what remains is the room for "
   "new debt. On the fiscal 2025 numbers: roughly $224,000 a year of capital outlay, about $2.05 million of "
   "building-fund tax, and $1.58 million of district-paid debt service in fiscal 2026. The fiscal 2024 audit "
-  "states the bottom line plainly: about $23.5 million of unused bonding capacity. The companion workbook lays "
+  "states the bottom line plainly: about $23.5 million of unused bonding capacity as of June 30, 2024. The companion workbook lays "
   "the components side by side on the Debt_Service tab.")
 P("Nothing in that math grows when a school closes. Closing North Middletown adds no assessment, no "
   "attendance, and no levy. What it changes is the plan, not the capacity: a “transitional” label removes the "
@@ -588,7 +588,7 @@ P("The fresh architect-and-engineer assessment this cycle rests on has now surfa
   "in it, demonstrates the pencil at work. The architect's own KFICS slides print a third set entirely: 499 at "
   "Bourbon Central and 397 at Cane Ridge, capacities at which the receiving schools have <b>negative</b> net "
   "room at today's enrollment. Three documents, three sets of capacities for the same unchanged buildings; "
-  "under two of the three, the seats for 128 children are not there. "
+  "under two of the three, the seats for 128 children are not there. Run the seat math under every printed set: 59 uncommitted at 549 and 422, 31 at the 2021 plan's printed 521, minus 16 at the architect's 499 and 397; only the draft table's unexplained 640 and 547 produces room, and that is the set that added 216 paper seats with no construction. "
   "Moving 128 children into those schools is not free of capital cost. An empty "
   "building, finally, is not free: it must be secured, insured, minimally heated, and eventually disposed of, while "
   "the town loses its largest civic anchor, a community of about 610 people whose residents told the planning "
@@ -760,13 +760,15 @@ P("Now the closure math, from the bottom up, with the distances measured on the 
   "roughly $55,000 more. The bottom-up estimate therefore lands at about $51,000 to $147,000, squarely inside "
   "the $75,000 to $200,000 planning range this report has used from the start, and it validates the $137,500 "
   "midpoint in the closure model. The geometry also prices the quieter cost. Averaged over the zone's "
-  "area, closure adds about 4 road miles each way to a child's trip. At the far corner, near the Nicholas "
+  "area, closure adds an estimated 4 road miles each way to a child's trip. At the far corner, near the Nicholas "
   "County line, a kindergartner who today rides about 10 road miles to North Middletown would ride about 18 "
   "to Paris, roughly 15 to 20 added minutes each way at rural bus speeds. And 78 percent of the zone's area "
   "lies closer to North Middletown than to Paris, which is the whole map's point in a single number.")
 P("Run the same math on the rebalancing scenario and the sign flips. Rezoned students already ride "
   "district buses today, ten miles west to the Paris schools; rezoning moves them to the school they live "
-  "closest to, so the affected routes shorten, an estimated $10,000 to $18,000 a year saved. Rebalancing is "
+  "closest to, so the affected routes shorten, an estimated $10,000 to $18,000 a year saved (each rezoned "
+  "student cutting about 136 bus-miles a year at $2.50 to $4.50 a mile, an estimate the district's T-1 route "
+  "data would replace). Rebalancing is "
   "transport-neutral at worst and modestly positive at best, while closure is a guaranteed transport "
   "increase. District-wide, the optimization lever in the menu below, routing software, tiered bells, and a "
   "right-sized fleet, remains worth 5 to 10 percent of the $2.9 million line, $145,000 to $290,000 a year, "
@@ -853,9 +855,10 @@ tbl(["Measure", "Estimated annual value", "How it works"],
     caption="Figure 14. Measures available without closing a school. The menu deliberately mixes two kinds of lines, "
             "new recurring revenue and recurring cost reductions, and the workbook's Alternatives tab labels each one "
             "by type with a confidence rating and what would firm it up. Values are estimates derived from the "
-            "district's audited figures and state data; ranges overlap and are not additive to the penny. A "
-            "conservative combination totals roughly $1.1 to $2.1 million a year of combined revenue and savings, "
-            "against an annual reserve drawdown of $1.1 to $1.2 million.",
+            "district's audited figures and state data; ranges overlap and are not additive to the penny. The "
+            "rows sum to roughly $1.8 to $3.1 million raw; the published $1.1 to $2.1 million a year applies "
+            "roughly a one-third haircut for overlap and implementation risk, against an annual reserve drawdown "
+            "of $1.1 to $1.2 million.",
     bold_first_col=True)
 
 H2("The tax question, faced squarely")
@@ -1014,11 +1017,15 @@ P("The decision before the Board is often framed as closure versus no closure. T
   "least three on the table. The comparison below is illustrative, built on this report's stated assumptions and "
   "a straight-line projection from the fiscal 2025 balance; the workbook's Scenarios tab carries the math, and "
   "the district should replace every assumption with actuals. One-time closure transition costs, which the "
-  "district has not published, are not included and would reduce Plan 2's early-year figures.")
+  "district has not published, are not included and would reduce Plan 2's early-year figures. Two yardsticks "
+  "are in play throughout this report, and they measure different things: coverage percentages run against the "
+  "$2.65 million operating gap before transfers, while these balance projections run on the roughly $1.15 "
+  "million net drawdown after transfers. A plan can restore the reported balance while covering only part of "
+  "the before-transfers gap, which is why both numbers are always shown side by side.")
 tbl(["Plan", "Recurring impact, year 3", "Projected FY2029 balance", "What it requires"],
     [["1. Districtwide status quo (change nothing)", "None", "Fully drawn down",
       "No decisions; the districtwide drawdown simply continues, with or without North Middletown"],
-     ["2. Close NMES and consolidate", "$250,000-$600,000 a year", "About $0.8 million",
+     ["2. Close NMES and consolidate", "$250,000-$640,000 a year", "About $0.8 million",
       "Closure vote; covers under a quarter of the gap; longer rides; enrollment-loss risk"],
      ["3. Districtwide recovery plan (menu plus levy)", "$1.1-$2.1 million a year", "About $3.7 million",
       "Revenue votes, administrative rollback, boundary action and HB 563 recruitment, implementation "
@@ -1298,7 +1305,7 @@ P("Kentucky's Open Records Act (KRS 61.870 to 61.884; inspection rights and requ
   "student-identifiable information, and I will publish, and correct against, whatever comes back.")
 tbl(["Request", "What it settles"],
     [["<b>The money.</b> The net-savings worksheet behind the \u201cover a million dollars\u201d statement",
-      "Replaces the $250,000 to $600,000 planning range (Sections 1, 4)"],
+      "Replaces the $250,000 to $640,000 planning range (Sections 1, 4)"],
      ["Any alternatives modeling the administration has performed",
       "Whether closure was compared to anything (Section 9)"],
      ["Administrator salary schedule and five years of compensation, position by position",
@@ -1345,7 +1352,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Deep Dive into Bourbon County Schools  \u2022  Version 2.4, July 20, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Deep Dive into Bourbon County Schools  \u2022  Version 2.5, July 20, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 
