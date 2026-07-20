@@ -4,7 +4,8 @@ from reportlab.lib import colors
 from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER, TA_LEFT
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
-                                Image, Table, TableStyle, HRFlowable, KeepTogether)
+                                CondPageBreak, Image, Table, TableStyle, HRFlowable,
+                                KeepTogether)
 from PIL import Image as PILImage
 
 NAVY = colors.HexColor("#1F3864")
@@ -49,11 +50,15 @@ class HRK(HRFlowable):
     def getKeepWithNext(self):
         return 1
 
-def H(t):
+def H(t, need=0):
+    if need:
+        A(CondPageBreak(need * inch))
     A(Paragraph(t, h1))
     A(HRK(width="100%", thickness=0.8, color=LINE, spaceAfter=8))
 
-def H2(t):
+def H2(t, need=0):
+    if need:
+        A(CondPageBreak(need * inch))
     A(Paragraph(t, h2))
 
 def fig(png, caption, width=W):
@@ -179,7 +184,7 @@ P("The report closes with ten questions the administration should be required to
   "answered in writing.")
 
 # ================= 2. WHERE THINGS STAND =================
-H("2. Where Things Stand: The Decision and the Process")
+H("2. Where Things Stand: The Decision and the Process", need=1.6)
 tbl(["Date (2026)", "Event"],
     [["Early July",
       "As the district develops its four-year District Facility Plan, word spreads that closure of North Middletown "
@@ -247,7 +252,7 @@ P("A reading note on the transfers line, because it changes the presentation wit
   "interfund transfers, some of them recurring and legitimate resources, some of them not sustainable, cover "
   "roughly half the gap while reserves absorb the rest. Which transfers can be sustained is itself a question "
   "the district's finance office should answer in writing.")
-H2("Why it happened")
+H2("Why it happened", need=4.0)
 fig("chart_cliff.png",
     "Figure 4. The two revenue shocks. Federal revenue in the governmental funds fell $2.95 million from FY2023 to "
     "FY2025 as ESSER pandemic aid expired, and attendance-based state funding fell with roughly 248 fewer funded "
@@ -343,7 +348,7 @@ P("Whatever the true net number proves to be, one comparison frames the decision
   "the measures in Section 9 total more, harm no student, and close no town's school.")
 
 # ================= 5. ACADEMICS =================
-H("5. Academic Performance: The District Would Be Closing Its Best Elementary School")
+H("5. Academic Performance: The District Would Be Closing Its Best Elementary School", need=5.3)
 fig("chart_district.png",
     "Figure 6. The full two-decade score history for every elementary school in the district, with Paris "
     "Independent's Paris Elementary for county context (reported from 2024). Values are SchoolDigger's normalized "
@@ -558,7 +563,7 @@ P("The 2026 planning cycle is supposed to rest on a fresh architect-and-engineer
   "committee the school is \u201cthe heartbeat\u201d of the town.")
 
 # ================= 8. ADMIN =================
-H("8. Where the Money Is Actually Going: Administrative Growth")
+H("8. Where the Money Is Actually Going: Administrative Growth", need=4.3)
 fig("chart_admin.png",
     "Figure 10. Administration expense from the district's audited statements of activities. District (central "
     "office) administration grew from $999,727 in FY2023 to $1,447,164 in FY2025; school administration grew from "
@@ -972,7 +977,7 @@ P("The decision before the Board is often framed as closure versus no closure. T
   "a straight-line projection from the fiscal 2025 balance; the workbook's Scenarios tab carries the math, and "
   "the district should replace every assumption with actuals. One-time closure transition costs, which the "
   "district has not published, are not included and would reduce Plan 2's early-year figures.")
-tbl(["Plan", "Recurring impact by yr 3", "Projected FY2029 balance", "What it requires"],
+tbl(["Plan", "Recurring impact, year 3", "Projected FY2029 balance", "What it requires"],
     [["1. Districtwide status quo (change nothing)", "None", "Fully drawn down",
       "No decisions; the districtwide drawdown simply continues, with or without North Middletown"],
      ["2. Close NMES and consolidate", "$250,000-$600,000 a year", "About $0.8 million",
@@ -1064,8 +1069,9 @@ P("I built this report from public records, and I want it held to that standard.
   "Question 3. The transportation estimates beside it use the official federal zone boundaries (SABS, "
   "2015-16), a highway distance, and labeled cost-per-mile bands; the district's annual T-1 transportation "
   "report would replace the cost inputs, and the Transport_Geo tab is built to take them.", note)
-P("A few items in the record need the district, not me, to resolve. The real-estate tax rate appears as 52.4 "
-  "confusion is resolved in Section 9: 52.4 cents is the levied rate, 54.2 a transposition typo, 54.7 the "
+P("A few items in the record need the district, not me, to resolve. The real-estate tax rate appears three "
+  "ways in public records, as 52.4, 54.2, and 54.7 cents; that confusion is resolved in Section 9: 52.4 "
+  "cents is the levied rate, 54.2 a transposition typo, 54.7 the "
   "motor vehicle rate; still open are the General Fund versus building fund cent split, the levied rate type "
   "by year, and the pre-2018 rate history, all in state files the district can produce. The 2013R bond "
   "figures are internally inconsistent as printed. The stated purpose of the 2023 and 2024 bond issues awaits "
