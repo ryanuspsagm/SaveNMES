@@ -505,13 +505,13 @@ P("The prior facility plan, approved by the Kentucky Board of Education in June 
 tbl(["School", "2013 plan: enrolled / capacity", "2021 plan: enrolled / capacity", "Today"],
     [["North Middletown Elementary", "169 / 198", "161 / 174", "128 enrolled"],
      ["Cane Ridge Elementary", "461 / 500", "480 / 422", "453 enrolled, 31 over its rating"],
-     ["Bourbon Central Elementary", "602 / 564", "535 / 521", "459 enrolled, 90 open at its current 549"],
+     ["Bourbon Central Elementary", "602 / 564", "535 / 521", "459 enrolled, 90 open at its rated 549"],
      ["Preschool/Head Start Center", "296 / 180", "272 / 200", "over capacity in both plans"]],
     [1.9 * inch, 1.7 * inch, 1.7 * inch, 1.4 * inch],
     caption="Enrollment and rated capacity in the district's two most recent state-approved facility plans "
             "(KBE June 2013 and KBE August 2021; both archived under build/ in this report's repository), with "
-            "current 2024-25 enrollment. Bourbon Central's rating today is 549, the to-become capacity its 2021 "
-            "plan listed with its addition. The reading order, enrollment first, is confirmed by the 2021 plan's "
+            "current 2024-25 enrollment. Bourbon Central's rated capacity is 549, reflecting the addition in its "
+            "2021 plan. The reading order, enrollment first, is confirmed by the 2021 plan's "
             "own preschool note (272 = 80 full-day plus 192 half-day students).",
     bold_first_col=True)
 P("Three facts fall out of that table. First, the rated capacity of North Middletown was written down from 198 "
@@ -543,10 +543,9 @@ P("The 2026 planning cycle is supposed to rest on a fresh architect-and-engineer
   "adopted. Two further points keep the building question in proportion. First, whatever renovation the school "
   "needs would be paid from the restricted facility funds described in Section 6, money that cannot close the "
   "operating deficit whether the school stays open or not. Second, the receiving schools have no room to spare: "
-  "Bourbon Central's rating stands at 549 with the addition its plan contemplated, and Cane Ridge's at 422. At "
+  "the rated capacities are 549 at Bourbon Central and 422 at Cane Ridge. At "
   "today's enrollments of 459 and 453 that leaves 90 seats open at Bourbon Central and puts Cane Ridge 31 "
-  "students <b>over</b> its rating, a net 59 uncommitted seats for 128 children; at the 2021 plan's as-printed "
-  "521 for Bourbon Central, the net is just 31. Either way the seats are not there. "
+  "students <b>over</b> its rating, a net 59 uncommitted seats for 128 children. The seats are not there. "
   "Moving 128 children into those schools is not free of capital cost. An empty "
   "building, finally, is not free: it must be secured, insured, minimally heated, and eventually disposed of, while "
   "the town loses its largest civic anchor, a community of about 610 people whose residents told the planning "

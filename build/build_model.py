@@ -734,7 +734,7 @@ for i, h in enumerate(fhdrs):
 frows = [
  ("Bourbon County High School", 881, 637, 799, 704, "Expansion built; CTC addition was the 2022-24 in-biennium priority"),
  ("Bourbon County Middle School", 616, 515, 640, 641, ""),
- ("Bourbon Central Elementary", 602, 564, 535, 521, "Rating today is 549, the plan's to-become capacity with its addition"),
+ ("Bourbon Central Elementary", 602, 564, 535, 521, "Rated capacity 549, reflecting the addition in the 2021 plan"),
  ("Cane Ridge Elementary", 461, 500, 480, 422, "Rated capacity written down 78 seats between plans"),
  ("North Middletown Elementary", 169, 198, 161, 174, "Rated capacity written down 24 seats; building held 261 students at the 1989 peak"),
  ("Preschool/Head Start Center", 296, 180, 272, 200, "Over capacity in both plans"),
@@ -745,12 +745,11 @@ for row in frows:
         put(fp, f"{get_column_letter(i+1)}{r}", v, NOTE if i in (0, 5) else BLUE, None if i in (0, 5) else NUM)
     r += 1
 put(fp, "A12", "RECEIVING CAPACITY TODAY (current ratings vs 2024-25 enrollment)", SEC)
-put(fp, "A13", "Bourbon Central open seats at its current rated 549"); put(fp, "B13", "=549-Redistricting!B8", BLK, NUM)
+put(fp, "A13", "Bourbon Central open seats at rated 549"); put(fp, "B13", "=549-Redistricting!B8", BLK, NUM)
 put(fp, "A14", "Cane Ridge students over rated 422"); put(fp, "B14", "=Redistricting!B9-E8", BLK, NUM)
 put(fp, "A15", "Net uncommitted seats at both receiving schools"); put(fp, "B15", "=B13-B14", BLK, NUM, bold=True)
 put(fp, "A16", "NMES students needing seats on closure"); put(fp, "B16", "=Assumptions!B11", GRN, NUM)
 put(fp, "A17", "Shortfall if closure proceeds today"); put(fp, "B17", "=B16-B15", BLK, NUM, bold=True)
-put(fp, "A18", "Sensitivity: net seats at the 2021 plan's as-printed 521 for Bourbon Central"); put(fp, "B18", "=E7-Redistricting!B8-B14", BLK, NUM)
 put(fp, "A20", "NMES INVESTMENT RECORD IN THE PLANS", SEC)
 put(fp, "A21", "2013 plan: NMES major renovation priced (HVAC, media center, kitchen, security vestibule, gym)")
 put(fp, "B21", 1594872, BLUE, CUR); put(fp, "C21", 239139, BLUE, CUR); put(fp, "D21", 86959, BLUE, CUR)
@@ -761,8 +760,8 @@ put(fp, "E22", "=SUM(B22:D22)", BLK, CUR); put(fp, "F22", "All scheduled after t
 put(fp, "A23", "2021 plan: HS Career & Technical Center, in-biennium new construction")
 put(fp, "B23", "=227149+1447694+1150886+1075170+772305+832878+1150886", BLK, CUR)
 put(fp, "A24", "2021 plan: total district facility need"); put(fp, "B24", 43389464, BLUE, CUR)
-put(fp, "A26", "Reading: the receiving schools' current ratings are 549 (Bourbon Central) and 422 (Cane Ridge). At current enrollment that is 90 open at Bourbon Central and 31 over at Cane Ridge, "
-               "a net 59 uncommitted seats for 128 children (net 31 at the 2021 plan's as-printed 521). NMES renovation needs were priced in 2013 and re-priced higher in 2021, each time scheduled behind other work. "
+put(fp, "A26", "Reading: the receiving schools' rated capacities are 549 (Bourbon Central) and 422 (Cane Ridge). At current enrollment that is 90 open at Bourbon Central and 31 over at Cane Ridge, "
+               "a net 59 uncommitted seats for 128 children. NMES renovation needs were priced in 2013 and re-priced higher in 2021, each time scheduled behind other work. "
                "Its rated capacity fell 198 to 174 between the same two plans while its enrollment fell 169 to 128.", NOTE, wrap=True)
 
 # ---- finish ----
