@@ -904,14 +904,16 @@ for i, q in enumerate(qs, 1):
 # ================= 12. RECOMMENDATIONS =================
 H("12. Recommendations")
 P("The decision before the Board is often framed as closure versus no closure. That is the wrong frame. The "
+  "deficit is a districtwide problem: every school stays on the same trajectory under Plan 1, and North "
+  "Middletown, whose realistic closure saving covers under a quarter of the gap, did not cause it. The "
   "real question is which complete operating plan produces the best verified five-year result, and there are at "
   "least four on the table. The comparison below is illustrative, built on this report's stated assumptions and "
   "a straight-line projection from the fiscal 2025 balance; the workbook's Scenarios tab carries the math, and "
   "the district should replace every assumption with actuals. One-time closure transition costs, which the "
   "district has not published, are not included and would reduce Plan 2's early-year figures.")
 tbl(["Plan", "Recurring impact by yr 3", "Projected FY2029 balance", "What it requires"],
-    [["1. Keep NMES open, current trajectory", "None", "Below zero",
-      "No decisions; reserves run out and the gap remains"],
+    [["1. Districtwide status quo (change nothing)", "None", "Below zero",
+      "No decisions; the districtwide gap drains reserves with or without North Middletown"],
      ["2. Close NMES and consolidate", "$250,000-$600,000 a year", "About $0.8 million",
       "Closure vote; covers under a quarter of the gap; longer rides; enrollment-loss risk"],
      ["3. Keep NMES open, rebalance and grow", "$140,000-$225,000 a year", "About $0.1 million",

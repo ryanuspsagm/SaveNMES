@@ -505,11 +505,11 @@ put(sc, "A2", "Each row is a full operating plan under this workbook's stated as
 schdrs = ["Plan", "Recurring GF impact ($/yr, by yr 3)", "Projected FY2029 balance", "One-time costs", "What it requires and risks"]
 for i, h in enumerate(schdrs):
     put(sc, f"{get_column_letter(i+1)}4", h, BOLDW, fill=HDR)
-put(sc, "A5", "1. Keep NMES open, current trajectory")
+put(sc, "A5", "1. Districtwide status quo (change nothing anywhere)")
 put(sc, "B5", 0, BLUE, CUR)
 put(sc, "C5", "=Runway!E5", BLK, CUR)
 put(sc, "D5", "None", NOTE)
-put(sc, "E5", "No decisions; reserves cross below zero on the straight line and the gap remains unaddressed", NOTE)
+put(sc, "E5", "No decisions; the districtwide gap, which NMES did not cause, drains reserves below zero with or without the school", NOTE)
 put(sc, "A6", "2. Close NMES and consolidate")
 put(sc, "B6", "=Closure_Model!B20", GRN, CUR)
 put(sc, "C6", "=Runway!E7", BLK, CUR)
