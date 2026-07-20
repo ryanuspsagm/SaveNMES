@@ -162,9 +162,9 @@ P("<b>Second, North Middletown Elementary did not cause the problem, and closing
   "site cost, not a savings estimate: the 128 students do not disappear, their teachers and their state funding move "
   "with them, and the district's fastest-growing expense, transportation, up 20.3 percent last year, would rise "
   "further with longer bus routes. Most building money in Kentucky school finance is legally restricted and cannot "
-  "pay teachers in any case. The district's own facility plan rates the receiving schools at 521 and 422 seats; at "
-  "today's enrollment that is a net 31 uncommitted seats for 128 children, with Cane Ridge already 31 students "
-  "over its rating. A realistic net recurring saving, estimated in Section 4, is on the order of $250,000 to "
+  "pay teachers in any case. The receiving schools' rated capacities are 549 at Bourbon Central and 422 at Cane "
+  "Ridge; at today's enrollment that is a net 59 uncommitted seats for 128 children, with Cane Ridge already 31 "
+  "students over its rating. A realistic net recurring saving, estimated in Section 4, is on the order of $250,000 to "
   "$600,000, a fraction of the deficit, and less than several alternatives that harm no one.")
 P("<b>Third, the district has not yet shown its work.</b> No line-item net-savings analysis, transportation model, "
   "receiving-school capacity study, building condition assessment, or alternatives comparison has been published. "
@@ -505,12 +505,13 @@ P("The prior facility plan, approved by the Kentucky Board of Education in June 
 tbl(["School", "2013 plan: enrolled / capacity", "2021 plan: enrolled / capacity", "Today"],
     [["North Middletown Elementary", "169 / 198", "161 / 174", "128 enrolled"],
      ["Cane Ridge Elementary", "461 / 500", "480 / 422", "453 enrolled, 31 over its rating"],
-     ["Bourbon Central Elementary", "602 / 564", "535 / 521", "459 enrolled, 62 seats open"],
+     ["Bourbon Central Elementary", "602 / 564", "535 / 521", "459 enrolled, 90 open at its current 549"],
      ["Preschool/Head Start Center", "296 / 180", "272 / 200", "over capacity in both plans"]],
     [1.9 * inch, 1.7 * inch, 1.7 * inch, 1.4 * inch],
     caption="Enrollment and rated capacity in the district's two most recent state-approved facility plans "
             "(KBE June 2013 and KBE August 2021; both archived under build/ in this report's repository), with "
-            "current 2024-25 enrollment. The reading order, enrollment first, is confirmed by the 2021 plan's "
+            "current 2024-25 enrollment. Bourbon Central's rating today is 549, the to-become capacity its 2021 "
+            "plan listed with its addition. The reading order, enrollment first, is confirmed by the 2021 plan's "
             "own preschool note (272 = 80 full-day plus 192 half-day students).",
     bold_first_col=True)
 P("Three facts fall out of that table. First, the rated capacity of North Middletown was written down from 198 "
@@ -542,9 +543,10 @@ P("The 2026 planning cycle is supposed to rest on a fresh architect-and-engineer
   "adopted. Two further points keep the building question in proportion. First, whatever renovation the school "
   "needs would be paid from the restricted facility funds described in Section 6, money that cannot close the "
   "operating deficit whether the school stays open or not. Second, the receiving schools have no room to spare: "
-  "at the 2021 plan's capacities of 521 and 422, today's enrollments of 459 and 453 leave 62 seats open at "
-  "Bourbon Central and put Cane Ridge 31 students <b>over</b> its rating, a net 31 uncommitted seats for 128 "
-  "children, and still only 59 even if Bourbon Central's planned but unbuilt expansion to 549 were completed. "
+  "Bourbon Central's rating stands at 549 with the addition its plan contemplated, and Cane Ridge's at 422. At "
+  "today's enrollments of 459 and 453 that leaves 90 seats open at Bourbon Central and puts Cane Ridge 31 "
+  "students <b>over</b> its rating, a net 59 uncommitted seats for 128 children; at the 2021 plan's as-printed "
+  "521 for Bourbon Central, the net is just 31. Either way the seats are not there. "
   "Moving 128 children into those schools is not free of capital cost. An empty "
   "building, finally, is not free: it must be secured, insured, minimally heated, and eventually disposed of, while "
   "the town loses its largest civic anchor, a community of about 610 people whose residents told the planning "
@@ -660,8 +662,8 @@ P("Here is one concrete scenario, math anyone can check, run in the workbook's R
   "geocoded student counts and the routing data to run the full version, and it should, before any vote.")
 fig("chart_balance.png",
     "Figure 12. One rebalancing scenario: North Middletown fills to its rated 174 while Bourbon Central and Cane "
-    "Ridge each ease by about fifteen students. Dashed lines mark each school's rated capacity in the 2021 "
-    "facility plan (174, 521, 422); Cane Ridge enrolls above its rating today and remains above it even "
+    "Ridge each ease by about fifteen students. Dashed lines mark each school's rated capacity "
+    "(174, 549, 422); Cane Ridge enrolls above its rating today and remains above it even "
     "rebalanced, which is the receiving-capacity problem closure would compound. The scenario levers (30 "
     "rezoned, 16 cross-county transfers) are adjustable in the companion workbook's Redistricting tab.", width=6.0 * inch)
 H2("The transportation map, drawn from the official boundaries")
@@ -927,7 +929,7 @@ qs = [
  "federal data show 128 students, while public statements have ranged lower.",
  "Grade by grade, what is the real capacity at Bourbon Central and Cane Ridge, and what staff, sections, or space "
  "must be added to absorb 128 more children, at what cost, from which fund? The district's own 2021 facility plan "
- "rates them at 521 and 422; at today's 459 and 453 enrolled, that is a net 31 uncommitted seats. And publish the "
+ "rates them at 549 and 422; at today's 459 and 453 enrolled, that is a net 59 uncommitted seats. And publish the "
  "geocoded student counts by attendance area that any honest boundary study, including the rebalancing scenario "
  "in Section 9, needs.",
  "What are the modeled bus routes, and what is the longest one-way ride a North Middletown kindergartner would "

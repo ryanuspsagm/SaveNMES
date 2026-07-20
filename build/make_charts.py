@@ -210,11 +210,11 @@ b2 = ax.bar(x + w/2, after, w, color=NAVY, label="Rebalanced (30 rezoned + 16 tr
 for r, v in list(zip(b1, today)) + list(zip(b2, after)):
     ax.text(r.get_x() + r.get_width()/2, v + 8, f"{v}", ha="center", fontsize=8.6,
             fontweight="bold", color="#333333")
-caps = [174, 521, 422]
+caps = [174, 549, 422]
 for xi, cv in zip(x, caps):
     ax.plot([xi - w, xi + w], [cv, cv], color=BLUE, linewidth=1.4, linestyle="--")
 ax.text(x[0] + w + 0.05, 174, "174", fontsize=8, color=BLUE, va="center")
-ax.text(x[1] + w + 0.05, 521, "521", fontsize=8, color=BLUE, va="center")
+ax.text(x[1] + w + 0.05, 549, "549", fontsize=8, color=BLUE, va="center")
 ax.text(x[2] + w + 0.05, 422, "422", fontsize=8, color=BLUE, va="center")
 ax.plot([], [], color=BLUE, linewidth=1.4, linestyle="--",
         label="Rated capacity (2021 facility plan)")

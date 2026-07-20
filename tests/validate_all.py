@@ -86,10 +86,10 @@ def main():
         "model Facility_Plans: 2021 capacities 521/422/174")
     chk(fp["C9"].value == 198,
         "model Facility_Plans: NMES 2013 capacity 198")
-    chk("521 and 422" in t and "net 31 uncommitted seats" in t,
-        "PDF states receiving capacities and the net 31 seats")
-    chk("521" in html and "422" in html and "198" in html,
-        "site shows DFP capacities 521/422 and the 198 history")
+    chk("549 at Bourbon Central and 422 at Cane Ridge" in t and "net 59 uncommitted seats" in t,
+        "PDF states receiving capacities 549/422 and the net 59 seats")
+    chk("549" in html and "422" in html and "198" in html and "59" in html,
+        "site shows capacities 549/422, the 198 history, and the net 59")
 
     # pagination quality (optional dependency)
     try:
