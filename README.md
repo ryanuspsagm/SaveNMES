@@ -10,14 +10,16 @@ public source cited in the report and on the site.
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
 - `Saving_North_Middletown_Elementary.pdf` - the 28-page report.
-- `NMES_Financial_Model.xlsx` - the 13-tab financial model (166 formulas).
+- `NMES_Financial_Model.xlsx` - the 13-tab financial model (169 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
   Requires: `pip install reportlab openpyxl matplotlib`. Run
   `python build/make_charts.py`, then `python build/build_pdf.py`,
   and `python build/build_model.py`. `python build/fetch_sabs.py` pulls the
   official 2015-16 federal attendance boundaries (NCES SABS) into
   `build/sabs_zones.json`, already committed here; the map figure redraws from
-  them automatically. The script tries the NCES REST endpoint first and falls
+  them automatically; `python build/zone_distances.py` then computes the
+  actual zone distances the busing math uses. The fetch script tries the NCES
+  REST endpoint first and falls
   back to the EDGE bulk download (`SABS_1516_SchoolLevels.zip` in `~/Downloads`,
   or set `SABS_ZIP`), so it works without a reachable NCES server - which
   matters, because that endpoint is currently returning HTTP 500.

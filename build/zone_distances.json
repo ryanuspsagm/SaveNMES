@@ -1,0 +1,15 @@
+{
+ "source": "computed from build/sabs_zones.json (SABS 2015-16)",
+ "sample_points": 812,
+ "pair_straight_mi": 8.9,
+ "pair_road_mi": 10.0,
+ "implied_road_factor": 1.13,
+ "road_factor_applied": 1.2,
+ "mean_added_straight_mi": 3.3,
+ "mean_added_road_mi": 3.9,
+ "far_corner_straight_to_paris_mi": 15.1,
+ "far_corner_straight_to_nmes_mi": 8.3,
+ "far_corner_road_to_paris_mi": 18.0,
+ "far_corner_road_to_nmes_mi": 10.0,
+ "share_of_area_closer_to_nmes": 0.78
+}

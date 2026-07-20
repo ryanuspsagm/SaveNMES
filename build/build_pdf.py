@@ -633,22 +633,28 @@ tbl(["Zone", "Approx. area (sq mi)", "Elementary students", "Students per sq mi"
      ["District overall", "289", "1,040", "3.6"]],
     [2.6 * inch, 1.35 * inch, 1.45 * inch, 1.3 * inch],
     caption="Official zone areas from the federal School Attendance Boundary Survey (2015-16 collection); "
-            "students shown are each school's cited enrollment. The vintage is the caveat: the district should confirm nothing has moved since (Appendix B).",
+            "students shown are each school's cited enrollment, the closest public proxy for zone residents. The vintage is the caveat: the district should confirm nothing has moved since (Appendix B).",
     bold_first_col=True)
 fig("chart_map.png",
     "Figure 13. Where the students are: the district's official attendance zones from the federal School "
     "Attendance Boundary Survey (2015-16 collection), fetched by the repository's build/fetch_sabs.py. Paris "
     "holds half the county's people and both receiving schools; Millersburg sits in Cane Ridge's northern "
     "zone; the NMES zone runs about 1.2 students per square mile across 110 square miles of the southeast.", width=5.2 * inch)
-P("Now the closure math, from the bottom up. North Middletown sits about ten miles from the Paris schools on US "
-  "460. Roughly 109 of the school's 128 students ride the bus on an estimated three rural routes. Extend "
+P("Now the closure math, from the bottom up, with the distances measured on the official zone geometry "
+  "rather than assumed (the workbook's Transport_Geo tab and build/zone_distances.py carry the computation). "
+  "North Middletown sits ten road miles from the Paris schools on US "
+  "460, against 8.9 miles straight-line, a road factor of 1.13 on the one pair that can be measured exactly; "
+  "a conservative 1.2 is applied everywhere else. Roughly 109 of the school's 128 students ride the bus on an estimated three rural routes. Extend "
   "those routes to Paris and each one adds about 40 bus-miles a day, out and back, morning and afternoon: "
   "about 20,400 added bus-miles a year. At a marginal cost of $2.50 to $4.50 per bus-mile that is $51,000 to "
   "$92,000 a year, and if the longer runs break the route tiering and force even one additional bus, add "
   "roughly $55,000 more. The bottom-up estimate therefore lands at about $51,000 to $147,000, squarely inside "
   "the $75,000 to $200,000 planning range this report has used from the start, and it validates the $137,500 "
-  "midpoint in the closure model. It also prices the quieter cost: those are 15 to 20 added minutes each way "
-  "for the county's easternmost children, on rides families already call long.")
+  "midpoint in the closure model. The geometry also prices the quieter cost. Averaged over the zone's "
+  "area, closure adds about 4 road miles each way to a child's trip. At the far corner, near the Nicholas "
+  "County line, a kindergartner who today rides about 10 road miles to North Middletown would ride about 18 "
+  "to Paris, roughly 15 to 20 added minutes each way at rural bus speeds. And 78 percent of the zone's area "
+  "lies closer to North Middletown than to Paris, which is the whole map's point in a single number.")
 P("Run the same math on the rebalancing scenario and the sign flips. Rezoned students already ride "
   "district buses today, ten miles west to the Paris schools; rezoning moves them to the school they live "
   "closest to, so the affected routes shorten, an estimated $10,000 to $18,000 a year saved. Rebalancing is "

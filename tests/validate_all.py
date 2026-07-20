@@ -103,6 +103,18 @@ def main():
         chk("38 percent of the county" in html, "site cites the official 38 percent")
         chk("roughly 5.1 across" in t, "PDF cites the official 5.1 per sq mi Paris-area density")
 
+    # actual-distance computation
+    zd_path = REPO / "build" / "zone_distances.json"
+    if zd_path.exists():
+        zd = json.load(open(zd_path))
+        chk(zd["pair_road_mi"] == 10.0 and zd["implied_road_factor"] == 1.13,
+            "distance file: US 460 pair 10 road mi, factor 1.13")
+        chk(3.5 <= zd["mean_added_road_mi"] <= 4.5,
+            f"distance file: mean added road miles {zd['mean_added_road_mi']}")
+        chk(zd["share_of_area_closer_to_nmes"] == 0.78, "distance file: 78 percent closer to NMES")
+        chk("road factor of 1.13" in t and "78 percent of the zone" in t,
+            "PDF cites the measured road factor and the 78 percent share")
+
     # SABS pipeline references
     chk((REPO / "build" / "fetch_sabs.py").exists() and "fetch_sabs.py" in t
         and "fetch_sabs.py" in readme and "fetch_sabs.py" in html,

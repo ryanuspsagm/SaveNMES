@@ -299,6 +299,7 @@ put(rd, "A39", "ASSUMPTIONS THE DISTRICT'S DATA SHOULD REPLACE", SEC)
 put(rd, "A40", "Rezoned students are drawn only from homes closer to NMES than to their assigned school, so bus routes shorten or hold even; the district's routing data would settle it.", NOTE, wrap=True)
 put(rd, "A41", "Receiving-school relief is booked only as one to two avoided or redeployed sections; grade-by-grade capacities at Bourbon Central and Cane Ridge are a records ask (report Question 3).", NOTE, wrap=True)
 put(rd, "A42", "SEEK for rezoned in-county students is unchanged (same district); only cross-county transfers add revenue.", NOTE, wrap=True)
+put(rd, "A43", "Per-student figures pair the latest published spending year (2023-24) with the current enrollment count; refresh when the 2024-25 spending data posts.", NOTE, wrap=True)
 
 # ================= TRANSPORT_GEO =================
 tg = sheet("Transport_Geo", [58, 15, 58])
@@ -355,6 +356,17 @@ put(tg, "A49", "Average Daily Attendance, FY2025"); put(tg, "B49", 2242.5, BLUE,
 put(tg, "A50", "Transportation cost per student in attendance"); put(tg, "B50", "=B48/B49", BLK, CUR)
 put(tg, "A51", "Optimization potential at 5 to 10 percent (Alternatives menu)"); put(tg, "B51", "=Assumptions!B42*Assumptions!B43", GRN, CUR)
 put(tg, "A52", ""); put(tg, "B52", "=Assumptions!B42*Assumptions!B44", GRN, CUR)
+
+put(tg, "A54", "ACTUAL DISTANCES, COMPUTED FROM THE OFFICIAL ZONE GEOMETRY (build/zone_distances.py)", SEC)
+put(tg, "A55", "Straight-line, NMES to the Paris schools (miles)"); put(tg, "B55", 8.9, BLUE, '0.0'); put(tg, "C55", "Great-circle between the school points", NOTE)
+put(tg, "A56", "Measured road distance, US 460 (miles)"); put(tg, "B56", 10.0, BLUE, '0.0'); put(tg, "C56", "The one pair that can be measured exactly", NOTE)
+put(tg, "A57", "Implied road factor on the measured pair"); put(tg, "B57", "=B56/B55", BLK, '0.00')
+put(tg, "A58", "Road factor applied elsewhere (conservative)"); put(tg, "B58", 1.2, BLUE, '0.00', fill=YEL)
+put(tg, "A59", "Area-average added distance under closure, one way, straight-line"); put(tg, "B59", 3.3, BLUE, '0.0'); put(tg, "C59", "Grid average over the official NMES zone (812 sample points)", NOTE)
+put(tg, "A60", "Area-average added distance, road"); put(tg, "B60", "=B59*B58", BLK, '0.0')
+put(tg, "A61", "Farthest corner of the zone, straight-line to Paris / to NMES"); put(tg, "B61", 15.1, BLUE, '0.0'); put(tg, "C61", "8.3 miles to NMES; near the Nicholas County line", NOTE)
+put(tg, "A62", "Farthest corner by road: to Paris / to NMES (miles)"); put(tg, "B62", "=ROUND(B61*B58,0)", BLK, '0'); put(tg, "C62", "About 18 versus 10; the district's routing data would give exact times", NOTE)
+put(tg, "A63", "Share of the zone's area closer to NMES than to Paris"); put(tg, "B63", 0.78, BLUE, PCT); put(tg, "C63", "Computed on the official boundary; the map's whole point in one number", NOTE)
 
 # ================= ALTERNATIVES =================
 al = sheet("Alternatives", [46, 14, 14, 52])
