@@ -960,8 +960,8 @@ P("The decision before the Board is often framed as closure versus no closure. T
   "the district should replace every assumption with actuals. One-time closure transition costs, which the "
   "district has not published, are not included and would reduce Plan 2's early-year figures.")
 tbl(["Plan", "Recurring impact by yr 3", "Projected FY2029 balance", "What it requires"],
-    [["1. Districtwide status quo (change nothing)", "None", "Below zero",
-      "No decisions; the districtwide gap drains reserves with or without North Middletown"],
+    [["1. Districtwide status quo (change nothing)", "None", "Fully drawn down",
+      "No decisions; the districtwide drawdown simply continues, with or without North Middletown"],
      ["2. Close NMES and consolidate", "$250,000-$600,000 a year", "About $0.8 million",
       "Closure vote; covers under a quarter of the gap; longer rides; enrollment-loss risk"],
      ["3. Districtwide recovery plan (menu plus levy)", "$1.1-$2.1 million a year", "About $3.7 million",
