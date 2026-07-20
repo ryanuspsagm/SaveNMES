@@ -196,9 +196,23 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>Room to grow: enrollment since 1989</h3>
-<p>The building held 261 children at its peak. It holds 128 today against a rated capacity of 174. The seats exist; the plan to fill them, through redistricting and cross-county enrollment on quality, is in the full report.</p>
+<p>The building held 261 children at its peak. It holds 128 today against a rated capacity of 174, a rating the district's own plans put at 198 as recently as 2013. The seats exist; the plan to fill them, through redistricting and cross-county enrollment on quality, is in the full report.</p>
 <div class="chartbox"><canvas id="chartEnroll" role="img" aria-label="Line chart of NMES enrollment from 1989 to 2025 against a capacity of 174"></canvas></div>
 <span class="checkme"><a href="https://www.publicschoolreview.com/north-middletown-elementary-school-profile">Federal enrollment history</a> &middot; <a href="https://education.ky.gov/districts/fac/Documents/Bourbon%20Co%20DFP.pdf">2021 state facility plan (capacity 174)</a></span>
+</div>
+
+<div class="card">
+<h3>What the district's own facility plans show</h3>
+<p>The state-approved facility plans are the district's official record of every school's rated capacity. The current plan (approved August 2021) and its predecessor (approved June 2013, recovered from the Internet Archive) tell a story the closure case has to answer.</p>
+<div style="overflow-x:auto"><table class="alt">
+<tr><th>School (enrolled / capacity)</th><th>2013 plan</th><th>2021 plan</th><th>Today</th></tr>
+<tr><td>North Middletown</td><td>169 / 198</td><td>161 / 174</td><td>128 enrolled</td></tr>
+<tr><td>Cane Ridge</td><td>461 / 500</td><td>480 / 422</td><td>453, 31 over</td></tr>
+<tr><td>Bourbon Central</td><td>602 / 564</td><td>535 / 521</td><td>459, 62 open</td></tr>
+</table></div>
+<div class="totalstrip">Net uncommitted seats at the two receiving schools: 31 &bull; Children who would need them: 128</div>
+<p>Three things fall out of the record. NMES stood 93 percent full against its rating as recently as the 2021 plan; the "half-empty school" is four years old, not a generation old. Its rated capacity was written down from 198 to 174 between plans, a paper number the district itself controls through room assignments. And a $1.9 million renovation priced for NMES in the 2013 plan reappears in the 2021 plan at $4.3 million, scheduled behind other work both times, while both plans classified the school as permanent. The 2026 draft's "transitional" label reverses two consecutive state-approved plans.</p>
+<span class="checkme"><a href="build/dfp_current.pdf">2021 plan (archived copy)</a> &middot; <a href="build/dfp_2013_excerpt.png">2013 plan excerpt</a> &middot; <a href="build/dfp_manifest.json">Document provenance</a></span>
 </div>
 
 <div class="quote">There is always a solution to a problem if you persist through it.
@@ -271,7 +285,7 @@ footer a{color:var(--ice)}
 <h3>The map the rebalancing plan stands on</h3>
 <p>Half the county's people live in Paris, where both receiving schools sit. The official federal boundary file (School Attendance Boundary Survey, 2015-16) puts the NMES zone at 110 square miles, 38 percent of the county, at roughly 1.2 students per square mile, the exact variable state law funds busing on. Cane Ridge's zone serves the north, Bourbon Central's the southwest. Closing the one eastern school keeps every square mile of that territory and serves it with longer rides, about four road miles more each way on average and up to ten from town; rebalancing shortens them. Boston proved the routing upside is real: an MIT algorithm made its routes 20 percent more efficient and saved $5 million in one year.</p>
 <img src="map.png" alt="Map of Bourbon County's three official elementary attendance zones from the federal School Attendance Boundary Survey: Cane Ridge's northern zone, Bourbon Central's southwestern zone, 912 students between them, and the NMES zone covering 110 square miles of the southeast at about 1.2 students per square mile" style="width:100%;height:auto;margin-top:12px" loading="lazy">
-<img src="balance.png" alt="Bar chart of one rebalancing scenario: NMES fills from 128 to its 174 capacity while Bourbon Central eases from 459 to 444 and Cane Ridge from 453 to 438" style="width:100%;height:auto;margin-top:16px" loading="lazy">
+<img src="balance.png" alt="Bar chart of one rebalancing scenario: NMES fills from 128 to its 174 capacity while Bourbon Central eases from 459 to 444 and Cane Ridge from 453 to 438, with dashed lines marking each school's rated capacity of 174, 521, and 422 from the 2021 facility plan" style="width:100%;height:auto;margin-top:16px" loading="lazy">
 <span class="checkme">Official zones: NCES School Attendance Boundary Survey, 2015-16 &middot; fetched by <a href="https://github.com/ryanuspsagm/SaveNMES/blob/main/build/fetch_sabs.py">the repo's query script</a> &middot; <a href="https://www.the74million.org/article/building-a-smarter-and-cheaper-school-bus-system-how-a-boston-mit-partnership-led-to-new-routes-that-are-20-more-efficient-use-400-fewer-buses-save-5-million/">Boston-MIT routing study</a></span>
 </div>
 
@@ -306,7 +320,7 @@ footer a{color:var(--ice)}
 <p class="lede">These are not rhetorical. Each has a document behind it that the administration either already holds or should be required to produce. Tap to read.</p>
 <details><summary>What is the real net saving from closure, published as a worksheet?</summary><p>Line by line: costs that truly disappear, minus added transportation, receiving-school costs, and the carrying or disposal cost of the building.</p></details>
 <details><summary>What is inside the "over a million dollars" figure?</summary><p>How does it reconcile with the state's published per-student spending data for the school? And which enrollment count is being used? Federal data show 128 students, while public statements have ranged lower.</p></details>
-<details><summary>Grade by grade, what is the real capacity at Bourbon Central and Cane Ridge?</summary><p>What staff, sections, or space must be added to absorb 128 more children, at what cost, from which fund?</p></details>
+<details><summary>Grade by grade, what is the real capacity at Bourbon Central and Cane Ridge?</summary><p>The district's own 2021 facility plan rates them at 521 and 422; at today's 459 and 453 enrolled, that is a net 31 uncommitted seats for 128 children. What staff, sections, or space must be added, at what cost, from which fund?</p></details>
 <details><summary>How long will the youngest children ride the bus?</summary><p>Publish the modeled routes and the longest one-way ride a North Middletown kindergartner would face.</p></details>
 <details><summary>What does the condition assessment say about the North Middletown building?</summary><p>The new architect-and-engineer assessment: what renovation figure does it attach, and who prepared it?</p></details>
 <details><summary>Which of the claimed savings can actually pay teachers?</summary><p>Which are General Fund dollars, and which are restricted facility dollars that cannot pay a single salary?</p></details>
@@ -347,7 +361,7 @@ footer a{color:var(--ice)}
 </div>
 <div class="card" style="margin-top:26px">
 <h3>Read the full case</h3>
-<p>The 28-page report and the complete financial model behind every number on this page.</p>
+<p>The 29-page report and the complete financial model behind every number on this page.</p>
 <a class="btn" href="Saving_North_Middletown_Elementary.pdf">Download the report (PDF)</a>
 &nbsp;<a class="btn" href="NMES_Financial_Model.xlsx" download>Download the model (Excel)</a>
 </div>

@@ -9,8 +9,8 @@ public source cited in the report and on the site.
 
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
-- `Saving_North_Middletown_Elementary.pdf` - the 28-page report.
-- `NMES_Financial_Model.xlsx` - the 14-tab financial model (174 formulas).
+- `Saving_North_Middletown_Elementary.pdf` - the 29-page report.
+- `NMES_Financial_Model.xlsx` - the 15-tab financial model (183 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
   Requires: `pip install reportlab openpyxl matplotlib`. Run
   `python build/make_charts.py`, then `python build/build_pdf.py`,
@@ -23,7 +23,11 @@ public source cited in the report and on the site.
   Plan from KDE plus every distinct historical version held by the Wayback
   Machine, the documents that set each school's rated capacity and
   classification; commit the resulting `dfp_*.pdf` files and the capacity
-  analysis picks them up. The SABS fetch script uses a saved
+  analysis picks them up. The district's current facility plan (KBE August 2021) and an excerpt of the
+  prior plan (KBE June 2013, from the Wayback Machine) are archived as
+  `build/dfp_current.pdf`, `build/dfp_2013_excerpt.png`, and
+  `build/dfp_2021_excerpt.png`, with provenance in `build/dfp_manifest.json`;
+  they back the capacity analysis and the model's Facility_Plans tab. The SABS fetch script uses a saved
   `sabs_zones_raw.json` if present, then tries the NCES REST endpoint, and falls
   back to the EDGE bulk download (`SABS_1516_SchoolLevels.zip` in `~/Downloads`,
   or set `SABS_ZIP`), so it works without a reachable NCES server - which

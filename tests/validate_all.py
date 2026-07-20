@@ -78,6 +78,19 @@ def main():
     chk("$4,626" in t and "fiscal 2027" in t,
         "PDF states the $4,626 FY2027 SEEK base")
 
+    # facility-plan capacity analysis (DFP documents archived in build/)
+    for f in ["dfp_current.pdf", "dfp_2013_excerpt.png", "dfp_manifest.json"]:
+        chk((REPO / "build" / f).exists(), f"DFP archive present: build/{f}")
+    fp = wb["Facility_Plans"]
+    chk(fp["E7"].value == 521 and fp["E8"].value == 422 and fp["E9"].value == 174,
+        "model Facility_Plans: 2021 capacities 521/422/174")
+    chk(fp["C9"].value == 198,
+        "model Facility_Plans: NMES 2013 capacity 198")
+    chk("521 and 422" in t and "net 31 uncommitted seats" in t,
+        "PDF states receiving capacities and the net 31 seats")
+    chk("521" in html and "422" in html and "198" in html,
+        "site shows DFP capacities 521/422 and the 198 history")
+
     # pagination quality (optional dependency)
     try:
         import numpy as np

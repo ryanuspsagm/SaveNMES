@@ -722,6 +722,49 @@ for label, nm, ky, fmt in detail:
     rr += 1
 put(sd, "T30", "SchoolDigger/KDE; economically disadvantaged composite = 62nd percentile statewide; female = 91st", NOTE, wrap=True)
 
+# ================= FACILITY_PLANS =================
+fp = sheet("Facility_Plans", [42, 12, 12, 12, 12, 50])
+put(fp, "A1", "What the District's Own Facility Plans Show", TITLE)
+put(fp, "A2", "Sources: District Facilities Plan, KBE approval June 2013 (Wayback Machine capture) and District Facility Plan, KBE approval August 2021 "
+              "(currently posted; next plan due June 2025). Both archived in this repository under build/. Figures read enrollment/capacity; the 2021 "
+              "preschool line (272/200, with the plan's note of 80 full-day plus 192 half-day students) confirms the order.", NOTE, wrap=True)
+fhdrs = ["School", "2013 enr", "2013 cap", "2021 enr", "2021 cap", "Note"]
+for i, h in enumerate(fhdrs):
+    put(fp, f"{get_column_letter(i+1)}4", h, BOLDW, fill=HDR)
+frows = [
+ ("Bourbon County High School", 881, 637, 799, 704, "Expansion built; CTC addition was the 2022-24 in-biennium priority"),
+ ("Bourbon County Middle School", 616, 515, 640, 641, ""),
+ ("Bourbon Central Elementary", 602, 564, 535, 521, "Plan lists a to-become capacity of 549 after an addition not yet built"),
+ ("Cane Ridge Elementary", 461, 500, 480, 422, "Rated capacity written down 78 seats between plans"),
+ ("North Middletown Elementary", 169, 198, 161, 174, "Rated capacity written down 24 seats; building held 261 students at the 1989 peak"),
+ ("Preschool/Head Start Center", 296, 180, 272, 200, "Over capacity in both plans"),
+]
+r = 5
+for row in frows:
+    for i, v in enumerate(row):
+        put(fp, f"{get_column_letter(i+1)}{r}", v, NOTE if i in (0, 5) else BLUE, None if i in (0, 5) else NUM)
+    r += 1
+put(fp, "A12", "RECEIVING CAPACITY TODAY (2021 plan capacities vs 2024-25 enrollment)", SEC)
+put(fp, "A13", "Bourbon Central open seats at rated 521"); put(fp, "B13", "=E7-Redistricting!B8", BLK, NUM)
+put(fp, "A14", "Cane Ridge students over rated 422"); put(fp, "B14", "=Redistricting!B9-E8", BLK, NUM)
+put(fp, "A15", "Net uncommitted seats at both receiving schools"); put(fp, "B15", "=B13-B14", BLK, NUM, bold=True)
+put(fp, "A16", "NMES students needing seats on closure"); put(fp, "B16", "=Assumptions!B11", GRN, NUM)
+put(fp, "A17", "Shortfall if closure proceeds today"); put(fp, "B17", "=B16-B15", BLK, NUM, bold=True)
+put(fp, "A18", "Net seats even after Bourbon Central's planned (unbuilt) expansion to 549"); put(fp, "B18", "=549-Redistricting!B8-B14", BLK, NUM)
+put(fp, "A20", "NMES INVESTMENT RECORD IN THE PLANS", SEC)
+put(fp, "A21", "2013 plan: NMES major renovation priced (HVAC, media center, kitchen, security vestibule, gym)")
+put(fp, "B21", 1594872, BLUE, CUR); put(fp, "C21", 239139, BLUE, CUR); put(fp, "D21", 86959, BLUE, CUR)
+put(fp, "E21", "=SUM(B21:D21)", BLK, CUR); put(fp, "F21", "Base renovation + special ed classroom + family resource center", NOTE)
+put(fp, "A22", "2021 plan: NMES need re-priced (life safety + accessibility ramp/elevator + major renovation)")
+put(fp, "B22", 317660, BLUE, CUR); put(fp, "C22", 325000, BLUE, CUR); put(fp, "D22", 3617530, BLUE, CUR)
+put(fp, "E22", "=SUM(B22:D22)", BLK, CUR); put(fp, "F22", "All scheduled after the 2022-24 biennium; the in-biennium priority was the HS Career & Technical Center", NOTE)
+put(fp, "A23", "2021 plan: HS Career & Technical Center, in-biennium new construction")
+put(fp, "B23", "=227149+1447694+1150886+1075170+772305+832878+1150886", BLK, CUR)
+put(fp, "A24", "2021 plan: total district facility need"); put(fp, "B24", 43389464, BLUE, CUR)
+put(fp, "A26", "Reading: the plans rate the receiving schools at 521 and 422 seats. At current enrollment that is 62 open at Bourbon Central and 31 over at Cane Ridge, "
+               "a net 31 uncommitted seats for 128 children. NMES renovation needs were priced in 2013 and re-priced higher in 2021, each time scheduled behind other work. "
+               "Its rated capacity fell 198 to 174 between the same two plans while its enrollment fell 169 to 128.", NOTE, wrap=True)
+
 # ---- finish ----
 del wb["Sheet"]
 for ws in wb.worksheets:

@@ -113,7 +113,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 2.1 &nbsp;\u2022&nbsp; July 20, 2026",
+A(Paragraph("Version 2.2 &nbsp;\u2022&nbsp; July 20, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
@@ -162,7 +162,9 @@ P("<b>Second, North Middletown Elementary did not cause the problem, and closing
   "site cost, not a savings estimate: the 128 students do not disappear, their teachers and their state funding move "
   "with them, and the district's fastest-growing expense, transportation, up 20.3 percent last year, would rise "
   "further with longer bus routes. Most building money in Kentucky school finance is legally restricted and cannot "
-  "pay teachers in any case. A realistic net recurring saving, estimated in Section 4, is on the order of $250,000 to "
+  "pay teachers in any case. The district's own facility plan rates the receiving schools at 521 and 422 seats; at "
+  "today's enrollment that is a net 31 uncommitted seats for 128 children, with Cane Ridge already 31 students "
+  "over its rating. A realistic net recurring saving, estimated in Section 4, is on the order of $250,000 to "
   "$600,000, a fraction of the deficit, and less than several alternatives that harm no one.")
 P("<b>Third, the district has not yet shown its work.</b> No line-item net-savings analysis, transportation model, "
   "receiving-school capacity study, building condition assessment, or alternatives comparison has been published. "
@@ -443,8 +445,10 @@ B("<b>The 2024 borrowing funds an active project that has not been publicly tied
   "state project application (the BG-1) would say definitively, and should be published alongside any closure "
   "discussion.")
 B("<b>No bond issue on record names North Middletown Elementary.</b> The capital program has flowed elsewhere for "
-  "years, which raises a fairness question the administration should answer directly: how much has been invested "
-  "in this building compared with the district's other elementary schools over the past decade? The records "
+  "years, and the 2021 facility plan shows where: its in-biennium priority was the $6.66 million high school "
+  "Career and Technical Center, while North Middletown's $3.62 million renovation sat scheduled after the "
+  "biennium. That raises a fairness question the administration should answer directly: how much has been "
+  "invested in this building compared with the district's other schools over the past decade? The records "
   "requested in Appendix B would answer it.")
 B("<b>The construction fund ran a negative $1.43 million restricted balance at June 30, 2024</b>, project spending "
   "ran ahead of the borrowing that later covered it. Not improper in itself, but it shows a capital program being "
@@ -487,32 +491,61 @@ H("7. The North Middletown Building Itself")
 P("If the closure case rests on the building, the record so far does not support it. The school's sections date to "
   "1948, 1963, and 1964, an older plant, like much of the district. The state-approved District Facility Plan "
   "(adopted with Kentucky Board of Education approval in 2021) classifies North Middletown as a <b>permanent</b> "
-  "kindergarten-through-five center with a capacity of 174, comfortably above its current 128 students. The "
-  "improvements that plan lists for the school are modest and typical of buildings its age: life-safety upgrades "
-  "(a sprinkler system, exit and emergency lighting), an accessibility ramp and elevator, and renovation of space "
-  "for a vocal-music classroom. The plan's district-wide capital need of roughly $43.4 million is concentrated at "
-  "the high school and middle school, not at North Middletown.")
-P("The capacity number itself deserves scrutiny before anyone treats it as a wall. The 2021 plan rates North "
-  "Middletown at 174 students; the same building, the same 1948, 1963, and 1964 sections, held 261 students "
-  "at its 1988-89 peak, half again the current rating, and enrollment histories show it above 200 for most "
-  "of the 1990s and 2000s. Nothing about the walls shrank. What changes a rated capacity under the state's "
-  "facilities planning manual (702 KAR 4:180) is how rooms are counted: capacity is computed from the "
-  "classrooms in regular homeroom use, at program class-size caps, discounted by a utilization factor, so "
-  "every room reassigned over the years to preschool, intervention, special education services, or a "
-  "computer lab quietly lowers the school's official capacity without a brick moving. Rated capacity, in "
-  "other words, is a policy output the district itself controls, and it can be raised the same way it was "
-  "lowered: by returning rooms to homeroom use as enrollment fills. Two records would settle the history, "
-  "and Section 12 requests both: the pre-2021 facility plans, which carry the building's earlier rated "
-  "capacities, and the room-by-room utilization worksheet behind the current 174. A closure case that "
-  "leans on a capacity figure should first explain who set that figure, from what room assignments, and "
-  "why the community should treat as fixed a number the administration can change with a room schedule.")
+  "kindergarten-through-five center with a capacity of 174, comfortably above its current 128 students. That plan, "
+  "archived in this repository alongside its predecessor, prices the school's needs plainly: $317,660 of "
+  "life-safety work, a $325,000 accessibility ramp and elevator, and a $3.62 million major renovation of the "
+  "building's mechanical, electrical, and plumbing systems, about $4.26 million in all, every dollar of it "
+  "scheduled <b>after</b> the 2022-24 biennium. The plan's in-biennium priority was the $6.66 million high school "
+  "Career and Technical Center. The district-wide capital need it assesses is roughly $43.4 million, concentrated "
+  "at the high school and middle school, not at North Middletown.")
+H2("What the district's own facility plans show")
+P("The prior facility plan, approved by the Kentucky Board of Education in June 2013 and recovered from the "
+  "Internet Archive's captures of the state's own posting, settles what earlier versions of this report could "
+  "only infer. Both plans are archived in this repository, and the comparison speaks for itself.")
+tbl(["School", "2013 plan: enrolled / capacity", "2021 plan: enrolled / capacity", "Today"],
+    [["North Middletown Elementary", "169 / 198", "161 / 174", "128 enrolled"],
+     ["Cane Ridge Elementary", "461 / 500", "480 / 422", "453 enrolled, 31 over its rating"],
+     ["Bourbon Central Elementary", "602 / 564", "535 / 521", "459 enrolled, 62 seats open"],
+     ["Preschool/Head Start Center", "296 / 180", "272 / 200", "over capacity in both plans"]],
+    [1.9 * inch, 1.7 * inch, 1.7 * inch, 1.4 * inch],
+    caption="Enrollment and rated capacity in the district's two most recent state-approved facility plans "
+            "(KBE June 2013 and KBE August 2021; both archived under build/ in this report's repository), with "
+            "current 2024-25 enrollment. The reading order, enrollment first, is confirmed by the 2021 plan's "
+            "own preschool note (272 = 80 full-day plus 192 half-day students).",
+    bold_first_col=True)
+P("Three facts fall out of that table. First, the rated capacity of North Middletown was written down from 198 "
+  "to 174 between the two plans, while the same 1948 and 1964 walls held 261 students at the 1988-89 peak. The "
+  "write-down was not unique: Cane Ridge fell from 500 to 422 and Bourbon Central from 564 to 521. What changes "
+  "a rated capacity under the state's facilities planning manual (702 KAR 4:180) is how rooms are counted: "
+  "capacity is computed from classrooms in regular homeroom use, at program class-size caps, discounted by a "
+  "utilization factor, so every room reassigned to preschool, intervention, special education services, or a "
+  "computer lab quietly lowers the official number without a brick moving. Rated capacity is a policy output the "
+  "district itself controls, and it can be raised the same way it was lowered. The room-by-room worksheets behind "
+  "each rating, and the intermediate 2017-cycle plan, remain requested in Appendix B. Second, as recently as the "
+  "2021 plan North Middletown stood at 161 students against its rating of 174: <b>93 percent full</b>. The "
+  "“half-empty school” is four years old, not a generation old, and its window coincides with the "
+  "district-wide attendance decline after the pandemic. Third, the 2013 plan classified North Middletown as "
+  "permanent, with a long-range plan to reorganize it as a grade-band center, and the 2021 plan classified it as "
+  "permanent with no change proposed at all. The transitional label in the 2026 draft is a reversal of two "
+  "consecutive state-approved plans, which is precisely why the community is entitled to the analysis behind it.")
+P("The investment record runs alongside. The 2013 plan priced a $1.92 million major renovation for North "
+  "Middletown: a security vestibule, enlarged music and computer classrooms, media center and kitchen, gymnasium "
+  "upgrades, new flooring, window and door replacement, electrical upgrades, and HVAC replacement. The 2021 plan "
+  "prices much of the same scope again, higher, at $4.26 million all told, and schedules it after the biennium. "
+  "Whether any of the 2013-priced work was ever completed is exactly what the maintenance and project records "
+  "requested in Appendix B would show. A fair question for the administration follows: when the same needs are "
+  "priced in two consecutive plans, eight years apart, and the capital program builds elsewhere both times, at "
+  "what point does deferred investment itself become the closure case?")
 P("The 2026 planning cycle is supposed to rest on a fresh architect-and-engineer condition assessment of every "
   "building. If that assessment attaches a large renovation figure to North Middletown, the public has yet to see "
   "it, its author, or its assumptions, and it should be published before any \u201ctransitional\u201d designation is "
   "adopted. Two further points keep the building question in proportion. First, whatever renovation the school "
   "needs would be paid from the restricted facility funds described in Section 6, money that cannot close the "
-  "operating deficit whether the school stays open or not. Second, the receiving schools carry their own listed "
-  "expansion needs in the same plan; moving 128 children into them is not free of capital cost either. An empty "
+  "operating deficit whether the school stays open or not. Second, the receiving schools have no room to spare: "
+  "at the 2021 plan's capacities of 521 and 422, today's enrollments of 459 and 453 leave 62 seats open at "
+  "Bourbon Central and put Cane Ridge 31 students <b>over</b> its rating, a net 31 uncommitted seats for 128 "
+  "children, and still only 59 even if Bourbon Central's planned but unbuilt expansion to 549 were completed. "
+  "Moving 128 children into those schools is not free of capital cost. An empty "
   "building, finally, is not free: it must be secured, insured, minimally heated, and eventually disposed of, while "
   "the town loses its largest civic anchor, a community of about 610 people whose residents told the planning "
   "committee the school is \u201cthe heartbeat\u201d of the town.")
@@ -599,6 +632,16 @@ fig("chart_enroll.png",
     "compiled from federal school-level data. The long decline mirrors the county's flat population, which is "
     "exactly why this plan relies on boundary decisions and cross-county enrollment rather than demographics.",
     width=6.1 * inch)
+P("The decline itself deserves questions, not just measurement, because its milestones track the district's "
+  "own planning documents: 261 at the 1988-89 peak, 169 in the 2013 facility plan, 161 in the 2021 plan, 128 "
+  "today. The town did not empty out; North Middletown holds about 610 people and the zone's boundaries are "
+  "unchanged in the federal record since at least 2015-16. Over the same years the district centralized "
+  "preschool at the Paris center, so many zone families now start their school lives in Paris; the renovation "
+  "priced for the building in 2013 reappears in the 2021 plan, priced higher; the rated capacity was written "
+  "down from 198 to 174; and no recruitment or transfer program marketed the county's highest-scoring "
+  "elementary to anyone. Each of those is a district decision, not a demographic fact, and the records "
+  "requested in Appendix B would show how much of the decline they explain. A school that stood 93 percent "
+  "full against its rating in the 2021 plan did not become surplus in four years by itself.")
 H2("A worked example: rebalance the map, fill the school")
 P("Here is one concrete scenario, math anyone can check, run in the workbook's Redistricting tab. Rezone "
   "30 students to North Middletown from the adjacent edges of the Cane Ridge and Bourbon Central zones, drawing only "
@@ -617,8 +660,10 @@ P("Here is one concrete scenario, math anyone can check, run in the workbook's R
   "geocoded student counts and the routing data to run the full version, and it should, before any vote.")
 fig("chart_balance.png",
     "Figure 12. One rebalancing scenario: North Middletown fills to its rated 174 while Bourbon Central and Cane "
-    "Ridge each ease by about fifteen students. Enrollment counts as cited in Sections 4 and 9; the scenario "
-    "levers (30 rezoned, 16 cross-county transfers) are adjustable in the companion workbook's Redistricting tab.", width=6.0 * inch)
+    "Ridge each ease by about fifteen students. Dashed lines mark each school's rated capacity in the 2021 "
+    "facility plan (174, 521, 422); Cane Ridge enrolls above its rating today and remains above it even "
+    "rebalanced, which is the receiving-capacity problem closure would compound. The scenario levers (30 "
+    "rezoned, 16 cross-county transfers) are adjustable in the companion workbook's Redistricting tab.", width=6.0 * inch)
 H2("The transportation map, drawn from the official boundaries")
 P("The zone geometry here is official: the federal School Attendance Boundary Survey (2015-16, the last "
   "national collection) published the district's actual attendance boundaries, and this report draws them "
@@ -881,9 +926,10 @@ qs = [
  "published per-student spending data for the school? And which enrollment count is the administration using, "
  "federal data show 128 students, while public statements have ranged lower.",
  "Grade by grade, what is the real capacity at Bourbon Central and Cane Ridge, and what staff, sections, or space "
- "must be added to absorb 128 more children, at what cost, from which fund? And publish the geocoded student "
- "counts by attendance area that any honest boundary study, including the rebalancing scenario in Section 9, "
- "needs.",
+ "must be added to absorb 128 more children, at what cost, from which fund? The district's own 2021 facility plan "
+ "rates them at 521 and 422; at today's 459 and 453 enrolled, that is a net 31 uncommitted seats. And publish the "
+ "geocoded student counts by attendance area that any honest boundary study, including the rebalancing scenario "
+ "in Section 9, needs.",
  "What are the modeled bus routes, and what is the longest one-way ride a North Middletown kindergartner would "
  "face?",
  "What does the new architect-and-engineer condition assessment say about the North Middletown building, what "
@@ -1046,8 +1092,12 @@ srcs = [
  "SchoolDigger, normalized 0-100 school test-score histories and statewide rankings built from Kentucky "
  "Department of Education assessment data: schooldigger.com (used for Figure 6 and the statewide ranks; "
  "not KDE's official rating)",
- "Bourbon County Schools District Facility Plan, approved by the Kentucky Board of Education, 2021: "
- "education.ky.gov/districts/fac/documents/bourbon co dfp.pdf",
+ "Bourbon County Schools District Facility Plan, approved by the Kentucky Board of Education, August 2021: "
+ "education.ky.gov/districts/fac/documents/bourbon co dfp.pdf (archived in this repository as build/dfp_current.pdf)",
+ "Bourbon County Schools District Facilities Plan, approved by the Kentucky Board of Education, June 2013, "
+ "recovered from the Internet Archive's Wayback Machine captures of the same KDE address (24 captures, 2015-2025): "
+ "web.archive.org; excerpt archived in this repository as build/dfp_2013_excerpt.png with provenance in "
+ "build/dfp_manifest.json",
  "702 KAR 4:180, Kentucky School Facilities Planning Manual; 702 KAR 4:160, Capital Construction Process: "
  "apps.legislature.ky.gov/law/kar/titles/702/004",
  "Kentucky Revised Statutes 160.470 and 132.017 (school property-tax rates); 157.350 (nonresident students); "
@@ -1232,7 +1282,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Deep Dive into Bourbon County Schools  \u2022  Version 2.1, July 20, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Deep Dive into Bourbon County Schools  \u2022  Version 2.2, July 20, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 

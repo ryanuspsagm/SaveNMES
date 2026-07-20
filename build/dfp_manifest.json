@@ -1,0 +1,18 @@
+{
+ "dfp_current.pdf": {
+  "what": "Bourbon County Schools District Facility Plan, KBE approval date August 2021 (current posted plan; next DFP due June 2025)",
+  "source": "https://education.ky.gov/districts/fac/Documents/Bourbon%20Co%20DFP.pdf",
+  "retrieved": "2026-07-20"
+ },
+ "dfp_2021_excerpt.png": {
+  "what": "Wayback Machine capture of the same August 2021 plan, page 1 (school centers, enrollment/capacity, 2022-24 priorities)",
+  "source": "web.archive.org capture of the education.ky.gov URL above (24 captures, Sep 2015 to Sep 2025)",
+  "retrieved": "2026-07-20"
+ },
+ "dfp_2013_excerpt.png": {
+  "what": "Wayback Machine capture of the prior District Facilities Plan, KBE approval date June 2013 (school centers and post-2012-14 major renovation priorities)",
+  "source": "web.archive.org capture of the education.ky.gov URL above",
+  "retrieved": "2026-07-20"
+ },
+ "reading_note": "Figures under 'Student Enrollment Capacity' read enrollment/capacity; confirmed by the 2021 preschool line 272/200 with the plan's own note that current enrollment is 80 full-day plus 192 half-day students (= 272)."
+}
