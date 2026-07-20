@@ -61,7 +61,7 @@ rows = [
  "  Tax rates, fund split, delinquency check, and the 4% three-year path: Tax_History tab (backs Figure 15).",
  "  Boundary rebalancing and fill-to-capacity scenario: Redistricting tab (backs the Section 9 worked example and Figure 12).",
  "  Bonding capacity components and what closure can and cannot change: Debt_Service tab (backs Section 6).",
- "  Student density, route-mile arithmetic, and busing cost scenarios: Transport_Geo tab (backs Section 9).",
+ "  Student density, route-mile math, and busing cost scenarios: Transport_Geo tab (backs Section 9).",
  "",
  "CAVEAT",
  "Prepared by a former NMES King working alongside Fable 5, an AI research assistant from Anthropic. Estimates are labeled; every figure",

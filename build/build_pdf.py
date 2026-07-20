@@ -231,7 +231,7 @@ fig("chart_gf.png",
     "Figure 3. The operating gap and the drawdown. The district spends roughly $2.5 to $2.6 million more from its "
     "General Fund than it takes in before transfers, and reserves have fallen about $2.3 million in two years. "
     "Source: audited financial statements, FY2024 and FY2025.")
-P("A reading note on the transfers line, because it softens the optics without changing the arithmetic: "
+P("A reading note on the transfers line, because it softens the optics without changing the math: "
   "“net transfers and other sources” of roughly $1.4 million a year are moves between the district's own "
   "funds, indirect cost recoveries from grants and self-supporting operations and similar interfund items "
   "detailed in the audits' fund statements, not new money from outside. They cushion the General Fund's "
@@ -274,7 +274,7 @@ fig("chart_pp.png",
     "Figure 5. Per-student spending at the district's three elementary schools, 2023-24, as published in the "
     "Kentucky School Report Card's school-level expenditure data (total of state, local, and federal dollars).")
 P("North Middletown's $19,348 per student is the highest of the three elementaries, and that is exactly what "
-  "arithmetic predicts for a small school, because one principal, one office, one kitchen, and one heated building "
+  "the math predicts for a small school, because one principal, one office, one kitchen, and one heated building "
   "divide across 128 children instead of 450. Multiplied out, the school's total site spending is about $2.5 "
   "million, of which roughly $1.8 million is state and local money. But almost none of that total is what a closure "
   "would save, for a simple reason: <b>closing a school does not delete its students.</b>")
@@ -291,7 +291,7 @@ P("The 128 children would still need teachers, about eight to nine classrooms' w
 P("Put together, a defensible planning estimate of the net recurring General Fund saving is roughly <b>$250,000 to "
   "$600,000 a year</b>, an estimate, clearly labeled as such, that the district could replace tomorrow with a real "
   "worksheet. Even on assumptions generous to the district, five positions eliminated instead of three, busing "
-  "at the low end, and not one family leaving, the arithmetic tops out in the low $600,000s, still under a "
+  "at the low end, and not one family leaving, the math tops out in the low $600,000s, still under a "
   "quarter of the structural deficit (the companion workbook shows this case explicitly). The reason for "
   "skepticism about even that number is not theoretical. Districts across the country have run exactly this "
   "play, and the results are on the record. One more thing closure does not buy: borrowing room. Bonding "
@@ -322,7 +322,7 @@ P("Student costs compound the fiscal ones: a 2024 national study following 470 T
   "children, low-income children most of all, absent more often, disciplined more often, and earning less as "
   "adults. Roughly three-quarters or more of North Middletown's students qualify for free or reduced-price meals. "
   "If Bourbon County believes its closure would beat this record, the burden is on the administration to show the "
-  "arithmetic.")
+  "math.")
 P("When the district's numbers are presented publicly, four framings deserve particular scrutiny, because "
   "each can make closure look better than it is: gross site cost presented as savings; restricted building "
   "dollars presented as operating relief; per-pupil cost cited without noting that state funding follows the "
@@ -443,7 +443,7 @@ B("<b>The construction fund ran a negative $1.43 million restricted balance at J
   "notes the district held $23.5 million in unused bonding capacity, borrowing room for buildings that, again, "
   "cannot pay teachers either way.")
 H2("What closing a school does, and does not do, to bonding capacity")
-P("A district's ability to borrow for buildings is arithmetic set by statute and regulation, and it is worth "
+P("A district's ability to borrow for buildings is simple math set by statute and regulation, and it is worth "
   "walking through, because “bonding capacity” is likely to surface in the closure debate. Kentucky districts "
   "build capacity from two restricted streams: the capital outlay allotment of $100 per student in average daily "
   "attendance (KRS 157.420), of which regulation lets a district pledge 80 percent, the rest held back as a "
@@ -453,12 +453,12 @@ P("A district's ability to borrow for buildings is arithmetic set by statute and
   "building-fund tax, and $1.58 million of district-paid debt service in fiscal 2026. The fiscal 2024 audit "
   "states the bottom line plainly: about $23.5 million of unused bonding capacity. The companion workbook lays "
   "the components side by side on the Debt_Service tab.")
-P("Nothing in that arithmetic grows when a school closes. Closing North Middletown adds no assessment, no "
+P("Nothing in that math grows when a school closes. Closing North Middletown adds no assessment, no "
   "attendance, and no levy. What it changes is the plan, not the capacity: a “transitional” label removes the "
   "school's modest listed needs from the priority list and steers future SFCC offers of assistance (KRS "
   "157.622), and the district's own borrowing, toward other projects, such as the career-and-technical center "
   "ambition in the district's planning documents. That is a choice about priorities, and it deserves to be "
-  "argued openly as one, with the bonding potential statement on the table. The arithmetic can also run against "
+  "argued openly as one, with the bonding potential statement on the table. The math can also run against "
   "the district: every family that responds to closure by leaving takes $100 a year out of capital outlay and "
   "the SEEK base out of operations, permanently. Nor is an emptied building a windfall: the Pew study in "
   "Section 4 found districts typically realized $200,000 to $1 million on sales, one-time money that is itself "
@@ -591,7 +591,7 @@ fig("chart_enroll.png",
     "exactly why this plan relies on boundary decisions and cross-county enrollment rather than demographics.",
     width=6.1 * inch)
 H2("A worked example: rebalance the map, fill the school")
-P("Here is one concrete scenario, arithmetic anyone can check, run in the workbook's Redistricting tab. Rezone "
+P("Here is one concrete scenario, math anyone can check, run in the workbook's Redistricting tab. Rezone "
   "30 students to North Middletown from the eastern edges of the two Paris-area attendance zones, drawing only "
   "from families who already live closer to North Middletown than to their assigned school, and recruit 16 "
   "cross-county transfers under House Bill 563. The school reaches exactly its rated 174. Bourbon Central eases "
@@ -617,7 +617,7 @@ P("The district has not published its zone map, its geocoded student counts, or 
   "of land. Its people cluster west: Paris holds 10,171 of the county's 20,252 residents, against 747 in "
   "Millersburg and 610 in North Middletown. The district's own published attendance-zone view assigns the "
   "county's southeast, about 36 percent of its area, to North Middletown, with Millersburg in the northern "
-  "zone, and the arithmetic follows: about 1.2 elementary students per square "
+  "zone, and the math follows: about 1.2 elementary students per square "
   "mile in the NMES zone, against roughly 4.9 in the two Paris-area zones and 3.6 district-wide. That density gap is "
   "not a detail; it is the exact variable state law funds on. KRS 157.370 sets transportation aid by "
   "transported pupils per square mile, paying more where density is low because low density costs more to "
@@ -638,7 +638,7 @@ fig("chart_map.png",
     "published zone view onto the U.S. Census county outline. Paris holds half the county's people and both "
     "receiving schools; Millersburg sits in the northern zone; the NMES zone runs about 1.2 students per "
     "square mile across roughly 105 square miles of the county's southeast.", width=5.2 * inch)
-P("Now the closure arithmetic, bottom up. North Middletown sits about ten miles from the Paris schools on US "
+P("Now the closure math, from the bottom up. North Middletown sits about ten miles from the Paris schools on US "
   "460. Roughly 109 of the school's 128 students ride the bus on an estimated three rural routes. Extend "
   "those routes to Paris and each one adds about 40 bus-miles a day, out and back, morning and afternoon: "
   "about 20,400 added bus-miles a year. At a marginal cost of $2.50 to $4.50 per bus-mile that is $51,000 to "
@@ -647,7 +647,7 @@ P("Now the closure arithmetic, bottom up. North Middletown sits about ten miles 
   "the $75,000 to $200,000 planning range this report has used from the start, and it validates the $137,500 "
   "midpoint in the closure model. It also prices the quieter cost: those are 15 to 20 added minutes each way "
   "for the county's easternmost children, on rides families already call long.")
-P("Run the same arithmetic on the rebalancing scenario and the sign flips. Rezoned students already ride "
+P("Run the same math on the rebalancing scenario and the sign flips. Rezoned students already ride "
   "district buses today, ten miles west to the Paris schools; rezoning moves them to the school they live "
   "closest to, so the affected routes shorten, an estimated $10,000 to $18,000 a year saved. Rebalancing is "
   "transport-neutral at worst and modestly positive at best, while closure is a guaranteed transport "
@@ -661,7 +661,7 @@ P("The state-revenue side seals the comparison. Because the 2026-2028 appropriat
   "students attend the same district. Cross-county transfer students add SEEK revenue while adding no "
   "required busing at all: under KRS 157.350 the receiving district sets its own transportation policy for "
   "nonresident students, and most Kentucky districts have families drive or meet routes at the county line. "
-  "Redistricting, in short, does not raise transportation costs; on this arithmetic it trims them while the "
+  "Redistricting, in short, does not raise transportation costs; by this math it trims them while the "
   "revenue side only gains.")
 H2("How a real optimization would run, and who already runs them")
 P("None of this requires inventing anything. The method is standard: geocode enrolled students from the "
@@ -731,7 +731,7 @@ tbl(["Measure", "Estimated annual value", "How it works"],
      ["Fill North Middletown to capacity instead of closing it",
       "$140,000 to $225,000 net, recurring",
       "Rebalance eastern attendance boundaries and recruit cross-county transfers under House Bill 563 to fill "
-      "all 46 open seats; the worked example above and the workbook's Redistricting tab show the arithmetic. "
+      "all 46 open seats; the worked example above and the workbook's Redistricting tab show the math. "
       "Multi-age reorganization and a preschool or day-care satellite are additional levers on top."]],
     [1.75 * inch, 1.35 * inch, 3.6 * inch],
     caption="Figure 14. Revenue and cost measures available without closing a school. Values are estimates derived "
@@ -960,7 +960,7 @@ P("I built this report from public records, and I want it held to that standard.
   "from 1989 through 2014 are compiled from federal data by PublicSchoolReview; the 2015 through 2025 counts "
   "match the federal figures directly. Every dollar range labeled an estimate is mine, its assumptions are "
   "stated where it appears, and every one of them is adjustable in the companion workbook. The boundary "
-  "rebalancing scenario in Section 9 is arithmetic on the cited enrollment counts, not a routing study; the "
+  "rebalancing scenario in Section 9 is simple math on the cited enrollment counts, not a routing study; the "
   "geocoded student counts and routing data a full study needs are held by the district and requested in "
   "Question 3. The transportation estimates beside it use census geography, a highway distance, and labeled "
   "cost-per-mile bands; the district's annual T-1 transportation report and zone map would replace every one "
