@@ -18,6 +18,21 @@ public source cited in the report and on the site.
   machine with open internet to pull the official 2015-16 federal attendance
   boundaries (NCES SABS); the map figure redraws from them automatically.
 
+## Tests
+
+`python tests/run_all.py` runs the whole suite:
+
+- `tests/validate_all.py` - cross-file consistency: page, tab, and formula
+  counts; figure numbering; meeting details; board roster; local assets;
+  the no-dash rule; pagination quality; headline claims.
+- `tests/sync_check.py` - every shared number checked three ways: site
+  JavaScript vs workbook cells vs report text.
+- `tests/test_site.py` - browser tests for the calculators, charts,
+  toggles, anchors, and mobile layout (needs `pip install playwright`
+  and a Chromium; Chart.js is vendored so no internet is needed).
+
+Run the suite after any edit and before any push.
+
 ## Live links wired into the site
 
 - Petition: https://www.change.org/p/sos-save-our-school-north-middletown-elementary
