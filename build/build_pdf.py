@@ -105,7 +105,7 @@ A(Paragraph("AN INDEPENDENT REVIEW OF PUBLIC RECORDS", ParagraphStyle(
 A(Paragraph("Saving North Middletown<br/>Elementary School", ParagraphStyle(
     "title", fontName="Helvetica-Bold", fontSize=27, leading=32, textColor=NAVY,
     alignment=TA_CENTER, spaceAfter=10)))
-A(Paragraph("A Deep Dive into Bourbon County Schools", ParagraphStyle(
+A(Paragraph("A Close Look at Bourbon County Schools", ParagraphStyle(
     "sub", fontName="Times-Italic", fontSize=15.5, leading=19, textColor=colors.HexColor("#333333"),
     alignment=TA_CENTER, spaceAfter=22)))
 A(HRFlowable(width=2.2 * inch, thickness=1.1, color=GOLD, hAlign="CENTER", spaceAfter=22))
@@ -122,7 +122,7 @@ A(Paragraph("Version 2.6 &nbsp;\u2022&nbsp; July 20, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
-scope = ("This review draws exclusively on public records: the district's audited financial statements for the "
+scope = ("This review relies only on public records: the district's audited financial statements for the "
          "fiscal years ending June 30, 2024 and June 30, 2025; Kentucky Department of Education funding, facility, "
          "and school report card data; federal enrollment records; municipal bond disclosures; state regulations; and "
          "contemporaneous local reporting. Where a figure is an estimate rather than a published number, it is labeled "
@@ -156,7 +156,7 @@ P("I wrote this report to examine the district's finances in depth, so the Board
   "the actual record. Three conclusions follow from it.")
 P("<b>First, the district's budget problem is real.</b> The General Fund ran operating deficits before transfers of "
   "$2.54 million in fiscal 2024 and $2.65 million in fiscal 2025, and reserves have fallen from $6.58 million to "
-  "$4.29 million in two years. The causes are identifiable: about $2.95 million in one-time federal pandemic aid "
+  "$4.29 million in two years. The causes are clear: about $2.95 million in one-time federal pandemic aid "
   "expired; attendance-based state funding fell as roughly 248 students' worth of Average Daily Attendance "
   "disappeared after the pandemic hold-harmless ended; and several district-controlled costs grew quickly, led by "
   "central-office administration, up 44.8 percent in two years. Behind the attendance line sits a demographic "
@@ -181,11 +181,11 @@ P("<b>Third, the district has not yet shown its work.</b> No line-item net-savin
   "subject, reading, mathematics, science, social studies, and writing, and above the statewide elementary "
   "average in science and writing. The state's historical files complete the arc: county math leader in "
   "every pre-COVID year on record and an official Distinguished rating in 2016 (Section 5).")
-P("The report closes with ten questions the administration should be required to answer in writing before any vote, "
-  "a menu of revenue and cost measures worth an estimated $1.1 to $2.1 million a year without closing a school, and "
-  "staged recommendations with clear decision thresholds. The district retains roughly $4.3 million in General Fund "
+P("The report closes with ten questions the administration should have to answer in writing before any vote, "
+  "a list of revenue and cost measures worth an estimated $1.1 to $2.1 million a year without closing a school, and "
+  "recommendations that come in stages, each with a clear number for when the Board should act. The district retains roughly $4.3 million in General Fund "
   "balance and is drawing it down at $1.1 to $1.2 million a year. There is a real problem here, and there is also "
-  "time to solve it well. The ask is specific: pause any vote until the ten questions in this report are "
+  "time to solve it well. I am asking for one thing, and it is specific: pause any vote until the ten questions in this report are "
   "answered in writing.")
 
 # ================= 2. WHERE THINGS STAND =================
@@ -248,7 +248,7 @@ fig("chart_gf.png",
     "Figure 3. The operating gap and the drawdown. The district spends roughly $2.5 to $2.6 million more from its "
     "General Fund than it takes in before transfers, and reserves have fallen about $2.3 million in two years. "
     "Source: audited financial statements, FY2024 and FY2025.")
-P("A reading note on the transfers line, because it changes the presentation without changing the math: "
+P("A note on the transfers line, because it changes how the numbers look, not the math itself: "
   "“net transfers and other sources” of roughly $1.4 million a year are moves between the district's own "
   "funds, indirect cost recoveries from grants and self-supporting operations and similar interfund items "
   "detailed in the audits' fund statements, not new money from outside. They cushion the General Fund's "
@@ -274,7 +274,7 @@ P("At the same time, several costs the district controls grew quickly: a two-per
   "fiscal 2025, transportation up 20.3 percent in a single year, and central-office administration up 44.8 percent "
   "in two years (Section 8). A $6.055 million bond issued in 2024 helped push the district's debt-service payments "
   "up by about $430,000 this year (Section 6).")
-P("Two facts round out the picture, and both cut in the community's favor. The district has already shown it can fix "
+P("Two more facts fill in the rest of the picture, and both cut in the community's favor. The district has already shown it can fix "
   "a money-losing operation without closing anything: between fiscal 2024 and 2025 it cut the day-care fund's loss "
   "from $722,828 to $79,010 and swung food service from a $610,606 loss to a $179,197 surplus, a combined "
   "improvement of about $1.4 million in one year. Even if part of that swing reflects one-time pricing and "
@@ -282,7 +282,7 @@ P("Two facts round out the picture, and both cut in the community's favor. The d
   "And the district is not in collapse: both audits carry clean "
   "opinions, the fiscal 2026 budget holds a $1,411,076 contingency above the state's two-percent minimum, and at "
   "the current pace of drawdown the unassigned reserve lasts roughly three more budget cycles. The problem is real. "
-  "So is the time to address it deliberately.")
+  "So is the time to fix it right.")
 
 # ================= 4. MILLION DOLLAR QUESTION =================
 H("4. The Million-Dollar Question: What Closing the School Would Actually Save")
@@ -301,14 +301,14 @@ P("The 128 children would still need teachers, about eight to nine classrooms' w
   "ratios, and Bourbon Central (459 students) and Cane Ridge (453 students) would each absorb roughly 64 more "
   "children across six grade levels, adding sections in several of them. The children's SEEK funding transfers with "
   "them. Food service, now a self-supporting operation, follows the meal counts. What is genuinely avoidable is the "
-  "fixed layer: the principal and office staff, custodial time, utilities, and insurance, and only if the building "
+  "fixed cost of running the building: the principal and office staff, custodial time, utilities, and insurance, and only if the building "
   "is sold or fully repurposed rather than mothballed. Against those savings run the new costs: longer bus routes "
   "in the district's fastest-growing and worst-reimbursed budget line (families have warned of rides exceeding two "
   "hours a day), any staffing or space additions at the receiving schools, transition costs, and the quiet revenue "
   "risk that some families leave the district altogether, each departure taking at least $4,626 a year in base "
   "state funding with it, permanently (the fiscal 2027 base, the first year a closure could take effect; this "
   "report uses the fiscal 2027 figure for anything that would happen after a closure).")
-P("Put together, a defensible planning estimate of the net recurring General Fund saving is roughly <b>$250,000 to "
+P("Put together, my best honest estimate of the net recurring General Fund saving is roughly <b>$250,000 to "
   "$640,000 a year</b>, an estimate, clearly labeled as such, that the district could replace tomorrow with a real "
   "worksheet. Even on assumptions generous to the district, five positions eliminated instead of three, busing "
   "at the low end, and not one family leaving, the math tops out around $640,000. Measured honestly against "
@@ -342,12 +342,12 @@ B("<b>California, 2026.</b> A Stanford analysis for the Getting Down to Facts pr
   "closures amid enrollment decline, spending fell about $440 "
   "per pupil, and revenue fell by effectively the same amount, with no reduction in teachers or staff. Districts "
   "broke even. Earlier research puts typical closure savings below five percent of a district's budget.")
-P("Student costs compound the fiscal ones: a 2024 national study following 470 Texas closures found displaced "
+P("The costs to children pile on top of the costs to the budget: a 2024 national study following 470 Texas closures found displaced "
   "children, low-income children most of all, absent more often, disciplined more often, and earning less as "
   "adults. Roughly three-quarters or more of North Middletown's students qualify for free or reduced-price meals. "
   "If Bourbon County believes its closure would beat this record, the burden is on the administration to show the "
   "math.")
-P("When the district's numbers are presented publicly, four framings deserve particular scrutiny, because "
+P("When the district shows its numbers in public, watch four ways it can frame them, because "
   "each can make closure look better than it is: gross site cost presented as savings; restricted building "
   "dollars presented as operating relief; per-pupil cost cited without noting that state funding follows the "
   "student; and district-wide cost growth attributed to one small school. I have tried to avoid the "
@@ -390,7 +390,7 @@ tbl(["Subject (percent proficient or distinguished)", "NMES", "Bourbon Central",
             "Asterisks are cells the state suppresses for small groups; the Kentucky average is the statewide "
             "elementary level. North Middletown leads all four county schools in all five subjects.",
     bold_first_col=True)
-P("The full arc, on the state's own files, reads as follows (Figure 6, top panel). Through the Unbridled "
+P("Here is the full arc, straight from the state's own files (Figure 6, top panel). Through the Unbridled "
   "Learning era North Middletown's official overall score rose every single year, 62.6 to 68.8 to 71.4 to 72.1 "
   "to <b>79.1</b>, closing 2015-16 with a formal <b>Distinguished</b> classification, the county's best score "
   "by nearly ten points. The same files show the school <b>first in the county in elementary mathematics in "
@@ -402,7 +402,7 @@ P("The full arc, on the state's own files, reads as follows (Figure 6, top panel
   "watching, and the school still finished first among all four county elementaries in every tested subject. "
   "Small schools swing hard in single years, in both directions; the record above is why one soft year argues "
   "for attention, not for closure.")
-P("The SchoolDigger index in Figure 6's lower panel and in Figure 7 is retained as third-party context, with "
+P("I keep the SchoolDigger index in Figure 6's lower panel and in Figure 7 only as outside context, with "
   "its limits printed. Tested against the official record, it tracks the county's larger schools closely "
   "(correlation near 0.9) but is unreliable year to year for a school North Middletown's size (near 0.4), and "
   "it named the wrong county leader in three of the ten years both sources cover, twice against North "
@@ -410,7 +410,7 @@ P("The SchoolDigger index in Figure 6's lower panel and in Figure 7 is retained 
   "official archive cannot yet show: the Blue Ribbon-era view, where North Middletown's index reached 87.9 "
   "and 85.8 around 2010 and 2011; the official CATS files for those years are on request with KDE. Wherever "
   "the index and the official record disagree, the official record governs in this report.")
-P("The profile beneath the headline numbers has real texture. In 2023-24 North Middletown matched the "
+P("The details underneath the headline numbers are worth a closer look. In 2023-24 North Middletown matched the "
   "statewide elementary average in reading (45 percent proficient or better against 47) and beat it in "
   "mathematics (45 against 42); in 2024-25 it beat the state decisively in writing (56 against 43) and "
   "science (53 against 37). Most striking for a school where about three-quarters of children qualify for "
@@ -456,9 +456,9 @@ P("Two honest caveats belong here. Small schools produce noisier year-to-year sc
 
 # ================= 6. BONDS =================
 H("6. Bonds, Buildings, and Two Different Pots of Money")
-P("Kentucky school finance separates operating money from building money, and the distinction decides what a "
-  "closure can and cannot accomplish. Districts do not borrow directly: a Finance Corporation, legally distinct "
-  "but composed of the same people as the Board, issues bonds and leases the buildings back to the district. The "
+P("Kentucky school finance separates operating money from building money, and that split decides what "
+  "closing a school can and cannot do. Districts do not borrow directly: a Finance Corporation, a separate body on paper "
+  "but made up of the same people as the Board, issues bonds and leases the buildings back to the district. The "
   "state's School Facilities Construction Commission (SFCC) pays part of qualifying debt; the local share comes from "
   "restricted facility revenues, chiefly the \u201cnickel\u201d building tax (about $2.05 million in fiscal 2025) and the "
   "capital outlay allotment. <b>None of that money can lawfully pay teachers or plug the operating deficit.</b> "
@@ -484,7 +484,7 @@ tbl(["Series", "Original amount", "Interest rate", "Final maturity", "Outstandin
 fig("chart_debt.png", "Figure 9. Annual bond payments are rising as the 2024 issue comes online. The state's SFCC "
     "pays $1,568,809 of the outstanding principal over the life of the bonds. Source: FY2024 and FY2025 audits.",
     width=4.6 * inch)
-P("Three findings from the bond record deserve the Board's attention.")
+P("Three things in the bond record deserve the Board's attention.")
 B("<b>The 2024 borrowing's stated purpose is on the public record, and it names the high school, not any "
   "elementary.</b> The SFCC Bond Payee Disclosure reviewed and approved by the legislature's Capital Projects and "
   "Bond Oversight Committee on June 20, 2024 states the purpose of the Series of 2024 bonds: various construction "
@@ -502,7 +502,7 @@ B("<b>No bond issue on record names North Middletown Elementary.</b> The capital
   "requested in Appendix B would answer it.")
 B("<b>The construction fund ran a negative $1.43 million restricted balance at June 30, 2024</b>, project spending "
   "ran ahead of the borrowing that later covered it. Not improper in itself, but it shows a capital program being "
-  "prioritized and cash-flowed in the same years the operating budget went into deficit. The fiscal 2024 audit also "
+  "prioritized and paid for out of cash flow in the same years the operating budget went into deficit. The fiscal 2024 audit also "
   "notes the district held $23.5 million in unused bonding capacity as of June 30, 2024, borrowing room for buildings that, again, "
   "cannot pay teachers either way.")
 H2("What closing a school does, and does not do, to bonding capacity")
@@ -541,7 +541,7 @@ P("As for where the 2024 borrowing went: the $6.055 million issue, at 4.00 to 5.
 # ================= 7. THE BUILDING =================
 H("7. The North Middletown Building Itself")
 P("If the closure case rests on the building, the record so far does not support it. The school's sections date to "
-  "1948, 1963, and 1964, an older plant, like much of the district. The state-approved District Facility Plan "
+  "1948, 1963, and 1964, an older building, like much of the district. The state-approved District Facility Plan "
   "(adopted with Kentucky Board of Education approval in 2021) classifies North Middletown as a <b>permanent</b> "
   "kindergarten-through-five center with a capacity of 174, comfortably above its current 128 students. That plan, "
   "archived in this repository alongside its predecessor, prices the school's needs plainly: $317,660 of "
@@ -573,9 +573,9 @@ P("Three facts fall out of that table. First, the rated capacity of North Middle
   "a rated capacity under the state's facilities planning manual (702 KAR 4:180) is how rooms are counted: "
   "capacity is computed from classrooms in regular homeroom use, at program class-size caps, discounted by a "
   "utilization factor, so every room reassigned to preschool, intervention, special education services, or a "
-  "computer lab lowers the official number without a brick moving. Rated capacity is a policy output the "
-  "district shapes through its own room assignments and planning submissions, and it can be raised through the "
-  "same process it was lowered. That symmetry cuts against the "
+  "computer lab lowers the official number without a brick moving. Rated capacity is a number the "
+  "district sets through its own room assignments and planning submissions, and it can be raised the "
+  "same way it was lowered. That cuts against the "
   "closure case: if room assignments can be re-rated to make space for 128 more children in Paris, the same "
   "pencil can raise North Middletown's rating back toward the 198 it carried in 2013, or toward the 261 the "
   "building has actually held, and every seat restored there can be filled with revenue-bearing students "
@@ -592,8 +592,8 @@ P("The 2026 planning cycle sharpens the point to a fine edge. The draft plan pre
   "the same buildings again, this time on the state facilities inventory (KFICS) basis: Cane Ridge rises from 422 "
   "to 547 and Bourbon Central to 640, while North Middletown falls again, from 174 to 154. The draft's own "
   "new-construction sections read <b>None</b>, so not one of those 216 new paper seats at the receiving schools "
-  "comes from a brick. Ratings that can move 125 seats in a single planning cycle are policy, not walls, which "
-  "has been this section's argument all along. Two more details sit on the same page: even at its reduced 154 "
+  "comes from a brick. Ratings that can move 125 seats in a single planning cycle are policy, not walls. That "
+  "has been the point all along. Two more details sit on the same page: even at its reduced 154 "
   "rating, North Middletown stands 83 percent full today, and the draft as presented that day, before the "
   "committee's amendment, still listed the school as <b>permanent</b>. Its headline capital priority is an $18.6 "
   "million major renovation of the high school's 1968 and 1981 sections, the same direction the two approved "
@@ -616,7 +616,7 @@ P("The fresh architect-and-engineer assessment this cycle rests on has now surfa
   "million combined: $8,840,267 at Bourbon Central and $14,387,595 at Cane Ridge, a 1992 building that needs "
   "two thirds more than the 1948 one proposed for closure. The high school needs $27.5 million, the middle "
   "school $22.4 million, and the districtwide total is <b>$98,441,294</b>, more than four times the unused "
-  "bonding capacity in Section 6. The assessment thus answers one question and raises a better one: closing "
+  "bonding capacity in Section 6. So the assessment answers one question and raises a better one: closing "
   "the district's second-least-needy building avoids $8.5 million of restricted-fund need while moving its "
   "children into buildings that need $23.2 million, and it does nothing about a $98 million problem. The full "
   "report behind the slides, with its room-by-room data and assumptions, remains unpublished and remains "
@@ -644,15 +644,15 @@ fig("chart_admin.png",
     "Figure 10. Administration expense from the district's audited statements of activities. District (central "
     "office) administration grew from $999,727 in FY2023 to $1,447,164 in FY2025; school administration grew from "
     "$2,110,039 to $2,581,412 over the same two years.")
-P("The single most striking controllable-cost trend in the audits is not at North Middletown. Central-office "
-  "administration grew 44.8 percent in two years, an increase of $447,000 a year, comparable to or larger than "
+P("The biggest cost jump in the audits, and one the district controls, is not at North Middletown. Central-office "
+  "administration grew 44.8 percent in two years, an increase of $447,000 a year, as much as or more than"
   "any realistic net saving from closing the school, while enrollment and attendance fell. School-level "
   "administration grew 22.3 percent. Transportation grew 20.3 percent in fiscal 2025 alone, alongside bus purchases "
   "of roughly $888,000 and $691,000 in consecutive years. Single-year jumps can carry one-time costs, so the "
   "fair question is the multi-year trend and the routing, not any one invoice. Federal data most recently on "
   "file show the district "
-  "reporting four central-office administrators and fifteen school administrators; reconciling that headcount "
-  "against the dollar growth, position by position, is a reasonable ask before any classroom building closes.")
+  "reporting four central-office administrators and fifteen school administrators; matching that headcount "
+  "against the dollar growth, position by position, is a fair thing to ask before any classroom building closes.")
 P("A caution belongs beside that number, offered here before anyone else raises it: functional expense lines "
   "in Kentucky school audits include allocated state pension payments made on the district's behalf, and "
   "reclassifications between categories can move money on paper without a single new hire. Some share of the "
@@ -663,7 +663,7 @@ P("I deliberately rely on the audited totals rather than individual salaries, be
   "figures should come from official records: the Kentucky Department of Education's annual superintendent salary "
   "file and the district's own board-adopted administrator salary schedule, which sets pay by formula, a base "
   "teacher salary multiplied by a responsibility increment and an extended work year. Publishing those records, "
-  "current and for the past five years, is part of the transparency the moment calls for, and appears among the "
+  "current and for the past five years, is exactly the kind of openness this moment calls for, and appears among the "
   "questions in Section 10.")
 
 # ================= 9. ALTERNATIVES =================
@@ -676,7 +676,7 @@ P("Every option below is available under current Kentucky law, and each comes wi
   "the menu, and it shows a district taxing near the bottom of its region. It asks the community to weigh "
   "a modest, no-recall increase against losing its school.")
 H2("First among them: grow the Kings into the region's premier elementary school")
-P("The strongest alternative is not defensive. Kentucky law already supplies the mechanism for growth: under House "
+P("The strongest alternative is not defensive. Kentucky law already gives the district a way to grow: under House "
   "Bill 563 (2021), codified at KRS 157.350, a district that adopts a nonresident-student policy may, since July "
   "2022, enroll students from other counties and count them in its attendance for state SEEK funding, with no "
   "agreement from the child's home district required and tuition at the board's discretion. Every family North "
@@ -723,7 +723,7 @@ P("The seats deserve a destination, not just a headcount, and the school already
   "same end. Under any of them, every child in the zone keeps their seat; the program adds students, it never "
   "displaces one. A district that needs students has every reason to run a growth play at the school best "
   "credentialed to anchor it, whichever form the community and the Board choose together.")
-P("Growth framed this way is reallocation and recruitment on quality, not a bet on a population rebound, and "
+P("Framed this way, growth means moving and recruiting students on the strength of a good school, not betting on a population rebound, and "
   "the near-term target is modest: returning to the 160 students the school enrolled as recently as 2019-20 "
   "takes just 32 children from a district of 2,600 and four neighboring counties.")
 fig("chart_enroll.png",
@@ -1061,10 +1061,10 @@ for i, q in enumerate(qs, 1):
 # ================= 12. RECOMMENDATIONS =================
 H("12. Recommendations")
 P("The decision before the Board is often framed as closure versus no closure. That is the wrong frame. The "
-  "deficit is a districtwide problem: every school stays on the same trajectory under Plan 1, and North "
+  "deficit is a districtwide problem: every school stays on the same path under Plan 1, and North "
   "Middletown, whose realistic closure saving covers under a quarter of the gap, did not cause it. The "
-  "real question is which complete operating plan produces the best verified five-year result, and there are at "
-  "least three on the table. The comparison below is illustrative, built on this report's stated assumptions and "
+  "real question is which full operating plan gives the best five-year result once you check it against real numbers, and there are at "
+  "least three on the table. The comparison below is an illustration, not a forecast, built on this report's stated assumptions and "
   "a straight-line projection from the fiscal 2025 balance; the workbook's Scenarios tab carries the math, and "
   "the district should replace every assumption with actuals. One-time closure transition costs, which the "
   "district has not published, are not included and would reduce Plan 2's early-year figures. Two yardsticks "
@@ -1126,7 +1126,7 @@ B("Pursue the low-harm levers first: the collections-gap reconciliation, the 4-p
   "September tax setting, Medicaid and meals reimbursements, transportation routing, attrition-based staffing, and "
   "an administrative cost review, with quarterly public reporting against a target of cutting the operating "
   "deficit from $2.6 million to under $1.5 million by fiscal 2027 and under $800,000 by fiscal 2028.")
-B("Charter a North Middletown sustainability committee, district, city, parents, and business, to design the "
+B("Set up a North Middletown sustainability committee, district, city, parents, and business, to design the "
   "signature program, community uses of the building, and a transfer-in program for the 2027-28 school year.")
 B("Give that plan a real test: two years, a public target of at least 145 students at the fall 2028 count, "
   "and quarterly reporting against it. If the community's plan misses its own number, the conversation "
@@ -1418,7 +1418,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Deep Dive into Bourbon County Schools  \u2022  Version 2.6, July 20, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 2.6, July 20, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 
@@ -1429,7 +1429,7 @@ doc = SimpleDocTemplate("/home/claude/nmes/Saving_North_Middletown_Elementary.pd
                         pagesize=letter,
                         leftMargin=0.9 * inch, rightMargin=0.9 * inch,
                         topMargin=0.85 * inch, bottomMargin=0.95 * inch,
-                        title="Saving North Middletown Elementary School, a Deep Dive into Bourbon County Schools",
+                        title="Saving North Middletown Elementary School, a Close Look at Bourbon County Schools",
                         author="North Middletown Community Analysis")
 doc.build(story, onFirstPage=cover, onLaterPages=footer)
 print("pdf built")
