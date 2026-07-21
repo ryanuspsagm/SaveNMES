@@ -396,12 +396,6 @@ P("The full arc, on the state's own files, reads as follows (Figure 6, top panel
   "watching, and the school still finished first among all four county elementaries in every tested subject. "
   "Small schools swing hard in single years, in both directions; the record above is why one soft year argues "
   "for attention, not for closure.")
-P("Two receiving-school facts from the same official files belong beside that record. Bourbon Central is "
-  "federally identified for <b>Targeted Support and Improvement</b> in 2024-25 for its students with "
-  "disabilities, and Cane Ridge carried the same designation in 2021-22. That is no criticism of either "
-  "school's educators; it is a fact about capacity. The proposal asks two schools, one currently under a "
-  "federal improvement plan and the other enrolled past its rated capacity, to absorb 128 more children from "
-  "the school that leads them in every subject.")
 P("The SchoolDigger index in Figure 6's lower panel and in Figure 7 is retained as third-party context, with "
   "its limits printed. Tested against the official record, it tracks the county's larger schools closely "
   "(correlation near 0.9) but is unreliable year to year for a school North Middletown's size (near 0.4), and "

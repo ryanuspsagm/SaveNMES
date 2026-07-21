@@ -112,8 +112,12 @@ def main():
         "KDE historical scores archive present")
     chk("79.1" in t and "Distinguished" in t,
         "PDF carries the 2016 official Distinguished rating at 79.1")
-    chk("74.5" in t and "Targeted Support" in t,
-        "PDF carries the 74.5 composite and the TSI designations")
+    chk("74.5" in t, "PDF carries the 74.5 composite")
+    kde_json = (REPO / "build" / "kde_scores_history.json").read_text()
+    chk("Targeted Support" not in t and "Targeted Support" not in html
+        and not any("Targeted Support" in v for v in cells)
+        and "TSI" not in kde_json,
+        "no TSI references anywhere (PDF, site, workbook, archived extract)")
     chk("every pre-COVID administration on record" in t,
         "PDF carries the eight-year county math streak")
     chk("74.5" in html and 'id="tgSD"' in html and 'id="tgKC"' in html,

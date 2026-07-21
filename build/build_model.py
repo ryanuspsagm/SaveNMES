@@ -779,7 +779,7 @@ for name, vals in kc_rows:
         if v is not None:
             put(sd, f"{get_column_letter(2 + i)}{rr}", v, BLUE, "0.0")
     rr += 1
-put(sd, "A60", "Classifications: NMES rated Proficient 2012-2015 and Distinguished in 2015-16 at 79.1, the county's only Distinguished elementary rating in the files retrieved. In 2023-24 NMES posted 74.5, first in the county by 14 points. Bourbon Central is federally identified for Targeted Support and Improvement (disability group) in 2024-25; Cane Ridge carried the same designation in 2021-22.", NOTE, wrap=True)
+put(sd, "A60", "Classifications: NMES rated Proficient 2012-2015 and Distinguished in 2015-16 at 79.1, the county's only Distinguished elementary rating in the files retrieved. In 2023-24 NMES posted 74.5, first in the county by 14 points.", NOTE, wrap=True)
 put(sd, "A62", "Third-party check: the SchoolDigger index above correlates about 0.9 with these official results for Bourbon Central and Cane Ridge but only weakly for NMES, and it names the wrong county leader in three of the ten overlapping years. The official record governs.", NOTE, wrap=True)
 
 # ================= FACILITY_PLANS =================
