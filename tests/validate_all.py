@@ -102,6 +102,20 @@ def main():
     chk("yet to see" not in t,
         "stale assessment-not-published language removed from PDF")
     chk((REPO / "build" / "kde_ksa_2024_25.json").exists(), "KDE assessment extract archived")
+
+    # 2024 bond: purpose recovered from the state disclosure, own-goal closed
+    chk((REPO / "build" / "bond_2024_sfcc_disclosure.pdf").exists()
+        and (REPO / "build" / "cpboc_minutes_2024_06_20.pdf").exists(),
+        "2024 bond disclosure and CPBOC minutes archived in build/")
+    chk("audio system" in t and "roof replacement" in t.lower(),
+        "PDF states the 2024 bond's recovered purpose (HS roof, districtwide audio)")
+    chk("has not been publicly tied" not in t and "awaits\nthe official statements" not in t
+        and "awaits the official statements" not in t.replace("\n", " "),
+        "stale 'bond purpose unknown' language removed from PDF")
+    chk("Publish the official statement and the BG-1" not in t
+        and "Publish the official statement and the BG-1" not in html,
+        "questions no longer demand the already-public 2024 official statement")
+    chk("audio system" in html, "site states the recovered 2024 bond purpose")
     chk("first among all four" in t and "SchoolDigger index" in t,
         "PDF leads with KDE results and labels the SchoolDigger index")
     chk("1st in all 5 subjects" in html and "state" in html,

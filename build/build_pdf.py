@@ -479,13 +479,15 @@ fig("chart_debt.png", "Figure 9. Annual bond payments are rising as the 2024 iss
     "pays $1,568,809 of the outstanding principal over the life of the bonds. Source: FY2024 and FY2025 audits.",
     width=4.6 * inch)
 P("Three findings from the bond record deserve the Board's attention.")
-B("<b>The 2024 borrowing funds an active project that has not been publicly tied to any school the district "
-  "proposes to keep or close.</b> The $6.055 million issue flowed into the Construction Fund, and construction in "
-  "progress grew from $3.65 million to $7.41 million during fiscal 2025, matching that fund's spending almost to "
-  "the dollar. District planning documents describe an ambition to build a career-and-technical learning center, "
-  "potentially in partnership with Bluegrass Community and Technical College; the bond's official statement and the "
-  "state project application (the BG-1) would say definitively, and should be published alongside any closure "
-  "discussion.")
+B("<b>The 2024 borrowing's stated purpose is on the public record, and it names the high school, not any "
+  "elementary.</b> The SFCC Bond Payee Disclosure reviewed and approved by the legislature's Capital Projects and "
+  "Bond Oversight Committee on June 20, 2024 states the purpose of the Series of 2024 bonds: various construction "
+  "projects including roof replacement at Bourbon County High School and a districtwide audio system. The issue "
+  "was presented at an estimated $10 million with an 18 percent SFCC share and sold at $6.055 million; the "
+  "proceeds flowed into the Construction Fund, where construction in progress grew from $3.65 million to $7.41 "
+  "million during fiscal 2025, matching that fund's spending almost to the dollar. The disclosure and the "
+  "committee minutes are archived in this repository. The BG-1 project applications would complete the "
+  "project-by-project accounting, and Question 7 asks for them.")
 B("<b>No bond issue on record names North Middletown Elementary.</b> The capital program has flowed elsewhere for "
   "years, and the 2021 facility plan shows where: its in-biennium priority was the $6.66 million high school "
   "Career and Technical Center, while North Middletown's $3.62 million renovation sat scheduled after the "
@@ -524,9 +526,10 @@ P("As for where the 2024 borrowing went: the $6.055 million issue, at 4.00 to 5.
   "$430,000 a year of debt payments, which is why the district's share of debt service jumps from $1.15 "
   "million in fiscal 2025 to $1.58 million in fiscal 2026. The state's SFCC participates in the qualifying "
   "issues, paying $1,568,809 of principal over the life of the bonds. None of the seven outstanding issues "
-  "names North Middletown Elementary. The two documents that would settle the 2024 bond's purpose beyond "
-  "argument, the official statement and the BG-1 project application, are standard public records, and "
-  "Question 7 asks for both.")
+  "names North Middletown Elementary, and the 2024 issue's stated purpose on the state disclosure, roof "
+  "replacement at the high school and a districtwide audio system, confirms the pattern: the active capital "
+  "program serves other buildings. The BG-1 project applications would complete the accounting, and Question 7 "
+  "asks for them.")
 
 # ================= 7. THE BUILDING =================
 H("7. The North Middletown Building Itself")
@@ -1032,8 +1035,9 @@ qs = [
  "million districtwide; publish the complete assessment, its room-by-room data, and its assumptions.",
  "Which of the claimed savings are General Fund dollars that can pay teachers, and which are restricted facility "
  "dollars that cannot?",
- "What is the stated purpose of the 2024 $6.055 million bond issue? Publish the official statement and the "
- "BG-1, and state when North Middletown Elementary last received meaningful capital investment.",
+ "The 2024 $6.055 million bond's stated purpose is now on the public record (high school roof and a districtwide "
+ "audio system, per the state bond disclosure archived here). Publish the BG-1 project applications behind it, and "
+ "state when North Middletown Elementary last received meaningful capital investment.",
  "Why did central-office administration grow 44.8 percent in two years while attendance fell, and what rollback "
  "is on the table before a school closes? Publish administrator compensation from the official state records.",
  "What is the written plan to protect the academic outcomes of students moved from the school that leads the "
@@ -1158,8 +1162,10 @@ P("A few items in the record need the district, not me, to resolve. The real-est
   "cents is the levied rate, 54.2 a transposition typo, 54.7 the "
   "motor vehicle rate; still open are the General Fund versus building fund cent split, the levied rate type "
   "by year, and the pre-2018 rate history, all in state files the district can produce. The 2013R bond "
-  "figures are internally inconsistent as printed. The stated purpose of the 2023 and 2024 bond issues awaits "
-  "the official statements. The school-level climate and safety survey results were not publicly retrievable. "
+  "figures are internally inconsistent as printed. The 2024 bond's stated purpose is now on the public record "
+  "through the state's June 2024 bond disclosure (high school roof and a districtwide audio system); the 2023 "
+  "issue's project detail and both years' BG-1 applications are still open. The school-level climate and safety "
+  "survey results were not publicly retrievable. "
   "And the enrollment count itself: federal data show 128, public statements have said around 100, and a 118 "
   "figure appears in no official record I could find. Reported free and reduced-price meal shares for the school "
   "range from roughly 76 to 93 percent across federal and state sources. My recollection in Section 10 of an "
@@ -1224,8 +1230,9 @@ srcs = [
  "Kentucky Department of Education, SEEK funding files and Local District Tax Levies: education.ky.gov/districts/SEEK "
  "and education.ky.gov (Taxes)",
  "Kentucky Department of Revenue, 2025 Property Tax Rate Book",
- "School Facilities Construction Commission, bond participation and refunding policies: sfcc.ky.gov; Capital "
- "Projects and Bond Oversight Committee agenda, May 23, 2024, Kentucky Legislative Research Commission",
+ "School Facilities Construction Commission, bond participation and refunding policies: sfcc.ky.gov; SFCC Bond "
+ "Payee Disclosure for the Series of 2024 bonds and the Capital Projects and Bond Oversight Committee minutes of "
+ "June 20, 2024, Kentucky Legislative Research Commission (both archived in this repository under build/)",
  "Municipal Securities Rulemaking Board, EMMA disclosure database (Bourbon County School District Finance "
  "Corporation): emma.msrb.org",
  "National Center for Education Statistics, Common Core of Data, Bourbon County district and school files "

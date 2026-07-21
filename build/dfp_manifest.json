@@ -31,8 +31,18 @@
   "retrieved": "2026-07-20"
  },
  "kde_scores_history.json": {
-  "what": "Multi-year extract of official KDE assessment and accountability files for the four Bourbon County elementary schools: reading/math percent proficient-or-distinguished 2011-12 through 2024-25, official composite scores and classifications, TSI designations, statewide averages, and the SchoolDigger validation results.",
+  "what": "Multi-year extract of official KDE assessment and accountability files for the four Bourbon County elementary schools: reading/math percent proficient-or-distinguished 2011-12 through 2024-25, official composite scores and classifications, statewide averages, and the SchoolDigger validation results.",
   "source": "See the source field inside the file; every underlying file is a KDE publication.",
   "retrieved": "2026-07-20"
+ },
+ "bond_2024_sfcc_disclosure.pdf": {
+  "what": "SFCC Bond Payee Disclosure for the Bourbon County School District Finance Corporation School Building Revenue Bonds, Series of 2024, submitted to the School Facilities Construction Commission and reviewed by the legislature's Capital Projects and Bond Oversight Committee on June 20, 2024. States the purpose: various construction projects including roof replacement at Bourbon County High School and a districtwide audio system. Presented at $10,000,000 estimated (18 percent SFCC share, $132,646 estimated annual state debt service; $633,142 local); sold at $6,055,000. No tax increase required. Expected Moody's A1; bond counsel Steptoe & Johnson; fiscal agent Baird; competitive sale projected August 2024.",
+  "source": "Kentucky Legislative Research Commission, Capital Projects and Bond Oversight Committee documents, June 2024 meeting (apps.legislature.ky.gov/CommitteeDocuments/13), item 6.D; pages excerpted from the SFCC transmittal.",
+  "retrieved": "2026-07-21"
+ },
+ "cpboc_minutes_2024_06_20.pdf": {
+  "what": "Minutes of the Kentucky Capital Projects and Bond Oversight Committee, June 20, 2024, recording approval of six SFCC school-district debt issues including Bourbon County by roll-call vote.",
+  "source": "apps.legislature.ky.gov/minutes/cap_proj/240620OK.PDF",
+  "retrieved": "2026-07-21"
  }
 }
