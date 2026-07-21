@@ -63,7 +63,8 @@ def main():
 
         net = pg.text_content("#rNet").strip()
         verdict = pg.text_content("#rVerdict").strip()
-        if net == "$361,240" and "13.6%" in verdict: ok("closure defaults $361,240 / 13.6%")
+        if net == "$361,240" and "13.6%" in verdict and "reserves" in verdict:
+            ok("closure defaults $361,240 / 13.6% deficit + drawdown framing")
         else: bad(f"closure defaults: {net} / {verdict}")
 
         pg.fill("#sPos", "6"); pg.dispatch_event("#sPos", "input")
@@ -82,8 +83,8 @@ def main():
         pg.fill("#sYrs", "3"); pg.dispatch_event("#sYrs", "input")
         lv3 = pg.text_content("#rLevy").strip()
         lverd = pg.text_content("#rLevyVerdict").strip()
-        if lv1 == "$385,641" and lv3 == "$1,203,816" and "45.5%" in lverd:
-            ok("levy compounder $385,641 year 1, $1,203,816 / 45.5% year 3")
+        if lv1 == "$313,162" and lv3 == "$977,568" and "37%" in lverd and "drawdown" in lverd:
+            ok("levy compounder $313,162 year 1, $977,568 / 37% deficit / drawdown year 3 (GF base)")
         else: bad(f"levy: {lv1} / {lv3} / {lverd}")
 
         f1 = pg.text_content("#rFill").strip()

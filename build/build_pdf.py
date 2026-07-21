@@ -272,8 +272,8 @@ P("Three forces converged. One-time federal pandemic relief, the ESSER programs,
 P("At the same time, several costs the district controls grew quickly: a two-percent raise in fiscal 2024 with "
   "\u201csome employees receiving much more,\u201d in the words of the district's own audit narrative, step increases in "
   "fiscal 2025, transportation up 20.3 percent in a single year, and central-office administration up 44.8 percent "
-  "in two years (Section 8). A $6.055 million bond issued in 2024 added roughly $430,000 a year of debt payments "
-  "through 2044 (Section 6).")
+  "in two years (Section 8). A $6.055 million bond issued in 2024 helped push the district's debt-service payments "
+  "up by about $430,000 this year (Section 6).")
 P("Two facts round out the picture, and both cut in the community's favor. The district has already shown it can fix "
   "a money-losing operation without closing anything: between fiscal 2024 and 2025 it cut the day-care fund's loss "
   "from $722,828 to $79,010 and swung food service from a $610,606 loss to a $179,197 surplus, a combined "
@@ -311,8 +311,13 @@ P("The 128 children would still need teachers, about eight to nine classrooms' w
 P("Put together, a defensible planning estimate of the net recurring General Fund saving is roughly <b>$250,000 to "
   "$640,000 a year</b>, an estimate, clearly labeled as such, that the district could replace tomorrow with a real "
   "worksheet. Even on assumptions generous to the district, five positions eliminated instead of three, busing "
-  "at the low end, and not one family leaving, the math tops out around $640,000, still under a "
-  "quarter of the structural deficit (the companion workbook shows this case explicitly). The reason for "
+  "at the low end, and not one family leaving, the math tops out around $640,000. Measured honestly against "
+  "either yardstick, that is under a quarter of the $2.65 million structural deficit, or a bit over half of the "
+  "roughly $1.15 million the district actually draws from reserves each year; a partial fix on either measure, "
+  "not a solution (the companion workbook shows both). The three-to-five-position range is itself a real judgment "
+  "call, how many of North Middletown's nine sections the receiving schools would truly shed rather than "
+  "re-create; the same slack that makes five plausible is what the multi-age option in Section 9 would capture at "
+  "$170,000 to $255,000 a year without closing the school at all. The reason for "
   "skepticism about even that number is not theoretical. Districts across the country have run exactly this "
   "play, and the results are on the record. One more thing closure does not buy: borrowing room. Bonding "
   "capacity is built from restricted revenue streams that do not grow when a school closes (Section 6).")
@@ -348,9 +353,11 @@ P("When the district's numbers are presented publicly, four framings deserve par
   "dollars presented as operating relief; per-pupil cost cited without noting that state funding follows the "
   "student; and district-wide cost growth attributed to one small school. I have tried to avoid the "
   "mirror-image errors, and I flag my own judgment calls where they occur.")
-P("Whatever the true net number proves to be, one comparison frames the decision: the district's structural deficit "
-  "is about $2.6 million. Closing North Middletown Elementary addresses, at best, a small fraction of it, while "
-  "the measures in Section 9 total more, harm no student, and close no town's school.")
+P("Whatever the true net number proves to be, one comparison frames the decision, and it holds on either honest "
+  "yardstick. Against the $2.6 million structural deficit before transfers, closing North Middletown addresses at "
+  "best a small fraction; against the roughly $1.15 million the district actually draws from reserves each year, "
+  "the favorable case reaches a bit over half, and the base case under a third. On either measure it is a partial "
+  "fix, while the measures in Section 9 total more, harm no student, and close no town's school.")
 
 # ================= 5. ACADEMICS =================
 H("5. Academic Performance: The District Would Be Closing Its Best Elementary School", need=5.3)
@@ -522,9 +529,10 @@ P("Nothing in that math grows when a school closes. Closing North Middletown add
   "restricted to capital use.")
 P("As for where the 2024 borrowing went: the $6.055 million issue, at 4.00 to 5.00 percent interest through "
   "2044, flowed into the Construction Fund, where construction in progress grew from $3.65 million to $7.41 "
-  "million during fiscal 2025, matching that fund's spending almost to the dollar, and it added roughly "
-  "$430,000 a year of debt payments, which is why the district's share of debt service jumps from $1.15 "
-  "million in fiscal 2025 to $1.58 million in fiscal 2026. The state's SFCC participates in the qualifying "
+  "million during fiscal 2025, matching that fund's spending almost to the dollar. As it and the other series "
+  "settle into their schedules, the district's total debt-service payment steps up by about $430,000, from $1.15 "
+  "million in fiscal 2025 to $1.58 million in fiscal 2026 (that $430,000 is the net change across all seven "
+  "series, some rising and the 2013 issue maturing, not the 2024 bond's payment alone). The state's SFCC participates in the qualifying "
   "issues, paying $1,568,809 of principal over the life of the bonds. None of the seven outstanding issues "
   "names North Middletown Elementary, and the 2024 issue's stated purpose on the state disclosure, roof "
   "replacement at the high school and a districtwide audio system, confirms the pattern: the active capital "
@@ -894,7 +902,7 @@ tbl(["Measure", "Estimated annual value", "How it works"],
             "new recurring revenue and recurring cost reductions, and the workbook's Alternatives tab labels each one "
             "by type with a confidence rating and what would firm it up. Values are estimates derived from the "
             "district's audited figures and state data; ranges overlap and are not additive to the penny. The "
-            "rows sum to roughly $1.8 to $3.1 million raw; the published $1.1 to $2.1 million a year applies "
+            "rows sum to roughly $1.7 to $3.0 million raw; the published $1.1 to $2.1 million a year applies "
             "roughly a one-third haircut for overlap and implementation risk, against an annual reserve drawdown "
             "of $1.1 to $1.2 million.",
     bold_first_col=True)
@@ -921,10 +929,13 @@ P("Where the money lands is equally clear. Of the $9.9 million the property tax 
   "that reason: honest numbers cut both ways, and I built this report to take the cut.")
 P("What remains is the option the board controls every August. Under KRS 160.470 the board may set a rate "
   "producing four percent more revenue from existing property than the compensating rate, with no recall "
-  "exposure attached. Taken on the current base, that is roughly $386,000 of new recurring revenue in year one, "
-  "about $787,000 a year by year two, and about $1.2 million a year by year three, nearly half the structural "
-  "deficit, from a district that would still tax below Harrison, Scott, Bath, Clark, Paris Independent, and "
-  "Fayette. Section 12 carries the recommendation and the companion workbook carries the math. To be clear, the "
+  "exposure attached. Taken on the General Fund levy of $7,829,060, the part that can actually pay teachers, that "
+  "is roughly $313,000 of new recurring revenue in year one, about $639,000 a year by year two, and about $978,000 a year by "
+  "year three, more than a third of the structural deficit and over four fifths of the annual reserve drawdown, "
+  "from a district that would still tax below Harrison, Scott, Bath, Clark, Paris Independent, and "
+  "Fayette. (The restricted building-fund levy, which cannot pay operating costs, is excluded from this base, the "
+  "same restricted-funds rule this report applies to closure.) Section 12 carries the recommendation and the "
+  "companion workbook carries the math. To be clear, the "
   "levy is one option, not the only one: the menu above lists other revenue and cost measures, and deeper "
   "spending reductions are always available to a board willing to make them. But the math is simple and it "
   "does not bend. Either spending comes down or revenue goes up, and a district drawing down a million "
@@ -1100,14 +1111,15 @@ H2("Before the July 29 forum and any Board action")
 B("Adopt a formal Board position that closure is a last resort, to be considered only after the ten questions above "
   "are answered in writing and the alternatives in Section 9 have been costed.")
 B("Decline to adopt any facility plan carrying a \u201ctransitional\u201d designation for North Middletown until the "
-  "net-savings worksheet, the complete KFICS assessment behind the July slides, the 2024 bond documents, and the "
+  "net-savings worksheet, the complete KFICS assessment behind the July slides, the 2024 bond project "
+  "applications (the BG-1s behind the already-public high school roof and audio-system purpose), and the "
   "school-level climate-and-safety survey results are public.")
 B("A working threshold for the Board: if documented net recurring General Fund savings fall below roughly "
-  "$400,000 to $500,000 a year, a range the four percent revenue option alone nearly matches in its first "
-  "year, closure "
+  "$400,000 to $500,000 a year, a range the four percent revenue option alone reaches by its second year "
+  "without closing a school, closure "
   "fails on its own financial terms.")
-B("Face the levy each August with the numbers on the table: the four percent option adds roughly $386,000 of "
-  "recurring revenue in year one and about $1.2 million a year by year three if taken three years running, "
+B("Face the levy each August with the numbers on the table: the four percent option adds roughly $313,000 of "
+  "recurring revenue in year one and about $978,000 a year by year three if taken three years running, "
   "while Bourbon would still tax below six of its eight neighbors. Take it or reject it, but decide on the "
   "record, alongside the spending decisions, because standing idle is the one answer I rule out.")
 H2("Over the next twelve months")

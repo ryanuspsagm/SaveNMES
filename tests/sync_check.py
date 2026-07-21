@@ -61,20 +61,23 @@ pct_fav = fav / model_deficit * 100
 if fav == 640000:
     match(f"district-favorable case $640,000 = {pct_fav:.1f}% of deficit; site fact strip '~24% at best'; PDF 'around $640,000, still under a quarter'")
 
-# levy path
-lb = TH["B48"].value  # formula ref -> read C43
-levy_base = TH["C43"].value
+# levy path: base is now the General Fund tax only (B48 = "=B32"), not total collections
+levy_base = TH["B32"].value  # General Fund property tax, the base B48 points at
 site_levy_base = int(re.search(r"base=(\d+),add", html).group(1))
 cum = 0
 for i in range(3): cum += (levy_base + cum) * 0.04
-if levy_base == site_levy_base == 9641017 and round(cum) == 1203816:
-    match(f"levy base $9,641,017 and 3-yr path to $1,203,816 = {cum/model_deficit*100:.1f}% (model inputs == site JS)")
+if levy_base == site_levy_base == 7829060 and round(cum) == 977568:
+    match(f"levy base $7,829,060 (GF only) and 3-yr path to $977,568 = {cum/model_deficit*100:.1f}% of deficit (model inputs == site JS)")
 else:
     diff(f"levy: model base {levy_base}, site {site_levy_base}, cum {cum:.0f}")
 y1 = levy_base * 0.04
-pdf_levy_ok = "386,000" in pdf_flat and "1.2 million" in pdf_flat and "787,000" in pdf_flat
-if pdf_levy_ok: match(f"PDF levy path ($386K yr1, $787K yr2, $1.2M yr3) matches computed ({y1:,.0f} / 786,707 / 1,203,816)")
+pdf_levy_ok = "313,000" in pdf_flat and "978,000" in pdf_flat and "639,000" in pdf_flat
+if pdf_levy_ok: match(f"PDF levy path ($313K yr1, $639K yr2, $978K yr3) matches computed ({y1:,.0f} / 638,851 / 977,568)")
 else: diff("PDF levy figures not all found")
+# the excluded restricted base is disclosed, not silently dropped
+if "7,829,060" in pdf_flat and "restricted building-fund" in pdf_flat:
+    match("PDF discloses the GF-only levy base and why the restricted levy is excluded")
+else: diff("PDF levy-base disclosure missing")
 
 # ---------- 2. score series (site vs model vs PDF claims) ----------
 years_model = list(range(2007, 2020)) + list(range(2021, 2026))
@@ -208,7 +211,7 @@ if alt_low == 1100000 and alt_high == 2100000:
 
 # site text spot checks
 for s, label in [("1st in all 5 subjects", "hero fact scores"), ("$250K to $640K", "hero fact closure range"),
-                 ("$9,641,017", "levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),
+                 ("$7,829,060", "GF levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),
                  ("128 students", "enrollment in prose"), ("rated capacity of 174", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")
     else: diff(f"site text missing '{s}' ({label})")

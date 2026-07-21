@@ -210,6 +210,23 @@ def main():
         chk(needle in t, f"PDF claim intact: {needle}")
     chk("$361,240" in html, "site claim intact: $361,240 calculator default")
 
+    # money-story cleanup: GF-only levy base, both denominators, precise debt wording
+    chk("$313,000" in t and "$978,000" in t and "386,000" not in t,
+        "PDF levy uses the corrected GF base (313K/978K), old 386K gone")
+    chk("$7,829,060" in t and "restricted building-fund levy" in html,
+        "levy base disclosed as GF-only in PDF and site")
+    chk("over four fifths of the annual reserve drawdown" in t
+        and "a bit over half of the" in t,
+        "PDF scores closure and levy against both deficit and drawdown")
+    chk("draws from reserves each year" in html and "DRAWDOWN=1145561" in html,
+        "site shows both denominators on the calculators")
+    chk("net change across all seven" in t,
+        "PDF clarifies the $430K is the net debt-service step, not the bond's payment alone")
+    chk("multi-age option in Section 9 would capture" in t,
+        "PDF reconciles the closure staffing count with the multi-age alternative")
+    chk("$1.7 to $3.0 million" in t and "$1.7 to $3.0 million" in html,
+        "alternatives raw sum updated after the levy correction")
+
     print(f"PASS {len(ok)}")
     print(f"FAIL {len(bad)}")
     for b in bad:

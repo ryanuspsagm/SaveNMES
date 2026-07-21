@@ -10,7 +10,7 @@ public source cited in the report and on the site.
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
 - `Saving_North_Middletown_Elementary.pdf` - the 33-page report.
-- `NMES_Financial_Model.xlsx` - the 15-tab financial model (191 formulas).
+- `NMES_Financial_Model.xlsx` - the 15-tab financial model (193 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
   Requires: `pip install reportlab openpyxl matplotlib`. Run
   `python build/make_charts.py`, then `python build/build_pdf.py`,

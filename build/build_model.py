@@ -207,7 +207,9 @@ put(c, "A17", "SEEK revenue lost to departing students (FY2027 base)"); put(c, "
 put(c, "A18", "Total offsets", bold=True); put(c, "B18", "=SUM(B16:B17)", BLK, CUR, bold=True)
 put(c, "A20", "NET RECURRING GENERAL FUND SAVING", bold=True)
 nc = put(c, "B20", "=B13-B18", BLK, CUR, bold=True); nc.border = TOPLINE
-put(c, "A21", "As a share of the FY2025 structural deficit"); put(c, "B21", "=B20/(Assumptions!B24-Assumptions!B21)", BLK, PCT)
+put(c, "A21", "Share of the structural deficit ($2.65M) | of the reserve drawdown ($1.15M)")
+put(c, "B21", "=B20/(Assumptions!B24-Assumptions!B21)", BLK, PCT)
+put(c, "C21", "=B20/GF_Summary!D16", BLK, PCT)
 put(c, "A22", "One-time transition cost (year one)"); put(c, "B22", "=Assumptions!B56", GRN, CUR)
 put(c, "A24", "SENSITIVITY: STUDENTS LEAVING THE DISTRICT", SEC)
 put(c, "A25", "Students leaving", bold=True); put(c, "B25", "Net recurring saving", bold=True)
@@ -219,8 +221,9 @@ put(c, "A31", "Each departing student removes at least the SEEK base guarantee, 
 put(c, "A33", "DISTRICT-FAVORABLE CASE (red-team): 5 positions cut, low busing, no departures", SEC)
 put(c, "A34", "Net recurring saving, favorable case")
 put(c, "B34", "=Assumptions!B51+Assumptions!B52+Assumptions!B66*Assumptions!B41-Assumptions!B67", GRN, CUR)
-put(c, "A35", "As a share of the FY2025 structural deficit")
+put(c, "A35", "Share of the structural deficit ($2.65M) | of the reserve drawdown ($1.15M)")
 put(c, "B35", "=B34/(Assumptions!B24-Assumptions!B21)", BLK, PCT)
+put(c, "C35", "=B34/GF_Summary!D16", BLK, PCT)
 
 # ================= GROWTH_MODEL =================
 gr = sheet("Growth_Model", [50, 14, 14, 14])
@@ -376,7 +379,7 @@ hdrs = ["Measure", "Low ($/yr)", "High ($/yr)", "Basis", "Type", "Confidence / w
 for i, h in enumerate(hdrs):
     put(al, f"{get_column_letter(i+1)}3", h, BOLDW, fill=HDR)
 alts = [
- ("4% property-tax adjustment (KRS 160.470)", "=Tax_History!B50", 450000, "Low = year-one 4% option on the full levied base (matches the levy analysis); high allows base growth", GRN, BLUE,
+ ("4% property-tax adjustment (KRS 160.470)", "=Tax_History!B50", 375000, "Low = year-one 4% option on the General Fund levied base (matches the levy analysis); high allows base growth", GRN, BLUE,
   "New revenue", "High; board authority every August, no recall exposure"),
  ("Improve delinquent-tax recovery (partial)", 60000, 120000, "25-50% of FY2025 delinquency of $239,126 (2.4% of certified yield)", BLUE, BLUE,
   "New revenue", "Medium; needs an aging and collection analysis"),
@@ -419,7 +422,7 @@ put(al, f"A{tot+5}", "Conservative combined estimate, high"); put(al, f"B{tot+5}
 put(al, f"A{tot+6}", "Conservative midpoint (used in Runway sheet)"); put(al, f"B{tot+6}", f"=(B{tot+4}+B{tot+5})/2", BLK, CUR)
 put(al, f"A{tot+7}", "Average annual GF drawdown (FY2024-25)"); put(al, f"B{tot+7}", "=GF_Summary!D16", GRN, CUR)
 put(al, f"A{tot+8}", "Closure net saving (base case)"); put(al, f"B{tot+8}", "=Closure_Model!B20", GRN, CUR)
-put(al, f"A{tot+10}", "Reading: raw row sums run about $1.8M to $3.1M; the published $1.1M to $2.1M band takes roughly two thirds of them as a haircut for overlap and implementation risk. Coverage percentages elsewhere measure against the $2.65M gap before transfers; the Runway and Scenarios tabs run on the net drawdown after transfers.", NOTE, wrap=True)
+put(al, f"A{tot+10}", "Reading: raw row sums run about $1.7M to $3.0M; the published $1.1M to $2.1M band takes roughly two thirds of them as a haircut for overlap and implementation risk. Coverage is reported against both yardsticks: the $2.65M structural gap before transfers and the roughly $1.15M net drawdown after transfers (Closure_Model rows 21 and 35 carry both for closure).", NOTE, wrap=True)
 
 # ================= DEBT_SERVICE =================
 d = sheet("Debt_Service", [16, 16, 14, 12, 18, 44])
@@ -573,14 +576,14 @@ put(th, "A44", "Gap (ordinary delinquency)"); put(th, "B44", "=B42-B43", BLK, CU
 put(th, "A45", "Gap as share of yield"); put(th, "B45", "=B44/B42", BLK, PCT); put(th, "C45", "=C44/C42", BLK, PCT)
 
 put(th, "A47", "FOUR PERCENT OPTION, THREE-YEAR PATH (KRS 160.470)", SEC)
-put(th, "A48", "Base: FY2025 actual real + personal collections"); put(th, "B48", "=C43", GRN, CUR)
+put(th, "A48", "Base: FY2025 General Fund real + personal collections"); put(th, "B48", "=B32", GRN, CUR)
 put(th, "A49", "Annual revenue option"); put(th, "B49", 0.04, BLUE, PCT)
 put(th, "A50", "Year 1 added recurring revenue"); put(th, "B50", "=B48*B49", BLK, CUR)
 put(th, "A51", "Year 2 added recurring revenue"); put(th, "B51", "=(B48+B50)*B49", BLK, CUR)
 put(th, "A52", "Year 3 added recurring revenue"); put(th, "B52", "=(B48+B50+B51)*B49", BLK, CUR)
 put(th, "A53", "Cumulative added annual revenue by Year 3"); put(th, "B53", "=B50+B51+B52", BLK, CUR)
 put(th, "A54", "As a share of the FY2025 structural deficit"); put(th, "B54", "=B53/(Assumptions!B24-Assumptions!B21)", BLK, PCT)
-put(th, "G48", "Basis: 4% more revenue from EXISTING real + personal property than the compensating rate; new property excluded (upside); motor vehicle separate; recall applies only above 4%.", NOTE, wrap=True)
+put(th, "G48", "Basis: 4% more revenue from EXISTING real + personal property than the compensating rate, on the GENERAL FUND levy only. The restricted building-fund (FSPK, $2,052,786) and debt levies are excluded because that money cannot pay operating costs, the same restricted-funds rule this report applies to closure. New property excluded (upside); motor vehicle separate; recall applies only above 4%.", NOTE, wrap=True)
 
 # ================= DEMOGRAPHICS =================
 dm = sheet("Demographics", [30, 12, 30, 6, 8, 8, 6, 8, 8, 44])

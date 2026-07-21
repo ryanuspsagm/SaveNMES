@@ -264,7 +264,7 @@ footer a{color:var(--ice)}
 <div class="big" id="rNet">$361,240</div>
 <div class="sub">estimated net recurring saving per year</div>
 <div class="bar-vs" aria-hidden="true"><i id="rBar" style="width:13.6%"></i></div>
-<div class="verdict" id="rVerdict">That covers 13.6% of the $2.65M structural deficit.</div>
+<div class="verdict" id="rVerdict">That covers 13.6% of the $2.65M structural deficit, or 32% of the $1.15M the district actually draws from reserves each year. A partial fix on either measure.</div>
 </div>
 </div>
 
@@ -274,12 +274,12 @@ footer a{color:var(--ice)}
 <div class="slider-row"><label>Years the board takes the 4 percent option <output id="oYrs">3</output></label>
 <input type="range" id="sYrs" min="1" max="3" value="3" step="1"></div>
 <div class="result">
-<div class="big" id="rLevy">$1,203,816</div>
+<div class="big" id="rLevy">$977,568</div>
 <div class="sub">added recurring revenue per year, by that point</div>
-<div class="bar-vs" aria-hidden="true"><i id="rLevyBar" style="width:45.5%"></i></div>
-<div class="verdict" id="rLevyVerdict">That covers 45.5% of the structural deficit. Bourbon would still tax below six of its eight neighbors.</div>
+<div class="bar-vs" aria-hidden="true"><i id="rLevyBar" style="width:36.9%"></i></div>
+<div class="verdict" id="rLevyVerdict">That covers 37% of the structural deficit, about 85% of the annual reserve drawdown. Bourbon would still tax below six of its eight neighbors.</div>
 </div>
-<p class="note" style="margin-top:14px">Basis: KRS 160.470, applied to fiscal 2025 collections of $9,641,017. The levy is one option, not the only one. But revenue or reductions, the board must choose one and own it.</p>
+<p class="note" style="margin-top:14px">Basis: KRS 160.470, applied to the fiscal 2025 General Fund tax collections of $7,829,060, the part that can pay teachers. The restricted building-fund levy is excluded, the same rule this site applies to closure savings. The levy is one option, not the only one. But revenue or reductions, the board must choose one and own it.</p>
 </div>
 
 <div class="card">
@@ -317,7 +317,7 @@ footer a{color:var(--ice)}
 
 <table class="alt">
 <tr><th>Measure</th><th>Type</th><th>Estimated annual value</th></tr>
-<tr><td>Take the 4 percent revenue option (year one; compounds thereafter)</td><td>New revenue</td><td>$386,000</td></tr>
+<tr><td>Take the 4 percent revenue option (year one; compounds thereafter)</td><td>New revenue</td><td>$313,000</td></tr>
 <tr><td>Fill NMES to capacity: rebalance boundaries and recruit cross-county transfers</td><td>New revenue, net</td><td>$140,000 to $225,000</td></tr>
 <tr><td>Recover part of ordinary tax delinquencies</td><td>New revenue</td><td>$60,000 to $120,000</td></tr>
 <tr><td>Trim central-office growth back toward its FY2023 level</td><td>Cost reduction</td><td>$200,000 to $450,000</td></tr>
@@ -325,7 +325,7 @@ footer a{color:var(--ice)}
 <tr><td>Medicaid billing, energy performance, and shared services</td><td>Mixed</td><td>$170,000 to $400,000</td></tr>
 </table>
 <div class="totalstrip">Combined recurring improvement, revenue plus savings: $1.1 to $2.1 million a year &bull; Closure: $250,000 to $640,000 a year</div>
-<p class="note">Figures are estimates with stated assumptions; the exact basis, a confidence rating, and what would firm up each line are in the report and the downloadable model. Ranges overlap: the raw row sums run about $1.8 to $3.1 million, and the published $1.1 to $2.1 million applies roughly a one-third haircut for overlap and implementation risk. New revenue and cost reductions are different things; the menu names which is which, and both close the same gap. Two yardsticks appear on this page: coverage percentages use the $2.65M gap before transfers; the reserves projections use the roughly $1.15M net drawdown after transfers.</p>
+<p class="note">Figures are estimates with stated assumptions; the exact basis, a confidence rating, and what would firm up each line are in the report and the downloadable model. Ranges overlap: the raw row sums run about $1.7 to $3.0 million, and the published $1.1 to $2.1 million applies roughly a one-third haircut for overlap and implementation risk. New revenue and cost reductions are different things; the menu names which is which, and both close the same gap. Two yardsticks frame every figure here: the $2.65M structural gap before transfers, and the roughly $1.15M the district actually draws from reserves each year after transfers cushion it. The calculators above show both, so nothing turns on the choice.</p>
 </div>
 
 <div class="card">
@@ -569,7 +569,7 @@ options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bo
 scales:{y:{min:0,max:290,grid:{color:'#E3E8F0'}},x:{ticks:{maxTicksLimit:10}}}}});
 
 /* Closure calculator */
-var DEFICIT=2648086;
+var DEFICIT=2648086,DRAWDOWN=1145561;
 function money(n){return '$'+Math.round(n).toLocaleString('en-US')}
 function calc(){
 var p=+document.getElementById('sPos').value,
@@ -580,9 +580,10 @@ document.getElementById('oBus').textContent=money(b);
 document.getElementById('oLeav').textContent=l;
 var net=290000+p*85000-b-l*4626;
 var pct=Math.max(0,net/DEFICIT*100);
+var pctD=Math.max(0,net/DRAWDOWN*100);
 document.getElementById('rNet').textContent=money(net);
 document.getElementById('rBar').style.width=Math.min(100,pct).toFixed(1)+'%';
-document.getElementById('rVerdict').textContent='That covers '+pct.toFixed(1)+'% of the $2.65M structural deficit.'+(pct<50?' The other '+(100-pct).toFixed(0)+'% still has to come from somewhere.':'');
+document.getElementById('rVerdict').textContent='That covers '+pct.toFixed(1)+'% of the $2.65M structural deficit, or '+pctD.toFixed(0)+'% of the $1.15M the district actually draws from reserves each year. A partial fix on either measure.';
 }
 ['sPos','sBus','sLeav'].forEach(function(id){document.getElementById(id).addEventListener('input',calc)});
 calc();
@@ -591,12 +592,13 @@ calc();
 function levy(){
 var yr=+document.getElementById('sYrs').value;
 document.getElementById('oYrs').textContent=yr;
-var base=9641017,add=0,cum=0;
+var base=7829060,add=0,cum=0;
 for(var i=0;i<yr;i++){add=(base+cum)*0.04;cum+=add}
 var pct=cum/DEFICIT*100;
+var pctD=cum/DRAWDOWN*100;
 document.getElementById('rLevy').textContent=money(cum);
 document.getElementById('rLevyBar').style.width=Math.min(100,pct).toFixed(1)+'%';
-document.getElementById('rLevyVerdict').textContent='That covers '+pct.toFixed(1)+'% of the structural deficit. Bourbon would still tax below six of its eight neighbors.';
+document.getElementById('rLevyVerdict').textContent='That covers '+pct.toFixed(0)+'% of the structural deficit, about '+pctD.toFixed(0)+'% of the annual reserve drawdown. Bourbon would still tax below six of its eight neighbors.';
 }
 document.getElementById('sYrs').addEventListener('input',levy);
 levy();
