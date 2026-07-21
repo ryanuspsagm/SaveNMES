@@ -115,6 +115,28 @@ details[open] summary{border-bottom:1px solid var(--line)}
 .btn.blue{background:var(--royal);color:var(--chalk);font-weight:700}
 .btn.blue:hover{background:#256199}
 
+/* Road Ahead timeline */
+#roadahead .steps{list-style:none;margin:24px 0 8px}
+#roadahead .steps > li{position:relative;padding:0 0 24px 28px;border-left:2px solid var(--ice)}
+#roadahead .steps > li:last-child{border-left-color:transparent;padding-bottom:0}
+#roadahead .steps > li::before{content:"";position:absolute;left:-9px;top:3px;width:14px;height:14px;border-radius:50%;background:var(--royal);border:3px solid var(--paper)}
+#roadahead .steps > li.done::before{background:var(--ice)}
+#roadahead .steps h4{font-family:var(--serif);font-weight:400;color:var(--navy);font-size:17.5px;margin-bottom:4px}
+#roadahead .steps .who{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--mist);margin-bottom:4px}
+#roadahead .steps p{font-size:14.5px;margin-top:2px}
+#roadahead .steps .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:2px 9px;border-radius:20px;margin-right:8px;vertical-align:middle}
+#roadahead .tag.done{background:var(--line);color:var(--mist)}
+#roadahead .tag.ahead{background:var(--royal);color:#fff}
+#roadahead .req{margin-top:9px;background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:9px 12px}
+#roadahead .req .lbl{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--royal);display:block;margin-bottom:4px}
+#roadahead .req ul{margin:0;padding-left:16px;font-size:13px;color:var(--slate)}
+#roadahead .req li{margin-bottom:2px}
+#roadahead .crit{list-style:none;margin-top:12px}
+#roadahead .crit li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+#roadahead .crit li:last-child{border-bottom:none}
+#roadahead .crit b{color:var(--navy)}
+#roadahead .crit .mark{color:var(--royal);font-weight:700}
+
 /* Sources */
 .src{font-size:14px;columns:2;column-gap:34px}
 @media(max-width:720px){.src{columns:1}}
@@ -129,7 +151,7 @@ footer a{color:var(--ice)}
 <nav aria-label="Sections"><div class="wrap">
 <a href="#case">The Case</a><a href="#money">The Money</a><a href="#school">The School</a>
 <a href="#math">Try the Math</a><a href="#alternatives">Alternatives</a><a href="#questions">Ten Questions</a>
-<a href="#act">Act Now</a><a href="#voices">Voices</a><a href="#sources">Sources</a>
+<a href="#roadahead">Road Ahead</a><a href="#act">Act Now</a><a href="#voices">Voices</a><a href="#sources">Sources</a>
 </div></nav>
 
 <header id="case"><div class="wrap">
@@ -364,6 +386,72 @@ footer a{color:var(--ice)}
 <p><b>The students.</b> The academic transition plan and Title I reallocation analysis. Grade-by-grade capacity and space at Bourbon Central and Cane Ridge. School-level climate and safety survey results for all three elementaries.</p>
 <p class="note">Nothing here seeks student-identifiable information. The full table, with what each item settles, is <a href="Saving_North_Middletown_Elementary.pdf">Appendix B of the report</a>. Some checks need no request at all: the federal <a href="https://nces.ed.gov/programs/edge/sabs">School Attendance Boundary Survey</a> published the district's attendance-zone boundaries as free GIS files, and NCES publishes geocoded school locations.</p>
 </div>
+</div></section>
+
+<section id="roadahead"><div class="wrap">
+<div class="kicker">Road Ahead</div>
+<h2>How a closure would actually happen, and where you come in.</h2>
+<p class="lede">A school is not closed by a single vote. Under Kentucky's facility-planning rules, it takes a chain of public meetings and separate votes by the planning committee, the elected school board, and the Kentucky Board of Education. Most of those steps are still ahead of us. Each one below lists the procedural rules the district must follow, because every rule is also a chance for the public to be heard, and a step that skips a rule can be challenged.</p>
+<ol class="steps">
+<li class="done"><div class="who"><span class="tag done">Done</span>School board &bull; January 2026</div><h4>The board appointed the Local Planning Committee</h4>
+<p>A committee tasked with drafting the four-year facility plan.</p>
+<div class="req"><span class="lbl">Rules that had to be met</span><ul>
+<li>10 to 20 members, including parents, teachers, principals, the facilities director, central office staff, community leaders, and one board member</li>
+<li>The superintendent serves but does not vote</li>
+<li>Approved at an advertised public board meeting</li></ul></div></li>
+<li class="done"><div class="who"><span class="tag done">Done</span>Planning committee &bull; May 27, 2026</div><h4>Orientation and the first public meeting</h4>
+<div class="req"><span class="lbl">Rules that had to be met</span><ul>
+<li>Advertised at least 7 days ahead in the largest-circulation local paper</li>
+<li>State-led orientation; the committee selects a chair and vice-chair</li></ul></div></li>
+<li class="done"><div class="who"><span class="tag done">Done</span>Planning committee &bull; July 15, 2026</div><h4>The committee recommended the "transitional" label</h4>
+<p>A recommendation only. It does not close the school; it lets a draft plan be written without it.</p>
+<div class="req"><span class="lbl">Rules that had to be met</span><ul>
+<li>Public forum advertised at least 7 days ahead, held after 5:30 p.m. on weekdays, in a wheelchair-accessible place</li>
+<li>Open to public comment; subject to the Open Meetings Act</li></ul></div></li>
+<li><div class="who"><span class="tag ahead">Still ahead</span>Planning committee</div><h4>More public forums, then the committee's vote on the draft</h4>
+<p>The committee reviews the state's comments and votes whether to accept the draft plan.</p>
+<div class="req"><span class="lbl">Rules that must be met</span><ul>
+<li>At least 3 public forums and 3 committee meetings in all; forums advertised 7 days ahead, later meetings posted online 24 hours ahead with the paper notified</li>
+<li>Held after 5:30 p.m. on weekdays, wheelchair-accessible, under the Open Meetings Act</li>
+<li>The draft goes to the state for review before the last meeting</li>
+<li>The accept vote requires a quorum of the committee</li></ul></div></li>
+<li><div class="who"><span class="tag ahead">Still ahead</span>School board</div><h4>The board's first vote: whether to hold a public hearing</h4>
+<div class="req"><span class="lbl">Rules that must be met</span><ul>
+<li>Taken at a scheduled, advertised board meeting</li>
+<li>If the board accepts the draft, it must schedule a public hearing and appoint a neutral hearing officer</li></ul></div></li>
+<li><div class="who"><span class="tag ahead">Still ahead</span>Public hearing</div><h4>The public hearing. This is your moment.</h4>
+<p>Anyone may speak for or against the plan, or hand in a written statement to be read into the record.</p>
+<div class="req"><span class="lbl">Rules that must be met</span><ul>
+<li>Advertised at least 14 days ahead in the largest-circulation paper, held after 5:30 p.m. on weekdays, wheelchair-accessible</li>
+<li>A recording device and a public-address system are required</li>
+<li>Copies of the draft placed for public review in the community beforehand</li>
+<li>The hearing officer records every comment and stays neutral</li>
+<li>Written statements are accepted with a name and address; anonymous ones are not read</li></ul></div></li>
+<li><div class="who"><span class="tag ahead">Still ahead</span>School board</div><h4>The board's second vote: whether to adopt the final plan</h4>
+<div class="req"><span class="lbl">Rules that must be met</span><ul>
+<li>The hearing officer's report comes back to the board at a regular or special advertised meeting</li>
+<li>Final adoption is by simple majority</li></ul></div></li>
+<li><div class="who"><span class="tag ahead">Still ahead</span>Kentucky Board of Education</div><h4>The state board must approve it</h4>
+<p>Only after this does anything take effect, and only for four years.</p>
+<div class="req"><span class="lbl">Rules that must be met</span><ul>
+<li>The full package is submitted to the state 45 days before the vote, with proof of every advertisement, the committee and board minutes, the signed hearing report, and the hearing recording</li>
+<li>The state board meets only in February, April, June, August, October, and December</li>
+<li>A vote of the Kentucky Board of Education is required to approve the plan</li></ul></div></li>
+</ol>
+<div class="card">
+<h3>What makes a school "transitional"</h3>
+<p>Separate from the steps above, Kentucky keeps a school as a permanent center when it meets four of six criteria. Meet fewer than four, and it can be labeled transitional. Here are the six, and where North Middletown stands today.</p>
+<ul class="crit">
+<li><b>1. Test scores.</b> Meets the state's curriculum threshold in one of the last two testing cycles. <span class="mark">NMES leads the county, it meets this.</span></li>
+<li><b>2. Bus rides.</b> Under 45 minutes for most young students. <span class="mark">As a neighborhood school, NMES meets this today. Closure is what breaks it.</span></li>
+<li><b>3. Cost per student.</b> Within 150 percent of the district's lowest-cost like school. <span class="mark">NMES is about 107 percent of the lowest, it meets this.</span></li>
+<li><b>4. Equal programs.</b> Offers 90 percent of what similar schools offer.</li>
+<li><b>5. Building condition.</b> At least 30 years of life left, with renovation under 80 percent of replacement cost.</li>
+<li><b>6. Community support.</b> Volunteer hours, PTA/PTO membership, an outside sponsor, and a community service program.</li>
+</ul>
+<p class="note">The board also has a separate, discretionary path to apply the label, so meeting the criteria is not an automatic shield. But it puts one fair question on the table: why call a school "transitional" when it meets the state's own standard for a permanent school? Ask the district for its written scoring on all six.</p>
+</div>
+<div class="totalstrip">The next public meetings are where this is decided. Show up, speak, and send a signed statement if you cannot attend.</div>
 </div></section>
 
 <section id="act"><div class="wrap">
