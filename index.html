@@ -126,7 +126,7 @@ footer a{color:var(--ice)}
 <nav aria-label="Sections"><div class="wrap">
 <a href="#case">The Case</a><a href="#money">The Money</a><a href="#school">The School</a>
 <a href="#math">Try the Math</a><a href="#alternatives">Alternatives</a><a href="#questions">Ten Questions</a>
-<a href="#act">Act Now</a><a href="#sources">Sources</a>
+<a href="#act">Act Now</a><a href="#voices">Voices</a><a href="#sources">Sources</a>
 </div></nav>
 
 <header id="case"><div class="wrap">
@@ -369,8 +369,8 @@ footer a{color:var(--ice)}
 <div class="act-grid">
 <div class="act"><h3>Show up Thursday</h3><div class="when">July 23 &bull; 6:30 p.m. &bull; North Middletown Community Center</div>
 <p>Community meeting at the North Middletown Community Center, next to the fire department on Church Street. Children are invited to write a love letter to the school. Bring your neighbors.</p></div>
-<div class="act"><h3>Show up to the forum</h3><div class="when">July 29 &bull; Local Planning Committee</div>
-<p>The committee that voted "transitional" meets again on the draft facility plan. Its vote is advisory; the audience is not.</p></div>
+<div class="act"><h3>Show up to the forum</h3><div class="when">July 29 &bull; 5:00 p.m. &bull; Local Planning Committee</div>
+<p>The committee that voted "transitional" meets again on the draft facility plan, with a second public forum at 5:00 p.m. (<a href="https://www.bourboncountycitizen.com/2026/07/16/bourbon-county-schools-local-planning-committee-hosts-public-forum-regarding-nmes/">Bourbon County Citizen</a>). Its vote is advisory; the audience is not.</p></div>
 <div class="act"><h3>Sign and share</h3><div class="when">Two minutes</div>
 <p>Add your name to the petition asking the board to pause any vote until the ten questions are answered in writing.</p>
 <a class="btn blue" href="https://www.change.org/p/sos-save-our-school-north-middletown-elementary" id="petitionBtn">Sign the petition</a></div>
@@ -390,6 +390,39 @@ footer a{color:var(--ice)}
 </div>
 </div></section>
 
+<section id="voices"><div class="wrap">
+<div class="kicker">Part Seven</div>
+<h2>Voices of North Middletown.</h2>
+<p class="lede">Roughly one hundred supporters filled the July 15 forum, and a public comment period scheduled for thirty minutes ran about an hour and a half before the committee voted (<a href="https://www.bourboncountycitizen.com/2026/07/16/bourbon-county-schools-local-planning-committee-hosts-public-forum-regarding-nmes/">Bourbon County Citizen</a>). Those voices belong in this record, in their owners' own words.</p>
+<div id="storyList"></div>
+<div class="card" id="storyEmpty">
+<h3>Your story could be the first one here.</h3>
+<p>If NMES taught you, taught your children, or employed you, what happened inside that building is evidence too. Send your story and it will appear on this page once we have talked and you have approved the exact words.</p>
+<a class="btn" href="mailto:ryanuspsagm@gmail.com?subject=My%20NMES%20story&body=Full%20name%3A%0A%0AMy%20connection%20to%20NMES%20%28student%2C%20parent%2C%20teacher%2C%20and%20which%20years%29%3A%0A%0ATown%20where%20I%20live%20now%3A%0A%0APhone%20number%20%28for%20verification%20only%2C%20never%20published%29%3A%0A%0AMy%20story%3A%0A%0A%0AMay%20we%20publish%20your%20story%20and%20first%20name%20on%20savenmes.org%3F%20%28yes%20or%20no%29%3A">Share your story</a>
+</div>
+<p class="note">How this page works: every story is submitted directly by its author, or reposted only after the author gives explicit permission. I confirm each person's identity and connection to the school before publishing, and I check that each story speaks to the decision in front of the district. Phone numbers are never published. Any author can have their story removed at any time by asking.</p>
+</div></section>
+
+<script>
+/* Stories are added to this array only after the author's identity is verified
+   and written permission to publish is in hand. Format:
+   {name:"First L.", connection:"parent of two students", years:"2018 to 2025", text:"..."} */
+var STORIES=[];
+(function(){
+var list=document.getElementById('storyList');
+if(!STORIES.length)return;
+document.querySelector('#storyEmpty h3').textContent='Add your voice to these.';
+STORIES.forEach(function(s){
+var d=document.createElement('div');d.className='card';
+var q=document.createElement('p');q.className='quote';q.textContent=s.text;
+var a=document.createElement('p');a.innerHTML='<b></b>';
+a.firstChild.textContent=s.name;
+a.appendChild(document.createTextNode(' · '+s.connection+(s.years?', '+s.years:'')));
+d.appendChild(q);d.appendChild(a);list.appendChild(d);
+});
+})();
+</script>
+
 <section id="sources"><div class="wrap">
 <div class="kicker">Check My Work</div>
 <h2>Sources</h2>
@@ -401,6 +434,7 @@ footer a{color:var(--ice)}
 <li><a href="https://revenue.ky.gov/News/Publications/pages/property-tax-rate-books.aspx">Kentucky Dept. of Revenue property tax rate books</a></li>
 <li><a href="https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&ID=210054000096">NCES school data, North Middletown Elementary</a></li>
 <li><a href="https://www.schooldigger.com/go/KY/schools/0054000096/school.aspx">SchoolDigger score history (KDE data)</a></li>
+<li><a href="https://www.bourboncountycitizen.com/2026/07/16/bourbon-county-schools-local-planning-committee-hosts-public-forum-regarding-nmes/">Bourbon County Citizen coverage of the July 15 forum and transitional vote</a></li>
 <li><a href="https://www.kentuckyteacher.org/features/2011/11/blue-ribbon-school-shares-keys-to-success/">Kentucky Teacher, 2011 Blue Ribbon feature</a></li>
 <li><a href="https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=51320">KRS 160.470, the 4 percent option</a></li>
 <li><a href="https://www.education.ky.gov/districts/SEEK/Pages/Taxes.aspx">KDE local district tax levies</a></li>

@@ -129,6 +129,14 @@ def main():
             for row in sdw.iter_rows() for c in row),
         "model School_Data cites build/kde_scores_history.json")
 
+    # voices section (personal stories, published only with verified permission)
+    chk('id="voices"' in html and 'id="storyList"' in html and "var STORIES=[" in html,
+        "site has the Voices section with the story pipeline")
+    chk("explicit permission" in html and "never published" in html,
+        "Voices section carries the consent and verification promise")
+    chk("bourboncountycitizen.com" in html and "5:00 p.m." in html,
+        "July 29 forum time and Citizen coverage cited")
+
     # pagination quality (optional dependency)
     try:
         import numpy as np
