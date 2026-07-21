@@ -419,14 +419,28 @@ document.querySelector('#storyEmpty h3').textContent='Add your voice to these.';
 STORIES.forEach(function(s){
 var d=document.createElement('div');d.className='card';
 var q=document.createElement('div');q.className='quote';
-s.text.split('\n').forEach(function(par){
-if(!par.trim())return;
-var p=document.createElement('p');p.textContent=par;p.style.margin='0 0 12px';q.appendChild(p);
-});
+var parts=s.text.split('\n').filter(function(t){return t.trim()});
+function para(t){var p=document.createElement('p');p.textContent=t;p.style.margin='0 0 12px';return p}
+q.appendChild(para(parts[0]));
+var more=document.createElement('div');more.style.display='none';
+parts.slice(1).forEach(function(t){more.appendChild(para(t))});
+q.appendChild(more);
 var a=document.createElement('p');a.innerHTML='<b></b>';
 a.firstChild.textContent=s.name;
 a.appendChild(document.createTextNode(' · '+s.connection+(s.years?', '+s.years:'')));
-d.appendChild(q);d.appendChild(a);list.appendChild(d);
+d.appendChild(q);d.appendChild(a);
+if(parts.length>1){
+var btn=document.createElement('button');btn.type='button';btn.className='btn';
+btn.textContent='Read the full story';btn.setAttribute('aria-expanded','false');
+btn.addEventListener('click',function(){
+var open=more.style.display!=='none';
+more.style.display=open?'none':'';
+btn.textContent=open?'Read the full story':'Show less';
+btn.setAttribute('aria-expanded',String(!open));
+});
+d.appendChild(btn);
+}
+list.appendChild(d);
 });
 })();
 </script>
