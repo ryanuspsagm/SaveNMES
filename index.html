@@ -179,7 +179,7 @@ footer a{color:var(--ice)}
 <section id="school"><div class="wrap">
 <div class="kicker">Part Two</div>
 <h2>The school they want to close is the one that works.</h2>
-<p class="lede">On the state's official 2024-25 tests, North Middletown is first among all four elementary schools in the county, in every tested subject. It also beats the statewide elementary average in science and writing.</p>
+<p class="lede">On the state's official 2024-25 tests, North Middletown is first among all four elementary schools in the county, in every tested subject, and beats the statewide elementary average in science and writing. The state's historical files complete the arc: county math leader in every pre-COVID year on record, 2012 through 2019, and an official Distinguished rating in 2016.</p>
 
 <div class="card">
 <h3>The state's own numbers, 2024-25</h3>
@@ -191,21 +191,26 @@ footer a{color:var(--ice)}
 <tr><td>Social Studies</td><td>36</td><td>31</td><td>27</td><td>38</td></tr>
 <tr><td>Writing</td><td>56</td><td>40</td><td>27</td><td>43</td></tr>
 </table></div>
-<p class="note">Kentucky Summative Assessments, all students; asterisks are state-suppressed small groups. Paris Elementary trails in every subject as well. Source data archived in this site's repository.</p>
-<span class="checkme"><a href="build/kde_ksa_2024_25.json">KDE assessment extract (archived)</a> &middot; <a href="https://www.kyschoolreportcard.com">Kentucky School Report Card</a></span>
+<p class="note">Kentucky Summative Assessments, all students; asterisks are state-suppressed small groups. Paris Elementary trails in every subject as well. The historical record runs deeper: NMES posted the county's best official overall rate in 2023-24 (74.5, first by fourteen points) before a small tested cohort dipped in 2024-25 while still finishing first in every subject. And Bourbon Central, a designated receiving school, is federally identified for Targeted Support and Improvement in 2024-25. All source data archived in this site's repository.</p>
+<span class="checkme"><a href="build/kde_ksa_2024_25.json">KDE 2024-25 extract</a> &middot; <a href="build/kde_scores_history.json">KDE 2012-2025 history extract</a> &middot; <a href="https://www.kyschoolreportcard.com">Kentucky School Report Card</a></span>
 </div>
 
 <div class="card">
-<h3>Two decades of scores, every district elementary</h3>
+<h3>Two decades of scores: the state's record and the third-party index</h3>
 <div class="checkrow">
 <label><input type="checkbox" id="tgNMES" checked> North Middletown</label>
 <label><input type="checkbox" id="tgBC" checked> Bourbon Central</label>
 <label><input type="checkbox" id="tgCR" checked> Cane Ridge</label>
 <label><input type="checkbox" id="tgPE"> Paris Elementary</label>
 </div>
+<div class="checkrow">
+<label><input type="checkbox" id="tgKC" checked> KDE official composite</label>
+<label><input type="checkbox" id="tgKP" checked> KDE reading and math average</label>
+<label><input type="checkbox" id="tgSD"> SchoolDigger index (third party)</label>
+</div>
 <div class="chartbox tall"><canvas id="chartScores" role="img" aria-label="Line chart of elementary school scores from 2007 to 2025"></canvas></div>
-<p class="note">SchoolDigger's normalized 0-100 score computed from state test data, a consistent cross-year yardstick, not KDE's official rating. No statewide tests in 2020; NMES 2021 not reported.</p>
-<span class="checkme"><a href="https://www.schooldigger.com/go/KY/schools/0054000096/school.aspx">SchoolDigger, NMES year table</a></span>
+<p class="note">KDE official composite = Kentucky's overall accountability score in each era (2012 to 2016 and 2022 to 2025; none was issued from 2017 to 2021, and the 2006 to 2011 CATS files are available from KDE by data request). KDE reading and math average = percent proficient or better on the state tests, 2012 to 2019 and 2021 to 2025; 2020 tests were canceled and 2021 was a limited COVID administration. The SchoolDigger index is a third-party 0-100 rank of the same tests, kept for context: validated against the official record, it tracks the larger schools closely but is unreliable year to year for a school of NMES's size, and where the two disagree the official record governs.</p>
+<span class="checkme"><a href="build/kde_scores_history.json">KDE history extract (archived)</a> &middot; <a href="https://www.schooldigger.com/go/KY/schools/0054000096/school.aspx">SchoolDigger, NMES year table</a></span>
 </div>
 
 <div class="card">
@@ -344,7 +349,7 @@ footer a{color:var(--ice)}
 <details><summary>Which of the claimed savings can actually pay teachers?</summary><p>Which are General Fund dollars, and which are restricted facility dollars that cannot pay a single salary?</p></details>
 <details><summary>What is the stated purpose of the 2024 $6.055 million bond issue?</summary><p>Publish the official statement and the BG-1, and state when NMES last received meaningful capital investment.</p></details>
 <details><summary>Why did central-office administration grow 44.8 percent in two years while attendance fell?</summary><p>What rollback is on the table before a school closes? Publish administrator compensation from the official state records.</p></details>
-<details><summary>What is the written plan to protect the students academically?</summary><p>For children moved from the school that leads the county in every tested subject on the state's 2024-25 assessments into the two schools it outscores, and what happens to the district's Title I allocations when they move?</p></details>
+<details><summary>What is the written plan to protect the students academically?</summary><p>For children moved from the school that leads the county in every tested subject on the state's 2024-25 assessments into the two schools it outscores, one of which is federally identified for Targeted Support and Improvement, and what happens to the district's Title I allocations when they move?</p></details>
 <details><summary>Which alternatives has the administration actually modeled, and with what results?</summary><p>If none, why is closure first on the list rather than last?</p></details>
 
 <div class="card" style="margin-top:26px">
@@ -379,7 +384,7 @@ footer a{color:var(--ice)}
 </div>
 <div class="card" style="margin-top:26px">
 <h3>Read the full case</h3>
-<p>The 32-page report and the complete financial model behind every number on this page.</p>
+<p>The 33-page report and the complete financial model behind every number on this page.</p>
 <a class="btn" href="Saving_North_Middletown_Elementary.pdf">Download the report (PDF)</a>
 &nbsp;<a class="btn" href="NMES_Financial_Model.xlsx" download>Download the model (Excel)</a>
 </div>
@@ -451,26 +456,47 @@ backgroundColor:[LGRAY,NAVY,ROYAL]}]},
 options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
 scales:{y:{grid:{color:'#E3E8F0'},max:2.2}}}});
 
-/* Scores chart with toggles */
+/* Scores chart: schools x sources */
 var yrs=[]; for(var y=2007;y<=2025;y++){yrs.push(y)}
 var S={
-NMES:{label:'North Middletown',color:NAVY,w:3,data:[56.5,63.9,68.6,87.9,85.8,72.5,67.6,56.6,56.9,48.7,49.3,40.0,50.4,null,null,47.7,32.1,54.1,58.2]},
-BC:{label:'Bourbon Central',color:ROYAL,w:2,data:[77.5,81.9,72.6,69.6,63.0,74.7,67.6,51.8,52.1,30.0,34.0,32.8,39.9,null,20.0,29.9,29.0,23.8,26.5]},
-CR:{label:'Cane Ridge',color:GRAY,w:2,data:[35.2,50.9,56.2,65.5,34.5,34.0,49.6,51.0,51.1,57.5,50.4,41.4,38.8,null,23.8,38.7,34.6,35.8,19.3]},
-PE:{label:'Paris Elementary',color:'#AEB4BE',w:2,data:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,16.8,12.2]}
+NMES:{label:'North Middletown',color:NAVY,w:3},
+BC:{label:'Bourbon Central',color:ROYAL,w:2},
+CR:{label:'Cane Ridge',color:GRAY,w:2},
+PE:{label:'Paris Elementary',color:'#AEB4BE',w:2}
 };
-function mkDs(k){return{label:S[k].label,data:S[k].data,borderColor:S[k].color,backgroundColor:S[k].color,borderWidth:S[k].w,pointRadius:2.5,spanGaps:false,tension:0.15}}
-var scoreChart=new Chart(document.getElementById('chartScores'),{type:'line',
-data:{labels:yrs,datasets:[mkDs('NMES'),mkDs('BC'),mkDs('CR')]},
-options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},
-scales:{y:{min:0,max:95,grid:{color:'#E3E8F0'}},x:{ticks:{maxTicksLimit:10}}}}});
-function syncToggles(){
-var want=[['tgNMES','NMES'],['tgBC','BC'],['tgCR','CR'],['tgPE','PE']];
-scoreChart.data.datasets=[];
-want.forEach(function(p){if(document.getElementById(p[0]).checked){scoreChart.data.datasets.push(mkDs(p[1]))}});
-scoreChart.update();
+var SRCDATA={
+comp:{
+NMES:[null,null,null,null,null,62.6,68.8,71.4,72.1,79.1,null,null,null,null,null,51.9,62.2,74.5,54.0],
+BC:[null,null,null,null,null,63.2,63.0,69.8,67.8,56.8,null,null,null,null,null,52.8,56.7,50.3,55.4],
+CR:[null,null,null,null,null,53.3,58.9,69.2,68.5,65.5,null,null,null,null,null,54.3,51.8,60.7,47.8],
+PE:[null,null,null,null,null,48.0,49.9,59.4,54.8,69.6,null,null,null,null,null,46.1,45.9,40.7,41.9]},
+pd:{
+NMES:[null,null,null,null,null,52.6,54.6,59.3,56.4,59.1,53.2,45.1,48.4,null,19.7,31.5,36.5,45.0,36.0],
+BC:[null,null,null,null,null,54.6,52.0,52.1,49.7,44.0,45.7,45.6,47.1,null,29.4,35.0,32.5,29.5,33.0],
+CR:[null,null,null,null,null,38.1,42.5,48.8,50.7,56.9,51.5,46.8,44.3,null,25.9,38.5,37.5,35.0,32.0],
+PE:[null,null,null,null,null,30.4,29.6,34.9,30.9,41.6,31.5,32.2,33.7,null,20.2,25.5,28.5,28.5,27.0]},
+sd:{
+NMES:[56.5,63.9,68.6,87.9,85.8,72.5,67.6,56.6,56.9,48.7,49.3,40.0,50.4,null,null,47.7,32.1,54.1,58.2],
+BC:[77.5,81.9,72.6,69.6,63.0,74.7,67.6,51.8,52.1,30.0,34.0,32.8,39.9,null,20.0,29.9,29.0,23.8,26.5],
+CR:[35.2,50.9,56.2,65.5,34.5,34.0,49.6,51.0,51.1,57.5,50.4,41.4,38.8,null,23.8,38.7,34.6,35.8,19.3],
+PE:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,16.8,12.2]}
+};
+var SRCSTYLE={comp:{suffix:' (KDE composite)',dash:[],pt:'circle'},pd:{suffix:' (KDE R/M avg)',dash:[6,3],pt:'triangle'},sd:{suffix:' (SchoolDigger)',dash:[2,3],pt:'rect'}};
+function mkDs(k,src){var st=SRCSTYLE[src];return{label:S[k].label+st.suffix,data:SRCDATA[src][k],borderColor:S[k].color,backgroundColor:S[k].color,borderWidth:src==='comp'?S[k].w:Math.max(1.2,S[k].w-1),borderDash:st.dash,pointStyle:st.pt,pointRadius:2.5,spanGaps:false,tension:0.15}}
+function buildDatasets(){
+var out=[];
+var schools=[['tgNMES','NMES'],['tgBC','BC'],['tgCR','CR'],['tgPE','PE']];
+var srcs=[['tgKC','comp'],['tgKP','pd'],['tgSD','sd']];
+schools.forEach(function(sc){if(!document.getElementById(sc[0]).checked)return;
+srcs.forEach(function(sr){if(document.getElementById(sr[0]).checked){out.push(mkDs(sc[1],sr[1]))}})});
+return out;
 }
-['tgNMES','tgBC','tgCR','tgPE'].forEach(function(id){document.getElementById(id).addEventListener('change',syncToggles)});
+var scoreChart=new Chart(document.getElementById('chartScores'),{type:'line',
+data:{labels:yrs,datasets:buildDatasets()},
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:18,font:{size:10}}}},
+scales:{y:{min:0,max:101,grid:{color:'#E3E8F0'}},x:{ticks:{maxTicksLimit:10}}}}});
+function syncToggles(){scoreChart.data.datasets=buildDatasets();scoreChart.update()}
+['tgNMES','tgBC','tgCR','tgPE','tgKC','tgKP','tgSD'].forEach(function(id){document.getElementById(id).addEventListener('change',syncToggles)});
 
 /* Enrollment chart */
 var eyrs=[]; for(var y2=1989;y2<=2025;y2++){eyrs.push(y2)}

@@ -179,7 +179,8 @@ P("<b>Third, the district has not yet shown its work.</b> No line-item net-savin
   "Meanwhile the school proposed for closure is, on the state's official 2024-25 assessments, the county's "
   "highest-performing elementary: first among all four elementary schools in Bourbon County in every tested "
   "subject, reading, mathematics, science, social studies, and writing, and above the statewide elementary "
-  "average in science and writing (Section 5).")
+  "average in science and writing. The state's historical files complete the arc: county math leader in "
+  "every pre-COVID year on record and an official Distinguished rating in 2016 (Section 5).")
 P("The report closes with ten questions the administration should be required to answer in writing before any vote, "
   "a menu of revenue and cost measures worth an estimated $1.1 to $2.1 million a year without closing a school, and "
   "staged recommendations with clear decision thresholds. The district retains roughly $4.3 million in General Fund "
@@ -354,11 +355,13 @@ P("Whatever the true net number proves to be, one comparison frames the decision
 # ================= 5. ACADEMICS =================
 H("5. Academic Performance: The District Would Be Closing Its Best Elementary School", need=5.3)
 fig("chart_district.png",
-    "Figure 6. The full two-decade score history for every elementary school in the district, with Paris "
-    "Independent's Paris Elementary for county context (reported from 2024). Values are SchoolDigger's normalized "
-    "0-100 score computed from state test data, a consistent cross-year yardstick, not KDE's official rating. "
-    "Dashed markers show where the underlying state assessment changed (2012 and 2021-22); no statewide tests were "
-    "given in 2020, and North Middletown's 2021 result was not reported.")
+    "Figure 6. Top: the official state record, Kentucky's overall accountability composite in its two "
+    "comparable eras (Unbridled Learning overall score, 2012-2016; KSA overall indicator rate, 2022-2025). No "
+    "composite was issued from 2017 through 2021 (system transition, star-rating years, then COVID), and "
+    "CATS-era school files (2006-2011) are available from KDE by data request. Bottom: SchoolDigger's "
+    "third-party 0-100 index of the same tests, retained for context and validated against the official "
+    "record; wherever the two disagree, the official record governs. Sources: KDE historical datasets, "
+    "archived in this repository as build/kde_scores_history.json.")
 fig("chart_compare.png",
     "Figure 7. SchoolDigger's normalized 0-100 index for 2024-25 across the region's elementary schools, computed from state test data (not KDE's official rating). Only Montgomery "
     "County's two elementaries outscore North Middletown; every elementary in Bourbon County, Clark County, and "
@@ -381,21 +384,38 @@ tbl(["Subject (percent proficient or distinguished)", "NMES", "Bourbon Central",
             "Asterisks are cells the state suppresses for small groups; the Kentucky average is the statewide "
             "elementary level. North Middletown leads all four county schools in all five subjects.",
     bold_first_col=True)
-P("The pattern is hard to miss, and it runs in opposite directions. After a pandemic-era dip in 2023, North "
-  "Middletown rebounded to 54.1 in 2024 and 58.2 in 2025 on SchoolDigger's index, back above the state median, around the 60th "
-  "percentile of Kentucky elementary schools, ranking 272nd of 685 statewide. Over the same stretch the receiving "
-  "schools moved the other way: Bourbon Central has slid from 39.9 (2019) to 26.5, and Cane Ridge fell from 35.8 "
-  "to 19.3 in a single year, both now in the bottom quarter of the state, alongside Paris Elementary at 12.2. "
-  "Across the wider region (Figure 7), only Montgomery County's Northview and Mapleton outscore North Middletown; "
-  "every elementary in Clark County and Paris Independent trails it. The two-decade record in Figure 6 "
-  "deepens the contrast: around its Blue Ribbon years North Middletown scored 87.9 and 85.8, the top tier of "
-  "the state, while Bourbon Central, the district's strongest elementary as recently as 2008 (81.9), has "
-  "fallen by two-thirds.")
-P("The profile beneath the composite has real texture. North Middletown students match the state average in "
-  "reading (50 percent proficient or better) and mathematics (44 percent), and beat it decisively in writing (58 "
-  "percent, twenty points above the state) and science (53 percent, sixteen above). Most striking for a school "
-  "where about three-quarters of children qualify for free or reduced-price meals: its economically disadvantaged "
-  "students scored 57.1, the 62nd percentile statewide, evidence that this environment lifts precisely the "
+P("The full arc, on the state's own files, reads as follows (Figure 6, top panel). Through the Unbridled "
+  "Learning era North Middletown's official overall score rose every single year, 62.6 to 68.8 to 71.4 to 72.1 "
+  "to <b>79.1</b>, closing 2015-16 with a formal <b>Distinguished</b> classification, the county's best score "
+  "by nearly ten points. The same files show the school <b>first in the county in elementary mathematics in "
+  "every pre-COVID administration on record</b>, 2011-12 through 2018-19, eight straight. The pandemic "
+  "cratered every school in the county; the recovery is where they separate. North Middletown's overall "
+  "indicator rate climbed 51.9 to 62.2 to <b>74.5</b> in 2023-24, first in the county by fourteen points, with "
+  "reading and math both at 45 percent proficient or better. In 2024-25 a tested cohort of roughly sixty "
+  "children slipped to 41 and 31 while statewide averages ticked up, a real single-year decline worth "
+  "watching, and the school still finished first among all four county elementaries in every tested subject. "
+  "Small schools swing hard in single years, in both directions; the record above is why one soft year argues "
+  "for attention, not for closure.")
+P("Two receiving-school facts from the same official files belong beside that record. Bourbon Central is "
+  "federally identified for <b>Targeted Support and Improvement</b> in 2024-25 for its students with "
+  "disabilities, and Cane Ridge carried the same designation in 2021-22. That is no criticism of either "
+  "school's educators; it is a fact about capacity. The proposal asks two schools, one currently under a "
+  "federal improvement plan and the other enrolled past its rated capacity, to absorb 128 more children from "
+  "the school that leads them in every subject.")
+P("The SchoolDigger index in Figure 6's lower panel and in Figure 7 is retained as third-party context, with "
+  "its limits printed. Tested against the official record, it tracks the county's larger schools closely "
+  "(correlation near 0.9) but is unreliable year to year for a school North Middletown's size (near 0.4), and "
+  "it named the wrong county leader in three of the ten years both sources cover, twice against North "
+  "Middletown, including the year the state rated the school Distinguished. It still adds one thing the "
+  "official archive cannot yet show: the Blue Ribbon-era view, where North Middletown's index reached 87.9 "
+  "and 85.8 around 2010 and 2011; the official CATS files for those years are on request with KDE. Wherever "
+  "the index and the official record disagree, the official record governs in this report.")
+P("The profile beneath the headline numbers has real texture. In 2023-24 North Middletown matched the "
+  "statewide elementary average in reading (45 percent proficient or better against 47) and beat it in "
+  "mathematics (45 against 42); in 2024-25 it beat the state decisively in writing (56 against 43) and "
+  "science (53 against 37). Most striking for a school where about three-quarters of children qualify for "
+  "free or reduced-price meals: on the third-party index, its economically disadvantaged students alone rank "
+  "in the 62nd percentile of all Kentucky schools, evidence that this environment lifts precisely the "
   "students the research says are hardest to lift.")
 P("This is not a new story. In 2011 the U.S. Department of Education named North Middletown Elementary a "
   "<b>National Blue Ribbon School</b>, one of just five Kentucky public schools honored that year, an award "
@@ -417,7 +437,8 @@ P("The record has always been built by people, and I will name the two who ancho
   "than \u201cArtBurst,\u201d which threaded the performing and creative arts through core academics with volunteers "
   "teaching art forms and students performing weekly. Those educators set a standard, and the school's history "
   "belongs to them. Its present belongs to a new set of educators proving equal to it: under principal Hannah "
-  "Southall, the current staff has lifted the school from 32.1 to 54.1 to 58.2 in two years, keeps a "
+  "Southall, the current staff took the school from its COVID-era trough back to the county's best official "
+  "overall rate, 74.5 in 2023-24, and the county's top marks in every tested subject in 2024-25, keeps a "
   "gifted-and-talented program running, and draws the kind of testimony money cannot buy, a parent writing this "
   "month that her child \u201cfeels so loved and welcomed by each and every teacher.\u201d The people who set the "
   "standard have successors already making the climb. What that faculty needs is not consolidation. It is time, "
@@ -657,8 +678,9 @@ P("The strongest alternative is not defensive. Kentucky law already supplies the
   "agreement from the child's home district required and tuition at the board's discretion. Every family North "
   "Middletown attracts brings at least the $4,626 base guarantee (fiscal 2027), plus applicable add-ons.")
 P("North Middletown is built to compete for those families. It is a 2011 National Blue Ribbon school with a "
-  "gifted-and-talented program, a 13.6-to-1 student-teacher ratio, and a 58.2 SchoolDigger index that beats "
-  "every elementary school in Bourbon County and every one in neighboring Clark County and Paris Independent "
+  "gifted-and-talented program, a 13.6-to-1 student-teacher ratio, state results that lead every elementary "
+  "school in Bourbon County in every tested subject, and a third-party index that also tops every school in "
+  "neighboring Clark County and Paris Independent "
   "(Conkwright 17.5, Strode Station 34.2, Justice 39.3, Shearer 42.3, Paris Elementary 12.2). Its state-approved "
   "capacity is 174 against 128 enrolled: forty-six open seats which, filled with transfer students at the base "
   "guarantee alone, represent roughly $213,000 a year in new recurring revenue at little marginal cost, before "
@@ -1185,6 +1207,11 @@ srcs = [
  "Assessments, school-level, all students: kyschoolreportcard.com datasets; the rows for the four Bourbon "
  "County elementary schools and the statewide elementary averages are archived in this repository as "
  "build/kde_ksa_2024_25.json",
+ "Kentucky Department of Education, historical School Report Card datasets, 2011-12 through 2023-24: "
+ "accountability achievement and profile files (education.ky.gov/Open-House/data/HistoricalDatasets) and, "
+ "for 2017-18 and 2018-19, Wayback Machine captures of KDE's retired openhouse download endpoint; the "
+ "multi-year extract for the four county elementary schools, with the SchoolDigger validation results, is "
+ "archived in this repository as build/kde_scores_history.json",
  "Bourbon County Schools District Facility Plan, approved by the Kentucky Board of Education, August 2021: "
  "education.ky.gov/districts/fac/documents/bourbon co dfp.pdf (archived in this repository as build/dfp_current.pdf)",
  "Bourbon County Schools District Facilities Plan, approved by the Kentucky Board of Education, June 2013, "

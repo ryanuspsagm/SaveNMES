@@ -653,7 +653,7 @@ put(dm, "A55", "Bourbon County faces a real demographic headwind: flat for fifty
 # ================= SCHOOL_DATA =================
 sd = sheet("School_Data", [30] + [7.2] * 18 + [44])
 put(sd, "A1", "School Data Backing the Report Figures", TITLE)
-put(sd, "A2", "Inputs (blue) transcribed from public sources. Scores are SchoolDigger's normalized 0-100 'Average Standard Score' from KDE test data - not KDE's official rating. Confirm vs KDE Open House datasets before formal submission.", NOTE)
+put(sd, "A2", "Inputs (blue) transcribed from public sources. The 2007-2025 series below is SchoolDigger's normalized 0-100 index built from KDE test data (a third-party rendering, kept for context). KDE's own official record, pulled directly from the department's historical files, is in the KDE OFFICIAL HISTORY block below and governs every claim in the report.", NOTE)
 
 put(sd, "A4", "NMES ENROLLMENT BY SCHOOL YEAR (backs Figure 11)", SEC)
 eyears = ["'15-16", "'16-17", "'17-18", "'18-19", "'19-20", "'20-21", "'21-22", "'22-23", "'23-24", "'24-25"]
@@ -736,6 +736,51 @@ for row in kde_rows:
         put(sd, f"{get_column_letter(i+1)}{rr}", v, NOTE if i == 0 else BLUE, None if isinstance(v, str) else NUM)
     rr += 1
 put(sd, "A41", "NMES is first among all four county elementary schools in every subject and beats the statewide elementary average in science and writing. Asterisks = state-suppressed cells.", NOTE, wrap=True)
+
+put(sd, "A43", "KDE OFFICIAL HISTORY, 2011-12 TO 2024-25 (build/kde_scores_history.json)", SEC)
+kh_years = ["'11-12", "'12-13", "'13-14", "'14-15", "'15-16", "'16-17", "'17-18",
+            "'18-19", "'20-21", "'21-22", "'22-23", "'23-24", "'24-25"]
+put(sd, "A44", "Percent proficient or distinguished", bold=True)
+for i, y in enumerate(kh_years):
+    put(sd, f"{get_column_letter(2 + i)}44", y, BOLD)
+put(sd, "T44", "KDE historical accountability files (all students, elementary level); 2017-19 recovered from Wayback captures of KDE's retired download endpoint. 2019-20 canceled statewide; 2020-21 was a limited COVID administration. CATS-era files (2006-2011) are available from KDE by data request.", NOTE, wrap=True)
+kh_rows = [
+ ("Reading: North Middletown", [51.9, 59.7, 63.2, 53.2, 56.1, 55.6, 42.3, 48.4, 21.4, 32, 43, 45, 41]),
+ ("Reading: Bourbon Central", [62.1, 56.6, 61.2, 55.7, 47.9, 47.9, 49.3, 49.1, 27.1, 43, 37, 36, 38]),
+ ("Reading: Cane Ridge", [42.9, 47.2, 54.5, 55.3, 59.3, 57.1, 52.0, 49.6, 26.5, 44, 40, 40, 37]),
+ ("Reading: Paris Elementary", [31.0, 34.1, 42.9, 38.9, 41.2, 34.3, 34.4, 35.3, 25.0, 28, 25, 30, 25]),
+ ("Mathematics: North Middletown", [53.2, 49.4, 55.3, 59.5, 62.1, 50.8, 47.9, 48.4, 17.9, 31, 30, 45, 31]),
+ ("Mathematics: Bourbon Central", [47.1, 47.4, 43.0, 43.6, 40.0, 43.5, 41.8, 45.1, 31.7, 27, 28, 23, 28]),
+ ("Mathematics: Cane Ridge", [33.3, 37.7, 43.1, 46.1, 54.4, 45.9, 41.5, 39.0, 25.2, 33, 35, 30, 27]),
+ ("Mathematics: Paris Elementary", [29.7, 25.0, 26.8, 22.9, 41.9, 28.7, 30.0, 32.0, 15.3, 23, 32, 27, 29]),
+]
+rr = 45
+for name, vals in kh_rows:
+    put(sd, f"A{rr}", name)
+    for i, v in enumerate(vals):
+        put(sd, f"{get_column_letter(2 + i)}{rr}", v, BLUE, "0.0")
+    rr += 1
+put(sd, "A53", "NMES led the county in mathematics in every pre-COVID administration on record, 2011-12 through 2018-19: eight straight years.", NOTE, wrap=True)
+
+put(sd, "A55", "Official overall score", bold=True)
+for i, y in enumerate(kh_years):
+    put(sd, f"{get_column_letter(2 + i)}55", y, BOLD)
+put(sd, "T55", "Unbridled Learning overall score 2011-12 to 2015-16 (state classifications noted below); KSA overall indicator rate 2021-22 to 2024-25. The two scales are not comparable to each other. No overall score was issued 2016-17 through 2020-21 by design.", NOTE, wrap=True)
+kc_rows = [
+ ("North Middletown", [62.6, 68.8, 71.4, 72.1, 79.1, None, None, None, None, 51.9, 62.2, 74.5, 54.0]),
+ ("Bourbon Central", [63.2, 63.0, 69.8, 67.8, 56.8, None, None, None, None, 52.8, 56.7, 50.3, 55.4]),
+ ("Cane Ridge", [53.3, 58.9, 69.2, 68.5, 65.5, None, None, None, None, 54.3, 51.8, 60.7, 47.8]),
+ ("Paris Elementary", [48.0, 49.9, 59.4, 54.8, 69.6, None, None, None, None, 46.1, 45.9, 40.7, 41.9]),
+]
+rr = 56
+for name, vals in kc_rows:
+    put(sd, f"A{rr}", name)
+    for i, v in enumerate(vals):
+        if v is not None:
+            put(sd, f"{get_column_letter(2 + i)}{rr}", v, BLUE, "0.0")
+    rr += 1
+put(sd, "A60", "Classifications: NMES rated Proficient 2012-2015 and Distinguished in 2015-16 at 79.1, the county's only Distinguished elementary rating in the files retrieved. In 2023-24 NMES posted 74.5, first in the county by 14 points. Bourbon Central is federally identified for Targeted Support and Improvement (disability group) in 2024-25; Cane Ridge carried the same designation in 2021-22.", NOTE, wrap=True)
+put(sd, "A62", "Third-party check: the SchoolDigger index above correlates about 0.9 with these official results for Bourbon Central and Cane Ridge but only weakly for NMES, and it names the wrong county leader in three of the ten overlapping years. The official record governs.", NOTE, wrap=True)
 
 # ================= FACILITY_PLANS =================
 fp = sheet("Facility_Plans", [42, 12, 12, 12, 12, 50])

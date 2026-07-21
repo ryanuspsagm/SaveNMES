@@ -85,35 +85,51 @@ clean(ax, ygrid=False, xgrid=True)
 fig.tight_layout()
 save(fig, "chart_pp.png")
 
-# ---- D: district elementary full history ---------------------------------
-fig, ax = plt.subplots(figsize=(6.7, 3.3))
+# ---- D: district elementary full history (official record + third-party index) ----
+fig, (axo, axs) = plt.subplots(2, 1, figsize=(6.7, 5.6), height_ratios=[1.15, 1])
 yrs_all = list(range(2007, 2026))
 nan = float("nan")
+comp = [
+    ("North Middletown", {2012:62.6,2013:68.8,2014:71.4,2015:72.1,2016:79.1,2022:51.9,2023:62.2,2024:74.5,2025:54.0}, NAVY, "-", "o", 2.4),
+    ("Bourbon Central", {2012:63.2,2013:63.0,2014:69.8,2015:67.8,2016:56.8,2022:52.8,2023:56.7,2024:50.3,2025:55.4}, BLUE, "--", "s", 1.5),
+    ("Cane Ridge", {2012:53.3,2013:58.9,2014:69.2,2015:68.5,2016:65.5,2022:54.3,2023:51.8,2024:60.7,2025:47.8}, GRAY, "-", "^", 1.5),
+    ("Paris Elementary", {2012:48.0,2013:49.9,2014:59.4,2015:54.8,2016:69.6,2022:46.1,2023:45.9,2024:40.7,2025:41.9}, "#AEB4BE", "-.", "D", 1.3),
+]
+for name, m, col, ls, mk, lw in comp:
+    ys = [m.get(y, nan) for y in yrs_all]
+    axo.plot(yrs_all, ys, color=col, linestyle=ls, marker=mk, markersize=3.6, linewidth=lw, label=name)
+axo.axvspan(2006.5, 2011.5, color="#F3F5F9")
+axo.axvspan(2019.5, 2021.5, color="#E7EBF3")
+axo.text(2009.0, 88, "CATS era: school files\navailable from KDE\nby data request", ha="center", fontsize=7.2, color="#777777")
+axo.text(2018.4, 55, "no composite issued\n2017-2021", ha="center", fontsize=7.2, color="#777777",
+         bbox=dict(facecolor="white", edgecolor="none", pad=1.2))
+axo.text(2020.5, 42, "COVID", ha="center", fontsize=7.4, color="#777777", fontweight="bold")
+axo.annotate('79.1 "Distinguished"', xy=(2016, 79.1), xytext=(2013.1, 92.5), fontsize=7.6, color=NAVY,
+             fontweight="bold", arrowprops=dict(arrowstyle="->", color=NAVY, lw=0.8))
+axo.annotate("74.5, first by 14 pts", xy=(2024, 74.5), xytext=(2021.2, 92.5), fontsize=7.6, color=NAVY,
+             fontweight="bold", arrowprops=dict(arrowstyle="->", color=NAVY, lw=0.8))
+axo.set_title("Official state composite: Unbridled Learning overall score (2012-16), KSA overall indicator rate (2022-25)")
+axo.set_xticks(list(range(2007, 2026, 2)))
+axo.set_xlim(2006.5, 2026.0)
+axo.set_ylim(35, 101)
+axo.legend(loc="lower left", frameon=False, fontsize=7.4, ncol=2)
+clean(axo)
 series = [
-    ("North Middletown", [56.5, 63.9, 68.6, 87.9, 85.8, 72.5, 67.6, 56.6, 56.9, 48.7, 49.3, 40.0, 50.4, nan, nan, 47.7, 32.1, 54.1, 58.2], NAVY, "-", "o", 2.3),
-    ("Bourbon Central", [77.5, 81.9, 72.6, 69.6, 63.0, 74.7, 67.6, 51.8, 52.1, 30.0, 34.0, 32.8, 39.9, nan, 20.0, 29.9, 29.0, 23.8, 26.5], BLUE, "--", "s", 1.6),
-    ("Cane Ridge", [35.2, 50.9, 56.2, 65.5, 34.5, 34.0, 49.6, 51.0, 51.1, 57.5, 50.4, 41.4, 38.8, nan, 23.8, 38.7, 34.6, 35.8, 19.3], GRAY, "-", "^", 1.6),
-    ("Paris Elementary", [nan]*17 + [16.8, 12.2], "#AEB4BE", "-.", "D", 1.6),
+    ("North Middletown", [56.5, 63.9, 68.6, 87.9, 85.8, 72.5, 67.6, 56.6, 56.9, 48.7, 49.3, 40.0, 50.4, nan, nan, 47.7, 32.1, 54.1, 58.2], NAVY, "-", "o", 2.0),
+    ("Bourbon Central", [77.5, 81.9, 72.6, 69.6, 63.0, 74.7, 67.6, 51.8, 52.1, 30.0, 34.0, 32.8, 39.9, nan, 20.0, 29.9, 29.0, 23.8, 26.5], BLUE, "--", "s", 1.4),
+    ("Cane Ridge", [35.2, 50.9, 56.2, 65.5, 34.5, 34.0, 49.6, 51.0, 51.1, 57.5, 50.4, 41.4, 38.8, nan, 23.8, 38.7, 34.6, 35.8, 19.3], GRAY, "-", "^", 1.4),
+    ("Paris Elementary", [nan]*17 + [16.8, 12.2], "#AEB4BE", "-.", "D", 1.4),
 ]
 for name, ys, col, ls, mk, lw in series:
-    ax.plot(yrs_all, ys, color=col, linestyle=ls, marker=mk, markersize=3.8,
-            linewidth=lw, label=name)
-    last = [v for v in ys if v == v][-1]
-    ax.text(2025.3, last, f"{last}", color=col, fontsize=8.8, fontweight="bold", va="center")
-for xv in (2011.5, 2020):
-    ax.axvline(xv, color="#D5D9E0", linewidth=1.1, linestyle="--", zorder=0)
-ax.axhline(50, color=GRAY, linewidth=0.9, linestyle=":")
-ax.text(2007.0, 51.6, "Kentucky median (approx. 50)", fontsize=7.8, color=GRAY,
-        bbox=dict(facecolor="white", alpha=0.85, edgecolor="none", pad=0.8))
-ax.text(2007.1, 92.6, "Blue Ribbon era: 2010 and 2011", fontsize=7.8, color=NAVY, fontweight="bold")
-ax.set_title("Elementary school scores by year, 2007-2025")
-ax.set_xticks(list(range(2007, 2026, 2)))
-ax.set_xlim(2006.5, 2027.0)
-ax.set_ylim(4, 97)
-ax.legend(loc="upper right", frameon=False, fontsize=8.2, ncol=2)
-ax.tick_params(axis="x", labelsize=8.4)
-clean(ax)
-fig.tight_layout()
+    axs.plot(yrs_all, ys, color=col, linestyle=ls, marker=mk, markersize=3.2, linewidth=lw)
+axs.axvspan(2019.5, 2021.5, color="#E7EBF3")
+axs.set_title("Third-party SchoolDigger index of the same tests (kept for context; official record governs)")
+axs.set_xticks(list(range(2007, 2026, 2)))
+axs.set_xlim(2006.5, 2026.0)
+axs.set_ylim(4, 97)
+axs.text(2007.0, 10, "validated against the official files: tracks larger schools closely (r near 0.9);\nunreliable year to year for a school NMES's size (r near 0.4)", fontsize=7.0, color="#777777")
+clean(axs)
+fig.tight_layout(h_pad=1.6)
 save(fig, "chart_district.png")
 
 # ---- E: regional 2024-25 comparison --------------------------------------

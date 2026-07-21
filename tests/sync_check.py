@@ -80,11 +80,63 @@ else: diff("PDF levy figures not all found")
 years_model = list(range(2007, 2020)) + list(range(2021, 2026))
 def model_row(r):
     return {y: SD.cell(row=r, column=2+i).value for i, y in enumerate(years_model)}
-site_scores = {}
-for key in ("NMES", "BC", "CR", "PE"):
-    m = re.search(key + r":\{label:'[^']*',color:[^,]+,w:\d+,data:\[([^\]]+)\]", html)
-    vals = [None if v.strip() == "null" else float(v) for v in m.group(1).split(",")]
-    site_scores[key] = {2007 + i: v for i, v in enumerate(vals)}
+
+# the site now carries three selectable sources: comp (KDE official composite),
+# pd (KDE reading/math average), sd (SchoolDigger third-party index)
+def site_block(src):
+    blk = re.search(src + r":\{(.*?)\]\}", html, re.S).group(1) + "]"
+    out = {}
+    for key in ("NMES", "BC", "CR", "PE"):
+        vals = [None if v.strip() == "null" else float(v)
+                for v in re.search(key + r":\[([^\]]+)\]", blk).group(1).split(",")]
+        out[key] = {2007 + i: v for i, v in enumerate(vals)}
+    return out
+site_scores = site_block("sd")
+site_comp = site_block("comp")
+site_pd = site_block("pd")
+
+# KDE official record: site arrays vs the archived source file
+kde = json.load(open(f"{REPO}/build/kde_scores_history.json"))
+comp_bad, pd_bad = [], []
+for yk, row in kde["official_composite"].items():
+    if yk == "note": continue
+    y = int(yk[:4]) + 1
+    for key in ("NMES", "BC", "CR", "PE"):
+        want = row[key][0]
+        got = site_comp[key].get(y)
+        if got is None or abs(got - want) > 0.06:
+            comp_bad.append((key, y, got, want))
+for yk in kde["reading_pd"]:
+    y = int(yk[:4]) + 1
+    for key in ("NMES", "BC", "CR", "PE"):
+        want = (kde["reading_pd"][yk][key] + kde["math_pd"][yk][key]) / 2
+        got = site_pd[key].get(y)
+        if got is None or abs(got - want) > 0.06:
+            pd_bad.append((key, y, got, round(want, 2)))
+if not comp_bad: match("site KDE composite series matches build/kde_scores_history.json (all schools, all years)")
+else: diff(f"site KDE composite mismatches: {comp_bad}")
+if not pd_bad: match("site KDE reading/math average series matches build/kde_scores_history.json")
+else: diff(f"site KDE R/M average mismatches: {pd_bad}")
+
+# model School_Data KDE history block vs the same source file
+kh_years_keys = ["2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17",
+                 "2017-18", "2018-19", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25"]
+mh_bad = []
+for subj, base in (("reading_pd", 45), ("math_pd", 49)):
+    for j, key in enumerate(("NMES", "BC", "CR", "PE")):
+        for i, yk in enumerate(kh_years_keys):
+            got = SD.cell(row=base + j, column=2 + i).value
+            if abs(got - kde[subj][yk][key]) > 0.001:
+                mh_bad.append((subj, key, yk, got))
+for j, key in enumerate(("NMES", "BC", "CR", "PE")):
+    for i, yk in enumerate(kh_years_keys):
+        want = kde["official_composite"].get(yk, {})
+        want = want[key][0] if key in want else None
+        got = SD.cell(row=56 + j, column=2 + i).value
+        if (got is None) != (want is None) or (want is not None and abs(got - want) > 0.001):
+            mh_bad.append(("composite", key, yk, got))
+if not mh_bad: match("model School_Data KDE history block matches build/kde_scores_history.json (104 P/D cells + composites)")
+else: diff(f"model KDE history mismatches: {mh_bad}")
 rowmap = {"NMES": 15, "BC": 16, "CR": 17, "PE": 18}
 for key, row in rowmap.items():
     mrow = model_row(row)
@@ -93,10 +145,12 @@ for key, row in rowmap.items():
            or (mrow[y] is not None and abs((site_scores[key].get(y) or 0) - mrow[y]) > 0.01)]
     if not bad: match(f"score series {key}: all {sum(1 for y in years_model if mrow[y] is not None)} values identical site vs model")
     else: diff(f"score series {key} mismatches: {bad}")
-for trio in ["58.2", "26.5", "19.3"]:
-    if trio in pdf_flat: pass
-    else: diff(f"PDF missing headline score {trio}")
-match("headline scores 58.2 / 26.5 / 19.3 present in PDF text and site fact strip")
+head_ok = all(s in pdf_flat for s in ["79.1", "74.5"])
+site_sd_ok = all(s in html for s in ["58.2", "26.5", "19.3"])
+if head_ok and site_sd_ok:
+    match("PDF headlines the official composites (79.1 Distinguished, 74.5 first by 14); site keeps the SchoolDigger series (58.2 / 26.5 / 19.3) as selectable context")
+else:
+    diff(f"headline scores: PDF official {head_ok}, site SchoolDigger {site_sd_ok}")
 
 # 3-yr averages claimed in PDF (48.1 / 26.4 / 29.9)
 import statistics

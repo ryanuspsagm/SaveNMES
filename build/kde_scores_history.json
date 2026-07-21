@@ -1,0 +1,356 @@
+{
+ "source": "Kentucky Department of Education official files, retrieved 2026-07-20 directly from education.ky.gov/Open-House/data/HistoricalDatasets (ACCOUNTABILITY_ACHIEVEMENT_LEVEL and ACCOUNTABILITY_PROFILE 2011-12 through 2016-17; accountable_assessment_performance and accountability_profile 2021-22, 2022-23; KYRC24/KYRC25 accountability files) and, for 2017-18 and 2018-19, Wayback Machine captures of KDE's retired openhouse download endpoint (ACCOUNTABILITY_PROFICIENCY_LEVEL.xlsx, captures 2020-09-27/28). All-students rows, elementary level. 2019-20 canceled statewide; 2020-21 was a limited COVID administration; no official composite issued 2017 through 2021. CATS-era files (2006-2011) are no longer published online and are available from KDE by data request.",
+ "reading_pd": {
+  "2011-12": {
+   "NMES": 51.9,
+   "BC": 62.1,
+   "CR": 42.9,
+   "PE": 31.0
+  },
+  "2012-13": {
+   "NMES": 59.7,
+   "BC": 56.6,
+   "CR": 47.2,
+   "PE": 34.1
+  },
+  "2013-14": {
+   "NMES": 63.2,
+   "BC": 61.2,
+   "CR": 54.5,
+   "PE": 42.9
+  },
+  "2014-15": {
+   "NMES": 53.2,
+   "BC": 55.7,
+   "CR": 55.3,
+   "PE": 38.9
+  },
+  "2015-16": {
+   "NMES": 56.1,
+   "BC": 47.9,
+   "CR": 59.3,
+   "PE": 41.2
+  },
+  "2016-17": {
+   "NMES": 55.6,
+   "BC": 47.9,
+   "CR": 57.1,
+   "PE": 34.3
+  },
+  "2017-18": {
+   "NMES": 42.3,
+   "BC": 49.3,
+   "CR": 52.0,
+   "PE": 34.4
+  },
+  "2018-19": {
+   "NMES": 48.4,
+   "BC": 49.1,
+   "CR": 49.6,
+   "PE": 35.3
+  },
+  "2020-21": {
+   "NMES": 21.4,
+   "BC": 27.1,
+   "CR": 26.5,
+   "PE": 25.0
+  },
+  "2021-22": {
+   "NMES": 32,
+   "BC": 43,
+   "CR": 44,
+   "PE": 28
+  },
+  "2022-23": {
+   "NMES": 43,
+   "BC": 37,
+   "CR": 40,
+   "PE": 25
+  },
+  "2023-24": {
+   "NMES": 45,
+   "BC": 36,
+   "CR": 40,
+   "PE": 30
+  },
+  "2024-25": {
+   "NMES": 41,
+   "BC": 38,
+   "CR": 37,
+   "PE": 25
+  }
+ },
+ "math_pd": {
+  "2011-12": {
+   "NMES": 53.2,
+   "BC": 47.1,
+   "CR": 33.3,
+   "PE": 29.7
+  },
+  "2012-13": {
+   "NMES": 49.4,
+   "BC": 47.4,
+   "CR": 37.7,
+   "PE": 25.0
+  },
+  "2013-14": {
+   "NMES": 55.3,
+   "BC": 43.0,
+   "CR": 43.1,
+   "PE": 26.8
+  },
+  "2014-15": {
+   "NMES": 59.5,
+   "BC": 43.6,
+   "CR": 46.1,
+   "PE": 22.9
+  },
+  "2015-16": {
+   "NMES": 62.1,
+   "BC": 40.0,
+   "CR": 54.4,
+   "PE": 41.9
+  },
+  "2016-17": {
+   "NMES": 50.8,
+   "BC": 43.5,
+   "CR": 45.9,
+   "PE": 28.7
+  },
+  "2017-18": {
+   "NMES": 47.9,
+   "BC": 41.8,
+   "CR": 41.5,
+   "PE": 30.0
+  },
+  "2018-19": {
+   "NMES": 48.4,
+   "BC": 45.1,
+   "CR": 39.0,
+   "PE": 32.0
+  },
+  "2020-21": {
+   "NMES": 17.9,
+   "BC": 31.7,
+   "CR": 25.2,
+   "PE": 15.3
+  },
+  "2021-22": {
+   "NMES": 31,
+   "BC": 27,
+   "CR": 33,
+   "PE": 23
+  },
+  "2022-23": {
+   "NMES": 30,
+   "BC": 28,
+   "CR": 35,
+   "PE": 32
+  },
+  "2023-24": {
+   "NMES": 45,
+   "BC": 23,
+   "CR": 30,
+   "PE": 27
+  },
+  "2024-25": {
+   "NMES": 31,
+   "BC": 28,
+   "CR": 27,
+   "PE": 29
+  }
+ },
+ "official_composite": {
+  "note": "Unbridled Learning overall score 2011-12 to 2015-16 (with state classification); KSA overall indicator rate 2021-22 to 2024-25. 2016-17 issued no scores by design.",
+  "2011-12": {
+   "NMES": [
+    62.6,
+    "Proficient"
+   ],
+   "BC": [
+    63.2,
+    "Proficient"
+   ],
+   "CR": [
+    53.3,
+    "Needs Improvement"
+   ],
+   "PE": [
+    48.0,
+    "Needs Improvement"
+   ]
+  },
+  "2012-13": {
+   "NMES": [
+    68.8,
+    "Proficient/Progressing"
+   ],
+   "BC": [
+    63.0,
+    "Proficient"
+   ],
+   "CR": [
+    58.9,
+    "Needs Improvement/Progressing"
+   ],
+   "PE": [
+    49.9,
+    "Needs Improvement/Progressing"
+   ]
+  },
+  "2013-14": {
+   "NMES": [
+    71.4,
+    "Proficient"
+   ],
+   "BC": [
+    69.8,
+    "Proficient"
+   ],
+   "CR": [
+    69.2,
+    "Needs Improvement"
+   ],
+   "PE": [
+    59.4,
+    "Needs Improvement"
+   ]
+  },
+  "2014-15": {
+   "NMES": [
+    72.1,
+    "Proficient/Progressing"
+   ],
+   "BC": [
+    67.8,
+    "Proficient"
+   ],
+   "CR": [
+    68.5,
+    "Proficient/Progressing"
+   ],
+   "PE": [
+    54.8,
+    "Needs Improvement"
+   ]
+  },
+  "2015-16": {
+   "NMES": [
+    79.1,
+    "Distinguished/Progressing"
+   ],
+   "BC": [
+    56.8,
+    "Needs Improvement"
+   ],
+   "CR": [
+    65.5,
+    "Needs Improvement"
+   ],
+   "PE": [
+    69.6,
+    "Proficient/Progressing"
+   ]
+  },
+  "2021-22": {
+   "NMES": [
+    51.9,
+    null
+   ],
+   "BC": [
+    52.8,
+    null
+   ],
+   "CR": [
+    54.3,
+    "TSI (Disability)"
+   ],
+   "PE": [
+    46.1,
+    null
+   ]
+  },
+  "2022-23": {
+   "NMES": [
+    62.2,
+    null
+   ],
+   "BC": [
+    56.7,
+    null
+   ],
+   "CR": [
+    51.8,
+    null
+   ],
+   "PE": [
+    45.9,
+    null
+   ]
+  },
+  "2023-24": {
+   "NMES": [
+    74.5,
+    null
+   ],
+   "BC": [
+    50.3,
+    null
+   ],
+   "CR": [
+    60.7,
+    null
+   ],
+   "PE": [
+    40.7,
+    null
+   ]
+  },
+  "2024-25": {
+   "NMES": [
+    54.0,
+    null
+   ],
+   "BC": [
+    55.4,
+    "TSI (Disability)"
+   ],
+   "CR": [
+    47.8,
+    null
+   ],
+   "PE": [
+    41.9,
+    null
+   ]
+  }
+ },
+ "state_elementary_pd": {
+  "2023-24": {
+   "Reading": 47,
+   "Mathematics": 42
+  },
+  "2024-25": {
+   "Reading": 49,
+   "Mathematics": 43
+  }
+ },
+ "schooldigger_validation": {
+  "note": "Third-party index tested against the official files, all overlapping years 2012-2025.",
+  "correlation_vs_official": {
+   "NMES": 0.07,
+   "BC": 0.75,
+   "CR": 0.87
+  },
+  "correlation_vs_pd_avg": {
+   "NMES": 0.43,
+   "BC": 0.89,
+   "CR": 0.93
+  },
+  "wrong_county_leader_years": [
+   "2015-16",
+   "2016-17",
+   "2021-22"
+  ]
+ }
+}

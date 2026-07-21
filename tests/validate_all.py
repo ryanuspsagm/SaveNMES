@@ -107,6 +107,24 @@ def main():
     chk("1st in all 5 subjects" in html and "state" in html,
         "site hero tile carries the KDE first-in-county claim")
 
+    # KDE official historical record (build/kde_scores_history.json)
+    chk((REPO / "build" / "kde_scores_history.json").exists(),
+        "KDE historical scores archive present")
+    chk("79.1" in t and "Distinguished" in t,
+        "PDF carries the 2016 official Distinguished rating at 79.1")
+    chk("74.5" in t and "Targeted Support" in t,
+        "PDF carries the 74.5 composite and the TSI designations")
+    chk("every pre-COVID administration on record" in t,
+        "PDF carries the eight-year county math streak")
+    chk("74.5" in html and 'id="tgSD"' in html and 'id="tgKC"' in html,
+        "site carries 74.5 and the KDE/SchoolDigger source toggles")
+    sdw = wb["School_Data"]
+    chk(sdw["F56"].value == 79.1 and sdw["M56"].value == 74.5,
+        "model School_Data: official composites 79.1 (2015-16) and 74.5 (2023-24)")
+    chk(any(isinstance(c.value, str) and "kde_scores_history.json" in c.value
+            for row in sdw.iter_rows() for c in row),
+        "model School_Data cites build/kde_scores_history.json")
+
     # pagination quality (optional dependency)
     try:
         import numpy as np

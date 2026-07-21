@@ -29,5 +29,10 @@
   "what": "Extract of the KDE School Report Card assessment dataset, 2024-25 KSA, school level, all students: the four Bourbon County elementary schools plus statewide elementary averages (P/D percentages and content index by subject).",
   "source": "kyschoolreportcard.com datasets (full state CSV, 47 MB); extract generated 2026-07-20",
   "retrieved": "2026-07-20"
+ },
+ "kde_scores_history.json": {
+  "what": "Multi-year extract of official KDE assessment and accountability files for the four Bourbon County elementary schools: reading/math percent proficient-or-distinguished 2011-12 through 2024-25, official composite scores and classifications, TSI designations, statewide averages, and the SchoolDigger validation results.",
+  "source": "See the source field inside the file; every underlying file is a KDE publication.",
+  "retrieved": "2026-07-20"
  }
 }
