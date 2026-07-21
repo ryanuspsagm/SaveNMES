@@ -222,10 +222,12 @@ def main():
         "site shows both denominators on the calculators")
     chk("net change across all seven" in t,
         "PDF clarifies the $430K is the net debt-service step, not the bond's payment alone")
-    chk("multi-age option in Section 9 would capture" in t,
-        "PDF reconciles the closure staffing count with the multi-age alternative")
-    chk("$1.7 to $3.0 million" in t and "$1.7 to $3.0 million" in html,
-        "alternatives raw sum updated after the levy correction")
+    chk("multi-age" not in t.lower() and "multiage" not in t.lower(),
+        "multi-age reorganization removed from the report")
+    chk("truly shed rather than" in t,
+        "PDF keeps the closure staffing-count judgment note (without the multi-age crutch)")
+    chk("$1.6 to $2.8 million" in t and "$1.6 to $2.8 million" in html,
+        "alternatives raw sum updated after the levy correction and multi-age removal")
 
     print(f"PASS {len(ok)}")
     print(f"FAIL {len(bad)}")

@@ -399,8 +399,6 @@ alts = [
   "Cost reduction", "Low; needs an interlocal feasibility study"),
  ("Fill NMES to capacity (rebalance + transfers, net)", "=Redistricting!B30", "=Redistricting!B31", "Boundary rebalancing and cross-county scenario, Redistricting tab", GRN, GRN,
   "New revenue, net of costs", "High; board boundary authority, math on Redistricting tab"),
- ("NMES multi-age reorganization", 170000, 255000, "Six or seven sections instead of nine, via attrition", BLUE, BLUE,
-  "Cost reduction", "Medium; needs a staffing and grade-band plan"),
 ]
 r = 4
 for label, lo, hi, basis, flo, fhi, typ, conf in alts:
@@ -422,7 +420,7 @@ put(al, f"A{tot+5}", "Conservative combined estimate, high"); put(al, f"B{tot+5}
 put(al, f"A{tot+6}", "Conservative midpoint (used in Runway sheet)"); put(al, f"B{tot+6}", f"=(B{tot+4}+B{tot+5})/2", BLK, CUR)
 put(al, f"A{tot+7}", "Average annual GF drawdown (FY2024-25)"); put(al, f"B{tot+7}", "=GF_Summary!D16", GRN, CUR)
 put(al, f"A{tot+8}", "Closure net saving (base case)"); put(al, f"B{tot+8}", "=Closure_Model!B20", GRN, CUR)
-put(al, f"A{tot+10}", "Reading: raw row sums run about $1.7M to $3.0M; the published $1.1M to $2.1M band takes roughly two thirds of them as a haircut for overlap and implementation risk. Coverage is reported against both yardsticks: the $2.65M structural gap before transfers and the roughly $1.15M net drawdown after transfers (Closure_Model rows 21 and 35 carry both for closure).", NOTE, wrap=True)
+put(al, f"A{tot+10}", "Reading: raw row sums run about $1.6M to $2.8M; the published $1.1M to $2.1M band applies a conservative haircut for overlap and implementation risk. Coverage is reported against both yardsticks: the $2.65M structural gap before transfers and the roughly $1.15M net drawdown after transfers (Closure_Model rows 21 and 35 carry both for closure).", NOTE, wrap=True)
 
 # ================= DEBT_SERVICE =================
 d = sheet("Debt_Service", [16, 16, 14, 12, 18, 44])

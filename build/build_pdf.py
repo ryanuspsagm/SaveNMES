@@ -315,9 +315,8 @@ P("Put together, a defensible planning estimate of the net recurring General Fun
   "either yardstick, that is under a quarter of the $2.65 million structural deficit, or a bit over half of the "
   "roughly $1.15 million the district actually draws from reserves each year; a partial fix on either measure, "
   "not a solution (the companion workbook shows both). The three-to-five-position range is itself a real judgment "
-  "call, how many of North Middletown's nine sections the receiving schools would truly shed rather than "
-  "re-create; the same slack that makes five plausible is what the multi-age option in Section 9 would capture at "
-  "$170,000 to $255,000 a year without closing the school at all. The reason for "
+  "call, turning on how many of North Middletown's nine sections the receiving schools would truly shed rather "
+  "than re-create as they absorb sixty-four more children each across six grades. The reason for "
   "skepticism about even that number is not theoretical. Districts across the country have run exactly this "
   "play, and the results are on the record. One more thing closure does not buy: borrowing room. Bonding "
   "capacity is built from restricted revenue streams that do not grow when a school closes (Section 6).")
@@ -720,7 +719,7 @@ P("The seats deserve a destination, not just a headcount, and the school already
   "advanced learners that families apply into from across the district and, under House Bill 563, from the "
   "surrounding counties; Kentucky's larger districts have run magnet and specialized-program schools for "
   "decades precisely because a distinctive program pulls enrollment to the building that hosts it. A preschool "
-  "satellite, a multi-age model, or simply growing the neighborhood school it has always been would serve the "
+  "satellite, or simply growing the neighborhood school it has always been, would serve the "
   "same end. Under any of them, every child in the zone keeps their seat; the program adds students, it never "
   "displaces one. A district that needs students has every reason to run a growth play at the school best "
   "credentialed to anchor it, whichever form the community and the Board choose together.")
@@ -896,14 +895,14 @@ tbl(["Measure", "Estimated annual value", "How it works"],
       "$140,000 to $225,000 net, recurring",
       "Rebalance eastern attendance boundaries and recruit cross-county transfers under House Bill 563 to fill "
       "all 46 open seats; the worked example above and the workbook's Redistricting tab show the math. "
-      "Multi-age reorganization and a preschool or day-care satellite are additional levers on top."]],
+      "A preschool or day-care satellite is an additional lever on top."]],
     [1.75 * inch, 1.35 * inch, 3.6 * inch],
     caption="Figure 14. Measures available without closing a school. The menu deliberately mixes two kinds of lines, "
             "new recurring revenue and recurring cost reductions, and the workbook's Alternatives tab labels each one "
             "by type with a confidence rating and what would firm it up. Values are estimates derived from the "
             "district's audited figures and state data; ranges overlap and are not additive to the penny. The "
-            "rows sum to roughly $1.7 to $3.0 million raw; the published $1.1 to $2.1 million a year applies "
-            "roughly a one-third haircut for overlap and implementation risk, against an annual reserve drawdown "
+            "rows sum to roughly $1.6 to $2.8 million raw; the published $1.1 to $2.1 million a year applies "
+            "a conservative haircut for overlap and implementation risk, against an annual reserve drawdown "
             "of $1.1 to $1.2 million.",
     bold_first_col=True)
 
@@ -1128,7 +1127,7 @@ B("Pursue the low-harm levers first: the collections-gap reconciliation, the 4-p
   "an administrative cost review, with quarterly public reporting against a target of cutting the operating "
   "deficit from $2.6 million to under $1.5 million by fiscal 2027 and under $800,000 by fiscal 2028.")
 B("Charter a North Middletown sustainability committee, district, city, parents, and business, to design the "
-  "multi-age model, community uses of the building, and a transfer-in program for the 2027-28 school year.")
+  "signature program, community uses of the building, and a transfer-in program for the 2027-28 school year.")
 B("Give that plan a real test: two years, a public target of at least 145 students at the fall 2028 count, "
   "and quarterly reporting against it. If the community's plan misses its own number, the conversation "
   "changes; if it hits, the question is settled. Either way, the decision will have been earned rather than "
