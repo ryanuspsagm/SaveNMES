@@ -406,15 +406,23 @@ footer a{color:var(--ice)}
 <script>
 /* Stories are added to this array only after the author's identity is verified
    and written permission to publish is in hand. Format:
-   {name:"First L.", connection:"parent of two students", years:"2018 to 2025", text:"..."} */
-var STORIES=[];
+   {name:"First L.", connection:"parent of two students", years:"2018 to 2025", text:"..."}
+   Paragraph breaks inside text are written as \n. */
+var STORIES=[
+{name:"Lynne", connection:"student, 1966 to 1972; parent, 1995 to 2004",
+text:"My parents both attended NMES and my father graduated from the high school around 1948. My mother left after the school burned and went to Midway.\nI attended NMES from 1st thru 6th grades. I have so many fond memories of the teachers, staff and especially the bond with friends that continues to this day even though we may not see each other. I can name every teacher that I had and they all impacted my life.\nWhen my first son started school we lived in Lexington and he attended an elementary there. In 1st grade there were issues that the principal failed to address due to possible backlash. That year we decided we were moving back to North Middletown and started planning to build a house. When my son transferred to NMES the school secretary, Barbara Martin, was the same sweet lady that was there from my school days. It felt like home and both of my boys thrived there. There was a sense of belonging, they gained confidence and amazed us with their participation and success with the academic teams and in other areas.\nMy two sons and I all graduated college. I attribute our success to our beginnings at NMES with teachers that were outstanding, staff who cared about all of us and a sense of community shared by the students of this small school!"}
+];
 (function(){
 var list=document.getElementById('storyList');
 if(!STORIES.length)return;
 document.querySelector('#storyEmpty h3').textContent='Add your voice to these.';
 STORIES.forEach(function(s){
 var d=document.createElement('div');d.className='card';
-var q=document.createElement('p');q.className='quote';q.textContent=s.text;
+var q=document.createElement('div');q.className='quote';
+s.text.split('\n').forEach(function(par){
+if(!par.trim())return;
+var p=document.createElement('p');p.textContent=par;p.style.margin='0 0 12px';q.appendChild(p);
+});
 var a=document.createElement('p');a.innerHTML='<b></b>';
 a.firstChild.textContent=s.name;
 a.appendChild(document.createTextNode(' · '+s.connection+(s.years?', '+s.years:'')));

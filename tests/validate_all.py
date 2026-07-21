@@ -136,6 +136,8 @@ def main():
         "Voices section carries the consent and verification promise")
     chk("bourboncountycitizen.com" in html and "5:00 p.m." in html,
         "July 29 forum time and Citizen coverage cited")
+    chk('name:"Lynne"' in html and "859-707" not in html,
+        "Lynne's story published by first name, phone number kept private")
 
     # pagination quality (optional dependency)
     try:
