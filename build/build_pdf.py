@@ -558,7 +558,11 @@ P("Three funding sources are available that do not involve a closure. First, the
   "construction (KRS 157.440). Third, SFCC offers of assistance, the state participation already carrying $1.57 "
   "million of current principal. These sources raise amounts comparable to the plan's $14 million, so the "
   "decision before the board is a choice among funding mechanisms, and it should be made with the fiscal agent's "
-  "current bonding potential statement public.")
+  "current bonding potential statement public. The workbook's Debt_Service tab combines them into a "
+  "balanced-budget scenario: close the operating gap first from the levy increments and cost reductions, then "
+  "fund construction from the remainder plus the nickel. It supports roughly $30 million of total capacity in "
+  "the conservative case, treating the FY2026 miscellaneous receipt as one-time, and about $50 million on the "
+  "FY2026 trend, with the budget balanced first in both cases and no school closed.")
 H2("Where the general fund is actually trending: the unaudited FY2026 close")
 P("The district's own KDE Budget Monitoring Tool, included in the June 2026 financial packet on the board's July "
   "16, 2026 agenda and archived in this repository, shows fiscal 2026 closing with revenues $2.2 million over "

@@ -522,6 +522,45 @@ put(d, f"A{r}", "Salaries under budget per the monitoring tool"); put(d, f"B{r}"
 put(d, f"A{r}", "Salaries below FY2025 actuals"); put(d, f"B{r}", 223974, BLUE, CUR); r += 1
 put(d, f"A{r}", "Caveat: miscellaneous revenue budgeted at zero, received"); put(d, f"B{r}", 1567829, BLUE, CUR)
 put(d, f"F{r}", "If one-time, the underlying gap is about $1.9 million; the district should identify this receipt", NOTE, wrap=True)
+r += 2
+put(d, f"A{r}", "SCENARIO: BALANCE THE BUDGET AND EXPAND BONDING CAPACITY, NO CLOSURE", SEC); r += 1
+put(d, f"A{r}", "Two cases differ only in the operating gap assumed. Conservative treats the FY2026 $1.57M receipt as one-time;", NOTE); r += 1
+put(d, f"A{r}", "trend uses the unaudited FY2026 net change. Operations are balanced first; only the remainder services debt.", NOTE); r += 1
+put(d, f"B{r}", "Conservative", BOLDW, fill=HDR); put(d, f"C{r}", "FY2026 trend", BOLDW, fill=HDR); r += 1
+put(d, f"A{r}", "Operating gap to close first")
+put(d, f"B{r}", 1900000, BLUE, CUR); put(d, f"C{r}", 373989, BLUE, CUR)
+put(d, f"F{r}", "Editable. $1.9M = FY2026 result excluding the unidentified receipt; $373,989 = FY2026 unaudited net change", NOTE, wrap=True); gap_r = r; r += 1
+put(d, f"A{r}", "New recurring revenue: 4 percent levy taken three years running")
+put(d, f"B{r}", "=Tax_History!B32*(1.04^3-1)", GRN, CUR); put(d, f"C{r}", "=Tax_History!B32*(1.04^3-1)", GRN, CUR)
+put(d, f"F{r}", "Same base and compounding as the levy tab; year 1 is $313,162, year 3 cumulative $977,568", NOTE, wrap=True); lev_r = r; r += 1
+put(d, f"A{r}", "Recurring cost reductions, not from closing a school")
+put(d, f"B{r}", 1000000, BLUE, CUR); put(d, f"C{r}", 1000000, BLUE, CUR)
+put(d, f"F{r}", "Editable. For scale from the FY2025 audit: district administration grew $221K in one year, salaries fell $224K through attrition, spending ran $859K under budget", NOTE, wrap=True); cut_r = r; r += 1
+put(d, f"A{r}", "Operating room left for debt service after the budget balances")
+for col in ("B", "C"):
+    put(d, f"{col}{r}", f"=MAX(0,{col}{lev_r}+{col}{cut_r}-{col}{gap_r})", BLK, CUR)
+room_r = r; r += 1
+put(d, f"A{r}", "General-fund bond capacity from that room")
+for col in ("B", "C"):
+    put(d, f"{col}{r}", f"={col}{room_r}*(1-(1+B${rate_r})^-B${term_r})/B${rate_r}", BLK, CUR)
+gfb_r = r; r += 1
+put(d, f"A{r}", "Recallable nickel yield, restricted, before FSPK equalization")
+for col in ("B", "C"):
+    put(d, f"{col}{r}", f"=B{asmt_r}*0.0005", BLK, CUR)
+nks_r = r; r += 1
+put(d, f"A{r}", "Bond capacity from the nickel")
+for col in ("B", "C"):
+    put(d, f"{col}{r}", f"={col}{nks_r}*(1-(1+B${rate_r})^-B${term_r})/B${rate_r}", BLK, CUR)
+nkb_r = r; r += 1
+put(d, f"A{r}", "Existing unused restricted capacity, approximate")
+put(d, f"B{r}", 17600000, BLUE, CUR); put(d, f"C{r}", 17600000, BLUE, CUR)
+put(d, f"F{r}", "FY2024 audit $23.5M less local share of the 2024 issue; fiscal agent's statement is the authority", NOTE, wrap=True); ex_r = r; r += 1
+put(d, f"A{r}", "Total capacity available without closing a school", bold=True)
+for col in ("B", "C"):
+    cc = put(d, f"{col}{r}", f"={col}{gfb_r}+{col}{nkb_r}+{col}{ex_r}", BLK, CUR, bold=True); cc.border = TOPLINE
+r += 1
+put(d, f"A{r}", "Roughly $30.6 million in the conservative case and $50.4 million on the FY2026 trend, with the budget balanced", NOTE); r += 1
+put(d, f"A{r}", "first in both. The administration's plan reaches $32 million at face value and leaves the deficit in place.", NOTE)
 
 # ================= RUNWAY =================
 rw = sheet("Runway", [52, 14, 14, 14, 14])

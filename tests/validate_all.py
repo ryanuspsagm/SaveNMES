@@ -222,6 +222,11 @@ def main():
     chk((REPO / "build" / "fy2026_june_financial_packet.pdf").exists()
         and "fy2026_june_financial_packet.pdf" in html,
         "June 2026 financial packet archived and linked from site")
+    chk("budget balanced first either way" in html and "balanced-budget scenario" in t,
+        "balanced-budget scenario referenced on site and in PDF")
+    chk("$30 million" in html and "$50 million" in html
+        and "$30 million" in t and "$50 million" in t,
+        "scenario capacity range $30M/$50M consistent on site and in PDF")
 
     # money-story cleanup: GF-only levy base, both denominators, precise debt wording
     chk("$313,000" in t and "$978,000" in t and "386,000" not in t,
