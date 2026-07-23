@@ -210,6 +210,19 @@ def main():
         chk(needle in t, f"PDF claim intact: {needle}")
     chk("$361,240" in html, "site claim intact: $361,240 calculator default")
 
+    # bonding story: the $14M plan, the levers, and the unaudited FY2026 close
+    for needle in ["$14 million plan", "wrap-around", "recallable",
+                   "Budget Monitoring Tool", "$374,000", "$1.57 million"]:
+        chk(needle in t, f"PDF bonding story intact: {needle}")
+    for needle in ["The $14 million plan", "$121,000 a year", "wrap-around",
+                   "Budget Monitoring Tool", "$374,000", "miscellaneous receipt"]:
+        chk(needle in html, f"site bonding story intact: {needle}")
+    chk("unaudited" in html and "unaudited" in t,
+        "FY2026 figures labeled unaudited on site and in PDF")
+    chk((REPO / "build" / "fy2026_june_financial_packet.pdf").exists()
+        and "fy2026_june_financial_packet.pdf" in html,
+        "June 2026 financial packet archived and linked from site")
+
     # money-story cleanup: GF-only levy base, both denominators, precise debt wording
     chk("$313,000" in t and "$978,000" in t and "386,000" not in t,
         "PDF levy uses the corrected GF base (313K/978K), old 386K gone")

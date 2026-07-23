@@ -473,6 +473,55 @@ put(d, f"A{r}", "and the SEEK base from operations. Sale proceeds are one-time a
 put(d, f"A{r}", "changes is the facility plan's priority list, which steers SFCC offers (KRS 157.622) toward other projects.", NOTE); r += 1
 put(d, f"A{r}", "That is a choice about priorities, not a gain in capacity, and it should be argued openly with the BG-1,", NOTE); r += 1
 put(d, f"A{r}", "the official statement, and the bonding potential statement all public.", NOTE)
+r += 2
+put(d, f"A{r}", "THE $14 MILLION PLAN (JULY 15, 2026 PLANNING COMMITTEE)", SEC); r += 1
+put(d, f"A{r}", "Stated plan: free up $800,000 to $1,000,000 a year of operating money to bond $14 million", NOTE); r += 1
+put(d, f"A{r}", "Proposed bond amount"); put(d, f"B{r}", 14000000, BLUE, CUR); bond_r = r; r += 1
+put(d, f"A{r}", "Assumed interest rate"); put(d, f"B{r}", 0.045, BLUE, PCT); rate_r = r; r += 1
+put(d, f"A{r}", "Assumed term, years"); put(d, f"B{r}", 20, BLUE, '0'); term_r = r; r += 1
+put(d, f"A{r}", "Annual debt service on the proposed bond")
+pmt = put(d, f"B{r}", f"=B{bond_r}*B{rate_r}/(1-(1+B{rate_r})^-B{term_r})", BLK, CUR); pmt.border = TOPLINE
+put(d, f"F{r}", "The payment equals the operating money the plan frees up: the school's claimed cost becomes the mortgage", NOTE, wrap=True); pmt_r = r; r += 2
+put(d, f"A{r}", "WHAT EACH SAVINGS ESTIMATE COULD ACTUALLY BOND", SEC); r += 1
+put(d, f"A{r}", "Bond principal supported = annual savings x present-value annuity factor at the rate and term above", NOTE); r += 1
+sav_rows = [
+ ("District's own KDE-filed excess cost of NMES vs peer elementaries", 121220, "Matches the closure model's worst case"),
+ ("Closure model default net saving", 361240, "Closure_Model tab"),
+ ("Closure model best case", 725000, "Closure_Model tab"),
+ ("Administration's claim, July 15, 2026", 900000, "Unpublished derivation; reconcile with KDE-filed school-level spending"),
+]
+for label, sv, note6 in sav_rows:
+    put(d, f"A{r}", label); put(d, f"B{r}", sv, BLUE, CUR)
+    put(d, f"C{r}", f"=B{r}*(1-(1+B${rate_r})^-B${term_r})/B${rate_r}", BLK, CUR)
+    put(d, f"F{r}", note6, NOTE, wrap=True); r += 1
+put(d, f"A{r}", "Only the administration's own number reaches $14 million. The audited excess cost supports about $1.6 million.", NOTE); r += 2
+put(d, f"A{r}", "DISTRICT-PAID DEBT SERVICE SCHEDULE (FY2025 AUDIT, NOTE 4)", SEC); r += 1
+put(d, f"A{r}", "Payments fall as the 2013, 2016, and 2020 series retire; this falling schedule is the room a wrap-around structure fills", NOTE); r += 1
+for yr_label, amt in [("FY2026", 1578700), ("FY2027", 1575060), ("FY2028", 1578719), ("FY2029", 1577258), ("FY2030", 1578340),
+                      ("FY2031-35 average", 1321112), ("FY2036-40 average", 398915), ("FY2041-45 average", 260708)]:
+    put(d, f"A{r}", yr_label); put(d, f"B{r}", amt, BLUE, CUR); r += 1
+r += 1
+put(d, f"A{r}", "THE LEVERS THAT DO NOT CLOSE A SCHOOL", SEC); r += 1
+put(d, f"A{r}", "Remaining restricted capacity (FY2024 audit $23.5M less local share of the 2024 issue, approximate)")
+put(d, f"B{r}", 17600000, BLUE, CUR); put(d, f"F{r}", "Exact figure is the fiscal agent's bonding potential statement; demand it", NOTE, wrap=True); r += 1
+put(d, f"A{r}", "Certified real and personal property assessment, FY2025"); put(d, f"B{r}", 1843569625, BLUE, CUR); asmt_r = r; r += 1
+put(d, f"A{r}", "Recallable nickel yield per year (5 cents per $100)"); put(d, f"B{r}", f"=B{asmt_r}*0.0005", BLK, CUR); nick_r = r; r += 1
+put(d, f"A{r}", "Bonds a nickel supports before state FSPK equalization")
+put(d, f"B{r}", f"=B{nick_r}*(1-(1+B{rate_r})^-B{term_r})/B{rate_r}", BLK, CUR)
+put(d, f"F{r}", "FSPK equalization adds state dollars on top; KDE's tables set the amount", NOTE, wrap=True); r += 1
+put(d, f"A{r}", "SFCC offers of assistance, typical cycle"); put(d, f"B{r}", 1750000, BLUE, CUR); put(d, f"F{r}", "State already pays $1,568,809 of current principal", NOTE, wrap=True); r += 2
+put(d, f"A{r}", "FY2026 YEAR-END, DISTRICT'S OWN KDE BUDGET MONITORING TOOL (UNAUDITED)", SEC); r += 1
+put(d, f"A{r}", "June 2026 financial packet, board agenda July 16, 2026; MUNIS run July 15, 2026. Audit will finalize these figures.", NOTE); r += 1
+put(d, f"A{r}", "General Fund revenue, FY2026 actual (excludes carryforward and on-behalf)"); put(d, f"B{r}", 22103877, BLUE, CUR); fy26rev_r = r; r += 1
+put(d, f"A{r}", "General Fund expenditures, FY2026 actual"); put(d, f"B{r}", 22477866, BLUE, CUR); fy26exp_r = r; r += 1
+put(d, f"A{r}", "Net General Fund change, FY2026 (unaudited)")
+nn26 = put(d, f"B{r}", f"=B{fy26rev_r}-B{fy26exp_r}", BLK, CUR); nn26.border = TOPLINE
+put(d, f"F{r}", "Compare net changes of -$1,065,657 in FY2024 and -$1,225,465 in FY2025 (audited)", NOTE, wrap=True); r += 1
+put(d, f"A{r}", "Revenues over budget per the monitoring tool"); put(d, f"B{r}", 2225835, BLUE, CUR); r += 1
+put(d, f"A{r}", "Salaries under budget per the monitoring tool"); put(d, f"B{r}", 587592, BLUE, CUR); r += 1
+put(d, f"A{r}", "Salaries below FY2025 actuals"); put(d, f"B{r}", 223974, BLUE, CUR); r += 1
+put(d, f"A{r}", "Caveat: miscellaneous revenue budgeted at zero, received"); put(d, f"B{r}", 1567829, BLUE, CUR)
+put(d, f"F{r}", "If one-time, the underlying gap is about $1.9 million; the district should identify this receipt", NOTE, wrap=True)
 
 # ================= RUNWAY =================
 rw = sheet("Runway", [52, 14, 14, 14, 14])

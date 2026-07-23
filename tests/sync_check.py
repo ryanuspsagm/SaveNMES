@@ -209,6 +209,35 @@ for r in range(15, 25):
 if alt_low == 1100000 and alt_high == 2100000:
     match("alternatives conservative range $1.1M-$2.1M hardcoded identically in model and quoted in PDF and site")
 
+# ---------- 6. bonding story: $14M plan, savings-to-bond scenarios, FY2026 close ----------
+DS = wb["Debt_Service"]
+ds_vals = {}
+for r in range(1, DS.max_row + 1):
+    a = DS.cell(row=r, column=1).value
+    if a: ds_vals[str(a)] = (DS.cell(row=r, column=2).value, DS.cell(row=r, column=3).value)
+bond_amt = ds_vals.get("Proposed bond amount", (None, None))[0]
+if bond_amt == 14000000 and "$14 million" in html and "$14 million" in pdf_flat:
+    match("proposed $14M bond consistent across model, site, PDF")
+else:
+    diff(f"$14M bond: model {bond_amt}, site {'$14 million' in html}, pdf {'$14 million' in pdf_flat}")
+excess = ds_vals.get("District's own KDE-filed excess cost of NMES vs peer elementaries", (None, None))[0]
+if excess == 121220 and "$121,000" in html and "$121,000" in pdf_flat:
+    match("audited excess cost $121,220 in model; site and PDF round to $121,000")
+else:
+    diff(f"excess cost: model {excess}, site {'$121,000' in html}, pdf {'$121,000' in pdf_flat}")
+fy26 = ds_vals.get("Net General Fund change, FY2026 (unaudited)", (None, None))[0]
+rev26 = ds_vals.get("General Fund revenue, FY2026 actual (excludes carryforward and on-behalf)", (None, None))[0]
+exp26 = ds_vals.get("General Fund expenditures, FY2026 actual", (None, None))[0]
+if rev26 == 22103877 and exp26 == 22477866 and "$374,000" in html and "$374,000" in pdf_flat:
+    match("FY2026 unaudited net change (-$373,989 from packet figures) rounds to $374,000 on site and PDF")
+else:
+    diff(f"FY2026 close: model rev {rev26} exp {exp26}, site {'$374,000' in html}, pdf {'$374,000' in pdf_flat}")
+misc = ds_vals.get("Caveat: miscellaneous revenue budgeted at zero, received", (None, None))[0]
+if misc == 1567829 and "$1.57 million" in html and "$1.57 million" in pdf_flat:
+    match("FY2026 $1.57M miscellaneous-revenue caveat present in model, site, PDF")
+else:
+    diff(f"misc revenue caveat: model {misc}, site {'$1.57 million' in html}, pdf {'$1.57 million' in pdf_flat}")
+
 # site text spot checks
 for s, label in [("1st in all 5 subjects", "hero fact scores"), ("$250K to $640K", "hero fact closure range"),
                  ("$7,829,060", "GF levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),
