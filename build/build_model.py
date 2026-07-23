@@ -481,7 +481,7 @@ put(d, f"A{r}", "Assumed interest rate"); put(d, f"B{r}", 0.045, BLUE, PCT); rat
 put(d, f"A{r}", "Assumed term, years"); put(d, f"B{r}", 20, BLUE, '0'); term_r = r; r += 1
 put(d, f"A{r}", "Annual debt service on the proposed bond")
 pmt = put(d, f"B{r}", f"=B{bond_r}*B{rate_r}/(1-(1+B{rate_r})^-B{term_r})", BLK, CUR); pmt.border = TOPLINE
-put(d, f"F{r}", "The payment equals the operating money the plan frees up: the school's claimed cost becomes the mortgage", NOTE, wrap=True); pmt_r = r; r += 2
+put(d, f"F{r}", "Payment is approximately the operating amount the plan frees up; compare the savings scenarios below", NOTE, wrap=True); pmt_r = r; r += 2
 put(d, f"A{r}", "WHAT EACH SAVINGS ESTIMATE COULD ACTUALLY BOND", SEC); r += 1
 put(d, f"A{r}", "Bond principal supported = annual savings x present-value annuity factor at the rate and term above", NOTE); r += 1
 sav_rows = [

@@ -541,23 +541,24 @@ H2("The $14 million plan, and the levers not on the table")
 P("At the July 15, 2026 planning committee meeting, the superintendent stated that the district must free up "
   "$800,000 to $1,000,000 a year in operating money to bond $14 million. That is a general-fund bond: the payment "
   "would come from the budget that pays teachers. Debt service on $14 million runs roughly $0.8 to $1.1 million a "
-  "year depending on term, so the school's claimed cost and the needed mortgage payment are the same number. And "
-  "the claimed cost cannot carry it: bond capacity is annual savings capitalized, and the district's own KDE-filed "
-  "school-level spending puts North Middletown's full excess cost near $121,000 a year, which supports about $1.6 "
-  "million of bonds, not $14 million. Even this report's best case, $725,000, supports about $9.4 million. Only "
-  "the administration's own unpublished figure reaches the target. The workbook's Debt_Service tab runs every "
-  "scenario.")
-P("Meanwhile the levers that do not close a school sit unused. First, the restricted capacity itself: the FY2024 "
-  "audit's $23.5 million, less the local share of the 2024 issue, leaves roughly $18 million, and the district's "
-  "own debt schedule shows why it is usable now: district-paid payments hold near $1.58 million a year only "
+  "year depending on term, about the same size as the school's claimed operating cost, so money saved by a "
+  "closure would go to debt service and the general fund deficit itself would not shrink. The published savings "
+  "estimates also do not support a bond of that size: bond capacity is annual savings capitalized, and the "
+  "district's own KDE-filed school-level spending puts North Middletown's full excess cost near $121,000 a year, "
+  "which supports about $1.6 million of bonds. This report's best case, $725,000, supports about $9.4 million. "
+  "Of the available estimates, only the administration's own unpublished figure reaches $14 million. The "
+  "workbook's Debt_Service tab runs every scenario.")
+P("Three funding sources are available that do not involve a closure. First, the restricted capacity itself: the "
+  "FY2024 audit's $23.5 million, less the local share of the 2024 issue, leaves roughly $18 million, and the "
+  "district's own debt schedule shows why it is usable now: district-paid payments hold near $1.58 million a year "
   "through 2030, fall to about $1.32 million in 2031 to 2035, and drop below $400,000 after 2035 as the 2013, "
-  "2016, and 2020 series retire. A standard wrap-around structure fills exactly that shape. Second, a recallable "
-  "nickel: about $920,000 a year on the district's $1.84 billion assessment, plus state FSPK equalization on top, "
-  "supporting $12 million or more, the instrument Kentucky built for this situation. Third, SFCC offers of "
-  "assistance, the state participation already carrying $1.57 million of current principal. The board is not "
-  "choosing between closing North Middletown and renovating the other schools. It is choosing between asking "
-  "taxpayers for a nickel and taking a school, and the difference deserves to be debated in those words, with the "
-  "fiscal agent's bonding potential statement on the table.")
+  "2016, and 2020 series retire. A standard wrap-around structure is designed to fill exactly that shape. Second, "
+  "a recallable nickel: about $920,000 a year on the district's $1.84 billion assessment, plus state FSPK "
+  "equalization on top, supporting $12 million or more, the funding mechanism Kentucky law provides for facility "
+  "construction (KRS 157.440). Third, SFCC offers of assistance, the state participation already carrying $1.57 "
+  "million of current principal. These sources raise amounts comparable to the plan's $14 million, so the "
+  "decision before the board is a choice among funding mechanisms, and it should be made with the fiscal agent's "
+  "current bonding potential statement public.")
 H2("Where the general fund is actually trending: the unaudited FY2026 close")
 P("The district's own KDE Budget Monitoring Tool, included in the June 2026 financial packet on the board's July "
   "16, 2026 agenda and archived in this repository, shows fiscal 2026 closing with revenues $2.2 million over "
@@ -565,11 +566,10 @@ P("The district's own KDE Budget Monitoring Tool, included in the June 2026 fina
   "change of roughly negative $374,000, against audited drawdowns of $1.07 million in fiscal 2024 and $1.23 "
   "million in fiscal 2025. These figures are unaudited and include a $1.57 million miscellaneous receipt that was "
   "budgeted at zero; if that receipt is one-time, the underlying gap is nearer $1.9 million, and the district "
-  "should identify it. Either way, the third consecutive year of actuals beating budget by more than $2.5 million "
-  "is a trend, and it points the opposite direction from the crisis narrative: a shrinking drawdown, falling "
-  "payroll through ordinary attrition, and growing revenue on a 7.4 percent assessment increase. A closure "
-  "decision this permanent should not rest on budgeted deficits that the district's own year-end reports keep "
-  "erasing.")
+  "should identify it. Either way, this is the third consecutive year that actual results came in more than $2.5 "
+  "million better than budget, and the components are consistent: a shrinking drawdown, payroll falling through "
+  "ordinary attrition, and revenue growing on a 7.4 percent assessment increase. A decision as permanent as a "
+  "school closure should be evaluated against audited actuals as well as budgets.")
 
 # ================= 7. THE BUILDING =================
 H("7. The North Middletown Building Itself")
