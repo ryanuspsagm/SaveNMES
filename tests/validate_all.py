@@ -234,6 +234,9 @@ def main():
         chk(needle in t, f"PDF capacity time-series intact: {needle}")
     chk("within 1 to 3 percent" in html,
         "honest tie-years correction present on site")
+    chk("$15,316" in html and "$16,701" in html
+        and "$15,316" in t and "$16,701" in t,
+        "staffed capacity cases priced on site and in PDF")
     chk("utilization measure" in html and "utilization measure" in t,
         "sender-side symmetry caution present on site and in PDF")
     chk((Path("/home/claude/nmes") / "chart_pptime.png").exists()
