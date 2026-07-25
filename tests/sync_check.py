@@ -271,6 +271,28 @@ if needs and crv and abs((1 - needs / crv) - 0.773295) < 0.0005 and "0.773" in p
 else:
     diff(f"NMES CI recompute: needs {needs}, crv {crv}, pdf 0.773 {'0.773' in pdf_flat}, site {'0.773' in html}")
 
+# ---------- 8. recruitment pool (v3.2): fill planner lever, model, PDF ----------
+RD = wb["Redistricting"]
+if re.search(r"net=\(t\+h\)\*4626-\(r\+t\+h\)\*400\+s\*85000", html):
+    match("fill planner JS prices returns like transfers: (t+h)*4626-(r+t+h)*400+s*85000")
+else:
+    diff("fill planner JS formula for returning students not found or changed")
+hs = (RD["B117"].value, RD["B118"].value)
+seek46 = 46 * A["B6"].value
+if hs == (236, 23) and "259 registered homeschool" in html and "236 registered homeschool" in pdf_flat:
+    match("registered homeschool counts (236 BCS + 23 Paris = 259, 2022-23) consistent model/site/PDF")
+else:
+    diff(f"homeschool counts: model {hs}, site 259 {'259 registered homeschool' in html}, pdf 236 {'236 registered homeschool' in pdf_flat}")
+pool = (RD["B123"].value, RD["B125"].value, RD["B126"].value, RD["B127"].value)
+if pool == (76, 131, 54, 189) and "54 of them from Fayette County" in html and "net import of 189" in pdf_flat:
+    match("KDE nonresident flows (76 out / 131 in / 54 Fayette / net 189) consistent model/site/PDF")
+else:
+    diff(f"nonresident flows: model {pool}")
+if seek46 == 212796 and "$213,000" in pdf_flat and RD["B131"].value == "=Assumptions!B6-Assumptions!B62":
+    match("46-seat fill from the pool = 46 x $4,626 = $212,796, quoted as about $213,000 in PDF; per-return net formula in model")
+else:
+    diff(f"pool revenue: 46*B6={seek46}, pdf $213,000 {'$213,000' in pdf_flat}")
+
 # site text spot checks
 for s, label in [("1st in all 5 subjects", "hero fact scores"), ("-$385K to +$565K", "hero fact closure range"),
                  ("$7,829,060", "GF levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),

@@ -109,9 +109,25 @@ def main():
         else: bad(f"fill planner clamp: transfers={tval}")
         pg.fill("#sRez", "0"); pg.dispatch_event("#sRez", "input")
         pg.fill("#sTr", "0"); pg.dispatch_event("#sTr", "input")
+        pg.fill("#sRet", "0"); pg.dispatch_event("#sRet", "input")
         if "No students moved" in pg.text_content("#rFillVerdict"):
             ok("fill planner zero-move edge case")
         else: bad("fill planner zero-move verdict missing")
+        # returning homeschool/private students: new money at the same base
+        pg.fill("#sSec", "1"); pg.dispatch_event("#sSec", "input")
+        pg.fill("#sRez", "20"); pg.dispatch_event("#sRez", "input")
+        pg.fill("#sTr", "10"); pg.dispatch_event("#sTr", "input")
+        pg.fill("#sRet", "16"); pg.dispatch_event("#sRet", "input")
+        expect_ret = (10 + 16) * 4626 - 46 * 400 + 1 * 85000
+        if pg.text_content("#rFill").strip() == f"${expect_ret:,}" and "174 of 174" in pg.text_content("#rFillVerdict"):
+            ok(f"fill planner returning-students case ${expect_ret:,}")
+        else: bad(f"fill planner returns: {pg.text_content('#rFill')}")
+        pg.fill("#sRez", "30"); pg.dispatch_event("#sRez", "input")
+        pg.fill("#sTr", "16"); pg.dispatch_event("#sTr", "input")
+        pg.fill("#sRet", "46"); pg.dispatch_event("#sRet", "input")
+        if pg.eval_on_selector("#sRet", "e=>e.value") == "0":
+            ok("fill planner caps returns at the 46 open seats")
+        else: bad(f"fill planner return clamp: {pg.eval_on_selector('#sRet', 'e=>e.value')}")
 
         boxes = pg.query_selector_all(".checkrow input[type=checkbox]")
         if boxes:

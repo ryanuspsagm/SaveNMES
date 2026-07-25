@@ -355,11 +355,13 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>The fill-the-seats planner</h3>
-<p class="note">Rebalance attendance boundaries and recruit cross-county transfers until NMES reaches its rated 174. Each transfer brings the state's $4,626 per-student funding at the fiscal 2027 base; Section 9 of the report shows the full math.</p>
+<p class="note">Rebalance attendance boundaries, recruit cross-county transfers, and win back homeschool and private-school families until NMES reaches its rated 174. Each transfer or returning student brings the state's $4,626 per-student funding at the fiscal 2027 base; Section 9 of the report shows the full math. The recruits are not hypothetical, and the pool is measured: the two districts' own records show <b>259 registered homeschool students</b> (2022-23), the Census puts <b>about one in three</b> county school-age kids in private school or homeschooling (up from about one in eight before the pandemic), and KDE's own nonresident report shows <b>131 out-of-county students already enrolled in Bourbon County schools, 54 of them from Fayette County</b>. Families already drive into this district; filling NMES's 46 open seats takes fewer than one in five of the registered homeschoolers alone.</p>
 <div class="slider-row"><label>Students rezoned from the Paris-area zones <output id="oRez">30</output></label>
 <input type="range" id="sRez" min="0" max="46" value="30" step="1"></div>
 <div class="slider-row"><label>Cross-county transfers under HB 563 <output id="oTr">16</output></label>
 <input type="range" id="sTr" min="0" max="46" value="16" step="1"></div>
+<div class="slider-row"><label>Returning homeschool and private-school students <output id="oRet">0</output></label>
+<input type="range" id="sRet" min="0" max="46" value="0" step="1"></div>
 <div class="slider-row"><label>Sections avoided at the receiving schools <output id="oSec">1</output></label>
 <input type="range" id="sSec" min="0" max="2" value="1" step="1"></div>
 <div class="result">
@@ -367,7 +369,8 @@ footer a{color:var(--ice)}
 <div class="sub">net new recurring dollars per year</div>
 <div class="verdict" id="rFillVerdict"></div>
 </div>
-<p class="note" style="margin-top:14px">Rezoned students already ride district buses about ten miles to the Paris schools today; moving them to the school they live closest to should shorten routes, not lengthen them, an assumption the district can test against its real routing data. Transfers bring the state SEEK base with them, and the district sets its own busing policy for them. The state's frozen transportation budget reimburses nothing on new miles, which is closure's problem, not this plan's.</p>
+<p class="note" style="margin-top:14px">Rezoned students already ride district buses about ten miles to the Paris schools today; moving them to the school they live closest to should shorten routes, not lengthen them, an assumption the district can test against its real routing data. Transfers bring the state SEEK base with them, and the district sets its own busing policy for them. Returning homeschool and private-school students generate no state funding today, so every one who enrolls is entirely new money: $4,626 at the base, about $4,226 after supplies. The state's frozen transportation budget reimburses nothing on new miles, which is closure's problem, not this plan's. One more measured flow worth knowing: 10 Bourbon County students are enrolled in Cloverport Independent, 150 miles away, which hosts the statewide virtual academy. That is the virtual competition already collecting this district's SEEK money, and a school with room is the counteroffer.</p>
+<span class="checkme"><a href="https://www.education.ky.gov/districts/enrol/Pages/Nonresident-Student-Policy.aspx">KDE Non-Resident Student report (SY24-25)</a> &middot; <a href="build/kde_nonresident_students_sy24_25.xlsx">archived copy</a> &middot; <a href="https://github.com/washingtonpost/data_home_schooling">Washington Post homeschool records project</a> &middot; <a href="build/wapo_home_school_district.csv">archived copy</a> &middot; <a href="https://data.census.gov/table/ACSDT5Y2023.B14003?g=050XX00US21017">Census B14003, Bourbon County</a> &middot; <a href="NMES_Financial_Model.xlsx">Model, Redistricting tab rows 116-135</a></span>
 </div>
 </div>
 <span class="checkme">Every formula here matches the downloadable financial model.</span>
@@ -389,7 +392,7 @@ footer a{color:var(--ice)}
 <table class="alt">
 <tr><th>Measure</th><th>Type</th><th>Estimated annual value</th></tr>
 <tr><td>Take the 4 percent revenue option (year one; compounds thereafter)</td><td>New revenue</td><td>$313,000</td></tr>
-<tr><td>Fill NMES to capacity: rebalance boundaries and recruit cross-county transfers</td><td>New revenue, net</td><td>$140,000 to $225,000</td></tr>
+<tr><td>Fill NMES to capacity: rebalance boundaries, recruit cross-county transfers and returning homeschool families</td><td>New revenue, net</td><td>$140,000 to $225,000</td></tr>
 <tr><td>Recover part of ordinary tax delinquencies</td><td>New revenue</td><td>$60,000 to $120,000</td></tr>
 <tr><td>Trim central-office growth back toward its FY2023 level</td><td>Cost reduction</td><td>$200,000 to $450,000</td></tr>
 <tr><td>Transportation efficiency review (routing, fleet, fuel)</td><td>Cost reduction</td><td>$145,000 to $290,000</td></tr>
@@ -557,8 +560,9 @@ footer a{color:var(--ice)}
 </div>
 <div class="card" style="margin-top:26px">
 <h3>Read the full case</h3>
-<p>The 40-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
+<p>The 41-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
 <p class="note"><b>Version history</b> (every version stays public; corrections are listed in each report's corrections section):
+<a href="reports/Saving_NMES_v3.2_2026-07-26.pdf">v3.2, July 26</a> (the recruitment pool, measured: 259 registered homeschoolers, about one in three county kids in private or homeschool, KDE nonresident flows showing the district a net importer; returning-student lever added to the fill planner) &middot;
 <a href="reports/Saving_NMES_v3.1_2026-07-26.pdf">v3.1, July 26</a> (building condition index from every KFICS State Report the state has published; capacity-rule verification: 702 KAR 4:180 unamended since 2008, re-certified March 2025) &middot;
 <a href="reports/Saving_NMES_v3.0_2026-07-26.pdf">v3.0, July 26</a> (two-tailed closure economics, verified position costs, capacity scenarios across all plans incl. the recovered 2017 plan, Millersburg case study) &middot;
 <a href="reports/Saving_NMES_v2.7_2026-07-25.pdf">v2.7, July 25</a> (June 2026 capital transfer, FY2026 decomposition, nickel verification) &middot;
@@ -847,18 +851,21 @@ levy();
 function fillCalc(){
 var r=+document.getElementById('sRez').value,
 t=+document.getElementById('sTr').value,
+h=+document.getElementById('sRet').value,
 s=+document.getElementById('sSec').value;
 if(r+t>46){t=46-r;document.getElementById('sTr').value=t}
+if(r+t+h>46){h=Math.max(0,46-r-t);document.getElementById('sRet').value=h}
 document.getElementById('oRez').textContent=r;
 document.getElementById('oTr').textContent=t;
+document.getElementById('oRet').textContent=h;
 document.getElementById('oSec').textContent=s;
-var net=t*4626-(r+t)*400+s*85000;
-var enroll=128+r+t;
-var pp=Math.round((2476544+(r+t)*400)/enroll);
+var net=(t+h)*4626-(r+t+h)*400+s*85000;
+var enroll=128+r+t+h;
+var pp=Math.round((2476544+(r+t+h)*400)/enroll);
 document.getElementById('rFill').textContent=money(net);
-document.getElementById('rFillVerdict').textContent=(r+t===0)?(s>0?'No students moved: the section savings above assume enrollment relief at the receiving schools, so move students first.':'No students moved. NMES stays at 128 of 174 seats and nothing changes.'):'NMES at '+enroll+' of 174 seats. Cost per student falls from $19,348 to '+money(pp)+'.'+(r>0?' Busing trims by roughly '+money(r*340)+' to '+money(r*612)+' a year on top.':' No rezoning; busing unchanged.');
+document.getElementById('rFillVerdict').textContent=(r+t+h===0)?(s>0?'No students moved: the section savings above assume enrollment relief at the receiving schools, so move students first.':'No students moved. NMES stays at 128 of 174 seats and nothing changes.'):'NMES at '+enroll+' of 174 seats. Cost per student falls from $19,348 to '+money(pp)+'.'+(r>0?' Busing trims by roughly '+money(r*340)+' to '+money(r*612)+' a year on top.':' No rezoning; busing unchanged.');
 }
-['sRez','sTr','sSec'].forEach(function(id){document.getElementById(id).addEventListener('input',fillCalc)});
+['sRez','sTr','sRet','sSec'].forEach(function(id){document.getElementById(id).addEventListener('input',fillCalc)});
 fillCalc();
 });
 </script>

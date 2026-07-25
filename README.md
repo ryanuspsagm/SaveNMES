@@ -9,8 +9,8 @@ public source cited in the report and on the site.
 
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
-- `Saving_North_Middletown_Elementary.pdf` - the 40-page report.
-- `NMES_Financial_Model.xlsx` - the 15-tab financial model (260 formulas).
+- `Saving_North_Middletown_Elementary.pdf` - the 41-page report.
+- `NMES_Financial_Model.xlsx` - the 15-tab financial model (267 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
   Requires: `pip install reportlab openpyxl matplotlib`. Run
   `python build/make_charts.py`, then `python build/build_pdf.py`,
@@ -65,6 +65,14 @@ it attributes no motive and alleges no wrongdoing to anyone.
 ## Report version history
 Every published version stays available under `reports/`; each report's
 corrections section lists what changed and why.
+- v3.2 (July 26, 2026): the recruitment pool, measured three ways (259
+  registered homeschoolers in the districts' own 2022-23 records; about one
+  in three county school-age kids in private school or homeschool per ACS,
+  up from one in eight pre-pandemic; KDE nonresident flows showing the
+  district a net importer of 189 with 54 students from Fayette County);
+  returning-student lever added to the fill planner and Redistricting tab;
+  KDE Non-Resident report and Washington Post homeschool file archived
+  under `build/`.
 - v3.1 (July 26, 2026): building condition index for every school from all
   three KFICS State Reports the state has published (NMES the only building
   whose condition improved between inspection cycles; smallest four-year

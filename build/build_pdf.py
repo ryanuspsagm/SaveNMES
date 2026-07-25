@@ -118,7 +118,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 3.1 &nbsp;\u2022&nbsp; July 26, 2026",
+A(Paragraph("Version 3.2 &nbsp;\u2022&nbsp; July 26, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
@@ -948,6 +948,42 @@ fig("chart_balance.png",
     "(174, 549, 422); Cane Ridge enrolls above its rating today and remains above it even "
     "rebalanced, which is the receiving-capacity problem closure would compound. The scenario levers (30 "
     "rezoned, 16 cross-county transfers) are adjustable in the companion workbook's Redistricting tab.", width=6.0 * inch)
+
+H2("Where the students come from: the pool is measured, and it is large")
+P("A fair objection to any fill-the-seats plan is that the students are hypothetical. They are not, and the "
+  "public record now measures the pool three separate ways, all archived in this repository. First, the "
+  "districts' own records: families who homeschool in Kentucky must file a letter of intent with the local "
+  "superintendent (KRS 159.160), and the counts the two districts themselves reported, collected by the "
+  "Washington Post's records project, show <b>236 registered homeschool students in the Bourbon County "
+  "district and 23 in Paris Independent</b> in 2022-23, about 259 in all, up roughly half since 2018-19. "
+  "Because compliance with the filing statute is famously incomplete, that is a floor. Second, the Census: "
+  "the American Community Survey asks households directly, counting private school and homeschooling as one "
+  "combined answer, and for 2019-2023 it puts that combined group at <b>about one in three of the county's "
+  "roughly 3,350 school-age children</b>, up from about one in eight in the 2014-2018 window, with wide "
+  "margins at county size but a shift far larger than the margins. The county's only private school, St. "
+  "Mary in Paris, enrolls 96 students in the federal Private School Survey, so nearly all of that group is "
+  "homeschooling or commuting to private schools outside the county. Third, the state: KDE's Non-Resident "
+  "Student report for 2024-25 shows this district already <b>wins</b> the cross-district competition it is "
+  "in: 436 nonresident students enroll in Bourbon County schools (305 Paris Independent residents plus 131 "
+  "from out of county, <b>including 54 from Fayette County</b>) against 247 residents enrolled elsewhere, a "
+  "net import of 189. Only 76 county-district residents attend any out-of-county public school. Ten of those "
+  "are enrolled in Cloverport Independent, 150 miles away, which hosts the statewide virtual academy: that is "
+  "the virtual competition already collecting this district's SEEK money today, small so far, and the "
+  "counteroffer to it is a good school with room.")
+P("The revenue side is symmetric with the closure math in Section 4, on purpose, using the same $4,626 SEEK "
+  "base cell in the workbook. A homeschool or private-school student generates no state funding for the "
+  "district today, so each one who enrolls is entirely new money: about $4,226 net of supplies. Filling all "
+  "46 open seats at the rated 174 from this pool alone is worth about <b>$213,000 a year, recurring</b>, and "
+  "requires fewer than one in five of the registered homeschoolers, or about one in twenty-five of the "
+  "Census pool. The fill planner on the site and the Redistricting tab now carry a returning-student lever "
+  "alongside the rezone and transfer levers, capped together at the 46 open seats, and set to zero by "
+  "default so the $140,000 to $225,000 package above claims nothing from it. What would move these families "
+  "is not a mystery either: the county's top test scores, the state's best-trending building, and small "
+  "classes are precisely the product homeschool and private-school families shopped for when they left. Two "
+  "records asks sharpen this: the letter-of-intent counts by year at both districts, which are public "
+  "records, and the school-level split of the 131 out-of-county students already here. Closing the school "
+  "with the open seats forfeits the one asset this recruitment case runs on.")
+
 H2("The transportation map, drawn from the official boundaries")
 P("The zone geometry here is official: the federal School Attendance Boundary Survey (2015-16, the last "
   "national collection) published the district's actual attendance boundaries, and this report draws them "
@@ -1603,7 +1639,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 3.1, July 26, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 3.2, July 26, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 

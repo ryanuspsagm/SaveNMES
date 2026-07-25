@@ -269,6 +269,19 @@ def main():
         and (REPO / "reports" / "Saving_NMES_v3.1_2026-07-26.pdf").exists(),
         "v3.1 archived in reports/ and linked from the version history")
 
+    # recruitment pool (v3.2)
+    for needle in ["236 registered homeschool", "54 from Fayette", "one in three",
+                   "$213,000", "Cloverport", "net import of 189", "letter of intent",
+                   "KRS 159.160", "$4,226", "St. Mary"]:
+        chk(needle in t, f"PDF recruitment pool intact: {needle}")
+    for needle in ["sRet", "259 registered homeschool", "54 of them from Fayette County",
+                   "kde_nonresident_students_sy24_25.xlsx", "wapo_home_school_district.csv",
+                   "Cloverport", "$4,226", "about one in three"]:
+        chk(needle in html, f"site recruitment pool intact: {needle}")
+    chk("reports/Saving_NMES_v3.2_2026-07-26.pdf" in html
+        and (REPO / "reports" / "Saving_NMES_v3.2_2026-07-26.pdf").exists(),
+        "v3.2 archived in reports/ and linked from the version history")
+
     chk("unaudited" in html and "unaudited" in t,
         "FY2026 figures labeled unaudited on site and in PDF")
     chk((REPO / "build" / "fy2026_june_financial_packet.pdf").exists()
