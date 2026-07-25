@@ -352,30 +352,36 @@ save(fig, "chart_tax.png")
 
 print("charts done")
 
-# ---- P2: per-pupil across schools over time, with the filled-to-174 counterfactual ----
-fig, ax = plt.subplots(figsize=(6.7, 3.9))
+# ---- P2: per-pupil across schools over time, with both capacity counterfactuals ----
+fig, ax = plt.subplots(figsize=(6.7, 4.1))
 yrs5 = ["2019-20", "2020-21", "2021-22", "2022-23", "2023-24"]
 nmes_pp = [12903, 15406, 19080, 19003, 19348]
 bces_pp = [12159, 14011, 15619, 17410, 18131]
 cres_pp = [12168, 14621, 16137, 17403, 18670]
-cf_pp   = [12328, 14199, 16074, 15796, 14339]   # (site $ + (174-n)*400)/174, n = 166/160/146/144/128
+cf174   = [12328, 14199, 16074, 15796, 14339]   # (site $ + (174-n)*400)/174
+cf154   = [None, None, 18110, 17795, 16149]     # n exceeded 154 in 2019-20 and 2020-21
+nanv = float("nan")
 ax.plot(yrs5, nmes_pp, color=NAVY, marker="o", markersize=4.5, linewidth=2.4, label="NMES actual (166 to 128 students)")
 ax.plot(yrs5, bces_pp, color=BLUE, marker="s", markersize=4, linewidth=1.6, linestyle="--", label="Bourbon Central actual")
 ax.plot(yrs5, cres_pp, color=GRAY, marker="^", markersize=4.5, linewidth=1.6, label="Cane Ridge actual")
-ax.plot(yrs5, cf_pp, color=MBLUE, marker="o", markersize=4.5, linewidth=2.2, linestyle=(0, (5, 3)),
-        markerfacecolor="white", label="NMES if filled to its rated 174")
-ax.annotate("$19,348", xy=(4, 19348), xytext=(3.55, 20050), fontsize=8, color=NAVY, fontweight="bold")
-ax.annotate("$14,339 filled:\ncheapest in the district", xy=(4, 14339), xytext=(2.75, 12650),
-            fontsize=8, color="#4A6FA5", fontweight="bold",
-            arrowprops=dict(arrowstyle="->", color="#4A6FA5", lw=0.9))
-ax.annotate("gap = empty seats", xy=(3.997, 16850), fontsize=7.6, color="#666666", ha="right")
-ax.annotate("", xy=(3.93, 19100), xytext=(3.93, 14580),
-            arrowprops=dict(arrowstyle="<->", color="#999999", lw=0.9))
+ax.plot(yrs5, cf174, color=MBLUE, marker="o", markersize=4.5, linewidth=2.2, linestyle=(0, (5, 3)),
+        markerfacecolor="white", label="NMES filled to 174 (approved rating)")
+ax.plot(yrs5, [v if v is not None else nanv for v in cf154], color="#4A6FA5", marker="D", markersize=4,
+        linewidth=1.7, linestyle=(0, (2, 2)), markerfacecolor="white",
+        label="NMES filled to 154 (draft plan's proposed rating)")
+ax.annotate("2019-21: enrollment was 166 and 160, above the proposed 154 rating;\nfilled at 174 in those years = a tie with the other schools (within 1-3%)",
+            xy=(0.0, 11850), fontsize=7.4, color="#666666")
+ax.annotate("$14,339", xy=(4, 14339), xytext=(3.98, 13550), fontsize=8, color="#4A6FA5", fontweight="bold", ha="right")
+ax.annotate("$16,149", xy=(4, 16149), xytext=(3.98, 15690), fontsize=8, color="#4A6FA5", fontweight="bold", ha="right")
+ax.annotate("current costs: filled NMES cheapest\nat BOTH ratings", xy=(3.99, 19800), fontsize=7.8,
+            color=NAVY, fontweight="bold", ha="right")
+ax.axvspan(2.55, 4.25, color="#F1F4F9", zorder=0)
 ax.set_ylabel("Spending per student (KDE school-level filings)")
-ax.set_ylim(11000, 21000)
+ax.set_ylim(11500, 20600)
+ax.set_xlim(-0.25, 4.25)
 ax.yaxis.set_major_formatter(lambda v, p: f"${v/1000:,.0f}K")
-ax.legend(fontsize=7.6, loc="upper left", frameon=False)
-ax.set_title("Same school, same money: only the number of students changes the cost per student")
+ax.legend(fontsize=7.2, loc="upper left", frameon=False)
+ax.set_title("Filled at either capacity rating, NMES is the cheapest school in today's costs")
 clean(ax)
 fig.tight_layout()
 save(fig, "chart_pptime.png")

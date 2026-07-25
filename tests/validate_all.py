@@ -226,10 +226,14 @@ def main():
         "capital transfer components consistent on site and in PDF")
 
     # filled-to-capacity time series (Figure 6 / chartPPtime)
-    chk("chartPPtime" in html and "$14,339" in html and "$14,173" in html,
+    chk("chartPPtime" in html and "$14,339" in html and "$14,173" in html
+        and "$16,149" in html,
         "site carries the capacity time-series chart and its key figures")
-    for needle in ["Figure 6.", "$14,339", "16 percent", "47 percent"]:
+    for needle in ["Figure 6.", "$14,339", "$16,149", "16 percent", "47 percent",
+                   "within 1 to 3 percent"]:
         chk(needle in t, f"PDF capacity time-series intact: {needle}")
+    chk("within 1 to 3 percent" in html,
+        "honest tie-years correction present on site")
     chk("utilization measure" in html and "utilization measure" in t,
         "sender-side symmetry caution present on site and in PDF")
     chk((Path("/home/claude/nmes") / "chart_pptime.png").exists()

@@ -343,7 +343,7 @@ put(rd, "A71", "Base-year variant: at the current 115 enrolled, filling to 174 a
 
 put(rd, "A73", "FIVE YEARS OF THE SAME TEST (KDE school-level filings, 2019-20 to 2023-24; backs Figure 6)", SEC)
 put(rd, "A74", "Year", BOLDW, fill=HDR); put(rd, "B74", "NMES members", BOLDW, fill=HDR); put(rd, "C74", "NMES $/pupil", BOLDW, fill=HDR)
-put(rd, "D74", "BCES $/pupil", BOLDW, fill=HDR); put(rd, "E74", "CRES $/pupil", BOLDW, fill=HDR); put(rd, "F74", "NMES at 174", BOLDW, fill=HDR)
+put(rd, "D74", "BCES $/pupil", BOLDW, fill=HDR); put(rd, "E74", "CRES $/pupil", BOLDW, fill=HDR); put(rd, "F74", "NMES at 174", BOLDW, fill=HDR); put(rd, "G74", "NMES at 154", BOLDW, fill=HDR)
 hist5 = [("2019-20", 166, 12903, 12159, 12168), ("2020-21", 160, 15406, 14011, 14621),
          ("2021-22", 146, 19080, 15619, 16137), ("2022-23", 144, 19003, 17410, 17403),
          ("2023-24", 128, 19348, 18131, 18670)]
@@ -352,7 +352,11 @@ for i, (yy, nn, npp, bpp, cpp) in enumerate(hist5):
     put(rd, f"A{rr}", yy); put(rd, f"B{rr}", nn, BLUE, NUM); put(rd, f"C{rr}", npp, BLUE, CUR)
     put(rd, f"D{rr}", bpp, BLUE, CUR); put(rd, f"E{rr}", cpp, BLUE, CUR)
     put(rd, f"F{rr}", f"=(C{rr}*B{rr}+(174-B{rr})*Assumptions!B62)/174", BLK, CUR)
-put(rd, "A81", "The counterfactual column is below both receiving schools in every year on record. NMES's total site spending grew 16 percent over the five years, against 37 percent at Bourbon Central and 47 percent at Cane Ridge; only the divisor changed.", NOTE, wrap=True)
+    if nn < 154:
+        put(rd, f"G{rr}", f"=(C{rr}*B{rr}+(154-B{rr})*Assumptions!B62)/154", BLK, CUR)
+    else:
+        put(rd, f"G{rr}", "n/a: enrolled above 154", NOTE)
+put(rd, "A81", "Honest reading (corrected 7/26): at 174 the counterfactual is within 1 to 3 percent of the cheapest school in 2019-22, a tie, and decisively below both schools in 2022-23 and 2023-24. At the draft plan's 154 rating it is cheapest on the 2023-24 filing; in 2019-20 and 2020-21 the school enrolled above 154, the capacity the draft now assigns it. NMES's total site spending grew 16 percent over the five years, against 37 percent at Bourbon Central and 47 percent at Cane Ridge; only the divisor changed.", NOTE, wrap=True)
 
 put(rd, "A83", "SYMMETRY CHECK: THE SENDERS' PER-PUPIL AFTER THE MOVE (2023-24 basis)", SEC)
 put(rd, "A84", "Per-pupil rises at the senders for the same denominator reason it falls at NMES; a pure shuffle leaves total district spending nearly unchanged in either direction. The comparison below is the honest post-move one.", NOTE, wrap=True)
