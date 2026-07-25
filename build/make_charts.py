@@ -352,37 +352,49 @@ save(fig, "chart_tax.png")
 
 print("charts done")
 
-# ---- P2: per-pupil across schools over time, with both capacity counterfactuals ----
-fig, ax = plt.subplots(figsize=(6.7, 4.1))
-yrs5 = ["2019-20", "2020-21", "2021-22", "2022-23", "2023-24"]
-nmes_pp = [12903, 15406, 19080, 19003, 19348]
-bces_pp = [12159, 14011, 15619, 17410, 18131]
-cres_pp = [12168, 14621, 16137, 17403, 18670]
-cf174   = [12328, 14199, 16074, 15796, 14339]   # (site $ + (174-n)*400)/174
-cf154   = [None, None, 18110, 17795, 16149]     # n exceeded 154 in 2019-20 and 2020-21
-nanv = float("nan")
-ax.plot(yrs5, nmes_pp, color=NAVY, marker="o", markersize=4.5, linewidth=2.4, label="NMES actual (166 to 128 students)")
-ax.plot(yrs5, bces_pp, color=BLUE, marker="s", markersize=4, linewidth=1.6, linestyle="--", label="Bourbon Central actual")
-ax.plot(yrs5, cres_pp, color=GRAY, marker="^", markersize=4.5, linewidth=1.6, label="Cane Ridge actual")
-ax.plot(yrs5, cf174, color=MBLUE, marker="o", markersize=4.5, linewidth=2.2, linestyle=(0, (5, 3)),
-        markerfacecolor="white", label="NMES filled to 174 (approved rating)")
-ax.plot(yrs5, [v if v is not None else nanv for v in cf154], color="#4A6FA5", marker="D", markersize=4,
-        linewidth=1.7, linestyle=(0, (2, 2)), markerfacecolor="white",
-        label="NMES filled to 154 (draft plan's proposed rating)")
-ax.annotate("2019-21: enrollment was 166 and 160, above the proposed 154 rating;\nfilled at 174 in those years = a tie with the other schools (within 1-3%)",
-            xy=(0.0, 11850), fontsize=7.4, color="#666666")
-ax.annotate("$14,339", xy=(4, 14339), xytext=(3.98, 13550), fontsize=8, color="#4A6FA5", fontweight="bold", ha="right")
-ax.annotate("$16,149", xy=(4, 16149), xytext=(3.98, 15690), fontsize=8, color="#4A6FA5", fontweight="bold", ha="right")
-ax.annotate("current costs: filled NMES cheapest\nat BOTH ratings", xy=(3.99, 19800), fontsize=7.8,
-            color=NAVY, fontweight="bold", ha="right")
-ax.axvspan(2.55, 4.25, color="#F1F4F9", zorder=0)
-ax.set_ylabel("Spending per student (KDE school-level filings)")
-ax.set_ylim(11500, 20600)
-ax.set_xlim(-0.25, 4.25)
-ax.yaxis.set_major_formatter(lambda v, p: f"${v/1000:,.0f}K")
-ax.legend(fontsize=7.2, loc="upper left", frameon=False)
-ax.set_title("Filled at either capacity rating, NMES is the cheapest school in today's costs")
+# ---- P2: every school filled to its rated capacity, seven capacity scenarios ----
+import math as _math
+def _sections(N):
+    per = N/6
+    return 4*_math.ceil(per/24) + _math.ceil(per/28) + _math.ceil(per/29)
+def _pp(total, n_now, n_t, sect_now, V=400, T=85000):
+    return (total + (n_t-n_now)*V + (_sections(n_t)-sect_now)*T) / n_t
+_S = {'NMES': (128, 2476544, 9), 'BCES': (491, 8902321, _sections(491)), 'CRES': (461, 8606870, _sections(461))}
+_scen = [
+ ("Actual today\n(2023-24 filing)", None),
+ ("2013 plan\n(state approved)\n198/564/500", {'NMES':198,'BCES':564,'CRES':500}),
+ ("2017 plan\n(state approved)\n152/611/550", {'NMES':152,'BCES':611,'CRES':550}),
+ ("2021 plan\n(state approved,\nin force) 174/521/422", {'NMES':174,'BCES':521,'CRES':422}),
+ ("Peak enrollment,\npast 20 years\n224/620/495", {'NMES':224,'BCES':620,'CRES':495}),
+ ("2026 architect\n(KFICS slides)\n154/499/397", {'NMES':154,'BCES':499,'CRES':397}),
+ ("2026 draft plan\ntable (unapproved)\n154/640/547", {'NMES':154,'BCES':640,'CRES':547}),
+]
+_vals = {s: [] for s in _S}
+for _name, _caps in _scen:
+    for s, (n, tot, sec) in _S.items():
+        _vals[s].append(tot/n if _caps is None else _pp(tot, n, _caps[s], sec))
+import numpy as _np
+fig, ax = plt.subplots(figsize=(7.2, 4.5))
+x = _np.arange(len(_scen)); w = 0.27
+bsets = [(_vals['NMES'], -w, NAVY, "North Middletown"), (_vals['BCES'], 0, BLUE, "Bourbon Central"),
+         (_vals['CRES'], w, GRAY, "Cane Ridge")]
+for vv, off, col, lab in bsets:
+    bars = ax.bar(x + off, vv, w, color=col, label=lab)
+    for b in bars:
+        ax.text(b.get_x() + b.get_width()/2, b.get_height() + 200,
+                f"{b.get_height()/1000:.1f}", ha="center", fontsize=6.4, fontweight="bold", color="#333333")
+for gi in range(len(_scen)):
+    trio = [_vals['NMES'][gi], _vals['BCES'][gi], _vals['CRES'][gi]]
+    idx = trio.index(min(trio))
+    ax.text(gi + (-w, 0, w)[idx], min(trio) - 1500, "low", ha="center", fontsize=6.6,
+            color="white", fontweight="bold")
+ax.set_ylabel("Per student, filled to the scenario's rating ($K)")
+ax.set_ylim(0, 24800)
+ax.yaxis.set_major_formatter(lambda v, p: f"{v/1000:,.0f}")
+ax.set_xticks(x); ax.set_xticklabels([s[0] for s in _scen], fontsize=6.4)
+ax.legend(fontsize=7.4, loc="upper left", frameon=False, ncol=3)
+ax.set_title("Every school filled to its rated capacity: the answer depends on\nwhich of the district's own capacity tables you use")
 clean(ax)
 fig.tight_layout()
-save(fig, "chart_pptime.png")
-print("pptime done")
+save(fig, "chart_capacity_scenarios.png")
+print("capacity scenarios done")

@@ -225,18 +225,23 @@ def main():
         and "$1,098,633" in t and "$222,276" in t,
         "capital transfer components consistent on site and in PDF")
 
-    # filled-to-capacity time series (Figure 6 / chartPPtime)
-    chk("chartPPtime" in html and "$14,339" in html and "$14,173" in html
-        and "$16,149" in html,
-        "site carries the capacity time-series chart and its key figures")
+    # filled-to-capacity scenarios (Figure 6 / chartPPtime grouped bars)
+    chk("chartPPtime" in html and "$14,339" in html and "$16,149" in html,
+        "site carries the capacity scenarios chart and its key figures")
     for needle in ["Figure 6.", "$14,339", "$16,149", "16 percent", "47 percent",
-                   "within 1 to 3 percent"]:
-        chk(needle in t, f"PDF capacity time-series intact: {needle}")
-    chk("within 1 to 3 percent" in html,
-        "honest tie-years correction present on site")
+                   "within 1 to 3 percent", "$9,848", "June 7, 2017", "OVER capacity"]:
+        chk(needle in t, f"PDF capacity scenarios intact: {needle}")
+    for needle in ["within 1 to 3 percent", "$9,848", "June 7, 2017", "OVER capacity",
+                   "152/611/550", "utilization measure"]:
+        chk(needle in html, f"site capacity scenarios intact: {needle}")
     chk("$15,316" in html and "$16,701" in html
         and "$15,316" in t and "$16,701" in t,
         "staffed capacity cases priced on site and in PDF")
+    chk("2,625 people" in html and "610" in html,
+        "zone population (2,625) and town population (610) both on site")
+    chk("dfp_wayback_20170701225631.pdf" in html
+        and (REPO / "build" / "dfp_wayback_20170701225631.pdf").exists(),
+        "2017 plan capture archived and linked from site")
     chk("utilization measure" in html and "utilization measure" in t,
         "sender-side symmetry caution present on site and in PDF")
     chk((Path("/home/claude/nmes") / "chart_pptime.png").exists()

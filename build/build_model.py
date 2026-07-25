@@ -387,6 +387,33 @@ put(rd, "A97", "Cane Ridge, same treatment")
 put(rd, "B97", "=(8606870-15*Assumptions!B62-Assumptions!B41)/(461-15)", BLK, CUR)
 put(rd, "A98", "The same discipline applies to the closure direction: 128 arriving students trigger the same class caps at the receiving schools, adding sections in several grades, which is exactly why the closure's net saving is $121K to $725K and not the school's $2.5M gross cost.", NOTE, wrap=True)
 
+put(rd, "A100", "FAIR TEST: EVERY SCHOOL FILLED TO ITS RATED CAPACITY, SEVEN CAPACITY SETS (backs Figure 6)", SEC)
+put(rd, "A101", "Step costs: $400 per student added or removed, plus or minus $85,000 per section vs today's staffing (even K-5 mix under KRS 157.360). Section deltas below are precomputed from that rule; capacities from the named documents, all archived in build/.", NOTE, wrap=True)
+put(rd, "A102", "Scenario (NMES/BCES/CRES caps)", BOLDW, fill=HDR); put(rd, "B102", "NMES", BOLDW, fill=HDR); put(rd, "C102", "BCES", BOLDW, fill=HDR); put(rd, "D102", "CRES", BOLDW, fill=HDR); put(rd, "E102", "Cheapest", BOLDW, fill=HDR)
+fair = [
+ ("Actual today (2023-24 filing)", 19348, 18131, 18670, "BCES"),
+ ("2013 plan, KBE approved (198/564/500)", 13937, 16137, 17245, "NMES"),
+ ("2017 plan, KBE approved (152/611/550)", 16915, 15483, 16023, "BCES"),
+ ("2021 plan, KBE approved, in force (174/521/422)", 15316, 17273, 19553, "NMES"),
+ ("Peak enrollment 2005-2025 (224/620/495)", 12366, 15264, 17415, "NMES"),
+ ("2026 KFICS architect slides (154/499/397)", 16701, 17847, 20759, "NMES"),
+ ("2026 draft DFP table, unapproved (154/640/547)", 16701, 14800, 16108, "BCES"),
+]
+for i, (lbl, a, b2, c2, wname) in enumerate(fair):
+    rr = 103 + i
+    put(rd, f"A{rr}", lbl); put(rd, f"B{rr}", a, BLUE, CUR); put(rd, f"C{rr}", b2, BLUE, CUR); put(rd, f"D{rr}", c2, BLUE, CUR); put(rd, f"E{rr}", wname, NOTE)
+put(rd, "A110", "Same-building ratings across four consecutive plans: NMES 198-152-174-154, Bourbon Central 564-611-521-640, Cane Ridge 500-550-422-547. Swings up to 128 seats with no major construction after 2009. The 2017 plan (recovered from the Internet Archive; KBE minutes June 7, 2017 corroborate) lists NMES at 154 enrolled against 152 capacity: OVER capacity.", NOTE, wrap=True)
+put(rd, "A111", "VALIDATION AGAINST ACTUALS: the empirical marginal cost per student")
+put(rd, "B111", "=(8902321-8606870)/(491-461)", BLK, CUR)
+put(rd, "F111", "The actual per-student cost difference between the district's own two large schools on the same 2023-24 filing, about $9,848: an all-in, actuals-derived marginal cost", NOTE, wrap=True)
+put(rd, "A112", "NMES filled to 174 at that empirical marginal cost")
+put(rd, "B112", "=(B34+(B6-B5)*B111)/B6", BLK, CUR)
+put(rd, "F112", "About $16,837: still below both receiving schools", NOTE, wrap=True)
+put(rd, "A113", "NMES filled to 154 at that empirical marginal cost")
+put(rd, "B113", "=(B34+(154-B5)*B111)/154", BLK, CUR)
+put(rd, "F113", "About $17,744: still below both receiving schools", NOTE, wrap=True)
+put(rd, "A114", "Extreme bound: NMES's own year-over-year cost change 2022-23 to 2023-24 ($259,888 lower with 16 fewer students, about $16,243 per student, which folds in deliberate staffing cuts) gives $18,527 at 174: under Cane Ridge, marginally over Bourbon Central. Even the most hostile actuals-derived number does not restore the cost case.", NOTE, wrap=True)
+
 put(rd, "A89", "NMES at 174 stays the cheapest of the three after the move, by a wider margin than before it (about $4,400 vs $3,800). The district-level cash case is booked separately and conservatively above as the net recurring benefit: consolidated sections at the senders, HB 563 SEEK revenue from out-of-county transfers, and capacity relief at Cane Ridge, which runs 31 students over its rating. The same symmetry runs the other way: closing NMES would lower the receiving schools' per-pupil optics while saving almost nothing in total, which is the closure case's weakness in one sentence.", NOTE, wrap=True)
 put(rd, "A39", "ASSUMPTIONS THE DISTRICT'S DATA SHOULD REPLACE", SEC)
 put(rd, "A40", "Rezoned students are drawn only from homes closer to NMES than to their assigned school, so bus routes shorten or hold even; the district's routing data would settle it.", NOTE, wrap=True)
@@ -1070,6 +1097,14 @@ put(fp, "A50", "Net receiving seats at the slides' own capacities (499 and 397)"
 put(fp, "A52", "Notes: components and totals as printed on the slides; Bourbon Central's printed components sum $9,421 below its printed total. "
                "The slides' receiving-school capacities (499, 397) differ from the 2026 draft DFP table (640, 547) and from the approved 2021 plan "
                "(549 with addition, 422): three documents, three capacity sets for the same buildings. NMES total need is second lowest among the district's schools.", NOTE, wrap=True)
+
+put(fp, "A55", "2017 PLAN, RECOVERED (KBE approved June 7, 2017; Wayback capture July 1, 2017, archived as build/dfp_wayback_20170701225631.pdf; KBE minutes corroborate)", SEC)
+put(fp, "A56", "School", BOLDW, fill=HDR); put(fp, "B56", "2017 enr", BOLDW, fill=HDR); put(fp, "C56", "2017 cap", BOLDW, fill=HDR)
+for i, (sname, enr, cap) in enumerate([("Bourbon County High School", 914, 671), ("Bourbon County Middle School", 607, 564),
+                                        ("Bourbon Central Elementary", 633, 611), ("Cane Ridge Elementary", 482, 550),
+                                        ("North Middletown Elementary", 154, 152), ("Preschool/Head Start Center", 125, 200)]):
+    put(fp, f"A{57+i}", sname); put(fp, f"B{57+i}", enr, BLUE, NUM); put(fp, f"C{57+i}", cap, BLUE, NUM)
+put(fp, "A63", "NMES listed at 154 enrolled against 152 capacity: OVER capacity in the district's own 2017 plan. Same-building rating trajectory across plans: NMES 198-152-174-154; Bourbon Central 564-611-521-640; Cane Ridge 500-550-422-547.", NOTE, wrap=True)
 
 put(fp, "A26", "Reading: the receiving schools' rated capacities are 549 (Bourbon Central) and 422 (Cane Ridge). At current enrollment that is 90 open at Bourbon Central and 31 over at Cane Ridge, "
                "a net 59 uncommitted seats for 128 children. NMES's major renovation was priced in 2013 and re-priced higher in 2021, each time scheduled after the then-current biennium. "
