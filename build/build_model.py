@@ -1144,6 +1144,30 @@ for i, (sname, enr, cap) in enumerate([("Bourbon County High School", 914, 671),
     put(fp, f"A{57+i}", sname); put(fp, f"B{57+i}", enr, BLUE, NUM); put(fp, f"C{57+i}", cap, BLUE, NUM)
 put(fp, "A63", "NMES listed at 154 enrolled against 152 capacity: OVER capacity in the district's own 2017 plan. Same-building rating trajectory across plans: NMES 198-152-174-154; Bourbon Central 564-611-521-640; Cane Ridge 500-550-422-547.", NOTE, wrap=True)
 
+put(fp, "A65", "KFICS CONDITION INDEX, EVERY STATE REPORT PUBLISHED (KDE KFICS State Reports: official Oct 2023, official Oct 2025, updated report generated July 2, 2026)", SEC)
+cihdrs = ["School", "Oct 2023 report", "Oct 2025 report", "Jul 2026 report", "4-yr needs (Jul 2026)", "Replacement value (Jul 2026)"]
+for i, h in enumerate(cihdrs):
+    put(fp, f"{get_column_letter(i+1)}66", h, BOLDW, fill=HDR)
+cirows = [
+ ("Bourbon Central Elementary (1988)", 0.887637, 0.819273, 0.823017, 4006243.38, 22636266.80),
+ ("Cane Ridge Elementary (1992)", 0.812058, 0.811765, 0.728249, 4796308.00, 17649638.79),
+ ("North Middletown Elementary (1948/64)", 0.694064, 0.702133, 0.773295, 3099147.93, 13670417.60),
+ ("Bourbon County Middle School (1948)", 0.726249, 0.727501, 0.596145, 12167086.72, 30127350.00),
+ ("Bourbon County High School (1968)", 0.809819, 0.802057, 0.792529, 10251532.33, 49411909.14),
+]
+r = 67
+for name, c23, c25, c26, needs, crv in cirows:
+    put(fp, f"A{r}", name)
+    put(fp, f"B{r}", c23, BLUE, "0.000"); put(fp, f"C{r}", c25, BLUE, "0.000"); put(fp, f"D{r}", c26, BLUE, "0.000")
+    put(fp, f"E{r}", needs, BLUE, CUR); put(fp, f"F{r}", crv, BLUE, CUR)
+    r += 1
+put(fp, "A72", "Check: Condition Index = 1 - (4-year renewal needs / replacement value), NMES"); put(fp, "B72", "=1-E69/F69", BLK, "0.000", bold=True)
+put(fp, "A73", "NMES change between inspection cycles (2020-21 to April 2026)"); put(fp, "B73", "=D69-B69", BLK, "0.000", bold=True)
+put(fp, "A74", "Notes: the Oct 2023 and Oct 2025 official reports rest on the same 2020-21 inspections (NMES and Cane Ridge Jan 5, 2021; Bourbon Central Apr 14, 2020) with costs updated between reports; "
+               "the Jul 2026 report carries the first fresh inspections, completed April 2026 and reviewed by KDE. NMES is the only school whose index improved between inspection cycles, and its $3.1M "
+               "four-year repair bill is the smallest of the district's five schools. NMES Educational Suitability prints 0.21725 in both the 2023 and Jul 2026 reports, identical to five decimal places, "
+               "so that component appears carried forward rather than re-surveyed. Higher index = healthier building.", NOTE, wrap=True)
+
 put(fp, "A26", "Reading: the receiving schools' rated capacities are 549 (Bourbon Central) and 422 (Cane Ridge). At current enrollment that is 90 open at Bourbon Central and 31 over at Cane Ridge, "
                "a net 59 uncommitted seats for 128 children. NMES's major renovation was priced in 2013 and re-priced higher in 2021, each time scheduled after the then-current biennium. "
                "Its rated capacity fell 198 to 174 between the same two plans while its enrollment fell 169 to 128.", NOTE, wrap=True)

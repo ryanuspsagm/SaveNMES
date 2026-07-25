@@ -254,6 +254,21 @@ def main():
     chk((Path("/home/claude/nmes") / "chart_pptime.png").exists()
         or (REPO / "build" / "chart_pptime.png").exists() or True,
         "chart_pptime generated")
+    # KFICS condition index (v3.1)
+    for needle in ["Figure 13.", "Condition Index", "0.773", "0.728", "0.694",
+                   "smallest four-year repair bill", "July 2, 2026", "0.21725",
+                   "re-certified", "March 2025", "no utilization discount"]:
+        chk(needle in t, f"PDF condition index intact: {needle}")
+    for needle in ["chartCondition", "0.773", "0.728", "0.823", "0.21725",
+                   "KFICS%20Monthly%20Report%2007022026.xlsx",
+                   "Official_KFICS_Report_October_2025.xlsx",
+                   "Official_KFICS_Report_October_2023.xlsx",
+                   "only school in the district whose condition improved"]:
+        chk(needle in html, f"site condition index intact: {needle}")
+    chk("reports/Saving_NMES_v3.1_2026-07-26.pdf" in html
+        and (REPO / "reports" / "Saving_NMES_v3.1_2026-07-26.pdf").exists(),
+        "v3.1 archived in reports/ and linked from the version history")
+
     chk("unaudited" in html and "unaudited" in t,
         "FY2026 figures labeled unaudited on site and in PDF")
     chk((REPO / "build" / "fy2026_june_financial_packet.pdf").exists()

@@ -247,6 +247,30 @@ if gap_b == 1900000 and gap_c == 373989 and "$22 million" in html and "$42 milli
 else:
     diff(f"scenario: model gaps {gap_b}/{gap_c}, site $22M {'$22 million' in html}, $42M {'$42 million' in html}")
 
+# ---------- 7. KFICS condition index (v3.1): site JS vs model vs PDF ----------
+FP = wb["Facility_Plans"]
+ci_model = {FP.cell(row=r, column=1).value: [FP.cell(row=r, column=c).value for c in (2, 3, 4)]
+            for r in range(67, 72)}
+nmes_ci = ci_model.get("North Middletown Elementary (1948/64)")
+cane_ci = ci_model.get("Cane Ridge Elementary (1992)")
+cent_ci = ci_model.get("Bourbon Central Elementary (1988)")
+site_nmes = re.search(r"North Middletown \(1948/64\)',data:\[([\d.,]+)\]", html)
+site_cane = re.search(r"Cane Ridge \(1992\)',data:\[([\d.,]+)\]", html)
+site_cent = re.search(r"Bourbon Central \(1988\)',data:\[([\d.,]+)\]", html)
+def _r3(v): return [round(x, 3) for x in v]
+if (nmes_ci and site_nmes and _r3(nmes_ci) == [float(x) for x in site_nmes.group(1).split(",")]
+        and cane_ci and site_cane and _r3(cane_ci) == [float(x) for x in site_cane.group(1).split(",")]
+        and cent_ci and site_cent and _r3(cent_ci) == [float(x) for x in site_cent.group(1).split(",")]):
+    match("KFICS condition index series identical site JS vs model (3 schools x 3 state reports)")
+else:
+    diff(f"condition index: model {nmes_ci}/{cane_ci}/{cent_ci} vs site "
+         f"{site_nmes and site_nmes.group(1)}/{site_cane and site_cane.group(1)}/{site_cent and site_cent.group(1)}")
+needs = FP["E69"].value; crv = FP["F69"].value
+if needs and crv and abs((1 - needs / crv) - 0.773295) < 0.0005 and "0.773" in pdf_flat and "0.773" in html:
+    match("NMES condition index 0.773 = 1 - 3,099,148/13,670,418 verified from state-report components; quoted on site and PDF")
+else:
+    diff(f"NMES CI recompute: needs {needs}, crv {crv}, pdf 0.773 {'0.773' in pdf_flat}, site {'0.773' in html}")
+
 # site text spot checks
 for s, label in [("1st in all 5 subjects", "hero fact scores"), ("-$385K to +$565K", "hero fact closure range"),
                  ("$7,829,060", "GF levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),

@@ -286,6 +286,13 @@ footer a{color:var(--ice)}
 <span class="checkme"><a href="build/dfp_current.pdf">2021 plan (archived copy)</a> &middot; <a href="build/dfp_2013_excerpt.png">2013 plan excerpt</a> &middot; <a href="build/dfp_2026_draft_excerpt.png">2026 draft as presented July 15</a> &middot; <a href="build/kfics_assessment.pdf">KFICS assessment slides</a> &middot; <a href="build/dfp_manifest.json">Document provenance</a></span>
 </div>
 
+<div class="card">
+<h3>Building condition, as reported to the state: the district's best-trending building</h3>
+<p>Kentucky's facilities inventory system (KFICS) gives every public school building a Condition Index: one minus the ratio of repairs due within four years to the cost of replacing the building, so higher is healthier. The state has published exactly three statewide reports, and here is every number it has ever printed for Bourbon County's elementary schools. In the newest, KDE-reviewed data (fresh April 2026 inspections), NMES posts <b>0.773</b>: better than Cane Ridge (0.728), within six points of Bourbon Central (0.823), and far ahead of the middle school (0.596). NMES is the <b>only school in the district whose condition improved</b> between the 2020-21 and April 2026 inspection cycles, and its four-year repair bill, <b>$3.1 million, is the smallest of the district's five schools</b>. Cane Ridge, a 1992 building, went the other way: 0.812 down to 0.728, with a $4.8 million bill. One caveat, on the record: NMES's separate Educational Suitability score prints 0.21725 in the July 2026 report, identical to five decimal places to 2023, so that half of the aggregate appears carried forward rather than re-surveyed. The building proposed for closure is, on the state's own newest data, the healthiest small asset the district owns.</p>
+<div class="chartbox"><canvas id="chartCondition" role="img" aria-label="Line chart of the KFICS Condition Index for the three elementary schools across the October 2023, October 2025, and July 2026 state reports, showing North Middletown improving from 0.694 to 0.773 while Cane Ridge falls from 0.812 to 0.728"></canvas></div>
+<span class="checkme"><a href="https://www.education.ky.gov/districts/fac/Pages/Kentucky%20Facilities%20Inventory%20and%20Classification%20System.aspx">KDE KFICS page (definitions and reports)</a> &middot; <a href="https://www.education.ky.gov/districts/fac/Documents/KFICS%20Monthly%20Report%2007022026.xlsx">July 2026 State Report (Excel)</a> &middot; <a href="https://www.education.ky.gov/districts/fac/Documents/Official_KFICS_Report_October_2025.xlsx">Oct 2025 official</a> &middot; <a href="https://www.education.ky.gov/districts/fac/Documents/Official_KFICS_Report_October_2023.xlsx">Oct 2023 official</a> &middot; <a href="build/kfics_state_report_jul2026.xlsx">Archived copies in this repository</a> &middot; <a href="NMES_Financial_Model.xlsx">Model, Facility_Plans tab rows 65-74</a></span>
+</div>
+
 <div class="quote">There is always a solution to a problem if you persist through it.
 <small>The lesson Mrs. Mitchell's classroom taught me, 24 years ago, in this building. A 2011 National Blue Ribbon School, and climbing back toward that standard today under its current staff.</small></div>
 </div></section>
@@ -550,8 +557,9 @@ footer a{color:var(--ice)}
 </div>
 <div class="card" style="margin-top:26px">
 <h3>Read the full case</h3>
-<p>The 39-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
+<p>The 40-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
 <p class="note"><b>Version history</b> (every version stays public; corrections are listed in each report's corrections section):
+<a href="reports/Saving_NMES_v3.1_2026-07-26.pdf">v3.1, July 26</a> (building condition index from every KFICS State Report the state has published; capacity-rule verification: 702 KAR 4:180 unamended since 2008, re-certified March 2025) &middot;
 <a href="reports/Saving_NMES_v3.0_2026-07-26.pdf">v3.0, July 26</a> (two-tailed closure economics, verified position costs, capacity scenarios across all plans incl. the recovered 2017 plan, Millersburg case study) &middot;
 <a href="reports/Saving_NMES_v2.7_2026-07-25.pdf">v2.7, July 25</a> (June 2026 capital transfer, FY2026 decomposition, nickel verification) &middot;
 <a href="reports/Saving_NMES_v2.6_2026-07-20.pdf">v2.6, July 20</a> (bonding story, transport geography).</p>
@@ -759,6 +767,19 @@ options:{responsive:true,maintainAspectRatio:false,
 plugins:{legend:{position:'bottom',labels:{boxWidth:18,font:{size:10}}},
 tooltip:{callbacks:{label:function(c){return c.dataset.label+': $'+c.parsed.y.toLocaleString('en-US')+' per student'}}}},
 scales:{y:{min:0,max:22000,grid:{color:'#E3E8F0'},ticks:{callback:function(v){return '$'+(v/1000)+'K'}}},x:{ticks:{font:{size:9.5}}}}}});
+
+/* V3.1: KFICS condition index, every state report published */
+new Chart(document.getElementById('chartCondition'),{type:'line',
+data:{labels:[['Oct 2023 official','(2020-21 inspections)'],['Oct 2025 official','(same inspections,','costs updated)'],['Jul 2026 update','(new April 2026','inspections)']],
+datasets:[
+{label:'Bourbon Central (1988)',data:[0.888,0.819,0.823],borderColor:ROYAL,backgroundColor:ROYAL,borderWidth:1.8,borderDash:[5,4],pointRadius:3.5,tension:0},
+{label:'Cane Ridge (1992)',data:[0.812,0.812,0.728],borderColor:GRAY,backgroundColor:GRAY,borderWidth:1.8,pointRadius:3.5,tension:0},
+{label:'North Middletown (1948/64)',data:[0.694,0.702,0.773],borderColor:NAVY,backgroundColor:NAVY,borderWidth:2.6,pointRadius:4.5,tension:0}
+]},
+options:{responsive:true,maintainAspectRatio:false,
+plugins:{legend:{position:'bottom',labels:{boxWidth:18,font:{size:10}}},
+tooltip:{callbacks:{label:function(c){return c.dataset.label+': '+c.parsed.y.toFixed(3)},afterBody:function(items){if(items[0].dataIndex===2)return 'April 2026 inspections: NMES improved to 0.773; its $3.1M four-year repair bill is the smallest of the five schools';return ''}}}},
+scales:{y:{min:0.55,max:0.95,grid:{color:'#E3E8F0'},title:{display:true,text:'Condition Index (higher = healthier)',font:{size:10}}},x:{ticks:{font:{size:9.5}}}}}});
 
 /* V3: tornado (floating bars) */
 new Chart(document.getElementById('chartSpectrum'),{type:'bar',

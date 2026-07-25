@@ -446,6 +446,39 @@ a2.set_title("What moves the number most", fontsize=9.5)
 fig.tight_layout()
 save(fig, "chart_closure_spectrum.png")
 
+# ---- V3.1: KFICS building condition index, every state report published ----
+fig, ax = plt.subplots(figsize=(6.9, 3.7))
+ci_x = [0, 1, 2]
+ci_labels = ["October 2023\nofficial report\n(2020-21 inspections)",
+             "October 2025\nofficial report\n(same inspections,\ncosts updated)",
+             "July 2026\nupdated report\n(new April 2026\ninspections)"]
+ci_series = [
+    ("Bourbon Central (1988)", [0.888, 0.819, 0.823], BLUE, "--", "s", 1.6),
+    ("Cane Ridge (1992)", [0.812, 0.812, 0.728], GRAY, "-", "^", 1.6),
+    ("North Middletown (1948/64)", [0.694, 0.702, 0.773], NAVY, "-", "o", 2.4),
+]
+for nm, vv, col, ls, mk, lw in ci_series:
+    ax.plot(ci_x, vv, color=col, linestyle=ls, marker=mk, markersize=6, linewidth=lw, label=nm)
+    for xi, v in zip(ci_x, vv):
+        dy = 0.013 if nm.startswith("North") else (0.013 if v >= 0.81 else -0.026)
+        if nm.startswith("Cane") and xi < 2: dy = -0.026
+        ax.text(xi, v + dy, f"{v:.3f}", ha="center", fontsize=7.6, color=col, fontweight="bold")
+ax.annotate("the only school in the district whose\ncondition improved between inspections",
+            xy=(2, 0.773), xytext=(1.30, 0.640), fontsize=7.6, color=NAVY, fontweight="bold",
+            arrowprops=dict(arrowstyle="->", color=NAVY, lw=0.9))
+ax.text(0.02, 0.045, "Condition Index = 1 minus (repairs due within 4 years / building replacement value). Higher is better.\n"
+        "NMES four-year repair bill in the July 2026 report: \\$3.1M, the smallest of the district's five schools.",
+        transform=ax.transAxes, fontsize=7.0, color="#666666")
+ax.set_xticks(ci_x); ax.set_xticklabels(ci_labels, fontsize=7.6)
+ax.set_xlim(-0.35, 2.55)
+ax.set_ylim(0.55, 0.95)
+ax.set_ylabel("KFICS Condition Index")
+ax.legend(fontsize=7.6, loc="upper right", frameon=False)
+clean(ax)
+ax.set_title("Building condition as reported to the state: every KFICS State Report published")
+fig.tight_layout()
+save(fig, "chart_condition.png")
+
 # ---- V3: Millersburg timeline ----
 fig, ax = plt.subplots(figsize=(6.9, 3.9))
 myrs = [1980, 1990, 2000, 2010, 2020]

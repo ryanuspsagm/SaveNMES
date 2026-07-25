@@ -9,8 +9,8 @@ public source cited in the report and on the site.
 
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
-- `Saving_North_Middletown_Elementary.pdf` - the 39-page report.
-- `NMES_Financial_Model.xlsx` - the 15-tab financial model (258 formulas).
+- `Saving_North_Middletown_Elementary.pdf` - the 40-page report.
+- `NMES_Financial_Model.xlsx` - the 15-tab financial model (260 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
   Requires: `pip install reportlab openpyxl matplotlib`. Run
   `python build/make_charts.py`, then `python build/build_pdf.py`,
@@ -65,6 +65,12 @@ it attributes no motive and alleges no wrongdoing to anyone.
 ## Report version history
 Every published version stays available under `reports/`; each report's
 corrections section lists what changed and why.
+- v3.1 (July 26, 2026): building condition index for every school from all
+  three KFICS State Reports the state has published (NMES the only building
+  whose condition improved between inspection cycles; smallest four-year
+  repair bill in the district); capacity-rule verification (702 KAR 4:180
+  unamended since 2008, re-certified March 2025; state reports archived
+  under `build/`).
 - v3.0 (July 26, 2026): two-tailed closure economics with verified GF position
   costs; capacity scenarios across the 2013/2017/2021 plans, 20-year peaks,
   KFICS, and the draft table; Millersburg case study; version archive added.

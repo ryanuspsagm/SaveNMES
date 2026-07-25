@@ -118,7 +118,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 3.0 &nbsp;\u2022&nbsp; July 26, 2026",
+A(Paragraph("Version 3.1 &nbsp;\u2022&nbsp; July 26, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
@@ -714,10 +714,14 @@ tbl(["School", "2013 plan: enrolled / capacity", "2021 plan: enrolled / capacity
 P("Three facts fall out of that table. First, the rated capacity of North Middletown was written down from 198 "
   "to 174 between the two plans, while the same 1948 and 1964 walls held 261 students at the 1988-89 peak. The "
   "write-down was not unique: Cane Ridge fell from 500 to 422 and Bourbon Central from 564 to 521. What changes "
-  "a rated capacity under the state's facilities planning manual (702 KAR 4:180) is how rooms are counted: "
-  "capacity is computed from classrooms in regular homeroom use, at program class-size caps, discounted by a "
-  "utilization factor, so every room reassigned to preschool, intervention, special education services, or a "
-  "computer lab lowers the official number without a brick moving. Rated capacity is a number the "
+  "a rated capacity under the state's facilities planning manual (702 KAR 4:180, unamended since 2008 and "
+  "re-certified by the state as recently as March 2025) is how rooms are counted: elementary capacity is the "
+  "number of standard classrooms in the district's own room inventory times a cap set by room size (25, 22, or "
+  "20 students), with no utilization discount, so every room relabeled from standard classroom to preschool, "
+  "intervention, special education services, or a "
+  "computer lab lowers the official number without a brick moving. The manual itself says the quiet part "
+  "aloud, twice: “Different use of the facility spaces shall not reduce the capacity of the facility” "
+  "(sections 302.2.2 and 302.3.1). Rated capacity is a number the "
   "district sets through its own room assignments and planning submissions, and it can be raised the "
   "same way it was lowered. That cuts against the "
   "closure case: if room assignments can be re-rated to make space for 128 more children in Paris, the same "
@@ -782,10 +786,46 @@ P("The fresh architect-and-engineer assessment this cycle rests on has now surfa
   "the town loses its largest civic anchor, a community of about 610 people whose residents told the planning "
   "committee the school is \u201cthe heartbeat\u201d of the town.")
 
+H2("The state's own condition index: the district's best-trending building")
+P("The architect's slides are one reading of the building. The state publishes its own, and it is stronger. "
+  "Kentucky's facilities inventory system (KFICS) assigns every public school building a Condition Index, "
+  "defined in the state reports as one minus the ratio of repairs coming due within four years to the cost of "
+  "replacing the building outright, so a higher number means a healthier building. KDE has published exactly "
+  "three statewide reports: the official October 2023 report, the official October 2025 report (both resting "
+  "on inspections done in 2020 and early 2021, with costs updated between them), and an updated report "
+  "generated July 2, 2026 that carries the first fresh inspections, completed in April 2026 by the district's "
+  "own third-party architect and reviewed by KDE. Figure 13 plots every number the state has ever published "
+  "for the three elementary schools.")
+fig("chart_condition.png",
+    "Figure 13. The KFICS Condition Index for Bourbon County's three elementary schools in every statewide "
+    "report the state has published: October 2023 official, October 2025 official, and the July 2, 2026 "
+    "update. The 2023 and 2025 reports rest on the same 2020-21 inspections; the July 2026 report is the "
+    "first with fresh April 2026 inspections. Source: KDE, KFICS State Reports, downloadable from the "
+    "department's facilities pages and archived under build/ in this repository; Bourbon County is "
+    "district 041.")
+P("Three findings sit in that figure. First, in the newest KDE-reviewed data, North Middletown's condition "
+  "index is <b>0.773</b>: better than Cane Ridge (0.728), within six points of Bourbon Central (0.823), and "
+  "far ahead of the middle school (0.596), the district's other 1948 building. Second, North Middletown is "
+  "the <b>only school in the district whose condition improved</b> between the 2020-21 and April 2026 "
+  "inspection cycles, from 0.694 to 0.773, while every other school's index fell or held: the repairs coming "
+  "due within four years at NMES dropped from about $4.1 million to <b>$3.1 million, the smallest four-year "
+  "repair bill of the district's five schools</b>. Cane Ridge, a 1992 building, moved the other way, from "
+  "0.812 to 0.728 with a $4.8 million four-year bill. Third, the numbers reconcile with the architect's own "
+  "$8.5 million total-need figure for NMES quoted above: that larger total includes longer-horizon work and "
+  "$2.9 million of instructional-space items, while the condition index counts what is actually due within "
+  "four years. On either reading NMES is near the bottom of the district's need list. One caveat belongs in "
+  "the record, and it favors caution rather than the closure case: NMES's Educational Suitability score, the "
+  "separate survey of how well the 1948 layout matches modern program standards, prints 0.21725 in the July "
+  "2026 report, identical to five decimal places to the 2023 report, so that half of the aggregate score "
+  "appears to have been carried forward rather than re-surveyed in April 2026 even as the condition half was "
+  "refreshed. The building the draft plan proposes to close is, on the state's newest published data, the "
+  "healthiest small asset the district owns: best trend in the county, smallest near-term repair bill, and a "
+  "condition index that beats a receiving school 44 years its junior.")
+
 # ================= 8. ADMIN =================
 H("8. Where the Money Is Actually Going: Administrative Growth", need=4.3)
 fig("chart_admin.png",
-    "Figure 13. Administration expense from the district's audited statements of activities. District (central "
+    "Figure 14. Administration expense from the district's audited statements of activities. District (central "
     "office) administration grew from $999,727 in FY2023 to $1,447,164 in FY2025; school administration grew from "
     "$2,110,039 to $2,581,412 over the same two years.")
 P("The biggest cost jump in the audits, and one the district controls, is not at North Middletown. Central-office "
@@ -843,7 +883,7 @@ P("Honesty requires naming the headwind first. Bourbon County has hovered near t
   "limits new subdivisions. The regional boom passed to the west: neighboring Scott County is projected to grow "
   "46 percent by 2050 and Fayette nearly ten, while Bourbon sits outside that corridor. The district's enrollment "
   "decline is real and structural, and I will not pretend otherwise. North Middletown Elementary itself "
-  "tells the story: it held 261 children in 1988-89, about double today's 128 (Figure 14).")
+  "tells the story: it held 261 children in 1988-89, about double today's 128 (Figure 15).")
 P("But a school's enrollment does not have to wait on a county's birth rate, because the board controls two "
   "levers that demographics do not. The first is redistricting: attendance boundaries are the board's to draw, "
   "and with Bourbon Central at 459 students and Cane Ridge at 453 while the district's best elementary sits at "
@@ -871,7 +911,7 @@ P("Framed this way, growth means moving and recruiting students on the strength 
   "the near-term target is modest: returning to the 160 students the school enrolled as recently as 2019-20 "
   "takes just 32 children from a district of 2,600 and four neighboring counties.")
 fig("chart_enroll.png",
-    "Figure 14. NMES enrollment from 1989 through 2025 against its current state-rated capacity of 174. The "
+    "Figure 15. NMES enrollment from 1989 through 2025 against its current state-rated capacity of 174. The "
     "school held 261 students at its 1988-89 peak, roughly double today's official count of 128. History "
     "compiled from federal school-level data. The long decline mirrors the county's flat population, which is "
     "exactly why this plan relies on boundary decisions and cross-county enrollment rather than demographics.",
@@ -903,7 +943,7 @@ P("Here is one concrete scenario, math anyone can check, run in the workbook's R
   "ask in Question 3. This is what an unbiased boundary study looks like in miniature. The district holds the "
   "geocoded student counts and the routing data to run the full version, and it should, before any vote.")
 fig("chart_balance.png",
-    "Figure 15. One rebalancing scenario: North Middletown fills to its rated 174 while Bourbon Central and Cane "
+    "Figure 16. One rebalancing scenario: North Middletown fills to its rated 174 while Bourbon Central and Cane "
     "Ridge each ease by about fifteen students. Dashed lines mark each school's rated capacity "
     "(174, 549, 422); Cane Ridge enrolls above its rating today and remains above it even "
     "rebalanced, which is the receiving-capacity problem closure would compound. The scenario levers (30 "
@@ -934,7 +974,7 @@ tbl(["Zone", "Approx. area (sq mi)", "Elementary students", "Students per sq mi"
             "students shown are each school's cited enrollment, the closest public proxy for zone residents. The vintage is the caveat: the district should confirm nothing has moved since (Appendix B).",
     bold_first_col=True)
 fig("chart_map.png",
-    "Figure 16. Where the students are: the district's official attendance zones from the federal School "
+    "Figure 17. Where the students are: the district's official attendance zones from the federal School "
     "Attendance Boundary Survey (2015-16 collection), fetched by the repository's build/fetch_sabs.py. Paris "
     "holds half the county's people and both receiving schools; Millersburg sits in Cane Ridge's northern "
     "zone; the NMES zone runs about 1.2 students per square mile across 110 square miles of the southeast.", width=5.2 * inch)
@@ -992,7 +1032,7 @@ P("The savings from doing this well are documented, not hypothetical. Boston Pub
   "$290,000 a year, and Boston's 20 percent shows the ceiling sits higher than the menu assumes. One more "
   "check anyone can run without waiting on the district: the federal School Attendance Boundary Survey "
   "(NCES EDGE) published the district's actual attendance-zone boundaries as free GIS files in its 2015-16 "
-  "collection, and NCES publishes geocoded school locations. Figure 16 is drawn directly from that file, "
+  "collection, and NCES publishes geocoded school locations. Figure 17 is drawn directly from that file, "
   "fetched by the repository's build/fetch_sabs.py, so anyone can reproduce it in one step. Appendix B lists the datasets alongside the records "
   "only the district can produce.")
 tbl(["Measure", "Estimated annual value", "How it works"],
@@ -1041,7 +1081,7 @@ tbl(["Measure", "Estimated annual value", "How it works"],
       "all 46 open seats; the worked example above and the workbook's Redistricting tab show the math. "
       "A preschool or day-care satellite is an additional lever on top."]],
     [1.75 * inch, 1.35 * inch, 3.6 * inch],
-    caption="Figure 17. Measures available without closing a school. The menu deliberately mixes two kinds of lines, "
+    caption="Figure 18. Measures available without closing a school. The menu deliberately mixes two kinds of lines, "
             "new recurring revenue and recurring cost reductions, and the workbook's Alternatives tab labels each one "
             "by type with a confidence rating and what would firm it up. Values are estimates derived from the "
             "district's audited figures and state data; ranges overlap and are not additive to the penny. The "
@@ -1055,7 +1095,7 @@ P("The rate history strengthens rather than weakens the community's hand. Bourbo
   "cents per $100 on real estate, second lowest among nine area districts and roughly 13 cents below the "
   "statewide school average of 65.1. Fayette levies 80.9, Paris Independent, in this same county, 71.5, Clark "
   "66.8, Bath 63.4, Scott 62.9, and Harrison 57.7; only Nicholas County, at 43.1, sits lower, and Montgomery is "
-  "essentially tied at 52.5 (Figure 18). The trend runs the same direction: the levied rate has fallen from 61.3 "
+  "essentially tied at 52.5 (Figure 19). The trend runs the same direction: the levied rate has fallen from 61.3 "
   "cents in 2018 to 52.4 today, a decline that largely reflects Kentucky's rollback mechanics, in which a rising "
   "assessment base pushes the cent rate down to hold revenue roughly level. The one year with a documented "
   "rate-type decision, 2019, shows the board taking the full four percent revenue option, and nothing in the "
@@ -1086,7 +1126,7 @@ P("What remains is the option the board controls every August. Under KRS 160.470
   "chosen path, in writing, with the work shown. What they do not owe anyone is the closure of the district's "
   "best performing school presented as the only choice.")
 fig("chart_tax.png",
-    "Figure 18. Left: the Bourbon County Schools real estate rate by tax year, from Kentucky Department of "
+    "Figure 19. Left: the Bourbon County Schools real estate rate by tax year, from Kentucky Department of "
     "Revenue rate books; years before 2018 could not be retrieved and are not interpolated. Right: current "
     "levied real estate rates across nine area districts against the statewide school average of 65.1 cents. "
     "Fayette and Clark are from local reporting of their board votes; all other rates are Department of Revenue "
@@ -1532,7 +1572,7 @@ tbl(["Request", "What it settles"],
      ["The room-by-room worksheet behind the 174 capacity rating; the pre-2021 facility plans",
       "Whether capacity is a wall or a room schedule (Section 7)"],
      ["<b>The boundaries and buses.</b> The district's current GIS attendance-zone map",
-      "Confirms the official 2015-16 federal boundaries in Figure 16 are still in force"],
+      "Confirms the official 2015-16 federal boundaries in Figure 17 are still in force"],
      ["Geocoded student counts by attendance area or planning zone",
       "Validates the density analysis; enables real boundary optimization (Section 9)"],
      ["The T-1 annual transportation report, route sheets, and cost per bus-mile",
@@ -1563,7 +1603,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 3.0, July 26, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 3.1, July 26, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 
