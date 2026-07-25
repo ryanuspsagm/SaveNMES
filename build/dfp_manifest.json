@@ -1,48 +1,32 @@
 {
- "dfp_current.pdf": {
-  "what": "Bourbon County Schools District Facility Plan, KBE approval date August 2021 (current posted plan; next DFP due June 2025)",
-  "source": "https://education.ky.gov/districts/fac/Documents/Bourbon%20Co%20DFP.pdf",
-  "retrieved": "2026-07-20"
+ "current": {
+  "file": "dfp_current.pdf",
+  "bytes": 81424,
+  "sha256": "cc636ae027c8c51f",
+  "url": "https://education.ky.gov/districts/fac/Documents/Bourbon%20Co%20DFP.pdf"
  },
- "dfp_2021_excerpt.png": {
-  "what": "Wayback Machine capture of the same August 2021 plan, page 1 (school centers, enrollment/capacity, 2022-24 priorities)",
-  "source": "web.archive.org capture of the education.ky.gov URL above (24 captures, Sep 2015 to Sep 2025)",
-  "retrieved": "2026-07-20"
- },
- "dfp_2013_excerpt.png": {
-  "what": "Wayback Machine capture of the prior District Facilities Plan, KBE approval date June 2013 (school centers and post-2012-14 major renovation priorities)",
-  "source": "web.archive.org capture of the education.ky.gov URL above",
-  "retrieved": "2026-07-20"
- },
- "reading_note": "Figures under 'Student Enrollment Capacity' read enrollment/capacity; confirmed by the 2021 preschool line 272/200 with the plan's own note that current enrollment is 80 full-day plus 192 half-day students (= 272).",
- "dfp_2026_draft_excerpt.png": {
-  "what": "Bourbon County Schools District Facility Plan, 2026 planning-cycle draft, page 1, as presented at the July 15, 2026 Local Planning Committee forum, before the committee's amendment; KDE approval date and next-DFP-due both listed TBD. Annotated attendee copy (handwritten meeting notes visible). Shows KFICS capacities: BCHS 704, BCMS 544, Bourbon Central 640, Cane Ridge 547, North Middletown 154, Preschool 160; 2023-24 SAAR enrollments 783/560/491/461/128/209; six-year projections at minus 3 percent; North Middletown listed Permanent PS-5; new-construction priorities 1a and 1b both None; headline 2026-28 priority an $18,600,946 major renovation of the high school's 1968 and 1981 sections.",
-  "source": "photographed attendee copy from the July 15, 2026 forum",
-  "retrieved": "2026-07-20"
- },
- "kfics_assessment.pdf": {
-  "what": "KFICS Facilities Assessment for Bourbon County Schools, prepared by RossTarrant Architects, presented at the July 2026 facility planning meeting (38 slides). Per-school needs (building condition plus instructional deficiency): BCHS $27,488,455; BCMS $22,418,692; Cane Ridge $14,387,595; Bourbon Central $8,840,267; North Middletown $8,530,093 ($5,648,434 condition + $2,881,659 instructional); Preschool $7,861,696; Agriculture Building $1,825,444. District total $98,441,294 ($91,352,242 school centers + $7,089,052 support). Slide capacities: BCHS 704, BCMS 544, Bourbon Central 499, Cane Ridge 397, North Middletown 154, Preschool 160 (note: the 2026 draft DFP table prints 640 and 547 for the two Paris elementaries, a discrepancy between the district's own documents).",
-  "source": "presentation file shared from the district facility planning process",
-  "retrieved": "2026-07-20"
- },
- "kde_ksa_2024_25.json": {
-  "what": "Extract of the KDE School Report Card assessment dataset, 2024-25 KSA, school level, all students: the four Bourbon County elementary schools plus statewide elementary averages (P/D percentages and content index by subject).",
-  "source": "kyschoolreportcard.com datasets (full state CSV, 47 MB); extract generated 2026-07-20",
-  "retrieved": "2026-07-20"
- },
- "kde_scores_history.json": {
-  "what": "Multi-year extract of official KDE assessment and accountability files for the four Bourbon County elementary schools: reading/math percent proficient-or-distinguished 2011-12 through 2024-25, official composite scores and classifications, statewide averages, and the SchoolDigger validation results.",
-  "source": "See the source field inside the file; every underlying file is a KDE publication.",
-  "retrieved": "2026-07-20"
- },
- "bond_2024_sfcc_disclosure.pdf": {
-  "what": "SFCC Bond Payee Disclosure for the Bourbon County School District Finance Corporation School Building Revenue Bonds, Series of 2024, submitted to the School Facilities Construction Commission and reviewed by the legislature's Capital Projects and Bond Oversight Committee on June 20, 2024. States the purpose: various construction projects including roof replacement at Bourbon County High School and a districtwide audio system. Presented at $10,000,000 estimated (18 percent SFCC share, $132,646 estimated annual state debt service; $633,142 local); sold at $6,055,000. No tax increase required. Expected Moody's A1; bond counsel Steptoe & Johnson; fiscal agent Baird; competitive sale projected August 2024.",
-  "source": "Kentucky Legislative Research Commission, Capital Projects and Bond Oversight Committee documents, June 2024 meeting (apps.legislature.ky.gov/CommitteeDocuments/13), item 6.D; pages excerpted from the SFCC transmittal.",
-  "retrieved": "2026-07-21"
- },
- "cpboc_minutes_2024_06_20.pdf": {
-  "what": "Minutes of the Kentucky Capital Projects and Bond Oversight Committee, June 20, 2024, recording approval of six SFCC school-district debt issues including Bourbon County by roll-call vote.",
-  "source": "apps.legislature.ky.gov/minutes/cap_proj/240620OK.PDF",
-  "retrieved": "2026-07-21"
- }
+ "wayback": [
+  {
+   "file": "dfp_wayback_20150914172025.pdf",
+   "bytes": 65845,
+   "sha256": "bd22be377276cdde",
+   "url": "https://web.archive.org/web/20150914172025id_/http://education.ky.gov/districts/fac/Documents/Bourbon%20Co%20DFP.pdf",
+   "captured": "2015-09-14"
+  },
+  {
+   "file": "dfp_wayback_20170701225631.pdf",
+   "bytes": 47737,
+   "sha256": "340b10c500da8bdf",
+   "url": "https://web.archive.org/web/20170701225631id_/http://education.ky.gov/districts/fac/Documents/Bourbon%20Co%20DFP.pdf",
+   "captured": "2017-07-01"
+  },
+  {
+   "file": "dfp_wayback_20211123035256.pdf",
+   "bytes": 81424,
+   "sha256": "cc636ae027c8c51f",
+   "url": "https://web.archive.org/web/20211123035256id_/https://education.ky.gov/districts/fac/Documents/Bourbon%20Co%20DFP.pdf",
+   "captured": "2021-11-23"
+  }
+ ],
+ "errors": []
 }
