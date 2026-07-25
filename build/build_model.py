@@ -505,10 +505,13 @@ put(d, f"A{r}", "THE LEVERS THAT DO NOT CLOSE A SCHOOL", SEC); r += 1
 put(d, f"A{r}", "Remaining restricted capacity (FY2024 audit $23.5M less local share of the 2024 issue, approximate)")
 put(d, f"B{r}", 17600000, BLUE, CUR); put(d, f"F{r}", "Exact figure is the fiscal agent's bonding potential statement; demand it", NOTE, wrap=True); r += 1
 put(d, f"A{r}", "Certified real and personal property assessment, FY2025"); put(d, f"B{r}", 1843569625, BLUE, CUR); asmt_r = r; r += 1
-put(d, f"A{r}", "Recallable nickel yield per year (5 cents per $100)"); put(d, f"B{r}", f"=B{asmt_r}*0.0005", BLK, CUR); nick_r = r; r += 1
-put(d, f"A{r}", "Bonds a nickel supports before state FSPK equalization")
+put(d, f"A{r}", "Recallable nickel status: ALREADY LEVIED, inside the existing rate"); put(d, f"B{r}", "levied", NOTE)
+put(d, f"F{r}", "KDE SEEK District Payment Schedules show a nonzero Recallable Nickel state amount for Bourbon (041); the schedule equalizes only levied nickels", NOTE, wrap=True); r += 1
+put(d, f"A{r}", "New annual state equalization on the recallable nickel (began FY2026)"); put(d, f"B{r}", 276246, BLUE, CUR)
+put(d, f"F{r}", "FY2027 SEEK schedule; $55,515 partial in FY2026. New restricted revenue, no board action required", NOTE, wrap=True); nick_r = r; r += 1
+put(d, f"A{r}", "Bonds the new equalization alone supports")
 put(d, f"B{r}", f"=B{nick_r}*(1-(1+B{rate_r})^-B{term_r})/B{rate_r}", BLK, CUR)
-put(d, f"F{r}", "FSPK equalization adds state dollars on top; KDE's tables set the amount", NOTE, wrap=True); r += 1
+put(d, f"F{r}", "Additive to the FY2024 audit's bonding potential, which predates the equalization", NOTE, wrap=True); r += 1
 put(d, f"A{r}", "SFCC offers of assistance, typical cycle"); put(d, f"B{r}", 1750000, BLUE, CUR); put(d, f"F{r}", "State already pays $1,568,809 of current principal", NOTE, wrap=True); r += 2
 put(d, f"A{r}", "FY2026 YEAR-END, DISTRICT'S OWN KDE BUDGET MONITORING TOOL (UNAUDITED)", SEC); r += 1
 put(d, f"A{r}", "June 2026 financial packet, board agenda July 16, 2026; MUNIS run July 15, 2026. Audit will finalize these figures.", NOTE); r += 1
@@ -544,11 +547,11 @@ put(d, f"A{r}", "General-fund bond capacity from that room")
 for col in ("B", "C"):
     put(d, f"{col}{r}", f"={col}{room_r}*(1-(1+B${rate_r})^-B${term_r})/B${rate_r}", BLK, CUR)
 gfb_r = r; r += 1
-put(d, f"A{r}", "Recallable nickel yield, restricted, before FSPK equalization")
-for col in ("B", "C"):
-    put(d, f"{col}{r}", f"=B{asmt_r}*0.0005", BLK, CUR)
+put(d, f"A{r}", "New state equalization on the already-levied recallable nickel")
+put(d, f"B{r}", 276246, BLUE, CUR); put(d, f"C{r}", 276246, BLUE, CUR)
+put(d, f"F{r}", "FY2027 SEEK schedule; the recallable nickel itself is already levied and its local yield is already inside the building-fund stream above", NOTE, wrap=True)
 nks_r = r; r += 1
-put(d, f"A{r}", "Bond capacity from the nickel")
+put(d, f"A{r}", "Bond capacity from the new equalization")
 for col in ("B", "C"):
     put(d, f"{col}{r}", f"={col}{nks_r}*(1-(1+B${rate_r})^-B${term_r})/B${rate_r}", BLK, CUR)
 nkb_r = r; r += 1
@@ -559,7 +562,7 @@ put(d, f"A{r}", "Total capacity available without closing a school", bold=True)
 for col in ("B", "C"):
     cc = put(d, f"{col}{r}", f"={col}{gfb_r}+{col}{nkb_r}+{col}{ex_r}", BLK, CUR, bold=True); cc.border = TOPLINE
 r += 1
-put(d, f"A{r}", "Roughly $30.6 million in the conservative case and $50.4 million on the FY2026 trend, with the budget balanced", NOTE); r += 1
+put(d, f"A{r}", "Roughly $22.2 million in the conservative case and $42.1 million on the FY2026 trend, with the budget balanced", NOTE); r += 1
 put(d, f"A{r}", "first in both. The administration's plan reaches $32 million at face value and leaves the deficit in place.", NOTE)
 
 # ================= RUNWAY =================

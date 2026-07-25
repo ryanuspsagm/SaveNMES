@@ -238,10 +238,10 @@ if misc == 1567829 and "$1.57 million" in html and "$1.57 million" in pdf_flat:
 else:
     diff(f"misc revenue caveat: model {misc}, site {'$1.57 million' in html}, pdf {'$1.57 million' in pdf_flat}")
 gap_b, gap_c = ds_vals.get("Operating gap to close first", (None, None))
-if gap_b == 1900000 and gap_c == 373989 and "$30 million" in html and "$50 million" in html:
-    match("balanced-budget scenario inputs ($1.9M / $373,989 gaps) in model; $30M/$50M capacity quoted on site")
+if gap_b == 1900000 and gap_c == 373989 and "$22 million" in html and "$42 million" in html:
+    match("balanced-budget scenario inputs ($1.9M / $373,989 gaps) in model; $22M/$42M capacity quoted on site")
 else:
-    diff(f"scenario: model gaps {gap_b}/{gap_c}, site $30M {'$30 million' in html}, $50M {'$50 million' in html}")
+    diff(f"scenario: model gaps {gap_b}/{gap_c}, site $22M {'$22 million' in html}, $42M {'$42 million' in html}")
 
 # site text spot checks
 for s, label in [("1st in all 5 subjects", "hero fact scores"), ("$250K to $640K", "hero fact closure range"),
