@@ -118,7 +118,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 2.6 &nbsp;\u2022&nbsp; July 20, 2026",
+A(Paragraph("Version 2.7 &nbsp;\u2022&nbsp; July 25, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
@@ -554,9 +554,14 @@ P("Three funding sources are available that do not involve a closure. First, the
   "through 2030, fall to about $1.32 million in 2031 to 2035, and drop below $400,000 after 2035 as the 2013, "
   "2016, and 2020 series retire. A standard wrap-around structure is designed to fill exactly that shape. Second, "
   "the nickel stream is stronger than this report first described, and the correction runs in the district's "
-  "favor on capacity: KDE's SEEK payment schedules show Bourbon already levies a recallable nickel alongside the "
-  "original facilities nickel, and beginning in fiscal 2026 the state began equalizing it, $276,246 a year on the "
-  "FY2027 schedule, new restricted revenue that expands bonding capacity with no board action at all. Third, SFCC "
+  "favor on capacity: KDE's SEEK payment schedules and its Nickel Levy Chart show Bourbon already levies a "
+  "recallable nickel alongside the original facilities nickel. The board levied it on August 17, 2023, and the "
+  "recall window closed with no petition, so the community has already accepted a facilities tax, twice; KDE's "
+  "current levied-rates file decomposes the 52.4-cent rate as 41.0 general fund plus 5.7 FSPK plus 5.7 recallable. "
+  "State equalization on that nickel is phasing in, $82,866 on the FY2025 schedule and $276,246 a year at full "
+  "value on the FY2027 schedule, new restricted revenue that expands bonding capacity with no board action at "
+  "all. For scale, the same KDE file puts Paris Independent, the other district in this county, at 71.5 cents "
+  "with 17.4 cents of recallable building levies. Third, SFCC "
   "offers of assistance, the state participation already carrying $1.57 million of current principal. These "
   "sources raise amounts comparable to the plan's $14 million, so the decision before the board is a choice among "
   "funding mechanisms, and it should be made with the fiscal agent's current bonding potential statement public. "
@@ -565,17 +570,37 @@ P("Three funding sources are available that do not involve a closure. First, the
   "equalization. It supports roughly $22 million of total capacity in the conservative case, treating the FY2026 "
   "miscellaneous receipt as one-time, and about $42 million on the FY2026 trend, with the budget balanced first "
   "in both cases and no school closed.")
+H2("The June 2026 capital transfer: what the year-end packet reveals")
+P("The June 2026 year-end packet, archived in this repository, documents a transaction that decodes the plan. In "
+  "June 2026 the district moved $1,320,939 of restricted capital money into the general fund: $1,098,633 from the "
+  "Building Fund and $222,276 from Capital Outlay, which ended the year at exactly zero. The transfer is lawful, "
+  "under a flexibility provision Kentucky's budget acts have carried since 2020, exercised through a Capital Funds "
+  "Request to the state, and it sat in the district's own working budget from September 2025. Its significance is "
+  "simple. The Building Fund collects about $2.5 million a year from the two facilities nickels; debt service "
+  "consumes about $1.38 million; the roughly $1.1 million residual is precisely the restricted stream that could "
+  "service a $14 million bond. In fiscal 2026 that residual plugged the operating budget instead. So the plan, "
+  "decoded from the district's own books: let the general fund stand on its own, stop the sweep, and pledge the "
+  "nickel residual to the bond. Any recurring million dollars performs that function, the untaken 4 percent levy, "
+  "the alternatives package, or reductions elsewhere in a $22 million budget. The closure is one candidate among "
+  "several, and the smallest-yield one.")
 H2("Where the general fund is actually trending: the unaudited FY2026 close")
 P("The district's own KDE Budget Monitoring Tool, included in the June 2026 financial packet on the board's July "
-  "16, 2026 agenda and archived in this repository, shows fiscal 2026 closing with revenues $2.2 million over "
-  "budget, salaries $588,000 under budget and $224,000 below the prior year's actuals, and a net general fund "
-  "change of roughly negative $374,000, against audited drawdowns of $1.07 million in fiscal 2024 and $1.23 "
-  "million in fiscal 2025. These figures are unaudited and include a $1.57 million miscellaneous receipt that was "
-  "budgeted at zero; if that receipt is one-time, the underlying gap is nearer $1.9 million, and the district "
-  "should identify it. Either way, this is the third consecutive year that actual results came in more than $2.5 "
-  "million better than budget, and the components are consistent: a shrinking drawdown, payroll falling through "
-  "ordinary attrition, and revenue growing on a 7.4 percent assessment increase. A decision as permanent as a "
-  "school closure should be evaluated against audited actuals as well as budgets.")
+  "16, 2026 agenda and archived in this repository, shows fiscal 2026 closing down roughly $374,000, the best "
+  "result in four years, against audited drawdowns of $1.07 million in fiscal 2024 and $1.23 million in fiscal "
+  "2025. The same packet shows how that headline was built. Two June entries account for nearly all of it: the "
+  "$1,320,939 capital transfer described above, and a $1,413,929 receipt booked to miscellaneous revenue in "
+  "period 12 against a budget of zero, in a line that produced about $154,000 across the other eleven months "
+  "combined. June revenue totaled $3.92 million against $1.13 million in June of the prior year, and those two "
+  "entries are 98 percent of the difference. The packet's variance row reconciles to the dollar: the projected "
+  "$4.08 million fund balance equals the $1.49 million budgeted contingency, plus revenue $2.23 million over "
+  "budget, of which the June miscellaneous entry is 63 percent, plus salaries $588,000 under budget and $224,000 "
+  "below the prior year, less other expenses $224,000 over budget. The genuine improvements are real but modest: "
+  "SEEK revenue $402,000 over budget and payroll falling through ordinary attrition. Excluding the capital "
+  "transfer, the year is down about $1.7 million; excluding the unidentified June receipt as well, about $3.1 "
+  "million, the same range as the audited years. These figures are unaudited, the general fund balance sheet "
+  "shows no receivable behind the June receipt, and the packet does not identify its source. The district should "
+  "identify it on the record before this close is cited to justify anything, in either direction, and a decision "
+  "as permanent as a school closure should be evaluated against audited actuals as well as budgets.")
 
 # ================= 7. THE BUILDING =================
 H("7. The North Middletown Building Itself")
@@ -1457,7 +1482,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 2.6, July 20, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 2.7, July 25, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 

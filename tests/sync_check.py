@@ -232,11 +232,16 @@ if rev26 == 22103877 and exp26 == 22477866 and "$374,000" in html and "$374,000"
     match("FY2026 unaudited net change (-$373,989 from packet figures) rounds to $374,000 on site and PDF")
 else:
     diff(f"FY2026 close: model rev {rev26} exp {exp26}, site {'$374,000' in html}, pdf {'$374,000' in pdf_flat}")
-misc = ds_vals.get("Caveat: miscellaneous revenue budgeted at zero, received", (None, None))[0]
-if misc == 1567829 and "$1.57 million" in html and "$1.57 million" in pdf_flat:
-    match("FY2026 $1.57M miscellaneous-revenue caveat present in model, site, PDF")
+misc = ds_vals.get("Caveat 1: miscellaneous revenue (object 1990) budgeted at zero, received", (None, None))[0]
+if misc == 1567829 and "$1,413,929" in html and "$1,413,929" in pdf_flat:
+    match("FY2026 miscellaneous-revenue caveat ($1.57M YTD, $1,413,929 June) present in model, site, PDF")
 else:
-    diff(f"misc revenue caveat: model {misc}, site {'$1.57 million' in html}, pdf {'$1.57 million' in pdf_flat}")
+    diff(f"misc revenue caveat: model {misc}, site {'$1,413,929' in html}, pdf {'$1,413,929' in pdf_flat}")
+xfer = ds_vals.get("Caveat 2: restricted capital money transferred INTO the General Fund in June 2026", (None, None))[0]
+if xfer == 1320939 and "$1,320,939" in html and "$1,320,939" in pdf_flat:
+    match("June 2026 capital-to-GF transfer ($1,320,939) present in model, site, PDF")
+else:
+    diff(f"capital transfer: model {xfer}, site {'$1,320,939' in html}, pdf {'$1,320,939' in pdf_flat}")
 gap_b, gap_c = ds_vals.get("Operating gap to close first", (None, None))
 if gap_b == 1900000 and gap_c == 373989 and "$22 million" in html and "$42 million" in html:
     match("balanced-budget scenario inputs ($1.9M / $373,989 gaps) in model; $22M/$42M capacity quoted on site")

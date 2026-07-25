@@ -505,10 +505,10 @@ put(d, f"A{r}", "THE LEVERS THAT DO NOT CLOSE A SCHOOL", SEC); r += 1
 put(d, f"A{r}", "Remaining restricted capacity (FY2024 audit $23.5M less local share of the 2024 issue, approximate)")
 put(d, f"B{r}", 17600000, BLUE, CUR); put(d, f"F{r}", "Exact figure is the fiscal agent's bonding potential statement; demand it", NOTE, wrap=True); r += 1
 put(d, f"A{r}", "Certified real and personal property assessment, FY2025"); put(d, f"B{r}", 1843569625, BLUE, CUR); asmt_r = r; r += 1
-put(d, f"A{r}", "Recallable nickel status: ALREADY LEVIED, inside the existing rate"); put(d, f"B{r}", "levied", NOTE)
-put(d, f"F{r}", "KDE SEEK District Payment Schedules show a nonzero Recallable Nickel state amount for Bourbon (041); the schedule equalizes only levied nickels", NOTE, wrap=True); r += 1
-put(d, f"A{r}", "New annual state equalization on the recallable nickel (began FY2026)"); put(d, f"B{r}", 276246, BLUE, CUR)
-put(d, f"F{r}", "FY2027 SEEK schedule; $55,515 partial in FY2026. New restricted revenue, no board action required", NOTE, wrap=True); nick_r = r; r += 1
+put(d, f"A{r}", "Recallable nickel status: ALREADY LEVIED August 17, 2023, inside the existing rate"); put(d, f"B{r}", "levied", NOTE)
+put(d, f"F{r}", "KDE Nickel Levy Chart (March 2024) dates Bourbon's recallable levy 8/17/2023; KDE's levied-rates file (April 30, 2026) decomposes the 52.4-cent rate as 41.0 general fund + 5.7 FSPK + 5.7 recallable. Paris Independent, for scale: 71.5 cents with 17.4 recallable", NOTE, wrap=True); r += 1
+put(d, f"A{r}", "New annual state equalization on the recallable nickel (full value, FY2027 schedule)"); put(d, f"B{r}", 276246, BLUE, CUR)
+put(d, f"F{r}", "Phasing in on KDE SEEK schedules: $82,866 FY2025, $55,515 FY2026, $276,246 FY2027. New restricted revenue, no board action required", NOTE, wrap=True); nick_r = r; r += 1
 put(d, f"A{r}", "Bonds the new equalization alone supports")
 put(d, f"B{r}", f"=B{nick_r}*(1-(1+B{rate_r})^-B{term_r})/B{rate_r}", BLK, CUR)
 put(d, f"F{r}", "Additive to the FY2024 audit's bonding potential, which predates the equalization", NOTE, wrap=True); r += 1
@@ -523,8 +523,32 @@ put(d, f"F{r}", "Compare net changes of -$1,065,657 in FY2024 and -$1,225,465 in
 put(d, f"A{r}", "Revenues over budget per the monitoring tool"); put(d, f"B{r}", 2225835, BLUE, CUR); r += 1
 put(d, f"A{r}", "Salaries under budget per the monitoring tool"); put(d, f"B{r}", 587592, BLUE, CUR); r += 1
 put(d, f"A{r}", "Salaries below FY2025 actuals"); put(d, f"B{r}", 223974, BLUE, CUR); r += 1
-put(d, f"A{r}", "Caveat: miscellaneous revenue budgeted at zero, received"); put(d, f"B{r}", 1567829, BLUE, CUR)
-put(d, f"F{r}", "If one-time, the underlying gap is about $1.9 million; the district should identify this receipt", NOTE, wrap=True)
+put(d, f"A{r}", "Caveat 1: miscellaneous revenue (object 1990) budgeted at zero, received"); put(d, f"B{r}", 1567829, BLUE, CUR)
+put(d, f"F{r}", "Unbudgeted even in the final amended budget; the district should identify this receipt on the record", NOTE, wrap=True); misc_r = r; r += 1
+put(d, f"A{r}", "  of which booked in June (period 12) alone"); put(d, f"B{r}", 1413929, BLUE, CUR)
+put(d, f"F{r}", "Months 1-11 produced $153,900 combined, a normal run rate; the balance sheet shows no receivable behind the June entry", NOTE, wrap=True); jmisc_r = r; r += 1
+put(d, f"A{r}", "Caveat 2: restricted capital money transferred INTO the General Fund in June 2026"); put(d, f"B{r}", 1320939, BLUE, CUR)
+put(d, f"F{r}", "Object 5210: $1,098,633 from the Building Fund (320) + $222,276 from Capital Outlay (310), which ended the year at $0. Lawful under budget-act capital funds flexibility; budgeted from September 2025", NOTE, wrap=True); xfer_r = r; r += 1
+put(d, f"A{r}", "Net change excluding the capital transfer")
+put(d, f"B{r}", f"=B{fy26rev_r}-B{fy26exp_r}-B{xfer_r}", BLK, CUR)
+put(d, f"F{r}", "About -$1.69 million: the operating result on operating revenue alone", NOTE, wrap=True); r += 1
+put(d, f"A{r}", "Net change excluding the transfer and the unidentified June receipt")
+put(d, f"B{r}", f"=B{fy26rev_r}-B{fy26exp_r}-B{xfer_r}-B{jmisc_r}", BLK, CUR)
+put(d, f"F{r}", "About -$3.11 million: the same range as the audited years", NOTE, wrap=True); r += 1
+put(d, f"A{r}", "June 2026 General Fund revenue vs June 2025 (district's monitoring tool)"); put(d, f"B{r}", 3923096, BLUE, CUR); put(d, f"C{r}", 1130736, BLUE, CUR)
+put(d, f"F{r}", "The two June entries above are 98 percent of the year-over-year June difference", NOTE, wrap=True); r += 1
+put(d, f"A{r}", "Variance identity from the packet: projected fund balance reconciles to the dollar")
+put(d, f"B{r}", "=1489853+2225835+587592-224087", BLK, CUR)
+put(d, f"F{r}", "Contingency + revenue over budget + salary savings - expense overrun = $4,079,193, the tool's projected balance. The June misc entry is 63 percent of the revenue beat", NOTE, wrap=True); r += 1
+put(d, f"A{r}", "BUILDING FUND FLOWS, FY2026 (fund 320, same packet)", SEC); r += 1
+put(d, f"A{r}", "Building Fund transfers out, FY2026 total"); put(d, f"B{r}", 2481394, BLUE, CUR); bfout_r = r; r += 1
+put(d, f"A{r}", "  to Debt Service (fund 400)"); put(d, f"B{r}", 1382761, BLUE, CUR); bfds_r = r; r += 1
+put(d, f"A{r}", "  to the General Fund (June 2026)")
+put(d, f"B{r}", f"=B{bfout_r}-B{bfds_r}", BLK, CUR)
+put(d, f"F{r}", "The residual after debt service. This is the restricted stream a $14 million bond would lean on; in FY2026 it plugged the operating budget instead", NOTE, wrap=True); bfres_r = r; r += 1
+put(d, f"A{r}", "Bond capacity that residual supports at the same rate and term")
+put(d, f"B{r}", f"=B{bfres_r}*(1-(1+B{rate_r})^-B{term_r})/B{rate_r}", BLK, CUR)
+put(d, f"F{r}", "About $14 million: the plan's own target, carried by restricted money. The closure's role is only to replace the sweep, and any recurring million dollars does that", NOTE, wrap=True)
 r += 2
 put(d, f"A{r}", "SCENARIO: BALANCE THE BUDGET AND EXPAND BONDING CAPACITY, NO CLOSURE", SEC); r += 1
 put(d, f"A{r}", "Two cases differ only in the operating gap assumed. Conservative treats the FY2026 $1.57M receipt as one-time;", NOTE); r += 1
@@ -563,7 +587,10 @@ for col in ("B", "C"):
     cc = put(d, f"{col}{r}", f"={col}{gfb_r}+{col}{nkb_r}+{col}{ex_r}", BLK, CUR, bold=True); cc.border = TOPLINE
 r += 1
 put(d, f"A{r}", "Roughly $22.2 million in the conservative case and $42.1 million on the FY2026 trend, with the budget balanced", NOTE); r += 1
-put(d, f"A{r}", "first in both. The administration's plan reaches $32 million at face value and leaves the deficit in place.", NOTE)
+put(d, f"A{r}", "first in both. The administration's plan reaches $32 million at face value and leaves the deficit in place.", NOTE); r += 1
+put(d, f"A{r}", "Floor check: even with zero general-fund room, the restricted capacity plus new equalization alone are about $21 million.", NOTE); r += 1
+put(d, f"A{r}", "Pledging the building-fund residual to new bonds requires ending the capital-to-operations sweep documented above,", NOTE); r += 1
+put(d, f"A{r}", "which is exactly what the administration's plan implies; the only question is which recurring million replaces it.", NOTE)
 
 # ================= RUNWAY =================
 rw = sheet("Runway", [52, 14, 14, 14, 14])

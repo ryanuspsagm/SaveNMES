@@ -212,11 +212,18 @@ def main():
 
     # bonding story: the $14M plan, the levers, and the unaudited FY2026 close
     for needle in ["$14 million plan", "wrap-around", "recallable",
-                   "Budget Monitoring Tool", "$374,000", "$1.57 million"]:
+                   "Budget Monitoring Tool", "$374,000", "$1,320,939",
+                   "$1,413,929", "August 17, 2023", "$82,866", "Paris Independent",
+                   "Capital Funds Request", "$3.1 million"]:
         chk(needle in t, f"PDF bonding story intact: {needle}")
     for needle in ["The $14 million plan", "$121,000 a year", "wrap-around",
-                   "Budget Monitoring Tool", "$374,000", "miscellaneous receipt"]:
+                   "Budget Monitoring Tool", "$374,000", "miscellaneous revenue",
+                   "$1,320,939", "$1,413,929", "August 17, 2023", "$82,866",
+                   "Paris Independent", "$3.1 million"]:
         chk(needle in html, f"site bonding story intact: {needle}")
+    chk("$1,098,633" in html and "$222,276" in html
+        and "$1,098,633" in t and "$222,276" in t,
+        "capital transfer components consistent on site and in PDF")
     chk("unaudited" in html and "unaudited" in t,
         "FY2026 figures labeled unaudited on site and in PDF")
     chk((REPO / "build" / "fy2026_june_financial_packet.pdf").exists()
