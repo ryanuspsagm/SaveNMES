@@ -191,7 +191,7 @@ if TH["B28"].value == 65.13 and "65.1" in html and "65.1" in pdf_flat:
     match("state average 65.1 consistent (model 65.13, site and PDF 65.1)")
 hist_rates = [TH.cell(row=5 + i, column=2).value for i in range(8)]
 if hist_rates == [61.3, 60.6, 55.9, 54.2, 49.2, 52.4, 52.4, 52.4]:
-    match("2018-2025 Bourbon rate history in model matches PDF Figure 13 series (61.3 -> 52.4)")
+    match("2018-2025 Bourbon rate history in model matches PDF Figure 14 series (61.3 -> 52.4)")
 
 # ---------- 5. spot figures in PDF vs model ----------
 checks = [("19,348", A["B14"].value == 19348, "per-pupil spending $19,348"),

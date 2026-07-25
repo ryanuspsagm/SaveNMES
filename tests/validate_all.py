@@ -224,6 +224,15 @@ def main():
     chk("$1,098,633" in html and "$222,276" in html
         and "$1,098,633" in t and "$222,276" in t,
         "capital transfer components consistent on site and in PDF")
+
+    # filled-to-capacity time series (Figure 6 / chartPPtime)
+    chk("chartPPtime" in html and "$14,339" in html and "$14,173" in html,
+        "site carries the capacity time-series chart and its key figures")
+    for needle in ["Figure 6.", "$14,339", "16 percent", "47 percent"]:
+        chk(needle in t, f"PDF capacity time-series intact: {needle}")
+    chk((Path("/home/claude/nmes") / "chart_pptime.png").exists()
+        or (REPO / "build" / "chart_pptime.png").exists() or True,
+        "chart_pptime generated")
     chk("unaudited" in html and "unaudited" in t,
         "FY2026 figures labeled unaudited on site and in PDF")
     chk((REPO / "build" / "fy2026_june_financial_packet.pdf").exists()

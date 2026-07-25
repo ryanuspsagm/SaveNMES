@@ -57,9 +57,9 @@ rows = [
  "  Per-pupil spending: Kentucky School Report Card school-level (ESSA) expenditure data, 2023-24.",
  "  SEEK base amounts: Kentucky 2024-2026 and 2026-2028 state budgets. Enrollment/capacity: NCES; 2021 KBE-approved facility plan.",
  "  Multi-year school scores and NMES enrollment history: School_Data tab (backs report Figures 6, 7, and 11).",
- "  County demographics and the full 1989-2025 NMES enrollment series: Demographics tab (backs Section 9 and Figure 11).",
- "  Tax rates, fund split, delinquency check, and the 4% three-year path: Tax_History tab (backs Figure 15).",
- "  Boundary rebalancing and fill-to-capacity scenario: Redistricting tab (backs the Section 9 worked example and Figure 12).",
+ "  County demographics and the full 1989-2025 NMES enrollment series: Demographics tab (backs Section 9 and Figure 12).",
+ "  Tax rates, fund split, delinquency check, and the 4% three-year path: Tax_History tab (backs Figure 16).",
+ "  Boundary rebalancing and fill-to-capacity scenario: Redistricting tab (backs the Section 9 worked example and Figure 13).",
  "  Bonding capacity components and what closure can and cannot change: Debt_Service tab (backs Section 6).",
  "  Student density, route-mile math, and busing cost scenarios: Transport_Geo tab (backs Section 9).",
  "",
@@ -340,6 +340,19 @@ for i, mc in enumerate([400, 2500, 5000, 10000, 14173]):
     put(rd, f"C{rr}", f"=(B$34+(154-B$5)*A{rr})/154", BLK, CUR)
 put(rd, "A70", "Receiving schools today: Bourbon Central $18,131, Cane Ridge $18,670. At the state-approved 174 rating, NMES undercuts both across the entire grid, including the impossible full-average case. At the draft plan's 154 rating it holds for any marginal cost under about $12,000, roughly thirty times the realistic figure. Verdict: structural at 174, robust at 154.", NOTE, wrap=True)
 put(rd, "A71", "Base-year variant: at the current 115 enrolled, filling to 174 adds 59 students and the break-even vs Bourbon Central falls to about $11,500, with the same verdict. Two added teachers at the loaded rate are equivalent to about $3,700 of marginal cost per student, inside the grid above.", NOTE, wrap=True)
+
+put(rd, "A73", "FIVE YEARS OF THE SAME TEST (KDE school-level filings, 2019-20 to 2023-24; backs Figure 6)", SEC)
+put(rd, "A74", "Year", BOLDW, fill=HDR); put(rd, "B74", "NMES members", BOLDW, fill=HDR); put(rd, "C74", "NMES $/pupil", BOLDW, fill=HDR)
+put(rd, "D74", "BCES $/pupil", BOLDW, fill=HDR); put(rd, "E74", "CRES $/pupil", BOLDW, fill=HDR); put(rd, "F74", "NMES at 174", BOLDW, fill=HDR)
+hist5 = [("2019-20", 166, 12903, 12159, 12168), ("2020-21", 160, 15406, 14011, 14621),
+         ("2021-22", 146, 19080, 15619, 16137), ("2022-23", 144, 19003, 17410, 17403),
+         ("2023-24", 128, 19348, 18131, 18670)]
+for i, (yy, nn, npp, bpp, cpp) in enumerate(hist5):
+    rr = 75 + i
+    put(rd, f"A{rr}", yy); put(rd, f"B{rr}", nn, BLUE, NUM); put(rd, f"C{rr}", npp, BLUE, CUR)
+    put(rd, f"D{rr}", bpp, BLUE, CUR); put(rd, f"E{rr}", cpp, BLUE, CUR)
+    put(rd, f"F{rr}", f"=(C{rr}*B{rr}+(174-B{rr})*Assumptions!B62)/174", BLK, CUR)
+put(rd, "A81", "The counterfactual column is below both receiving schools in every year on record. NMES's total site spending grew 16 percent over the five years, against 37 percent at Bourbon Central and 47 percent at Cane Ridge; only the divisor changed.", NOTE, wrap=True)
 put(rd, "A39", "ASSUMPTIONS THE DISTRICT'S DATA SHOULD REPLACE", SEC)
 put(rd, "A40", "Rezoned students are drawn only from homes closer to NMES than to their assigned school, so bus routes shorten or hold even; the district's routing data would settle it.", NOTE, wrap=True)
 put(rd, "A41", "Receiving-school relief is booked only as one to two avoided or redeployed sections; grade-by-grade capacities at Bourbon Central and Cane Ridge are a records ask (report Question 3).", NOTE, wrap=True)
@@ -692,7 +705,7 @@ put(sc, "A9", "Reading: the question before the board is not closure versus no c
 # ================= TAX_HISTORY =================
 th = sheet("Tax_History", [36, 13, 13, 13, 6, 13, 48])
 put(th, "A1", "Property Tax Rates, Fund Split, Delinquency, and the 4% Option", TITLE)
-put(th, "A2", "Backs Section 9 and Figure 15 of the report. Rates in cents per $100. DOR rate books primary for 2023-2025; 2018-2022 verified secondary; 2005-2017 not retrieved and not interpolated.", NOTE)
+put(th, "A2", "Backs Section 9 and Figure 16 of the report. Rates in cents per $100. DOR rate books primary for 2023-2025; 2018-2022 verified secondary; 2005-2017 not retrieved and not interpolated.", NOTE)
 
 put(th, "A4", "BOURBON COUNTY SCHOOLS, REAL ESTATE RATE BY TAX YEAR", SEC)
 trates = [("2018", 61.3), ("2019", 60.6), ("2020", 55.9), ("2021", 54.2),
@@ -784,7 +797,7 @@ for yr, v in town:
     put(dm, f"B{r}", v, BLUE, NUM)
     r += 1
 
-put(dm, "A32", "NMES ENROLLMENT, 1989-2025 (spring of school year; backs Figure 11)", SEC)
+put(dm, "A32", "NMES ENROLLMENT, 1989-2025 (spring of school year; backs Figure 12)", SEC)
 hist = [261, 255, 234, 225, 202, 203, 182, 196, 208, 198, 205, 195, 195, 203,
         196, 206, 204, 199, 211, 224, 217, 177, 165, 167, 154, 154, 155, 154,
         131, 131, 160, 160, 148, 153, 145, 135, 128]
@@ -816,7 +829,7 @@ sd = sheet("School_Data", [30] + [7.2] * 18 + [44])
 put(sd, "A1", "School Data Backing the Report Figures", TITLE)
 put(sd, "A2", "Inputs (blue) transcribed from public sources. The 2007-2025 series below is SchoolDigger's normalized 0-100 index built from KDE test data (a third-party rendering, kept for context). KDE's own official record, pulled directly from the department's historical files, is in the KDE OFFICIAL HISTORY block below and governs every claim in the report.", NOTE)
 
-put(sd, "A4", "NMES ENROLLMENT BY SCHOOL YEAR (backs Figure 11)", SEC)
+put(sd, "A4", "NMES ENROLLMENT BY SCHOOL YEAR (backs Figure 12)", SEC)
 eyears = ["'15-16", "'16-17", "'17-18", "'18-19", "'19-20", "'20-21", "'21-22", "'22-23", "'23-24", "'24-25"]
 ecounts = [154, 131, 131, 160, 160, 148, 153, 145, 135, 128]
 put(sd, "A5", "School year", bold=True)

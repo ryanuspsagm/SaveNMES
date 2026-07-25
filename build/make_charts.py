@@ -351,3 +351,32 @@ fig.tight_layout(w_pad=2.2)
 save(fig, "chart_tax.png")
 
 print("charts done")
+
+# ---- P2: per-pupil across schools over time, with the filled-to-174 counterfactual ----
+fig, ax = plt.subplots(figsize=(6.7, 3.9))
+yrs5 = ["2019-20", "2020-21", "2021-22", "2022-23", "2023-24"]
+nmes_pp = [12903, 15406, 19080, 19003, 19348]
+bces_pp = [12159, 14011, 15619, 17410, 18131]
+cres_pp = [12168, 14621, 16137, 17403, 18670]
+cf_pp   = [12328, 14199, 16074, 15796, 14339]   # (site $ + (174-n)*400)/174, n = 166/160/146/144/128
+ax.plot(yrs5, nmes_pp, color=NAVY, marker="o", markersize=4.5, linewidth=2.4, label="NMES actual (166 to 128 students)")
+ax.plot(yrs5, bces_pp, color=BLUE, marker="s", markersize=4, linewidth=1.6, linestyle="--", label="Bourbon Central actual")
+ax.plot(yrs5, cres_pp, color=GRAY, marker="^", markersize=4.5, linewidth=1.6, label="Cane Ridge actual")
+ax.plot(yrs5, cf_pp, color=MBLUE, marker="o", markersize=4.5, linewidth=2.2, linestyle=(0, (5, 3)),
+        markerfacecolor="white", label="NMES if filled to its rated 174")
+ax.annotate("$19,348", xy=(4, 19348), xytext=(3.55, 20050), fontsize=8, color=NAVY, fontweight="bold")
+ax.annotate("$14,339 filled:\ncheapest in the district", xy=(4, 14339), xytext=(2.75, 12650),
+            fontsize=8, color="#4A6FA5", fontweight="bold",
+            arrowprops=dict(arrowstyle="->", color="#4A6FA5", lw=0.9))
+ax.annotate("gap = empty seats", xy=(3.997, 16850), fontsize=7.6, color="#666666", ha="right")
+ax.annotate("", xy=(3.93, 19100), xytext=(3.93, 14580),
+            arrowprops=dict(arrowstyle="<->", color="#999999", lw=0.9))
+ax.set_ylabel("Spending per student (KDE school-level filings)")
+ax.set_ylim(11000, 21000)
+ax.yaxis.set_major_formatter(lambda v, p: f"${v/1000:,.0f}K")
+ax.legend(fontsize=7.6, loc="upper left", frameon=False)
+ax.set_title("Same school, same money: only the number of students changes the cost per student")
+clean(ax)
+fig.tight_layout()
+save(fig, "chart_pptime.png")
+print("pptime done")

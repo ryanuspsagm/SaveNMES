@@ -258,6 +258,13 @@ footer a{color:var(--ice)}
 </div>
 
 <div class="card">
+<h3>The cost argument, over time: fill the school and it flips</h3>
+<p>The district has filed spending for every school with the state since 2019. Five years of its own filings tell one story: NMES's total spending grew the least of the three elementaries, up 16 percent since 2019-20 against 37 percent at Bourbon Central and 47 percent at Cane Ridge. What grew is the empty space around each student as enrollment slid from 166 to 128. The dashed line below recomputes NMES each year as if filled to its state-rated 174 seats, adding only supplies for the added students, because its nine existing classrooms average 19 students at capacity, inside every legal class-size cap. Filled, NMES would have been the cheapest elementary school in the district in all five years: $14,339 per student in 2023-24, roughly $3,800 under either receiving school. The workbook's Redistricting tab carries the stress test: that result holds even if every added student cost the school's entire $14,173 state and local average, which is impossible, because that average includes the principal, the building, and the staff already paid for. The premium is not the school. It is the empty seats, and the district's own draft plan would move students in the wrong direction.</p>
+<div class="chartbox"><canvas id="chartPPtime" role="img" aria-label="Line chart of per-student spending at the three elementary schools from 2019-20 to 2023-24, with a dashed line showing NMES filled to capacity below both other schools"></canvas></div>
+<span class="checkme"><a href="https://www.kyschoolreportcard.com/datasets">KDE school-level spending files (2019-20 to 2023-24)</a> &middot; <a href="NMES_Financial_Model.xlsx">Model, Redistricting tab: capacity and break-even math</a></span>
+</div>
+
+<div class="card">
 <h3>What the district's own facility plans show</h3>
 <p>The state-approved facility plans are the district's official record of every school's rated capacity. The current plan (approved August 2021) and its predecessor (approved June 2013, recovered from the Internet Archive) tell a story the closure case has to answer.</p>
 <div style="overflow-x:auto"><table class="alt fac">
@@ -520,7 +527,7 @@ footer a{color:var(--ice)}
 </div>
 <div class="card" style="margin-top:26px">
 <h3>Read the full case</h3>
-<p>The 35-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
+<p>The 36-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
 <a class="btn" href="Saving_North_Middletown_Elementary.pdf">Download the report (PDF)</a>
 &nbsp;<a class="btn" href="NMES_Financial_Model.xlsx" download>Download the model (Excel)</a>
 &nbsp;<a class="btn" href="https://github.com/ryanuspsagm/SaveNMES">Browse the GitHub repository</a>
@@ -712,6 +719,20 @@ datasets:[{label:'Enrollment',data:evals,borderColor:NAVY,backgroundColor:NAVY,b
 {label:'Rated capacity (174)',data:cap,borderColor:ROYAL,borderWidth:2,borderDash:[6,5],pointRadius:0}]},
 options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},
 scales:{y:{min:0,max:290,grid:{color:'#E3E8F0'}},x:{ticks:{maxTicksLimit:10}}}}});
+
+/* Per-pupil over time with filled-to-capacity counterfactual */
+new Chart(document.getElementById('chartPPtime'),{type:'line',
+data:{labels:['2019-20','2020-21','2021-22','2022-23','2023-24'],
+datasets:[
+{label:'NMES actual (166 to 128 students)',data:[12903,15406,19080,19003,19348],borderColor:NAVY,backgroundColor:NAVY,borderWidth:2.5,pointRadius:3,pointStyle:'circle',tension:0.1},
+{label:'Bourbon Central actual',data:[12159,14011,15619,17410,18131],borderColor:ROYAL,backgroundColor:ROYAL,borderWidth:1.8,borderDash:[4,3],pointRadius:3,pointStyle:'rect',tension:0.1},
+{label:'Cane Ridge actual',data:[12168,14621,16137,17403,18670],borderColor:GRAY,backgroundColor:GRAY,borderWidth:1.8,pointRadius:3.5,pointStyle:'triangle',tension:0.1},
+{label:'NMES if filled to its rated 174',data:[12328,14199,16074,15796,14339],borderColor:ICE,backgroundColor:'#FFFFFF',borderWidth:2.4,borderDash:[7,4],pointRadius:3.5,pointStyle:'circle',tension:0.1}
+]},
+options:{responsive:true,maintainAspectRatio:false,
+plugins:{legend:{position:'bottom',labels:{boxWidth:18,font:{size:10}}},
+tooltip:{callbacks:{label:function(c){return c.dataset.label+': $'+c.parsed.y.toLocaleString('en-US')}}}},
+scales:{y:{min:11000,max:21000,grid:{color:'#E3E8F0'},ticks:{callback:function(v){return '$'+(v/1000)+'K'}}},x:{}}}});
 
 /* Closure calculator */
 var DEFICIT=2648086,DRAWDOWN=1145561;
