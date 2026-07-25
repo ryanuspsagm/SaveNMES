@@ -9,8 +9,8 @@ public source cited in the report and on the site.
 
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
-- `Saving_North_Middletown_Elementary.pdf` - the 37-page report.
-- `NMES_Financial_Model.xlsx` - the 15-tab financial model (255 formulas).
+- `Saving_North_Middletown_Elementary.pdf` - the 39-page report.
+- `NMES_Financial_Model.xlsx` - the 15-tab financial model (258 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
   Requires: `pip install reportlab openpyxl matplotlib`. Run
   `python build/make_charts.py`, then `python build/build_pdf.py`,
@@ -61,3 +61,13 @@ and the site serves from `index.html` at the repo root.
 
 Corrections welcome. This project criticizes decisions and asks for documents;
 it attributes no motive and alleges no wrongdoing to anyone.
+
+## Report version history
+Every published version stays available under `reports/`; each report's
+corrections section lists what changed and why.
+- v3.0 (July 26, 2026): two-tailed closure economics with verified GF position
+  costs; capacity scenarios across the 2013/2017/2021 plans, 20-year peaks,
+  KFICS, and the draft table; Millersburg case study; version archive added.
+- v2.7 (July 25, 2026): June 2026 capital-to-GF transfer; FY2026 close
+  decomposition; recallable-nickel triple verification.
+- v2.6 (July 20, 2026): bonding story; transport geography.

@@ -40,26 +40,25 @@ if bal == 4290840 and "4,290,840" in pdf_flat and "4,290,840" not in html:
     note("fund balance $4,290,840 in model+PDF; site says '$4.3 million'/'falling ~$1.1M a year' (rounded prose, consistent)")
 if "4,290,840" in html: match("fund balance $4,290,840 also on site")
 
-# closure base case
-base = A["B51"].value + A["B52"].value + A["B53"].value * A["B41"].value - (A["B54"].value + A["B55"].value * A["B6"].value)
-site_const = re.search(r"net=(\d+)\+p\*(\d+)-b-l\*(\d+)", html)
-site_base = int(site_const.group(1)) + 3*int(site_const.group(2)) - 137500 - 10*int(site_const.group(3))
-if base == site_base == 361240:
-    match("closure base-case net saving $361,240 (model formula == site calculator defaults)")
+# closure central case (v3 two-tailed)
+central = A["B51"].value + A["B52"].value + 3 * A["B69"].value - 137500 - 10 * A["B6"].value - 155000
+site_const = re.search(r"net=(\d+)\+p\*c-b-l\*(\d+)-o", html)
+if central == 131240 and site_const and "$131,240" in html:
+    match("closure central case $131,240 (model inputs == site calculator v3 defaults)")
 else:
-    diff(f"closure base: model {base}, site {site_base}")
-if int(site_const.group(1)) == A["B51"].value + A["B52"].value:
+    diff(f"closure central: model {central}, site regex {'ok' if site_const else 'MISSING'}")
+if site_const and int(site_const.group(1)) == A["B51"].value + A["B52"].value:
     match(f"calculator fixed avoidables {site_const.group(1)} == model principal+plant (175,000+115,000)")
-if int(site_const.group(2)) == A["B41"].value:
-    match("calculator $85,000 per position == model loaded cost")
-if int(site_const.group(3)) == A["B6"].value:
+if A["B69"].value == 60000:
+    match("GF-borne $60,000 per position (Assumptions B69) backs the calculator default")
+if site_const and int(site_const.group(2)) == A["B6"].value:
     match("calculator $4,626 per leaver == model SEEK base FY2027")
 
-# favorable case
-fav = A["B51"].value + A["B52"].value + A["B66"].value * A["B41"].value - A["B67"].value
-pct_fav = fav / model_deficit * 100
-if fav == 640000:
-    match(f"district-favorable case $640,000 = {pct_fav:.1f}% of deficit; site fact strip '~24% at best'; PDF 'around $640,000, still under a quarter'")
+# two-tailed range strings consistent
+if "losing $385,000" in pdf_flat and "saving $565,000" in pdf_flat and "-$385,000 to +$565,000" in html:
+    match("v3 two-tailed range (-$385,000 to +$565,000) consistent on site and in PDF")
+else:
+    diff("v3 two-tailed range strings missing on site or PDF")
 
 # levy path: base is now the General Fund tax only (B48 = "=B32"), not total collections
 levy_base = TH["B32"].value  # General Fund property tax, the base B48 points at
@@ -191,7 +190,7 @@ if TH["B28"].value == 65.13 and "65.1" in html and "65.1" in pdf_flat:
     match("state average 65.1 consistent (model 65.13, site and PDF 65.1)")
 hist_rates = [TH.cell(row=5 + i, column=2).value for i in range(8)]
 if hist_rates == [61.3, 60.6, 55.9, 54.2, 49.2, 52.4, 52.4, 52.4]:
-    match("2018-2025 Bourbon rate history in model matches PDF Figure 14 series (61.3 -> 52.4)")
+    match("2018-2025 Bourbon rate history in model matches PDF Figure 16 series (61.3 -> 52.4)")
 
 # ---------- 5. spot figures in PDF vs model ----------
 checks = [("19,348", A["B14"].value == 19348, "per-pupil spending $19,348"),
@@ -249,7 +248,7 @@ else:
     diff(f"scenario: model gaps {gap_b}/{gap_c}, site $22M {'$22 million' in html}, $42M {'$42 million' in html}")
 
 # site text spot checks
-for s, label in [("1st in all 5 subjects", "hero fact scores"), ("$250K to $640K", "hero fact closure range"),
+for s, label in [("1st in all 5 subjects", "hero fact scores"), ("-$385K to +$565K", "hero fact closure range"),
                  ("$7,829,060", "GF levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),
                  ("128 students", "enrollment in prose"), ("rated capacity of 174", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")

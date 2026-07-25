@@ -398,3 +398,77 @@ clean(ax)
 fig.tight_layout()
 save(fig, "chart_capacity_scenarios.png")
 print("capacity scenarios done")
+
+# ---- V3: two-tailed closure spectrum + tornado ----
+fig, (a1, a2) = plt.subplots(2, 1, figsize=(6.9, 5.8), height_ratios=[1, 1.5])
+a1.axvspan(-385, 0, color="#F3E4E0", zorder=0)
+a1.axvspan(0, 565, color="#EAF0E7", zorder=0)
+a1.axvspan(-18, 200, color="#C9D6EA", zorder=1, alpha=0.9)
+a1.plot([-385, 565], [0.5, 0.5], color="#666666", lw=1.2, zorder=2)
+for v, lab in [(-385, "worst case\n\\$385K lost"), (565, "best case\n\\$565K saved")]:
+    a1.plot([v], [0.5], marker="|", markersize=16, color="#444444", zorder=3)
+    a1.annotate(lab, xy=(v, 0.5), xytext=(v, 0.16), ha="center", fontsize=7.8)
+a1.plot([91], [0.5], marker="D", markersize=9, color=NAVY, zorder=4)
+a1.annotate("median: \\$91K saved", xy=(91, 0.5), xytext=(91, 0.68), ha="center", fontsize=8.2, fontweight="bold", color=NAVY)
+a1.annotate("most likely band:\n\\$18K lost to \\$200K saved", xy=(91, 0.5), xytext=(140, 0.06), ha="center", fontsize=7.4, color="#39506e")
+a1.annotate("the plan needs \\$800K to \\$1M\nfrom the closure", xy=(700, 0.5), xytext=(660, 0.78), ha="center",
+            fontsize=7.8, color="#8a4a2b", fontweight="bold",
+            arrowprops=dict(arrowstyle="->", color="#8a4a2b", lw=0.9))
+a1.plot([700, 900], [0.5, 0.5], color="#8a4a2b", lw=3, solid_capstyle="butt")
+a1.text(-200, 0.86, "closure loses money in\n29% of scenarios", ha="center", fontsize=7.8, color="#7a3b2e", fontweight="bold")
+a1.set_xlim(-460, 940); a1.set_ylim(0, 1)
+a1.axvline(0, color="#888888", lw=0.9, linestyle=(0, (3, 2)))
+a1.set_yticks([])
+a1.set_xticks([-400, -200, 0, 200, 400, 600, 800])
+a1.set_xticklabels(["-\\$400K", "-\\$200K", "\\$0", "+\\$200K", "+\\$400K", "+\\$600K", "+\\$800K"], fontsize=7.8)
+a1.set_title("Net yearly effect of closing NMES: all 1,944 defensible combinations")
+for sp in ("top", "right", "left"): a1.spines[sp].set_visible(False)
+levers3 = [("Capacity debt service triggered\n(\\$231K down to \\$0)", 15.2, 246.2),
+           ("Positions truly eliminated (2 up to 5)", 71.2, 251.2),
+           ("Added busing (\\$250K down to \\$100K)", 18.7, 168.7),
+           ("Families leaving district (30 down to 0)", 38.7, 177.5),
+           ("Assessment erosion (\\$95K down to \\$0)", 76.2, 171.2),
+           ("Cost per position (\\$50K up to \\$75K)", 101.2, 176.2),
+           ("Building mothballed vs sold", 71.2, 131.2)][::-1]
+yy = np.arange(len(levers3))
+for i, (lab, lo, hi) in enumerate(levers3):
+    a2.barh(i, hi - lo, left=lo, height=0.55, color="#9DC3E6", edgecolor=BLUE, linewidth=0.8)
+    a2.text(lo - 7, i, f"{lo:.0f}", ha="right", va="center", fontsize=7)
+    a2.text(hi + 7, i, f"{hi:.0f}", ha="left", va="center", fontsize=7)
+a2.axvline(131.2, color=NAVY, lw=1.4, linestyle=(0, (4, 2)))
+a2.text(134, len(levers3) - 0.45, "central case \\$131K", fontsize=7.6, color=NAVY, fontweight="bold")
+a2.set_yticks(yy); a2.set_yticklabels([l[0] for l in levers3], fontsize=7.2)
+a2.set_xlabel("Net yearly saving (\\$K), central case, moving one lever at a time")
+a2.set_xlim(-25, 320)
+a2.xaxis.grid(True, color="#E4E6EA", linewidth=0.8); a2.set_axisbelow(True)
+for sp in ("top", "right"): a2.spines[sp].set_visible(False)
+a2.set_title("What moves the number most", fontsize=9.5)
+fig.tight_layout()
+save(fig, "chart_closure_spectrum.png")
+
+# ---- V3: Millersburg timeline ----
+fig, ax = plt.subplots(figsize=(6.9, 3.9))
+myrs = [1980, 1990, 2000, 2010, 2020]
+mb = [987, 937, 842, 792, 747]
+county5 = [19405, 19236, 19360, 19985, 20252]
+mb_i = [v / 842 * 100 for v in mb]
+co_i = [v / 19360 * 100 for v in county5]
+ax.plot(myrs, mb_i, color=NAVY, marker="o", markersize=5, lw=2.4, label="Millersburg (2000 = 100)")
+ax.plot(myrs, co_i, color=GRAY, marker="s", markersize=4, lw=1.8, linestyle="--", label="Bourbon County (2000 = 100)")
+ax.axvline(2006, color="#B9C4D4", lw=1.0, linestyle=(0, (4, 2)))
+ax.axvline(2007, color="#C0625E", lw=1.5, linestyle=(0, (4, 2)))
+ax.axvline(2013, color="#B9C4D4", lw=1.0, linestyle=(0, (4, 2)))
+ax.text(2005.6, 120.5, "military institute\ncloses 2006", fontsize=6.9, color="#666666", ha="right")
+ax.text(2007.4, 78.2, "ELEMENTARY CLOSES 2007\n(119 students; NMES today: ~115)", fontsize=7.0, color="#7a3b2e", fontweight="bold")
+ax.text(2013.4, 114.5, "Joy Global closes 2013:\n197 jobs, half the\ntown's budget", fontsize=6.9, color="#666666")
+ax.text(2020.5, mb_i[-1], "747\n(down 11%\nsince 2000)", fontsize=7.4, color=NAVY, fontweight="bold", va="center")
+ax.text(2020.5, co_i[-1] + 1.2, "20,252 (+4.6%)", fontsize=7.4, color="#555555", va="center")
+ax.set_xlim(1979, 2027.5)
+ax.set_ylim(74, 126)
+ax.set_ylabel("Population, indexed to 2000 = 100")
+ax.legend(fontsize=7.6, loc="lower left", frameon=False)
+clean(ax)
+ax.set_title("Bourbon County has closed a small school before. The county grew; the town did not.")
+fig.tight_layout()
+save(fig, "chart_millersburg.png")
+print("v3 charts done")

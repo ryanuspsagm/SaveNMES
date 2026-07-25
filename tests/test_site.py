@@ -58,25 +58,30 @@ def main():
         else: ok("no JS console or page errors")
 
         n = pg.evaluate("Object.keys(Chart.instances).length")
-        if n == 7: ok(f"{n} Chart.js charts instantiated")
-        else: bad(f"expected 7 charts, got {n}")
+        if n == 9: ok(f"{n} Chart.js charts instantiated")
+        else: bad(f"expected 9 charts, got {n}")
 
         net = pg.text_content("#rNet").strip()
         verdict = pg.text_content("#rVerdict").strip()
-        if net == "$361,240" and "13.6%" in verdict and "reserves" in verdict:
-            ok("closure defaults $361,240 / 13.6% deficit + drawdown framing")
+        if net == "$131,240" and "5.0%" in verdict and "reserves" in verdict:
+            ok("closure v3 central default $131,240 / 5.0% deficit + drawdown framing")
         else: bad(f"closure defaults: {net} / {verdict}")
 
-        pg.fill("#sPos", "6"); pg.dispatch_event("#sPos", "input")
-        pg.fill("#sBus", "75000"); pg.dispatch_event("#sBus", "input")
+        pg.fill("#sPos", "5"); pg.dispatch_event("#sPos", "input")
+        pg.fill("#sCost", "75000"); pg.dispatch_event("#sCost", "input")
+        pg.fill("#sBus", "100000"); pg.dispatch_event("#sBus", "input")
         pg.fill("#sLeav", "0"); pg.dispatch_event("#sLeav", "input")
-        if pg.text_content("#rNet").strip() == "$725,000": ok("closure best case $725,000")
+        pg.fill("#sOther", "0"); pg.dispatch_event("#sOther", "input")
+        if pg.text_content("#rNet").strip() == "$565,000": ok("closure v3 favorable tail $565,000")
         else: bad(f"closure best case: {pg.text_content('#rNet')}")
         pg.fill("#sPos", "2"); pg.dispatch_event("#sPos", "input")
+        pg.fill("#sCost", "50000"); pg.dispatch_event("#sCost", "input")
         pg.fill("#sBus", "200000"); pg.dispatch_event("#sBus", "input")
         pg.fill("#sLeav", "30"); pg.dispatch_event("#sLeav", "input")
-        if pg.text_content("#rNet").strip() == "$121,220": ok("closure worst case $121,220")
-        else: bad(f"closure worst case: {pg.text_content('#rNet')}")
+        pg.fill("#sOther", "330000"); pg.dispatch_event("#sOther", "input")
+        if pg.text_content("#rNet").strip() == "-$278,780" and "LOSES" in pg.text_content("#rVerdict"):
+            ok("closure v3 unfavorable tail -$278,780 with loss verdict")
+        else: bad(f"closure worst case: {pg.text_content('#rNet')} / {pg.text_content('#rVerdict')[:60]}")
 
         pg.fill("#sYrs", "1"); pg.dispatch_event("#sYrs", "input")
         lv1 = pg.text_content("#rLevy").strip()
@@ -133,8 +138,11 @@ def main():
         else: bad(f"nav anchors missing: {missing}")
 
         pg.set_viewport_size({"width": 390, "height": 844})
-        pg.wait_for_timeout(400)
-        overflow = pg.evaluate("document.documentElement.scrollWidth - document.documentElement.clientWidth")
+        overflow = None
+        for _ in range(10):
+            pg.wait_for_timeout(250)
+            overflow = pg.evaluate("document.documentElement.scrollWidth - document.documentElement.clientWidth")
+            if overflow <= 1: break
         if overflow <= 1: ok("no horizontal overflow at 390px")
         else: bad(f"mobile overflow {overflow}px")
         b.close()

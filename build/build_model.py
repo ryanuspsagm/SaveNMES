@@ -57,9 +57,9 @@ rows = [
  "  Per-pupil spending: Kentucky School Report Card school-level (ESSA) expenditure data, 2023-24.",
  "  SEEK base amounts: Kentucky 2024-2026 and 2026-2028 state budgets. Enrollment/capacity: NCES; 2021 KBE-approved facility plan.",
  "  Multi-year school scores and NMES enrollment history: School_Data tab (backs report Figures 6, 7, and 11).",
- "  County demographics and the full 1989-2025 NMES enrollment series: Demographics tab (backs Section 9 and Figure 12).",
- "  Tax rates, fund split, delinquency check, and the 4% three-year path: Tax_History tab (backs Figure 16).",
- "  Boundary rebalancing and fill-to-capacity scenario: Redistricting tab (backs the Section 9 worked example and Figure 13).",
+ "  County demographics and the full 1989-2025 NMES enrollment series: Demographics tab (backs Section 9 and Figure 14).",
+ "  Tax rates, fund split, delinquency check, and the 4% three-year path: Tax_History tab (backs Figure 18).",
+ "  Boundary rebalancing and fill-to-capacity scenario: Redistricting tab (backs the Section 9 worked example and Figure 15).",
  "  Bonding capacity components and what closure can and cannot change: Debt_Service tab (backs Section 6).",
  "  Student density, route-mile math, and busing cost scenarios: Transport_Geo tab (backs Section 9).",
  "",
@@ -155,6 +155,7 @@ arow(63, "Added teacher once transfers exceed", 30, NUM, "Judgment call", fill=Y
 put(a, "A65", "DISTRICT-FAVORABLE CLOSURE CASE (red-team upper bound)", SEC)
 arow(66, "Positions eliminated, favorable case", 5, NUM, "Upper bound tested in Closure_Model", fill=YEL)
 arow(67, "Added busing, favorable (low) case", 75000, CUR, "Low end of the $75K-$200K range", fill=YEL)
+arow(69, "GF-borne loaded cost per certified position (v3)", 60000, CUR, "Published salary schedule $41,718-$71,447; state pays TRS/KEHP on-behalf; GF keeps salary + ~5%. Range $50K-$75K", fill=YEL)
 
 # ================= GF_SUMMARY =================
 g = sheet("GF_Summary", [46, 15, 15, 15])
@@ -218,12 +219,47 @@ for i, n in enumerate([0, 10, 20, 30]):
     put(c, f"A{rr}", n, BLUE, NUM)
     put(c, f"B{rr}", f"=$B$13-Assumptions!$B$54-A{rr}*Assumptions!$B$6", BLK, CUR)
 put(c, "A31", "Each departing student removes at least the SEEK base guarantee, every year, permanently.", NOTE)
-put(c, "A33", "DISTRICT-FAVORABLE CASE (red-team): 5 positions cut, low busing, no departures", SEC)
-put(c, "A34", "Net recurring saving, favorable case")
-put(c, "B34", "=Assumptions!B51+Assumptions!B52+Assumptions!B66*Assumptions!B41-Assumptions!B67", GRN, CUR)
-put(c, "A35", "Share of the structural deficit ($2.65M) | of the reserve drawdown ($1.15M)")
-put(c, "B35", "=B34/(Assumptions!B24-Assumptions!B21)", BLK, PCT)
-put(c, "C35", "=B34/GF_Summary!D16", BLK, PCT)
+put(c, "A33", "V3 CORRECTION: WHAT A POSITION ACTUALLY COSTS THE GENERAL FUND", SEC)
+put(c, "A34", "All-in cost per position (salary + state-paid on-behalf; filing basis)"); put(c, "B34", "=Assumptions!B41", GRN, CUR)
+put(c, "C34", "Correct for KDE per-pupil comparisons; the district books $6.94M of on-behalf in FY2026", NOTE, wrap=True)
+put(c, "A35", "GF-borne cost per position (salary + ~5%)"); put(c, "B35", "=Assumptions!B69", GRN, CUR)
+put(c, "C35", "Published schedule: Rank III $41,718 (yr 0) to Rank I $71,447 (yr 29-30). The state pays TRS and KEHP on behalf of districts; eliminating a GF position saves the GF only $50K-$75K", NOTE, wrap=True)
+put(c, "A37", "V3 TWO-TAILED SENSITIVITY: SEVEN LEVERS, 1,944 COMBINATIONS (backs Figure 7)", SEC)
+put(c, "A38", "Lever (low / central / high)", BOLDW, fill=HDR); put(c, "B38", "Low", BOLDW, fill=HDR); put(c, "C38", "Central", BOLDW, fill=HDR); put(c, "D38", "High", BOLDW, fill=HDR); put(c, "E38", "Source", BOLDW, fill=HDR)
+v3levers = [
+ ("Positions eliminated (net of re-created sections)", 2, 3, 5, "Class caps: receiving schools add ~4 sections while NMES's 9 dissolve"),
+ ("GF cost per position", 50000, 60000, 75000, "Published salary schedule + on-behalf structure"),
+ ("Fixed avoided (mothballed / sold)", 230000, 290000, 290000, "Principal+office $175K; plant $115K sold, ~$55K mothballed"),
+ ("Added busing", 100000, 137500, 250000, "110 sq mi zone (federal SABS); worst-reimbursed budget line"),
+ ("Students leaving district", 0, 10, 30, "x $4,626 SEEK; Paris Ind adjacent under HB 563; Millersburg precedent"),
+ ("Capacity debt service triggered", 0, 115000, 231000, "CRES 103 over approved rating; 2021 plan prices its kitchen/cafeteria deficient today"),
+ ("Assessment erosion, district share", 0, 40000, 95000, "Millersburg-calibrated; PVA records ask pending"),
+]
+for i, (lbl, lo, ce, hi, src) in enumerate(v3levers):
+    rr = 39 + i
+    put(c, f"A{rr}", lbl); put(c, f"B{rr}", lo, BLUE, CUR if lo > 100 else NUM); put(c, f"C{rr}", ce, BLUE, CUR if ce > 100 else NUM); put(c, f"D{rr}", hi, BLUE, CUR if hi > 100 else NUM); put(c, f"E{rr}", src, NOTE)
+put(c, "A47", "Central case: net yearly effect")
+put(c, "B47", "=C41+C39*C40-C42-C43*Assumptions!B6-C44-C45", BLK, CUR, bold=True)
+put(c, "C47", "$131,240: about 5 percent of the structural deficit", NOTE)
+put(c, "A48", "Unfavorable tail (all levers adverse)")
+put(c, "B48", "=B41+B39*B40-D42-D43*Assumptions!B6-D44-D45", BLK, CUR)
+put(c, "C48", "-$384,780 a year: the closure loses money", NOTE)
+put(c, "A49", "Favorable tail (all levers favorable)")
+put(c, "B49", "=D41+D39*D40-B42-B43*Assumptions!B6-B44-B45", BLK, CUR)
+put(c, "C49", "+$565,000 a year: the ceiling, and still below the plan's $800K-$1M requirement", NOTE)
+put(c, "A50", "Distribution of all 1,944 combinations (computed in build script, equal weights): median +$91,240; middle half -$17,500 to +$200,000; 29 percent of scenarios negative. One-time transition costs $100K-$300K in year one are additional.", NOTE, wrap=True)
+put(c, "A52", "HOSTILE PAPER CASE, PUBLISHED WITH ITS REFUTATION", SEC)
+put(c, "A53", "Every absorbed student priced at the empirical $9,848 marginal")
+put(c, "B53", "=Assumptions!B14*Assumptions!B11-128*Redistricting!B111-137500-10*Assumptions!B6", BLK, CUR)
+put(c, "C53", "About $1.03M on paper. But it requires Cane Ridge at 525 students against its approved 422 rating and Bourbon Central at 555 against 521: exactly the overcrowding the $14M renovation exists to cure. The savings pre-spend the bond.", NOTE, wrap=True)
+put(c, "A55", "MILLERSBURG, 2007: THE COUNTY'S OWN PRECEDENT (backs Figure 8)", SEC)
+put(c, "A56", "Millersburg Elementary final enrollment (fall 2005)"); put(c, "B56", 119, BLUE, NUM)
+put(c, "C56", "NCES CCD; series 153-133-145-139-137-127-129-119; closed 2007; students to Cane Ridge (2007 addition)", NOTE, wrap=True)
+put(c, "A57", "Millersburg population 1980/1990/2000/2010/2020"); put(c, "B57", "987 / 937 / 842 / 792 / 747", NOTE)
+put(c, "C57", "Decennial census; down 11% from 2000 while the county grew 4.6% (19,360 to 20,252)", NOTE, wrap=True)
+put(c, "A58", "Town-budget blow from the 2013 Joy Global closure"); put(c, "B58", 100000, BLUE, CUR)
+put(c, "C58", "Community Ventures account: 197 jobs lost; $100K/yr payroll tax, half the town budget", NOTE, wrap=True)
+put(c, "A59", "Records asks: the 2007 closure's savings analysis and realized savings; the Millersburg Elementary building's deed, sale price, and current condition; PVA assessed-value history Millersburg vs county.", NOTE, wrap=True)
 
 # ================= GROWTH_MODEL =================
 gr = sheet("Growth_Model", [50, 14, 14, 14])
@@ -767,7 +803,7 @@ put(sc, "A9", "Reading: the question before the board is not closure versus no c
 # ================= TAX_HISTORY =================
 th = sheet("Tax_History", [36, 13, 13, 13, 6, 13, 48])
 put(th, "A1", "Property Tax Rates, Fund Split, Delinquency, and the 4% Option", TITLE)
-put(th, "A2", "Backs Section 9 and Figure 16 of the report. Rates in cents per $100. DOR rate books primary for 2023-2025; 2018-2022 verified secondary; 2005-2017 not retrieved and not interpolated.", NOTE)
+put(th, "A2", "Backs Section 9 and Figure 18 of the report. Rates in cents per $100. DOR rate books primary for 2023-2025; 2018-2022 verified secondary; 2005-2017 not retrieved and not interpolated.", NOTE)
 
 put(th, "A4", "BOURBON COUNTY SCHOOLS, REAL ESTATE RATE BY TAX YEAR", SEC)
 trates = [("2018", 61.3), ("2019", 60.6), ("2020", 55.9), ("2021", 54.2),
@@ -859,7 +895,7 @@ for yr, v in town:
     put(dm, f"B{r}", v, BLUE, NUM)
     r += 1
 
-put(dm, "A32", "NMES ENROLLMENT, 1989-2025 (spring of school year; backs Figure 12)", SEC)
+put(dm, "A32", "NMES ENROLLMENT, 1989-2025 (spring of school year; backs Figure 14)", SEC)
 hist = [261, 255, 234, 225, 202, 203, 182, 196, 208, 198, 205, 195, 195, 203,
         196, 206, 204, 199, 211, 224, 217, 177, 165, 167, 154, 154, 155, 154,
         131, 131, 160, 160, 148, 153, 145, 135, 128]
@@ -891,7 +927,7 @@ sd = sheet("School_Data", [30] + [7.2] * 18 + [44])
 put(sd, "A1", "School Data Backing the Report Figures", TITLE)
 put(sd, "A2", "Inputs (blue) transcribed from public sources. The 2007-2025 series below is SchoolDigger's normalized 0-100 index built from KDE test data (a third-party rendering, kept for context). KDE's own official record, pulled directly from the department's historical files, is in the KDE OFFICIAL HISTORY block below and governs every claim in the report.", NOTE)
 
-put(sd, "A4", "NMES ENROLLMENT BY SCHOOL YEAR (backs Figure 12)", SEC)
+put(sd, "A4", "NMES ENROLLMENT BY SCHOOL YEAR (backs Figure 14)", SEC)
 eyears = ["'15-16", "'16-17", "'17-18", "'18-19", "'19-20", "'20-21", "'21-22", "'22-23", "'23-24", "'24-25"]
 ecounts = [154, 131, 131, 160, 160, 148, 153, 145, 135, 128]
 put(sd, "A5", "School year", bold=True)

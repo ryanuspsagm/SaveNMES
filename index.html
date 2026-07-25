@@ -146,6 +146,9 @@ details[open] summary{border-bottom:1px solid var(--line)}
 footer{background:var(--navy);color:#AFC0DC;padding:40px 0;font-size:14px}
 footer .kings{font-family:var(--serif);color:var(--ice);font-size:18px;margin-bottom:8px}
 footer a{color:var(--ice)}
+@media(max-width:480px){table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}}
+.calc-grid>.card{min-width:0}
+.slider-row label{flex-wrap:wrap}
 </style>
 </head>
 <body>
@@ -163,7 +166,7 @@ footer a{color:var(--ice)}
 <p class="hero-sub">The district's best elementary school is the one it has marked to close. On July 15, 2026, a planning committee voted to reclassify North Middletown Elementary as transitional, the first step toward closing it. I went through the district's own audits, state data, and two decades of public records. Here is what the numbers say. Every one of them is checkable, and I want you to check them.</p>
 <div class="factstrip">
 <div class="fact"><b>1st in all 5 subjects</b><span>NMES leads every elementary in the county on the state's 2024-25 tests</span></div>
-<div class="fact"><b>$250K to $640K</b><span>the realistic range of yearly closure savings: 9 to 24% of the $2.65M deficit</span></div>
+<div class="fact"><b>-$385K to +$565K</b><span>the honest range of yearly closure impact across 1,944 defensible scenarios; the median saves $91K, and 29% of scenarios lose money</span></div>
 <div class="fact"><b>2,625 people</b><span>live in this school's attendance zone (2020 Census, federal zone map); the town of North Middletown itself is 610</span></div>
 </div>
 <p class="disclose">Written by Dr. Ryan Bradley, a former NMES King, with the help of an AI research assistant. Built from public records only. Full report and financial model at the bottom of this page.</p>
@@ -205,7 +208,7 @@ footer a{color:var(--ice)}
 <div class="card">
 <h3>The $14 million plan, and the levers not on the table</h3>
 <p>At the July 15 planning meeting, the superintendent said the district must free up $800,000 to $1,000,000 a year in operating money to bond $14 million. That is a general fund bond: the payment would come from the budget that pays teachers, and at roughly $0.8 to $1.1 million a year it is about the same size as the school's claimed operating cost. Under this plan, money saved by a closure would go to debt service, so the General Fund deficit itself would not shrink.</p>
-<p>The claimed savings cannot carry that bond anyway. Bond capacity is yearly savings multiplied over the life of the bonds. The district's own school-level spending reports, filed with the state every year since 2019, put NMES's full excess cost near $121,000 a year, which supports about $1.6 million of bonds, not $14 million. Even my most generous case, $725,000, supports about $9.4 million. Only the administration's own unpublished $900,000 figure reaches the target.</p>
+<p>The claimed savings cannot carry that bond anyway. Bond capacity is yearly savings multiplied over the life of the bonds. The district's own school-level spending reports, filed with the state every year since 2019, put NMES's full excess cost near $121,000 a year, which supports about $1.6 million of bonds, not $14 million. Even the two-tailed best case, $565,000 a year, supports about $7.3 million, and the median outcome, $91,000, supports about $1.2 million. Only the administration's own unpublished $900,000 figure reaches the target.</p>
 <p>Three funding sources are available that do not involve a closure. The audit's $23.5 million in bonding potential, less the 2024 issue, leaves roughly $18 million of restricted capacity, and the district's own debt schedule shows payments falling from $1.58 million to about $400,000 a year as old bonds retire after 2030, room a standard wrap-around bond structure is designed to use. And a correction I make myself, because every number here answers to the documents: I previously described a recallable nickel as an untaken option. KDE's SEEK payment schedules show Bourbon already levies one, inside the existing rate, alongside the original facilities nickel. The community is already paying both. The board levied it on August 17, 2023, and the recall window closed with no petition, so this community has already said yes to a facilities tax, twice. What is genuinely new: the state match on that nickel is phasing in on KDE's own schedules, $82,866 in FY2025 and $276,246 a year at full value on the FY2027 schedule, additional restricted money that grows bonding capacity with no local action at all. And for scale, the other school district in this county shows what these same tools can do: KDE's current levied-rates file puts Paris Independent at 71.5 cents, including 17.4 cents of recallable building levies, while Bourbon sits at 52.4 cents with one. SFCC state offers add more. These sources raise amounts comparable to the plan's $14 million, so the decision is a choice among funding mechanisms, and it should be made with the fiscal agent's current bonding potential statement public. The model's Debt_Service tab runs a combined scenario, balancing the operating budget first from levy increments and cost reductions, then funding construction from the remainder plus the new nickel equalization: roughly $22 million of total capacity in the conservative case and about $42 million on the FY2026 trend, with the budget balanced first either way.</p>
 <p>The year-end packet also answers a question I could not answer before: what "free up operating money to bond" actually means. In June 2026 the district moved $1,320,939 of restricted capital money into the General Fund, $1,098,633 from the Building Fund and $222,276 from Capital Outlay, which ended the year at exactly zero. The transfer is lawful, under a flexibility provision Kentucky's budget acts have carried since 2020, and it was in the district's own budget from September 2025. Here is what it means for the bond plan. The Building Fund collects about $2.5 million a year from the two facilities nickels; debt service takes about $1.38 million; the roughly $1.1 million left over is precisely the restricted stream that could carry a $14 million bond. Right now that stream is plugging the operating budget instead. So the plan, decoded from the district's own books: make the General Fund stand on its own so the sweep can stop and the leftover nickel money can back the bond. Any million dollars a year does that job. The untaken 4 percent levy does it. The alternatives package does it. Cuts elsewhere in a $22 million budget do it. Closing the county's highest-scoring school is one option among several, and the smallest.</p>
 <p>Now the unaudited FY2026 close itself, because I have read every line of the packet, including the district's KDE Budget Monitoring Tool. The headline is the best in four years: the General Fund down about $374,000, after audited drawdowns of $1.07 million and $1.23 million. The packet also shows how that headline was built. Two entries landed in June, the final month of the year: the $1,320,939 capital transfer above, and a $1,413,929 receipt booked to miscellaneous revenue against a budget of zero, in a line that had produced about $154,000 all the other eleven months combined. June revenue was $3.9 million against $1.1 million the June before, and those two entries are 98 percent of the difference. Set the capital transfer aside and the year is down about $1.7 million. Set the unidentified June receipt aside too and it is down about $3.1 million. Some things genuinely improved: SEEK funding came in $402,000 over budget, and salaries ran $588,000 under budget and $224,000 below last year. But the underlying gap sits in the same range it has been, and no one should build a case on the $374,000, in either direction, until the district identifies that June receipt, on the record. That identification is at the top of our questions for the board.</p>
@@ -295,19 +298,38 @@ footer a{color:var(--ice)}
 <div class="calc-grid">
 <div class="card">
 <h3>The closure calculator</h3>
-<p class="note">What does closing NMES actually save, once teachers follow students, buses roll farther, and some families leave the district and take state funding with them? Each departing student is counted at the $4,626 SEEK base for fiscal 2027, the first year a closure could take effect.</p>
+<p class="note">What does closing NMES actually save, once teachers follow students, buses roll farther, and some families leave the district and take state funding with them? Each departing student is counted at the $4,626 SEEK base for fiscal 2027, the first year a closure could take effect. Version 3 correction, in the district's favor to fix: we previously credited $85,000 per eliminated position, but Kentucky pays teacher retirement and health insurance on behalf of districts, so the General Fund itself keeps only about $50,000 to $75,000 per position (the district's own salary schedule runs $41,718 to $71,447). The last slider carries the costs a closure can trigger: capacity work at an over-rating Cane Ridge and the property-base erosion this county watched in Millersburg.</p>
 <div class="slider-row"><label>Teaching positions actually eliminated <output id="oPos">3</output></label>
 <input type="range" id="sPos" min="2" max="6" value="3" step="1"></div>
+<div class="slider-row"><label>General Fund cost per position <output id="oCost">$60,000</output></label>
+<input type="range" id="sCost" min="50000" max="85000" value="60000" step="5000"></div>
 <div class="slider-row"><label>Added busing cost per year <output id="oBus">$137,500</output></label>
 <input type="range" id="sBus" min="75000" max="200000" value="137500" step="2500"></div>
 <div class="slider-row"><label>Students whose families leave the district <output id="oLeav">10</output></label>
 <input type="range" id="sLeav" min="0" max="30" value="10" step="1"></div>
+<div class="slider-row"><label>Closure-triggered costs: capacity debt service and assessment erosion <output id="oOther">$155,000</output></label>
+<input type="range" id="sOther" min="0" max="330000" value="155000" step="5000"></div>
 <div class="result">
-<div class="big" id="rNet">$361,240</div>
-<div class="sub">estimated net recurring saving per year</div>
-<div class="bar-vs" aria-hidden="true"><i id="rBar" style="width:13.6%"></i></div>
-<div class="verdict" id="rVerdict">That covers 13.6% of the $2.65M structural deficit, or 32% of the $1.15M the district actually draws from reserves each year. A partial fix on either measure.</div>
+<div class="big" id="rNet">$131,240</div>
+<div class="sub">estimated net recurring effect per year (central case)</div>
+<div class="bar-vs" aria-hidden="true"><i id="rBar" style="width:5.0%"></i></div>
+<div class="verdict" id="rVerdict">That covers 5.0% of the $2.65M structural deficit, or 11% of the $1.15M the district actually draws from reserves each year. Three to five cents of a one-dollar problem.</div>
 </div>
+</div>
+
+<div class="card">
+<h3>The honest range: every defensible scenario at once</h3>
+<p>Version 3 of this analysis stops publishing a single savings number. Seven inputs decide what a closure nets, and every one of them now comes from a document: the district's published salary schedule, its KDE filings, the class-size caps in KRS 157.360, the federal attendance-zone map, and this county's own history in Millersburg. Run all 1,944 defensible combinations and the net yearly effect of closing NMES falls between <b>losing $385,000 and saving $565,000</b>. The middle half of scenarios lands between an $18,000 loss and a $200,000 gain. The median is a <b>$91,000 saving, about three cents of the district's one-dollar problem</b>, and <b>29 percent of scenarios lose money outright</b>, before $100,000 to $300,000 of one-time transition costs in year one. The plan needs $800,000 to $1,000,000 a year from this closure; that number sits entirely outside the defensible range.</p>
+<div class="chartbox"><canvas id="chartSpectrum" role="img" aria-label="Floating bar chart showing how each of seven inputs moves the net yearly effect of closure around the central case of 131 thousand dollars"></canvas></div>
+<p class="note">Bars show how far each input alone moves the central case ($131,240). The full grid, every lever, and every source are in the model's Closure_Model tab.</p>
+<span class="checkme"><a href="NMES_Financial_Model.xlsx">Model: Closure_Model tab, v3 sensitivity grid</a> &middot; <a href="Saving_North_Middletown_Elementary.pdf">Report Section 4, Figure 7</a></span>
+</div>
+
+<div class="card">
+<h3>Millersburg: this county has run the play before</h3>
+<p>Millersburg Elementary, six miles from Paris, closed in 2007 with <b>119 students, nearly the size of NMES today</b>. Its children went to Cane Ridge, whose addition the district's own facility plan dates to 2007. The census tells the rest: Millersburg fell from 842 people in 2000 to 792 in 2010 to <b>747 in 2020, down 11 percent, while the county grew 4.6 percent</b>. No one blames the school closure alone, and neither do we: the military institute closed in 2006 and the Joy Global plant left in 2013 with 197 jobs and, by the town's own accounting, half its budget. That is the honest lesson, and it is worse: small towns lose their anchors in cascades, and every departure hands the remaining families one more reason to follow. Nineteen years later, the school that absorbed Millersburg's children is over its rated capacity, and the proposed fix is to close another small school. NMES's attendance zone holds 2,625 people. The records request list now includes the savings analysis from the 2007 closure and the savings actually realized, so this community can compare projection to outcome before the same projection is made twice.</p>
+<div class="chartbox"><canvas id="chartMillersburg" role="img" aria-label="Line chart of Millersburg and Bourbon County population indexed to 2000, with the military institute closure, elementary school closure, and factory closure marked"></canvas></div>
+<span class="checkme"><a href="https://www.publicschoolreview.com/millersburg-elementary-school-profile">Millersburg Elementary (closed 2007)</a> &middot; <a href="https://cvky.org/millersburg-kentucky-back-from-the-brink/">Community Ventures, Back From the Brink</a> &middot; decennial census counts</span>
 </div>
 
 <div class="card">
@@ -366,7 +388,7 @@ footer a{color:var(--ice)}
 <tr><td>Transportation efficiency review (routing, fleet, fuel)</td><td>Cost reduction</td><td>$145,000 to $290,000</td></tr>
 <tr><td>Medicaid billing, energy performance, and shared services</td><td>Mixed</td><td>$170,000 to $400,000</td></tr>
 </table>
-<div class="totalstrip">Combined recurring improvement, revenue plus savings: $1.1 to $2.1 million a year &bull; Closure: $250,000 to $640,000 a year</div>
+<div class="totalstrip">Combined recurring improvement, revenue plus savings: $1.1 to $2.1 million a year &bull; Closure: -$385,000 to +$565,000 a year, median +$91,000</div>
 <p class="note">Figures are estimates with stated assumptions; the exact basis, a confidence rating, and what would firm up each line are in the report and the downloadable model. Ranges overlap: the raw row sums run about $1.6 to $2.8 million, and the published $1.1 to $2.1 million is what is left after I cut those sums back to stay conservative, allowing for lines that overlap and for the chance that some prove harder to pull off. New revenue and cost reductions are different things; the list names which is which, and both close the same gap. Two yardsticks frame every figure here: the $2.65M structural gap before transfers, and the roughly $1.15M the district actually draws from reserves each year after transfers cushion it. The calculators above show both, so nothing turns on the choice.</p>
 </div>
 
@@ -376,7 +398,7 @@ footer a{color:var(--ice)}
 <table class="alt">
 <tr><th>Plan</th><th>Recurring impact by year 3</th><th>Reserves in 2029</th></tr>
 <tr><td>1. Districtwide status quo: change nothing anywhere</td><td>None</td><td>Fully drawn down</td></tr>
-<tr><td>2. Close NMES and consolidate</td><td>$250,000 to $640,000</td><td>About $0.8M</td></tr>
+<tr><td>2. Close NMES and consolidate</td><td>-$385K to +$565K, median +$91K</td><td>About $0.8M</td></tr>
 <tr><td>3. Districtwide recovery plan (menu plus levy)</td><td>$1.1 to $2.1 million</td><td>About $3.7M</td></tr>
 </table>
 <p class="note">Plan 2 buys the district roughly one more year before the reserves are gone, and it takes a school from a town. Plan 3 restores balance and closes nothing; rebalancing and growing NMES ($140,000 to $225,000 a year) is just one line in it.</p>
@@ -528,7 +550,11 @@ footer a{color:var(--ice)}
 </div>
 <div class="card" style="margin-top:26px">
 <h3>Read the full case</h3>
-<p>The 37-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
+<p>The 39-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
+<p class="note"><b>Version history</b> (every version stays public; corrections are listed in each report's corrections section):
+<a href="reports/Saving_NMES_v3.0_2026-07-26.pdf">v3.0, July 26</a> (two-tailed closure economics, verified position costs, capacity scenarios across all plans incl. the recovered 2017 plan, Millersburg case study) &middot;
+<a href="reports/Saving_NMES_v2.7_2026-07-25.pdf">v2.7, July 25</a> (June 2026 capital transfer, FY2026 decomposition, nickel verification) &middot;
+<a href="reports/Saving_NMES_v2.6_2026-07-20.pdf">v2.6, July 20</a> (bonding story, transport geography).</p>
 <a class="btn" href="Saving_North_Middletown_Elementary.pdf">Download the report (PDF)</a>
 &nbsp;<a class="btn" href="NMES_Financial_Model.xlsx" download>Download the model (Excel)</a>
 &nbsp;<a class="btn" href="https://github.com/ryanuspsagm/SaveNMES">Browse the GitHub repository</a>
@@ -734,24 +760,51 @@ plugins:{legend:{position:'bottom',labels:{boxWidth:18,font:{size:10}}},
 tooltip:{callbacks:{label:function(c){return c.dataset.label+': $'+c.parsed.y.toLocaleString('en-US')+' per student'}}}},
 scales:{y:{min:0,max:22000,grid:{color:'#E3E8F0'},ticks:{callback:function(v){return '$'+(v/1000)+'K'}}},x:{ticks:{font:{size:9.5}}}}}});
 
+/* V3: tornado (floating bars) */
+new Chart(document.getElementById('chartSpectrum'),{type:'bar',
+data:{labels:['Capacity debt service ($231K to $0)','Positions eliminated (2 to 5)','Added busing ($250K to $100K)','Families leaving (30 to 0)','Assessment erosion ($95K to $0)','Cost per position ($50K to $75K)','Building mothballed vs sold'],
+datasets:[{label:'Range of net yearly effect ($K)',data:[[15,246],[71,251],[19,169],[39,178],[76,171],[101,176],[71,131]],backgroundColor:ICE,borderColor:ROYAL,borderWidth:1}]},
+options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+plugins:{legend:{display:false},
+tooltip:{callbacks:{label:function(c){return '$'+c.raw[0]+'K to $'+c.raw[1]+'K around the $131K central case'}}}},
+scales:{x:{min:-20,max:320,grid:{color:'#E3E8F0'},ticks:{callback:function(v){return '$'+v+'K'}}},y:{ticks:{font:{size:10}}}}}});
+
+/* V3: Millersburg timeline */
+new Chart(document.getElementById('chartMillersburg'),{type:'line',
+data:{labels:[1980,1990,2000,2010,2020],
+datasets:[
+{label:'Millersburg (2000 = 100)',data:[117.2,111.3,100,94.1,88.7],borderColor:NAVY,backgroundColor:NAVY,borderWidth:2.5,pointRadius:3.5,tension:0.1},
+{label:'Bourbon County (2000 = 100)',data:[100.2,99.4,100,103.2,104.6],borderColor:GRAY,backgroundColor:GRAY,borderWidth:1.8,borderDash:[5,4],pointRadius:3,tension:0.1}
+]},
+options:{responsive:true,maintainAspectRatio:false,
+plugins:{legend:{position:'bottom',labels:{boxWidth:18,font:{size:10}}},
+tooltip:{callbacks:{afterBody:function(items){var y=+items[0].label;if(y===2010)return 'Military institute closed 2006; ELEMENTARY CLOSED 2007 (119 students)';if(y===2020)return 'Joy Global closed 2013: 197 jobs, half the town budget';return ''}}}},
+scales:{y:{min:80,max:125,grid:{color:'#E3E8F0'}},x:{}}}});
+
 /* Closure calculator */
 var DEFICIT=2648086,DRAWDOWN=1145561;
 function money(n){return '$'+Math.round(n).toLocaleString('en-US')}
 function calc(){
 var p=+document.getElementById('sPos').value,
+c=+document.getElementById('sCost').value,
 b=+document.getElementById('sBus').value,
-l=+document.getElementById('sLeav').value;
+l=+document.getElementById('sLeav').value,
+o=+document.getElementById('sOther').value;
 document.getElementById('oPos').textContent=p;
+document.getElementById('oCost').textContent=money(c);
 document.getElementById('oBus').textContent=money(b);
 document.getElementById('oLeav').textContent=l;
-var net=290000+p*85000-b-l*4626;
+document.getElementById('oOther').textContent=money(o);
+var net=290000+p*c-b-l*4626-o;
 var pct=Math.max(0,net/DEFICIT*100);
 var pctD=Math.max(0,net/DRAWDOWN*100);
-document.getElementById('rNet').textContent=money(net);
+document.getElementById('rNet').textContent=(net<0?'-$'+Math.round(-net).toLocaleString('en-US'):money(net));
 document.getElementById('rBar').style.width=Math.min(100,pct).toFixed(1)+'%';
-document.getElementById('rVerdict').textContent='That covers '+pct.toFixed(1)+'% of the $2.65M structural deficit, or '+pctD.toFixed(0)+'% of the $1.15M the district actually draws from reserves each year. A partial fix on either measure.';
+document.getElementById('rVerdict').textContent=(net<0
+ ?'At these settings the closure LOSES the district '+money(-net)+' a year. 29% of all 1,944 defensible input combinations land below zero.'
+ :'That covers '+pct.toFixed(1)+'% of the $2.65M structural deficit, or '+pctD.toFixed(0)+'% of the $1.15M the district actually draws from reserves each year.');
 }
-['sPos','sBus','sLeav'].forEach(function(id){document.getElementById(id).addEventListener('input',calc)});
+['sPos','sCost','sBus','sLeav','sOther'].forEach(function(id){document.getElementById(id).addEventListener('input',calc)});
 calc();
 
 /* Levy compounder */
