@@ -230,6 +230,8 @@ def main():
         "site carries the capacity time-series chart and its key figures")
     for needle in ["Figure 6.", "$14,339", "16 percent", "47 percent"]:
         chk(needle in t, f"PDF capacity time-series intact: {needle}")
+    chk("utilization measure" in html and "utilization measure" in t,
+        "sender-side symmetry caution present on site and in PDF")
     chk((Path("/home/claude/nmes") / "chart_pptime.png").exists()
         or (REPO / "build" / "chart_pptime.png").exists() or True,
         "chart_pptime generated")

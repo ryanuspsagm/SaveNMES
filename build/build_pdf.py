@@ -315,6 +315,17 @@ P("Five years of the district's own filings say the same thing in time series: N
   "division runs in reverse: at 174 students the school's per-student cost drops to about $14,339, roughly "
   "$3,800 under either receiving school, and the students who fill it come from the exact schools that are over "
   "or near their rated capacity today.")
+P("One symmetry this report applies to itself: per-student numbers move wherever the students move. Send "
+  "students out of Bourbon Central and Cane Ridge and their per-student costs rise for the same denominator "
+  "reason, to roughly $18,700 and $19,300 in the workbook's scenario, because a departing student takes only "
+  "variable costs while the fixed costs stay. A pure shuffle leaves total district spending nearly unchanged in "
+  "either direction. That is the point: cost per student is a utilization measure, not a verdict on a building, "
+  "and on the honest post-move comparison a filled North Middletown is still the cheapest of the three, by a "
+  "wider margin than before the move. The cash case for filling the school is booked separately and "
+  "conservatively in the workbook: one to two consolidated sections at the sending schools, new SEEK revenue "
+  "from out-of-county transfers under HB 563, and capacity relief at Cane Ridge. And the same symmetry runs the "
+  "other way: closing North Middletown would improve the receiving schools' per-student optics while saving "
+  "almost nothing in total, which is this report's Section 4 finding restated in one sentence.")
 P("The 128 children would still need teachers, about eight to nine classrooms' worth at the district's average "
   "ratios, and Bourbon Central (459 students) and Cane Ridge (453 students) would each absorb roughly 64 more "
   "children across six grade levels, adding sections in several of them. The children's SEEK funding transfers with "
