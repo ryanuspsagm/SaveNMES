@@ -1219,16 +1219,17 @@ P("The decision before the Board is often framed as closure versus no closure. T
 tbl(["Plan", "Recurring impact, year 3", "Projected FY2029 balance", "What it requires"],
     [["1. Districtwide status quo (change nothing)", "None", "Fully drawn down",
       "No decisions; the districtwide drawdown simply continues, with or without North Middletown"],
-     ["2. Close NMES and consolidate", "-$385,000 to +$565,000 (median +$91,000)", "About $0.8 million",
-      "Closure vote; covers under a quarter of the gap; longer rides; enrollment-loss risk"],
+     ["2. Close NMES and consolidate", "-$385,000 to +$565,000 (median +$91,000)", "Median: gone; central case about $0.1M; best case $1.4M",
+      "Closure vote; median covers three cents of the gap; longer rides; enrollment-loss risk"],
      ["3. Districtwide recovery plan (menu plus levy)", "$1.1-$2.1 million a year", "About $3.7 million",
       "Revenue votes, administrative rollback, boundary action and HB 563 recruitment, implementation "
       "discipline; every school stays open"]],
     [1.85 * inch, 1.45 * inch, 1.35 * inch, 2.05 * inch],
-    caption="Three complete plans, compared on the same assumptions. Plan 2 buys roughly one extra year of runway; "
-            "Plan 3 restores balance while keeping every school open, and rebalancing and growing North Middletown "
-            "($140,000 to $225,000 a year, Section 9) is one line inside its menu. Scenarios tab of the companion "
-            "workbook.",
+    caption="Three complete plans, compared on the same assumptions. At the v3 median, Plan 2 moves the "
+            "empty-reserves date by only months; only its best case buys a meaningful cushion, and its losing "
+            "scenarios drain reserves faster than doing nothing. Plan 3 restores balance while keeping every "
+            "school open, and rebalancing and growing North Middletown ($140,000 to $225,000 a year, Section 9) "
+            "is one line inside its menu. Scenarios and Runway tabs of the companion workbook.",
     bold_first_col=True)
 asktext = ("<b>The ask, plainly stated:</b> the community requests that the Board of Education pause any vote on "
            "the facility plan, or on the future of North Middletown Elementary, until the ten questions in Section "
