@@ -331,6 +331,21 @@ if (KC["C39"].value, KC["C40"].value, KC["B42"].value, KC["B43"].value) == (1102
 else:
     diff(f"distribution rows: {KC['C39'].value}/{KC['C40'].value}/{KC['B42'].value}/{KC['B43'].value}")
 
+# ---------- 10. levy history (v3.6): site JS vs model vs CSV ----------
+import csv as _csv
+lvrows={r["district"]:r for r in _csv.DictReader(open(f"{REPO}/build/ky_levy_history_2012_2026.csv"))}
+site_bourbon=re.search(r'"Bourbon County":\[([\d.,]+)\]',html)
+csv_b=[lvrows["Bourbon Co"][y] for y in sorted(k for k in lvrows["Bourbon Co"] if k[:2]=="20")]
+if site_bourbon and [float(x) for x in site_bourbon.group(1).split(",")]==[float(x) for x in csv_b]:
+    match("levy history: site JS Bourbon series identical to archived CSV (14 years)")
+else:
+    diff(f"levy history mismatch: site {site_bourbon and site_bourbon.group(1)} vs csv {csv_b}")
+TH2 = wb["Tax_History"]
+if TH2["O66"].value == 52.4 and TH2["B58"].value == 36.8 and abs(TH2["O58"].value-63.4)<0.05:
+    match("levy table in model matches endpoints (Bath 36.8->63.4; Bourbon ends 52.4)")
+else:
+    diff(f"levy model endpoints: {TH2['B58'].value}/{TH2['O58'].value}/{TH2['O66'].value}")
+
 # site text spot checks
 for s, label in [("1st in all 5 reported subjects", "hero fact scores"), ("-$385K to +$565K", "hero fact closure range"),
                  ("$7,829,060", "GF levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),

@@ -118,7 +118,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 3.5 &nbsp;\u2022&nbsp; July 26, 2026",
+A(Paragraph("Version 3.6 &nbsp;\u2022&nbsp; July 26, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
@@ -1231,6 +1231,29 @@ fig("chart_tax.png",
     "Fayette and Clark are from local reporting of their board votes; all other rates are Department of Revenue "
     "rate book lines. Bath's bar is its 2025 rate (2024 was 60.7); Nicholas is shown at its real estate rate "
     "of 43.1 (its tangible rate is 43.7).")
+P("The fourteen-year record settles how unusual this county's levy path is. KDE publishes every district's "
+  "levied rates back to tax year 2012, and Figure 21 plots all nine area districts on the same axis: every "
+  "neighboring district's levied rate is higher today than it was fourteen years ago, most by double-digit "
+  "percentages, Bath by 72 percent. Bourbon County's is <b>5.4 percent lower</b>, the only decline in the "
+  "region, falling from second highest among the nine in 2012 to seventh today. Two honesty notes belong in "
+  "the reading. First, these are levied RATES: under House Bill 44 a rate can drift down while collections "
+  "hold, because the compensating rate falls as assessments grow, so the chart measures the net of each "
+  "board's levy choices against its assessment growth, and by that measure every other board in the region "
+  "chose to keep or grow its rate while Bourbon's slid. Second, Bourbon did take the four percent revenue "
+  "option in five of the last twelve years, by KDE's own levied-type file; the rate fell anyway because the "
+  "other seven years took the compensating rate or less, including the twelve-cent slide from 2018 to 2022, "
+  "the exact years the drawdowns began. The neighbors that rose took the four percent seven, eight, and nine "
+  "times over the same window. The community that has twice declined to petition against a facilities nickel "
+  "has never been asked to vote against the operating levy that pays teachers; the board simply has not "
+  "levied it.")
+fig("chart_levy_history.png",
+    "Figure 21. Fourteen years of school levies, nine area districts, from KDE's Local District Tax Levies "
+    "files (total real estate column: general fund plus all facilities levies), cross-checked against the "
+    "Department of Revenue rate books for 2024 and 2025, where all nine districts reconcile exactly. Top: "
+    "levied rates by tax year. Bottom: percentage change from 2012 to 2025. Bourbon County is the only "
+    "district in the region whose levied rate is lower today than in 2012. Rates are levied rates, not "
+    "revenue effort; see the House Bill 44 note in the text. Data archived as build/ky_levy_history_"
+    "2012_2026.csv.")
 
 # ================= 10. WHAT CAN'T BE QUANTIFIED =================
 H("10. What Can't Be Quantified: A Town and Its Heartbeat")
@@ -1702,7 +1725,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 3.5, July 26, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 3.6, July 26, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 

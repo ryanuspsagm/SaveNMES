@@ -350,6 +350,40 @@ clean(a2, ygrid=False, xgrid=True)
 fig.tight_layout(w_pad=2.2)
 save(fig, "chart_tax.png")
 
+# ---- V3.6: fourteen years of school levies, nine districts ----
+import json as _json, os as _os
+_lv_path=_os.path.join(_os.path.dirname(_os.path.abspath(__file__)),"levy_series.json")
+_lv=_json.load(open(_lv_path))
+fig,(l1,l2)=plt.subplots(2,1,figsize=(6.9,7.0),height_ratios=[1.25,1])
+_yrs=sorted(_lv["Bourbon Co"]); _x=[int(y[:4]) for y in _yrs]
+_sty={"Fayette":("#AEB4BE","-"),"Paris Ind":(BLUE,"--"),"Clark":("#8FAEDC","-"),"Bath":("#C0625E","-"),
+      "Scott":(GRAY,"-"),"Harrison":("#9BB0A5","-"),"Montgomery":(LGRAY,"-"),"Nicholas":(LGRAY,"--")}
+for _lab,(_c,_ls) in _sty.items():
+    l1.plot(_x,[_lv[_lab][y] for y in _yrs],color=_c,linestyle=_ls,lw=1.5,marker="o",ms=2.4,label=_lab)
+l1.plot(_x,[_lv["Bourbon Co"][y] for y in _yrs],color=NAVY,lw=3.0,marker="o",ms=4.2,label="Bourbon County",zorder=5)
+l1.annotate("Bourbon's levied rate fell 12 cents\n2018 to 2022, then the recallable\nnickel restored 5.7 in 2023",xy=(2022,49.2),
+            xytext=(2016.6,42.2),fontsize=7.2,color=NAVY,fontweight="bold",
+            arrowprops=dict(arrowstyle="->",color=NAVY,lw=0.9))
+l1.set_title("School real estate levy, total levied (general fund plus facilities), cents per \$100:\nnine area districts, tax years 2012 to 2025")
+l1.set_ylim(33,88); l1.legend(fontsize=6.8,ncol=3,frameon=False,loc="upper left")
+clean(l1)
+_labs=["Bath","Scott","Harrison","Clark","Fayette","Paris Ind","Nicholas","Montgomery","Bourbon Co"]
+_pch=[( _lv[l]["2025-26"]/_lv[l]["2012-13"]-1)*100 for l in _labs]
+_cols=[NAVY if l=="Bourbon Co" else ("#C0625E" if p>20 else "#9DC3E6") for l,p in zip(_labs,_pch)]
+_bars=l2.bar(range(len(_labs)),_pch,color=_cols,width=0.62)
+for _b,_p in zip(_bars,_pch):
+    l2.text(_b.get_x()+_b.get_width()/2,_p+(1.2 if _p>=0 else -3.4),f"{_p:+.1f}%",ha="center",fontsize=8.2,
+            fontweight="bold",color=NAVY if _p<0 else "#333333")
+l2.axhline(0,color="#444444",lw=0.9)
+l2.set_xticks(range(len(_labs))); l2.set_xticklabels(_labs,fontsize=7.8)
+l2.set_ylabel("change in levied rate, percent")
+l2.set_ylim(-14,82)
+l2.set_title("Change over fourteen years: every neighboring district's levied rate rose.\nBourbon County's is the only one lower today than in 2012.",fontsize=9.5)
+clean(l2)
+fig.tight_layout(h_pad=2.0)
+save(fig,"chart_levy_history.png")
+print("levy history chart done")
+
 print("charts done")
 
 # ---- P2: every school filled to its rated capacity, seven capacity scenarios ----

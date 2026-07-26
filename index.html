@@ -195,7 +195,9 @@ footer a{color:var(--ice)}
 <h3>The tax picture the budget talk leaves out</h3>
 <p>Bourbon County Schools taxes real estate at 52.4 cents per $100, second lowest of nine area districts and roughly 13 cents below the statewide school average. The board also holds a no-recall option to raise revenue 4 percent a year. The math is simple and it does not bend: either spending comes down or revenue goes up. Standing idle is the one answer I rule out.</p>
 <div class="chartbox tall"><canvas id="chartTax" role="img" aria-label="Horizontal bar chart comparing school tax rates across nine area districts"></canvas></div>
-<span class="checkme"><a href="https://revenue.ky.gov/News/Publications/Property%20Tax%20Rate%20Books/2025%20Property%20Tax%20Rate%20Book.pdf">KY Dept. of Revenue 2025 rate book</a> &middot; Fayette and Clark from board-vote reporting</span>
+<p>And the fourteen-year record settles how unusual this county's path is. KDE publishes every district's levied rates back to tax year 2012. Every neighboring district's levied rate is higher today than fourteen years ago: <b>Bath up 72.3 percent, Scott up 38.9, Harrison up 34.2, Clark up 22.2, Fayette up 18.4, Paris Independent up 17.2, Nicholas up 12.2, Montgomery up 6.3</b>. Bourbon County's is <b>5.4 percent lower</b>, the only decline in the region, sliding from second highest of the nine in 2012 to seventh today, including a twelve-cent fall from 2018 to 2022, the exact years the drawdowns began. Two honesty notes: these are levied rates, and under HB 44 a rate can drift down while collections hold as assessments grow, so the chart nets each board's choices against its assessment growth; and Bourbon did take the 4 percent option in five of the last twelve years, per KDE's own levied-type file, but the other seven years took compensating or less. The neighbors that rose took the 4 percent seven, eight, and nine times.</p>
+<div class="chartbox tall"><canvas id="chartLevyHist" role="img" aria-label="Line chart of fourteen years of school levy rates for nine area districts, every neighbor rising while Bourbon County ends lower than it began, with a companion view showing percentage changes from plus 72 percent in Bath to minus 5.4 percent in Bourbon"></canvas></div>
+<span class="checkme"><a href="https://revenue.ky.gov/News/Publications/Property%20Tax%20Rate%20Books/2025%20Property%20Tax%20Rate%20Book.pdf">KY Dept. of Revenue 2025 rate book</a> &middot; <a href="https://www.education.ky.gov/districts/SEEK/Pages/Taxes.aspx">KDE Local District Tax Levies files, 2012-13 to 2025-26</a> &middot; <a href="build/ky_levy_history_2012_2026.csv">The full series (CSV, DOR-crosschecked)</a> &middot; <a href="NMES_Financial_Model.xlsx">Model, Tax_History tab rows 56-68</a> &middot; Fayette and Clark 2024-25 bars from board-vote reporting</span>
 </div>
 
 <div class="card">
@@ -570,8 +572,9 @@ footer a{color:var(--ice)}
 </div>
 <div class="card" style="margin-top:26px">
 <h3>Read the full case</h3>
-<p>The 43-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
+<p>The 44-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
 <p class="note"><b>Version history</b> (every version stays public; corrections are listed in each report's corrections section):
+<a href="reports/Saving_NMES_v3.6_2026-07-26.pdf">v3.6, July 26</a> (fourteen years of school levies across nine area districts from KDE's own files, DOR-crosschecked: every neighbor's levied rate rose, Bath by 72 percent; Bourbon's is the only one lower than in 2012, minus 5.4 percent, with the HB 44 rate-vs-revenue caveat and the district's own five 4-percent years disclosed) &middot;
 <a href="reports/Saving_NMES_v3.5_2026-07-26.pdf">v3.5, July 26</a> (correction release from our own 36-agent adversarial audit: Building Fund transfer component corrected to $1,098,663 per the district's GF ledger; Bourbon Central's current approved rating corrected to 521, making the receiving-seat shortfall worse, net 31 seats for 128 children and 244 paper seats in the draft; avoided-section credits repriced at the same GF-borne $60,000 the closure math uses, fill package now $116,000 to $176,000; Millersburg closure year corrected to 2006 per the federal record; the 1,944-scenario grid now reproducible via build/closure_grid.py; the full 30-year closure dataset archived; outcome stats restated on the refined corpus, 42 events, 11 improved, 10 declined; workbook stale cells and a wrong cell reference fixed) &middot;
 <a href="reports/Saving_NMES_v3.4_2026-07-26.pdf">v3.4, July 26</a> (the full closure distribution published: all 163 events per displaced student, median $1,102, 40 percent negative; case panel rebuilt to rural elementaries only after validating comparability, Adair 2006 added and Somerset/Montgomery reclassified as city grade reshuffles, Montgomery having opened a new elementary the same year; the $8,440 small-denominator artifact published with its explanation; convergence check: record's plausible median $818 vs our model's $713) &middot;
 <a href="reports/Saving_NMES_v3.3_2026-07-26.pdf">v3.3, July 26</a> (thirty years of Kentucky rural closures tested: 339 closures, 72 towns that lost their last school, median district saved nothing; every plausible case pays $2,000 to $4,800 per displaced student vs the plan's $6,250 to $7,813; no case of a rural elementary closure with clear savings and clear score gains; Perry and Johnson counties disclosed as the record's best cases) &middot;
@@ -713,6 +716,28 @@ plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(c){retur
 scales:{x:{grid:{color:'#E3E8F0'},max:90}}}});
 
 /* Debt service chart */
+/* V3.6: fourteen years of levies, nine districts */
+var LV={"Bourbon County":[55.4,57.6,57.3,59.1,58.8,60.0,61.3,60.6,55.9,54.2,49.2,52.4,52.4,52.4],
+"Paris Ind":[61.0,64.1,66.5,69.0,71.6,74.4,78.3,80.4,68.7,74.5,71.5,71.5,71.5,71.5],
+"Fayette":[67.4,69.6,71.9,74.0,75.0,75.0,81.0,81.0,81.0,80.8,83.3,81.0,80.9,79.8],
+"Clark":[53.6,55.9,57.4,60.0,62.2,62.2,62.2,63.7,63.7,64.9,65.9,67.5,66.8,65.5],
+"Bath":[36.8,44.0,44.2,44.8,44.8,47.2,52.6,52.6,52.6,52.4,54.1,57.8,60.7,63.4],
+"Scott":[45.3,47.2,47.6,49.0,49.6,56.4,56.4,57.1,57.6,58.1,58.1,62.8,62.9,62.9],
+"Harrison":[43.0,45.2,47.2,47.3,49.0,50.5,50.5,51.7,51.7,57.7,57.7,57.7,57.7,57.7],
+"Montgomery":[49.4,49.4,49.0,48.9,50.8,51.3,52.8,52.3,52.3,52.3,52.2,52.4,52.5,52.5],
+"Nicholas":[38.4,38.7,38.5,38.3,38.5,39.5,39.6,41.0,40.1,40.2,41.4,42.5,43.6,43.1]};
+var lvYears=[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
+new Chart(document.getElementById('chartLevyHist'),{type:'line',
+data:{labels:lvYears,datasets:Object.keys(LV).map(function(k){
+return {label:k,data:LV[k],borderColor:k==='Bourbon County'?NAVY:(k==='Bath'?'#C0625E':(k==='Paris Ind'?ROYAL:LGRAY)),
+backgroundColor:'transparent',borderWidth:k==='Bourbon County'?3:1.5,pointRadius:k==='Bourbon County'?3:1.5,
+borderDash:k==='Paris Ind'?[5,4]:[],tension:0.1}})},
+options:{responsive:true,maintainAspectRatio:false,
+plugins:{legend:{position:'bottom',labels:{boxWidth:14,font:{size:9}}},
+tooltip:{callbacks:{label:function(c){var k=c.dataset.label;var pc=(LV[k][13]/LV[k][0]-1)*100;
+return k+': '+c.parsed.y.toFixed(1)+' cents (14-yr change '+(pc>=0?'+':'')+pc.toFixed(1)+'%)'}}}},
+scales:{y:{min:30,max:88,grid:{color:'#E3E8F0'},title:{display:true,text:'total levied, cents per $100',font:{size:10}}},x:{ticks:{font:{size:9}}}}}});
+
 new Chart(document.getElementById('chartDebt'),{type:'bar',data:{
 labels:['FY2025 district share','FY2026 district share','FY2026 total incl. state SFCC'],
 datasets:[{label:'Annual bond payments ($M)',data:[1.150,1.579,1.846],

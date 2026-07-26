@@ -319,6 +319,20 @@ def main():
         and (REPO / "reports" / "Saving_NMES_v3.5_2026-07-26.pdf").exists(),
         "v3.5 archived in reports/ and linked from the version history")
 
+    # levy history (v3.6)
+    for needle in ["Figure 21.", "72 percent", "5.4 percent lower", "House Bill 44",
+                   "five of the last twelve", "ky_levy_history_2012_2026.csv"]:
+        chk(needle in t, f"PDF levy history intact: {needle}")
+    for needle in ["chartLevyHist", "72.3 percent", "5.4 percent lower", "HB 44",
+                   "five of the last twelve", "ky_levy_history_2012_2026.csv"]:
+        chk(needle in html, f"site levy history intact: {needle}")
+    chk((REPO / "build" / "ky_levy_history_2012_2026.csv").exists()
+        and (REPO / "build" / "levy_series.json").exists(),
+        "levy history data archived in build/")
+    chk("reports/Saving_NMES_v3.6_2026-07-26.pdf" in html
+        and (REPO / "reports" / "Saving_NMES_v3.6_2026-07-26.pdf").exists(),
+        "v3.6 archived in reports/ and linked from the version history")
+
     chk("unaudited" in html and "unaudited" in t,
         "FY2026 figures labeled unaudited on site and in PDF")
     chk((REPO / "build" / "fy2026_june_financial_packet.pdf").exists()

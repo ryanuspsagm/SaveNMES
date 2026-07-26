@@ -9,8 +9,8 @@ public source cited in the report and on the site.
 
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
-- `Saving_North_Middletown_Elementary.pdf` - the 43-page report.
-- `NMES_Financial_Model.xlsx` - the 16-tab financial model (325 formulas).
+- `Saving_North_Middletown_Elementary.pdf` - the 44-page report.
+- `NMES_Financial_Model.xlsx` - the 16-tab financial model (334 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
   Requires: `pip install reportlab openpyxl matplotlib`. Run
   `python build/make_charts.py`, then `python build/build_pdf.py`,
@@ -65,6 +65,16 @@ it attributes no motive and alleges no wrongdoing to anyone.
 ## Report version history
 Every published version stays available under `reports/`; each report's
 corrections section lists what changed and why.
+- v3.6 (July 26, 2026): fourteen years of school levies across nine area
+  districts, from KDE's Local District Tax Levies files (Total Real
+  Estate column), cross-checked against the DOR rate books for 2024-2025
+  where all nine districts reconcile exactly: every neighbor's levied
+  rate rose (Bath +72.3 percent, Scott +38.9, Harrison +34.2, Clark
+  +22.2, Fayette +18.4, Paris +17.2); Bourbon County's is the only rate
+  lower than in 2012 (-5.4 percent), with the HB 44 rate-vs-revenue
+  caveat and Bourbon's own five 4-percent years disclosed. New Figure
+  21, site chart, Tax_History rows 56-68, and archived series
+  (`build/ky_levy_history_2012_2026.csv`, `build/levy_series.json`).
 - v3.5 (July 26, 2026): correction release from a 36-agent adversarial
   audit of the entire case (117 raw findings, 22 confirmed after
   verification, all fixed): Building Fund transfer component $1,098,663
