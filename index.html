@@ -340,6 +340,15 @@ footer a{color:var(--ice)}
 </div>
 
 <div class="card">
+<h3>Has this ever worked in Kentucky? We checked all thirty years</h3>
+<p>From the federal record of every Kentucky public school since 1994, we built the complete list: <b>339 rural and small-town school closures since 1995, including 72 towns that lost their last public school</b> (Millersburg is one, which validates the method). The money finding: across 163 closures with clean finance data, the median district's spending bent by <b>five hundredths of a percentage point</b> against the state trend; half of districts grew faster after closing, half slower. For the <b>37 closures most like this plan</b>, one small elementary closed with students absorbed and nothing built, the median saving was <b>zero</b>. Price the whole record per displaced student, crediting each district's entire budget gap to its closure (a generous ceiling), and every plausible case in thirty years lands between roughly <b>$2,000 and $4,800 per displaced child</b>; the biggest, Perry County 2017, built a brand-new school for the children it moved. The plan before this county needs <b>$6,250 to $7,813 per displaced child, above every case in the record, with no construction</b>.</p>
+<p>The classroom finding: of 46 closures measurable within one state testing system, 13 improved against the state, 11 declined, 22 were flat, and the more children a closure displaced, the worse the trend (closures moving 15 percent or more of a district ran a median 2 points down). Exactly <b>one</b> event shows both clear savings and clear gains: Leslie County 2013, a middle school folded into an existing campus in the same community. The two best cases for a closure advocate, disclosed here so no one has to dig for them: Perry County (real but modest savings, bought with new construction, scores continuing a climb that began years earlier) and Johnson County 2016 (a 178-student rural elementary closed, spending 6 points under trend, scores flat: savings without improvement, in proportion to the school's 5 percent share). <b>No case exists of a Kentucky district closing a rural town's elementary school, clearly saving money, and clearly improving scores.</b> If the board believes it will be the first in thirty years, show us the data.</p>
+<div class="chartbox tall"><canvas id="chartKYRecord" role="img" aria-label="Horizontal bar chart of thirty years of Kentucky school closures priced per displaced student, every plausible case between two and five thousand dollars, against the plan's requirement of six to eight thousand dollars per displaced child"></canvas></div>
+<p class="note">Bars credit each district's entire budget deviation from the state trend to its closure, the most generous possible reading. Eight further cases produced gaps of $15,000 to $99,000 per child, more than any school even costs to run per student: proof those gaps reflect budget-wide events, not closure savings, and why our own estimate is built bottom-up from positions, busing, and state funding instead. Small towns that kept their schools declined in population at nearly the same rate as towns that lost them, so we make no claim that closure causes population decline; the claim is narrower: no measurable precedent exists for the savings or the improvement this plan promises.</p>
+<span class="checkme"><a href="build/ky_rural_closures_1995_2023.csv">The full closure list (CSV)</a> &middot; <a href="build/ky_closure_dollar_cases.csv">The dollar cases (CSV)</a> &middot; <a href="https://educationdata.urban.org/documentation/">Federal source data (CCD/EDFacts via Urban Institute)</a> &middot; <a href="https://edworkingpapers.com/ai22-530">Arkansas consolidation study</a> &middot; <a href="NMES_Financial_Model.xlsx">Model, KY_Closures tab</a></span>
+</div>
+
+<div class="card">
 <h3>The 4 percent option</h3>
 <p class="note">State law lets the board raise property-tax revenue 4 percent a year from existing property, and voters cannot petition to roll it back. It compounds. Slide the years.</p>
 <div class="slider-row"><label>Years the board takes the 4 percent option <output id="oYrs">3</output></label>
@@ -560,8 +569,9 @@ footer a{color:var(--ice)}
 </div>
 <div class="card" style="margin-top:26px">
 <h3>Read the full case</h3>
-<p>The 41-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
+<p>The 42-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
 <p class="note"><b>Version history</b> (every version stays public; corrections are listed in each report's corrections section):
+<a href="reports/Saving_NMES_v3.3_2026-07-26.pdf">v3.3, July 26</a> (thirty years of Kentucky rural closures tested: 339 closures, 72 towns that lost their last school, median district saved nothing; every plausible case pays $2,000 to $4,800 per displaced student vs the plan's $6,250 to $7,813; no case of a rural elementary closure with clear savings and clear score gains; Perry and Johnson counties disclosed as the record's best cases) &middot;
 <a href="reports/Saving_NMES_v3.2_2026-07-26.pdf">v3.2, July 26</a> (the recruitment pool, measured: 259 registered homeschoolers, about one in three county kids in private or homeschool, KDE nonresident flows showing the district a net importer; returning-student lever added to the fill planner) &middot;
 <a href="reports/Saving_NMES_v3.1_2026-07-26.pdf">v3.1, July 26</a> (building condition index from every KFICS State Report the state has published; capacity-rule verification: 702 KAR 4:180 unamended since 2008, re-certified March 2025) &middot;
 <a href="reports/Saving_NMES_v3.0_2026-07-26.pdf">v3.0, July 26</a> (two-tailed closure economics, verified position costs, capacity scenarios across all plans incl. the recovered 2017 plan, Millersburg case study) &middot;
@@ -805,6 +815,18 @@ options:{responsive:true,maintainAspectRatio:false,
 plugins:{legend:{position:'bottom',labels:{boxWidth:18,font:{size:10}}},
 tooltip:{callbacks:{afterBody:function(items){var y=+items[0].label;if(y===2010)return 'Military institute closed 2006; ELEMENTARY CLOSED 2007 (119 students)';if(y===2020)return 'Joy Global closed 2013: 197 jobs, half the town budget';return ''}}}},
 scales:{y:{min:80,max:125,grid:{color:'#E3E8F0'}},x:{}}}});
+
+/* V3.3: the Kentucky record, dollars per displaced student */
+new Chart(document.getElementById('chartKYRecord'),{type:'bar',
+data:{labels:[['Our model: median','to best case'],['Metcalfe 2013','(scores fell 10.5)'],['Pineville 2014','(same-town rebuild)'],['Webster 2012','(Slaughters El)'],['Perry 2017','(NEW school built)'],['Wayne 2007','(A J Lloyd Middle)'],['Somerset 1999','(city reorg)'],['Montgomery 2018','(county-seat reorg)'],['THE PLAN\'S','REQUIREMENT']],
+datasets:[{label:'$ per displaced student per year',
+data:[[713,4414],[0,2050],[0,2067],[0,3525],[0,3643],[0,4758],[0,6509],[0,7520],[6250,7813]],
+backgroundColor:[NAVY,GRAY,ROYAL,GRAY,ROYAL,GRAY,ICE,ICE,'#C0625E'],
+borderColor:[NAVY,GRAY,ROYAL,GRAY,ROYAL,GRAY,GRAY,GRAY,'#8a4a2b'],borderWidth:1}]},
+options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+plugins:{legend:{display:false},
+tooltip:{callbacks:{label:function(c){var v=c.raw;var t=(v[0]>0?'$'+v[0].toLocaleString('en-US')+' to ':'up to ')+'$'+v[1].toLocaleString('en-US')+' per displaced student';if(c.dataIndex===8)return 'The plan needs '+t+', above every case in the record';if(c.dataIndex===0)return 'Our two-tailed model: '+t;return t+' (entire budget gap credited to the closure)'}}}},
+scales:{x:{min:0,max:8600,grid:{color:'#E3E8F0'},ticks:{callback:function(v){return '$'+(v/1000)+'K'}}},y:{ticks:{font:{size:9.5}}}}}});
 
 /* Closure calculator */
 var DEFICIT=2648086,DRAWDOWN=1145561;

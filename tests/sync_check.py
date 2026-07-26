@@ -293,6 +293,37 @@ if seek46 == 212796 and "$213,000" in pdf_flat and RD["B131"].value == "=Assumpt
 else:
     diff(f"pool revenue: 46*B6={seek46}, pdf $213,000 {'$213,000' in pdf_flat}")
 
+# ---------- 9. KY closure record (v3.3): model formulas vs site chart vs PDF ----------
+KC = wb["KY_Closures"]
+perry = None; johnson = None
+for r in range(15, 30):
+    nm = KC.cell(row=r, column=1).value
+    if nm == "Perry County": perry = r
+    if nm == "Johnson County": johnson = r
+if perry and johnson:
+    pd_, pe, pf, pc = KC.cell(row=perry, column=4).value, KC.cell(row=perry, column=5).value, KC.cell(row=perry, column=6).value, KC.cell(row=perry, column=3).value
+    per_kid = (pd_ * (1 + pf) - pe) / pc
+    if abs(per_kid - 3643) < 2 and "3643" in re.sub(r"[,$]", "", html) and "$3,600" in pdf_flat:
+        match("Perry 2017 per-displaced-student figure ($3,643) recomputes from model inputs; on site chart and in PDF (about $3,600)")
+    else:
+        diff(f"Perry per-kid: model recompute {per_kid:.0f}, site 3643 {'3643' in re.sub(r'[,$]','',html)}, pdf $3,600 {'$3,600' in pdf_flat}")
+else:
+    diff("KY_Closures tab missing Perry/Johnson rows")
+plan_lo = 800000 / A["B11"].value; plan_hi = 1000000 / A["B11"].value
+if plan_lo == 6250 and abs(plan_hi - 7812.5) < 1 and "$6,250 to $7,813" in html and "$6,250 to $7,813" in pdf_flat:
+    match("plan requirement per displaced student ($6,250 to $7,813 = $800K-$1M over 128) consistent model/site/PDF")
+else:
+    diff(f"plan per-kid: {plan_lo:.0f}/{plan_hi:.0f}")
+site_ky = re.search(r"chartKYRecord[\s\S]{0,900}data:\[\[713,4414\],\[0,2050\],\[0,2067\],\[0,3525\],\[0,3643\],\[0,4758\],\[0,6509\],\[0,7520\],\[6250,7813\]\]", html)
+if site_ky:
+    match("site KY-record chart data matches the computed case table exactly")
+else:
+    diff("site KY-record chart data drifted from the case table")
+if KC["B5"].value == 339 and KC["B6"].value == 72 and KC["B41"].value == 0 and "339 rural" in pdf_flat:
+    match("closure universe (339/72) and the zero-precedent cell consistent in model and PDF")
+else:
+    diff(f"universe: model {KC['B5'].value}/{KC['B6'].value}, zero-cell {KC['B41'].value}")
+
 # site text spot checks
 for s, label in [("1st in all 5 subjects", "hero fact scores"), ("-$385K to +$565K", "hero fact closure range"),
                  ("$7,829,060", "GF levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),

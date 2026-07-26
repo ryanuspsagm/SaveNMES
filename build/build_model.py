@@ -1192,6 +1192,66 @@ put(fp, "A26", "Reading: the receiving schools' rated capacities are 549 (Bourbo
                "a net 59 uncommitted seats for 128 children. NMES's major renovation was priced in 2013 and re-priced higher in 2021, each time scheduled after the then-current biennium. "
                "Its rated capacity fell 198 to 174 between the same two plans while its enrollment fell 169 to 128.", NOTE, wrap=True)
 
+# ================= KY_CLOSURES =================
+kc = sheet("KY_Closures", [46, 10, 12, 14, 14, 10, 14, 14, 12, 60])
+put(kc, "A1", "Thirty Years of Kentucky Rural School Closures: The Record", TITLE)
+put(kc, "A2", "Universe: federal Common Core of Data, every KY public school, every year, 1994-2023 (via the Urban Institute Education Data API). Screens: rural/small-town locale; "
+              "enrollment above zero; renames, rebuilds under new IDs, and non-community programs removed; corrupt federal finance rows (12) excluded by an enrollment-plausibility screen. "
+              "Full lists archived as build/ky_rural_closures_1995_2023.csv and build/ky_closure_dollar_cases.csv.", NOTE, wrap=True)
+put(kc, "A4", "THE UNIVERSE", SEC)
+put(kc, "A5", "Rural/small-town school closures since 1995"); put(kc, "B5", 339, BLUE, NUM)
+put(kc, "A6", "Towns that lost their last public school (any district; successor-school check applied)"); put(kc, "B6", 72, BLUE, NUM)
+put(kc, "A7", "Closure events with clean district finance data"); put(kc, "B7", 163, BLUE, NUM)
+put(kc, "A8", "Median district per-pupil spending growth vs state, year before to 3 years after (pct pts)"); put(kc, "B8", -0.05, BLUE, "0.00")
+put(kc, "A9", "Same, vs districts of similar size (within 40 percent of enrollment)"); put(kc, "B9", -0.24, BLUE, "0.00")
+put(kc, "A10", "Districts growing slower than benchmark after closing"); put(kc, "B10", "=84/163", BLK, '0.0%')
+put(kc, "A11", "Closures most like this plan (single small elementary, nothing built): count / median saving"); put(kc, "B11", 37, BLUE, NUM); put(kc, "C11", 0, BLUE, NUM)
+put(kc, "A13", "THE DOLLAR TEST: BUDGET GAP VS STATE TREND, CREDITED ENTIRELY TO THE CLOSURE (A GENEROUS CEILING), PER DISPLACED STUDENT", SEC)
+kchdrs = ["Case", "Closed", "Students displaced", "Spending, year before", "Spending, 3 yrs after", "State growth", "Counterfactual", "Gap per year", "Gap per student", "Note"]
+for i, h in enumerate(kchdrs):
+    put(kc, f"{get_column_letter(i+1)}14", h, BOLDW, fill=HDR)
+kcases = [
+ ("Perry County", 2017, 825, 42356000, 44953000, 0.1323, "NEW West Perry Elementary built for the children moved; scores continued a pre-existing climb"),
+ ("Johnson County", 2016, 178, 37827000, 39175000, 0.1339, "Meade Memorial El, pure absorption; scores flat: savings without improvement"),
+ ("Pineville Independent", 2014, 508, 5355000, 4662000, 0.0667, "Same-town rebuild into one new combined campus; no community lost a school"),
+ ("Leslie County", 2013, 144, 19840000, 18031000, 0.0374, "Middle school folded into existing campus; the record's one savings-plus-gains case"),
+ ("Pike County", 2014, 123, 88648000, 90441000, 0.0667, "Majestic Knox Creek El, 1.3 percent of a 9,400-student district; the +8 score case"),
+ ("Somerset Independent", 1999, 264, 9161000, 9316000, 0.2045, "City-district reorganization, not a rural town"),
+ ("Rowan County", 2001, 144, 19483000, 21010000, 0.1931, "Farmers El; gap exceeds plausible closure savings"),
+ ("Webster County", 2012, 172, 19693000, 19475000, 0.0197, "Slaughters El; town lost its school; scores -2 vs state"),
+ ("Butler County", 2003, 94, 14995000, 16806000, 0.2352, "Third District El; gap exceeds plausible closure savings"),
+ ("Letcher County", 2007, 67, 30621000, 31987000, 0.1523, "Kingdom Come Settlement El; gap of $49K per child is 4x what a school costs: budget-wide, not closure"),
+ ("Muhlenberg County", 2013, 91, 52941000, 45883000, 0.0374, "Career HS; $99K per child gap = post-construction and coal-era budget swings, not closure"),
+ ("Wayne County", 2007, 381, 22129000, 23687000, 0.1523, "A J Lloyd Middle"),
+ ("Lincoln County", 2016, 286, 40397000, 41252000, 0.1339, "Sixth-grade center reorganization"),
+ ("Montgomery County", 2018, 737, 45709000, 46413000, 0.1366, "County-seat intermediate reorganization, not a rural town"),
+ ("Metcalfe County", 2013, 817, 17028000, 15990000, 0.0374, "Closed 3 schools, half the district displaced; scores fell 10.5 vs state: the cautionary pair"),
+]
+r = 15
+for name, cy, kids, pre, post, g, note in kcases:
+    put(kc, f"A{r}", name); put(kc, f"B{r}", cy, BLUE, NUM); put(kc, f"C{r}", kids, BLUE, NUM)
+    put(kc, f"D{r}", pre, BLUE, CUR); put(kc, f"E{r}", post, BLUE, CUR); put(kc, f"F{r}", g, BLUE, '0.0%')
+    put(kc, f"G{r}", f"=D{r}*(1+F{r})", BLK, CUR); put(kc, f"H{r}", f"=G{r}-E{r}", BLK, CUR)
+    put(kc, f"I{r}", f"=H{r}/C{r}", BLK, CUR, bold=True); put(kc, f"J{r}", note, NOTE, wrap=True)
+    r += 1
+put(kc, "A31", "THE YARDSTICK: WHAT THIS PLAN REQUIRES PER DISPLACED STUDENT", SEC)
+put(kc, "A32", "Plan requirement, low / high ($800K-$1M over the 128 students displaced)")
+put(kc, "B32", "=800000/Assumptions!B11", BLK, CUR, bold=True); put(kc, "C32", "=1000000/Assumptions!B11", BLK, CUR, bold=True)
+put(kc, "A33", "This report's own model, per displaced student: median / central / best case")
+put(kc, "B33", "=91240/Assumptions!B11", BLK, CUR); put(kc, "C33", "=Closure_Model!B47/Assumptions!B11", BLK, CUR); put(kc, "D33", "=Closure_Model!B49/Assumptions!B11", BLK, CUR)
+put(kc, "A34", "Reading: every plausible case in thirty years landed between about $2,000 and $4,800 per displaced student, and the largest (Perry, Pineville) were bought with new "
+               "construction. The plan requires $6,250 to $7,813 with no construction. Cases whose gaps exceed roughly a school's own cost per student ($10-13K in those years) are "
+               "flagged in the notes: such gaps prove budget-wide causes, which is why this model prices closure bottom-up (positions, busing, SEEK) rather than from budget trends.", NOTE, wrap=True)
+put(kc, "A36", "OUTCOMES, WITHIN ONE TESTING SYSTEM (federal proficiency series, closures 2012-2016, change vs state 3 years out)", SEC)
+put(kc, "A37", "Events measurable / improved 3+ pts / declined 3+ pts / flat"); put(kc, "B37", 46, BLUE, NUM); put(kc, "C37", 13, BLUE, NUM); put(kc, "D37", 11, BLUE, NUM); put(kc, "E37", 22, BLUE, NUM)
+put(kc, "A38", "Spearman correlation, share of district displaced vs score change"); put(kc, "B38", -0.28, BLUE, "0.00")
+put(kc, "A39", "Median score change: events displacing 15%+ of district / under 15%"); put(kc, "B39", -2.0, BLUE, "0.0"); put(kc, "C39", 0.2, BLUE, "0.0")
+put(kc, "A40", "Events with BOTH clear savings and clear gains"); put(kc, "B40", 1, BLUE, NUM); put(kc, "C40", "Leslie County 2013: middle school folded into an existing campus in the same community", NOTE)
+put(kc, "A41", "Cases of a rural town's ELEMENTARY closed with clear savings and clear gains"); put(kc, "B41", 0, BLUE, NUM, bold=True)
+put(kc, "A43", "Honest limits: closures before 2012 and after 2016 cannot be score-tested across Kentucky's assessment-system changes; whole-district mergers are unobservable afterward; "
+               "and same-size Kentucky towns that KEPT schools declined in population at nearly the same median rate as towns that lost them (-4.1 vs -3.5 percent, 2000-2020), so no claim "
+               "is made that closure causes population decline. The claim is narrower: the record contains no measurable precedent for the savings or the improvement this plan promises.", NOTE, wrap=True)
+
 # ---- finish ----
 del wb["Sheet"]
 for ws in wb.worksheets:

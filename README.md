@@ -9,8 +9,8 @@ public source cited in the report and on the site.
 
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
-- `Saving_North_Middletown_Elementary.pdf` - the 41-page report.
-- `NMES_Financial_Model.xlsx` - the 15-tab financial model (267 formulas).
+- `Saving_North_Middletown_Elementary.pdf` - the 42-page report.
+- `NMES_Financial_Model.xlsx` - the 16-tab financial model (318 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
   Requires: `pip install reportlab openpyxl matplotlib`. Run
   `python build/make_charts.py`, then `python build/build_pdf.py`,
@@ -65,6 +65,14 @@ it attributes no motive and alleges no wrongdoing to anyone.
 ## Report version history
 Every published version stays available under `reports/`; each report's
 corrections section lists what changed and why.
+- v3.3 (July 26, 2026): thirty years of Kentucky rural closures tested
+  from the federal record (339 closures since 1995; 72 towns lost their
+  last school; median district saved nothing vs state or size-matched
+  trends; every plausible case pays $2,000 to $4,800 per displaced
+  student vs the plan's required $6,250 to $7,813; no case of a rural
+  elementary closure with clear savings and clear score gains; Perry and
+  Johnson counties disclosed as the record's best cases); new KY_Closures
+  model tab; closure datasets archived under `build/` as CSVs.
 - v3.2 (July 26, 2026): the recruitment pool, measured three ways (259
   registered homeschoolers in the districts' own 2022-23 records; about one
   in three county school-age kids in private school or homeschool per ACS,

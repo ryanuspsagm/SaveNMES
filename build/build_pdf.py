@@ -118,7 +118,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 3.2 &nbsp;\u2022&nbsp; July 26, 2026",
+A(Paragraph("Version 3.3 &nbsp;\u2022&nbsp; July 26, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
@@ -400,6 +400,58 @@ fig("chart_millersburg.png",
     "losses marked. Decennial census counts: Millersburg 987, 937, 842, 792, 747; the county grew 4.6 percent "
     "from 2000 to 2020. Millersburg Elementary's final enrollment was 119 students; North Middletown enrolls "
     "about 115 today.")
+H2("Has this ever worked in Kentucky? We checked all thirty years")
+P("Before looking at other states, I tested this state. From the federal Common Core of Data, every Kentucky "
+  "public school, every year, 1994 through 2023, I built the complete record: <b>339 rural and small-town "
+  "school closures since 1995</b>, after screening out renames, rebuilds under new federal IDs, and "
+  "non-community programs, and <b>72 towns that lost their last public school entirely</b>. Millersburg 2007 "
+  "is one of them, which independently validates the method. The full lists and every input are archived in "
+  "this repository as spreadsheets anyone can check. Three findings follow.")
+P("<b>First, the money.</b> For the 163 closure events with clean finance data, I compared each district's "
+  "per-pupil spending growth, from the year before closure to three years after, against the statewide trend "
+  "and against districts of similar size. The median district's spending bent by <b>five hundredths of one "
+  "percentage point</b>. Half the districts grew faster than the state after closing; half grew slower. A "
+  "coin flip. For the 37 closures most like this plan, a single small elementary closed with students "
+  "absorbed into existing buildings and nothing built, the median saving was <b>zero</b>. The honest dollar "
+  "test is in Figure 9: credit every district's entire budget deviation to its closure, a generous ceiling, "
+  "and every plausible case in thirty years lands between about $2,000 and $4,800 per displaced student. "
+  "The plan before this county needs $6,250 to $7,813 per displaced child, above every one of them, and the "
+  "best cases in the record bought their savings with new consolidated schools this plan does not build.")
+fig("chart_ky_record.png",
+    "Figure 9. Thirty years of Kentucky rural closures, priced per displaced student: each bar is a district's "
+    "budget gap against the state trend after closing, the whole gap generously credited to the closure. Blue "
+    "bars involved new construction; light bars are county-seat or city reorganizations rather than rural "
+    "towns. The plan's $800,000 to $1,000,000 requirement equals $6,250 to $7,813 per displaced child, above "
+    "every plausible case in the record. Eight further cases produced gaps of $15,000 to $99,000 per child, "
+    "more than any school costs to run per student, which is proof those gaps reflect budget-wide events, not "
+    "closure savings, and why this report builds its own estimate bottom-up. Data: build/ky_rural_closures_"
+    "1995_2023.csv and build/ky_closure_dollar_cases.csv.")
+P("<b>Second, the classrooms.</b> Test scores can only be compared within one accountability system, so I "
+  "tested the 46 closure events measurable inside the 2012 to 2019 window on the uniform federal proficiency "
+  "series. Thirteen districts improved three or more points against the state, eleven declined, twenty-two "
+  "were flat: a wash, median half a point down. And the pattern inside the wash points one way: the more "
+  "children a closure displaced, the worse the trend. Events moving fifteen percent or more of a district's "
+  "students ran a median two points down; the improvers were overwhelmingly small closures inside eastern "
+  "Kentucky's broad mid-decade testing rebound, gains far too large for schools that were one to eight "
+  "percent of their districts to explain. Exactly <b>one</b> event in the record shows both clear savings "
+  "and clear gains: Leslie County 2013, which folded its middle school into an existing campus in the same "
+  "community. No case exists of a district closing a rural town's elementary school, clearly saving money, "
+  "and clearly improving scores.")
+P("<b>Third, the two best cases, disclosed by us so no one has to discover them.</b> Perry County closed "
+  "three rural elementaries in 2017 and shows real, modest savings, about $3,600 per displaced student, with "
+  "scores continuing a climb that began years earlier; it did so by building the new West Perry Elementary "
+  "for the children it moved. Johnson County closed 178-student Meade Memorial Elementary in 2016 with "
+  "nothing built and spending ran about six points under the state trend afterward, while scores stayed "
+  "flat: savings without improvement, in proportion to the school's five percent share of the district, "
+  "which is our own model's median arriving on schedule. Those are the strongest cards the record deals a "
+  "closure advocate, and neither resembles what this plan promises. Two honest limits belong here too: "
+  "closures before 2012 and after 2016 cannot be score-tested across Kentucky's assessment-system changes, "
+  "and small towns that kept their schools also declined in population at nearly the same rate as towns "
+  "that lost them, so I make no claim that closure causes population decline. What the record does show is "
+  "narrower and harder: no measurable precedent for the savings this plan requires, and none for academic "
+  "improvement from a closure like this one. If the board believes it will be the first in thirty years, "
+  "show us the data.")
+
 H2("What happened when other districts tried this")
 B("<b>Chicago, 2013.</b> The district closed about fifty schools projecting roughly $1 billion over a decade, "
   "including $43 million a year in operations. A 2023 Sun-Times and WBEZ analysis found actual labor savings of "
@@ -441,7 +493,7 @@ P("Whatever the true net number proves to be, one comparison frames the decision
 # ================= 5. ACADEMICS =================
 H("5. Academic Performance: The District Would Be Closing Its Best Elementary School", need=5.3)
 fig("chart_district.png",
-    "Figure 9. Top: the official state record, Kentucky's overall accountability composite in its two "
+    "Figure 10. Top: the official state record, Kentucky's overall accountability composite in its two "
     "comparable eras (Unbridled Learning overall score, 2012-2016; KSA overall indicator rate, 2022-2025). No "
     "composite was issued from 2017 through 2021 (system transition, star-rating years, then COVID), and "
     "CATS-era school files (2006-2011) are available from KDE by data request. Bottom: SchoolDigger's "
@@ -449,7 +501,7 @@ fig("chart_district.png",
     "record; wherever the two disagree, the official record governs. Sources: KDE historical datasets, "
     "archived in this repository as build/kde_scores_history.json.")
 fig("chart_compare.png",
-    "Figure 10. SchoolDigger's normalized 0-100 index for 2024-25 across the region's elementary schools, computed from state test data (not KDE's official rating). Only Montgomery "
+    "Figure 11. SchoolDigger's normalized 0-100 index for 2024-25 across the region's elementary schools, computed from state test data (not KDE's official rating). Only Montgomery "
     "County's two elementaries outscore North Middletown; every elementary in Bourbon County, Clark County, and "
     "Paris Independent trails it.")
 H2("The state's own numbers, first")
@@ -470,7 +522,7 @@ tbl(["Subject (percent proficient or distinguished)", "NMES", "Bourbon Central",
             "Asterisks are cells the state suppresses for small groups; the Kentucky average is the statewide "
             "elementary level. North Middletown leads all four county schools in all five subjects.",
     bold_first_col=True)
-P("Here is the full arc, straight from the state's own files (Figure 9, top panel). Through the Unbridled "
+P("Here is the full arc, straight from the state's own files (Figure 10, top panel). Through the Unbridled "
   "Learning era North Middletown's official overall score rose every single year, 62.6 to 68.8 to 71.4 to 72.1 "
   "to <b>79.1</b>, closing 2015-16 with a formal <b>Distinguished</b> classification, the county's best score "
   "by nearly ten points. The same files show the school <b>first in the county in elementary mathematics in "
@@ -482,7 +534,7 @@ P("Here is the full arc, straight from the state's own files (Figure 9, top pane
   "watching, and the school still finished first among all four county elementaries in every tested subject. "
   "Small schools swing hard in single years, in both directions; the record above is why one soft year argues "
   "for attention, not for closure.")
-P("I keep the SchoolDigger index in Figure 9's lower panel and in Figure 10 only as outside context, with "
+P("I keep the SchoolDigger index in Figure 10's lower panel and in Figure 11 only as outside context, with "
   "its limits printed. Tested against the official record, it tracks the county's larger schools closely "
   "(correlation near 0.9) but is unreliable year to year for a school North Middletown's size (near 0.4), and "
   "it named the wrong county leader in three of the ten years both sources cover, twice against North "
@@ -554,14 +606,14 @@ tbl(["Series", "Original amount", "Interest rate", "Final maturity", "Outstandin
      ["2024", "$6,055,000", "4.00-5.00%", "2044", "$5,945,290"],
      ["<b>Total</b>", "<b>$20,758,000</b>", "", "", "<b>$15,743,290</b>"]],
     [1.15 * inch, 1.45 * inch, 1.25 * inch, 1.2 * inch, 1.65 * inch],
-    caption="Figure 11. Outstanding bonds of the Bourbon County School District Finance Corporation, from Note 4 of "
+    caption="Figure 12. Outstanding bonds of the Bourbon County School District Finance Corporation, from Note 4 of "
             "the FY2025 audited financial statements. The 2016 issue refinanced $5,315,000 of 2009 bonds (saving "
             "$314,834 in present value) and the 2020 issue refinanced $3,410,000 of 2011 bonds (saving $106,627). "
             "* The audit's figures for the 2013R issue are internally inconsistent: the outstanding balance exceeds "
             "the listed original amount, and the stated maturity contains an obvious typographical error. Both are details "
             "the finance office should correct on the record.",
     bold_first_col=True)
-fig("chart_debt.png", "Figure 12. Annual bond payments are rising as the 2024 issue comes online. The state's SFCC "
+fig("chart_debt.png", "Figure 13. Annual bond payments are rising as the 2024 issue comes online. The state's SFCC "
     "pays $1,568,809 of the outstanding principal over the life of the bonds. Source: FY2024 and FY2025 audits.",
     width=4.6 * inch)
 P("Three things in the bond record deserve the Board's attention.")
@@ -794,10 +846,10 @@ P("The architect's slides are one reading of the building. The state publishes i
   "three statewide reports: the official October 2023 report, the official October 2025 report (both resting "
   "on inspections done in 2020 and early 2021, with costs updated between them), and an updated report "
   "generated July 2, 2026 that carries the first fresh inspections, completed in April 2026 by the district's "
-  "own third-party architect and reviewed by KDE. Figure 13 plots every number the state has ever published "
+  "own third-party architect and reviewed by KDE. Figure 14 plots every number the state has ever published "
   "for the three elementary schools.")
 fig("chart_condition.png",
-    "Figure 13. The KFICS Condition Index for Bourbon County's three elementary schools in every statewide "
+    "Figure 14. The KFICS Condition Index for Bourbon County's three elementary schools in every statewide "
     "report the state has published: October 2023 official, October 2025 official, and the July 2, 2026 "
     "update. The 2023 and 2025 reports rest on the same 2020-21 inspections; the July 2026 report is the "
     "first with fresh April 2026 inspections. Source: KDE, KFICS State Reports, downloadable from the "
@@ -825,7 +877,7 @@ P("Three findings sit in that figure. First, in the newest KDE-reviewed data, No
 # ================= 8. ADMIN =================
 H("8. Where the Money Is Actually Going: Administrative Growth", need=4.3)
 fig("chart_admin.png",
-    "Figure 14. Administration expense from the district's audited statements of activities. District (central "
+    "Figure 15. Administration expense from the district's audited statements of activities. District (central "
     "office) administration grew from $999,727 in FY2023 to $1,447,164 in FY2025; school administration grew from "
     "$2,110,039 to $2,581,412 over the same two years.")
 P("The biggest cost jump in the audits, and one the district controls, is not at North Middletown. Central-office "
@@ -883,7 +935,7 @@ P("Honesty requires naming the headwind first. Bourbon County has hovered near t
   "limits new subdivisions. The regional boom passed to the west: neighboring Scott County is projected to grow "
   "46 percent by 2050 and Fayette nearly ten, while Bourbon sits outside that corridor. The district's enrollment "
   "decline is real and structural, and I will not pretend otherwise. North Middletown Elementary itself "
-  "tells the story: it held 261 children in 1988-89, about double today's 128 (Figure 15).")
+  "tells the story: it held 261 children in 1988-89, about double today's 128 (Figure 16).")
 P("But a school's enrollment does not have to wait on a county's birth rate, because the board controls two "
   "levers that demographics do not. The first is redistricting: attendance boundaries are the board's to draw, "
   "and with Bourbon Central at 459 students and Cane Ridge at 453 while the district's best elementary sits at "
@@ -911,7 +963,7 @@ P("Framed this way, growth means moving and recruiting students on the strength 
   "the near-term target is modest: returning to the 160 students the school enrolled as recently as 2019-20 "
   "takes just 32 children from a district of 2,600 and four neighboring counties.")
 fig("chart_enroll.png",
-    "Figure 15. NMES enrollment from 1989 through 2025 against its current state-rated capacity of 174. The "
+    "Figure 16. NMES enrollment from 1989 through 2025 against its current state-rated capacity of 174. The "
     "school held 261 students at its 1988-89 peak, roughly double today's official count of 128. History "
     "compiled from federal school-level data. The long decline mirrors the county's flat population, which is "
     "exactly why this plan relies on boundary decisions and cross-county enrollment rather than demographics.",
@@ -943,7 +995,7 @@ P("Here is one concrete scenario, math anyone can check, run in the workbook's R
   "ask in Question 3. This is what an unbiased boundary study looks like in miniature. The district holds the "
   "geocoded student counts and the routing data to run the full version, and it should, before any vote.")
 fig("chart_balance.png",
-    "Figure 16. One rebalancing scenario: North Middletown fills to its rated 174 while Bourbon Central and Cane "
+    "Figure 17. One rebalancing scenario: North Middletown fills to its rated 174 while Bourbon Central and Cane "
     "Ridge each ease by about fifteen students. Dashed lines mark each school's rated capacity "
     "(174, 549, 422); Cane Ridge enrolls above its rating today and remains above it even "
     "rebalanced, which is the receiving-capacity problem closure would compound. The scenario levers (30 "
@@ -1010,7 +1062,7 @@ tbl(["Zone", "Approx. area (sq mi)", "Elementary students", "Students per sq mi"
             "students shown are each school's cited enrollment, the closest public proxy for zone residents. The vintage is the caveat: the district should confirm nothing has moved since (Appendix B).",
     bold_first_col=True)
 fig("chart_map.png",
-    "Figure 17. Where the students are: the district's official attendance zones from the federal School "
+    "Figure 18. Where the students are: the district's official attendance zones from the federal School "
     "Attendance Boundary Survey (2015-16 collection), fetched by the repository's build/fetch_sabs.py. Paris "
     "holds half the county's people and both receiving schools; Millersburg sits in Cane Ridge's northern "
     "zone; the NMES zone runs about 1.2 students per square mile across 110 square miles of the southeast.", width=5.2 * inch)
@@ -1068,7 +1120,7 @@ P("The savings from doing this well are documented, not hypothetical. Boston Pub
   "$290,000 a year, and Boston's 20 percent shows the ceiling sits higher than the menu assumes. One more "
   "check anyone can run without waiting on the district: the federal School Attendance Boundary Survey "
   "(NCES EDGE) published the district's actual attendance-zone boundaries as free GIS files in its 2015-16 "
-  "collection, and NCES publishes geocoded school locations. Figure 17 is drawn directly from that file, "
+  "collection, and NCES publishes geocoded school locations. Figure 18 is drawn directly from that file, "
   "fetched by the repository's build/fetch_sabs.py, so anyone can reproduce it in one step. Appendix B lists the datasets alongside the records "
   "only the district can produce.")
 tbl(["Measure", "Estimated annual value", "How it works"],
@@ -1117,7 +1169,7 @@ tbl(["Measure", "Estimated annual value", "How it works"],
       "all 46 open seats; the worked example above and the workbook's Redistricting tab show the math. "
       "A preschool or day-care satellite is an additional lever on top."]],
     [1.75 * inch, 1.35 * inch, 3.6 * inch],
-    caption="Figure 18. Measures available without closing a school. The menu deliberately mixes two kinds of lines, "
+    caption="Figure 19. Measures available without closing a school. The menu deliberately mixes two kinds of lines, "
             "new recurring revenue and recurring cost reductions, and the workbook's Alternatives tab labels each one "
             "by type with a confidence rating and what would firm it up. Values are estimates derived from the "
             "district's audited figures and state data; ranges overlap and are not additive to the penny. The "
@@ -1131,7 +1183,7 @@ P("The rate history strengthens rather than weakens the community's hand. Bourbo
   "cents per $100 on real estate, second lowest among nine area districts and roughly 13 cents below the "
   "statewide school average of 65.1. Fayette levies 80.9, Paris Independent, in this same county, 71.5, Clark "
   "66.8, Bath 63.4, Scott 62.9, and Harrison 57.7; only Nicholas County, at 43.1, sits lower, and Montgomery is "
-  "essentially tied at 52.5 (Figure 19). The trend runs the same direction: the levied rate has fallen from 61.3 "
+  "essentially tied at 52.5 (Figure 20). The trend runs the same direction: the levied rate has fallen from 61.3 "
   "cents in 2018 to 52.4 today, a decline that largely reflects Kentucky's rollback mechanics, in which a rising "
   "assessment base pushes the cent rate down to hold revenue roughly level. The one year with a documented "
   "rate-type decision, 2019, shows the board taking the full four percent revenue option, and nothing in the "
@@ -1162,7 +1214,7 @@ P("What remains is the option the board controls every August. Under KRS 160.470
   "chosen path, in writing, with the work shown. What they do not owe anyone is the closure of the district's "
   "best performing school presented as the only choice.")
 fig("chart_tax.png",
-    "Figure 19. Left: the Bourbon County Schools real estate rate by tax year, from Kentucky Department of "
+    "Figure 20. Left: the Bourbon County Schools real estate rate by tax year, from Kentucky Department of "
     "Revenue rate books; years before 2018 could not be retrieved and are not interpolated. Right: current "
     "levied real estate rates across nine area districts against the statewide school average of 65.1 cents. "
     "Fayette and Clark are from local reporting of their board votes; all other rates are Department of Revenue "
@@ -1373,7 +1425,7 @@ H("Notes on the Data")
 P("I built this report from public records, and I want it held to that standard. The audited figures come from "
   "the district's financial statements for the years ended June 30, 2024 and June 30, 2025, both of which carry "
   "clean opinions. Per-student spending is the state's published school-level data for 2023-24, the most recent "
-  "full year posted, and should be refreshed when the next year appears. The multi-year score series in Figure 9 "
+  "full year posted, and should be refreshed when the next year appears. The multi-year score series in Figure 10 "
   "is SchoolDigger's normalized 0-100 rendering of Kentucky Department of Education test data, a consistent "
   "yardstick across years but not KDE's official rating. Where this report says first in every tested subject, "
   "that is the state's own 2024-25 assessment file, archived in the repository; third-party rankings built on "
@@ -1608,7 +1660,7 @@ tbl(["Request", "What it settles"],
      ["The room-by-room worksheet behind the 174 capacity rating; the pre-2021 facility plans",
       "Whether capacity is a wall or a room schedule (Section 7)"],
      ["<b>The boundaries and buses.</b> The district's current GIS attendance-zone map",
-      "Confirms the official 2015-16 federal boundaries in Figure 17 are still in force"],
+      "Confirms the official 2015-16 federal boundaries in Figure 18 are still in force"],
      ["Geocoded student counts by attendance area or planning zone",
       "Validates the density analysis; enables real boundary optimization (Section 9)"],
      ["The T-1 annual transportation report, route sheets, and cost per bus-mile",
@@ -1639,7 +1691,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 3.2, July 26, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 3.3, July 26, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 

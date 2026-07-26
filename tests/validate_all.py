@@ -255,7 +255,7 @@ def main():
         or (REPO / "build" / "chart_pptime.png").exists() or True,
         "chart_pptime generated")
     # KFICS condition index (v3.1)
-    for needle in ["Figure 13.", "Condition Index", "0.773", "0.728", "0.694",
+    for needle in ["Figure 14.", "Condition Index", "0.773", "0.728", "0.694",
                    "smallest four-year repair bill", "July 2, 2026", "0.21725",
                    "re-certified", "March 2025", "no utilization discount"]:
         chk(needle in t, f"PDF condition index intact: {needle}")
@@ -281,6 +281,23 @@ def main():
     chk("reports/Saving_NMES_v3.2_2026-07-26.pdf" in html
         and (REPO / "reports" / "Saving_NMES_v3.2_2026-07-26.pdf").exists(),
         "v3.2 archived in reports/ and linked from the version history")
+
+    # the Kentucky closure record (v3.3)
+    for needle in ["Figure 9.", "339 rural", "72 towns", "five hundredths",
+                   "$6,250 to $7,813", "$2,000 and $4,800", "West Perry",
+                   "Meade Memorial", "Leslie County 2013", "show us the data",
+                   "ky_rural_closures_", "ky_closure_dollar_cases.csv"]:
+        chk(needle in t, f"PDF KY closure record intact: {needle}")
+    for needle in ["chartKYRecord", "339 rural", "72 towns", "$6,250 to $7,813",
+                   "Johnson County 2016", "Perry County", "Leslie County 2013",
+                   "ky_rural_closures_1995_2023.csv", "ky_closure_dollar_cases.csv",
+                   "show us the data"]:
+        chk(needle in html, f"site KY closure record intact: {needle}")
+    for f in ["ky_rural_closures_1995_2023.csv", "ky_closure_dollar_cases.csv"]:
+        chk((REPO / "build" / f).exists(), f"closure dataset archived: build/{f}")
+    chk("reports/Saving_NMES_v3.3_2026-07-26.pdf" in html
+        and (REPO / "reports" / "Saving_NMES_v3.3_2026-07-26.pdf").exists(),
+        "v3.3 archived in reports/ and linked from the version history")
 
     chk("unaudited" in html and "unaudited" in t,
         "FY2026 figures labeled unaudited on site and in PDF")

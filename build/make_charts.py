@@ -479,6 +479,42 @@ ax.set_title("Building condition as reported to the state: every KFICS State Rep
 fig.tight_layout()
 save(fig, "chart_condition.png")
 
+# ---- V3.3: the Kentucky record, dollars per displaced student ----
+fig, ax = plt.subplots(figsize=(6.9, 4.6))
+ky_cases = [
+    ("Metcalfe 2013 (3 schools; scores fell 10.5 vs state)", 2050, GRAY),
+    ("Pineville 2014 (same-town rebuild, new campus)", 2067, MBLUE),
+    ("Webster 2012 (Slaughters El; town lost school)", 3525, GRAY),
+    ("Perry 2017 (3 towns' elems; NEW school built)", 3643, MBLUE),
+    ("Wayne 2007 (A J Lloyd Middle)", 4758, GRAY),
+    ("Somerset 1999 (city district reorg)", 6509, LGRAY),
+    ("Montgomery 2018 (county-seat reorg)", 7520, LGRAY),
+]
+yy = np.arange(len(ky_cases))
+for i, (lab, v, col) in enumerate(ky_cases):
+    ax.barh(i, v, height=0.6, color=col)
+    ax.text(v + 90, i, f"\\${v:,}", va="center", fontsize=7.4, fontweight="bold", color="#333333")
+ax.axvspan(6250, 7813, color="#F3E4E0", zorder=0)
+ax.text(7020, 6.62, "the plan's requirement:\n\\$6,250 to \\$7,813\nper displaced student", ha="center",
+        fontsize=7.6, color="#8a4a2b", fontweight="bold")
+for v, lab, col in [(713, "our median\n\\$713", NAVY), (4414, "our best case\n\\$4,414", NAVY)]:
+    ax.axvline(v, ymin=0.115, color=col, lw=1.4, linestyle=(0, (4, 2)))
+    ax.text(v, -1.55, lab, ha="center", fontsize=7.2, color=col, fontweight="bold")
+ax.set_yticks(yy); ax.set_yticklabels([c[0] for c in ky_cases], fontsize=7.4)
+ax.set_xlabel("District budget gap vs state trend, per displaced student, per year (upper bound on closure savings)")
+ax.set_xlim(0, 8600)
+ax.set_ylim(-2.1, 7.4)
+ax.xaxis.set_major_formatter(lambda v, p: f"\\${v:,.0f}")
+ax.xaxis.grid(True, color="#E4E6EA", linewidth=0.8); ax.set_axisbelow(True)
+for sp in ("top", "right"): ax.spines[sp].set_visible(False)
+ax.set_title("Thirty years of Kentucky closures: every plausible case pays less per\ndisplaced student than this plan requires", fontsize=10)
+ax.text(0.01, -0.30, "Method: each district's spending vs its own pre-closure level grown at the state trend, whole gap credited to the closure "
+        "(generous).\nEight further cases show gaps of \\$15,000 to \\$99,000 per child, more than a school even costs per student: "
+        "proof such gaps are budget-wide,\nnot closure savings, and why this report builds its estimate bottom-up instead.",
+        transform=ax.transAxes, fontsize=6.6, color="#666666", va="top")
+fig.tight_layout()
+save(fig, "chart_ky_record.png")
+
 # ---- V3: Millersburg timeline ----
 fig, ax = plt.subplots(figsize=(6.9, 3.9))
 myrs = [1980, 1990, 2000, 2010, 2020]
