@@ -248,7 +248,7 @@ put(c, "C48", "-$384,780 a year: the closure loses money", NOTE)
 put(c, "A49", "Favorable tail (all levers favorable)")
 put(c, "B49", "=D41+D39*D40-B42-B43*Assumptions!B6-B44-B45", BLK, CUR)
 put(c, "C49", "+$565,000 a year: the ceiling, and still below the plan's $800K-$1M requirement", NOTE)
-put(c, "A50", "Distribution of all 1,944 combinations (computed in build script, equal weights): median +$91,240; middle half -$17,500 to +$200,000; 29 percent of scenarios negative. One-time transition costs $100K-$300K in year one are additional.", NOTE, wrap=True)
+put(c, "A50", "Distribution of all 1,944 combinations, equal weights, enumerated by build/closure_grid.py: positions take four values (2, 3, 4, 5), fixed-avoided takes two ($230,000 mothballed, $290,000 sold), and the five other levers three each (4 x 2 x 3^5 = 1,944). Median +$91,240; middle half -$17,500 to +$200,000; 28.8 percent (559 of 1,944, published as 29 percent) of scenarios negative. One-time transition costs $100K-$300K in year one are additional.", NOTE, wrap=True)
 put(c, "A52", "HOSTILE PAPER CASE, PUBLISHED WITH ITS REFUTATION", SEC)
 put(c, "A53", "Every absorbed student priced at the empirical $9,848 marginal")
 put(c, "B53", "=Assumptions!B14*Assumptions!B11-128*Redistricting!B111-137500-10*Assumptions!B6", BLK, CUR)
@@ -326,8 +326,8 @@ put(rd, "A26", "New SEEK revenue from cross-county transfers (FY2027 base)"); pu
 put(rd, "A27", "Variable cost of all added students"); put(rd, "B27", "=(B12+B13)*Assumptions!B62", GRN, CUR)
 put(rd, "A28", "Sections avoided or redeployed at receiving schools, low (count)"); put(rd, "B28", 1, BLUE, NUM, fill=YEL)
 put(rd, "A29", "Sections avoided or redeployed at receiving schools, high (count)"); put(rd, "B29", 2, BLUE, NUM, fill=YEL)
-put(rd, "A30", "Net recurring benefit, low", bold=True); b30 = put(rd, "B30", "=B26-B27+B28*Assumptions!B41", BLK, CUR, bold=True); b30.border = TOPLINE
-put(rd, "A31", "Net recurring benefit, high", bold=True); put(rd, "B31", "=B26-B27+B29*Assumptions!B41", BLK, CUR, bold=True)
+put(rd, "A30", "Net recurring benefit, low (avoided sections priced at the GF-borne $60K central, per the v3 on-behalf correction; range $50-75K)", bold=True); b30 = put(rd, "B30", "=B26-B27+B28*Assumptions!B69", BLK, CUR, bold=True); b30.border = TOPLINE
+put(rd, "A31", "Net recurring benefit, high (two sections at the same GF-borne rate)", bold=True); put(rd, "B31", "=B26-B27+B29*Assumptions!B69", BLK, CUR, bold=True)
 
 put(rd, "A33", "PER-STUDENT ARITHMETIC (the number the closure argument leans on)", SEC)
 put(rd, "A34", "NMES site spending today"); put(rd, "B34", "=Assumptions!B14*Assumptions!B11", GRN, CUR)
@@ -376,7 +376,7 @@ for i, mc in enumerate([400, 2500, 5000, 10000, 14173]):
     put(rd, f"B{rr}", f"=(B$34+(B$6-B$5)*A{rr})/B$6", BLK, CUR)
     put(rd, f"C{rr}", f"=(B$34+(154-B$5)*A{rr})/154", BLK, CUR)
 put(rd, "A70", "Receiving schools today: Bourbon Central $18,131, Cane Ridge $18,670. At the state-approved 174 rating, NMES undercuts both across the entire grid, including the impossible full-average case. At the draft plan's 154 rating it holds for any marginal cost under about $12,000, roughly thirty times the realistic figure. Verdict: structural at 174, robust at 154.", NOTE, wrap=True)
-put(rd, "A71", "Base-year variant: at the current 115 enrolled, filling to 174 adds 59 students and the break-even vs Bourbon Central falls to about $11,500, with the same verdict. Two added teachers at the loaded rate are equivalent to about $3,700 of marginal cost per student, inside the grid above.", NOTE, wrap=True)
+put(rd, "A71", "Current enrollment is 128 (NCES CCD, 2024-25); filling to 174 adds 46 students, the figure used throughout this workbook and the grid above.", NOTE, wrap=True)
 
 put(rd, "A73", "FIVE YEARS OF THE SAME TEST (KDE school-level filings, 2019-20 to 2023-24; backs Figure 6)", SEC)
 put(rd, "A74", "Year", BOLDW, fill=HDR); put(rd, "B74", "NMES members", BOLDW, fill=HDR); put(rd, "C74", "NMES $/pupil", BOLDW, fill=HDR)
@@ -422,7 +422,7 @@ put(rd, "B96", "=(8902321-15*Assumptions!B62-Assumptions!B41)/(491-15)", BLK, CU
 put(rd, "C96", "Bourbon Central; Cane Ridge next row. Consolidation lowers sender per-pupil AND is the source of the district-level saving; do not count it twice", NOTE, wrap=True)
 put(rd, "A97", "Cane Ridge, same treatment")
 put(rd, "B97", "=(8606870-15*Assumptions!B62-Assumptions!B41)/(461-15)", BLK, CUR)
-put(rd, "A98", "The same discipline applies to the closure direction: 128 arriving students trigger the same class caps at the receiving schools, adding sections in several grades, which is exactly why the closure's net saving is $121K to $725K and not the school's $2.5M gross cost.", NOTE, wrap=True)
+put(rd, "A98", "The same discipline applies to the closure direction: 128 arriving students trigger the same class caps at the receiving schools, adding sections in several grades, which is exactly why the closure's net effect is minus $385K to plus $565K (median $91K) and not the school's $2.5M gross cost.", NOTE, wrap=True)
 
 put(rd, "A100", "FAIR TEST: EVERY SCHOOL FILLED TO ITS RATED CAPACITY, SEVEN CAPACITY SETS (backs Figure 6)", SEC)
 put(rd, "A101", "Step costs: $400 per student added or removed, plus or minus $85,000 per section vs today's staffing (even K-5 mix under KRS 157.360). Section deltas below are precomputed from that rule; capacities from the named documents, all archived in build/.", NOTE, wrap=True)
@@ -659,9 +659,9 @@ put(d, f"F{r}", "Payment is approximately the operating amount the plan frees up
 put(d, f"A{r}", "WHAT EACH SAVINGS ESTIMATE COULD ACTUALLY BOND", SEC); r += 1
 put(d, f"A{r}", "Bond principal supported = annual savings x present-value annuity factor at the rate and term above", NOTE); r += 1
 sav_rows = [
- ("District's own KDE-filed excess cost of NMES vs peer elementaries", 121220, "Matches the closure model's worst case"),
- ("Closure model default net saving", 361240, "Closure_Model tab"),
- ("Closure model best case", 725000, "Closure_Model tab"),
+ ("District's own KDE-filed excess cost of NMES vs peer elementaries", 121220, "Sits between the v3 closure model's median ($91,240) and central case ($131,240)"),
+ ("Closure model median (v3 two-tailed grid)", 91240, "Closure_Model tab, 1,944-combination grid"),
+ ("Closure model best case (v3 favorable tail)", 565000, "Closure_Model tab B49"),
  ("Administration's claim, July 15, 2026", 900000, "Unpublished derivation; reconcile with KDE-filed school-level spending"),
 ]
 for label, sv, note6 in sav_rows:
@@ -702,7 +702,7 @@ put(d, f"F{r}", "Unbudgeted even in the final amended budget; the district shoul
 put(d, f"A{r}", "  of which booked in June (period 12) alone"); put(d, f"B{r}", 1413929, BLUE, CUR)
 put(d, f"F{r}", "Months 1-11 produced $153,900 combined, a normal run rate; the balance sheet shows no receivable behind the June entry", NOTE, wrap=True); jmisc_r = r; r += 1
 put(d, f"A{r}", "Caveat 2: restricted capital money transferred INTO the General Fund in June 2026"); put(d, f"B{r}", 1320939, BLUE, CUR)
-put(d, f"F{r}", "Object 5210: $1,098,633 from the Building Fund (320) + $222,276 from Capital Outlay (310), which ended the year at $0. Lawful under budget-act capital funds flexibility; budgeted from September 2025", NOTE, wrap=True); xfer_r = r; r += 1
+put(d, f"F{r}", "Object 5210: $1,098,663 from the Building Fund (320) + $222,276 from Capital Outlay (310), which ended the year at $0 ($1,098,663 + $222,276 = $1,320,939 per the GF receipts ledger; the packet's fund 320 page records $1,098,633, a $30 internal discrepancy in the district's own packet). Lawful under budget-act capital funds flexibility. The Building Fund piece was budgeted from September 2025 ($1,120,203); the $222,276 Capital Outlay piece appears in no version of the FY2026 budget", NOTE, wrap=True); xfer_r = r; r += 1
 put(d, f"A{r}", "Net change excluding the capital transfer")
 put(d, f"B{r}", f"=B{fy26rev_r}-B{fy26exp_r}-B{xfer_r}", BLK, CUR)
 put(d, f"F{r}", "About -$1.69 million: the operating result on operating revenue alone", NOTE, wrap=True); r += 1
@@ -726,7 +726,7 @@ put(d, f"F{r}", "About $14 million: the plan's own target, carried by restricted
 r += 2
 put(d, f"A{r}", "SCENARIO: BALANCE THE BUDGET AND EXPAND BONDING CAPACITY, NO CLOSURE", SEC); r += 1
 put(d, f"A{r}", "Two cases differ only in the operating gap assumed. Conservative treats the FY2026 $1.57M receipt as one-time;", NOTE); r += 1
-put(d, f"A{r}", "trend uses the unaudited FY2026 net change. Operations are balanced first; only the remainder services debt.", NOTE); r += 1
+put(d, f"A{r}", "trend uses the unaudited FY2026 net change. The sweep is ended in both cases; only genuine remainder services debt.", NOTE); r += 1
 put(d, f"B{r}", "Conservative", BOLDW, fill=HDR); put(d, f"C{r}", "FY2026 trend", BOLDW, fill=HDR); r += 1
 put(d, f"A{r}", "Operating gap to close first")
 put(d, f"B{r}", 1900000, BLUE, CUR); put(d, f"C{r}", 373989, BLUE, CUR)
@@ -737,9 +737,13 @@ put(d, f"F{r}", "Same base and compounding as the levy tab; year 1 is $313,162, 
 put(d, f"A{r}", "Recurring cost reductions, not from closing a school")
 put(d, f"B{r}", 1000000, BLUE, CUR); put(d, f"C{r}", 1000000, BLUE, CUR)
 put(d, f"F{r}", "Editable. For scale from the FY2025 audit: district administration grew $221K in one year, salaries fell $224K through attrition, spending ran $859K under budget", NOTE, wrap=True); cut_r = r; r += 1
-put(d, f"A{r}", "Operating room left for debt service after the budget balances")
+put(d, f"A{r}", "End the capital-to-GF sweep (required before the building-fund residual can be pledged to new bonds)")
+put(d, f"B{r}", 1320939, BLUE, CUR); put(d, f"C{r}", 1320939, BLUE, CUR)
+put(d, f"F{r}", "The FY2026 sweep is General Fund revenue today; pledging the residual means replacing it. Without this row the restricted stream would be counted twice", NOTE, wrap=True); swp_r = r; r += 1
+put(d, f"A{r}", "Operating room left for debt service after the budget balances and the sweep ends")
 for col in ("B", "C"):
-    put(d, f"{col}{r}", f"=MAX(0,{col}{lev_r}+{col}{cut_r}-{col}{gap_r})", BLK, CUR)
+    put(d, f"{col}{r}", f"=MAX(0,{col}{lev_r}+{col}{cut_r}-{col}{gap_r}-{col}{swp_r})", BLK, CUR)
+put(d, f"F{r}", "Trend case balances with about $283K to spare; the conservative case is still about $1.24M short, so its total below leans on equalization and existing restricted capacity only", NOTE, wrap=True)
 room_r = r; r += 1
 put(d, f"A{r}", "General-fund bond capacity from that room")
 for col in ("B", "C"):
@@ -779,9 +783,9 @@ for col, prev in zip("CDE", "BCD"):
     put(rw, f"{col}5", f"={prev}5-GF_Summary!$D$16", BLK, CUR)
 put(rw, "A6", "With alternatives package (conservative midpoint; half effect FY2027, full after)")
 put(rw, "B6", "=GF_Summary!D9-GF_Summary!$D$16", BLK, CUR)
-put(rw, "C6", "=B6-GF_Summary!$D$16+0.5*Alternatives!$B$21", BLK, CUR)
-put(rw, "D6", "=C6-GF_Summary!$D$16+Alternatives!$B$21", BLK, CUR)
-put(rw, "E6", "=D6-GF_Summary!$D$16+Alternatives!$B$21", BLK, CUR)
+put(rw, "C6", "=B6-GF_Summary!$D$16+0.5*Alternatives!$B$20", BLK, CUR)
+put(rw, "D6", "=C6-GF_Summary!$D$16+Alternatives!$B$20", BLK, CUR)
+put(rw, "E6", "=D6-GF_Summary!$D$16+Alternatives!$B$20", BLK, CUR)
 put(rw, "A7", "Closure only (v3 central case, $131,240, from FY2027)")
 put(rw, "B7", "=GF_Summary!D9-GF_Summary!$D$16", BLK, CUR)
 for col, prev in zip("CDE", "BCD"):
@@ -809,9 +813,9 @@ put(sc, "A6", "2. Close NMES and consolidate")
 put(sc, "B6", "=Closure_Model!B20", GRN, CUR)
 put(sc, "C6", "=Runway!E7", BLK, CUR)
 put(sc, "D6", "Unpublished", NOTE)
-put(sc, "E6", "Closure vote; covers 13.6% of the gap (24.2% in the district-favorable case); longer rides; enrollment-loss risk", NOTE)
+put(sc, "E6", "Closure vote; the v3 central case covers 5.0% of the gap (10.8% at the base case, 21.3% at the favorable tail); longer rides; enrollment-loss risk", NOTE)
 put(sc, "A7", "3. Districtwide recovery plan (menu plus levy; includes rebalancing and growing NMES)")
-put(sc, "B7", "=Alternatives!B21", GRN, CUR)
+put(sc, "B7", "=Alternatives!B20", GRN, CUR)
 put(sc, "C7", "=Runway!E6", BLK, CUR)
 put(sc, "D7", "Varies by measure", NOTE)
 put(sc, "E7", "Revenue votes, administrative rollback, boundary action, HB 563 recruitment and a signature program at NMES (advanced learners is one option), implementation discipline; every school stays open", NOTE)
@@ -1088,7 +1092,7 @@ for i, h in enumerate(fhdrs):
 frows = [
  ("Bourbon County High School", 881, 637, 799, 704, "Rating rose 637 to 704 between plans; the CTC addition was the 2022-24 in-biennium priority"),
  ("Bourbon County Middle School", 616, 515, 640, 641, ""),
- ("Bourbon Central Elementary", 602, 564, 535, 521, "Rated capacity 549, reflecting the addition in the 2021 plan"),
+ ("Bourbon Central Elementary", 602, 564, 535, 521, "Approved rating 521; the plan's 549 is a contingent To-Become figure tied to an expansion never built (GSF unchanged at 63,320 through the July 2026 KDE report)"),
  ("Cane Ridge Elementary", 461, 500, 480, 422, "Rated capacity written down 78 seats between plans"),
  ("North Middletown Elementary", 169, 198, 161, 174, "Written down again to 154 in the 2026 draft; building held 261 students at the 1989 peak"),
  ("Preschool/Head Start Center", 296, 180, 272, 200, "Over capacity in both plans"),
@@ -1099,7 +1103,7 @@ for row in frows:
         put(fp, f"{get_column_letter(i+1)}{r}", v, NOTE if i in (0, 5) else BLUE, None if i in (0, 5) else NUM)
     r += 1
 put(fp, "A12", "RECEIVING CAPACITY TODAY (current ratings vs 2024-25 enrollment)", SEC)
-put(fp, "A13", "Bourbon Central open seats at rated 549"); put(fp, "B13", "=549-Redistricting!B8", BLK, NUM)
+put(fp, "A13", "Bourbon Central open seats at the approved 521"); put(fp, "B13", "=521-Redistricting!B8", BLK, NUM)
 put(fp, "A14", "Cane Ridge students over rated 422"); put(fp, "B14", "=Redistricting!B9-E8", BLK, NUM)
 put(fp, "A15", "Net uncommitted seats at both receiving schools"); put(fp, "B15", "=B13-B14", BLK, NUM, bold=True)
 put(fp, "A16", "NMES students needing seats on closure"); put(fp, "B16", "=Assumptions!B11", GRN, NUM)
@@ -1118,7 +1122,7 @@ put(fp, "A28", "THE 2026 DRAFT (presented July 15, 2026, before the committee's 
 d26hdrs = ["School", "2023-24 SAAR", "Draft capacity (KFICS)", "Change vs 2021 rating"]
 for i, h in enumerate(d26hdrs):
     put(fp, f"{get_column_letter(i+1)}29", h, BOLDW, fill=HDR)
-put(fp, "A30", "Bourbon Central"); put(fp, "B30", 491, BLUE, NUM); put(fp, "C30", 640, BLUE, NUM); put(fp, "D30", "=C30-549", BLK, NUM)
+put(fp, "A30", "Bourbon Central"); put(fp, "B30", 491, BLUE, NUM); put(fp, "C30", 640, BLUE, NUM); put(fp, "D30", "=C30-521", BLK, NUM)
 put(fp, "A31", "Cane Ridge"); put(fp, "B31", 461, BLUE, NUM); put(fp, "C31", 547, BLUE, NUM); put(fp, "D31", "=C31-E8", BLK, NUM)
 put(fp, "A32", "North Middletown"); put(fp, "B32", 128, GRN, NUM); put(fp, "C32", 154, BLUE, NUM); put(fp, "D32", "=C32-E9", BLK, NUM)
 put(fp, "A33", "Paper seats added at the receiving schools, with the draft's new-construction sections reading None"); put(fp, "B33", "=D30+D31", BLK, NUM, bold=True)
@@ -1154,7 +1158,7 @@ put(fp, "A49", "Receiving schools combined (Bourbon Central + Cane Ridge)"); put
 put(fp, "A50", "Net receiving seats at the slides' own capacities (499 and 397)"); put(fp, "B50", "=(499-Redistricting!B8)-(Redistricting!B9-397)", BLK, NUM, bold=True)
 put(fp, "A52", "Notes: components and totals as printed on the slides; Bourbon Central's printed components sum $9,421 below its printed total. "
                "The slides' receiving-school capacities (499, 397) differ from the 2026 draft DFP table (640, 547) and from the approved 2021 plan "
-               "(549 with addition, 422): three documents, three capacity sets for the same buildings. NMES total need is second lowest among the district's schools.", NOTE, wrap=True)
+               "(the approved 521, 422; the plan's contingent 549 depends on unbuilt work): three documents, three capacity sets for the same buildings. NMES total need is second lowest among the district's schools.", NOTE, wrap=True)
 
 put(fp, "A55", "2017 PLAN, RECOVERED (KBE approved June 7, 2017; Wayback capture July 1, 2017, archived as build/dfp_wayback_20170701225631.pdf; KBE minutes corroborate)", SEC)
 put(fp, "A56", "School", BOLDW, fill=HDR); put(fp, "B56", "2017 enr", BOLDW, fill=HDR); put(fp, "C56", "2017 cap", BOLDW, fill=HDR)
@@ -1188,8 +1192,8 @@ put(fp, "A74", "Notes: the Oct 2023 and Oct 2025 official reports rest on the sa
                "four-year repair bill is the smallest of the district's five schools. NMES Educational Suitability prints 0.21725 in both the 2023 and Jul 2026 reports, identical to five decimal places, "
                "so that component appears carried forward rather than re-surveyed. Higher index = healthier building.", NOTE, wrap=True)
 
-put(fp, "A26", "Reading: the receiving schools' rated capacities are 549 (Bourbon Central) and 422 (Cane Ridge). At current enrollment that is 90 open at Bourbon Central and 31 over at Cane Ridge, "
-               "a net 59 uncommitted seats for 128 children. NMES's major renovation was priced in 2013 and re-priced higher in 2021, each time scheduled after the then-current biennium. "
+put(fp, "A26", "Reading: the receiving schools' approved ratings are 521 (Bourbon Central; the plan's 549 is contingent on an expansion never built) and 422 (Cane Ridge). At current enrollment that is 62 open at Bourbon Central and 31 over at Cane Ridge, "
+               "a net 31 uncommitted seats for 128 children (59 only under the plan's contingent 549). NMES's major renovation was priced in 2013 and re-priced higher in 2021, each time scheduled after the then-current biennium. "
                "Its rated capacity fell 198 to 174 between the same two plans while its enrollment fell 169 to 128.", NOTE, wrap=True)
 
 # ================= KY_CLOSURES =================
@@ -1252,9 +1256,9 @@ put(kc, "A43", "  why $8,440 is an artifact, not a savings figure: dividing whol
 put(kc, "A44", "CONVERGENCE CHECK: the record's plausible median vs this model's independent bottom-up median per displaced student"); put(kc, "B44", 818, BLUE, CUR); put(kc, "C44", "=91240/Assumptions!B11", BLK, CUR, bold=True)
 
 put(kc, "A46", "OUTCOMES, WITHIN ONE TESTING SYSTEM (federal proficiency series, closures 2012-2016, change vs state 3 years out)", SEC)
-put(kc, "A47", "Events measurable / improved 3+ pts / declined 3+ pts / flat"); put(kc, "B47", 46, BLUE, NUM); put(kc, "C47", 13, BLUE, NUM); put(kc, "D47", 11, BLUE, NUM); put(kc, "E47", 22, BLUE, NUM)
-put(kc, "A48", "Spearman correlation, share of district displaced vs score change"); put(kc, "B48", -0.28, BLUE, "0.00")
-put(kc, "A49", "Median score change: events displacing 15%+ of district / under 15%"); put(kc, "B49", -2.0, BLUE, "0.0"); put(kc, "C49", 0.2, BLUE, "0.0")
+put(kc, "A47", "Events measurable / improved 3+ pts / declined 3+ pts / flat"); put(kc, "B47", 42, BLUE, NUM); put(kc, "C47", 11, BLUE, NUM); put(kc, "D47", 10, BLUE, NUM); put(kc, "E47", 21, BLUE, NUM)
+put(kc, "A48", "Spearman correlation, share of district displaced vs score change"); put(kc, "B48", -0.38, BLUE, "0.00")
+put(kc, "A49", "Median score change: events displacing 15%+ of district / under 15%"); put(kc, "B49", -2.0, BLUE, "0.0"); put(kc, "C49", -0.2, BLUE, "0.0")
 put(kc, "A50", "Events with BOTH clear savings and clear gains"); put(kc, "B50", 1, BLUE, NUM); put(kc, "C50", "Leslie County 2013: middle school folded into an existing campus in the same community", NOTE)
 put(kc, "A51", "Cases of a rural town's ELEMENTARY closed with clear savings and clear gains"); put(kc, "B51", 0, BLUE, NUM, bold=True)
 put(kc, "A53", "Honest limits: closures before 2012 and after 2016 cannot be score-tested across Kentucky's assessment-system changes; whole-district mergers are unobservable afterward; and same-size Kentucky towns that KEPT schools declined in population at nearly the same median rate as towns that lost them (-4.1 vs -3.5 percent, 2000-2020), so no claim is made that closure causes population decline. The claim is narrower: the record contains no measurable precedent for the savings or the improvement this plan promises.", NOTE, wrap=True)

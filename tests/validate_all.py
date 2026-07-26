@@ -87,10 +87,10 @@ def main():
         "model Facility_Plans: 2021 capacities 521/422/174")
     chk(fp["C9"].value == 198,
         "model Facility_Plans: NMES 2013 capacity 198")
-    chk("549 at Bourbon Central and 422 at Cane Ridge" in t and "net 59 uncommitted seats" in t,
-        "PDF states receiving capacities 549/422 and the net 59 seats")
-    chk("549" in html and "422" in html and "198" in html and "59" in html,
-        "site shows capacities 549/422, the 198 history, and the net 59")
+    chk("521 at Bourbon Central and 422 at Cane" in t and "net 31 uncommitted seats" in t,
+        "PDF states approved receiving capacities 521/422 and the net 31 seats")
+    chk("521" in html and "422" in html and "198" in html and "31" in html,
+        "site shows the approved 521/422, the 198 history, and the net 31")
     chk("547" in t and "154" in t and "83 percent full" in t,
         "PDF carries the 2026 draft re-ratings and the 83 percent fill")
     chk("547" in html and "154" in html and "83 percent full" in html,
@@ -118,7 +118,7 @@ def main():
     chk("audio system" in html, "site states the recovered 2024 bond purpose")
     chk("first among all four" in t and "SchoolDigger index" in t,
         "PDF leads with KDE results and labels the SchoolDigger index")
-    chk("1st in all 5 subjects" in html and "state" in html,
+    chk("1st in all 5 reported subjects" in html and "state" in html,
         "site hero tile carries the KDE first-in-county claim")
 
     # KDE official historical record (build/kde_scores_history.json)
@@ -204,7 +204,7 @@ def main():
         "SABS query script present and referenced in PDF, README, site")
 
     # headline claims
-    for needle in ["$140,000 to $225,000", "2,648,086", "$23.5",
+    for needle in ["$116,000 to $176,000", "2,648,086", "$23.5",
                    "Appendix B: The Open Records Checklist", "KRS 157.370",
                    "Boston Public Schools"]:
         chk(needle in t, f"PDF claim intact: {needle}")
@@ -228,8 +228,8 @@ def main():
                    "$1,320,939", "$1,413,929", "August 17, 2023", "$82,866",
                    "Paris Independent", "$3.1 million"]:
         chk(needle in html, f"site bonding story intact: {needle}")
-    chk("$1,098,633" in html and "$222,276" in html
-        and "$1,098,633" in t and "$222,276" in t,
+    chk("$1,098,663" in html and "$222,276" in html
+        and "$1,098,663" in t and "$222,276" in t,
         "capital transfer components consistent on site and in PDF")
 
     # filled-to-capacity scenarios (Figure 6 / chartPPtime grouped bars)
@@ -303,16 +303,32 @@ def main():
         and (REPO / "reports" / "Saving_NMES_v3.4_2026-07-26.pdf").exists(),
         "v3.4 archived in reports/ and linked from the version history")
 
+    # v3.5 correction release
+    for needle in ["$1,489,853", "closed in 2006", "$116,000 to $176,000",
+                   "42 closure events", "net 31 uncommitted seats",
+                   "closure_grid.py", "ky_closure_events_full.csv",
+                   "contingent", "$1,098,663", "244 paper seats"]:
+        chk(needle in t, f"v3.5 correction intact in PDF: {needle}")
+    for needle in ["$1,098,663", "1st in all 5 reported subjects", "closed in 2006",
+                   "$116,000 to $176,000", "244 paper seats", "contingent"]:
+        chk(needle in html, f"v3.5 correction intact on site: {needle}")
+    for f in ["closure_grid.py", "ky_closure_events_full.csv",
+              "ky_district_finance_1995_2020.csv", "ky_edfacts_district_2009_2018.csv"]:
+        chk((REPO / "build" / f).exists(), f"reproducibility file archived: build/{f}")
+    chk("reports/Saving_NMES_v3.5_2026-07-26.pdf" in html
+        and (REPO / "reports" / "Saving_NMES_v3.5_2026-07-26.pdf").exists(),
+        "v3.5 archived in reports/ and linked from the version history")
+
     chk("unaudited" in html and "unaudited" in t,
         "FY2026 figures labeled unaudited on site and in PDF")
     chk((REPO / "build" / "fy2026_june_financial_packet.pdf").exists()
         and "fy2026_june_financial_packet.pdf" in html,
         "June 2026 financial packet archived and linked from site")
-    chk("budget balanced first either way" in html and "balanced-budget scenario" in t,
+    chk("sweep ended in both cases" in html and "balanced-budget scenario" in t,
         "balanced-budget scenario referenced on site and in PDF")
-    chk("$22 million" in html and "$42 million" in html
-        and "$22 million" in t and "$42 million" in t,
-        "scenario capacity range $22M/$42M consistent on site and in PDF")
+    chk("$21 million" in html and "$25 million" in html
+        and "$21 million" in t and "$25 million" in t,
+        "scenario capacity range $21M/$25M consistent on site and in PDF")
 
     # money-story cleanup: GF-only levy base, both denominators, precise debt wording
     chk("$313,000" in t and "$978,000" in t and "386,000" not in t,

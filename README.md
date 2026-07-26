@@ -65,6 +65,25 @@ it attributes no motive and alleges no wrongdoing to anyone.
 ## Report version history
 Every published version stays available under `reports/`; each report's
 corrections section lists what changed and why.
+- v3.5 (July 26, 2026): correction release from a 36-agent adversarial
+  audit of the entire case (117 raw findings, 22 confirmed after
+  verification, all fixed): Building Fund transfer component $1,098,663
+  per the GF ledger (with the packet's own $30 internal discrepancy
+  disclosed); Bourbon Central's current approved rating corrected to 521
+  (549 is the plan's contingent To-Become figure tied to unbuilt work),
+  net receiving seats 31 and draft paper seats 244; avoided sections
+  repriced at the GF-borne $60K (fill package $116K-$176K); Millersburg
+  closure year corrected to 2006 per the federal record and the distance
+  to about nine road miles; FY2026 contingency $1,489,853; "best in
+  three years"; science-suppression caveats added; SchoolDigger averages
+  labeled; Montgomery four-elementaries caveat; bonding scenario no longer
+  double counts the swept building-fund stream ($21M/$25M); the
+  1,944-scenario grid enumerated by `build/closure_grid.py`; the full
+  30-year closure dataset archived (`build/ky_closure_events_full.csv`
+  plus finance and score extracts); outcome statistics restated on the
+  refined corpus (42 events: 11 improved, 10 declined, 21 flat;
+  displacement gradient -0.38); stale workbook cells and an off-by-one
+  cell reference fixed.
 - v3.4 (July 26, 2026): the full closure distribution published (163 events
   per displaced student, median $1,102, 40 percent negative, tails beyond
   the physical ceiling shaded as budget noise); case panel rebuilt to rural

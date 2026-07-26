@@ -226,11 +226,11 @@ b2 = ax.bar(x + w/2, after, w, color=NAVY, label="Rebalanced (30 rezoned + 16 tr
 for r, v in list(zip(b1, today)) + list(zip(b2, after)):
     ax.text(r.get_x() + r.get_width()/2, v + 8, f"{v}", ha="center", fontsize=8.6,
             fontweight="bold", color="#333333")
-caps = [174, 549, 422]
+caps = [174, 521, 422]
 for xi, cv in zip(x, caps):
     ax.plot([xi - w, xi + w], [cv, cv], color=BLUE, linewidth=1.4, linestyle="--")
 ax.text(x[0] + w + 0.05, 174, "174", fontsize=8, color=BLUE, va="center")
-ax.text(x[1] + w + 0.05, 549, "549", fontsize=8, color=BLUE, va="center")
+ax.text(x[1] + w + 0.05, 521, "521", fontsize=8, color=BLUE, va="center")
 ax.text(x[2] + w + 0.05, 422, "422", fontsize=8, color=BLUE, va="center")
 ax.plot([], [], color=BLUE, linewidth=1.4, linestyle="--",
         label="Rated capacity (2021 facility plan)")
@@ -536,10 +536,10 @@ co_i = [v / 19360 * 100 for v in county5]
 ax.plot(myrs, mb_i, color=NAVY, marker="o", markersize=5, lw=2.4, label="Millersburg (2000 = 100)")
 ax.plot(myrs, co_i, color=GRAY, marker="s", markersize=4, lw=1.8, linestyle="--", label="Bourbon County (2000 = 100)")
 ax.axvline(2006, color="#B9C4D4", lw=1.0, linestyle=(0, (4, 2)))
-ax.axvline(2007, color="#C0625E", lw=1.5, linestyle=(0, (4, 2)))
+ax.axvline(2006.45, color="#C0625E", lw=1.5, linestyle=(0, (4, 2)))
 ax.axvline(2013, color="#B9C4D4", lw=1.0, linestyle=(0, (4, 2)))
 ax.text(2005.6, 120.5, "military institute\ncloses 2006", fontsize=6.9, color="#666666", ha="right")
-ax.text(2007.4, 78.2, "ELEMENTARY CLOSES 2007\n(119 students; NMES today: ~115)", fontsize=7.0, color="#7a3b2e", fontweight="bold")
+ax.text(2006.9, 78.2, "ELEMENTARY CLOSES 2006\n(119 students; NMES today: 128)", fontsize=7.0, color="#7a3b2e", fontweight="bold")
 ax.text(2013.4, 114.5, "Joy Global closes 2013:\n197 jobs, half the\ntown's budget", fontsize=6.9, color="#666666")
 ax.text(2020.5, mb_i[-1], "747\n(down 11%\nsince 2000)", fontsize=7.4, color=NAVY, fontweight="bold", va="center")
 ax.text(2020.5, co_i[-1] + 1.2, "20,252 (+4.6%)", fontsize=7.4, color="#555555", va="center")

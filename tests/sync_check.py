@@ -242,10 +242,10 @@ if xfer == 1320939 and "$1,320,939" in html and "$1,320,939" in pdf_flat:
 else:
     diff(f"capital transfer: model {xfer}, site {'$1,320,939' in html}, pdf {'$1,320,939' in pdf_flat}")
 gap_b, gap_c = ds_vals.get("Operating gap to close first", (None, None))
-if gap_b == 1900000 and gap_c == 373989 and "$22 million" in html and "$42 million" in html:
+if gap_b == 1900000 and gap_c == 373989 and "$21 million" in html and "$25 million" in html:
     match("balanced-budget scenario inputs ($1.9M / $373,989 gaps) in model; $22M/$42M capacity quoted on site")
 else:
-    diff(f"scenario: model gaps {gap_b}/{gap_c}, site $22M {'$22 million' in html}, $42M {'$42 million' in html}")
+    diff(f"scenario: model gaps {gap_b}/{gap_c}, site $21M {'$21 million' in html}, $25M {'$25 million' in html}")
 
 # ---------- 7. KFICS condition index (v3.1): site JS vs model vs PDF ----------
 FP = wb["Facility_Plans"]
@@ -273,8 +273,8 @@ else:
 
 # ---------- 8. recruitment pool (v3.2): fill planner lever, model, PDF ----------
 RD = wb["Redistricting"]
-if re.search(r"net=\(t\+h\)\*4626-\(r\+t\+h\)\*400\+s\*85000", html):
-    match("fill planner JS prices returns like transfers: (t+h)*4626-(r+t+h)*400+s*85000")
+if re.search(r"net=\(t\+h\)\*4626-\(r\+t\+h\)\*400\+s\*60000", html):
+    match("fill planner JS prices returns like transfers: (t+h)*4626-(r+t+h)*400+s*60000")
 else:
     diff("fill planner JS formula for returning students not found or changed")
 hs = (RD["B117"].value, RD["B118"].value)
@@ -332,7 +332,7 @@ else:
     diff(f"distribution rows: {KC['C39'].value}/{KC['C40'].value}/{KC['B42'].value}/{KC['B43'].value}")
 
 # site text spot checks
-for s, label in [("1st in all 5 subjects", "hero fact scores"), ("-$385K to +$565K", "hero fact closure range"),
+for s, label in [("1st in all 5 reported subjects", "hero fact scores"), ("-$385K to +$565K", "hero fact closure range"),
                  ("$7,829,060", "GF levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),
                  ("128 students", "enrollment in prose"), ("rated capacity of 174", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")
