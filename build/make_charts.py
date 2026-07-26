@@ -479,40 +479,51 @@ ax.set_title("Building condition as reported to the state: every KFICS State Rep
 fig.tight_layout()
 save(fig, "chart_condition.png")
 
-# ---- V3.3: the Kentucky record, dollars per displaced student ----
-fig, ax = plt.subplots(figsize=(6.9, 4.6))
-ky_cases = [
-    ("Metcalfe 2013 (3 schools; scores fell 10.5 vs state)", 2050, GRAY),
-    ("Pineville 2014 (same-town rebuild, new campus)", 2067, MBLUE),
-    ("Webster 2012 (Slaughters El; town lost school)", 3525, GRAY),
-    ("Perry 2017 (3 towns' elems; NEW school built)", 3643, MBLUE),
-    ("Wayne 2007 (A J Lloyd Middle)", 4758, GRAY),
-    ("Somerset 1999 (city district reorg)", 6509, LGRAY),
-    ("Montgomery 2018 (county-seat reorg)", 7520, LGRAY),
+# ---- V3.4: the Kentucky record, full distribution + rural elementary cases ----
+fig, (axA, axB) = plt.subplots(2, 1, figsize=(6.9, 7.2), height_ratios=[1, 1.05])
+# Panel A: all 163 events, per displaced student, clipped at +/-16K
+bins = [16,2,0,0,1,0,3,3,1,1,2,3,1,6,15,11,14,6,9,11,7,5,3,3,4,3,0,0,4,0,0,3,26]
+edges = list(range(-16,17))
+cols = []
+for b in edges:
+    if b < -13 or b >= 13: cols.append("#DDD3CB")
+    else: cols.append(MBLUE if b >= 0 else "#C9CDD4")
+axA.bar([e+0.5 for e in edges], bins, width=0.92, color=cols)
+axA.axvspan(6.25, 7.813, color="#F3E4E0", zorder=0)
+axA.axvline(1.102, color=NAVY, lw=1.6, linestyle=(0,(4,2)))
+axA.text(1.35, 27.4, "median: \\$1,102 per\ndisplaced student", fontsize=7.4, color=NAVY, fontweight="bold")
+axA.axvline(0, color="#555555", lw=1.0)
+axA.text(-15.6, 27.4, "40% of districts spent\nMORE than trend\nafter closing", fontsize=7.2, color="#7a3b2e", fontweight="bold")
+axA.text(7.03, 21.5, "the plan:\n\\$6,250\nto \\$7,813", ha="center", fontsize=7.2, color="#8a4a2b", fontweight="bold")
+axA.text(14.5, 21.5, "beyond \\$13K:\nmore than a school\neven costs per\nstudent; budget\nnoise, both tails", ha="center", fontsize=6.4, color="#77706a")
+axA.set_xlim(-16.6, 17.6); axA.set_ylim(0, 30)
+axA.set_xticks(range(-16, 17, 4))
+axA.set_xticklabels([("\u2264-16" if v==-16 else ("\u2265+16" if v==16 else f"{v:+d}")) for v in range(-16,17,4)], fontsize=7.6)
+axA.set_xlabel("District budget gap vs state trend per displaced student ($K per year), whole gap credited to the closure", fontsize=7.8)
+axA.set_ylabel("closure events")
+axA.set_title("All 163 measurable Kentucky rural closures, 1995-2020: the whole record, nothing hidden", fontsize=9.6)
+clean(axA)
+# Panel B: rural ELEMENTARY closures only, the district's strongest cases
+kb = [
+    ("Our model, median to best case", 713, 4414, NAVY, True),
+    ("Metcalfe 2013 (built 2 new centers;\nscores fell 10.5 vs state)", 0, 2050, MBLUE, False),
+    ("Webster 2012 (Slaughters El; NOTHING\nbuilt: the one clean comparable)", 0, 3525, "#5B6B7E", False),
+    ("Perry 2017 (3 towns; built NEW\nWest Perry Elementary)", 0, 3643, MBLUE, False),
+    ("Adair 2006 (3 schools; built NEW Adair Co\nElementary; spending spike reverting)", 0, 6935, MBLUE, False),
+    ("THE PLAN: no new school,\n\\$800K to \\$1M required", 6250, 7813, "#C0625E", False),
 ]
-yy = np.arange(len(ky_cases))
-for i, (lab, v, col) in enumerate(ky_cases):
-    ax.barh(i, v, height=0.6, color=col)
-    ax.text(v + 90, i, f"\\${v:,}", va="center", fontsize=7.4, fontweight="bold", color="#333333")
-ax.axvspan(6250, 7813, color="#F3E4E0", zorder=0)
-ax.text(7020, 6.62, "the plan's requirement:\n\\$6,250 to \\$7,813\nper displaced student", ha="center",
-        fontsize=7.6, color="#8a4a2b", fontweight="bold")
-for v, lab, col in [(713, "our median\n\\$713", NAVY), (4414, "our best case\n\\$4,414", NAVY)]:
-    ax.axvline(v, ymin=0.115, color=col, lw=1.4, linestyle=(0, (4, 2)))
-    ax.text(v, -1.55, lab, ha="center", fontsize=7.2, color=col, fontweight="bold")
-ax.set_yticks(yy); ax.set_yticklabels([c[0] for c in ky_cases], fontsize=7.4)
-ax.set_xlabel("District budget gap vs state trend, per displaced student, per year (upper bound on closure savings)")
-ax.set_xlim(0, 8600)
-ax.set_ylim(-2.1, 7.4)
-ax.xaxis.set_major_formatter(lambda v, p: f"\\${v:,.0f}")
-ax.xaxis.grid(True, color="#E4E6EA", linewidth=0.8); ax.set_axisbelow(True)
-for sp in ("top", "right"): ax.spines[sp].set_visible(False)
-ax.set_title("Thirty years of Kentucky closures: every plausible case pays less per\ndisplaced student than this plan requires", fontsize=10)
-ax.text(0.01, -0.30, "Method: each district's spending vs its own pre-closure level grown at the state trend, whole gap credited to the closure "
-        "(generous).\nEight further cases show gaps of \\$15,000 to \\$99,000 per child, more than a school even costs per student: "
-        "proof such gaps are budget-wide,\nnot closure savings, and why this report builds its estimate bottom-up instead.",
-        transform=ax.transAxes, fontsize=6.6, color="#666666", va="top")
-fig.tight_layout()
+yy = np.arange(len(kb))
+for i, (lab, lo, hi, col, isrange) in enumerate(kb):
+    axB.barh(i, hi-lo, left=lo, height=0.58, color=col, edgecolor="#666666" if i==len(kb)-1 else "none", linewidth=0.8)
+    axB.text(hi+90, i, (f"\\${lo:,} to \\${hi:,}" if lo>0 else f"\\${hi:,}"), va="center", fontsize=7.2, fontweight="bold", color="#333333")
+axB.set_yticks(yy); axB.set_yticklabels([k[0] for k in kb], fontsize=7.0)
+axB.invert_yaxis()
+axB.set_xlim(0, 10600)
+axB.xaxis.set_major_formatter(lambda v, p: f"\\${v:,.0f}")
+axB.set_xlabel("Per displaced student, per year. Rural ELEMENTARY closures only; city and county-seat grade\nreshuffles (Somerset 1999, Montgomery 2018, which opened a new elementary the same year)\nappear in the record above but are not comparisons for closing a rural town's school.", fontsize=7.2)
+axB.set_title("The rural elementary cases: every one at or near the plan's number built a new school", fontsize=9.6)
+clean(axB, ygrid=False, xgrid=True)
+fig.tight_layout(h_pad=2.2)
 save(fig, "chart_ky_record.png")
 
 # ---- V3: Millersburg timeline ----

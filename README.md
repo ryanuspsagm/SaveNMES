@@ -9,8 +9,8 @@ public source cited in the report and on the site.
 
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
-- `Saving_North_Middletown_Elementary.pdf` - the 42-page report.
-- `NMES_Financial_Model.xlsx` - the 16-tab financial model (318 formulas).
+- `Saving_North_Middletown_Elementary.pdf` - the 43-page report.
+- `NMES_Financial_Model.xlsx` - the 16-tab financial model (325 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
   Requires: `pip install reportlab openpyxl matplotlib`. Run
   `python build/make_charts.py`, then `python build/build_pdf.py`,
@@ -65,6 +65,16 @@ it attributes no motive and alleges no wrongdoing to anyone.
 ## Report version history
 Every published version stays available under `reports/`; each report's
 corrections section lists what changed and why.
+- v3.4 (July 26, 2026): the full closure distribution published (163 events
+  per displaced student, median $1,102, 40 percent negative, tails beyond
+  the physical ceiling shaded as budget noise); case panel rebuilt to rural
+  elementaries only after a comparability validation (Adair 2006 added with
+  its new-school disclosure; Somerset 1999 and Montgomery 2018 reclassified
+  as city grade reshuffles, Montgomery having opened a new elementary the
+  same year); the $8,440 small-denominator artifact published with its
+  explanation ($541 inside the plausible window); convergence check added:
+  the record's plausible median ($818) vs this model's independent
+  bottom-up median ($713).
 - v3.3 (July 26, 2026): thirty years of Kentucky rural closures tested
   from the federal record (339 closures since 1995; 72 towns lost their
   last school; median district saved nothing vs state or size-matched

@@ -283,21 +283,25 @@ def main():
         "v3.2 archived in reports/ and linked from the version history")
 
     # the Kentucky closure record (v3.3)
-    for needle in ["Figure 9.", "339 rural", "72 towns", "five hundredths",
-                   "$6,250 to $7,813", "$2,000 and $4,800", "West Perry",
+    for needle in ["Figure 9.", "339 rural", "72 towns", "$1,102", "$818",
+                   "$8,440", "$541", "$6,250 to $7,813", "West Perry", "Adair",
                    "Meade Memorial", "Leslie County 2013", "show us the data",
-                   "ky_rural_closures_", "ky_closure_dollar_cases.csv"]:
+                   "nine times", "ky_rural_closures_", "ky_closure_dollar_cases.csv"]:
         chk(needle in t, f"PDF KY closure record intact: {needle}")
-    for needle in ["chartKYRecord", "339 rural", "72 towns", "$6,250 to $7,813",
+    for needle in ["chartKYRecord", "chartKYDist", "339 rural", "72 towns",
+                   "$6,250 to $7,813", "$1,102", "$8,440", "$541", "$818",
                    "Johnson County 2016", "Perry County", "Leslie County 2013",
-                   "ky_rural_closures_1995_2023.csv", "ky_closure_dollar_cases.csv",
-                   "show us the data"]:
+                   "Adair 2006", "ky_rural_closures_1995_2023.csv",
+                   "ky_closure_dollar_cases.csv", "show us the data"]:
         chk(needle in html, f"site KY closure record intact: {needle}")
     for f in ["ky_rural_closures_1995_2023.csv", "ky_closure_dollar_cases.csv"]:
         chk((REPO / "build" / f).exists(), f"closure dataset archived: build/{f}")
     chk("reports/Saving_NMES_v3.3_2026-07-26.pdf" in html
         and (REPO / "reports" / "Saving_NMES_v3.3_2026-07-26.pdf").exists(),
         "v3.3 archived in reports/ and linked from the version history")
+    chk("reports/Saving_NMES_v3.4_2026-07-26.pdf" in html
+        and (REPO / "reports" / "Saving_NMES_v3.4_2026-07-26.pdf").exists(),
+        "v3.4 archived in reports/ and linked from the version history")
 
     chk("unaudited" in html and "unaudited" in t,
         "FY2026 figures labeled unaudited on site and in PDF")

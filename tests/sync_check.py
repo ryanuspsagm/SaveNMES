@@ -314,15 +314,22 @@ if plan_lo == 6250 and abs(plan_hi - 7812.5) < 1 and "$6,250 to $7,813" in html 
     match("plan requirement per displaced student ($6,250 to $7,813 = $800K-$1M over 128) consistent model/site/PDF")
 else:
     diff(f"plan per-kid: {plan_lo:.0f}/{plan_hi:.0f}")
-site_ky = re.search(r"chartKYRecord[\s\S]{0,900}data:\[\[713,4414\],\[0,2050\],\[0,2067\],\[0,3525\],\[0,3643\],\[0,4758\],\[0,6509\],\[0,7520\],\[6250,7813\]\]", html)
+site_ky = re.search(r"chartKYRecord[\s\S]{0,1200}data:\[\[713,4414\],\[0,2050\],\[0,3525\],\[0,3643\],\[0,6935\],\[6250,7813\]\]", html)
 if site_ky:
     match("site KY-record chart data matches the computed case table exactly")
 else:
     diff("site KY-record chart data drifted from the case table")
-if KC["B5"].value == 339 and KC["B6"].value == 72 and KC["B41"].value == 0 and "339 rural" in pdf_flat:
+if KC["B5"].value == 339 and KC["B6"].value == 72 and KC["B51"].value == 0 and "339 rural" in pdf_flat:
     match("closure universe (339/72) and the zero-precedent cell consistent in model and PDF")
 else:
-    diff(f"universe: model {KC['B5'].value}/{KC['B6'].value}, zero-cell {KC['B41'].value}")
+    diff(f"universe: model {KC['B5'].value}/{KC['B6'].value}, zero-cell {KC['B51'].value}")
+
+# distribution rows (v3.4)
+if (KC["C39"].value, KC["C40"].value, KC["B42"].value, KC["B43"].value) == (1102, 818, 8440, 541) \
+        and "$1,102" in html and "$8,440" in html and "$541" in html and "$818" in pdf_flat:
+    match("distribution stats (median $1,102 / plausible $818 / artifact $8,440 / corrected $541) consistent model/site/PDF")
+else:
+    diff(f"distribution rows: {KC['C39'].value}/{KC['C40'].value}/{KC['B42'].value}/{KC['B43'].value}")
 
 # site text spot checks
 for s, label in [("1st in all 5 subjects", "hero fact scores"), ("-$385K to +$565K", "hero fact closure range"),

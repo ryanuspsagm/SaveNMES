@@ -118,7 +118,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 3.3 &nbsp;\u2022&nbsp; July 26, 2026",
+A(Paragraph("Version 3.4 &nbsp;\u2022&nbsp; July 26, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
@@ -408,24 +408,35 @@ P("Before looking at other states, I tested this state. From the federal Common 
   "is one of them, which independently validates the method. The full lists and every input are archived in "
   "this repository as spreadsheets anyone can check. Three findings follow.")
 P("<b>First, the money.</b> For the 163 closure events with clean finance data, I compared each district's "
-  "per-pupil spending growth, from the year before closure to three years after, against the statewide trend "
-  "and against districts of similar size. The median district's spending bent by <b>five hundredths of one "
-  "percentage point</b>. Half the districts grew faster than the state after closing; half grew slower. A "
-  "coin flip. For the 37 closures most like this plan, a single small elementary closed with students "
-  "absorbed into existing buildings and nothing built, the median saving was <b>zero</b>. The honest dollar "
-  "test is in Figure 9: credit every district's entire budget deviation to its closure, a generous ceiling, "
-  "and every plausible case in thirty years lands between about $2,000 and $4,800 per displaced student. "
-  "The plan before this county needs $6,250 to $7,813 per displaced child, above every one of them, and the "
-  "best cases in the record bought their savings with new consolidated schools this plan does not build.")
+  "spending, from the year before closure to three years after, against the statewide trend and against "
+  "districts of similar size, credited the ENTIRE gap to the closure, the most generous possible reading, and "
+  "priced it per displaced student. Figure 9 shows the whole distribution, nothing hidden. The median closure "
+  "produced <b>$1,102 per displaced student</b> ($818 among the physically plausible cases), and <b>40 percent "
+  "of districts spent MORE than trend after closing</b>. Both tails hold events beyond $13,000 per child in "
+  "each direction, more than any school even costs to run per student, which is proof those gaps reflect "
+  "budget-wide events rather than closures, and why this report prices closure bottom-up from positions, "
+  "busing, and state funding instead. One number deserves its own sentence because anyone can compute it from "
+  "the archived spreadsheet: the raw median for the 27 closures most like this plan prints $8,440, and it is "
+  "an artifact, whole-district budget noise divided by 60-to-320-student denominators, with 11 of the 27 "
+  "beyond the physical ceiling; inside the plausible window that median is <b>$541</b>. Now the yardstick: "
+  "the plan before this county needs <b>$6,250 to $7,813 per displaced child</b>, above the record's 75th "
+  "percentile. Among rural elementary closures, the one clean comparable with nothing built, Webster County's "
+  "closure of Slaughters Elementary in 2012, paid $3,525; every case at or near the plan's number came with a "
+  "brand-new school (Perry 2017, Adair 2006, Metcalfe 2013) or was a city or county-seat grade reshuffle "
+  "rather than a rural closure (Somerset 1999; Montgomery 2018, which opened a new elementary the same "
+  "year). And the convergence is the point: thirty years of budget outcomes put the plausible median at "
+  "$818 per displaced student, and this report's own bottom-up model, built without ever looking at that "
+  "history, puts its median at $713. Two independent methods, one answer, and the plan needs nine times it.")
 fig("chart_ky_record.png",
-    "Figure 9. Thirty years of Kentucky rural closures, priced per displaced student: each bar is a district's "
-    "budget gap against the state trend after closing, the whole gap generously credited to the closure. Blue "
-    "bars involved new construction; light bars are county-seat or city reorganizations rather than rural "
-    "towns. The plan's $800,000 to $1,000,000 requirement equals $6,250 to $7,813 per displaced child, above "
-    "every plausible case in the record. Eight further cases produced gaps of $15,000 to $99,000 per child, "
-    "more than any school costs to run per student, which is proof those gaps reflect budget-wide events, not "
-    "closure savings, and why this report builds its own estimate bottom-up. Data: build/ky_rural_closures_"
-    "1995_2023.csv and build/ky_closure_dollar_cases.csv.")
+    "Figure 9. Top: all 163 measurable Kentucky rural closures, priced per displaced student with each "
+    "district's entire budget gap against the state trend credited to its closure. The median is $1,102; 40 "
+    "percent of districts spent more than trend after closing; the shaded tails beyond $13,000 per child "
+    "exceed what any school costs to run per student and mark budget-wide noise, not closure effects. "
+    "Bottom: the rural elementary cases only. The one clean no-construction comparable (Webster 2012) paid "
+    "$3,525 per displaced student; Perry, Adair, and Metcalfe built new schools; the plan requires $6,250 to "
+    "$7,813 while building nothing. City and county-seat grade reshuffles (Somerset 1999; Montgomery 2018, "
+    "which opened a new elementary the same year) appear in the top panel but are not comparisons for a "
+    "rural closure. Data: build/ky_rural_closures_1995_2023.csv and build/ky_closure_dollar_cases.csv.")
 P("<b>Second, the classrooms.</b> Test scores can only be compared within one accountability system, so I "
   "tested the 46 closure events measurable inside the 2012 to 2019 window on the uniform federal proficiency "
   "series. Thirteen districts improved three or more points against the state, eleven declined, twenty-two "
@@ -1691,7 +1702,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 3.3, July 26, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 3.4, July 26, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 
