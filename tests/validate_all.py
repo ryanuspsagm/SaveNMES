@@ -352,6 +352,32 @@ def main():
         and (REPO / "reports" / "Saving_NMES_v3.7_2026-07-26.pdf").exists(),
         "v3.7 archived in reports/ and linked from the version history")
 
+    # v3.8: fill correction, cost history, breakeven reconstruction, growth plan
+    for needle in ["$56,000 to $116,000", "$106,000 to $211,000",
+                   "$2,476,544", "$8,305", "155 students", "99.6 percent",
+                   "38 to 69", "$2,851", "$5,200", "$4,414",
+                   "$960,000 to $1.9 million", "$260,000 to $530,000"]:
+        chk(needle in t, f"PDF v3.8 content intact: {needle}")
+        chk(needle in html, f"site v3.8 content intact: {needle}")
+    chk("298 students" in t and "gives 298 students" in html,
+        "breakeven reconstruction lands at 298 in both artifacts")
+    chk("recovered from the Internet Archive" in html and "recovered from the Internet "
+        "Archive" in t.replace("  ", " "),
+        "2000-01 report card provenance disclosed on site and in PDF")
+    chk("may report prior-year spending" in html and "prior-year spending" in t,
+        "CATS-era fiscal-year caveat disclosed in both artifacts")
+    chk("$19,635" in html and "$19,635" in t,
+        "2012-13 capital-charge outlier disclosed, not hidden")
+    for f in ["bourbon_spending_per_student_2011_2017.csv", "bourbon_staffing_ratios_ccd.csv",
+              "crdc_school_finance_bourbon_2011_2017.csv", "slfs_bourbon_fy16_fy17.csv",
+              "bourbon_revenue_by_source_2020_2024.csv"]:
+        chk((REPO / "build" / f).exists(), f"v3.8 data archived: build/{f}")
+    chk("reports/Saving_NMES_v3.8_2026-07-26.pdf" in html
+        and (REPO / "reports" / "Saving_NMES_v3.8_2026-07-26.pdf").exists(),
+        "v3.8 archived in reports/ and linked from the version history")
+    chk("sAdd" in html and "New sections needed at NMES" in html,
+        "fill planner carries the v3.8 NMES section-debit slider")
+
     chk("unaudited" in html and "unaudited" in t,
         "FY2026 figures labeled unaudited on site and in PDF")
     chk((REPO / "build" / "fy2026_june_financial_packet.pdf").exists()
@@ -379,8 +405,8 @@ def main():
         "multi-age reorganization removed from the report")
     chk("re-create sections" in t and "four while North Middletown" in t,
         "PDF keeps the closure staffing-count judgment (v3 class-cap form)")
-    chk("$1.6 to $2.8 million" in t and "$1.6 to $2.8 million" in html,
-        "alternatives raw sum updated after the levy correction and multi-age removal")
+    chk("$1.6 to $2.9 million" in t and "$1.6 to $2.9 million" in html,
+        "alternatives raw sums (v3.8: fill correction plus priced recruitment line)")
 
     print(f"PASS {len(ok)}")
     print(f"FAIL {len(bad)}")

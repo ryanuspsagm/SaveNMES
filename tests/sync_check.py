@@ -273,10 +273,10 @@ else:
 
 # ---------- 8. recruitment pool (v3.2): fill planner lever, model, PDF ----------
 RD = wb["Redistricting"]
-if re.search(r"net=\(t\+h\)\*4626-\(r\+t\+h\)\*400\+s\*60000", html):
-    match("fill planner JS prices returns like transfers: (t+h)*4626-(r+t+h)*400+s*60000")
+if re.search(r"net=\(t\+h\)\*4626-\(r\+t\+h\)\*400\+s\*60000-a\*60000", html):
+    match("fill planner JS v3.8: (t+h)*4626-(r+t+h)*400+s*60000-a*60000 (NMES section debit live)")
 else:
-    diff("fill planner JS formula for returning students not found or changed")
+    diff("fill planner JS v3.8 formula with NMES section debit not found")
 hs = (RD["B117"].value, RD["B118"].value)
 seek46 = 46 * A["B6"].value
 if hs == (236, 23) and "259 registered homeschool" in html and "236 registered homeschool" in pdf_flat:
@@ -372,6 +372,53 @@ if lv_first_call == 1694928 and round(lv_margin) == 4551 and "$4,551" in html an
     match("beyond-4% sequencing: 2018 rate covers gap+sweep ($1,694,928) within $4,551, live in model")
 else:
     diff(f"beyond-4% sequencing: first call {lv_first_call}, margin {lv_margin:.0f}")
+
+# ---------- 12. v3.8: school costs, breakevens, growth plan ----------
+SCt = wb["School_Costs"]
+ok38 = SCt["B14"].value == 19348 and SCt["B15"].value == "=B14*128" and 19348*128 == 2476544
+ok38 &= "$2,476,544" in html and "$2,476,544" in pdf_flat and "$8,305" in html and "$8,305" in pdf_flat
+rev23 = (11808998, 20381341, 9550068, 2454)
+ok38 &= (SCt["C9"].value, SCt["D9"].value, SCt["E9"].value, SCt["B9"].value) == rev23
+ok38 &= abs(rev23[1]/rev23[3] - 8305.4) < 0.5 and abs(2476544/(rev23[1]/rev23[3]) - 298.2) < 0.5
+if ok38:
+    match("300-breakeven reconstruction: cost 128 x 19,348 = $2,476,544 exact; state-only $8,305 -> 298 (model/site/PDF)")
+else:
+    diff("300-breakeven reconstruction mismatch across model/site/PDF")
+c01 = [(SCt[f"B{r}"].value, SCt[f"C{r}"].value) for r in (49,50,51,52)]
+if c01 == [(595,3360),(312,4053),(193,4414),(145,5200)] and "$5,200" in html and "$4,414" in html:
+    xs=[1/n for n,_ in c01]; ys=[p for _,p in c01]
+    mx=sum(xs)/4; my=sum(ys)/4
+    F=sum((x-mx)*(y-my) for x,y in zip(xs,ys))/sum((x-mx)**2 for x in xs)
+    a0=my-F*mx
+    if abs(F-331507)<5 and abs(a0-2851)<5 and "$2,851" in html and "$332,000" in html:
+        match("2000-01 scale curve: $2,851 + $331,507/N reproduced from the four report-card points")
+    else:
+        diff(f"2000-01 curve fit mismatch: F={F:.0f}, a={a0:.0f}")
+    mil = (5200-4053)*145; nm = (19348-18131)*128
+    if mil == 166315 and nm == 155776 and "$166,000" in html and "$156,000" in html:
+        match("Millersburg symmetry: $166,315 (2000-01) vs $155,776 (2023-24), site quotes both rounded")
+    else:
+        diff(f"Millersburg symmetry mismatch: {mil} / {nm}")
+else:
+    diff(f"2000-01 report card rows mismatch in model: {c01}")
+AL2 = wb["Alternatives"]
+raw_lo = 313162.4 + 60000 + 100000 + 4*85000 + 0.5*(1447164-999727) + 2913654*0.05 + 100000 + 50000 + 100000 + (16*4626-46*400+(1-1)*60000) + 25*4226
+raw_hi = 375000 + 120000 + 200000 + 425000 + 450000 + 2913654*0.10 + 250000 + 150000 + 300000 + (16*4626-46*400+(2-1)*60000) + 50*4226
+if abs(raw_lo-1593830)<5 and abs(raw_hi-2888281)<5 and "$1.6 to $2.9 million" in html and "$1.6 to $2.9 million" in pdf_flat:
+    match("growth plan raw sums $1.59M/$2.89M recomputed from inputs; quoted as $1.6 to $2.9 million on site and PDF")
+else:
+    diff(f"growth plan raw sums: {raw_lo:.0f}/{raw_hi:.0f}")
+if "$960,000 to $1.9 million" in html and "$960,000 to $1.9 million" in pdf_flat \
+        and "$260,000 to $530,000" in html and "$260,000 to $530,000" in pdf_flat:
+    match("growth plan pillar subtotals consistent on site and in PDF")
+else:
+    diff("growth plan pillar subtotals missing or inconsistent")
+fills = (16*4626-46*400, 55616+60000)
+if fills[0]-0 == 55616+400*0 - 0 and "$56,000 to $116,000" in html and "$56,000 to $116,000" in pdf_flat \
+        and "$115,616" not in re.sub(r"v3\.5[^)]*\)", "", html):
+    match("fill package corrected to $56,000-$116,000 site+PDF; old default only in v3.5 history text")
+else:
+    diff("fill package correction incomplete")
 
 # site text spot checks
 for s, label in [("1st in all 5 reported subjects", "hero fact scores"), ("-$385K to +$565K", "hero fact closure range"),

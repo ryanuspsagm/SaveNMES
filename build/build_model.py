@@ -319,15 +319,17 @@ put(rd, "A19", "CLASSROOMS", SEC)
 put(rd, "A20", "NMES classroom sections"); put(rd, "B20", 9, BLUE, NUM); put(rd, "C20", "9.41 classroom FTE, NCES; K-5 across nine homerooms", NOTE)
 put(rd, "A21", "Average class size today"); put(rd, "B21", "=B5/B20", BLK, '0.0')
 put(rd, "A22", "Average class size at capacity"); put(rd, "B22", "=B14/B20", BLK, '0.0')
-put(rd, "A23", "Statutory caps (KRS 157.360): 24 in K-3, 28 in grade 4, 29 in grades 5-6. The scenario adds no NMES teachers.", NOTE)
+put(rd, "A23", "Statutory caps (KRS 157.360): 24 in K-3, 28 in grade 4, 29 in grades 5-6. At an even mix, 174 students exceed the single-section caps in most grades, so the lever below prices new NMES sections honestly (v3.8 correction; earlier versions omitted this charge).", NOTE, wrap=True)
+put(rd, "A24", "New sections needed at NMES under the caps (0 if the rezone is drawn grade-by-grade; 2 at a fully even mix)"); put(rd, "B24", 1, BLUE, NUM, fill=YEL)
 
 put(rd, "A25", "RECURRING DOLLARS", SEC)
 put(rd, "A26", "New SEEK revenue from cross-county transfers (FY2027 base)"); put(rd, "B26", "=B13*Assumptions!B6", GRN, CUR)
 put(rd, "A27", "Variable cost of all added students"); put(rd, "B27", "=(B12+B13)*Assumptions!B62", GRN, CUR)
 put(rd, "A28", "Sections avoided or redeployed at receiving schools, low (count)"); put(rd, "B28", 1, BLUE, NUM, fill=YEL)
 put(rd, "A29", "Sections avoided or redeployed at receiving schools, high (count)"); put(rd, "B29", 2, BLUE, NUM, fill=YEL)
-put(rd, "A30", "Net recurring benefit, low (avoided sections priced at the GF-borne $60K central, per the v3 on-behalf correction; range $50-75K)", bold=True); b30 = put(rd, "B30", "=B26-B27+B28*Assumptions!B69", BLK, CUR, bold=True); b30.border = TOPLINE
-put(rd, "A31", "Net recurring benefit, high (two sections at the same GF-borne rate)", bold=True); put(rd, "B31", "=B26-B27+B29*Assumptions!B69", BLK, CUR, bold=True)
+put(rd, "A30", "Net recurring benefit, low (avoided and added sections both priced at the GF-borne $60K central; v3.8 subtracts the NMES additions)", bold=True); b30 = put(rd, "B30", "=B26-B27+(B28-B24)*Assumptions!B69", BLK, CUR, bold=True); b30.border = TOPLINE
+put(rd, "A31", "Net recurring benefit, high (two avoided sections, same NMES debit)", bold=True); put(rd, "B31", "=B26-B27+(B29-B24)*Assumptions!B69", BLK, CUR, bold=True)
+put(rd, "A32", "Corner cases for the record: two added and none avoided gives about -$64,000; none added and two avoided gives about +$176,000. The published range uses the levers above.", NOTE, wrap=True)
 
 put(rd, "A33", "PER-STUDENT ARITHMETIC (the number the closure argument leans on)", SEC)
 put(rd, "A34", "NMES site spending today"); put(rd, "B34", "=Assumptions!B14*Assumptions!B11", GRN, CUR)
@@ -573,6 +575,8 @@ alts = [
   "Cost reduction", "Low; needs an interlocal feasibility study"),
  ("Fill NMES to capacity (rebalance + transfers, net)", "=Redistricting!B30", "=Redistricting!B31", "Boundary rebalancing and cross-county scenario, Redistricting tab", GRN, GRN,
   "New revenue, net of costs", "High; board boundary authority, math on Redistricting tab"),
+ ("District-wide recruitment beyond NMES's 46 seats (homeschool, private-school, nonresident incentives; v3.8)", "=25*(Assumptions!B6-Assumptions!B62)", "=50*(Assumptions!B6-Assumptions!B62)", "25-50 additional students at $4,226 net; pool measured on Redistricting rows 116-135 (259 registered homeschoolers, ACS pool ~1,135, net import already 189); 62 open seats exist at Bourbon Central's approved rating", GRN, GRN,
+  "New revenue", "Medium; needs an enrollment marketing plan and incentive design"),
 ]
 r = 4
 for label, lo, hi, basis, flo, fhi, typ, conf in alts:
@@ -594,7 +598,18 @@ put(al, f"A{tot+5}", "Conservative combined estimate, high"); put(al, f"B{tot+5}
 put(al, f"A{tot+6}", "Conservative midpoint (used in Runway sheet)"); put(al, f"B{tot+6}", f"=(B{tot+4}+B{tot+5})/2", BLK, CUR)
 put(al, f"A{tot+7}", "Average annual GF drawdown (FY2024-25)"); put(al, f"B{tot+7}", "=GF_Summary!D16", GRN, CUR)
 put(al, f"A{tot+8}", "Closure net saving (base case)"); put(al, f"B{tot+8}", "=Closure_Model!B20", GRN, CUR)
-put(al, f"A{tot+10}", "Reading: raw row sums run about $1.6M to $2.8M; the published $1.1M to $2.1M band applies a conservative haircut for overlap and implementation risk. Coverage is reported against both yardsticks: the $2.65M structural gap before transfers and the roughly $1.15M net drawdown after transfers (Closure_Model rows 21 and 35 carry both for closure).", NOTE, wrap=True)
+put(al, f"A{tot+10}", "Reading: raw row sums run about $1.6M to $2.9M; the published $1.1M to $2.1M band applies a conservative haircut for overlap and implementation risk. Coverage is reported against both yardsticks: the $2.65M structural gap before transfers and the roughly $1.15M net drawdown after transfers (Closure_Model rows 21 and 35 carry both for closure).", NOTE, wrap=True)
+
+put(al, f"A{tot+12}", "THE GROWTH PATH: THE SAME MENU AS A DISTRICT-WIDE RECOVERY PLAN (v3.8; backs the site card and Section 9)", SEC)
+put(al, f"A{tot+13}", "Move 1: inspect fixed costs, starting with administration (attrition, admin restraint, transport, reimbursements, energy, shared services)")
+put(al, f"B{tot+13}", "=SUM(B7:B12)", BLK, CUR, bold=True); put(al, f"C{tot+13}", "=SUM(C7:C12)", BLK, CUR, bold=True)
+put(al, f"A{tot+14}", "Move 2: grow enrollment instead of shrinking it (attendance recovery, fill NMES, district-wide recruitment)")
+put(al, f"B{tot+14}", "=B6+B13+B14", BLK, CUR, bold=True); put(al, f"C{tot+14}", "=C6+C13+C14", BLK, CUR, bold=True)
+put(al, f"A{tot+15}", "Move 3: the honest revenue conversation, year one (4 percent option plus delinquency; compounds by year three; recallable menu beyond it on Tax_History rows 70-91)")
+put(al, f"B{tot+15}", "=B4+B5", BLK, CUR, bold=True); put(al, f"C{tot+15}", "=C4+C5", BLK, CUR, bold=True)
+put(al, f"A{tot+16}", "Growth plan total (equals the raw sum above; the published band is the conservative cut of the same rows)")
+put(al, f"B{tot+16}", f"=B{tot+13}+B{tot+14}+B{tot+15}", BLK, CUR, bold=True); put(al, f"C{tot+16}", f"=C{tot+13}+C{tot+14}+C{tot+15}", BLK, CUR, bold=True)
+put(al, f"A{tot+17}", "NMES is not the reason salaries cannot rise (its honest excess cost is about $156,000, six tenths of a percent of the budget) and not the reason capital waits (about $17.6M of restricted capacity sits unused while the sweep drains the building fund). The structural problem is district-wide; so is the fix.", NOTE, wrap=True)
 
 # ================= DEBT_SERVICE =================
 d = sheet("Debt_Service", [16, 16, 14, 12, 18, 44])
@@ -1313,6 +1328,88 @@ put(th, "A88", "  plus bonds the new nickel equalization supports"); put(th, "B8
 put(th, "A89", "Construction capacity unlocked without pledging a cent of the new levy"); put(th, "B89", "=B86+B87+B88", BLK, CUR, bold=True)
 put(th, "G89", "Roughly $35 million, for $15.69 a month on the median home, with nothing closed. The Harrison and median options are honest partial steps, leaving about $680,000 and $190,000 a year to find from the alternatives menu before the sweep can end; the Clark option adds about $10.5 million more direct capacity from its surplus", NOTE, wrap=True)
 put(th, "A91", "None of these is a recommendation of a particular number, and none is counted in the alternatives package total. The point is narrower: a menu of options exists between cut nothing and close a school, every one prices out larger than the most generous closure estimate, and every one carries a built-in democratic check. A levy above 4 percent can be recalled by the voters it taxes. A closed school cannot be recalled by the children it displaces. This community was offered that veto twice on the facilities nickels and twice declined to use it; it has never been offered the same vote on the operating levy that pays teachers.", NOTE, wrap=True)
+
+# ================= SCHOOL COSTS AND BREAKEVENS (v3.8) =================
+sc = sheet("School_Costs", [46, 13, 13, 13, 13, 13, 52])
+put(sc, "A1", "School-Level Costs Across Every Reporting System, and Every Breakeven Construction", TITLE)
+put(sc, "A2", "Backs the two v3.8 site cards and the Section 4 additions. Three reporting systems with different definitions; compare within a system and a year, never across.", NOTE)
+
+put(sc, "A4", "DISTRICT REVENUE BY SOURCE, PER MEMBER (KDE funding files; archived build/bourbon_revenue_by_source_2020_2024.csv)", SEC)
+put(sc, "A5", "Year", BOLDW, fill=HDR); put(sc, "B5", "Members", BOLDW, fill=HDR); put(sc, "C5", "Local", BOLDW, fill=HDR); put(sc, "D5", "State", BOLDW, fill=HDR); put(sc, "E5", "Federal", BOLDW, fill=HDR); put(sc, "F5", "Total/member", BOLDW, fill=HDR)
+rev_rows = [("2019-20", 2620, 9427594, 18087210, 5573373), ("2020-21", 2561, 9934020, 17692714, 7900643),
+            ("2021-22", 2483, 10662819, 18079609, 9985007), ("2022-23", 2454, 11808998, 20381341, 9550068),
+            ("2023-24", 2406, 13172314, 17149768, 8132977)]
+for i, (yy, mm, lo, st, fe) in enumerate(rev_rows):
+    rr = 6 + i
+    put(sc, f"A{rr}", yy); put(sc, f"B{rr}", mm, BLUE, NUM); put(sc, f"C{rr}", lo, BLUE, CUR); put(sc, f"D{rr}", st, BLUE, CUR); put(sc, f"E{rr}", fe, BLUE, CUR)
+    put(sc, f"F{rr}", f"=(C{rr}+D{rr}+E{rr})/B{rr}", BLK, CUR)
+put(sc, "G6", "State column includes on-behalf pension and insurance payments that never pass through the district's accounts; net SEEK cash is $7.8M-$9.4M of it. Federal 2020-21 to 2022-23 carries ESSER.", NOTE, wrap=True)
+
+put(sc, "A13", "THE 300-STUDENT BREAKEVEN, RECONSTRUCTED (cited at the committee meeting; no worksheet published)", SEC)
+put(sc, "A14", "Cost side: NMES 2023-24 report-card total per student"); put(sc, "B14", 19348, BLUE, CUR); put(sc, "G14", "KYRC24_FT_Spending_per_Student.csv; includes federal spending and embedded on-behalf", NOTE, wrap=True)
+put(sc, "A15", "Times 128 students"); put(sc, "B15", "=B14*128", BLK, CUR, bold=True); put(sc, "G15", "Equals $2,476,544 exactly, zero-dollar difference from the figure the 300 implies", NOTE, wrap=True)
+put(sc, "A16", "Implied revenue denominator for a 300 breakeven"); put(sc, "B16", "=B15/300", BLK, CUR)
+put(sc, "A17", "State-only revenue per member, 2022-23"); put(sc, "B17", "=D9/B9", BLK, CUR); put(sc, "G17", "$8,305: the only revenue definition in the state's files that lands near the implied $8,255", NOTE, wrap=True)
+put(sc, "A18", "Breakeven N at state-only revenue"); put(sc, "B18", "=B15/B17", BLK, '0.0', bold=True); put(sc, "G18", "298 students. Per SEEK AADA (2,490) instead of members: 303. The 300 sits between the two bases.", NOTE, wrap=True)
+put(sc, "A19", "Same fraction with matching definitions: all-in cost / total revenue per member (2023-24)"); put(sc, "B19", "=B15/F10", BLK, '0.0')
+put(sc, "G19", "155 students, not 300. The 300 construction counts local and federal dollars on the cost side and skips them on the revenue side; those two sources bring $8,855 per student, more than the state share.", NOTE, wrap=True)
+
+put(sc, "A21", "THE CORRECTED TEST, APPLIED TO EVERY SCHOOL (all-in cost per pupil / total revenue per member, 2023-24)", SEC)
+put(sc, "A22", "School", BOLDW, fill=HDR); put(sc, "B22", "Cost/pupil", BOLDW, fill=HDR); put(sc, "C22", "Enrolled", BOLDW, fill=HDR); put(sc, "D22", "Breakeven N", BOLDW, fill=HDR); put(sc, "E22", "Short by", BOLDW, fill=HDR)
+bek = [("North Middletown", 19348, 128), ("Bourbon Central", 18131, 459), ("Cane Ridge", 18670, 453),
+       ("Bourbon Co Middle", 16673, 590), ("Bourbon Co High", 17404, 766)]
+for i, (nm, pp, en) in enumerate(bek):
+    rr = 23 + i
+    put(sc, f"A{rr}", nm); put(sc, f"B{rr}", pp, BLUE, CUR); put(sc, f"C{rr}", en, BLUE, NUM)
+    put(sc, f"D{rr}", f"=B{rr}*C{rr}/F$10", BLK, '0'); put(sc, f"E{rr}", f"=D{rr}-C{rr}", BLK, '0')
+put(sc, "A28", "Every school in the district fails, including both receiving schools; Cane Ridge falls short by 76 students and about $1.2 million on this test, nearly three times NMES. Statewide, 1,146 of 1,151 A1 schools with reported data (99.6 percent) spend more per student all-in than $8,255. An average-cost breakeven in a drawdown year is a district-budget thermometer, not a school test.", NOTE, wrap=True)
+
+put(sc, "A30", "THE REAL BREAKEVEN: FIXED SITE BASE VS THE FUNDING A STUDENT CARRIES", SEC)
+put(sc, "A31", "School", BOLDW, fill=HDR); put(sc, "B31", "Fixed base", BOLDW, fill=HDR); put(sc, "C31", "N (SEEK only)", BOLDW, fill=HDR); put(sc, "D31", "N (SEEK+federal)", BOLDW, fill=HDR); put(sc, "E31", "Enrolled", BOLDW, fill=HDR)
+put(sc, "A32", "North Middletown"); put(sc, "B32", "=Assumptions!B51+Assumptions!B52", GRN, CUR)
+put(sc, "A33", "Cane Ridge"); put(sc, "B33", "=Assumptions!B51+Assumptions!B52*Facility_Plans!F68/Facility_Plans!F69", BLK, CUR)
+put(sc, "A34", "Bourbon Central"); put(sc, "B34", "=Assumptions!B51+Assumptions!B52*Facility_Plans!F67/Facility_Plans!F69", BLK, CUR)
+for rr, en in ((32, 128), (33, 453), (34, 459)):
+    put(sc, f"C{rr}", f"=B{rr}/(Assumptions!B6-Assumptions!B62)", BLK, '0')
+    put(sc, f"D{rr}", f"=B{rr}/(Assumptions!B6+3380-Assumptions!B62)", BLK, '0')
+    put(sc, f"E{rr}", en, BLUE, NUM)
+put(sc, "G32", "Plant scaled by KFICS replacement value; office and principal equal across schools. Marginal federal $3,380 = measured 2023-24 federal per member. Local carries zero at the margin: the levy does not change with enrollment.", NOTE, wrap=True)
+put(sc, "A35", "NMES clears its bar at roughly double to triple enrollment; the receiving schools at 6 to 10 times. The full grid version with position, busing, and leaver effects brackets NMES at 20 to 122 (KY_Closures yardstick rows). Every construction except all-source-cost-over-state-only-revenue says every school pays its way.", NOTE, wrap=True)
+
+put(sc, "A37", "SCHOOL-LEVEL SPENDING PER STUDENT, OLD SRC SYSTEM 2011-12 TO 2016-17 (KDE Learning Environment files; archived CSV in build/)", SEC)
+put(sc, "A38", "Year", BOLDW, fill=HDR); put(sc, "B38", "NMES", BOLDW, fill=HDR); put(sc, "C38", "NMES members", BOLDW, fill=HDR); put(sc, "D38", "BCES", BOLDW, fill=HDR); put(sc, "E38", "Cane Ridge", BOLDW, fill=HDR); put(sc, "F38", "NMES vs BCES", BOLDW, fill=HDR)
+sric = [("2011-12", 9715, 177, 7351, 7740), ("2012-13", 19635, 158, 10281, 11383), ("2013-14", 9948, 154, 7123, 7718),
+        ("2014-15", 10999, 153, 8651, 9222), ("2015-16", 11521, 149, 8705, 9655), ("2016-17", 13260, 133, 9197, 9815)]
+for i, (yy, nn, mm, bb, cc) in enumerate(sric):
+    rr = 39 + i
+    put(sc, f"A{rr}", yy); put(sc, f"B{rr}", nn, BLUE, CUR); put(sc, f"C{rr}", mm, BLUE, NUM); put(sc, f"D{rr}", bb, BLUE, CUR); put(sc, f"E{rr}", cc, BLUE, CUR)
+    put(sc, f"F{rr}", f"=B{rr}/D{rr}-1", BLK, '+0%;-0%')
+put(sc, "G40", "2012-13 NMES prints $19,635, off both neighbors' trend by a factor of two in a renovation year: a capital charge booked to the site. Excluded from operating comparisons.", NOTE, wrap=True)
+put(sc, "A45", "These are the deep-emptiness years (133-177 students): the premium is widest exactly when the building is emptiest. Two federal collections confirm the pattern independently: CRDC school-level salaries (archived) and the NCES school-level finance survey FY16-FY17 (archived).", NOTE, wrap=True)
+
+put(sc, "A47", "THE 2000-01 REPORT CARDS: FOUR SCHOOLS, ONE SCALE CURVE (recovered from the Internet Archive; archive copies being added)", SEC)
+put(sc, "A48", "School", BOLDW, fill=HDR); put(sc, "B48", "Students", BOLDW, fill=HDR); put(sc, "C48", "Reported $/student", BOLDW, fill=HDR); put(sc, "D48", "Curve prediction", BOLDW, fill=HDR)
+c01 = [("Bourbon Central", 595, 3360), ("Cane Ridge", 312, 4053), ("North Middletown", 193, 4414), ("Millersburg", 145, 5200)]
+for i, (nm, en, pp) in enumerate(c01):
+    rr = 49 + i
+    put(sc, f"A{rr}", nm); put(sc, f"B{rr}", en, BLUE, NUM); put(sc, f"C{rr}", pp, BLUE, CUR)
+    put(sc, f"E{rr}", f"=1/B{rr}", BLK, '0.00000')
+for i in range(4):
+    rr = 49 + i
+    put(sc, f"D{rr}", f"=B$55+B$54*E{rr}", BLK, CUR)
+put(sc, "A54", "Fixed base per building (least-squares slope on 1/N)"); put(sc, "B54", "=SLOPE(C49:C52,E49:E52)", BLK, CUR, bold=True)
+put(sc, "A55", "Variable cost per student (intercept)"); put(sc, "B55", "=INTERCEPT(C49:C52,E49:E52)", BLK, CUR, bold=True)
+put(sc, "A56", "Fit quality (R-squared)"); put(sc, "B56", "=RSQ(C49:C52,E49:E52)", BLK, '0.000')
+put(sc, "G49", "One formula, about $2,851 per student plus about $332,000 per building over the zone-assigned enrollment, predicts all four schools within 4 percent. No school on this table was mismanaged; the ranking is enrollment. Cane Ridge itself cost 21 percent more than Bourbon Central at 312 students. CATS-era cards may report prior-year spending; the within-year comparison is unaffected.", NOTE, wrap=True)
+
+put(sc, "A58", "THE MILLERSBURG SYMMETRY: THE DISTRICT HAS RUN THIS EXPERIMENT", SEC)
+put(sc, "A59", "Millersburg premium over its receiving school, 2000-01 (per student x students)"); put(sc, "B59", "=(C52-C50)*B52", BLK, CUR, bold=True)
+put(sc, "G59", "$166,315 in FY2001 dollars. Closed 2006; the 30-year record (KY_Closures tab) shows no measurable district budget bend afterward.", NOTE, wrap=True)
+put(sc, "A60", "NMES premium over the cheaper receiving school, 2023-24 (same computation)"); put(sc, "B60", "=(B14-18131)*128", BLK, CUR, bold=True)
+put(sc, "G60", "$155,776. The same experiment at almost the same number, twenty-three years apart.", NOTE, wrap=True)
+
+put(sc, "A62", "STAFFING RECORD (federal CCD, 1996-2019; archived build/bourbon_staffing_ratios_ccd.csv)", SEC)
+put(sc, "A63", "NMES students per teacher at its 2007-09 enrollment peak (224 and 217 students): 16.0 and 15.5, vs 16.1-16.3 at Bourbon Central and Cane Ridge: parity. The ratio falls to 11.8 by 2012-13 as enrollment falls; the dollar premium peaks in the same years. 1998-2000 CCD teacher counts are corrupt for small Kentucky schools and excluded; single-year integer FTE wobbles about one student per teacher.", NOTE, wrap=True)
 
 # ---- finish ----
 del wb["Sheet"]

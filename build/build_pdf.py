@@ -118,7 +118,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 3.7 &nbsp;\u2022&nbsp; July 26, 2026",
+A(Paragraph("Version 3.8 &nbsp;\u2022&nbsp; July 26, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
@@ -502,6 +502,72 @@ P("Whatever the true net number proves to be, one comparison frames the decision
   "best a small fraction; against the roughly $1.15 million the district actually draws from reserves each year, "
   "the favorable case reaches a bit over half, and the base case under a third. On either measure it is a partial "
   "fix, while the measures in Section 9 total more, harm no student, and close no town's school.")
+
+H2("The 300-student breakeven, reconstructed to the dollar")
+P("At the July committee meeting a figure was cited: North Middletown needs about 300 students to break even. "
+  "No worksheet has been published with it, so this version reconstructs it from the state's own files, and "
+  "both sides of the fraction can now be named exactly. The cost side is $2,476,544, which is 128 students "
+  "times the $19,348 per-student total on the 2023-24 state report card, to the dollar, a figure that "
+  "includes federal spending and the state's on-behalf pension payments. The revenue side that yields 300 is "
+  "state revenue alone: in 2022-23, state sources came to $8,305 per member, and $2,476,544 divided by $8,305 "
+  "gives 298 students; per SEEK attendance instead of membership it gives 303, and the implied $8,255 sits "
+  "between the two. No other revenue definition in KDE's files lands near 300. The district collects three "
+  "streams per student, not one: in 2023-24, $5,475 local, $7,128 state, and $3,380 federal, $15,983 in all. "
+  "The 300 construction counts every dollar of cost from all three sources, then credits the school only the "
+  "state share of what its students bring in; the local and federal revenue those same children generate, "
+  "$8,855 per student, more than the state share, is counted on the cost side and skipped on the revenue "
+  "side. Run the same fraction with matching definitions and the breakeven is 155 students, not 300.")
+tbl(["School", "All-in cost per pupil", "Enrolled", "Corrected-test breakeven", "Short by"],
+    [["North Middletown", "$19,348", "128", "155", "27"],
+     ["Bourbon Central", "$18,131", "459", "521", "62"],
+     ["Cane Ridge", "$18,670", "453", "529", "76"],
+     ["Bourbon County Middle", "$16,673", "590", "615", "25"],
+     ["Bourbon County High", "$17,404", "766", "834", "68"]],
+    [W * 0.28, W * 0.20, W * 0.14, W * 0.24, W * 0.14],
+    caption="The corrected average-cost test (all-in cost against the district's full $15,983 revenue per "
+            "member) applied to every school the district owns. Every school fails, including both receiving "
+            "schools; Cane Ridge falls short by 76 students and about $1.2 million a year, nearly three times "
+            "North Middletown's shortfall. Statewide, 99.6 percent of Kentucky's schools with reported data "
+            "fail the same test. Nobody reads Cane Ridge's number as a closure argument, and rightly so: an "
+            "average-cost breakeven in a drawdown year measures the district's budget, not any school. "
+            "Model, School_Costs tab.")
+P("The real breakeven question is the marginal one: at what enrollment do a school's students bring in more "
+  "than closing it could actually save? Set each school's fixed site base, principal, office, and plant, "
+  "against the funding a student actually carries, and North Middletown clears its bar at 38 to 69 students "
+  "while enrolling 128, roughly double to triple its true breakeven. The same test puts Cane Ridge's bar at "
+  "43 to 77 and Bourbon Central's at 48 to 86; every school clears comfortably, which is how school finance "
+  "is supposed to work. The full grid version in this section, with position, busing, and leaver effects, "
+  "brackets North Middletown between 20 and 122 students. Every construction of the question except one, "
+  "all-source costs divided by state-only revenue, says this school pays its way. One request follows: "
+  "publish the worksheet behind the 300. If it differs from this reconstruction, the district's own records "
+  "are the fastest way to show it.")
+
+H2("What this school has cost, in every year the state has ever measured it")
+P("The cost argument rests on one recent number, so this version assembles every school-level cost figure "
+  "that exists in any state or federal record: three reporting systems reaching back a quarter century, each "
+  "archived in the repository. The oldest are the 2000-01 state report cards, recovered from the Internet "
+  "Archive, and they show all four of the district's then-elementaries on a single scale curve: about $2,851 "
+  "per student plus a fixed base of about $332,000 per building spread over however many children the zone "
+  "lines assign to it. That one formula predicts every school within 4 percent: Bourbon Central $3,360 "
+  "reported at 595 students, Cane Ridge $4,053 at 312, North Middletown $4,414 at 193, Millersburg $5,200 at "
+  "145. No school on that list was mismanaged; the ranking is enrollment, and Cane Ridge itself cost 21 "
+  "percent more than Bourbon Central for the same scale reason North Middletown cost 31 percent more. The "
+  "cheapest school in the county has always simply been its biggest.")
+P("The middle years confirm it: KDE's own report-card datasets for 2011-12 through 2016-17 show North "
+  "Middletown's premium widest exactly when the building was emptiest, 133 to 177 students, and two federal "
+  "collections that measured school-level salaries independently, the Civil Rights Data Collection and the "
+  "NCES school-level finance survey, show the same pattern. Federal staffing records (CCD, 1996 to 2019) "
+  "show the school staffed at parity with both larger elementaries in its 200-student years, including its "
+  "2007-09 peak. And the record contains a controlled experiment: Millersburg's premium over its receiving "
+  "school was about $166,000 a year on the 2000-01 report cards; the district closed it in 2006; and the "
+  "thirty-year record in this report shows the district's budget did not measurably bend. North Middletown's "
+  "premium today is $156,000, the same experiment at almost the same number, twenty-three years apart. "
+  "Provenance notes: the 2000-01 figures are as printed on the recovered report cards, with archived copies "
+  "being added to the repository; CATS-era cards may report prior-year spending, which does not affect the "
+  "within-year comparison; the 2012-13 file prints North Middletown at $19,635 in a renovation year, an "
+  "obvious capital charge excluded from operating comparisons; and the three reporting systems use different "
+  "definitions, so every comparison here is within one system in one year. The School_Costs tab carries all "
+  "of it live.")
 
 # ================= 5. ACADEMICS =================
 H("5. Academic Performance: The District Would Be Closing Its Best Elementary School", need=5.3)
@@ -996,13 +1062,18 @@ P("Here is one concrete scenario, math anyone can check, run in the workbook's R
   "30 students to North Middletown from the adjacent edges of the Cane Ridge and Bourbon Central zones, drawing only "
   "from families who already live closer to North Middletown than to their assigned school, and recruit 16 "
   "cross-county transfers under House Bill 563. The school reaches exactly its rated 174. Bourbon Central eases "
-  "from 459 to about 444 and Cane Ridge from 453 to about 438. No teacher is added at North Middletown: its "
-  "nine classroom sections go from an average of about 14 students to about 19, still under the statutory caps "
-  "of 24 in the primary grades (KRS 157.360). The 16 transfers bring roughly $74,000 a year of new SEEK "
-  "revenue, supplies for all 46 added students cost about $18,000, and if the relief lets the receiving schools "
-  "avoid or redeploy even one to two sections as the Paris side grows, priced at the same $60,000 General Fund rate this report applies to eliminated positions, the package is worth roughly <b>$116,000 "
-  "to $176,000 a year, recurring</b>, while cutting North Middletown's much-cited cost per student from $19,348 "
-  "to about $14,339, a 26 percent drop, purely by filling seats. Two assumptions are flagged in yellow in the "
+  "from 459 to about 444 and Cane Ridge from 453 to about 438. A correction this version makes against its own "
+  "case: earlier versions assumed no teacher is added at North Middletown, because nine sections average about "
+  "19 students at 174. The class caps (KRS 157.360: 24 in K-3, 28 in grade 4) bind grade by grade, not on "
+  "average, so 46 arrivals likely require one new section, possibly two if they lump in the wrong grades, and "
+  "possibly none if the rezone is drawn grade-by-grade. The planner now carries that lever, priced at the same "
+  "$60,000 General Fund rate this report applies to eliminated positions. The 16 transfers bring roughly "
+  "$74,000 a year of new SEEK revenue, supplies for all 46 added students cost about $18,000, and with one "
+  "added section against one to two avoided or redeployed at the receiving schools as the Paris side grows, "
+  "the package is worth roughly <b>$56,000 to $116,000 a year, recurring</b>, down from the $116,000 to "
+  "$176,000 published before this correction; across every slider corner it runs from minus $64,000 to "
+  "$176,000. The move still cuts North Middletown's much-cited cost per student from $19,348 to about "
+  "$14,827 with the added section ($14,339 without, $15,316 with two), purely by filling seats. Two assumptions are flagged in yellow in the "
   "workbook for the district to replace with real data: that rezoned students' bus routes shorten or hold even "
   "because they are chosen by proximity, and the receiving schools' grade-by-grade capacities, already a records "
   "ask in Question 3. This is what an unbiased boundary study looks like in miniature. The district holds the "
@@ -1042,7 +1113,7 @@ P("The revenue side is symmetric with the closure math in Section 4, on purpose,
   "requires fewer than one in five of the registered homeschoolers, or about one in twenty-five of the "
   "Census pool. The fill planner on the site and the Redistricting tab now carry a returning-student lever "
   "alongside the rezone and transfer levers, capped together at the 46 open seats, and set to zero by "
-  "default so the $116,000 to $176,000 package above claims nothing from it. What would move these families "
+  "default so the $56,000 to $116,000 package above claims nothing from it. What would move these families "
   "is not a mystery either: the county's top test scores, the state's best-trending building, and small "
   "classes are precisely the product homeschool and private-school families shopped for when they left. Two "
   "records asks sharpen this: the letter-of-intent counts by year at both districts, which are public "
@@ -1168,16 +1239,19 @@ tbl(["Measure", "Estimated annual value", "How it works"],
       "10-25% of utility spend",
       "State regulation (702 KAR 4:160) authorizes contracts in which guaranteed energy savings pay for the "
       "upgrades. No such contract is currently in place district-wide."],
-     ["Nonresident student agreements",
-      "$4,600+ per student",
-      "State funding follows students who transfer in. Growth, not shrinkage, is the durable fix for a "
-      "small-district budget."],
+     ["District-wide recruitment beyond North Middletown's seats",
+      "$106,000 to $211,000",
+      "Priced in v3.8: 25 to 50 additional students at $4,226 net each. State funding follows students who "
+      "transfer in; the measured pool (259 registered homeschoolers, a Census pool near one in three county "
+      "children, a nonresident market the district already wins) is in Section 9, and 62 open seats exist at "
+      "Bourbon Central's approved rating. Growth, not shrinkage, is the durable fix for a small-district "
+      "budget."],
      ["Shared services with Paris Independent",
       "$100,000-$300,000",
       "Two school districts operate in one small county. Shared transportation, food service, and back-office "
       "functions deserve a serious, public study."],
      ["Fill North Middletown to capacity instead of closing it",
-      "$116,000 to $176,000 net, recurring",
+      "$56,000 to $116,000 net, recurring",
       "Rebalance eastern attendance boundaries and recruit cross-county transfers under House Bill 563 to fill "
       "all 46 open seats; the worked example above and the workbook's Redistricting tab show the math. "
       "A preschool or day-care satellite is an additional lever on top."]],
@@ -1186,10 +1260,35 @@ tbl(["Measure", "Estimated annual value", "How it works"],
             "new recurring revenue and recurring cost reductions, and the workbook's Alternatives tab labels each one "
             "by type with a confidence rating and what would firm it up. Values are estimates derived from the "
             "district's audited figures and state data; ranges overlap and are not additive to the penny. The "
-            "rows sum to roughly $1.6 to $2.8 million raw; the published $1.1 to $2.1 million a year applies "
+            "rows sum to roughly $1.6 to $2.9 million raw; the published $1.1 to $2.1 million a year applies "
             "a conservative haircut for overlap and implementation risk, against an annual reserve drawdown "
             "of $1.1 to $1.2 million.",
     bold_first_col=True)
+
+H2("The growth path: the same menu as a district-wide recovery plan")
+P("Name the problem correctly and the plan writes itself. Bourbon County Schools has a structural funding "
+  "problem: spending has outrun revenue at every building, salaries are hard to raise, and capital projects "
+  "wait, and North Middletown is being blamed for it. The numbers in this report say otherwise. North "
+  "Middletown is not the reason salaries cannot increase; its honest excess cost is about $156,000 a year, "
+  "six tenths of one percent of the budget. North Middletown is not the reason capital projects cannot be "
+  "funded; roughly $17.6 million of restricted bonding capacity sits unused while the capital-to-operations "
+  "sweep drains the building fund, and that sweep is a General Fund problem every school shares. A district "
+  "in a defensive crouch, cutting a rural community's school to buy months, is choosing the smallest lever "
+  "on the table and the only one that harms a town. Organized as a plan, the same menu above prices out as "
+  "three moves. <b>Move one, inspect fixed costs, starting with administration</b>: central-office restraint, "
+  "attrition-based staffing alignment, transportation and energy efficiency, shared services, and "
+  "reimbursement recovery, worth $960,000 to $1.9 million a year. <b>Move two, grow enrollment instead of "
+  "shrinking it</b>: fill North Middletown's 46 seats, recover attendance, and recruit district-wide from the "
+  "measured pool of homeschool, private-school, and nonresident families with real incentives, worth "
+  "$260,000 to $530,000 a year. <b>Move three, have the honest revenue conversation</b>: the four percent "
+  "option and delinquency recovery bring $370,000 to $500,000 in year one and about $1.0 to $1.1 million by "
+  "year three as the option compounds, and the recallable menu beyond four percent, each option priced with "
+  "its cost to the median home, reaches $1.0 to $2.5 million. The three moves are the raw $1.6 to $2.9 "
+  "million shown under Figure 19, cut to the published $1.1 to $2.1 million after overlap and implementation "
+  "risk, and any one of them alone outweighs the closure median of $91,000. Together they balance the "
+  "budget, end the sweep, free the restricted stream to bond the renovation plan, and close nothing. That is "
+  "the difference between a defensive posture and a growth plan, and the choice belongs to the board. The "
+  "Alternatives tab prices each move live.")
 
 H2("The tax question, faced squarely")
 P("The rate history strengthens rather than weakens the community's hand. Bourbon County Schools levies 52.4 "
@@ -1434,7 +1533,7 @@ tbl(["Plan", "Recurring impact, year 3", "Projected FY2029 balance", "What it re
     caption="Three complete plans, compared on the same assumptions. At the v3 median, Plan 2 moves the "
             "empty-reserves date by only months; only its best case buys a meaningful cushion, and its losing "
             "scenarios drain reserves faster than doing nothing. Plan 3 restores balance while keeping every "
-            "school open, and rebalancing and growing North Middletown ($116,000 to $176,000 a year, Section 9) "
+            "school open, and rebalancing and growing North Middletown ($56,000 to $116,000 a year, Section 9) "
             "is one line inside its menu. Scenarios and Runway tabs of the companion workbook.",
     bold_first_col=True)
 asktext = ("<b>The ask, plainly stated:</b> the community requests that the Board of Education pause any vote on "
@@ -1769,7 +1868,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 3.7, July 26, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 3.8, July 26, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 

@@ -94,16 +94,24 @@ def main():
 
         f1 = pg.text_content("#rFill").strip()
         fv = pg.text_content("#rFillVerdict").strip()
-        if f1 == "$115,616" and "174 of 174" in fv and "$14,339" in fv:
-            ok("fill planner defaults $115,616, full at $14,339")
+        if f1 == "$55,616" and "174 of 174" in fv and "$14,827" in fv:
+            ok("fill planner defaults $55,616 (v3.8 section debit), full at $14,827")
         else: bad(f"fill planner defaults: {f1} / {fv}")
         pg.fill("#sSec", "2"); pg.dispatch_event("#sSec", "input")
-        if pg.text_content("#rFill").strip() == "$175,616": ok("fill planner high case $175,616")
+        if pg.text_content("#rFill").strip() == "$115,616": ok("fill planner high case $115,616 (2 avoided, 1 added)")
         else: bad(f"fill planner high: {pg.text_content('#rFill')}")
+        pg.fill("#sAdd", "2"); pg.dispatch_event("#sAdd", "input")
+        pg.fill("#sSec", "0"); pg.dispatch_event("#sSec", "input")
+        worst = 16 * 4626 - 46 * 400 - 2 * 60000
+        if pg.text_content("#rFill").strip() == f"-${abs(worst):,}":
+            ok(f"fill planner worst corner -${abs(worst):,} (2 added, 0 avoided)")
+        else: bad(f"fill planner worst corner: {pg.text_content('#rFill')}")
+        pg.fill("#sAdd", "1"); pg.dispatch_event("#sAdd", "input")
+        pg.fill("#sSec", "2"); pg.dispatch_event("#sSec", "input")
         pg.fill("#sRez", "40"); pg.dispatch_event("#sRez", "input")
         pg.fill("#sTr", "20"); pg.dispatch_event("#sTr", "input")
         tval = pg.eval_on_selector("#sTr", "e=>e.value")
-        expect = 6 * 4626 - 46 * 400 + 2 * 60000
+        expect = 6 * 4626 - 46 * 400 + 2 * 60000 - 1 * 60000
         if tval == "6" and pg.text_content("#rFill").strip() == f"${expect:,}":
             ok("fill planner clamps at the 46 open seats")
         else: bad(f"fill planner clamp: transfers={tval}")
@@ -118,7 +126,7 @@ def main():
         pg.fill("#sRez", "20"); pg.dispatch_event("#sRez", "input")
         pg.fill("#sTr", "10"); pg.dispatch_event("#sTr", "input")
         pg.fill("#sRet", "16"); pg.dispatch_event("#sRet", "input")
-        expect_ret = (10 + 16) * 4626 - 46 * 400 + 1 * 60000
+        expect_ret = (10 + 16) * 4626 - 46 * 400 + 1 * 60000 - 1 * 60000
         if pg.text_content("#rFill").strip() == f"${expect_ret:,}" and "174 of 174" in pg.text_content("#rFillVerdict"):
             ok(f"fill planner returning-students case ${expect_ret:,}")
         else: bad(f"fill planner returns: {pg.text_content('#rFill')}")

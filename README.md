@@ -9,8 +9,8 @@ public source cited in the report and on the site.
 
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
-- `Saving_North_Middletown_Elementary.pdf` - the 45-page report.
-- `NMES_Financial_Model.xlsx` - the 16-tab financial model (363 formulas).
+- `Saving_North_Middletown_Elementary.pdf` - the 48-page report.
+- `NMES_Financial_Model.xlsx` - the 17-tab financial model (421 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
   Requires: `pip install reportlab openpyxl matplotlib`. Run
   `python build/make_charts.py`, then `python build/build_pdf.py`,
@@ -65,6 +65,29 @@ it attributes no motive and alleges no wrongdoing to anyone.
 ## Report version history
 Every published version stays available under `reports/`; each report's
 corrections section lists what changed and why.
+- v3.8 (July 26, 2026): correction and new-evidence release. (1) The
+  fill planner now charges for new NMES sections under the class caps
+  (KRS 157.360), a cost earlier versions missed; the package falls from
+  $116,000-$176,000 to $56,000-$116,000, with every corner disclosed
+  (minus $64,000 to $176,000). (2) The complete school-level cost
+  record published: three reporting systems back to the 2000-01 report
+  cards recovered from the Internet Archive, which put all four
+  then-elementaries on one scale curve ($2,851 per student plus about
+  $332,000 fixed per building, R-squared 0.97) and price Millersburg's
+  2000-01 premium ($166,315) beside NMES's today ($155,776). KDE's
+  unlisted LEARNING_ENVIRONMENT files (2011-12 to 2016-17), federal
+  CRDC school-level salaries, and the NCES school-level finance survey
+  are archived under build/. (3) The 300-student breakeven cited at
+  the July committee meeting reconstructed to the dollar: all-source
+  cost (128 x $19,348 = $2,476,544 exactly) divided by state-only
+  revenue ($8,305/member in 2022-23 gives 298); the corrected test
+  fails every school in the district including both receiving schools,
+  and 99.6 percent of Kentucky schools; the real breakeven (fixed base
+  vs marginal revenue) is 38-69 students for NMES, cleared at double
+  to triple. (4) The alternatives menu reorganized and fully priced as
+  a three-move district-wide growth plan, with recruitment beyond
+  NMES's seats newly priced ($106,000-$211,000); raw sums now $1.6M to
+  $2.9M. New School_Costs model tab carries all of it live.
 - v3.7 (July 26, 2026): the recallable levy options beyond 4 percent
   (KRS 160.470), priced at Bourbon's own audited yield of about $191,000
   per cent of General Fund rate ($7,829,060 across 41.0 GF cents). Four

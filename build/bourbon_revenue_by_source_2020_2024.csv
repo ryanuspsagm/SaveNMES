@@ -1,0 +1,6 @@
+school_year,membership,revenue_local,revenue_state,revenue_federal,source_file,per_member_total
+20192020,2620.0,9427594.0,18087210.0,5573373.0,KDE funding_2020.csv,12629
+20202021,2561.0,9934020.0,17692714.0,7900643.0,KDE funding_2021.csv,13872
+20212022,2483.0,10662819.0,18079609.0,9985007.0,KDE funding_2022.csv,15597
+20222023,2454.0,11808998.0,20381341.0,9550068.0,KDE funding_2023.csv,17009
+20232024,2406.0,13172314.0,17149768.0,8132977.0,KYRC24_FT_Statewide_Funding_Sources.csv (membership: KYRC24 Financial Summary),15983
