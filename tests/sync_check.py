@@ -346,6 +346,33 @@ if TH2["O66"].value == 52.4 and TH2["B58"].value == 36.8 and abs(TH2["O58"].valu
 else:
     diff(f"levy model endpoints: {TH2['B58'].value}/{TH2['O58'].value}/{TH2['O66'].value}")
 
+# ---------- 11. beyond-4% recallable levy options (v3.7) ----------
+lv_yield = TH2["B32"].value / TH2["B71"].value          # 7,829,060 / 41.0
+lv_median = sorted(TH2[f"O{r}"].value for r in (58, 59, 60, 61, 63, 64, 65, 66))
+lv_median = (lv_median[3] + lv_median[4]) / 2            # median of eight, Fayette excluded
+lv_cases = [(TH2["B24"].value, "$1.01 million", 112),    # Harrison 57.7
+            (lv_median,        "$1.51 million", 167),    # regional median 60.3
+            (TH2["B5"].value,  "$1.70 million", 188),    # Bourbon's own 2018 rate 61.3
+            (TH2["O61"].value, "$2.50 million", 277)]    # Clark 65.5
+percent_cost = TH2["B73"].value * 0.01 / 100             # $21.16 per cent on the median home
+ok_lv = abs(lv_yield - 190952.68) < 1 and abs(lv_median - 60.3) < 0.01 and abs(percent_cost - 21.16) < 0.005
+for rate, revstr, fam in lv_cases:
+    cents = rate - TH2["B12"].value
+    rev = cents * lv_yield
+    ok_lv &= (abs(rev / 1e6 - float(revstr[1:5])) < 0.005) and revstr in html and revstr in pdf_flat
+    ok_lv &= round(cents * percent_cost) == fam and f"${fam}/yr" in html
+if ok_lv:
+    match("beyond-4% options: model-derived yield/median/costs reproduce all four site+PDF rows")
+else:
+    diff(f"beyond-4% options mismatch: yield {lv_yield:.2f}, median {lv_median}, cost/cent {percent_cost}")
+lv_first_call = 373989 + 1320939
+lv_margin = (TH2["B5"].value - TH2["B12"].value) * lv_yield - lv_first_call
+if lv_first_call == 1694928 and round(lv_margin) == 4551 and "$4,551" in html and "$4,551" in pdf_flat \
+        and str(TH2["B83"].value).startswith("=Debt_Service!") and TH2["B85"].value == "=B84-B83":
+    match("beyond-4% sequencing: 2018 rate covers gap+sweep ($1,694,928) within $4,551, live in model")
+else:
+    diff(f"beyond-4% sequencing: first call {lv_first_call}, margin {lv_margin:.0f}")
+
 # site text spot checks
 for s, label in [("1st in all 5 reported subjects", "hero fact scores"), ("-$385K to +$565K", "hero fact closure range"),
                  ("$7,829,060", "GF levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),

@@ -118,7 +118,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 3.6 &nbsp;\u2022&nbsp; July 26, 2026",
+A(Paragraph("Version 3.7 &nbsp;\u2022&nbsp; July 26, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
@@ -1257,6 +1257,48 @@ fig("chart_levy_history.png",
     "revenue effort; see the House Bill 44 note in the text. Data archived as build/ky_levy_history_"
     "2012_2026.csv.")
 
+H2("Beyond the four percent: the recallable levy options")
+P("The four percent option is the largest increase the board can take without offering voters a veto. It is "
+  "not the ceiling. Kentucky law (KRS 160.470) lets the board levy any rate, with the portion above four "
+  "percent subject to a voter recall petition, and that is exactly how every neighboring district in Figure "
+  "21 climbed past Bourbon. Each option below is priced at Bourbon's own audited yield of about $191,000 per "
+  "cent of rate: $7,829,060 of General Fund collections across the 41.0 General Fund cents in KDE's "
+  "levied-rates file, real estate only, so the figures are conservative. The household cost is priced on the "
+  "county's median owner-occupied home of $211,600 (Census ACS 2019-2023): each added cent costs that "
+  "household $21.16 a year, about $1.76 a month. Vehicle rates are untouched; the homestead exemption "
+  "shields about $46,000 of a senior homeowner's value, so most retirees pay less; farmland is assessed at "
+  "agricultural value, not market; renters pay only what landlords pass through.")
+tbl(["Option", "New rate", "Added cents", "Median-home cost", "New recurring revenue"],
+    [["Match Harrison County", "57.7", "+5.3", "$112/yr ($9.35/mo)", "about $1.01 million"],
+     ["Match the regional median (Fayette excluded)", "60.3", "+7.9", "$167/yr ($13.93/mo)", "about $1.51 million"],
+     ["Restore Bourbon's own 2018 rate", "61.3", "+8.9", "$188/yr ($15.69/mo)", "about $1.70 million"],
+     ["Match Clark County", "65.5", "+13.1", "$277/yr ($23.10/mo)", "about $2.50 million"]],
+    [W * 0.30, W * 0.11, W * 0.13, W * 0.22, W * 0.24],
+    caption="Recallable levy options at Bourbon's own per-cent yield. Rates are 2025-26 levied real estate "
+            "rates; the regional median is the median of the eight area districts with Fayette excluded. "
+            "Every formula is live in the model's Tax_History tab, rows 70 to 91.")
+P("Restoring the rate this district itself levied in 2018 closes about two thirds of the structural gap on "
+  "its own; matching Clark closes nearly all of it. And the sequencing is where the plan's own goal comes "
+  "within reach. The first call on any new recurring money is closing the operating gap ($373,989 on the "
+  "FY2026 trend) and ending the $1,320,939 capital-to-General-Fund sweep, $1,694,928 in all, because ending "
+  "the sweep is what frees the restricted building stream to carry bonds. Restoring the 2018 rate raises "
+  "$1,699,479, covering that requirement to within $4,551. The rate this board itself levied eight years ago "
+  "is, almost to the dollar, the make-the-General-Fund-stand-alone rate. Once the General Fund stands alone, "
+  "the nickel residual carries the $14 million renovation, the roughly $17.6 million of unused restricted "
+  "capacity becomes genuinely pledgeable, and the phasing-in nickel equalization adds about $3.6 million "
+  "more: roughly $35 million of construction capacity, for $15.69 a month on the median home, without "
+  "pledging a cent of the new levy to a bond and without closing anything. Pledged straight to construction "
+  "instead, the four options carry about $13.2, $19.6, $22.1, and $32.5 million at the model's 4.5 percent, "
+  "20-year assumption. The Harrison and median options are honest partial steps; they leave about $680,000 "
+  "and $190,000 a year still to find from the alternatives menu before the sweep can end.")
+P("None of this is a recommendation of a particular number, and none of it is counted in the alternatives "
+  "package of Section 9. The point is narrower: a menu of options exists between cut nothing and close a "
+  "school, every one of them prices out larger than the most generous closure estimate, and every one of "
+  "them carries a built-in democratic check. <b>A levy above four percent can be recalled by the voters it "
+  "taxes. A closed school cannot be recalled by the children it displaces.</b> This community was offered "
+  "that veto twice on the facilities nickels and twice declined to use it. It has never been offered the "
+  "same vote on the operating levy that pays teachers.")
+
 # ================= 10. WHAT CAN'T BE QUANTIFIED =================
 H("10. What Can't Be Quantified: A Town and Its Heartbeat")
 moontext = ("<i>\u201cThe school is the heartbeat of our small, but vital community.\u201d</i>"
@@ -1727,7 +1769,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 3.6, July 26, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 3.7, July 26, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 

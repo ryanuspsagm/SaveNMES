@@ -9,8 +9,8 @@ public source cited in the report and on the site.
 
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
-- `Saving_North_Middletown_Elementary.pdf` - the 44-page report.
-- `NMES_Financial_Model.xlsx` - the 16-tab financial model (334 formulas).
+- `Saving_North_Middletown_Elementary.pdf` - the 45-page report.
+- `NMES_Financial_Model.xlsx` - the 16-tab financial model (363 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
   Requires: `pip install reportlab openpyxl matplotlib`. Run
   `python build/make_charts.py`, then `python build/build_pdf.py`,
@@ -65,6 +65,18 @@ it attributes no motive and alleges no wrongdoing to anyone.
 ## Report version history
 Every published version stays available under `reports/`; each report's
 corrections section lists what changed and why.
+- v3.7 (July 26, 2026): the recallable levy options beyond 4 percent
+  (KRS 160.470), priced at Bourbon's own audited yield of about $191,000
+  per cent of General Fund rate ($7,829,060 across 41.0 GF cents). Four
+  benchmark rates (match Harrison 57.7, the regional median 60.3 with
+  Fayette excluded, Bourbon's own 2018 rate 61.3, Clark 65.5) with the
+  cost to the median $211,600 home ($21.16 per year per cent) and the
+  direct bond capacity of each. Sequencing result: restoring the 2018
+  rate raises $1,699,479, covering the FY2026-trend operating gap plus
+  the end of the $1,320,939 capital sweep ($1,694,928) to within $4,551,
+  which unlocks roughly $35 million of construction capacity with
+  nothing closed. Site levy card, report Section 9, Tax_History rows
+  70-91, all formulas live.
 - v3.6 (July 26, 2026): fourteen years of school levies across nine area
   districts, from KDE's Local District Tax Levies files (Total Real
   Estate column), cross-checked against the DOR rate books for 2024-2025

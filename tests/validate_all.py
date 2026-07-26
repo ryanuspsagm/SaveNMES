@@ -333,6 +333,25 @@ def main():
         and (REPO / "reports" / "Saving_NMES_v3.6_2026-07-26.pdf").exists(),
         "v3.6 archived in reports/ and linked from the version history")
 
+    # beyond-4% recallable levy options (v3.7)
+    for needle in ["recallable levy options", "KRS 160.470", "$191,000 per cent",
+                   "$211,600", "$21.16", "$1,699,479", "$4,551",
+                   "$13.2, $19.6, $22.1, and $32.5 million",
+                   "recalled by the voters it taxes",
+                   "recalled by the children it displaces"]:
+        chk(needle in t, f"PDF beyond-4% levy options intact: {needle}")
+        chk(needle in html, f"site beyond-4% levy options intact: {needle}")
+    for needle in ["57.7", "60.3", "61.3", "65.5",
+                   "$112/yr ($9.35/mo)", "$167/yr ($13.93/mo)",
+                   "$188/yr ($15.69/mo)", "$277/yr ($23.10/mo)"]:
+        chk(needle in t and needle in html,
+            f"beyond-4% option table consistent in PDF and site: {needle}")
+    chk("median of the eight area districts with Fayette excluded" in t,
+        "PDF defines the regional median precisely")
+    chk("reports/Saving_NMES_v3.7_2026-07-26.pdf" in html
+        and (REPO / "reports" / "Saving_NMES_v3.7_2026-07-26.pdf").exists(),
+        "v3.7 archived in reports/ and linked from the version history")
+
     chk("unaudited" in html and "unaudited" in t,
         "FY2026 figures labeled unaudited on site and in PDF")
     chk((REPO / "build" / "fy2026_june_financial_packet.pdf").exists()

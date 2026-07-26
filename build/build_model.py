@@ -677,7 +677,7 @@ for yr_label, amt in [("FY2026", 1578700), ("FY2027", 1575060), ("FY2028", 15787
 r += 1
 put(d, f"A{r}", "THE LEVERS THAT DO NOT CLOSE A SCHOOL", SEC); r += 1
 put(d, f"A{r}", "Remaining restricted capacity (FY2024 audit $23.5M less local share of the 2024 issue, approximate)")
-put(d, f"B{r}", 17600000, BLUE, CUR); put(d, f"F{r}", "Exact figure is the fiscal agent's bonding potential statement; demand it", NOTE, wrap=True); r += 1
+put(d, f"B{r}", 17600000, BLUE, CUR); put(d, f"F{r}", "Exact figure is the fiscal agent's bonding potential statement; demand it", NOTE, wrap=True); rrc_r = r; r += 1
 put(d, f"A{r}", "Certified real and personal property assessment, FY2025"); put(d, f"B{r}", 1843569625, BLUE, CUR); asmt_r = r; r += 1
 put(d, f"A{r}", "Recallable nickel status: ALREADY LEVIED August 17, 2023, inside the existing rate"); put(d, f"B{r}", "levied", NOTE)
 put(d, f"F{r}", "KDE Nickel Levy Chart (March 2024) dates Bourbon's recallable levy 8/17/2023; KDE's levied-rates file (April 30, 2026) decomposes the 52.4-cent rate as 41.0 general fund + 5.7 FSPK + 5.7 recallable. Paris Independent, for scale: 71.5 cents with 17.4 recallable", NOTE, wrap=True); r += 1
@@ -827,7 +827,7 @@ put(sc, "A9", "Reading: the question before the board is not closure versus no c
 
 
 # ================= TAX_HISTORY =================
-th = sheet("Tax_History", [36, 13, 13, 13, 6, 13, 48])
+th = sheet("Tax_History", [36, 13, 13, 13, 13, 13, 48])
 put(th, "A1", "Property Tax Rates, Fund Split, Delinquency, and the 4% Option", TITLE)
 put(th, "A2", "Backs Section 9 and Figure 18 of the report. Rates in cents per $100. DOR rate books primary for 2023-2025; 2018-2022 verified secondary; 2005-2017 not retrieved and not interpolated.", NOTE)
 
@@ -1276,6 +1276,43 @@ put(th, "A64", "Nicholas"); put(th, "B64", 38.4, BLUE, "0.0"); put(th, "C64", 38
 put(th, "A65", "Montgomery"); put(th, "B65", 49.4, BLUE, "0.0"); put(th, "C65", 49.4, BLUE, "0.0"); put(th, "D65", 49.0, BLUE, "0.0"); put(th, "E65", 48.9, BLUE, "0.0"); put(th, "F65", 50.8, BLUE, "0.0"); put(th, "G65", 51.3, BLUE, "0.0"); put(th, "H65", 52.8, BLUE, "0.0"); put(th, "I65", 52.3, BLUE, "0.0"); put(th, "J65", 52.3, BLUE, "0.0"); put(th, "K65", 52.3, BLUE, "0.0"); put(th, "L65", 52.2, BLUE, "0.0"); put(th, "M65", 52.4, BLUE, "0.0"); put(th, "N65", 52.5, BLUE, "0.0"); put(th, "O65", 52.5, BLUE, "0.0"); put(th, "P65", "=(O65/B65-1)", BLK, '+0.0%;-0.0%', bold=True)
 put(th, "A66", "Bourbon Co"); put(th, "B66", 55.4, BLUE, "0.0"); put(th, "C66", 57.6, BLUE, "0.0"); put(th, "D66", 57.3, BLUE, "0.0"); put(th, "E66", 59.1, BLUE, "0.0"); put(th, "F66", 58.8, BLUE, "0.0"); put(th, "G66", 60.0, BLUE, "0.0"); put(th, "H66", 61.3, BLUE, "0.0"); put(th, "I66", 60.6, BLUE, "0.0"); put(th, "J66", 55.9, BLUE, "0.0"); put(th, "K66", 54.2, BLUE, "0.0"); put(th, "L66", 49.2, BLUE, "0.0"); put(th, "M66", 52.4, BLUE, "0.0"); put(th, "N66", 52.4, BLUE, "0.0"); put(th, "O66", 52.4, BLUE, "0.0"); put(th, "P66", "=(O66/B66-1)", BLK, '+0.0%;-0.0%', bold=True)
 put(th, "A68", "Bourbon County is the only district in the region whose levied rate is lower today than in tax year 2012 (55.4 down to 52.4, minus 5.4 percent); Bath rose 72.3 percent, Scott 38.9, Harrison 34.2, Clark 22.2, Fayette 18.4, Paris Independent 17.2. Honesty notes: these are levied RATES, not revenue effort; under HB 44 the compensating rate falls as assessments grow, so the chart nets each board's levy choices against its assessment growth. Bourbon took the 4 percent option in 5 of the last 12 years (KDE levied-type file); the rate fell anyway because the other years took compensating or less, including the 12-cent slide of 2018-2022. Neighbors that rose took the 4 percent 7 to 9 times over the same window.", NOTE, wrap=True)
+
+put(th, "A70", "BEYOND THE 4 PERCENT: THE RECALLABLE LEVY OPTIONS (KRS 160.470; backs the levy card and Section 9)", SEC)
+put(th, "A71", "General Fund share of the levied 52.4 cents (KDE levied-rates file: 41.0 GF + 5.7 FSPK + 5.7 recallable)"); put(th, "B71", 41.0, BLUE, "0.0")
+put(th, "A72", "Yield per cent of General Fund rate, per year"); put(th, "B72", "=B32/B71", BLK, CUR)
+put(th, "G72", "FY2025 GF collections divided by the 41.0 GF cents: about $191,000 per cent. Real and personal property only; tangible and motor vehicle rates untouched, so every figure below is conservative", NOTE, wrap=True)
+put(th, "A73", "Median owner-occupied home value, Bourbon County (Census ACS 2019-2023, table B25077)"); put(th, "B73", 211600, BLUE, CUR)
+put(th, "A74", "Cost per added cent to that household, per year"); put(th, "B74", "=B73*0.01/100", BLK, '"$"#,##0.00')
+put(th, "G74", "$21.16 a year, $1.76 a month, per added cent. Homestead exemption shields about $46,000 of a senior homeowner's value; farmland is assessed at agricultural use value, not market; renters pay only what landlords pass through", NOTE, wrap=True)
+put(th, "A76", "Option", BOLDW, fill=HDR); put(th, "B76", "New rate", BOLDW, fill=HDR); put(th, "C76", "Added cents", BOLDW, fill=HDR); put(th, "D76", "Revenue per year", BOLDW, fill=HDR); put(th, "E76", "Median-home cost/yr", BOLDW, fill=HDR); put(th, "F76", "Direct bond capacity", BOLDW, fill=HDR)
+lv_opts = [("Match Harrison County (2025-26 levied rate)", "=B24"),
+           ("Match the regional median (eight area districts, Fayette excluded)", "=MEDIAN(O58,O59,O60,O61,O63,O64,O65,O66)"),
+           ("Restore Bourbon's own 2018 rate", "=B5"),
+           ("Match Clark County (2025-26 levied rate)", "=O61")]
+lvr = 77
+for lv_label, lv_rate in lv_opts:
+    put(th, f"A{lvr}", lv_label)
+    put(th, f"B{lvr}", lv_rate, BLK, "0.0")
+    put(th, f"C{lvr}", f"=B{lvr}-B12", BLK, "+0.0;-0.0")
+    put(th, f"D{lvr}", f"=C{lvr}*$B$72", BLK, CUR)
+    put(th, f"E{lvr}", f"=C{lvr}*$B$74", BLK, CUR)
+    put(th, f"F{lvr}", f"=D{lvr}*(1-(1+Debt_Service!B{rate_r})^-Debt_Service!B{term_r})/Debt_Service!B{rate_r}", BLK, CUR)
+    lvr += 1
+put(th, "G77", "Rates pulled live from this tab: Harrison row 24, the 2025-26 columns of the levy table, and Bourbon's own 2018 row. Direct bond capacity uses the Debt_Service tab's 4.5 percent, 20-year assumption, the same one that prices the $14 million nickel-residual bond", NOTE, wrap=True)
+
+put(th, "A82", "THE SEQUENCE: BALANCE THE BUDGET FIRST, THEN BOND", SEC)
+put(th, "A83", "First call on new recurring money: operating gap (FY2026 trend) plus ending the capital-to-GF sweep")
+put(th, "B83", f"=Debt_Service!C{gap_r}+Debt_Service!B{swp_r}", BLK, CUR)
+put(th, "G83", "$373,989 gap plus the $1,320,939 sweep = $1,694,928. Ending the sweep is what frees the building-fund residual to service new bonds", NOTE, wrap=True)
+put(th, "A84", "Revenue from restoring the 2018 rate"); put(th, "B84", "=D79", BLK, CUR)
+put(th, "A85", "Margin after the gap is closed and the sweep ended"); put(th, "B85", "=B84-B83", BLK, CUR, bold=True)
+put(th, "G85", "About $4,551. The rate this board itself levied in 2018 is, almost to the dollar, the make-the-General-Fund-stand-alone rate", NOTE, wrap=True)
+put(th, "A86", "Capacity unlocked once the sweep ends: nickel-residual bond"); put(th, "B86", f"=Debt_Service!B{bfres_r+1}", BLK, CUR)
+put(th, "A87", "  plus remaining restricted capacity (FY2024 audit less the 2024 issue)"); put(th, "B87", f"=Debt_Service!B{rrc_r}", BLK, CUR)
+put(th, "A88", "  plus bonds the new nickel equalization supports"); put(th, "B88", f"=Debt_Service!B{nick_r+1}", BLK, CUR)
+put(th, "A89", "Construction capacity unlocked without pledging a cent of the new levy"); put(th, "B89", "=B86+B87+B88", BLK, CUR, bold=True)
+put(th, "G89", "Roughly $35 million, for $15.69 a month on the median home, with nothing closed. The Harrison and median options are honest partial steps, leaving about $680,000 and $190,000 a year to find from the alternatives menu before the sweep can end; the Clark option adds about $10.5 million more direct capacity from its surplus", NOTE, wrap=True)
+put(th, "A91", "None of these is a recommendation of a particular number, and none is counted in the alternatives package total. The point is narrower: a menu of options exists between cut nothing and close a school, every one prices out larger than the most generous closure estimate, and every one carries a built-in democratic check. A levy above 4 percent can be recalled by the voters it taxes. A closed school cannot be recalled by the children it displaces. This community was offered that veto twice on the facilities nickels and twice declined to use it; it has never been offered the same vote on the operating levy that pays teachers.", NOTE, wrap=True)
 
 # ---- finish ----
 del wb["Sheet"]
