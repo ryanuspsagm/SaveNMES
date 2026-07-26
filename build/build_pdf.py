@@ -387,7 +387,7 @@ P("Millersburg Elementary, about nine road miles from Paris, closed in 2006 with
   "nearly the size of North Middletown today. Its students went to Cane Ridge, whose addition the district's "
   "own facility plan dates to 2007. What happened next is on the census rolls, Figure 8: Millersburg fell "
   "from 842 people in 2000 to 792 in 2010 to 747 in 2020, down 11 percent, while the county grew 4.6 percent. "
-  "No single closure did that alone; the military institute closed in 2006 and the Joy Global plant followed "
+  "No single closure did that alone, and this report is careful not to conflate the town's two lost schools: the private Millersburg Military Institute, after a temporary 2003 closure, shut permanently in July 2006, and the public elementary never opened that fall. The Joy Global plant followed "
   "in 2013, taking 197 jobs and, by the town's own accounting, half its operating budget. That is the honest "
   "lesson, and it is worse, not better: small towns lose their anchors in cascades, each loss making the next "
   "more likely. Twenty years later the district is over capacity at the school that absorbed Millersburg's "
@@ -397,7 +397,9 @@ P("Millersburg Elementary, about nine road miles from Paris, closed in 2006 with
   "projection is made again.")
 fig("chart_millersburg.png",
     "Figure 8. Millersburg and Bourbon County population, indexed to 2000, with the town's three institutional "
-    "losses marked. Decennial census counts: Millersburg 987, 937, 842, 792, 747; the county grew 4.6 percent "
+    "losses marked. The elementary's 2006 date is its federal record: enrolled through 2005-06, status closed "
+    "in the 2006-07 CCD universe file; the military institute is a separate, private school that closed "
+    "permanently in July 2006. Decennial census counts: Millersburg 987, 937, 842, 792, 747; the county grew 4.6 percent "
     "from 2000 to 2020. Millersburg Elementary's final enrollment was 119 students; North Middletown enrolls "
     "128 today.")
 H2("Has this ever worked in Kentucky? We checked all thirty years")
