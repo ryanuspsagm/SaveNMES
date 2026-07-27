@@ -392,6 +392,9 @@ def main():
     chk("range midpoints" in html and "range midpoints" in t
         and "different scales" in html,
         "EDFacts midpoint and KCCT/KPREP scale caveats disclosed")
+    for needle in ["Reading the 2024-25 crossover", "58.5", "45.4", "79.2", "74.3",
+                   "Writing content index", "Climate survey index"]:
+        chk(needle in html, f"2024-25 status-measure table on site: {needle}")
 
     chk("unaudited" in html and "unaudited" in t,
         "FY2026 figures labeled unaudited on site and in PDF")
