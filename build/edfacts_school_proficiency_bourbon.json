@@ -1,5 +1,5 @@
 {
- "source": "US ED EDFacts school-level proficiency (via Urban Institute Education Data API), reading and math percent proficient, all students. Small-school values are federal range midpoints. Year key = school year; chart label = spring year.",
+ "source": "US ED EDFacts school-level proficiency (via Urban Institute Education Data API), reading and math percent proficient, all students. Small-school values are federal range midpoints. Spring 2020 canceled nationwide; SY2021-22 onward not in the public federal file. Year key = school year; chart label = spring year.",
  "ncessch": {
   "NMES": "210054000096",
   "BC": "210054001576",
@@ -185,6 +185,24 @@
    "PE": {
     "m": 32.0,
     "r": 37.0
+   }
+  },
+  "SY2020-21": {
+   "NMES": {
+    "r": 22.0,
+    "m": 17.0
+   },
+   "BC": {
+    "r": 27.0,
+    "m": 32.0
+   },
+   "CR": {
+    "r": 26.0,
+    "m": 25.0
+   },
+   "PE": {
+    "r": 27.0,
+    "m": 17.0
    }
   }
  }

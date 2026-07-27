@@ -623,7 +623,8 @@ P("Here is the full arc, straight from the state's own files (Figure 10, top pan
   "worse for having been excellent the year before; that is the change component working as designed on a "
   "small cohort, and the state's component file is archived in the repository.")
 P("The site's score chart now also carries the federal EDFacts series, the U.S. Department of Education's "
-  "own record of each school's reading and math proficiency from 2009-10 through 2018-19: an independent "
+  "own record of each school's reading and math proficiency, 2009-10 through 2018-19 plus the 2020-21 "
+  "COVID administration (federal and state agree within two tenths for North Middletown that year): an independent "
   "federal cross-check of the state numbers that reaches two years further back, into the era of the 2011 "
   "Blue Ribbon, where North Middletown prints 89.5 and 94.8 on the old KCCT scale. Kentucky replaced its "
   "test in 2011-12, so federal values before and after that line are different scales, and the file reports "
