@@ -622,6 +622,12 @@ P("Here is the full arc, straight from the state's own files (Figure 10, top pan
   "North Middletown's own 2023-24 spike and credits Bourbon Central's climb off its 50.3. A school is not "
   "worse for having been excellent the year before; that is the change component working as designed on a "
   "small cohort, and the state's component file is archived in the repository.")
+P("The site's score chart now also carries the federal EDFacts series, the U.S. Department of Education's "
+  "own record of each school's reading and math proficiency from 2009-10 through 2018-19: an independent "
+  "federal cross-check of the state numbers that reaches two years further back, into the era of the 2011 "
+  "Blue Ribbon, where North Middletown prints 89.5 and 94.8 on the old KCCT scale. Kentucky replaced its "
+  "test in 2011-12, so federal values before and after that line are different scales, and the file reports "
+  "small-school values as range midpoints; the extract is archived in the repository.")
 P("I keep the SchoolDigger index in Figure 10's lower panel and in Figure 11 only as outside context, with "
   "its limits printed. Tested against the official record, it tracks the county's larger schools closely "
   "(correlation near 0.9) but is unreliable year to year for a school North Middletown's size (near 0.4), and "

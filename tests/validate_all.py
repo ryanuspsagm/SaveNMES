@@ -384,6 +384,14 @@ def main():
     chk((REPO / "build" / "kyrc25_acct_bourbon_extract.csv").exists()
         and "kyrc25_acct_bourbon_extract.csv" in html,
         "2024-25 accountability component extract archived and linked")
+    chk('id="tgEF" checked' in html and "federal EDFacts" in html and "EDFacts" in t,
+        "federal EDFacts series on site (default on) and referenced in PDF")
+    chk((REPO / "build" / "edfacts_school_proficiency_bourbon.json").exists()
+        and "edfacts_school_proficiency_bourbon.json" in html,
+        "EDFacts extract archived and linked")
+    chk("range midpoints" in html and "range midpoints" in t
+        and "different scales" in html,
+        "EDFacts midpoint and KCCT/KPREP scale caveats disclosed")
 
     chk("unaudited" in html and "unaudited" in t,
         "FY2026 figures labeled unaudited on site and in PDF")

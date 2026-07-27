@@ -420,6 +420,24 @@ if fills[0]-0 == 55616+400*0 - 0 and "$56,000 to $116,000" in html and "$56,000 
 else:
     diff("fill package correction incomplete")
 
+# ---------- 13. federal EDFacts series (v3.8 amendment) ----------
+ef_arch = json.load(open(f"{REPO}/build/edfacts_school_proficiency_bourbon.json"))
+ef_bad = []
+for key in ("NMES", "BC", "CR", "PE"):
+    m = re.search(r"ef:\{.*?" + key + r":\[([^\]]+)\]", html, re.S)
+    site_vals = [None if x.strip()=="null" else float(x) for x in m.group(1).split(",")]
+    for i, label in enumerate(range(2007, 2026)):
+        syk = f"SY{label-1}-{str(label)[2:]}"
+        rec = ef_arch["data"].get(syk, {}).get(key)
+        want = round((rec["r"]+rec["m"])/2, 1) if rec else None
+        got = site_vals[i]
+        if (got is None) != (want is None) or (want is not None and abs(got-want) > 0.05):
+            ef_bad.append((key, label, got, want))
+if not ef_bad:
+    match("EDFacts site series identical to archived federal extract (4 schools x 10 years)")
+else:
+    diff(f"EDFacts series mismatches: {ef_bad}")
+
 # site text spot checks
 for s, label in [("1st in all 5 reported subjects", "hero fact scores"), ("-$385K to +$565K", "hero fact closure range"),
                  ("$7,829,060", "GF levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),

@@ -249,10 +249,11 @@ footer a{color:var(--ice)}
 <label><input type="checkbox" id="tgKC" checked> KDE official composite</label>
 <label><input type="checkbox" id="tgKP" checked> KDE reading and math average</label>
 <label><input type="checkbox" id="tgSD" checked> SchoolDigger index (third party)</label>
+<label><input type="checkbox" id="tgEF" checked> Federal EDFacts, reading/math (2010-2019)</label>
 </div>
 <div class="chartbox tall"><canvas id="chartScores" role="img" aria-label="Line chart of elementary school scores from 2007 to 2025"></canvas></div>
-<p class="note">KDE official composite = Kentucky's overall accountability score in each era (2012 to 2016 and 2022 to 2025; none was issued from 2017 to 2021, and the 2006 to 2011 CATS files are available from KDE by data request). KDE reading and math average = percent proficient or better on the state tests, 2012 to 2019 and 2021 to 2025; 2020 tests were canceled and 2021 was a limited COVID administration. The SchoolDigger index is a third-party 0-100 rank of the same tests, kept for context: validated against the official record, it tracks the larger schools closely but is unreliable year to year for a school of NMES's size, and where the two disagree the official record governs.</p>
-<span class="checkme"><a href="build/kde_scores_history.json">KDE history extract (archived)</a> &middot; <a href="https://www.schooldigger.com/go/KY/schools/0054000096/school.aspx">SchoolDigger, NMES year table</a></span>
+<p class="note">KDE official composite = Kentucky's overall accountability score in each era (2012 to 2016 and 2022 to 2025; none was issued from 2017 to 2021, and the 2006 to 2011 CATS files are available from KDE by data request). KDE reading and math average = percent proficient or better on the state tests, 2012 to 2019 and 2021 to 2025; 2020 tests were canceled and 2021 was a limited COVID administration. The SchoolDigger index is a third-party 0-100 rank of the same tests, kept for context: validated against the official record, it tracks the larger schools closely but is unreliable year to year for a school of NMES's size, and where the two disagree the official record governs. The federal EDFacts series is the U.S. Department of Education's own record of each school's reading and math proficiency, 2009-10 through 2018-19: an independent federal cross-check of the state numbers that also reaches two years further back, into the era of NMES's 2011 Blue Ribbon (NMES prints 89.5 and 94.8 in 2009-10 and 2010-11 on the old KCCT scale). Two honesty notes: Kentucky replaced its test in 2011-12, so values before and after that line are different scales and the cliff at 2012 is the test changing, not the schools; and the federal file reports small-school values as range midpoints, so single points carry a few points of blur.</p>
+<span class="checkme"><a href="build/kde_scores_history.json">KDE history extract (archived)</a> &middot; <a href="build/edfacts_school_proficiency_bourbon.json">Federal EDFacts extract (archived)</a> &middot; <a href="https://educationdata.urban.org/documentation/schools.html">EDFacts via the Urban Institute API</a> &middot; <a href="https://www.schooldigger.com/go/KY/schools/0054000096/school.aspx">SchoolDigger, NMES year table</a></span>
 </div>
 
 <div class="card">
@@ -634,7 +635,7 @@ footer a{color:var(--ice)}
 </div>
 <div class="card" style="margin-top:26px">
 <h3>Read the full case</h3>
-<p>The 48-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
+<p>The 49-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
 <p class="note"><b>Version history</b> (every version stays public; corrections are listed in each report's corrections section):
 <a href="reports/Saving_NMES_v3.8_2026-07-26.pdf">v3.8, July 26</a> (correction and new evidence release: the fill planner now charges for new NMES sections under the class caps, a cost the earlier version missed, cutting the published package from $116,000-$176,000 to $56,000-$116,000; the complete school-level cost record published, three reporting systems back to the 2000-01 report cards recovered from the Internet Archive, showing all four elementaries on one scale curve and Millersburg's 2000-01 premium ($166,000) nearly identical to NMES's today ($156,000); the 300-student breakeven reconstructed to the dollar, all-source costs divided by state-only revenue, with the corrected test failing every school in the district including both receiving schools; real breakeven for every elementary published, NMES clears its bar at double to triple) &middot;
 <a href="reports/Saving_NMES_v3.7_2026-07-26.pdf">v3.7, July 26</a> (the recallable levy options beyond 4 percent under KRS 160.470, priced at Bourbon's own $191,000-per-cent yield: four benchmark rates with the median-home cost of each, $21.16 a year per cent on the $211,600 median home; restoring the district's own 2018 rate covers the operating gap plus ending the capital sweep to within $4,551, unlocking roughly $35 million of construction capacity with nothing closed) &middot;
@@ -832,14 +833,19 @@ sd:{
 NMES:[56.5,63.9,68.6,87.9,85.8,72.5,67.6,56.6,56.9,48.7,49.3,40.0,50.4,null,null,47.7,32.1,54.1,58.2],
 BC:[77.5,81.9,72.6,69.6,63.0,74.7,67.6,51.8,52.1,30.0,34.0,32.8,39.9,null,20.0,29.9,29.0,23.8,26.5],
 CR:[35.2,50.9,56.2,65.5,34.5,34.0,49.6,51.0,51.1,57.5,50.4,41.4,38.8,null,23.8,38.7,34.6,35.8,19.3],
-PE:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,16.8,12.2]}
+PE:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,16.8,12.2]},
+ef:{
+NMES:[null,null,null,89.5,94.8,52.0,52.0,54.5,54.5,57.0,52.0,44.5,47.0,null,null,null,null,null,null],
+BC:[null,null,null,81.5,79.0,53.5,51.0,51.5,49.5,44.5,47.0,46.0,47.0,null,null,null,null,null,null],
+CR:[null,null,null,79.0,66.5,39.0,42.0,49.0,51.0,57.0,50.0,47.0,43.0,null,null,null,null,null,null],
+PE:[null,null,null,77.0,72.0,32.0,27.0,34.5,29.5,37.0,32.0,34.5,34.5,null,null,null,null,null,null]}
 };
-var SRCSTYLE={comp:{suffix:' (KDE composite)',dash:[],pt:'circle'},pd:{suffix:' (KDE R/M avg)',dash:[6,3],pt:'triangle'},sd:{suffix:' (SchoolDigger)',dash:[2,3],pt:'rect'}};
+var SRCSTYLE={comp:{suffix:' (KDE composite)',dash:[],pt:'circle'},pd:{suffix:' (KDE R/M avg)',dash:[6,3],pt:'triangle'},sd:{suffix:' (SchoolDigger)',dash:[2,3],pt:'rect'},ef:{suffix:' (federal EDFacts)',dash:[10,4],pt:'star'}};
 function mkDs(k,src){var st=SRCSTYLE[src];return{label:S[k].label+st.suffix,data:SRCDATA[src][k],borderColor:S[k].color,backgroundColor:S[k].color,borderWidth:src==='comp'?S[k].w:Math.max(1.2,S[k].w-1),borderDash:st.dash,pointStyle:st.pt,pointRadius:2.5,spanGaps:false,tension:0.15}}
 function buildDatasets(){
 var out=[];
 var schools=[['tgNMES','NMES'],['tgBC','BC'],['tgCR','CR'],['tgPE','PE']];
-var srcs=[['tgKC','comp'],['tgKP','pd'],['tgSD','sd']];
+var srcs=[['tgKC','comp'],['tgKP','pd'],['tgSD','sd'],['tgEF','ef']];
 schools.forEach(function(sc){if(!document.getElementById(sc[0]).checked)return;
 srcs.forEach(function(sr){if(document.getElementById(sr[0]).checked){out.push(mkDs(sc[1],sr[1]))}})});
 return out;
@@ -849,7 +855,7 @@ data:{labels:yrs,datasets:buildDatasets()},
 options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:18,font:{size:10}}}},
 scales:{y:{min:0,max:101,grid:{color:'#E3E8F0'}},x:{ticks:{maxTicksLimit:10}}}}});
 function syncToggles(){scoreChart.data.datasets=buildDatasets();scoreChart.update()}
-['tgNMES','tgBC','tgCR','tgPE','tgKC','tgKP','tgSD'].forEach(function(id){document.getElementById(id).addEventListener('change',syncToggles)});
+['tgNMES','tgBC','tgCR','tgPE','tgKC','tgKP','tgSD','tgEF'].forEach(function(id){document.getElementById(id).addEventListener('change',syncToggles)});
 
 /* Enrollment chart */
 var eyrs=[]; for(var y2=1989;y2<=2025;y2++){eyrs.push(y2)}
