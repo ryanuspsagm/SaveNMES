@@ -377,6 +377,13 @@ def main():
         "v3.8 archived in reports/ and linked from the version history")
     chk("sAdd" in html and "New sections needed at NMES" in html,
         "fill planner carries the v3.8 NMES section-debit slider")
+    chk("change formula subtracts" in html and "change formula subtracts" in t,
+        "2024-25 index change-component explanation on site and in PDF")
+    chk('id="tgSD" checked' in html,
+        "SchoolDigger toggle defaults to checked")
+    chk((REPO / "build" / "kyrc25_acct_bourbon_extract.csv").exists()
+        and "kyrc25_acct_bourbon_extract.csv" in html,
+        "2024-25 accountability component extract archived and linked")
 
     chk("unaudited" in html and "unaudited" in t,
         "FY2026 figures labeled unaudited on site and in PDF")

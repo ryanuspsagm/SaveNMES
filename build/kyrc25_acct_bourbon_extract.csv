@@ -1,0 +1,1256 @@
+source_file,school,demographic_or_level,field,value
+KYRC25_ACCT_Index_Scores.csv,All Schools,All Students,Climate Index,77.8
+KYRC25_ACCT_Index_Scores.csv,All Schools,All Students,Safety Index,73.3
+KYRC25_ACCT_Index_Scores.csv,All Schools,Female,Climate Index,78.8
+KYRC25_ACCT_Index_Scores.csv,All Schools,Female,Safety Index,73.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,Male,Climate Index,76.9
+KYRC25_ACCT_Index_Scores.csv,All Schools,Male,Safety Index,72.9
+KYRC25_ACCT_Index_Scores.csv,All Schools,African American,Climate Index,77.9
+KYRC25_ACCT_Index_Scores.csv,All Schools,African American,Safety Index,74.1
+KYRC25_ACCT_Index_Scores.csv,All Schools,American Indian or Alaska Native,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,American Indian or Alaska Native,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Asian,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Asian,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Hispanic or Latino,Climate Index,76.0
+KYRC25_ACCT_Index_Scores.csv,All Schools,Hispanic or Latino,Safety Index,72.4
+KYRC25_ACCT_Index_Scores.csv,All Schools,Native Hawaiian or Pacific Islander,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Native Hawaiian or Pacific Islander,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Two or More Races,Climate Index,69.6
+KYRC25_ACCT_Index_Scores.csv,All Schools,Two or More Races,Safety Index,68.8
+KYRC25_ACCT_Index_Scores.csv,All Schools,White (non-Hispanic),Climate Index,78.6
+KYRC25_ACCT_Index_Scores.csv,All Schools,White (non-Hispanic),Safety Index,73.6
+KYRC25_ACCT_Index_Scores.csv,All Schools,Economically Disadvantaged,Climate Index,77.1
+KYRC25_ACCT_Index_Scores.csv,All Schools,Economically Disadvantaged,Safety Index,72.8
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non Economically Disadvantaged,Climate Index,79.0
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non Economically Disadvantaged,Safety Index,74.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,Students with Disabilities (IEP),Climate Index,79.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,Students with Disabilities (IEP),Safety Index,75.9
+KYRC25_ACCT_Index_Scores.csv,All Schools,Alternate Assessment,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Alternate Assessment,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Student without Disabilities (IEP),Climate Index,77.3
+KYRC25_ACCT_Index_Scores.csv,All Schools,Student without Disabilities (IEP),Safety Index,72.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,English Learner including Monitored,Climate Index,76.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,English Learner including Monitored,Safety Index,72.1
+KYRC25_ACCT_Index_Scores.csv,All Schools,English Learner,Climate Index,79.1
+KYRC25_ACCT_Index_Scores.csv,All Schools,English Learner,Safety Index,74.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non English Learner,Climate Index,77.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non English Learner,Safety Index,73.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-English Learner or monitored,Climate Index,78.0
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-English Learner or monitored,Safety Index,73.4
+KYRC25_ACCT_Index_Scores.csv,All Schools,Foster Care,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Foster Care,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Foster,Climate Index,77.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Foster,Safety Index,73.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,Homeless,Climate Index,76.8
+KYRC25_ACCT_Index_Scores.csv,All Schools,Homeless,Safety Index,73.8
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Homeless,Climate Index,77.9
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Homeless,Safety Index,73.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,Migrant,Climate Index,78.1
+KYRC25_ACCT_Index_Scores.csv,All Schools,Migrant,Safety Index,72.5
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Migrant,Climate Index,77.8
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Migrant,Safety Index,73.3
+KYRC25_ACCT_Index_Scores.csv,All Schools,Military Dependent,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Military Dependent,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Military,Climate Index,77.8
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Military,Safety Index,73.3
+KYRC25_ACCT_Index_Scores.csv,All Schools,All Students,Climate Index,70.8
+KYRC25_ACCT_Index_Scores.csv,All Schools,All Students,Safety Index,64.5
+KYRC25_ACCT_Index_Scores.csv,All Schools,Female,Climate Index,70.4
+KYRC25_ACCT_Index_Scores.csv,All Schools,Female,Safety Index,63.4
+KYRC25_ACCT_Index_Scores.csv,All Schools,Male,Climate Index,71.1
+KYRC25_ACCT_Index_Scores.csv,All Schools,Male,Safety Index,65.4
+KYRC25_ACCT_Index_Scores.csv,All Schools,African American,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,African American,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,American Indian or Alaska Native,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,American Indian or Alaska Native,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Asian,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Asian,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Hispanic or Latino,Climate Index,71.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,Hispanic or Latino,Safety Index,65.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,Native Hawaiian or Pacific Islander,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Native Hawaiian or Pacific Islander,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Two or More Races,Climate Index,65.3
+KYRC25_ACCT_Index_Scores.csv,All Schools,Two or More Races,Safety Index,59.9
+KYRC25_ACCT_Index_Scores.csv,All Schools,White (non-Hispanic),Climate Index,70.9
+KYRC25_ACCT_Index_Scores.csv,All Schools,White (non-Hispanic),Safety Index,64.5
+KYRC25_ACCT_Index_Scores.csv,All Schools,Economically Disadvantaged,Climate Index,70.4
+KYRC25_ACCT_Index_Scores.csv,All Schools,Economically Disadvantaged,Safety Index,64.3
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non Economically Disadvantaged,Climate Index,71.6
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non Economically Disadvantaged,Safety Index,64.8
+KYRC25_ACCT_Index_Scores.csv,All Schools,Students with Disabilities (IEP),Climate Index,75.8
+KYRC25_ACCT_Index_Scores.csv,All Schools,Students with Disabilities (IEP),Safety Index,70.0
+KYRC25_ACCT_Index_Scores.csv,All Schools,Alternate Assessment,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Alternate Assessment,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Student without Disabilities (IEP),Climate Index,70.1
+KYRC25_ACCT_Index_Scores.csv,All Schools,Student without Disabilities (IEP),Safety Index,63.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,English Learner including Monitored,Climate Index,71.0
+KYRC25_ACCT_Index_Scores.csv,All Schools,English Learner including Monitored,Safety Index,63.9
+KYRC25_ACCT_Index_Scores.csv,All Schools,English Learner,Climate Index,70.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,English Learner,Safety Index,62.3
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non English Learner,Climate Index,70.9
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non English Learner,Safety Index,64.6
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-English Learner or monitored,Climate Index,70.8
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-English Learner or monitored,Safety Index,64.6
+KYRC25_ACCT_Index_Scores.csv,All Schools,Foster Care,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Foster Care,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Foster,Climate Index,70.8
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Foster,Safety Index,64.5
+KYRC25_ACCT_Index_Scores.csv,All Schools,Homeless,Climate Index,72.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,Homeless,Safety Index,66.1
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Homeless,Climate Index,70.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Homeless,Safety Index,64.4
+KYRC25_ACCT_Index_Scores.csv,All Schools,Migrant,Climate Index,76.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,Migrant,Safety Index,70.6
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Migrant,Climate Index,70.6
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Migrant,Safety Index,64.3
+KYRC25_ACCT_Index_Scores.csv,All Schools,Military Dependent,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Military Dependent,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Military,Climate Index,70.8
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Military,Safety Index,64.5
+KYRC25_ACCT_Index_Scores.csv,All Schools,All Students,Climate Index,64.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,All Students,Safety Index,60.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,Female,Climate Index,64.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,Female,Safety Index,59.0
+KYRC25_ACCT_Index_Scores.csv,All Schools,Male,Climate Index,63.5
+KYRC25_ACCT_Index_Scores.csv,All Schools,Male,Safety Index,61.6
+KYRC25_ACCT_Index_Scores.csv,All Schools,African American,Climate Index,62.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,African American,Safety Index,59.8
+KYRC25_ACCT_Index_Scores.csv,All Schools,American Indian or Alaska Native,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,American Indian or Alaska Native,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Asian,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Asian,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Hispanic or Latino,Climate Index,64.6
+KYRC25_ACCT_Index_Scores.csv,All Schools,Hispanic or Latino,Safety Index,60.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,Native Hawaiian or Pacific Islander,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Native Hawaiian or Pacific Islander,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Two or More Races,Climate Index,57.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,Two or More Races,Safety Index,49.4
+KYRC25_ACCT_Index_Scores.csv,All Schools,White (non-Hispanic),Climate Index,64.5
+KYRC25_ACCT_Index_Scores.csv,All Schools,White (non-Hispanic),Safety Index,60.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,Economically Disadvantaged,Climate Index,62.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,Economically Disadvantaged,Safety Index,59.1
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non Economically Disadvantaged,Climate Index,66.0
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non Economically Disadvantaged,Safety Index,61.6
+KYRC25_ACCT_Index_Scores.csv,All Schools,Students with Disabilities (IEP),Climate Index,65.3
+KYRC25_ACCT_Index_Scores.csv,All Schools,Students with Disabilities (IEP),Safety Index,62.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,Alternate Assessment,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Alternate Assessment,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Student without Disabilities (IEP),Climate Index,64.1
+KYRC25_ACCT_Index_Scores.csv,All Schools,Student without Disabilities (IEP),Safety Index,60.0
+KYRC25_ACCT_Index_Scores.csv,All Schools,English Learner including Monitored,Climate Index,59.9
+KYRC25_ACCT_Index_Scores.csv,All Schools,English Learner including Monitored,Safety Index,59.4
+KYRC25_ACCT_Index_Scores.csv,All Schools,English Learner,Climate Index,59.9
+KYRC25_ACCT_Index_Scores.csv,All Schools,English Learner,Safety Index,59.4
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non English Learner,Climate Index,64.3
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non English Learner,Safety Index,60.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-English Learner or monitored,Climate Index,64.3
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-English Learner or monitored,Safety Index,60.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,Foster Care,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Foster Care,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Foster,Climate Index,64.1
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Foster,Safety Index,60.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,Homeless,Climate Index,61.7
+KYRC25_ACCT_Index_Scores.csv,All Schools,Homeless,Safety Index,58.5
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Homeless,Climate Index,64.3
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Homeless,Safety Index,60.3
+KYRC25_ACCT_Index_Scores.csv,All Schools,Migrant,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Migrant,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Migrant,Climate Index,64.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Migrant,Safety Index,60.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,Military Dependent,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Military Dependent,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Military,Climate Index,64.2
+KYRC25_ACCT_Index_Scores.csv,All Schools,Non-Military,Safety Index,60.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,All Students,Climate Index,76.5
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,All Students,Safety Index,72.3
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Female,Climate Index,77.3
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Female,Safety Index,72.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Male,Climate Index,75.9
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Male,Safety Index,72.4
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,African American,Climate Index,75.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,African American,Safety Index,72.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,American Indian or Alaska Native,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,American Indian or Alaska Native,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Asian,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Asian,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Hispanic or Latino,Climate Index,75.9
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Hispanic or Latino,Safety Index,72.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Native Hawaiian or Pacific Islander,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Native Hawaiian or Pacific Islander,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Two or More Races,Climate Index,71.0
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Two or More Races,Safety Index,70.6
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,White (non-Hispanic),Climate Index,77.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,White (non-Hispanic),Safety Index,72.4
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Economically Disadvantaged,Climate Index,76.6
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Economically Disadvantaged,Safety Index,72.4
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Non Economically Disadvantaged,Climate Index,76.4
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Non Economically Disadvantaged,Safety Index,72.0
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),Climate Index,79.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),Safety Index,75.0
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Alternate Assessment,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Alternate Assessment,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Student without Disabilities (IEP),Climate Index,75.9
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Student without Disabilities (IEP),Safety Index,71.6
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,English Learner including Monitored,Climate Index,75.6
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,English Learner including Monitored,Safety Index,71.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,English Learner,Climate Index,79.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,English Learner,Safety Index,73.8
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Non English Learner,Climate Index,76.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Non English Learner,Safety Index,72.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Non-English Learner or monitored,Climate Index,76.7
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Non-English Learner or monitored,Safety Index,72.5
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Foster Care,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Foster Care,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Non-Foster,Climate Index,76.4
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Non-Foster,Safety Index,72.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Homeless,Climate Index,67.7
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Homeless,Safety Index,65.7
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Non-Homeless,Climate Index,77.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Non-Homeless,Safety Index,72.7
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Migrant,Climate Index,80.5
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Migrant,Safety Index,72.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Non-Migrant,Climate Index,76.3
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Non-Migrant,Safety Index,72.3
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Military Dependent,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Military Dependent,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Non-Military,Climate Index,76.5
+KYRC25_ACCT_Index_Scores.csv,Bourbon Central Elementary School,Non-Military,Safety Index,72.3
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,All Students,Climate Index,79.2
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,All Students,Safety Index,74.3
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Female,Climate Index,80.2
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Female,Safety Index,75.1
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Male,Climate Index,78.2
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Male,Safety Index,73.4
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,African American,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,African American,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,American Indian or Alaska Native,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,American Indian or Alaska Native,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Asian,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Asian,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Hispanic or Latino,Climate Index,75.4
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Hispanic or Latino,Safety Index,71.4
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Native Hawaiian or Pacific Islander,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Native Hawaiian or Pacific Islander,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Two or More Races,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Two or More Races,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,White (non-Hispanic),Climate Index,80.2
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,White (non-Hispanic),Safety Index,74.9
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Economically Disadvantaged,Climate Index,77.8
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Economically Disadvantaged,Safety Index,72.8
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Non Economically Disadvantaged,Climate Index,80.8
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Non Economically Disadvantaged,Safety Index,76.0
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),Climate Index,79.8
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),Safety Index,75.9
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Alternate Assessment,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Alternate Assessment,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Student without Disabilities (IEP),Climate Index,79.0
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Student without Disabilities (IEP),Safety Index,73.8
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,English Learner including Monitored,Climate Index,77.6
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,English Learner including Monitored,Safety Index,71.8
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,English Learner,Climate Index,78.7
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,English Learner,Safety Index,73.3
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Non English Learner,Climate Index,79.2
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Non English Learner,Safety Index,74.3
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Non-English Learner or monitored,Climate Index,79.3
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Non-English Learner or monitored,Safety Index,74.5
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Foster Care,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Foster Care,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Non-Foster,Climate Index,79.2
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Non-Foster,Safety Index,74.3
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Homeless,Climate Index,81.5
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Homeless,Safety Index,77.1
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Non-Homeless,Climate Index,78.9
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Non-Homeless,Safety Index,73.9
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Migrant,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Migrant,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Non-Migrant,Climate Index,79.2
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Non-Migrant,Safety Index,74.2
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Military Dependent,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Military Dependent,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Non-Military,Climate Index,79.2
+KYRC25_ACCT_Index_Scores.csv,Cane Ridge Elementary School,Non-Military,Safety Index,74.3
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,All Students,Climate Index,78.0
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,All Students,Safety Index,73.5
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Female,Climate Index,79.5
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Female,Safety Index,74.5
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Male,Climate Index,76.7
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Male,Safety Index,72.7
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,African American,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,African American,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,American Indian or Alaska Native,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,American Indian or Alaska Native,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Asian,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Asian,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Hispanic or Latino,Climate Index,78.1
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Hispanic or Latino,Safety Index,76.4
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Native Hawaiian or Pacific Islander,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Native Hawaiian or Pacific Islander,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Two or More Races,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Two or More Races,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,White (non-Hispanic),Climate Index,77.9
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,White (non-Hispanic),Safety Index,72.9
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Economically Disadvantaged,Climate Index,77.2
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Economically Disadvantaged,Safety Index,73.8
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Non Economically Disadvantaged,Climate Index,80.1
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Non Economically Disadvantaged,Safety Index,72.7
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Students with Disabilities (IEP),Climate Index,81.4
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Students with Disabilities (IEP),Safety Index,78.8
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Alternate Assessment,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Alternate Assessment,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Student without Disabilities (IEP),Climate Index,77.1
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Student without Disabilities (IEP),Safety Index,72.2
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,English Learner including Monitored,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,English Learner including Monitored,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,English Learner,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,English Learner,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Non English Learner,Climate Index,77.8
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Non English Learner,Safety Index,73.0
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Non-English Learner or monitored,Climate Index,77.8
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Non-English Learner or monitored,Safety Index,73.0
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Foster Care,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Foster Care,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Non-Foster,Climate Index,78.0
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Non-Foster,Safety Index,73.5
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Homeless,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Homeless,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Non-Homeless,Climate Index,77.8
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Non-Homeless,Safety Index,73.0
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Migrant,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Migrant,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Non-Migrant,Climate Index,78.6
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Non-Migrant,Safety Index,73.8
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Military Dependent,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Military Dependent,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Non-Military,Climate Index,78.0
+KYRC25_ACCT_Index_Scores.csv,North Middletown Elementary School,Non-Military,Safety Index,73.5
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,All Students,Climate Index,64.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,All Students,Safety Index,60.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Female,Climate Index,64.7
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Female,Safety Index,59.0
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Male,Climate Index,63.5
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Male,Safety Index,61.6
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,African American,Climate Index,62.7
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,African American,Safety Index,59.8
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,American Indian or Alaska Native,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,American Indian or Alaska Native,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Asian,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Asian,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Hispanic or Latino,Climate Index,64.6
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Hispanic or Latino,Safety Index,60.7
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Native Hawaiian or Pacific Islander,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Native Hawaiian or Pacific Islander,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Two or More Races,Climate Index,57.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Two or More Races,Safety Index,49.4
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,White (non-Hispanic),Climate Index,64.5
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,White (non-Hispanic),Safety Index,60.7
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Economically Disadvantaged,Climate Index,62.7
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Economically Disadvantaged,Safety Index,59.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Non Economically Disadvantaged,Climate Index,66.0
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Non Economically Disadvantaged,Safety Index,61.6
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Students with Disabilities (IEP),Climate Index,65.3
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Students with Disabilities (IEP),Safety Index,62.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Alternate Assessment,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Alternate Assessment,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Student without Disabilities (IEP),Climate Index,64.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Student without Disabilities (IEP),Safety Index,60.0
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,English Learner including Monitored,Climate Index,59.9
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,English Learner including Monitored,Safety Index,59.4
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,English Learner,Climate Index,59.9
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,English Learner,Safety Index,59.4
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Non English Learner,Climate Index,64.3
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Non English Learner,Safety Index,60.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Non-English Learner or monitored,Climate Index,64.3
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Non-English Learner or monitored,Safety Index,60.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Foster Care,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Foster Care,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Non-Foster,Climate Index,64.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Non-Foster,Safety Index,60.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Homeless,Climate Index,61.7
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Homeless,Safety Index,58.5
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Non-Homeless,Climate Index,64.3
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Non-Homeless,Safety Index,60.3
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Migrant,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Migrant,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Non-Migrant,Climate Index,64.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Non-Migrant,Safety Index,60.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Military Dependent,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Military Dependent,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Non-Military,Climate Index,64.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon County High School,Non-Military,Safety Index,60.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,All Students,Climate Index,70.8
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,All Students,Safety Index,64.5
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Female,Climate Index,70.4
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Female,Safety Index,63.4
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Male,Climate Index,71.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Male,Safety Index,65.4
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,African American,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,African American,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,American Indian or Alaska Native,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,American Indian or Alaska Native,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Asian,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Asian,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Hispanic or Latino,Climate Index,71.7
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Hispanic or Latino,Safety Index,65.7
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Native Hawaiian or Pacific Islander,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Native Hawaiian or Pacific Islander,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Two or More Races,Climate Index,65.3
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Two or More Races,Safety Index,59.9
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,White (non-Hispanic),Climate Index,70.9
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,White (non-Hispanic),Safety Index,64.5
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Economically Disadvantaged,Climate Index,70.4
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Economically Disadvantaged,Safety Index,64.3
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Non Economically Disadvantaged,Climate Index,71.6
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Non Economically Disadvantaged,Safety Index,64.8
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Students with Disabilities (IEP),Climate Index,75.8
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Students with Disabilities (IEP),Safety Index,70.0
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Alternate Assessment,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Alternate Assessment,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Student without Disabilities (IEP),Climate Index,70.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Student without Disabilities (IEP),Safety Index,63.7
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,English Learner including Monitored,Climate Index,71.0
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,English Learner including Monitored,Safety Index,63.9
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,English Learner,Climate Index,70.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,English Learner,Safety Index,62.3
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Non English Learner,Climate Index,70.9
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Non English Learner,Safety Index,64.6
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Non-English Learner or monitored,Climate Index,70.8
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Non-English Learner or monitored,Safety Index,64.6
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Foster Care,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Foster Care,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Non-Foster,Climate Index,70.8
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Non-Foster,Safety Index,64.5
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Homeless,Climate Index,72.7
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Homeless,Safety Index,66.1
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Non-Homeless,Climate Index,70.7
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Non-Homeless,Safety Index,64.4
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Migrant,Climate Index,76.2
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Migrant,Safety Index,70.6
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Non-Migrant,Climate Index,70.6
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Non-Migrant,Safety Index,64.3
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Military Dependent,Climate Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Military Dependent,Safety Index,*
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Non-Military,Climate Index,70.8
+KYRC25_ACCT_Index_Scores.csv,Bourbon County Middle School,Non-Military,Safety Index,64.5
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,READING_MATH INDICATOR STATUS,42.4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,47.8
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS STATUS,70.3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS STATUS RATING,5
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,74.5
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,READING_MATH CHANGE DIFFERENCE,1.9
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,READING_MATH CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,READING_MATH CHANGE,1.9
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,-3.1
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,-3.1
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS CHANGE DIFFERENCE,0.8
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS CHANGE,0.8
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,1.9
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,1.9
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATE,44.3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,44.7
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATE,71.1
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATING,5
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,76.4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Economically Disadvantaged,OVERALL COMBINED INDICATOR RATE,47.1
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,READING_MATH INDICATOR STATUS,44.3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,ENGLISH LEARNERS PROGRESS STATUS,70.3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,ENGLISH LEARNERS PROGRESS STATUS RATING,5
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,73.4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,READING_MATH CHANGE DIFFERENCE,0.0
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,READING_MATH CHANGE RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,READING_MATH CHANGE,0.0
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,ENGLISH LEARNERS PROGRESS CHANGE DIFFERENCE,0.8
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,ENGLISH LEARNERS PROGRESS CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,ENGLISH LEARNERS PROGRESS CHANGE,0.8
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,0.7
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,0.7
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,READING_MATH COMBINED INDICATOR RATE,44.3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,READING_MATH COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATE,71.1
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATING,5
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,74.1
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,English Learner including Monitored,OVERALL COMBINED INDICATOR RATE,48.5
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,READING_MATH INDICATOR STATUS,47.4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,ENGLISH LEARNERS PROGRESS STATUS,68.4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,ENGLISH LEARNERS PROGRESS STATUS RATING,5
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,74.0
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,READING_MATH CHANGE DIFFERENCE,1.4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,READING_MATH CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,READING_MATH CHANGE,1.4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,ENGLISH LEARNERS PROGRESS CHANGE DIFFERENCE,-2.1
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,ENGLISH LEARNERS PROGRESS CHANGE RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,ENGLISH LEARNERS PROGRESS CHANGE,-2.1
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,0.5
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,0.5
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,READING_MATH COMBINED INDICATOR RATE,48.8
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,READING_MATH COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATE,66.3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,74.5
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Hispanic or Latino,OVERALL COMBINED INDICATOR RATE,52.0
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),READING_MATH INDICATOR STATUS,26.7
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),READING_MATH STATUS RATING,1
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),OVERALL INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,77.1
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),READING_MATH CHANGE DIFFERENCE,4.2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),READING_MATH CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),READING_MATH CHANGE,4.2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,1.8
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,1.8
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),READING_MATH COMBINED INDICATOR RATE,30.9
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),READING_MATH COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,78.9
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,Students with Disabilities (IEP),OVERALL COMBINED INDICATOR RATE,34.4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),READING_MATH INDICATOR STATUS,53.1
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,55.1
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),OVERALL INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,74.8
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),READING_MATH CHANGE DIFFERENCE,6.3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),READING_MATH CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),READING_MATH CHANGE,6.3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,-4.3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,-4.3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,1.4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,1.4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATE,59.4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,50.8
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,76.2
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon Central Elementary School,White (non-Hispanic),OVERALL COMBINED INDICATOR RATE,56.5
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,READING_MATH INDICATOR STATUS,39.6
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,36.8
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,2
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,OVERALL INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,75.3
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,READING_MATH CHANGE DIFFERENCE,1.7
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,READING_MATH CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,READING_MATH CHANGE,1.7
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,-10.4
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,1
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,-10.4
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,4.4
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,4.4
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATE,41.3
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,26.4
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,79.7
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Economically Disadvantaged,OVERALL COMBINED INDICATOR RATE,36.6
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),READING_MATH INDICATOR STATUS,23.3
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),READING_MATH STATUS RATING,1
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,29.4
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,1
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),OVERALL INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,77.9
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,4
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),READING_MATH CHANGE DIFFERENCE,-13.5
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),READING_MATH CHANGE RATING,1
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),READING_MATH CHANGE,-13.5
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,-3.1
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,2
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,-3.1
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,8.1
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,8.1
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),READING_MATH COMBINED INDICATOR RATE,9.8
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),READING_MATH COMBINED INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,26.3
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,86.0
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,5
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,Students with Disabilities (IEP),OVERALL COMBINED INDICATOR RATE,20.0
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),READING_MATH INDICATOR STATUS,54.1
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),READING_MATH STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,53.3
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,77.6
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,4
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),READING_MATH CHANGE DIFFERENCE,-0.8
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),READING_MATH CHANGE RATING,3
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),READING_MATH CHANGE,-0.8
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,-8.0
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,1
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,-8.0
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,6.8
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,6.8
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATE,53.3
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,45.3
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,84.4
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,5
+KYRC25_ACCT_Summary.csv,Cane Ridge Elementary School,White (non-Hispanic),OVERALL COMBINED INDICATOR RATE,51.2
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,READING_MATH INDICATOR STATUS,47.4
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,75.5
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,READING_MATH CHANGE DIFFERENCE,-9.6
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,READING_MATH CHANGE RATING,1
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,READING_MATH CHANGE,-9.6
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,0.0
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,3
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,0.0
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATE,37.8
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,75.5
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,Economically Disadvantaged,OVERALL COMBINED INDICATOR RATE,40.5
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),READING_MATH INDICATOR STATUS,52.1
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,67.5
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,4
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,75.4
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),READING_MATH CHANGE DIFFERENCE,-10.9
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),READING_MATH CHANGE RATING,1
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),READING_MATH CHANGE,-10.9
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,1.4
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,1.4
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,0.1
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,0.1
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATE,41.2
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,68.9
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,75.5
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,North Middletown Elementary School,White (non-Hispanic),OVERALL COMBINED INDICATOR RATE,54.3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,READING_MATH INDICATOR STATUS,52.0
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,38.7
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,GRADUATION RATE STATUS,94.9
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,GRADUATION RATE STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS STATUS,26.7
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,60.9
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,POSTSECONDARY STATUS,61.1
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,POSTSECONDARY STATUS RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,READING_MATH CHANGE DIFFERENCE,11.3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,READING_MATH CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,READING_MATH CHANGE,11.3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,5.0
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,5.0
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,1.7
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,1.7
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,POSTSECONDARY CHANGE DIFFERENCE,-2.8
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,POSTSECONDARY CHANGE RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,POSTSECONDARY CHANGE,-2.8
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,GRADUATION CHANGE DIFFERENCE,0.8
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,GRADUATION CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,GRADUATION CHANGE,0.8
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATE,63.3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,43.7
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATE,26.7
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,62.6
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,POSTSECONDARY COMBINED INDICATOR RATE,58.3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,POSTSECONDARY COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,GRADUATION COMBINED INDICATOR RATE,95.7
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,GRADUATION COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Economically Disadvantaged,OVERALL COMBINED INDICATOR RATE,58.5
+KYRC25_ACCT_Summary.csv,Bourbon County High School,English Learner including Monitored,OVERALL INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,Bourbon County High School,English Learner including Monitored,ENGLISH LEARNERS PROGRESS STATUS,25.0
+KYRC25_ACCT_Summary.csv,Bourbon County High School,English Learner including Monitored,ENGLISH LEARNERS PROGRESS STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,English Learner including Monitored,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATE,25.0
+KYRC25_ACCT_Summary.csv,Bourbon County High School,English Learner including Monitored,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,English Learner including Monitored,OVERALL COMBINED INDICATOR RATE,25.0
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,READING_MATH INDICATOR STATUS,56.0
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,READING_MATH STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,GRADUATION RATE STATUS,93.8
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,GRADUATION RATE STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,OVERALL INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,ENGLISH LEARNERS PROGRESS STATUS,25.0
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,ENGLISH LEARNERS PROGRESS STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,62.7
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,POSTSECONDARY STATUS,75.6
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,POSTSECONDARY STATUS RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,READING_MATH CHANGE DIFFERENCE,12.9
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,READING_MATH CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,READING_MATH CHANGE,12.9
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,0.6
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,0.6
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,POSTSECONDARY CHANGE DIFFERENCE,7.8
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,POSTSECONDARY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,POSTSECONDARY CHANGE,7.8
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,GRADUATION CHANGE DIFFERENCE,-0.1
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,GRADUATION CHANGE RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,GRADUATION CHANGE,-0.1
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,READING_MATH COMBINED INDICATOR RATE,68.9
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,READING_MATH COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATE,25.0
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,63.3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,POSTSECONDARY COMBINED INDICATOR RATE,83.4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,POSTSECONDARY COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,GRADUATION COMBINED INDICATOR RATE,93.7
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,GRADUATION COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Hispanic or Latino,OVERALL COMBINED INDICATOR RATE,71.4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Students with Disabilities (IEP),OVERALL INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,63.8
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,63.8
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,Students with Disabilities (IEP),OVERALL COMBINED INDICATOR RATE,63.8
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),READING_MATH INDICATOR STATUS,63.3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),READING_MATH STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,52.4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),GRADUATION RATE STATUS,96.0
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),GRADUATION RATE STATUS RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),OVERALL INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,62.6
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),POSTSECONDARY STATUS,76.7
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),POSTSECONDARY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),READING_MATH CHANGE DIFFERENCE,11.7
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),READING_MATH CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),READING_MATH CHANGE,11.7
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,7.2
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,7.2
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,2.8
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,2.8
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),POSTSECONDARY CHANGE DIFFERENCE,-5.2
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),POSTSECONDARY CHANGE RATING,1
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),POSTSECONDARY CHANGE,-5.2
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),GRADUATION CHANGE DIFFERENCE,1.4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),GRADUATION CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),GRADUATION CHANGE,1.4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATE,75.0
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,59.6
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,65.4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),POSTSECONDARY COMBINED INDICATOR RATE,71.5
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),POSTSECONDARY COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),GRADUATION COMBINED INDICATOR RATE,97.4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),GRADUATION COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County High School,White (non-Hispanic),OVERALL COMBINED INDICATOR RATE,72.0
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,READING_MATH INDICATOR STATUS,41.3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,48.0
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,67.4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,READING_MATH CHANGE DIFFERENCE,4.0
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,READING_MATH CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,READING_MATH CHANGE,4.0
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,4.0
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,4.0
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,0.3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,0.3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATE,45.3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,52.0
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,67.7
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Economically Disadvantaged,OVERALL COMBINED INDICATOR RATE,49.4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,READING_MATH INDICATOR STATUS,34.3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,READING_MATH STATUS RATING,1
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,67.5
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,READING_MATH CHANGE DIFFERENCE,5.1
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,READING_MATH CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,READING_MATH CHANGE,5.1
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,-1.0
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,-1.0
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,READING_MATH COMBINED INDICATOR RATE,39.4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,READING_MATH COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,66.5
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,English Learner including Monitored,OVERALL COMBINED INDICATOR RATE,41.6
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,READING_MATH INDICATOR STATUS,46.9
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,51.0
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,OVERALL INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,68.7
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,READING_MATH CHANGE DIFFERENCE,7.3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,READING_MATH CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,READING_MATH CHANGE,7.3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,6.8
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,6.8
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,2.8
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,2.8
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,READING_MATH COMBINED INDICATOR RATE,54.2
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,READING_MATH COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,57.8
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,71.5
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Hispanic or Latino,OVERALL COMBINED INDICATOR RATE,56.6
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),READING_MATH INDICATOR STATUS,18.4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),READING_MATH STATUS RATING,1
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,18.1
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,1
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),OVERALL INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,72.9
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),READING_MATH CHANGE DIFFERENCE,0.6
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),READING_MATH CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),READING_MATH CHANGE,0.6
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,-5.7
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,-5.7
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,0.7
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,0.7
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),READING_MATH COMBINED INDICATOR RATE,19.0
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),READING_MATH COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,12.4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,73.6
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,Students with Disabilities (IEP),OVERALL COMBINED INDICATOR RATE,18.2
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),READING_MATH INDICATOR STATUS,51.0
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,56.1
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),OVERALL INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,67.7
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),READING_MATH CHANGE DIFFERENCE,5.8
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),READING_MATH CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),READING_MATH CHANGE,5.8
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,4.1
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,4.1
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,0.4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,0.4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATE,56.8
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,60.2
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,68.1
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,Bourbon County Middle School,White (non-Hispanic),OVERALL COMBINED INDICATOR RATE,58.9
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH INDICATOR STATUS,41.8
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,44.8
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS STATUS,63.8
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS STATUS RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,75.0
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH CHANGE DIFFERENCE,-0.2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH CHANGE RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH CHANGE,-0.2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,-7.7
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,1
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,-7.7
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS CHANGE DIFFERENCE,-0.7
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS CHANGE RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS CHANGE,-0.7
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,2.5
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,2.5
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATE,41.6
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,37.1
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATE,63.1
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,77.5
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,OVERALL COMBINED INDICATOR RATE,42.3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH INDICATOR STATUS,52.0
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,38.7
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,GRADUATION RATE STATUS,94.9
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,GRADUATION RATE STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS STATUS,26.7
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,60.9
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,POSTSECONDARY STATUS,61.1
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,POSTSECONDARY STATUS RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH CHANGE DIFFERENCE,11.3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH CHANGE,11.3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,5.3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,5.3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,1.5
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,1.5
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,POSTSECONDARY CHANGE DIFFERENCE,-2.2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,POSTSECONDARY CHANGE RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,POSTSECONDARY CHANGE,-2.2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,GRADUATION CHANGE DIFFERENCE,0.8
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,GRADUATION CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,GRADUATION CHANGE,0.8
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATE,63.3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,44.0
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATE,26.7
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,62.4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,POSTSECONDARY COMBINED INDICATOR RATE,58.9
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,POSTSECONDARY COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,GRADUATION COMBINED INDICATOR RATE,95.7
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,GRADUATION COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,OVERALL COMBINED INDICATOR RATE,58.6
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH INDICATOR STATUS,41.3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,48.0
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,67.4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH CHANGE DIFFERENCE,4.0
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH CHANGE,4.0
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,4.0
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,4.0
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,0.3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,0.3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATE,45.3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,READING_MATH COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,52.0
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,67.7
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Economically Disadvantaged,OVERALL COMBINED INDICATOR RATE,49.4
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,READING_MATH INDICATOR STATUS,42.1
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,40.7
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,ENGLISH LEARNERS PROGRESS STATUS,63.8
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,ENGLISH LEARNERS PROGRESS STATUS RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,74.4
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,READING_MATH CHANGE DIFFERENCE,-0.2
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,READING_MATH CHANGE RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,READING_MATH CHANGE,-0.2
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,-5.7
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,-5.7
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,ENGLISH LEARNERS PROGRESS CHANGE DIFFERENCE,-0.7
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,ENGLISH LEARNERS PROGRESS CHANGE RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,ENGLISH LEARNERS PROGRESS CHANGE,-0.7
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,0.3
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,0.3
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,READING_MATH COMBINED INDICATOR RATE,41.9
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,READING_MATH COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,35.0
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATE,63.1
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,74.7
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,OVERALL COMBINED INDICATOR RATE,41.5
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,OVERALL INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,ENGLISH LEARNERS PROGRESS STATUS,25.0
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,ENGLISH LEARNERS PROGRESS STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATE,25.0
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,OVERALL COMBINED INDICATOR RATE,25.0
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,READING_MATH INDICATOR STATUS,34.3
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,READING_MATH STATUS RATING,1
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,67.5
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,READING_MATH CHANGE DIFFERENCE,5.1
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,READING_MATH CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,READING_MATH CHANGE,5.1
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,-1.0
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,-1.0
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,READING_MATH COMBINED INDICATOR RATE,39.4
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,READING_MATH COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,66.5
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,English Learner including Monitored,OVERALL COMBINED INDICATOR RATE,41.6
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH INDICATOR STATUS,46.5
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,47.0
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,ENGLISH LEARNERS PROGRESS STATUS,62.7
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,ENGLISH LEARNERS PROGRESS STATUS RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,74.2
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH CHANGE DIFFERENCE,-1.3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH CHANGE RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH CHANGE,-1.3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,-8.0
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,1
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,-8.0
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,ENGLISH LEARNERS PROGRESS CHANGE DIFFERENCE,-2.2
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,ENGLISH LEARNERS PROGRESS CHANGE RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,ENGLISH LEARNERS PROGRESS CHANGE,-2.2
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,0.1
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,0.1
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH COMBINED INDICATOR RATE,45.2
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,39.0
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATE,60.5
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,74.3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,OVERALL COMBINED INDICATOR RATE,44.6
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH INDICATOR STATUS,56.0
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,GRADUATION RATE STATUS,93.8
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,GRADUATION RATE STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,OVERALL INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,ENGLISH LEARNERS PROGRESS STATUS,25.0
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,ENGLISH LEARNERS PROGRESS STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,62.7
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,POSTSECONDARY STATUS,75.6
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,POSTSECONDARY STATUS RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH CHANGE DIFFERENCE,12.9
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH CHANGE,12.9
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,0.6
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,0.6
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,POSTSECONDARY CHANGE DIFFERENCE,7.8
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,POSTSECONDARY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,POSTSECONDARY CHANGE,7.8
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,GRADUATION CHANGE DIFFERENCE,-0.1
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,GRADUATION CHANGE RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,GRADUATION CHANGE,-0.1
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH COMBINED INDICATOR RATE,68.9
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATE,25.0
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,ENGLISH LEARNERS PROGRESS COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,63.3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,POSTSECONDARY COMBINED INDICATOR RATE,83.4
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,POSTSECONDARY COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,GRADUATION COMBINED INDICATOR RATE,93.7
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,GRADUATION COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,OVERALL COMBINED INDICATOR RATE,71.4
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH INDICATOR STATUS,46.9
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,51.0
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,OVERALL INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,68.7
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH CHANGE DIFFERENCE,7.3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH CHANGE,7.3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,6.8
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,6.8
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,2.8
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,2.8
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH COMBINED INDICATOR RATE,54.2
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,READING_MATH COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,57.8
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,71.5
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Hispanic or Latino,OVERALL COMBINED INDICATOR RATE,56.6
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),READING_MATH INDICATOR STATUS,25.1
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),READING_MATH STATUS RATING,1
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,28.9
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,1
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),OVERALL INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,77.8
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),READING_MATH CHANGE DIFFERENCE,-4.7
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),READING_MATH CHANGE RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),READING_MATH CHANGE,-4.7
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,-6.5
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,-6.5
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,4.7
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,4.7
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),READING_MATH COMBINED INDICATOR RATE,20.4
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),READING_MATH COMBINED INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,22.4
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,82.5
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,5
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),OVERALL COMBINED INDICATOR RATE,23.9
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),OVERALL INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,63.8
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,63.8
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),OVERALL COMBINED INDICATOR RATE,63.8
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),READING_MATH INDICATOR STATUS,18.4
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),READING_MATH STATUS RATING,1
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,18.1
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,1
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),OVERALL INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,72.9
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),READING_MATH CHANGE DIFFERENCE,0.6
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),READING_MATH CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),READING_MATH CHANGE,0.6
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,-5.7
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,-5.7
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,0.7
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,0.7
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),READING_MATH COMBINED INDICATOR RATE,19.0
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),READING_MATH COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,12.4
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,1
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,73.6
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,Students with Disabilities (IEP),OVERALL COMBINED INDICATOR RATE,18.2
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH INDICATOR STATUS,53.3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,55.6
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),OVERALL INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,76.1
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH CHANGE DIFFERENCE,1.0
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH CHANGE,1.0
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,-5.3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,-5.3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,3.6
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,3.6
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATE,54.3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,50.3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,79.7
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),OVERALL COMBINED INDICATOR RATE,53.7
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH INDICATOR STATUS,63.3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,52.4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),GRADUATION RATE STATUS,96.0
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),GRADUATION RATE STATUS RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),OVERALL INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,62.6
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),POSTSECONDARY STATUS,76.7
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),POSTSECONDARY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH CHANGE DIFFERENCE,11.7
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH CHANGE,11.7
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,7.5
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,5
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,7.5
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,2.7
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,2.7
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),POSTSECONDARY CHANGE DIFFERENCE,-4.7
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),POSTSECONDARY CHANGE RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),POSTSECONDARY CHANGE,-4.7
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),GRADUATION CHANGE DIFFERENCE,1.4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),GRADUATION CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),GRADUATION CHANGE,1.4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATE,75.0
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,59.9
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,65.3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),POSTSECONDARY COMBINED INDICATOR RATE,72.0
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),POSTSECONDARY COMBINED INDICATOR RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),GRADUATION COMBINED INDICATOR RATE,97.4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),GRADUATION COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),OVERALL COMBINED INDICATOR RATE,72.2
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH INDICATOR STATUS,51.0
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH STATUS RATING,2
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS,56.1
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),OVERALL INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS,67.7
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY STATUS RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH CHANGE DIFFERENCE,5.8
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH CHANGE,5.8
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE DIFFERENCE,4.1
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING CHANGE,4.1
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE DIFFERENCE,0.4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY CHANGE,0.4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATE,56.8
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),READING_MATH COMBINED INDICATOR RATING,3
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATE,60.2
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),SCIENCE_SOCIAL STUDIES_COMBINED WRITING COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATE,68.1
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),QUALITY OF SCHOOL CLIMATE AND SAFETY COMBINED INDICATOR RATING,4
+KYRC25_ACCT_Summary.csv,All Schools,White (non-Hispanic),OVERALL COMBINED INDICATOR RATE,58.9

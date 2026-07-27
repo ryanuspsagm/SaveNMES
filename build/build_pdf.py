@@ -614,7 +614,14 @@ P("Here is the full arc, straight from the state's own files (Figure 10, top pan
   "children slipped to 41 and 31 while statewide averages ticked up, a real single-year decline worth "
   "watching, and the school still finished first among all four county elementaries in every subject where the state publishes comparable results (two schools' science scores are state-suppressed small groups). "
   "Small schools swing hard in single years, in both directions; the record above is why one soft year argues "
-  "for attention, not for closure.")
+  "for attention, not for closure. One reading note, because the official index line crosses in 2024-25: "
+  "Kentucky's overall index blends each year's level with the change from the year before. On every 2024-25 "
+  "status measure the state computed, North Middletown led Bourbon Central: the weighted reading and math "
+  "content indexes (58.5 and 48.7 against 55.5 and 45.4), every other subject, the climate survey (78.0 to "
+  "76.5), and the safety survey (73.5 to 72.3). The index crosses only because the change formula subtracts "
+  "North Middletown's own 2023-24 spike and credits Bourbon Central's climb off its 50.3. A school is not "
+  "worse for having been excellent the year before; that is the change component working as designed on a "
+  "small cohort, and the state's component file is archived in the repository.")
 P("I keep the SchoolDigger index in Figure 10's lower panel and in Figure 11 only as outside context, with "
   "its limits printed. Tested against the official record, it tracks the county's larger schools closely "
   "(correlation near 0.9) but is unreliable year to year for a school North Middletown's size (near 0.4), and "
