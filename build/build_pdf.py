@@ -183,11 +183,11 @@ P("<b>Third, the district has not yet shown its work.</b> No line-item net-savin
   "subject, reading, mathematics, science, social studies, and writing, and above the statewide elementary "
   "average in science and writing. The state's historical files complete the arc: county math leader in "
   "every pre-COVID year on record and an official Distinguished rating in 2016 (Section 5).")
-P("The report closes with eleven questions the administration should have to answer in writing before any vote, "
+P("The report closes with twelve questions the administration should have to answer in writing before any vote, "
   "a list of revenue and cost measures worth an estimated $1.1 to $2.1 million a year without closing a school, and "
   "recommendations that come in stages, each with a clear number for when the Board should act. The district retains roughly $4.3 million in General Fund "
   "balance and is drawing it down at $1.1 to $1.2 million a year. There is a real problem here, and there is also "
-  "time to solve it well. I am asking for one thing, and it is specific: pause any vote until the eleven questions in this report are "
+  "time to solve it well. I am asking for one thing, and it is specific: pause any vote until the twelve questions in this report are "
   "answered in writing.")
 
 # ================= 2. WHERE THINGS STAND =================
@@ -1518,6 +1518,61 @@ fig("chart_levy_history.png",
     "revenue effort; see the House Bill 44 note in the text. Data archived as build/ky_levy_history_"
     "2012_2026.csv.")
 
+H2("The four percent is a limit on revenue, not on the rate")
+P("That distinction decides an argument raised at every public meeting on this proposal, so it belongs in the "
+  "record plainly. The district states that it takes the four percent option. The published rate has not "
+  "risen. <b>Both statements can be true at the same time, and ordinarily are.</b> Under KRS 160.470 the "
+  "board's benchmark each August is not last year's rate. It is the <b>compensating rate</b>, defined as the "
+  "rate that raises the same dollars from existing property as the prior year. When assessments rise, that "
+  "rate falls automatically, by the amount assessments rose. The four percent option is the compensating rate "
+  "multiplied by 1.04. A board taking the full four percent every year, in a county whose property is "
+  "appreciating, therefore publishes a falling rate while collecting more money. The table below works that "
+  "math on this district's own figures: the fiscal 2025 certified assessment of $1,843,569,625 and the "
+  "41.0 General Fund cents in KDE's levied-rates file.")
+tbl(["Assessment growth", "Compensating rate", "Four percent option", "Rate raised four percent",
+     "Revenue, four percent option", "Revenue, rate raised four percent", "Recallable excess"],
+    [["0 percent", "41.00", "42.64", "42.64", "$7,860,981", "$7,860,981", "none"],
+     ["3 percent", "39.81", "41.40", "42.64", "$7,860,981", "$8,096,810", "$235,829"],
+     ["5 percent", "39.05", "<b>40.61</b>", "42.64", "$7,860,981", "$8,254,030", "$393,049"],
+     ["7 percent", "38.32", "39.85", "42.64", "$7,860,981", "$8,411,250", "$550,269"]],
+    [0.90 * inch, 0.98 * inch, 0.84 * inch, 0.84 * inch, 0.98 * inch, 0.98 * inch, 0.88 * inch],
+    caption="Rates in cents per $100 of assessed value, General Fund levy only, on the fiscal 2025 "
+            "certified assessment of $1,843,569,625 at the 41.0-cent General Fund rate. Read the five percent "
+            "row: the largest rate the board can levy without recall exposure is 40.61 cents, below the 41.0 "
+            "it levies now, and it still collects four percent more revenue. Revenue from new construction "
+            "sits outside the cap and is additional. A reading of KRS 160.470 and KRS 132.017, not legal "
+            "advice.")
+P("Two consequences follow, and they point in opposite directions. First, <b>a flat or falling rate is not "
+  "evidence either way</b>, and arguing about the rate alone settles nothing. Second, <b>raising the rate four "
+  "percent is a different act entirely from taking the four percent option.</b> Last year's rate multiplied "
+  "by 1.04, against five percent assessment growth, raises about 9.2 percent more revenue, and every dollar "
+  "above the four percent ceiling is subject to a recall petition. The naive rate overshoots the protected "
+  "rate by exactly the assessment growth rate, in every case. Only when assessments are perfectly flat do the "
+  "two converge.")
+P("What Figure 21 measures, then, is not property markets. Every one of those nine boards sets its rate each "
+  "August against its own compensating rate, computed from its own assessment growth, so assessment growth is "
+  "netted out before any of them votes. What remains is the choice each board made. Eight of the nine levy a "
+  "higher rate today than in 2012; Bourbon's is 5.4 percent lower, the only decline in the region, and it has "
+  "fallen from second highest of the nine to seventh. The honest framing of the revenue question is therefore "
+  "not that this county's assessments rose, since they rose across the region. It is that eight boards facing "
+  "the same statutory mechanism finished with more resources to compete with, and one did not. <b>A single "
+  "document closes the remaining uncertainty</b>, and it is on the outstanding records list in Appendix B: "
+  "for each of the last five years, the certified compensating rate set against the rate the board actually "
+  "levied. If the four percent was taken, the levied rate sits four percent above the compensating rate, every "
+  "year, on the page.")
+P("One movement in Figure 21 needs explaining, because it cuts in both directions. Bourbon's total levied rate "
+  "rose 3.2 cents in tax year 2023, from 49.2 to 52.4, and has held at 52.4 for three years. <b>That increase "
+  "was not operating money.</b> KDE's Nickel Levy Chart dates this board's recallable facilities nickel to "
+  "August 17, 2023, and KDE's current levied-rates file puts that nickel at 5.7 cents. A new 5.7-cent "
+  "restricted levy inside a 3.2-cent net increase means the remainder of the rate fell about 2.5 cents in the "
+  "same year, roughly $477,000 a year of unrestricted revenue at this district's own $191,000 per cent. Two "
+  "caveats belong with that figure: KDE does not publish the year-by-year rate-type split, so the 2.5 cents "
+  "is an inference from the current file rather than a document, and a facilities nickel is an equivalent rate "
+  "that is restated annually against the whole property base and drifts. The certified split by year is "
+  "requested in Appendix B for precisely this reason. The direction, however, is not in doubt: the levy that "
+  "rose in 2023 was money that cannot lawfully pay a teacher, and it rose in the same year the operating levy "
+  "appears to have fallen.")
+
 H2("Beyond the four percent: the recallable levy options")
 P("The four percent option is the largest increase the board can take without offering voters a veto. It is "
   "not the ceiling. Kentucky law (KRS 160.470) lets the board levy any rate, with the portion above four "
@@ -1631,14 +1686,51 @@ pbox.setStyle(TableStyle([
 ]))
 A(pbox)
 
-# ================= 11. TEN QUESTIONS =================
-H("11. Ten Questions the Board Should Require Answered, In Writing, Before Any Vote")
+# ================= 11. TWELVE QUESTIONS =================
+H("11. Twelve Questions the Board Should Require Answered, In Writing, Before Any Vote")
 P("These are not rhetorical. Each has a document behind it that the administration either already holds or "
   "should be required to produce.")
 qs = [
- "What is the line-item <b>net recurring General Fund saving</b> from closure: costs that truly disappear, minus "
- "added transportation, receiving-school costs, and the carrying or disposal cost of the building? Publish the "
- "worksheet.",
+ "<b>Publish the closure worksheet, including the downside.</b> Line by line: the net recurring General Fund "
+ "saving, meaning costs that truly disappear, minus added transportation, receiving-school costs, and the "
+ "carrying or disposal cost of the building. And publish the downside alongside it, because a worksheet "
+ "carrying only one side of the ledger is not a worksheet. Two risks belong on that page and neither appears "
+ "in anything the district has produced. <b>First, children who leave the district rather than change "
+ "schools.</b> Each one takes the SEEK base with them, $4,626 at the fiscal 2027 rate, every year, "
+ "permanently; ten students is $46,260 a year and thirty is $138,780. This report's grid prices that leakage "
+ "at 0, 10 and 30 students rather than assuming zero, and the risk is live here specifically: 259 registered "
+ "homeschool students and roughly 450 to 550 county children are already outside these schools, so the exits "
+ "are open and in use. The district's published math carries no leakage line at all. <b>Second, assessment "
+ "erosion.</b> What does the loss of the town's only school do to property values inside the North Middletown "
+ "attendance area, and therefore to the assessment base that funds every school in the county? The limits of "
+ "my own evidence belong in the question: the thirty-year Kentucky corpus in Section 5 does <i>not</i> "
+ "establish that closure causes decline, because small towns that kept their schools declined at nearly the "
+ "same rate. So this is not a claim. It is a risk, it runs in one direction only, and the revenue at stake is "
+ "the district's own, which makes bounding it the district's job. Publish a range and the method behind it. "
+ "Both risks are estimable; neither has been estimated. A worksheet that books every saving at its best case "
+ "and every risk at zero is a sales document.",
+ "<b>Assessments rose everywhere. Why is Bourbon's the only rate that fell?</b> This is not a gotcha, and "
+ "\u201cwe take the four percent\u201d is not a responsive answer to it. Under House Bill 44 the four percent "
+ "is a limit on <b>revenue, not on the rate</b>: the benchmark is the compensating rate, which falls "
+ "automatically as assessments grow, so a board can take the full four percent every year and still publish a "
+ "lower rate than the year before. Section 11 works that math on this district's own assessment. Which "
+ "means a flat rate proves nothing on its own, in either direction, and it also means the nine-district "
+ "comparison in Figure 21 has already netted assessment growth out, because every one of those boards sets "
+ "its rate against its own compensating rate computed from its own assessment growth. On that comparison: "
+ "eight of the nine levy more today than in 2012, Bourbon levies 5.4 percent less, the only decline in the "
+ "region, falling from second highest of the nine to seventh, and KDE's levied-type file shows Bourbon took "
+ "the four percent option in five of the last twelve years against seven, eight and nine times for the "
+ "neighbors that rose. So, two things in writing. One: for each of the last five years, the certified "
+ "compensating rate set against the rate the board actually levied, which settles the question in a single "
+ "line. Two: if the option was not taken, name what was given up, and state what it means to run a school "
+ "system against eight neighbors who chose to compete with more resources. A district that has declined "
+ "revenue its neighbors accepted cannot present a school closure as the only remaining option without first "
+ "showing the math on the option it declined.",
+ "<b>Which enrollment number is the plan built on?</b> Two documents the district produced in the same month "
+ "give different 2026-27 projections for the same three elementary schools: the School Council staffing "
+ "allocation says 111, 463 and 445, while the Elementary Capacity Graphic says 115, 475 and 424, for totals "
+ "of 1,019 and 1,014. Which set is the plan built on, and which set was used to decide that the receiving "
+ "schools have room?",
  "What exactly is inside the \u201cover a million dollars\u201d figure, and how does it reconcile with the state's "
  "published per-student spending data for the school? And which enrollment count is the administration using, "
  "federal data show 128 students, while public statements have ranged lower.",
@@ -1699,7 +1791,7 @@ tbl(["Plan", "Recurring impact, year 3", "Projected FY2029 balance", "What it re
             "is one line inside its menu. Scenarios and Runway tabs of the companion workbook.",
     bold_first_col=True)
 asktext = ("<b>The ask, plainly stated:</b> the community requests that the Board of Education pause any vote on "
-           "the facility plan, or on the future of North Middletown Elementary, until the eleven questions in Section "
+           "the facility plan, or on the future of North Middletown Elementary, until the twelve questions in Section "
            "11 are answered in writing and in public. A pause is fully within the Board's power: boards control "
            "their own agendas, a resolution deferring adoption of the plan requires only a majority, and if the "
            "four-year planning deadline presses, the governing regulation (702 KAR 4:180) allows a district to "
@@ -1719,7 +1811,7 @@ askbox.setStyle(TableStyle([
 A(askbox)
 A(Spacer(1, 10))
 H2("Before the July 29 forum and any Board action")
-B("Adopt a formal Board position that closure is a last resort, to be considered only after the eleven questions above "
+B("Adopt a formal Board position that closure is a last resort, to be considered only after the twelve questions above "
   "are answered in writing and the alternatives in Section 9 have been costed.")
 B("Decline to adopt any facility plan carrying a \u201ctransitional\u201d designation for North Middletown until the "
   "net-savings worksheet, the complete KFICS assessment behind the July slides, the 2024 bond project "
@@ -1949,6 +2041,14 @@ srcs = [
  "Herald-Leader coverage of the Fayette County Public Schools 2024-25 rate",
  "Kentucky Department of Education, Local District Tax Levies files, SEEK Taxes page (rate type by year; "
  "cited as an open records item)",
+ "KRS 132.010 (definition of the compensating rate) and KRS 132.017 (petition and recall of a tax rate "
+ "producing more than four percent additional revenue), the two statutes behind the rate-versus-revenue "
+ "table in Section 11",
+ "Kentucky Department of Education, Nickel Levy Chart (March 2024), dating each district's facilities and "
+ "recallable nickels, including Bourbon County's August 17, 2023 recallable levy; and KDE SEEK payment "
+ "schedules FY2025 through FY2027 for the equalization phase-in on that nickel",
+ "Bourbon County Schools, Annual Financial Report and audit, fiscal 2025 (certified real and personal "
+ "property assessment of $1,843,569,625 and General Fund property tax collections of $7,829,060)",
 ]
 for i, s in enumerate(srcs, 1):
     A(Paragraph(f"{i}. {s}", ParagraphStyle("src", parent=note, fontSize=8.4, leading=10.8, spaceAfter=2.7)))
@@ -2016,6 +2116,9 @@ tbl(["Request", "What it settles"],
       "How much of the 44.8 percent central-office growth is people versus accounting (Section 8)"],
      ["KDE levy files: rate type elected each year; General Fund versus building fund cent split",
       "The two open cells in the tax history (Section 9)"],
+     ["<b>The certified compensating rate against the rate actually levied, each of the last five years</b>",
+      "Settles in one line whether the four percent option was taken, which the levied rate alone cannot "
+      "show (Section 11, Question 2)"],
      ["<b>The buildings and bonds.</b> The 2024 bond's official statement and BG-1; the 2023 issue's purpose",
       "Where $6.9 million of recent borrowing went (Section 6)"],
      ["KDE's bonding potential statement for the district",
@@ -2046,6 +2149,16 @@ B("School Attendance Boundary Survey (NCES EDGE, 2015-16): the district's attend
   "locations, and enrollment files at nces.ed.gov/programs/edge, with the prepared query in this repository as "
   "build/fetch_sabs.py. Also public: U.S. Census TIGER county boundaries and block-level population counts "
   "(census.gov/geographies), and KDE SEEK transportation calculation files (education.ky.gov/districts/SEEK).")
+B("Every levy figure in Section 11 can be checked without asking anyone for anything. KDE publishes its Local "
+  "District Tax Levies files, which carry each district's levied rates and the general fund, FSPK and "
+  "recallable components of the current year's rate, and its Nickel Levy Chart, which dates every district's "
+  "facilities nickels. The Kentucky Department of Revenue publishes annual Property Tax Rates books covering "
+  "all 120 counties and every school district line. This report's compiled fourteen-year, nine-district series "
+  "is archived in the repository as build/ky_levy_history_2012_2026.csv, and it reconciles exactly against the "
+  "Department of Revenue books for 2024 and 2025 in all nine districts. What is <b>not</b> published, and "
+  "therefore is requested above, is the rate type each board elected in each prior year and the general fund "
+  "versus building fund split for years before the current file. That single gap is the reason the 2.5-cent "
+  "figure in Section 11 is labeled an inference rather than a finding.")
 
 # ---------------- build ----------------
 def footer(canvas, doc):

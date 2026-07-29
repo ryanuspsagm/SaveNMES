@@ -154,7 +154,7 @@ def main():
             return d.length + ':' + d.filter(x=>x.open && x.querySelector('p').textContent.length>20).length
         }""")
         total, opened = kk.split(":")
-        if total == opened == "11": ok("all 11 question accordions open with content")
+        if total == opened == "12": ok("all 12 question accordions open with content")
         else: bad(f"accordions {opened}/{total}")
 
         missing = pg.evaluate("""() => [...document.querySelectorAll('nav a')]

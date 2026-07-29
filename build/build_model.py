@@ -1319,6 +1319,36 @@ put(th, "A87", "  plus remaining restricted capacity (FY2024 audit less the 2024
 put(th, "A88", "  plus bonds the new nickel equalization supports"); put(th, "B88", f"=Debt_Service!B{nick_r+1}", BLK, CUR)
 put(th, "A89", "Construction capacity unlocked without pledging a cent of the new levy"); put(th, "B89", "=B86+B87+B88", BLK, CUR, bold=True)
 put(th, "G89", "Roughly $35 million, for $15.69 a month on the median home, with nothing closed. The Harrison and median options are honest partial steps, leaving about $680,000 and $190,000 a year to find from the alternatives menu before the sweep can end; the Clark option adds about $10.5 million more direct capacity from its surplus", NOTE, wrap=True)
+put(th, "A93", "HOUSE BILL 44: THE 4 PERCENT IS A LIMIT ON REVENUE, NOT ON THE RATE (backs Section 11 and Question 2)", SEC)
+put(th, "A94", "Certified real and personal property assessment, FY2025 (audit)"); put(th, "B94", 1843569625, BLUE, CUR)
+put(th, "A95", "General Fund rate levied, cents per $100"); put(th, "B95", "=B71", BLK, "0.00")
+put(th, "A96", "General Fund revenue at that rate on that assessment"); put(th, "B96", "=B94*B95/100/100", BLK, CUR)
+put(th, "G96", "$7,558,635 on the certified assessment. Actual FY2025 GF tax collections were $7,829,060; the gap is motor vehicle and other classes plus collection timing, and it does not move any percentage below", NOTE, wrap=True)
+put(th, "A98", "Assessment growth", BOLDW, fill=HDR); put(th, "B98", "Compensating rate", BOLDW, fill=HDR)
+put(th, "C98", "4 percent option", BOLDW, fill=HDR); put(th, "D98", "Rate raised 4 percent", BOLDW, fill=HDR)
+put(th, "E98", "Revenue at 4 percent option", BOLDW, fill=HDR); put(th, "F98", "Revenue at rate x 1.04", BOLDW, fill=HDR)
+hb = 99
+for g in (0.00, 0.03, 0.05, 0.07):
+    put(th, f"A{hb}", g, BLUE, "0%")
+    put(th, f"B{hb}", f"=$B$95/(1+A{hb})", BLK, "0.00")
+    put(th, f"C{hb}", f"=B{hb}*1.04", BLK, "0.00")
+    put(th, f"D{hb}", f"=$B$95*1.04", BLK, "0.00")
+    put(th, f"E{hb}", f"=$B$94*(1+A{hb})*C{hb}/100/100", BLK, CUR)
+    put(th, f"F{hb}", f"=$B$94*(1+A{hb})*D{hb}/100/100", BLK, CUR)
+    put(th, f"G{hb}", f"=F{hb}-E{hb}", BLK, CUR, bold=True)
+    hb += 1
+put(th, "G98", "Above the ceiling, recallable", BOLDW, fill=HDR)
+put(th, "A104", "Read row 101, five percent growth: the largest rate the board can levy with no recall exposure is 40.61 cents, BELOW the 41.0 it levies now, and it still collects four percent more revenue. Column E is flat at every growth rate because the four percent is a revenue limit; column D is flat because it is a rate rule. The naive rate overshoots the protected rate by exactly the assessment growth rate, so the two coincide only at zero growth. New-construction revenue sits outside the cap and is additional; any rate above the compensating rate requires a public hearing; the two facilities nickels are separate from this General Fund table. KRS 132.010, KRS 132.017, KRS 160.470, read as a layperson, not as legal advice.", NOTE, wrap=True)
+put(th, "A106", "What this settles, and what it does not: a flat or falling levied rate is not evidence either way about whether the four percent option was taken, because taking it in a county with rising assessments produces a falling rate. KDE's levied-type file shows Bourbon took the option in five of the last twelve years against seven, eight and nine for the neighbors that rose. The document that closes the question is the certified compensating rate against the rate actually levied, each year, and it is on the records list.", NOTE, wrap=True)
+put(th, "A108", "THE 2023 RATE MOVEMENT: 3.2 CENTS NET, 5.7 CENTS RESTRICTED IN", SEC)
+put(th, "A109", "Total levied rate, tax year 2022"); put(th, "B109", 49.2, BLUE, "0.0")
+put(th, "A110", "Total levied rate, tax year 2023 (held at 52.4 for three years since)"); put(th, "B110", 52.4, BLUE, "0.0")
+put(th, "A111", "Net change"); put(th, "B111", "=B110-B109", BLK, "+0.0;-0.0")
+put(th, "A112", "Recallable facilities nickel levied 8/17/2023 (KDE levied-rates file, current year)"); put(th, "B112", 5.7, BLUE, "0.0")
+put(th, "A113", "Implied change in the rest of the rate"); put(th, "B113", "=B111-B112", BLK, "+0.0;-0.0", bold=True)
+put(th, "A114", "Implied annual change in unrestricted revenue"); put(th, "B114", "=B113*B72", BLK, CUR, bold=True)
+put(th, "G114", "About -2.5 cents, roughly -$477,000 a year. INFERENCE, NOT A DOCUMENT: KDE does not publish the year-by-year rate-type split, and a facilities nickel is an equivalent rate restated annually against the whole property base, so it drifts. The certified split by year is requested in Appendix B. What is not in doubt: the levy that rose in 2023 was restricted building money that cannot lawfully pay a teacher", NOTE, wrap=True)
+
 put(th, "A91", "None of these is a recommendation of a particular number, and none is counted in the alternatives package total. The point is narrower: a menu of options exists between cut nothing and close a school, every one prices out larger than the most generous closure estimate, and every one carries a built-in democratic check. A levy above 4 percent can be recalled by the voters it taxes. A closed school cannot be recalled by the children it displaces. This community was offered that veto twice on the facilities nickels and twice declined to use it; it has never been offered the same vote on the operating levy that pays teachers.", NOTE, wrap=True)
 
 # ================= SCHOOL COSTS AND BREAKEVENS (v3.8) =================

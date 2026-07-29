@@ -337,6 +337,36 @@ def main():
         and (REPO / "reports" / "Saving_NMES_v3.6_2026-07-26.pdf").exists(),
         "v3.6 archived in reports/ and linked from the version history")
 
+    # HB 44: the 4 percent is a revenue limit, not a rate limit (v3.9)
+    for needle in ["compensating rate", "40.61", "42.64", "$8,254,030", "$393,049",
+                   "$1,843,569,625", "five of the last twelve years"]:
+        chk(needle in t, f"PDF HB 44 rate-vs-revenue intact: {needle}")
+    for needle in ["compensating rate", "40.61", "42.64", "$8,254,030", "$393,049",
+                   "$1,843,569,625", "five of the last twelve years"]:
+        chk(needle in html, f"site HB 44 rate-vs-revenue intact: {needle}")
+    # the table is a revenue limit: revenue at the 4% option is flat across all growth rates
+    chk(t.count("$7,860,981") >= 4 and html.count("$7,860,981") >= 4,
+        "4 percent revenue constant at every assessment-growth row (PDF and site)")
+    # 2023 rate movement decomposition, labelled an inference
+    for needle in ["3.2 cents", "August 17, 2023", "5.7 cents", "$477,000"]:
+        chk(needle in t, f"PDF 2023 nickel decomposition intact: {needle}")
+        chk(needle in html, f"site 2023 nickel decomposition intact: {needle}")
+    chk("inference" in t.lower() and "inference" in html.lower(),
+        "the 2.5-cent figure is labelled an inference, not a finding")
+    # question list: twelve, aligned across site and report, with the two new asks
+    chk("Twelve Questions" in t and "Twelve questions" in html, "question list is twelve in both")
+    chk(html.count("<details>") >= 12, "twelve question accordions on the site")
+    chk("Ten Questions" not in t and "eleven questions" not in t.lower(),
+        "no stale question counts left in the report")
+    for needle in ["assessment erosion", "$138,780", "$46,260"]:
+        chk(needle in t, f"PDF question 1 downside risk intact: {needle}")
+        chk(needle in html, f"site question 1 downside risk intact: {needle}")
+    chk("does not establish that closure causes decline" in t.replace("<i>", "").replace("</i>", "")
+        or "not establish that closure causes decline" in t,
+        "question 1 states the limit of the closure/population evidence")
+    chk("certified compensating rate" in t and "certified compensating rate" in html,
+        "the records ask that settles the 4 percent question is published in both")
+
     # beyond-4% recallable levy options (v3.7)
     for needle in ["recallable levy options", "KRS 160.470", "$191,000 per cent",
                    "$211,600", "$21.16", "$1,699,479", "$4,551",
