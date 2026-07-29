@@ -9,7 +9,7 @@ public source cited in the report and on the site.
 
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
-- `Saving_North_Middletown_Elementary.pdf` - the 52-page report.
+- `Saving_North_Middletown_Elementary.pdf` - the 53-page report.
 - `NMES_Financial_Model.xlsx` - the 17-tab financial model (418 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
   Requires: `pip install reportlab openpyxl matplotlib`. Run
@@ -79,7 +79,22 @@ corrections section lists what changed and why.
   students and it enrolls 128. Published against us in the same section:
   on directly-coded dollars NMES's per-student premium is wider (9.6 and
   12.2 percent) than on the federal basis (3.6 and 6.7).
-  (2) CORRECTIONS. The 99.6 percent statewide figure reattached to the
+  (2) THE GRID REBUILT, the largest correction here. The fixed-cost lever
+  carried two estimated values ($230,000 mothballed, $290,000 sold), both
+  of which assumed every fixed position at the school is eliminated. It
+  now carries three MEASURED values from the FY2026 working budget:
+  $58,774 (staff reassigned, utilities only), $227,831 (mothballed) and
+  $276,928 (sold). Grid goes 1,944 -> 2,916 combinations. Median saving
+  $91,240 -> $21,571; negative share 29% -> 45%; range widens to
+  -$556,006 / +$551,928. Assumptions B51/B52 re-based to the measured
+  $131,724 / $96,107, so the School_Costs breakeven bar of 54 students is
+  now formula-driven. The site calculator gains a fixed-cost control and
+  now reaches both grid corners exactly, which it never could before.
+  The record-vs-model comparison is restated as a bracket, not a
+  convergence: the record's $818 per displaced student is an upper bound
+  by construction, the bottom-up model now reads $169, and the plan's
+  $6,250-$7,813 requirement sits outside both.
+  (3) CORRECTIONS. The 99.6 percent statewide figure reattached to the
   $8,255 bar it belongs to (the corrected test fails 786 of 1,151, 68
   percent); the "38 to 69 students" real-breakeven bar withdrawn because
   its low end credited each child with federal money that follows the
@@ -89,19 +104,19 @@ corrections section lists what changed and why.
   35-37 / 46-47 percent) with the base-year counts named; "total site
   spending" and "to the dollar" relabelled; the site closure calculator's
   sliders brought back inside the published grid.
-  (3) ADMINISTRATION. The 44.8 percent increase decomposed from the
+  (4) ADMINISTRATION. The 44.8 percent increase decomposed from the
   district's own working budgets: administrative salaries DOWN about 8
   percent, growth concentrated in insurance, statutory tax collection
   fees, accrued sick leave paid at retirement, and professional services.
   Total district payroll FELL 0.7 percent ($30,410,725 to $30,201,047).
   Central office payroll grew 7.6 percent excluding sick leave, all of it
   the business office. Two director roles were consolidated, not added.
-  (4) ENROLLMENT. County children aged 5-17 are flat for 25 years (3,594
+  (5) ENROLLMENT. County children aged 5-17 are flat for 25 years (3,594
   / 3,574 / 3,548) while district enrollment fell 10.2 percent. The
   private-or-homeschool share corrected DOWN from "about one in three" to
   450-550 children, 13-15 percent, after locating a single-age-band
   weighting artifact in the survey.
-  (5) STAFFING AND RECORDS. NMES runs on 5.5 fixed positions against
+  (6) STAFFING AND RECORDS. NMES runs on 5.5 fixed positions against
   11.5 and 12.25 at the receiving schools, published beside the
   per-hundred ratio that cuts the other way. 33 records line items came
   back "N/A", including every closure, feasibility, boundary and

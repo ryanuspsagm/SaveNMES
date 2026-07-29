@@ -208,12 +208,12 @@ def main():
                    "Appendix B: The Open Records Checklist", "KRS 157.370",
                    "Boston Public Schools"]:
         chk(needle in t, f"PDF claim intact: {needle}")
-    chk("$131,240" in html, "site claim intact: $131,240 calculator central-case default")
-    for needle in ["-$385K to +$565K", "$91,000", "29 percent", "losing $385,000",
-                   "saving $565,000", "Millersburg", "119 students", "2007"]:
+    chk("$69,071" in html, "site claim intact: $69,071 calculator central-case default")
+    for needle in ["-$556K to +$552K", "$22,000", "45 percent", "losing $556,000",
+                   "saving $552,000", "Millersburg", "119 students", "2007"]:
         chk(needle in html, f"site v3 two-tailed range intact: {needle}")
-    for needle in ["Figure 7.", "Figure 8.", "losing $385,000", "saving $565,000",
-                   "$91,000", "29 percent", "Millersburg", "119 students",
+    for needle in ["Figure 7.", "Figure 8.", "losing $556,000", "saving $552,000",
+                   "$22,000", "45 percent", "Millersburg", "119 students",
                    "$50,000 to $75,000", "$41,718", "747"]:
         chk(needle in t, f"PDF v3 two-tailed range intact: {needle}")
 
@@ -437,7 +437,7 @@ def main():
     chk("$7,829,060" in t and "restricted building-fund levy" in html,
         "levy base disclosed as GF-only in PDF and site")
     chk("over four fifths of the annual reserve drawdown" in t
-        and "three cents of the district" in t,
+        and "one cent of the district" in t,
         "PDF scores closure and levy against both deficit and drawdown")
     chk("draws from reserves each year" in html and "DRAWDOWN=1145561" in html,
         "site shows both denominators on the calculators")

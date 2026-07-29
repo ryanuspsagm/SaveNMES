@@ -138,8 +138,8 @@ arow(47, "Administrative rollback share of 2-yr growth", 0.5, PCT, "Judgment cal
 arow(48, "Attrition positions, district-wide", 4, NUM, "Judgment call", fill=YEL)
 
 put(a, "A50", "CLOSURE SCENARIO JUDGMENTS (estimates; district must replace with actuals)", SEC)
-arow(51, "Principal & office costs avoided", 175000, CUR, "Estimate", fill=YEL)
-arow(52, "Plant/utilities/insurance avoided, net of carrying cost", 115000, CUR, "Estimate; assumes building sold or repurposed", fill=YEL)
+arow(51, "School administration avoided (principal, secretary, extended day)", 131724, CUR, "MEASURED v3.9: district FY2026 working budget, location 090, General Fund program 077, excl on-behalf. Was a $175,000 estimate through v3.8.", fill=YEL)
+arow(52, "Plant operations avoided (custodial + utilities, sanitation, water)", 96107, CUR, "MEASURED v3.9: same source, custodial program 087 $37,333 + plant program 987 $58,774. B51+B52 = $227,831, the grid's mothballed case. Was a $115,000 estimate through v3.8.", fill=YEL)
 arow(53, "Teaching positions truly eliminated", 3, NUM, "Estimate; via attrition only", fill=YEL)
 arow(54, "Added busing cost per year", 137500, CUR, "Estimate; midpoint of $75K-$200K", fill=YEL)
 arow(55, "Students leaving the district on closure", 10, NUM, "Judgment call; see sensitivity table", fill=YEL)
@@ -225,12 +225,12 @@ put(c, "A34", "All-in cost per position (salary + state-paid on-behalf; filing b
 put(c, "C34", "Correct for KDE per-pupil comparisons; the district books $6.94M of on-behalf in FY2026", NOTE, wrap=True)
 put(c, "A35", "GF-borne cost per position (salary + ~5%)"); put(c, "B35", "=Assumptions!B69", GRN, CUR)
 put(c, "C35", "Published schedule: Rank III $41,718 (yr 0) to Rank I $71,447 (yr 29-30). The state pays TRS and KEHP on behalf of districts; eliminating a GF position saves the GF only $50K-$75K", NOTE, wrap=True)
-put(c, "A37", "V3 TWO-TAILED SENSITIVITY: SEVEN LEVERS, 1,944 COMBINATIONS (backs Figure 7)", SEC)
+put(c, "A37", "V3.9 TWO-TAILED SENSITIVITY: SEVEN LEVERS, 2,916 COMBINATIONS (backs Figure 7)", SEC)
 put(c, "A38", "Lever (low / central / high)", BOLDW, fill=HDR); put(c, "B38", "Low", BOLDW, fill=HDR); put(c, "C38", "Central", BOLDW, fill=HDR); put(c, "D38", "High", BOLDW, fill=HDR); put(c, "E38", "Source", BOLDW, fill=HDR)
 v3levers = [
  ("Positions eliminated (net of re-created sections)", 2, 3, 5, "Class caps: receiving schools add ~4 sections while NMES's 9 dissolve"),
  ("GF cost per position", 50000, 60000, 75000, "Published salary schedule + on-behalf structure"),
- ("Fixed avoided (mothballed / sold)", 230000, 290000, 290000, "Principal+office $175K; plant $115K sold, ~$55K mothballed. CORROBORATED v3.9 from the district FY2026 working budget, location 090, General Fund, excl on-behalf: school admin (2400) $132,744 + plant (2600) $96,107 = $228,851 vs the $230,000 mothballed lever, a 0.5% miss; adding the library/media line $49,097 gives $277,948 vs the $290,000 sold lever. NOTE: $230,000 is this grid FLOOR and assumes principal, secretary, custodian and utilities are all eliminated rather than reassigned; a redeployment case (utilities only, $58,774) is not in the grid."),
+ ("Fixed avoided (reassigned / mothballed / sold)", 58774, 227831, 276928, "MEASURED v3.9 from the district FY2026 working budget, location 090, General Fund, excl on-behalf: school admin (2400) $132,744 + plant (2600) $96,107 = $228,851 vs the $230,000 mothballed lever, a 0.5% miss; adding the library/media line $49,097 gives $277,948 vs the $290,000 sold lever. NOTE: $230,000 is this grid FLOOR and assumes principal, secretary, custodian and utilities are all eliminated rather than reassigned; a redeployment case (utilities only, $58,774) is not in the grid."),
  ("Added busing", 100000, 137500, 250000, "110 sq mi zone (federal SABS); worst-reimbursed budget line. Treated as net new cost with nothing in the school's own code to offset it: student transportation coded to location 090 in the FY2026 working budget is $2,000, while location 901 is 100 percent function 2700 at $2,688,247, the only material transportation coding in the district."),
  ("Students leaving district", 0, 10, 30, "x $4,626 SEEK; Paris Ind adjacent under HB 563; Millersburg precedent"),
  ("Capacity debt service triggered", 0, 115000, 231000, "CRES 103 over approved rating; 2021 plan prices its kitchen/cafeteria deficient today"),
@@ -241,14 +241,14 @@ for i, (lbl, lo, ce, hi, src) in enumerate(v3levers):
     put(c, f"A{rr}", lbl); put(c, f"B{rr}", lo, BLUE, CUR if lo > 100 else NUM); put(c, f"C{rr}", ce, BLUE, CUR if ce > 100 else NUM); put(c, f"D{rr}", hi, BLUE, CUR if hi > 100 else NUM); put(c, f"E{rr}", src, NOTE)
 put(c, "A47", "Central case: net yearly effect")
 put(c, "B47", "=C41+C39*C40-C42-C43*Assumptions!B6-C44-C45", BLK, CUR, bold=True)
-put(c, "C47", "$131,240: about 5 percent of the structural deficit", NOTE)
+put(c, "C47", "$69,071: about 2.6 percent of the structural deficit", NOTE)
 put(c, "A48", "Unfavorable tail (all levers adverse)")
 put(c, "B48", "=B41+B39*B40-D42-D43*Assumptions!B6-D44-D45", BLK, CUR)
-put(c, "C48", "-$384,780 a year: the closure loses money", NOTE)
+put(c, "C48", "-$556,006 a year: the closure loses money", NOTE)
 put(c, "A49", "Favorable tail (all levers favorable)")
 put(c, "B49", "=D41+D39*D40-B42-B43*Assumptions!B6-B44-B45", BLK, CUR)
-put(c, "C49", "+$565,000 a year: the ceiling, and still below the plan's $800K-$1M requirement", NOTE)
-put(c, "A50", "Distribution of all 1,944 combinations, equal weights, enumerated by build/closure_grid.py: positions take four values (2, 3, 4, 5), fixed-avoided takes two ($230,000 mothballed, $290,000 sold), and the five other levers three each (4 x 2 x 3^5 = 1,944). Median +$91,240; middle half -$17,500 to +$200,000; 28.8 percent (559 of 1,944, published as 29 percent) of scenarios negative. One-time transition costs $100K-$300K in year one are additional.", NOTE, wrap=True)
+put(c, "C49", "+$551,928 a year: the ceiling, and still below the plan's $800K-$1M requirement", NOTE)
+put(c, "A50", "Distribution of all 2,916 combinations, equal weights, enumerated by build/closure_grid.py: positions take four values (2, 3, 4, 5) and the six other levers three each (4 x 3^6 = 2,916). Median +$21,571; middle half -$104,726 to +$146,274; 45.06 percent (1,314 of 2,916, published as 45 percent) of scenarios negative. One-time transition costs $100K-$300K in year one are additional. REBUILT IN v3.9: the fixed-avoided lever previously took two estimated values ($230,000 mothballed, $290,000 sold), both of which assumed every fixed position at the school is eliminated. It now takes three measured values from the district FY2026 working budget, location 090, General Fund, excl on-behalf: $58,774 (staff reassigned to other buildings, utilities only), $227,831 (mothballed: school admin $131,724 + custodial $37,333 + plant $58,774) and $276,928 (sold: the above plus library and media $49,097). Adding the reassignment case moved the median from +$91,240 to +$21,571 and the negative share from 28.8 to 45.1 percent.", NOTE, wrap=True)
 put(c, "A52", "HOSTILE PAPER CASE, PUBLISHED WITH ITS REFUTATION", SEC)
 put(c, "A53", "Every absorbed student priced at the empirical $9,848 marginal")
 put(c, "B53", "=Assumptions!B14*Assumptions!B11-128*Redistricting!B111-137500-10*Assumptions!B6", BLK, CUR)
@@ -666,9 +666,9 @@ put(d, f"F{r}", "Payment is approximately the operating amount the plan frees up
 put(d, f"A{r}", "WHAT EACH SAVINGS ESTIMATE COULD ACTUALLY BOND", SEC); r += 1
 put(d, f"A{r}", "Bond principal supported = annual savings x present-value annuity factor at the rate and term above", NOTE); r += 1
 sav_rows = [
- ("District's own KDE-filed excess cost of NMES vs peer elementaries", 121220, "Sits between the v3 closure model's median ($91,240) and central case ($131,240)"),
- ("Closure model median (v3 two-tailed grid)", 91240, "Closure_Model tab, 1,944-combination grid"),
- ("Closure model best case (v3 favorable tail)", 565000, "Closure_Model tab B49"),
+ ("District's own KDE-filed excess cost of NMES vs peer elementaries", 121220, "Above the v3.9 closure model's median ($21,571) and central case ($69,071)"),
+ ("Closure model median (v3.9 two-tailed grid)", 21571, "Closure_Model tab, 2,916-combination grid"),
+ ("Closure model best case (v3.9 favorable tail)", 551928, "Closure_Model tab B49"),
  ("Administration's claim, July 15, 2026", 900000, "Unpublished derivation; reconcile with KDE-filed school-level spending"),
 ]
 for label, sv, note6 in sav_rows:
@@ -793,11 +793,11 @@ put(rw, "B6", "=GF_Summary!D9-GF_Summary!$D$16", BLK, CUR)
 put(rw, "C6", "=B6-GF_Summary!$D$16+0.5*Alternatives!$B$20", BLK, CUR)
 put(rw, "D6", "=C6-GF_Summary!$D$16+Alternatives!$B$20", BLK, CUR)
 put(rw, "E6", "=D6-GF_Summary!$D$16+Alternatives!$B$20", BLK, CUR)
-put(rw, "A7", "Closure only (v3 central case, $131,240, from FY2027)")
+put(rw, "A7", "Closure only (v3.9 central case, $69,071, from FY2027)")
 put(rw, "B7", "=GF_Summary!D9-GF_Summary!$D$16", BLK, CUR)
 for col, prev in zip("CDE", "BCD"):
     put(rw, f"{col}7", f"={prev}7-GF_Summary!$D$16+Closure_Model!$B$47", BLK, CUR)
-put(rw, "A9", "Closure range check (v3): at the +$565,000 best case FY2029 ends near $1.4M; at the +$91,240 median the reserves are gone on nearly the status-quo schedule; in the 29 percent of scenarios that lose money, sooner than status quo.", NOTE, wrap=True)
+put(rw, "A9", "Closure range check (v3.9): at the +$551,928 best case FY2029 ends near $1.4M; at the +$21,571 median the reserves are gone on essentially the status-quo schedule; in the 45 percent of scenarios that lose money, sooner than status quo.", NOTE, wrap=True)
 put(rw, "A8", "2% contingency floor (approx., FY2025 basis)")
 for col in "BCDE":
     put(rw, f"{col}8", "=GF_Summary!$D$14", GRN, CUR)
@@ -1251,7 +1251,7 @@ put(kc, "A33", "THE YARDSTICK: WHAT THIS PLAN REQUIRES PER DISPLACED STUDENT", S
 put(kc, "A34", "Plan requirement, low / high ($800K-$1M over the 128 students displaced)")
 put(kc, "B34", "=800000/Assumptions!B11", BLK, CUR, bold=True); put(kc, "C34", "=1000000/Assumptions!B11", BLK, CUR, bold=True)
 put(kc, "A35", "This report's own model, per displaced student: median / central / best case")
-put(kc, "B35", "=91240/Assumptions!B11", BLK, CUR); put(kc, "C35", "=Closure_Model!B47/Assumptions!B11", BLK, CUR); put(kc, "D35", "=Closure_Model!B49/Assumptions!B11", BLK, CUR)
+put(kc, "B35", "=21571/Assumptions!B11", BLK, CUR); put(kc, "C35", "=Closure_Model!B47/Assumptions!B11", BLK, CUR); put(kc, "D35", "=Closure_Model!B49/Assumptions!B11", BLK, CUR)
 put(kc, "A36", "Reading: among rural ELEMENTARY closures, the one clean no-construction comparable (Webster 2012) paid $3,525 per displaced student; every case at or near the plan's band built a new school (Perry, Adair, Metcalfe) or was a city or county-seat grade reshuffle (Somerset, Montgomery). Gaps beyond roughly a school's own cost per student are flagged in the notes: they prove budget-wide causes, which is why this model prices closure bottom-up (positions, busing, SEEK) rather than from budget trends.", NOTE, wrap=True)
 
 put(kc, "A38", "THE FULL DISTRIBUTION, PER DISPLACED STUDENT (all measurable events; whole budget gap credited to the closure)", SEC)
@@ -1260,7 +1260,7 @@ put(kc, "A40", "Physically plausible magnitudes only (within $13K, 116 events): 
 put(kc, "A41", "Share of districts spending MORE than trend after closing (all / plausible-only)"); put(kc, "B41", 0.40, BLUE, '0%'); put(kc, "C41", 0.41, BLUE, '0%')
 put(kc, "A42", "Analogous-subset RAW median, published for transparency"); put(kc, "B42", 8440, BLUE, CUR)
 put(kc, "A43", "  why $8,440 is an artifact, not a savings figure: dividing whole-district budget noise by 60-320 student denominators explodes per-child values; 11 of 27 such events exceed the $13K physical ceiling in one direction or the other. Same events, plausible window only, median:", NOTE, wrap=True); put(kc, "B43", 541, BLUE, CUR)
-put(kc, "A44", "CONVERGENCE CHECK: the record's plausible median vs this model's independent bottom-up median per displaced student"); put(kc, "B44", 818, BLUE, CUR); put(kc, "C44", "=91240/Assumptions!B11", BLK, CUR, bold=True)
+put(kc, "A44", "BRACKET CHECK (v3.9): the record's plausible median vs this model's independent bottom-up median per displaced student. These bracket rather than coincide and measure different things: the record credits a district's whole budget change to its closure (an upper bound by construction), the model prices only the levers a closure moves. Before the v3.9 fixed-cost rebuild the model read $713 and the two nearly coincided. Both remain far below the plan's $6,250-$7,813 requirement."); put(kc, "B44", 818, BLUE, CUR); put(kc, "C44", "=Closure_Model!B47/Assumptions!B11", BLK, CUR, bold=True)
 
 put(kc, "A46", "OUTCOMES, WITHIN ONE TESTING SYSTEM (federal proficiency series, closures 2012-2016, change vs state 3 years out)", SEC)
 put(kc, "A47", "Events measurable / improved 3+ pts / declined 3+ pts / flat"); put(kc, "B47", 42, BLUE, NUM); put(kc, "C47", 11, BLUE, NUM); put(kc, "D47", 10, BLUE, NUM); put(kc, "E47", 21, BLUE, NUM)
@@ -1365,7 +1365,7 @@ for rr, en in ((32, 128), (33, 453), (34, 459)):
     put(sc, f"C{rr}", f"=B{rr}/(Assumptions!B6-Assumptions!B62)", BLK, '0')
     put(sc, f"D{rr}", f"=B{rr}/(Assumptions!B6+3380-Assumptions!B62)", BLK, '0')
     put(sc, f"E{rr}", en, BLUE, NUM)
-put(sc, "G32", "Office and principal are estimates held equal across schools and plant is scaled by KFICS replacement value. The district's FY2026 working budget now measures North Middletown's own General Fund lines, excluding state-paid on-behalf, at school administration $132,744, plant operations $96,107 (the General Fund portion of function 2600; $119,909 across all funds) and instructional staff support, the school's library and media line, $49,097. Administration plus plant measure $228,851 against the $290,000 this model assumes for the same two components. Local carries zero at the margin, because the levy does not change with enrollment, and federal carries zero as well, because Title I is a district allocation driven by resident poverty and reappears at whichever school the child attends. Column D keeps the federal case only to show how far the answer moves when you count it.", NOTE, wrap=True)
+put(sc, "G32", "B51 and B52 are now the measured lines themselves and plant is scaled by KFICS replacement value for the other two schools. The district's FY2026 working budget measures North Middletown's own General Fund lines, excluding state-paid on-behalf, at school administration $132,744, plant operations $96,107 (the General Fund portion of function 2600; $119,909 across all funds) and instructional staff support, the school's library and media line, $49,097. Administration plus plant measure $227,831 on the program view used by B51 and B52, or $228,851 on the function view, against the $290,000 this model assumed for the same two components through v3.8. Local carries zero at the margin, because the levy does not change with enrollment, and federal carries zero as well, because Title I is a district allocation driven by resident poverty and reappears at whichever school the child attends. Column D keeps the federal case only to show how far the answer moves when you count it.", NOTE, wrap=True)
 put(sc, "A35", "NMES clears its bar at roughly two to two and a half times its enrollment; the receiving schools at roughly 5 to 6 times. The full grid version with position, busing, and leaver effects brackets NMES at 20 to 122 (KY_Closures yardstick rows). Every construction except all-source-cost-over-state-only-revenue says every school pays its way.", NOTE, wrap=True)
 
 put(sc, "A37", "SCHOOL-LEVEL SPENDING PER STUDENT, OLD SRC SYSTEM 2011-12 TO 2016-17 (KDE Learning Environment files; archived CSV in build/)", SEC)

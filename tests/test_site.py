@@ -63,24 +63,26 @@ def main():
 
         net = pg.text_content("#rNet").strip()
         verdict = pg.text_content("#rVerdict").strip()
-        if net == "$131,240" and "5.0%" in verdict and "reserves" in verdict:
-            ok("closure v3 central default $131,240 / 5.0% deficit + drawdown framing")
+        if net == "$69,071" and "2.6%" in verdict and "reserves" in verdict:
+            ok("closure v3.9 central default $69,071 / 2.6% deficit + drawdown framing")
         else: bad(f"closure defaults: {net} / {verdict}")
 
+        pg.fill("#sFix", "2"); pg.dispatch_event("#sFix", "input")
         pg.fill("#sPos", "5"); pg.dispatch_event("#sPos", "input")
         pg.fill("#sCost", "75000"); pg.dispatch_event("#sCost", "input")
         pg.fill("#sBus", "100000"); pg.dispatch_event("#sBus", "input")
         pg.fill("#sLeav", "0"); pg.dispatch_event("#sLeav", "input")
         pg.fill("#sOther", "0"); pg.dispatch_event("#sOther", "input")
-        if pg.text_content("#rNet").strip() == "$565,000": ok("closure v3 favorable tail $565,000")
+        if pg.text_content("#rNet").strip() == "$551,928": ok("closure v3.9 favorable tail $551,928 = grid max")
         else: bad(f"closure best case: {pg.text_content('#rNet')}")
+        pg.fill("#sFix", "0"); pg.dispatch_event("#sFix", "input")
         pg.fill("#sPos", "2"); pg.dispatch_event("#sPos", "input")
         pg.fill("#sCost", "50000"); pg.dispatch_event("#sCost", "input")
         pg.fill("#sBus", "250000"); pg.dispatch_event("#sBus", "input")
         pg.fill("#sLeav", "30"); pg.dispatch_event("#sLeav", "input")
         pg.fill("#sOther", "326000"); pg.dispatch_event("#sOther", "input")
-        if pg.text_content("#rNet").strip() == "-$324,780" and "LOSES" in pg.text_content("#rVerdict"):
-            ok("closure v3.9 unfavorable tail -$324,780 with loss verdict (sliders now inside the grid)")
+        if pg.text_content("#rNet").strip() == "-$556,006" and "LOSES" in pg.text_content("#rVerdict"):
+            ok("closure v3.9 unfavorable tail -$556,006 = grid min (calculator spans the whole grid)")
         else: bad(f"closure worst case: {pg.text_content('#rNet')} / {pg.text_content('#rVerdict')[:60]}")
 
         pg.fill("#sYrs", "1"); pg.dispatch_event("#sYrs", "input")

@@ -170,8 +170,8 @@ P("<b>Second, North Middletown Elementary did not cause the problem, and closing
   "pay teachers in any case. The receiving schools' approved ratings are 521 at Bourbon Central and 422 at Cane "
   "Ridge; at today's enrollment that is a net 31 uncommitted seats for 128 children, with Cane Ridge already 31 "
   "students over its rating. Section 4 prices every defensible combination of the closure's costs and savings: "
-  "the net effect runs from losing $385,000 a year to saving $565,000, the median is a $91,000 saving, about "
-  "three cents of the district's one-dollar problem, and 29 percent of scenarios lose money outright. Several "
+  "the net effect runs from losing $556,000 a year to saving $552,000, the median is a $22,000 saving, under "
+  "one cent of the district's one-dollar problem, and 45 percent of scenarios lose money outright. Several "
   "alternatives that harm no one save more than the median.")
 P("<b>Third, the district has not yet shown its work.</b> No line-item net-savings analysis, transportation model, "
   "receiving-school capacity study, or alternatives comparison has been published. The one technical document that "
@@ -375,20 +375,20 @@ P("This version also prices what earlier versions only named: the class-size cap
   "schools to re-create sections (they add about four while North Middletown's nine dissolve), the busing a "
   "110-square-mile zone actually requires, the families a closure sends to other districts, the capacity "
   "construction a 103-students-over-rating Cane Ridge would need, and the property-base erosion this county "
-  "has already watched in Millersburg. Run every defensible combination of those inputs, 1,944 in all, enumerated by build/closure_grid.py in this repository, "
+  "has already watched in Millersburg. Run every defensible combination of those inputs, 2,916 in all, enumerated by build/closure_grid.py in this repository, "
   "published lever by lever in the workbook, and the result is Figure 7: the net yearly effect of closing "
-  "North Middletown falls between <b>losing $385,000 and saving $565,000</b>, the middle half of all scenarios "
-  "lands between an $18,000 loss and a $200,000 saving, the median is a <b>$91,000 saving, about three cents "
-  "of the district's one-dollar problem</b>, and 29 percent of scenarios lose money outright, before $100,000 "
+  "North Middletown falls between <b>losing $556,000 and saving $552,000</b>, the middle half of all scenarios "
+  "lands between a $105,000 loss and a $146,000 saving, the median is a <b>$22,000 saving, under one cent "
+  "of the district's one-dollar problem</b>, and 45 percent of scenarios lose money outright, before $100,000 "
   "to $300,000 of one-time transition costs in the first year. The prior planning range of $250,000 to "
   "$640,000 sits in the optimistic half of the honest distribution, and the plan's own requirement, $800,000 "
   "to $1,000,000 a year, sits entirely outside it. One more thing closure does not buy: borrowing room. "
   "Bonding capacity is built from restricted revenue streams that do not grow when a school closes "
   "(Section 6).")
 fig("chart_closure_spectrum.png",
-    "Figure 7. The honest range. Top: the net yearly effect of closure across all 1,944 combinations of the "
-    "seven sourced inputs, from losing $385,000 to saving $565,000, with the middle half of scenarios between "
-    "an $18,000 loss and a $200,000 saving and the median at a $91,000 saving. The plan's own $800,000 to "
+    "Figure 7. The honest range. Top: the net yearly effect of closure across all 2,916 combinations of the "
+    "seven sourced inputs, from losing $556,000 to saving $552,000, with the middle half of scenarios between "
+    "a $105,000 loss and a $146,000 saving and the median at a $22,000 saving. The plan's own $800,000 to "
     "$1,000,000 requirement lies entirely outside the defensible range. Bottom: how far each input moves the "
     "central case by itself. Inputs: the district's published salary schedule, its KDE filings, KRS 157.360 "
     "class caps, the federal attendance-zone map, and the Millersburg precedent; every lever and formula is "
@@ -448,11 +448,15 @@ P("Two conclusions follow, and the second is a caution about this report's own m
   "at the top. Second, <b>$230,000 is the floor of the grid, not a floor case.</b> Reaching it requires that "
   "the principal, the secretary, the custodian and the utilities all go. Districts frequently redeploy people "
   "rather than cut them, and if that happens here the closure avoids the utilities and nothing else, $58,774. "
-  "The grid contains no such scenario. This version does not rebuild the grid on a scenario that cannot yet "
-  "be sourced to a district decision, but the effect is stated plainly rather than left implicit: priced "
-  "into the same 1,944 combinations, a redeployment floor would move the median saving from $91,000 to about "
-  "$23,000 and put roughly 45 percent of scenarios in the red instead of 29 percent. One question to the "
-  "district settles it: which of these positions would be eliminated, and which reassigned?")
+  "The old grid contained no such scenario, which meant every figure this report published assumed the "
+  "district would make the deepest cut available to it. <b>So this version rebuilds the grid.</b> The "
+  "fixed-cost lever now carries the three decisions the district can actually make with these lines, all "
+  "measured rather than estimated: staff reassigned and utilities only, $58,774; mothballed with those "
+  "positions cut, $227,831; sold, adding the library and media line, $276,928. The grid goes from 1,944 "
+  "combinations to 2,916. It is the largest correction in this release and it moves the headline against "
+  "this report's own case: the median saving falls from $91,240 to $21,571, the negative share rises from 29 "
+  "to 45 percent, and the range widens to minus $556,006 and plus $551,928. One question to the district "
+  "would narrow all of it: which of these positions would be eliminated, and which reassigned?")
 P("There is a limit to what any ledger can settle, and naming it is more useful than pretending otherwise. "
   "The seven inputs that decide a closure's net effect span about $950,000. The district's books speak to two "
   "of them, worth about a third of that spread. The rest, how many families leave, whether the building is "
@@ -515,9 +519,21 @@ P("<b>First, the money.</b> For the 163 closure events with clean finance data, 
   "closure of Slaughters Elementary in 2012, paid $3,525; every case at or near the plan's number came with a "
   "brand-new school (Perry 2017, Adair 2006, Metcalfe 2013) or was a city or county-seat grade reshuffle "
   "rather than a rural closure (Somerset 1999; Montgomery 2018, which opened a new elementary the same "
-  "year). And the convergence is the point: thirty years of budget outcomes put the plausible median at "
-  "$818 per displaced student, and this report's own bottom-up model, built without ever looking at that "
-  "history, puts its median at $713. Two independent methods, one answer, and the plan needs nine times it.")
+  "year). Here the two methods bracket rather than coincide, and this version says so plainly because the "
+  "v3.9 grid rebuild moved this report's own number and not the record's. Thirty years of budget outcomes "
+  "put the plausible median at $818 per displaced student. This report's bottom-up model, built without ever "
+  "looking at that history, now puts its median at $169, down from $713 before the fixed-cost lever was "
+  "rebuilt on the district's measured lines. They are not the same number and they do not measure the same "
+  "thing: the record's figure credits a district's entire budget change to its closure, an upper bound by "
+  "construction, while the bottom-up figure prices only the levers a closure actually moves. What matters is "
+  "that both sit far below the yardstick. The plan needs $6,250 to $7,813 per displaced child: eight times "
+  "the record's generous reading, and thirty-seven times this report's own.")
+P("What a reader should take from the pair is not a single number but a ceiling. The record's $818 is what "
+  "thirty years of Kentucky districts actually managed when every dollar of their budget improvement is "
+  "credited to the closure, which no honest accounting would do. The bottom-up $169 is what the seven "
+  "priced levers deliver at the middle of each. Between them lies every defensible answer, and the plan's "
+  "requirement lies well outside. That gap, rather than any one estimate, is the finding: a closure of this "
+  "school cannot produce what the plan needs from it, and no arrangement of the inputs makes it do so.")
 fig("chart_ky_record.png",
     "Figure 9. Top: all 163 measurable Kentucky rural closures, priced per displaced student with each "
     "district's entire budget gap against the state trend credited to its closure. The median is $1,102; 40 "
@@ -874,7 +890,7 @@ P("At the July 15, 2026 planning committee meeting, the superintendent stated th
   "closure would go to debt service and the general fund deficit itself would not shrink. The published savings "
   "estimates also do not support a bond of that size: bond capacity is annual savings capitalized, and the "
   "district's own KDE-filed school-level spending puts North Middletown's full excess cost near $121,000 a year, "
-  "which supports about $1.6 million of bonds. This report's two-tailed best case, $565,000, supports about $7.3 million, and its median, $91,000, about $1.2 million. "
+  "which supports about $1.6 million of bonds. This report's two-tailed best case, $551,928, supports about $7.1 million, and its median, $21,571, about $280,000. "
   "Of the available estimates, only the administration's own unpublished figure reaches $14 million. The "
   "workbook's Debt_Service tab runs every scenario.")
 P("Three funding sources are available that do not involve a closure. First, the restricted capacity itself: the "
@@ -1487,7 +1503,7 @@ P("Name the problem correctly and the plan writes itself. Bourbon County Schools
   "year three as the option compounds, and the recallable menu beyond four percent, each option priced with "
   "its cost to the median home, reaches $1.0 to $2.5 million. The three moves are the raw $1.6 to $2.9 "
   "million shown under Figure 19, cut to the published $1.1 to $2.1 million after overlap and implementation "
-  "risk, and any one of them alone outweighs the closure median of $91,000. Together they balance the "
+  "risk, and any one of them alone outweighs the closure median of $21,571 many times over. Together they balance the "
   "budget, end the sweep, free the restricted stream to bond the renovation plan, and close nothing. That is "
   "the difference between a defensive posture and a growth plan, and the choice belongs to the board. The "
   "Alternatives tab prices each move live.")
@@ -1726,7 +1742,7 @@ P("The decision before the Board is often framed as closure versus no closure. T
 tbl(["Plan", "Recurring impact, year 3", "Projected FY2029 balance", "What it requires"],
     [["1. Districtwide status quo (change nothing)", "None", "Fully drawn down",
       "No decisions; the districtwide drawdown simply continues, with or without North Middletown"],
-     ["2. Close NMES and consolidate", "-$385,000 to +$565,000 (median +$91,000)", "Median: gone; central case about $0.1M; best case $1.4M",
+     ["2. Close NMES and consolidate", "-$556,000 to +$552,000 (median +$22,000)", "Median: gone; central case about $0.1M; best case $1.4M",
       "Closure vote; median covers three cents of the gap; longer rides; enrollment-loss risk"],
      ["3. Districtwide recovery plan (menu plus levy)", "$1.1-$2.1 million a year", "About $3.7 million",
       "Revenue votes, administrative rollback, boundary action and HB 563 recruitment, implementation "
@@ -1845,7 +1861,7 @@ P("I prepared this report myself, with Claude, an AI research assistant from Ant
   "Last: this report criticizes decisions and asks for documents. It attributes no motive "
   "and alleges no wrongdoing to the superintendent, the finance office, the Board, or any member of the planning "
   "committee, and nothing in it should be read otherwise.", note)
-P("Corrections in version 3.9. Nine, and four of them run against this report's own case. "
+P("Corrections in version 3.9. Ten, and five of them run against this report's own case. "
   "<b>One.</b> I attached the 99.6 percent statewide figure to the corrected test when it belongs to the "
   "$8,255 bar the 300 implies; corrected, and the corrected test fails 786 of 1,151 Kentucky schools, 68 "
   "percent. <b>Two.</b> I published North Middletown's real breakeven as 38 to 69 students. The low end "
@@ -1873,10 +1889,11 @@ P("One further disclosure that is not a correction but belongs with them. The me
   "school, $227,831 for administration, custodial and plant, sits within half a percent of the $230,000 this "
   "report's closure grid uses as its low fixed-cost value. That is corroboration. But $230,000 is the grid's "
   "floor, and reaching it requires that the principal, the secretary, the custodian and the utilities all be "
-  "eliminated rather than reassigned. The grid contains no redeployment scenario. Priced into the same 1,944 "
-  "combinations, one would move the median saving from $91,000 to about $23,000 and put roughly 45 percent of "
-  "scenarios in the red instead of 29 percent. This report does not rebuild the grid on a scenario it cannot "
-  "yet source to a district decision, and it does not leave the reader to discover the subtraction unaided.", note)
+  "eliminated rather than reassigned, and the v3.8 grid contained no redeployment scenario at all. This "
+  "version rebuilds that lever on three measured values, $58,774 reassigned, $227,831 mothballed and $276,928 "
+  "sold, taking the grid from 1,944 combinations to 2,916. The published median falls from $91,240 to "
+  "$21,571, the negative share rises from 29 to 45 percent, and the range widens to minus $556,006 and plus "
+  "$551,928. It is the tenth correction in this release and the one that costs this report's case the most.", note)
 P("Corrections policy: errors identified in this report will be corrected publicly and promptly, and each "
   "corrected version will carry a new version number and date. Every version, and the complete line-by-line "
   "history of every change to the report, the model, and the website, is archived in the public repository at "
@@ -2055,7 +2072,7 @@ P("Kentucky's Open Records Act (KRS 61.870 to 61.884; inspection rights and requ
   "student-identifiable information, and I will publish, and correct against, whatever comes back.")
 tbl(["Request", "What it settles"],
     [["<b>The money.</b> The net-savings worksheet behind the \u201cover a million dollars\u201d statement",
-      "Replaces the published two-tailed range, minus $385,000 to plus $565,000 (Sections 1, 4)"],
+      "Replaces the published two-tailed range, minus $556,000 to plus $552,000 (Sections 1, 4)"],
      ["Any alternatives modeling the administration has performed",
       "Whether closure was compared to anything (Section 9)"],
      ["Administrator salary schedule and five years of compensation, position by position",

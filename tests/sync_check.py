@@ -42,21 +42,28 @@ if "4,290,840" in html: match("fund balance $4,290,840 also on site")
 
 # closure central case (v3 two-tailed)
 central = A["B51"].value + A["B52"].value + 3 * A["B69"].value - 137500 - 10 * A["B6"].value - 155000
-site_const = re.search(r"net=(\d+)\+p\*c-b-l\*(\d+)-o", html)
-if central == 131240 and site_const and "$131,240" in html:
-    match("closure central case $131,240 (model inputs == site calculator v3 defaults)")
+site_const = re.search(r"net=FIXV\[f\]\+p\*c-b-l\*(\d+)-o", html)
+site_fixv = re.search(r"var FIXV=\[(\d+),(\d+),(\d+)\]", html)
+if central == 69071 and site_const and "$69,071" in html:
+    match("closure central case $69,071 (model inputs == site calculator v3.9 defaults)")
 else:
     diff(f"closure central: model {central}, site regex {'ok' if site_const else 'MISSING'}")
-if site_const and int(site_const.group(1)) == A["B51"].value + A["B52"].value:
-    match(f"calculator fixed avoidables {site_const.group(1)} == model principal+plant (175,000+115,000)")
+if site_fixv and int(site_fixv.group(2)) == A["B51"].value + A["B52"].value:
+    match(f"calculator mothballed case {site_fixv.group(2)} == model B51+B52 (131,724+96,107, both measured)")
+else:
+    diff("calculator FIXV mothballed case does not equal model B51+B52")
+if site_fixv and (int(site_fixv.group(1)), int(site_fixv.group(3))) == (58774, 276928):
+    match("calculator reassigned/sold cases (58,774 / 276,928) match build/closure_grid.py")
+else:
+    diff("calculator FIXV reassigned/sold cases do not match the grid")
 if A["B69"].value == 60000:
     match("GF-borne $60,000 per position (Assumptions B69) backs the calculator default")
-if site_const and int(site_const.group(2)) == A["B6"].value:
+if site_const and int(site_const.group(1)) == A["B6"].value:
     match("calculator $4,626 per leaver == model SEEK base FY2027")
 
 # two-tailed range strings consistent
-if "losing $385,000" in pdf_flat and "saving $565,000" in pdf_flat and "-$385,000 to +$565,000" in html:
-    match("v3 two-tailed range (-$385,000 to +$565,000) consistent on site and in PDF")
+if "losing $556,000" in pdf_flat and "saving $552,000" in pdf_flat and "losing $556,000 and saving $552,000" in html:
+    match("v3.9 two-tailed range (-$556,000 to +$552,000) consistent on site and in PDF")
 else:
     diff("v3 two-tailed range strings missing on site or PDF")
 
@@ -439,7 +446,7 @@ else:
     diff(f"EDFacts series mismatches: {ef_bad}")
 
 # site text spot checks
-for s, label in [("1st in all 5 reported subjects", "hero fact scores"), ("-$385K to +$565K", "hero fact closure range"),
+for s, label in [("1st in all 5 reported subjects", "hero fact scores"), ("-$556K to +$552K", "hero fact closure range"),
                  ("$7,829,060", "GF levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),
                  ("128 students", "enrollment in prose"), ("rated capacity of 174", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")
