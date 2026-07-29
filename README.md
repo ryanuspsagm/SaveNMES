@@ -9,8 +9,8 @@ public source cited in the report and on the site.
 
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
-- `Saving_North_Middletown_Elementary.pdf` - the 49-page report.
-- `NMES_Financial_Model.xlsx` - the 17-tab financial model (421 formulas).
+- `Saving_North_Middletown_Elementary.pdf` - the 52-page report.
+- `NMES_Financial_Model.xlsx` - the 17-tab financial model (418 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
   Requires: `pip install reportlab openpyxl matplotlib`. Run
   `python build/make_charts.py`, then `python build/build_pdf.py`,
@@ -65,6 +65,47 @@ it attributes no motive and alleges no wrongdoing to anyone.
 ## Report version history
 Every published version stays available under `reports/`; each report's
 corrections section lists what changed and why.
+- v3.9 (July 29, 2026): the district's own ledger, plus nine corrections,
+  four of which run against this project's own case.
+  (1) THE LEDGER. An open records request produced the district's
+  "Overall Cost by ORG" summary, its FY2024-FY2026 working budgets,
+  payroll reports, salary schedules and the School Council staffing
+  allocation. The district codes $1,285,310 to North Middletown against
+  the $2,476,544 the 300-student breakeven was built on, and only
+  $21,482,445 of a roughly $44M all-funds budget is coded to any school.
+  Like-for-like, same year and same all-in basis: $2,611,980 reported
+  against $1,593,309 coded, a gap of $1,018,671 in central overhead no
+  closure removes. On the coded basis the school's breakeven is 80
+  students and it enrolls 128. Published against us in the same section:
+  on directly-coded dollars NMES's per-student premium is wider (9.6 and
+  12.2 percent) than on the federal basis (3.6 and 6.7).
+  (2) CORRECTIONS. The 99.6 percent statewide figure reattached to the
+  $8,255 bar it belongs to (the corrected test fails 786 of 1,151, 68
+  percent); the "38 to 69 students" real-breakeven bar withdrawn because
+  its low end credited each child with federal money that follows the
+  child, replaced by 54 to 69; the $9,848 "empirical marginal cost"
+  retired, its sign flipping across every membership pair that can be
+  sourced; the five-year growth trio republished as bands (about 16 /
+  35-37 / 46-47 percent) with the base-year counts named; "total site
+  spending" and "to the dollar" relabelled; the site closure calculator's
+  sliders brought back inside the published grid.
+  (3) ADMINISTRATION. The 44.8 percent increase decomposed from the
+  district's own working budgets: administrative salaries DOWN about 8
+  percent, growth concentrated in insurance, statutory tax collection
+  fees, accrued sick leave paid at retirement, and professional services.
+  Total district payroll FELL 0.7 percent ($30,410,725 to $30,201,047).
+  Central office payroll grew 7.6 percent excluding sick leave, all of it
+  the business office. Two director roles were consolidated, not added.
+  (4) ENROLLMENT. County children aged 5-17 are flat for 25 years (3,594
+  / 3,574 / 3,548) while district enrollment fell 10.2 percent. The
+  private-or-homeschool share corrected DOWN from "about one in three" to
+  450-550 children, 13-15 percent, after locating a single-age-band
+  weighting artifact in the survey.
+  (5) STAFFING AND RECORDS. NMES runs on 5.5 fixed positions against
+  11.5 and 12.25 at the receiving schools, published beside the
+  per-hundred ratio that cuts the other way. 33 records line items came
+  back "N/A", including every closure, feasibility, boundary and
+  ride-time analysis.
 - v3.8 (July 26, 2026): correction and new-evidence release. (1) The
   fill planner now charges for new NMES sections under the class caps
   (KRS 157.360), a cost earlier versions missed; the package falls from
@@ -78,13 +119,13 @@ corrections section lists what changed and why.
   unlisted LEARNING_ENVIRONMENT files (2011-12 to 2016-17), federal
   CRDC school-level salaries, and the NCES school-level finance survey
   are archived under build/. (3) The 300-student breakeven cited at
-  the July committee meeting reconstructed to the dollar: all-source
+  the July committee meeting reconstructed from the state files: all-source
   cost (128 x $19,348 = $2,476,544 exactly) divided by state-only
   revenue ($8,305/member in 2022-23 gives 298); the corrected test
   fails every school in the district including both receiving schools,
   and 99.6 percent of Kentucky schools; the real breakeven (fixed base
-  vs marginal revenue) is 38-69 students for NMES, cleared at double
-  to triple. (4) The alternatives menu reorganized and fully priced as
+  vs marginal revenue) was published as 38-69 students for NMES;
+  v3.9 withdrew the lower bar and the honest range is 54-69. (4) The alternatives menu reorganized and fully priced as
   a three-move district-wide growth plan, with recruitment beyond
   NMES's seats newly priced ($106,000-$211,000); raw sums now $1.6M to
   $2.9M. New School_Costs model tab carries all of it live.

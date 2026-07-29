@@ -58,8 +58,8 @@ def main():
         else: ok("no JS console or page errors")
 
         n = pg.evaluate("Object.keys(Chart.instances).length")
-        if n == 13: ok(f"{n} Chart.js charts instantiated")
-        else: bad(f"expected 13 charts, got {n}")
+        if n == 14: ok(f"{n} Chart.js charts instantiated")
+        else: bad(f"expected 14 charts, got {n}")
 
         net = pg.text_content("#rNet").strip()
         verdict = pg.text_content("#rVerdict").strip()
@@ -76,11 +76,11 @@ def main():
         else: bad(f"closure best case: {pg.text_content('#rNet')}")
         pg.fill("#sPos", "2"); pg.dispatch_event("#sPos", "input")
         pg.fill("#sCost", "50000"); pg.dispatch_event("#sCost", "input")
-        pg.fill("#sBus", "200000"); pg.dispatch_event("#sBus", "input")
+        pg.fill("#sBus", "250000"); pg.dispatch_event("#sBus", "input")
         pg.fill("#sLeav", "30"); pg.dispatch_event("#sLeav", "input")
-        pg.fill("#sOther", "330000"); pg.dispatch_event("#sOther", "input")
-        if pg.text_content("#rNet").strip() == "-$278,780" and "LOSES" in pg.text_content("#rVerdict"):
-            ok("closure v3 unfavorable tail -$278,780 with loss verdict")
+        pg.fill("#sOther", "326000"); pg.dispatch_event("#sOther", "input")
+        if pg.text_content("#rNet").strip() == "-$324,780" and "LOSES" in pg.text_content("#rVerdict"):
+            ok("closure v3.9 unfavorable tail -$324,780 with loss verdict (sliders now inside the grid)")
         else: bad(f"closure worst case: {pg.text_content('#rNet')} / {pg.text_content('#rVerdict')[:60]}")
 
         pg.fill("#sYrs", "1"); pg.dispatch_event("#sYrs", "input")
@@ -152,7 +152,7 @@ def main():
             return d.length + ':' + d.filter(x=>x.open && x.querySelector('p').textContent.length>20).length
         }""")
         total, opened = kk.split(":")
-        if total == opened == "10": ok("all 10 question accordions open with content")
+        if total == opened == "11": ok("all 11 question accordions open with content")
         else: bad(f"accordions {opened}/{total}")
 
         missing = pg.evaluate("""() => [...document.querySelectorAll('nav a')]

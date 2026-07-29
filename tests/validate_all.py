@@ -235,10 +235,14 @@ def main():
     # filled-to-capacity scenarios (Figure 6 / chartPPtime grouped bars)
     chk("chartPPtime" in html and "$14,339" in html and "$16,149" in html,
         "site carries the capacity scenarios chart and its key figures")
-    for needle in ["Figure 6.", "$14,339", "$16,149", "16 percent", "47 percent",
-                   "within 1 to 3 percent", "$9,848", "June 7, 2017", "OVER capacity"]:
+    for needle in ["Figure 6.", "$14,339", "$16,149", "about 16 percent", "35 to 37 percent",
+                   "46 to 47 percent", "within 1 to 3 percent", "June 7, 2017", "OVER capacity"]:
         chk(needle in t, f"PDF capacity scenarios intact: {needle}")
-    for needle in ["within 1 to 3 percent", "$9,848", "June 7, 2017", "OVER capacity",
+    chk("up 16 percent since 2019-20" not in t,
+        "PDF: retracted single-basis growth figure absent")
+    chk("validated against actuals two ways" in t,
+        "PDF: the withdrawn third validation is no longer announced")
+    for needle in ["within 1 to 3 percent", "June 7, 2017", "OVER capacity",
                    "152/611/550", "utilization measure"]:
         chk(needle in html, f"site capacity scenarios intact: {needle}")
     chk("$15,316" in html and "$16,701" in html
@@ -355,10 +359,30 @@ def main():
     # v3.8: fill correction, cost history, breakeven reconstruction, growth plan
     for needle in ["$56,000 to $116,000", "$106,000 to $211,000",
                    "$2,476,544", "$8,305", "155 students", "99.6 percent",
-                   "38 to 69", "$2,851", "$5,200", "$4,414",
+                   "54 to 69", "$2,851", "$5,200", "$4,414",
                    "$960,000 to $1.9 million", "$260,000 to $530,000"]:
         chk(needle in t, f"PDF v3.8 content intact: {needle}")
+
         chk(needle in html, f"site v3.8 content intact: {needle}")
+
+    # ---- v3.9 release content ----
+    for needle in ["$1,285,310", "$21,482,445", "$1,018,671", "$938,690", "$227,831",
+                   "$276,928", "5.5 fixed positions", "$30,410,725", "$30,201,047",
+                   "7.6 percent", "450 to 550", "13 to 15 percent", "3,594", "3,548",
+                   "2,912", "2,616", "$61,937" if "$61,937" in t else "$132,744"]:
+        chk(needle in t, f"PDF v3.9 content present: {needle}")
+    for needle in ["$1,285,310", "$21,482,445", "$938,690", "$227,831", "$276,928",
+                   "5.5 fixed positions", "$30,410,725", "7.6 percent",
+                   "450 to 550", "13 to 15 percent", "3,594", "2,616",
+                   "54 to 69", "80 students", "$61,937"]:
+        chk(needle in html, f"site v3.9 content present: {needle}")
+    chk("about one in three" not in html or "an earlier version of this page said one in three" in html,
+        "site: the retracted one-in-three share is corrected, not merely repeated")
+    chk('id="sPos" min="2" max="5"' in html and 'id="sCost" min="50000" max="75000"' in html
+        and 'id="sBus" min="100000" max="250000"' in html,
+        "site calculator sliders sit inside the published grid")
+    chk("Version 3.9" in t and "July 29, 2026" in t, "PDF carries the v3.9 version block")
+    chk("Saving_NMES_v3.9_2026-07-29.pdf" in html, "site links the v3.9 report")
     chk("298 students" in t and "gives 298 students" in html,
         "breakeven reconstruction lands at 298 in both artifacts")
     chk("recovered from the Internet Archive" in html and "recovered from the Internet "

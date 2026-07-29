@@ -230,8 +230,8 @@ put(c, "A38", "Lever (low / central / high)", BOLDW, fill=HDR); put(c, "B38", "L
 v3levers = [
  ("Positions eliminated (net of re-created sections)", 2, 3, 5, "Class caps: receiving schools add ~4 sections while NMES's 9 dissolve"),
  ("GF cost per position", 50000, 60000, 75000, "Published salary schedule + on-behalf structure"),
- ("Fixed avoided (mothballed / sold)", 230000, 290000, 290000, "Principal+office $175K; plant $115K sold, ~$55K mothballed"),
- ("Added busing", 100000, 137500, 250000, "110 sq mi zone (federal SABS); worst-reimbursed budget line"),
+ ("Fixed avoided (mothballed / sold)", 230000, 290000, 290000, "Principal+office $175K; plant $115K sold, ~$55K mothballed. CORROBORATED v3.9 from the district FY2026 working budget, location 090, General Fund, excl on-behalf: school admin (2400) $132,744 + plant (2600) $96,107 = $228,851 vs the $230,000 mothballed lever, a 0.5% miss; adding the library/media line $49,097 gives $277,948 vs the $290,000 sold lever. NOTE: $230,000 is this grid FLOOR and assumes principal, secretary, custodian and utilities are all eliminated rather than reassigned; a redeployment case (utilities only, $58,774) is not in the grid."),
+ ("Added busing", 100000, 137500, 250000, "110 sq mi zone (federal SABS); worst-reimbursed budget line. Treated as net new cost with nothing in the school's own code to offset it: student transportation coded to location 090 in the FY2026 working budget is $2,000, while location 901 is 100 percent function 2700 at $2,688,247, the only material transportation coding in the district."),
  ("Students leaving district", 0, 10, 30, "x $4,626 SEEK; Paris Ind adjacent under HB 563; Millersburg precedent"),
  ("Capacity debt service triggered", 0, 115000, 231000, "CRES 103 over approved rating; 2021 plan prices its kitchen/cafeteria deficient today"),
  ("Assessment erosion, district share", 0, 40000, 95000, "Millersburg-calibrated; PVA records ask pending"),
@@ -377,7 +377,7 @@ for i, mc in enumerate([400, 2500, 5000, 10000, 14173]):
     put(rd, f"A{rr}", mc, BLUE, CUR)
     put(rd, f"B{rr}", f"=(B$34+(B$6-B$5)*A{rr})/B$6", BLK, CUR)
     put(rd, f"C{rr}", f"=(B$34+(154-B$5)*A{rr})/154", BLK, CUR)
-put(rd, "A70", "Receiving schools today: Bourbon Central $18,131, Cane Ridge $18,670. At the state-approved 174 rating, NMES undercuts both across the entire grid, including the impossible full-average case. At the draft plan's 154 rating it holds for any marginal cost under about $12,000, roughly thirty times the realistic figure. Verdict: structural at 174, robust at 154.", NOTE, wrap=True)
+put(rd, "A70", "Receiving schools today: Bourbon Central $18,131, Cane Ridge $18,670. At the state-approved 174 rating, NMES undercuts both across the entire grid, including the impossible full-average case. At the draft plan's 154 rating it holds for any marginal cost under about $12,140, roughly three times the class-cap marginal this workbook prices (about $3,670). Verdict: structural at 174, robust at 154.", NOTE, wrap=True)
 put(rd, "A71", "Current enrollment is 128 (NCES CCD, 2024-25); filling to 174 adds 46 students, the figure used throughout this workbook and the grid above.", NOTE, wrap=True)
 
 put(rd, "A73", "FIVE YEARS OF THE SAME TEST (KDE school-level filings, 2019-20 to 2023-24; backs Figure 6)", SEC)
@@ -395,7 +395,7 @@ for i, (yy, nn, npp, bpp, cpp) in enumerate(hist5):
         put(rd, f"G{rr}", f"=(C{rr}*B{rr}+(154-B{rr})*Assumptions!B62)/154", BLK, CUR)
     else:
         put(rd, f"G{rr}", "n/a: enrolled above 154", NOTE)
-put(rd, "A81", "Honest reading (corrected 7/26): at 174 the counterfactual is within 1 to 3 percent of the cheapest school in 2019-22, a tie, and decisively below both schools in 2022-23 and 2023-24. At the draft plan's 154 rating it is cheapest on the 2023-24 filing; in 2019-20 and 2020-21 the school enrolled above 154, the capacity the draft now assigns it. NMES's total site spending grew 16 percent over the five years, against 37 percent at Bourbon Central and 47 percent at Cane Ridge; only the divisor changed.", NOTE, wrap=True)
+put(rd, "A81", "Honest reading (corrected 7/26): at 174 the counterfactual is within 1 to 3 percent of the cheapest school in 2019-22, a tie, and decisively below both schools in 2022-23 and 2023-24. At the draft plan's 154 rating it is cheapest on the 2023-24 filing; in 2019-20 and 2020-21 the school enrolled above 154, the capacity the draft now assigns it. NMES's total site spending grew about 16 percent over the five years, against 35 to 37 percent at Bourbon Central and 46 to 47 percent at Cane Ridge, on the state's per-student filings times each school's reported enrollment; the bands carry the two base-year counts the record offers, the district's 2021 facility plan enrollment and the federal fall 2019 count. Decomposed, NMES's per-student rise is roughly one third spending and two thirds divisor (total up about 16 percent over membership down about 23 percent); at Bourbon Central the same decomposition is mostly spending. That is the finding: at this school the divisor did most of the work.", NOTE, wrap=True)
 
 put(rd, "A83", "SYMMETRY CHECK: THE SENDERS' PER-PUPIL AFTER THE MOVE (2023-24 basis)", SEC)
 put(rd, "A84", "Per-pupil rises at the senders for the same denominator reason it falls at NMES; a pure shuffle leaves total district spending nearly unchanged in either direction. The comparison below is the honest post-move one.", NOTE, wrap=True)
@@ -442,15 +442,7 @@ for i, (lbl, a, b2, c2, wname) in enumerate(fair):
     rr = 103 + i
     put(rd, f"A{rr}", lbl); put(rd, f"B{rr}", a, BLUE, CUR); put(rd, f"C{rr}", b2, BLUE, CUR); put(rd, f"D{rr}", c2, BLUE, CUR); put(rd, f"E{rr}", wname, NOTE)
 put(rd, "A110", "Same-building ratings across four consecutive plans: NMES 198-152-174-154, Bourbon Central 564-611-521-640, Cane Ridge 500-550-422-547. Swings up to 128 seats with no major construction after 2009. The 2017 plan (recovered from the Internet Archive; KBE minutes June 7, 2017 corroborate) lists NMES at 154 enrolled against 152 capacity: OVER capacity.", NOTE, wrap=True)
-put(rd, "A111", "VALIDATION AGAINST ACTUALS: the empirical marginal cost per student")
-put(rd, "B111", "=(8902321-8606870)/(491-461)", BLK, CUR)
-put(rd, "F111", "The actual per-student cost difference between the district's own two large schools on the same 2023-24 filing, about $9,848: an all-in, actuals-derived marginal cost", NOTE, wrap=True)
-put(rd, "A112", "NMES filled to 174 at that empirical marginal cost")
-put(rd, "B112", "=(B34+(B6-B5)*B111)/B6", BLK, CUR)
-put(rd, "F112", "About $16,837: still below both receiving schools", NOTE, wrap=True)
-put(rd, "A113", "NMES filled to 154 at that empirical marginal cost")
-put(rd, "B113", "=(B34+(154-B5)*B111)/154", BLK, CUR)
-put(rd, "F113", "About $17,744: still below both receiving schools", NOTE, wrap=True)
+put(rd, "A111", "VALIDATION AGAINST ACTUALS: withdrawn in v3.9. The two-school cost slope used here depended on memberships (491 and 461) that appear in no archived source file and that contradict B8 and B9 above, and its sign flips from plus $9,848 to minus $941 to minus $22,564 across the three plausible membership pairs. The honest bound is the break-even marginal cost already computed live in rows 57 to 60.", NOTE, wrap=True)
 put(rd, "A114", "Extreme bound: NMES's own year-over-year cost change 2022-23 to 2023-24 ($259,888 lower with 16 fewer students, about $16,243 per student, which folds in deliberate staffing cuts) gives $18,527 at 174: under Cane Ridge, marginally over Bourbon Central. Even the most hostile actuals-derived number does not restore the cost case.", NOTE, wrap=True)
 
 put(rd, "A116", "THE RECRUITMENT POOL: WHERE FILL-THE-SEATS STUDENTS CAN COME FROM (measured; year noted per row; sources archived under build/)", SEC)
@@ -1365,7 +1357,7 @@ for i, (nm, pp, en) in enumerate(bek):
 put(sc, "A28", "Every school in the district fails, including both receiving schools; Cane Ridge falls short by 76 students and about $1.2 million on this test, nearly three times NMES. Statewide, 1,146 of 1,151 A1 schools with reported data (99.6 percent) spend more per student all-in than $8,255. An average-cost breakeven in a drawdown year is a district-budget thermometer, not a school test.", NOTE, wrap=True)
 
 put(sc, "A30", "THE REAL BREAKEVEN: FIXED SITE BASE VS THE FUNDING A STUDENT CARRIES", SEC)
-put(sc, "A31", "School", BOLDW, fill=HDR); put(sc, "B31", "Fixed base", BOLDW, fill=HDR); put(sc, "C31", "N (SEEK only)", BOLDW, fill=HDR); put(sc, "D31", "N (SEEK+federal)", BOLDW, fill=HDR); put(sc, "E31", "Enrolled", BOLDW, fill=HDR)
+put(sc, "A31", "School", BOLDW, fill=HDR); put(sc, "B31", "Fixed base", BOLDW, fill=HDR); put(sc, "C31", "N (SEEK only)", BOLDW, fill=HDR); put(sc, "D31", "N if fed counted", BOLDW, fill=HDR); put(sc, "E31", "Enrolled", BOLDW, fill=HDR)
 put(sc, "A32", "North Middletown"); put(sc, "B32", "=Assumptions!B51+Assumptions!B52", GRN, CUR)
 put(sc, "A33", "Cane Ridge"); put(sc, "B33", "=Assumptions!B51+Assumptions!B52*Facility_Plans!F68/Facility_Plans!F69", BLK, CUR)
 put(sc, "A34", "Bourbon Central"); put(sc, "B34", "=Assumptions!B51+Assumptions!B52*Facility_Plans!F67/Facility_Plans!F69", BLK, CUR)
@@ -1373,8 +1365,8 @@ for rr, en in ((32, 128), (33, 453), (34, 459)):
     put(sc, f"C{rr}", f"=B{rr}/(Assumptions!B6-Assumptions!B62)", BLK, '0')
     put(sc, f"D{rr}", f"=B{rr}/(Assumptions!B6+3380-Assumptions!B62)", BLK, '0')
     put(sc, f"E{rr}", en, BLUE, NUM)
-put(sc, "G32", "Plant scaled by KFICS replacement value; office and principal equal across schools. Marginal federal $3,380 = measured 2023-24 federal per member. Local carries zero at the margin: the levy does not change with enrollment.", NOTE, wrap=True)
-put(sc, "A35", "NMES clears its bar at roughly double to triple enrollment; the receiving schools at 6 to 10 times. The full grid version with position, busing, and leaver effects brackets NMES at 20 to 122 (KY_Closures yardstick rows). Every construction except all-source-cost-over-state-only-revenue says every school pays its way.", NOTE, wrap=True)
+put(sc, "G32", "Office and principal are estimates held equal across schools and plant is scaled by KFICS replacement value. The district's FY2026 working budget now measures North Middletown's own General Fund lines, excluding state-paid on-behalf, at school administration $132,744, plant operations $96,107 (the General Fund portion of function 2600; $119,909 across all funds) and instructional staff support, the school's library and media line, $49,097. Administration plus plant measure $228,851 against the $290,000 this model assumes for the same two components. Local carries zero at the margin, because the levy does not change with enrollment, and federal carries zero as well, because Title I is a district allocation driven by resident poverty and reappears at whichever school the child attends. Column D keeps the federal case only to show how far the answer moves when you count it.", NOTE, wrap=True)
+put(sc, "A35", "NMES clears its bar at roughly two to two and a half times its enrollment; the receiving schools at roughly 5 to 6 times. The full grid version with position, busing, and leaver effects brackets NMES at 20 to 122 (KY_Closures yardstick rows). Every construction except all-source-cost-over-state-only-revenue says every school pays its way.", NOTE, wrap=True)
 
 put(sc, "A37", "SCHOOL-LEVEL SPENDING PER STUDENT, OLD SRC SYSTEM 2011-12 TO 2016-17 (KDE Learning Environment files; archived CSV in build/)", SEC)
 put(sc, "A38", "Year", BOLDW, fill=HDR); put(sc, "B38", "NMES", BOLDW, fill=HDR); put(sc, "C38", "NMES members", BOLDW, fill=HDR); put(sc, "D38", "BCES", BOLDW, fill=HDR); put(sc, "E38", "Cane Ridge", BOLDW, fill=HDR); put(sc, "F38", "NMES vs BCES", BOLDW, fill=HDR)
