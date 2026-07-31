@@ -42,7 +42,7 @@ if "4,290,840" in html: match("fund balance $4,290,840 also on site")
 
 # closure central case (v3 two-tailed)
 central = A["B51"].value + A["B52"].value + 3 * A["B69"].value - 137500 - 10 * A["B6"].value - 155000
-site_const = re.search(r"net=FIXV\[f\]\+p\*c-b-l\*(\d+)-o", html)
+site_const = re.search(r"net=FIXV\[f\]\+p\*c-b-l\*(\d+)-cap-ero", html)
 site_fixv = re.search(r"var FIXV=\[(\d+),(\d+),(\d+)\]", html)
 if central == 69071 and site_const and "$69,071" in html:
     match("closure central case $69,071 (model inputs == site calculator v3.9 defaults)")

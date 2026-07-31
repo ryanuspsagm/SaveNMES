@@ -66,13 +66,18 @@ def main():
         if net == "$69,071" and "2.6%" in verdict and "reserves" in verdict:
             ok("closure v3.9 central default $69,071 / 2.6% deficit + drawdown framing")
         else: bad(f"closure defaults: {net} / {verdict}")
+        rank = pg.text_content("#rRank").strip()
+        if "2,916 scenarios" in rank and "%" in rank and "$21,571" in rank:
+            ok("live grid-rank readout present with median and range context")
+        else: bad(f"grid-rank readout: {rank}")
 
         pg.fill("#sFix", "2"); pg.dispatch_event("#sFix", "input")
         pg.fill("#sPos", "5"); pg.dispatch_event("#sPos", "input")
         pg.fill("#sCost", "75000"); pg.dispatch_event("#sCost", "input")
         pg.fill("#sBus", "100000"); pg.dispatch_event("#sBus", "input")
         pg.fill("#sLeav", "0"); pg.dispatch_event("#sLeav", "input")
-        pg.fill("#sOther", "0"); pg.dispatch_event("#sOther", "input")
+        pg.fill("#sCap", "0"); pg.dispatch_event("#sCap", "input")
+        pg.fill("#sEro", "0"); pg.dispatch_event("#sEro", "input")
         if pg.text_content("#rNet").strip() == "$551,928": ok("closure v3.9 favorable tail $551,928 = grid max")
         else: bad(f"closure best case: {pg.text_content('#rNet')}")
         pg.fill("#sFix", "0"); pg.dispatch_event("#sFix", "input")
@@ -80,7 +85,8 @@ def main():
         pg.fill("#sCost", "50000"); pg.dispatch_event("#sCost", "input")
         pg.fill("#sBus", "250000"); pg.dispatch_event("#sBus", "input")
         pg.fill("#sLeav", "30"); pg.dispatch_event("#sLeav", "input")
-        pg.fill("#sOther", "326000"); pg.dispatch_event("#sOther", "input")
+        pg.fill("#sCap", "231000"); pg.dispatch_event("#sCap", "input")
+        pg.fill("#sEro", "95000"); pg.dispatch_event("#sEro", "input")
         if pg.text_content("#rNet").strip() == "-$556,006" and "LOSES" in pg.text_content("#rVerdict"):
             ok("closure v3.9 unfavorable tail -$556,006 = grid min (calculator spans the whole grid)")
         else: bad(f"closure worst case: {pg.text_content('#rNet')} / {pg.text_content('#rVerdict')[:60]}")

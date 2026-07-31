@@ -348,15 +348,24 @@ def main():
                          "The tax picture the budget talk leaves out"]:
         chk(html.index(growth_block) < band,
             f"growth-side block sits in Part One: {growth_block}")
-    chk(html.index("Every version stays public") < html.index('id="choice"'),
+    chk(html.index('id="asks"') < html.index('id="downloads"') < html.index('id="act"'),
+        "Downloads sits between the four asks and Act Now")
+    chk(html.index("Every version stays public") < html.index('id="act"'),
         "version history lives in the Downloads section")
+    # v4.1: the live scenario model exposes all seven grid levers
+    for lever in ['id="sFix"', 'id="sPos"', 'id="sCost"', 'id="sBus"',
+                  'id="sLeav"', 'id="sCap"', 'id="sEro"']:
+        chk(lever in html, f"scenario-model slider present: {lever}")
+    chk('id="sOther"' not in html, "combined closure-cost slider replaced by its two grid levers")
+    chk("all seven inputs in your hands" in html and 'id="rRank"' in html,
+        "calculator presented as the live scenario model with a grid-rank readout")
     for heading in ["What the district's own facility plans show",
                     "Building condition, as reported to the state"]:
         chk(heading not in html, f"off-layout card removed from site: {heading}")
     chk(not __import__("re").search(r"[\u2013\u2014]", es), "zero en/em dashes in the executive summary")
 
     # v4.0: the two-roads restructure
-    for needle in ["The Case for Growth", "The Case Against Closure", "Two roads",
+    for needle in ["The District Needs Growth, Not Closures", "The Case Against Closure", "Two roads",
                    "$19,080", "$19,020", "107.5", "Eminence", "occupational",
                    "$58,774", "Permanent"]:
         chk(needle in html, f"site v4 content intact: {needle}")

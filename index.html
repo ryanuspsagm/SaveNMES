@@ -134,7 +134,7 @@ footer a{color:var(--ice)}
 <body>
 
 <nav aria-label="Sections"><div class="wrap">
-<a href="#growth">The Case for Growth</a><a href="#closure">The Case Against Closure</a><a href="#downloads">Report &amp; Model</a><a href="#choice">The Choice</a><a href="#act">Act Now</a><a href="#voices">Voices</a><a href="#sources">Sources</a>
+<a href="#growth">The District Needs Growth, Not Closures</a><a href="#closure">The Case Against Closure</a><a href="#choice">The Choice</a><a href="#downloads">Report &amp; Model</a><a href="#act">Act Now</a><a href="#voices">Voices</a><a href="#sources">Sources</a>
 </div></nav>
 
 <header id="case"><div class="wrap">
@@ -152,7 +152,7 @@ footer a{color:var(--ice)}
 
 <section id="growth" class="partband"><div class="wrap">
 <div class="kicker">Part One</div>
-<h2>The Case for Growth</h2>
+<h2>The District Needs Growth, Not Closures</h2>
 <p>Bourbon County Schools does not have a North Middletown problem. It has a district-wide problem: enrollment falling while the county's children stay put, fixed costs rising at every building, and a revenue posture no neighbor shares. Every piece of it is fixable, and none of the fixes involve closing a school. The problem first, then the three levers: grow enrollment, trim fixed costs, and face the rate question the way every neighboring board already has.</p>
 </div></section>
 
@@ -523,8 +523,8 @@ footer a{color:var(--ice)}
 
 <div class="calc-grid">
 <div class="card">
-<h3>The closure calculator</h3>
-<p class="note">What does closing NMES actually save, once teachers follow students, buses roll farther, and some families leave the district and take state funding with them? Each departing student is counted at the $4,626 SEEK base for fiscal 2027, the first year a closure could take effect. Version 3 correction, in the district's favor to fix: we previously credited $85,000 per eliminated position, but Kentucky pays teacher retirement and health insurance on behalf of districts, so the General Fund itself keeps only about $50,000 to $75,000 per position (the district's own salary schedule runs $41,718 to $71,447). That correction is now measured rather than reasoned. On-behalf payments coded to this school total $406,333 against $1,497,576 of salary and benefits, a load of 27.1 percent, which puts the General Fund share of an $85,000 position at $61,937; and the school's own classroom payroll line, $324,550 of salary and benefits over 4.9 to 5.8 teaching positions, works out to $56,000 to $66,000 each. Three routes, one answer, and the middle of this slider is where they land. The last slider carries the costs a closure can trigger: capacity work at an over-rating Cane Ridge and the property-base erosion this county watched in Millersburg. The first slider is new in v3.9 and it is the one that moved the answer most. Earlier versions assumed a closure always avoids the whole fixed base. The district's own working budget now measures those lines, and there are three real cases, not one: if the principal, secretary and custodian are reassigned to other buildings rather than eliminated, the closure avoids the utilities and nothing else, <b>$58,774</b>; mothballed, with those positions cut, <b>$227,831</b>; sold, adding the library and media line, <b>$276,928</b>. Which one happens is a district decision nobody has published, and it swings the answer by more than $200,000 a year.</p>
+<h3>The scenario model, live: all seven inputs in your hands</h3>
+<p class="note">What does closing NMES actually save, once teachers follow students, buses roll farther, and some families leave the district and take state funding with them? Each departing student is counted at the $4,626 SEEK base for fiscal 2027, the first year a closure could take effect. Version 3 correction, in the district's favor to fix: we previously credited $85,000 per eliminated position, but Kentucky pays teacher retirement and health insurance on behalf of districts, so the General Fund itself keeps only about $50,000 to $75,000 per position (the district's own salary schedule runs $41,718 to $71,447). That correction is now measured rather than reasoned. On-behalf payments coded to this school total $406,333 against $1,497,576 of salary and benefits, a load of 27.1 percent, which puts the General Fund share of an $85,000 position at $61,937; and the school's own classroom payroll line, $324,550 of salary and benefits over 4.9 to 5.8 teaching positions, works out to $56,000 to $66,000 each. Three routes, one answer, and the middle of this slider is where they land. These are the same seven levers the published 2,916-scenario grid runs on, one slider each, so every input to the model is in your hands; the last two carry the costs a closure can trigger, capacity work at an over-rating Cane Ridge and the property-base erosion this county watched in Millersburg. The first slider is the one that moved the answer most when v3.9 added it. Earlier versions assumed a closure always avoids the whole fixed base. The district's own working budget now measures those lines, and there are three real cases, not one: if the principal, secretary and custodian are reassigned to other buildings rather than eliminated, the closure avoids the utilities and nothing else, <b>$58,774</b>; mothballed, with those positions cut, <b>$227,831</b>; sold, adding the library and media line, <b>$276,928</b>. Which one happens is a district decision nobody has published, and it swings the answer by more than $200,000 a year.</p>
 <div class="slider-row"><label>Fixed costs the closure actually avoids <output id="oFix">Building mothballed: $227,831</output></label>
 <input type="range" id="sFix" min="0" max="2" value="1" step="1"></div>
 <div class="slider-row"><label>Teaching positions actually eliminated <output id="oPos">3</output></label>
@@ -535,13 +535,16 @@ footer a{color:var(--ice)}
 <input type="range" id="sBus" min="100000" max="250000" value="137500" step="2500"></div>
 <div class="slider-row"><label>Students whose families leave the district <output id="oLeav">10</output></label>
 <input type="range" id="sLeav" min="0" max="30" value="10" step="1"></div>
-<div class="slider-row"><label>Closure-triggered costs: capacity debt service and assessment erosion <output id="oOther">$155,000</output></label>
-<input type="range" id="sOther" min="0" max="326000" value="155000" step="1000"></div>
+<div class="slider-row"><label>Capacity debt service at the receiving schools <output id="oCap">$115,000</output></label>
+<input type="range" id="sCap" min="0" max="231000" value="115000" step="1000"></div>
+<div class="slider-row"><label>Assessment erosion in the town that loses its school <output id="oEro">$40,000</output></label>
+<input type="range" id="sEro" min="0" max="95000" value="40000" step="1000"></div>
 <div class="result">
 <div class="big" id="rNet">$69,071</div>
 <div class="sub">estimated net recurring effect per year (central case)</div>
 <div class="bar-vs" aria-hidden="true"><i id="rBar" style="width:2.6%"></i></div>
 <div class="verdict" id="rVerdict">That covers 2.6% of the $2.65M structural deficit, or 6% of the $1.15M the district actually draws from reserves each year. Two to six cents of a one-dollar problem.</div>
+<div class="verdict" id="rRank" style="margin-top:8px"></div>
 </div>
 </div>
 
@@ -549,7 +552,7 @@ footer a{color:var(--ice)}
 <h3>The honest range: every defensible scenario at once</h3>
 <p>Version 3 of this analysis stops publishing a single savings number. Seven inputs decide what a closure nets, and every one of them now comes from a document: the district's published salary schedule, its KDE filings, the class-size caps in KRS 157.360, the federal attendance-zone map, and this county's own history in Millersburg. Run all 2,916 defensible combinations and the net yearly effect of closing NMES falls between <b>losing $556,000 and saving $552,000</b>. The middle half of scenarios lands between a $105,000 loss and a $146,000 gain. The median is a <b>$22,000 saving, under one cent of the district's one-dollar problem</b>, and <b>45 percent of scenarios lose money outright</b>, before $100,000 to $300,000 of one-time transition costs in year one. The plan needs $800,000 to $1,000,000 a year from this closure; that number sits entirely outside the defensible range.</p>
 <div class="chartbox"><canvas id="chartSpectrum" role="img" aria-label="Floating bar chart showing how each of seven inputs moves the net yearly effect of closure around the central case of 131 thousand dollars"></canvas></div>
-<p class="note">Bars show how far each input alone moves the central case ($69,071). The full grid, every lever, and every source are in the model's Closure_Model tab.</p>
+<p class="note">Bars show how far each input alone moves the central case ($69,071). The calculator above carries these same seven levers, one slider each, and ranks whatever you set against this grid. The full grid, every lever, and every source are in the model's Closure_Model tab.</p>
 <span class="checkme"><a href="NMES_Financial_Model.xlsx">Model: Closure_Model tab, v3 sensitivity grid</a> &middot; <a href="Saving_North_Middletown_Elementary.pdf">Report Section 4, Figure 7</a></span>
 </div>
 
@@ -614,6 +617,28 @@ footer a{color:var(--ice)}
 <span class="checkme">Every formula here matches the downloadable financial model.</span>
 </div></section>
 
+
+<section id="choice" class="partband"><div class="wrap">
+<div class="kicker">The Decision</div>
+<h2>Two roads: shrink to fit, or grow and thrive.</h2>
+<p>The board and the planning committee face one real choice, and it is not about one building. Shrink to fit: close the county's highest-scoring school for a median $21,571 a year, accept the leakage risk the district's own 2006 closure demonstrated, and tell every family watching that this district answers decline with retreat. Or grow and thrive: fill the seats, trim the fixed costs that actually move the budget, face the rate question every neighbor has faced, and compete for the families this county never lost.</p>
+</div></section>
+
+<section id="asks"><div class="wrap">
+<div class="kicker">On North Middletown, Specifically</div>
+<h2>Four asks that cost the district nothing.</h2>
+<div class="grid2">
+<div class="card"><h3>1. Keep the school Permanent in the facility plan</h3>
+<p class="note">List its capital needs at a lower priority. A facility plan commits no money: the regulation itself says plans are implemented "to the extent that the financial ability of the district permits," and Priority 2 exists precisely for acknowledged needs that are not yet funded. The alternative label, Transitional, saves nothing and forecloses everything: it removes the school from state facilities funding eligibility, blocks major renovation, and under the state manual's own definition declares a phase-out decided. Permanent at low priority and Transitional cost the same this year: zero. Only one of them keeps every door open.</p></div>
+<div class="card"><h3>2. Be honest that near-term savings are minimal</h3>
+<p class="note">If staff are retained and reassigned rather than eliminated, the most conservative case in the closure grid and the pattern small-district closures typically follow, the closure frees the utilities line: <b>$58,774 a year</b>, about a quarter of one percent of the budget. The restricted renovation money is capped by enrollment anyway: at today's enrollment the state formula limits restricted-fund renovation to roughly a third of replacement cost, a ceiling that rises with every student recruited back. There is no pot of building money a closure unlocks.</p></div>
+<div class="card"><h3>3. Give the school the four years to the next plan</h3>
+<p class="note">The facility plan runs on a four-year cycle. Let the community and the school run a real enrollment push, the themed program, the preschool funnel, the nonresident recruitment, the foundation scholarships, and measure it. If enrollment recovers toward the rated 174, the school's finances, its renovation ceiling, and its state funding all recover with it. If the push fails on a fair trial, the next planning cycle can revisit the question with actual evidence instead of projections.</p></div>
+<div class="card"><h3>4. Let the community carry the building's critical needs</h3>
+<p class="note">North Middletown has already shown it will fight for this school; let it fund and build for it too. A community fundraising drive and donated services, contractors, materials, labor, for the building's genuinely critical needs costs the district nothing and is how small Kentucky towns have always kept their schools standing. The district's role is one sentence in a board motion: accept the help.</p></div>
+</div>
+</div></section>
+
 <section id="downloads"><div class="wrap">
 <div class="kicker">Check Everything</div>
 <h2>The full report, the model, and every source.</h2>
@@ -636,27 +661,6 @@ footer a{color:var(--ice)}
 <a href="reports/Saving_NMES_v3.0_2026-07-26.pdf">v3.0, July 26</a> (two-tailed closure economics, verified position costs, capacity scenarios across all plans incl. the recovered 2017 plan, Millersburg case study) &middot;
 <a href="reports/Saving_NMES_v2.7_2026-07-25.pdf">v2.7, July 25</a> (June 2026 capital transfer, FY2026 decomposition, nickel verification) &middot;
 <a href="reports/Saving_NMES_v2.6_2026-07-20.pdf">v2.6, July 20</a> (bonding story, transport geography).</p>
-</div>
-</div></section>
-
-<section id="choice" class="partband"><div class="wrap">
-<div class="kicker">The Decision</div>
-<h2>Two roads: shrink to fit, or grow and thrive.</h2>
-<p>The board and the planning committee face one real choice, and it is not about one building. Shrink to fit: close the county's highest-scoring school for a median $21,571 a year, accept the leakage risk the district's own 2006 closure demonstrated, and tell every family watching that this district answers decline with retreat. Or grow and thrive: fill the seats, trim the fixed costs that actually move the budget, face the rate question every neighbor has faced, and compete for the families this county never lost.</p>
-</div></section>
-
-<section id="asks"><div class="wrap">
-<div class="kicker">On North Middletown, Specifically</div>
-<h2>Four asks that cost the district nothing.</h2>
-<div class="grid2">
-<div class="card"><h3>1. Keep the school Permanent in the facility plan</h3>
-<p class="note">List its capital needs at a lower priority. A facility plan commits no money: the regulation itself says plans are implemented "to the extent that the financial ability of the district permits," and Priority 2 exists precisely for acknowledged needs that are not yet funded. The alternative label, Transitional, saves nothing and forecloses everything: it removes the school from state facilities funding eligibility, blocks major renovation, and under the state manual's own definition declares a phase-out decided. Permanent at low priority and Transitional cost the same this year: zero. Only one of them keeps every door open.</p></div>
-<div class="card"><h3>2. Be honest that near-term savings are minimal</h3>
-<p class="note">If staff are retained and reassigned rather than eliminated, the most conservative case in the closure grid and the pattern small-district closures typically follow, the closure frees the utilities line: <b>$58,774 a year</b>, about a quarter of one percent of the budget. The restricted renovation money is capped by enrollment anyway: at today's enrollment the state formula limits restricted-fund renovation to roughly a third of replacement cost, a ceiling that rises with every student recruited back. There is no pot of building money a closure unlocks.</p></div>
-<div class="card"><h3>3. Give the school the four years to the next plan</h3>
-<p class="note">The facility plan runs on a four-year cycle. Let the community and the school run a real enrollment push, the themed program, the preschool funnel, the nonresident recruitment, the foundation scholarships, and measure it. If enrollment recovers toward the rated 174, the school's finances, its renovation ceiling, and its state funding all recover with it. If the push fails on a fair trial, the next planning cycle can revisit the question with actual evidence instead of projections.</p></div>
-<div class="card"><h3>4. Let the community carry the building's critical needs</h3>
-<p class="note">North Middletown has already shown it will fight for this school; let it fund and build for it too. A community fundraising drive and donated services, contractors, materials, labor, for the building's genuinely critical needs costs the district nothing and is how small Kentucky towns have always kept their schools standing. The district's role is one sentence in a board motion: accept the help.</p></div>
 </div>
 </div></section>
 
@@ -993,20 +997,32 @@ var DEFICIT=2648086,DRAWDOWN=1145561;
 function money(n){n=Math.round(n);return (n<0?'-$':'$')+Math.abs(n).toLocaleString('en-US')}
 var FIXV=[58774,227831,276928],
 FIXL=['Staff reassigned, utilities only: $58,774','Building mothballed: $227,831','Building sold: $276,928'];
+/* The published 2,916-scenario grid, enumerated here exactly as in
+   build/closure_grid.py, so the rank readout is against the real grid. */
+var GRID=(function(){
+var out=[];
+[2,3,4,5].forEach(function(p){[50000,60000,75000].forEach(function(c){
+FIXV.forEach(function(f){[100000,137500,250000].forEach(function(b){
+[0,10,30].forEach(function(l){[0,115000,231000].forEach(function(d){
+[0,40000,95000].forEach(function(e){out.push(f+p*c-b-l*4626-d-e)})})})})})})});
+return out.sort(function(a,b){return a-b});
+})();
 function calc(){
 var f=+document.getElementById('sFix').value,
 p=+document.getElementById('sPos').value,
 c=+document.getElementById('sCost').value,
 b=+document.getElementById('sBus').value,
 l=+document.getElementById('sLeav').value,
-o=+document.getElementById('sOther').value;
+cap=+document.getElementById('sCap').value,
+ero=+document.getElementById('sEro').value;
 document.getElementById('oFix').textContent=FIXL[f];
 document.getElementById('oPos').textContent=p;
 document.getElementById('oCost').textContent=money(c);
 document.getElementById('oBus').textContent=money(b);
 document.getElementById('oLeav').textContent=l;
-document.getElementById('oOther').textContent=money(o);
-var net=FIXV[f]+p*c-b-l*4626-o;
+document.getElementById('oCap').textContent=money(cap);
+document.getElementById('oEro').textContent=money(ero);
+var net=FIXV[f]+p*c-b-l*4626-cap-ero;
 var pct=Math.max(0,net/DEFICIT*100);
 var pctD=Math.max(0,net/DRAWDOWN*100);
 document.getElementById('rNet').textContent=(net<0?'-$'+Math.round(-net).toLocaleString('en-US'):money(net));
@@ -1014,8 +1030,12 @@ document.getElementById('rBar').style.width=Math.min(100,pct).toFixed(1)+'%';
 document.getElementById('rVerdict').textContent=(net<0
  ?'At these settings the closure LOSES the district '+money(-net)+' a year. 45% of all 2,916 defensible input combinations land below zero.'
  :'That covers '+pct.toFixed(1)+'% of the $2.65M structural deficit, or '+pctD.toFixed(0)+'% of the $1.15M the district actually draws from reserves each year.');
+var below=0;while(below<GRID.length&&GRID[below]<net){below++}
+var rank=Math.round(below/GRID.length*100);
+document.getElementById('rRank').textContent='Where your scenario sits in the published grid: it nets more than about '+
+rank+'% of the 2,916 scenarios (grid median '+money(21571)+', range '+money(-556006)+' to '+money(551928)+').';
 }
-['sFix','sPos','sCost','sBus','sLeav','sOther'].forEach(function(id){document.getElementById(id).addEventListener('input',calc)});
+['sFix','sPos','sCost','sBus','sLeav','sCap','sEro'].forEach(function(id){document.getElementById(id).addEventListener('input',calc)});
 calc();
 
 /* Levy compounder */
