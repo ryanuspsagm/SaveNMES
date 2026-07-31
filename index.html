@@ -190,7 +190,7 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>The fill-the-seats planner</h3>
-<p class="note">The building held 261 children at its peak and holds 128 today against a rated capacity of 174 (198 in the 2013 plan). Rebalance attendance boundaries, recruit cross-county transfers, and win back homeschool and private-school families until NMES reaches its rated 174. Each transfer or returning student brings the state's $4,626 per-student funding at the fiscal 2027 base; Section 9 of the report shows the full math. The recruits are not hypothetical, and the pool is measured: the two districts' own records show <b>259 registered homeschool students</b> (2022-23), reconciling rosters, census counts and the state's non-resident file puts <b>about 450 to 550 county school-age kids, 13 to 15 percent</b>, in private school or homeschooling, up from around one in eleven a decade ago (an earlier version of this page said one in three, from the Census survey alone; the rosters cap it lower and the corrected figure is above), and KDE's own nonresident report shows <b>131 out-of-county students already enrolled in Bourbon County schools, 54 of them from Fayette County</b>. Families already drive into this district; filling NMES's 46 open seats takes fewer than one in five of the registered homeschoolers alone.</p>
+<p class="note">The building held 261 children at its peak and holds 128 today against a rated capacity of 174 (198 in the 2013 plan). Rebalance attendance boundaries, recruit cross-county transfers, and win back homeschool and private-school families until NMES reaches its rated 174. The three student sliders share the 46 open seats: raising the returning-students slider frees seats from the other two. Each transfer or returning student brings the state's $4,626 per-student funding at the fiscal 2027 base; Section 9 of the report shows the full math. The recruits are not hypothetical, and the pool is measured: the two districts' own records show <b>259 registered homeschool students</b> (2022-23), reconciling rosters, census counts and the state's non-resident file puts <b>about 450 to 550 county school-age kids, 13 to 15 percent</b>, in private school or homeschooling, up from around one in eleven a decade ago (an earlier version of this page said one in three, from the Census survey alone; the rosters cap it lower and the corrected figure is above), and KDE's own nonresident report shows <b>131 out-of-county students already enrolled in Bourbon County schools, 54 of them from Fayette County</b>. Families already drive into this district; filling NMES's 46 open seats takes fewer than one in five of the registered homeschoolers alone.</p>
 <div class="slider-row"><label>Students rezoned from the Paris-area zones <output id="oRez">30</output></label>
 <input type="range" id="sRez" min="0" max="46" value="30" step="1"></div>
 <div class="slider-row"><label>Cross-county transfers under HB 563 <output id="oTr">16</output></label>
@@ -851,13 +851,20 @@ document.getElementById('sYrs').addEventListener('input',levy);
 levy();
 
 /* Fill-the-seats planner */
-function fillCalc(){
-var r=+document.getElementById('sRez').value,
-t=+document.getElementById('sTr').value,
-h=+document.getElementById('sRet').value,
+function fillCalc(src){
+var R=document.getElementById('sRez'),T=document.getElementById('sTr'),H=document.getElementById('sRet');
+var r=+R.value,t=+T.value,h=+H.value,
 s=+document.getElementById('sSec').value;
-if(r+t>46){t=46-r;document.getElementById('sTr').value=t}
-if(r+t+h>46){h=Math.max(0,46-r-t);document.getElementById('sRet').value=h}
+if(src==='sRet'){
+/* the moved slider keeps its value; free seats from transfers, then rezoning */
+var over=r+t+h-46;
+if(over>0){var cut=Math.min(t,over);t-=cut;over-=cut;
+if(over>0){r=Math.max(0,r-over)}
+T.value=t;R.value=r}
+}else{
+if(r+t>46){t=46-r;T.value=t}
+if(r+t+h>46){h=Math.max(0,46-r-t);H.value=h}
+}
 document.getElementById('oRez').textContent=r;
 document.getElementById('oTr').textContent=t;
 document.getElementById('oRet').textContent=h;
@@ -870,7 +877,7 @@ var pp=Math.round((2476544+(r+t+h)*400+a*85000)/enroll);
 document.getElementById('rFill').textContent=money(net);
 document.getElementById('rFillVerdict').textContent=(r+t+h===0)?((s>0||a>0)?'No students moved: the section credits and charges shown assume the rebalancing scenario runs, so move students first.':'No students moved. NMES stays at 128 of 174 seats and nothing changes.'):'NMES at '+enroll+' of 174 seats. Cost per student falls from $19,348 to '+money(pp)+'.'+(r>0?' Busing trims by roughly '+money(r*340)+' to '+money(r*612)+' a year on top.':' No rezoning; busing unchanged.');
 }
-['sRez','sTr','sRet','sSec','sAdd'].forEach(function(id){document.getElementById(id).addEventListener('input',fillCalc)});
+['sRez','sTr','sRet','sSec','sAdd'].forEach(function(id){document.getElementById(id).addEventListener('input',function(){fillCalc(id)})});
 fillCalc();
 });
 </script>

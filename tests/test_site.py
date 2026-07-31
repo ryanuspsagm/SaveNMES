@@ -141,9 +141,11 @@ def main():
         pg.fill("#sRez", "30"); pg.dispatch_event("#sRez", "input")
         pg.fill("#sTr", "16"); pg.dispatch_event("#sTr", "input")
         pg.fill("#sRet", "46"); pg.dispatch_event("#sRet", "input")
-        if pg.eval_on_selector("#sRet", "e=>e.value") == "0":
-            ok("fill planner caps returns at the 46 open seats")
-        else: bad(f"fill planner return clamp: {pg.eval_on_selector('#sRet', 'e=>e.value')}")
+        vals = [pg.eval_on_selector(sel, "e=>e.value") for sel in ("#sRet", "#sTr", "#sRez")]
+        expect_prio = 46 * 4626 - 46 * 400 + 1 * 60000 - 1 * 60000
+        if vals == ["46", "0", "0"] and pg.text_content("#rFill").strip() == f"${expect_prio:,}":
+            ok("returning-students slider keeps its value; seats freed from transfers and rezoning")
+        else: bad(f"fill planner return priority: ret/tr/rez = {vals}, net {pg.text_content('#rFill')}")
 
         boxes = pg.query_selector_all(".checkrow input[type=checkbox]")
         if boxes:
