@@ -31,7 +31,7 @@ A = S.append
 
 A(Paragraph("Saving North Middletown Elementary", title))
 A(Paragraph("Executive Summary • The Case for Growth, the Case Against Closure, and the Choice", sub))
-A(Paragraph("Version 4.0 • July 31, 2026 • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
+A(Paragraph("Version 4.1 • July 31, 2026 • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
 A(HRFlowable(width="100%", thickness=1.1, color=NAVY, spaceAfter=10))
 
 A(Paragraph("THE CASE FOR GROWTH", kick))
@@ -114,7 +114,7 @@ A(Paragraph(
   "recalled by the children it displaces; a growth plan can be measured, every year, by everyone.", body))
 A(HRFlowable(width="100%", thickness=0.8, color=LINE, spaceBefore=6, spaceAfter=6))
 A(Paragraph(
-  "The full 57-page report, the financial model with every calculation as live formulas, all archived "
+  "The full 56-page report, the financial model with every calculation as live formulas, all archived "
   "district documents, and every prior version with its corrections are free at SaveNMES.org and in the "
   "public repository.", ParagraphStyle("f", parent=body, fontSize=9.4, textColor=GRAY)))
 
@@ -125,7 +125,7 @@ def footer(canvas, doc):
     canvas.line(0.9*inch, 0.62*inch, 7.6*inch, 0.62*inch)
     canvas.setFont("Helvetica", 7.6); canvas.setFillColor(GRAY)
     canvas.drawString(0.9*inch, 0.47*inch,
-        "Saving North Middletown Elementary School • Executive Summary • Version 4.0, July 31, 2026")
+        "Saving North Middletown Elementary School • Executive Summary • Version 4.1, July 31, 2026")
     canvas.drawRightString(7.6*inch, 0.47*inch, f"Page {doc.page}")
     canvas.restoreState()
 

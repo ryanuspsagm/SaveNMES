@@ -561,29 +561,4 @@ clean(axB, ygrid=False, xgrid=True)
 fig.tight_layout(h_pad=2.2)
 save(fig, "chart_ky_record.png")
 
-# ---- V3: Millersburg timeline ----
-fig, ax = plt.subplots(figsize=(6.9, 3.9))
-myrs = [1980, 1990, 2000, 2010, 2020]
-mb = [987, 937, 842, 792, 747]
-county5 = [19405, 19236, 19360, 19985, 20252]
-mb_i = [v / 842 * 100 for v in mb]
-co_i = [v / 19360 * 100 for v in county5]
-ax.plot(myrs, mb_i, color=NAVY, marker="o", markersize=5, lw=2.4, label="Millersburg (2000 = 100)")
-ax.plot(myrs, co_i, color=GRAY, marker="s", markersize=4, lw=1.8, linestyle="--", label="Bourbon County (2000 = 100)")
-ax.axvline(2006, color="#B9C4D4", lw=1.0, linestyle=(0, (4, 2)))
-ax.axvline(2006.45, color="#C0625E", lw=1.5, linestyle=(0, (4, 2)))
-ax.axvline(2013, color="#B9C4D4", lw=1.0, linestyle=(0, (4, 2)))
-ax.text(2005.6, 120.5, "private military institute\ncloses July 2006", fontsize=6.8, color="#666666", ha="right")
-ax.text(2006.9, 78.2, "PUBLIC ELEMENTARY CLOSES 2006\n(federal CCD record; 119 students;\nNMES today: 128)", fontsize=6.8, color="#7a3b2e", fontweight="bold")
-ax.text(2013.4, 114.5, "Joy Global closes 2013:\n197 jobs, half the\ntown's budget", fontsize=6.9, color="#666666")
-ax.text(2020.5, mb_i[-1], "747\n(down 11%\nsince 2000)", fontsize=7.4, color=NAVY, fontweight="bold", va="center")
-ax.text(2020.5, co_i[-1] + 1.2, "20,252 (+4.6%)", fontsize=7.4, color="#555555", va="center")
-ax.set_xlim(1979, 2027.5)
-ax.set_ylim(74, 126)
-ax.set_ylabel("Population, indexed to 2000 = 100")
-ax.legend(fontsize=7.6, loc="lower left", frameon=False)
-clean(ax)
-ax.set_title("Bourbon County has closed a small school before. The county grew; the town did not.")
-fig.tight_layout()
-save(fig, "chart_millersburg.png")
 print("v3 charts done")
