@@ -337,6 +337,20 @@ def main():
         and (REPO / "reports" / "Saving_NMES_v3.6_2026-07-26.pdf").exists(),
         "v3.6 archived in reports/ and linked from the version history")
 
+    # v4.0: the two-roads restructure
+    for needle in ["The Case for Growth", "The Case Against Closure", "Two roads",
+                   "$19,080", "$19,020", "107.5", "Eminence", "occupational",
+                   "$58,774", "Permanent"]:
+        chk(needle in html, f"site v4 content intact: {needle}")
+    for needle in ["Decision in Brief", "Part Two: The Evidence", "$19,080", "$19,020",
+                   "107.5 percent", "Eminence", "149 last fall", "occupational",
+                   "Marion County voters", "$5.6 million of remaining", "$613,000"]:
+        chk(needle in t, f"PDF v4 decision brief intact: {needle}")
+    chk("12 percent" in t and "24 to 29 percent" in t,
+        "Millersburg leakage published at the verified rate with the upper bound labeled")
+    chk("110" in html and "remains requested" in html,
+        "the district's unsourced 110-enrollment figure is flagged, not adopted")
+
     # HB 44: the 4 percent is a revenue limit, not a rate limit (v3.9)
     for needle in ["compensating rate", "40.61", "42.64", "$8,254,030", "$393,049",
                    "$1,843,569,625", "five of the last twelve years"]:
@@ -411,7 +425,7 @@ def main():
     chk('id="sPos" min="2" max="5"' in html and 'id="sCost" min="50000" max="75000"' in html
         and 'id="sBus" min="100000" max="250000"' in html,
         "site calculator sliders sit inside the published grid")
-    chk("Version 3.9" in t and "July 29, 2026" in t, "PDF carries the v3.9 version block")
+    chk("Version 4.0" in t and "July 31, 2026" in t, "PDF carries the v4.0 version block")
     chk("Saving_NMES_v3.9_2026-07-29.pdf" in html, "site links the v3.9 report")
     chk("298 students" in t and "gives 298 students" in html,
         "breakeven reconstruction lands at 298 in both artifacts")

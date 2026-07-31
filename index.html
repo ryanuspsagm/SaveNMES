@@ -104,6 +104,11 @@ input[type=range]{width:100%;accent-color:var(--royal)}
 @media(max-width:480px){.alt.fac{font-size:13px}.alt.fac td,.alt.fac th{padding:8px 7px}}
 .totalstrip{background:var(--royal);color:var(--chalk);font-family:var(--serif);font-size:19px;padding:14px 18px;border-radius:6px;margin-top:16px;text-align:center}
 
+/* Part dividers (v4) */
+.partband{background:#1F3864;color:#fff;padding:34px 0 30px}
+.partband .kicker{color:#F5C242}
+.partband h2{color:#fff;margin:0 0 6px}
+.partband p{color:#D9E2F3;max-width:900px;margin:0}
 /* Questions */
 details{border:1px solid var(--line);border-radius:6px;background:var(--chalk);margin:10px 0}
 summary{cursor:pointer;padding:14px 18px;font-weight:600;color:var(--navy);list-style:none;display:flex;gap:12px}
@@ -114,6 +119,9 @@ details[open] summary{border-bottom:1px solid var(--line)}
 
 /* Act */
 .act-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
 @media(max-width:720px){.act-grid{grid-template-columns:1fr}}
 .act{background:var(--chalk);border:1px solid var(--line);border-left:4px solid var(--royal);border-radius:6px;padding:20px}
 .act h3{font-family:var(--serif);font-weight:400;color:var(--navy);font-size:19px}
@@ -160,9 +168,7 @@ footer a{color:var(--ice)}
 <body>
 
 <nav aria-label="Sections"><div class="wrap">
-<a href="#tldr">Summary</a><a href="#case">The Case</a><a href="#money">The Money</a><a href="#school">The School</a>
-<a href="#math">Try the Math</a><a href="#alternatives">Alternatives</a><a href="#questions">Twelve Questions</a>
-<a href="#roadahead">Road Ahead</a><a href="#act">Act Now</a><a href="#voices">Voices</a><a href="#sources">Sources</a>
+<a href="#growth">The Case for Growth</a><a href="#closure">The Case Against Closure</a><a href="#downloads">Report &amp; Model</a><a href="#choice">The Choice</a><a href="#act">Act Now</a><a href="#voices">Voices</a><a href="#sources">Sources</a>
 </div></nav>
 
 <header id="case"><div class="wrap">
@@ -181,6 +187,7 @@ footer a{color:var(--ice)}
 <section id="tldr"><div class="wrap">
 <div class="kicker">The short version</div>
 <h2>Five things, before the details.</h2>
+<p class="lede">This page makes two cases and asks for one decision. <b>Part One, the case for growth:</b> the district-wide problem and the three levers that fix it. <b>Part Two, the case against closure:</b> what the district's own documents say about the school it proposes to close. Then the choice.</p>
 <p class="lede">Every one of these is sourced further down this page, in the report, and in the downloadable model. If you read nothing else, read these.</p>
 <div class="card">
 <ol class="tldr">
@@ -192,6 +199,12 @@ footer a{color:var(--ice)}
 </ol>
 <p class="note" style="margin-top:18px">And the thing that follows from all five: <b>there is more money in fixing this than in closing the school.</b> A district-wide recovery plan that closes nothing prices out at $1.1 to $2.1 million a year against a $22,000 median. <a href="#alternatives">See the alternatives</a></p>
 </div>
+</div></section>
+
+<section id="growth" class="partband"><div class="wrap">
+<div class="kicker">Part One</div>
+<h2>The Case for Growth</h2>
+<p>Bourbon County Schools does not have a North Middletown problem. It has a district-wide problem: enrollment falling while the county's children stay put, fixed costs rising at every building, and a revenue posture no neighbor shares. Every piece of it is fixable, and none of the fixes involve closing a school. The problem first, then the three levers: grow enrollment, trim fixed costs, and face the rate question the way every neighboring board already has.</p>
 </div></section>
 
 <section id="money"><div class="wrap">
@@ -263,9 +276,65 @@ footer a{color:var(--ice)}
 </div>
 </div></section>
 
+<section id="grow"><div class="wrap">
+<div class="kicker">Growth Lever One</div>
+<h2>Build enrollment. Every returning student is nearly pure margin.</h2>
+<p class="lede">One more child in an existing classroom brings the state's $4,626 SEEK base against roughly $400 of supplies. The district is losing that trade 25 times a year at the front door: kindergarten intake hit <b>149 last fall, the lowest in the federal record</b>, and fewer children have entered kindergarten than left fifth grade in seven of the last eight years. The pool to win back is measured, not imagined: 259 registered homeschool students, roughly 450 to 550 county children in private or home settings, and 131 out-of-county students already choosing these schools.</p>
+<div class="grid3">
+<div class="card"><h3>Differentiate the offering</h3>
+<p class="note">The proof this works is one county over from ordinary. <b>Eminence Independent</b>, a district smaller than Cane Ridge, rebuilt itself around a distinctive project-based program and open nonresident enrollment: federal enrollment data show it growing from <b>733 students in 2014 to 1,006 in 2024, up 37 percent</b>, over the same decade Bourbon County shrank 13 percent. <b>Beechwood Independent</b> grew 20 percent on the same open-market forces. Growth is a choice districts have made, in this state, at this scale, under these laws.</p></div>
+<div class="card"><h3>Themed programs cost little</h3>
+<p class="note">A themed academy at North Middletown, agriculture and outdoor sciences being the obvious fit for the county's economy, converts the district's smallest school into its most distinctive offering. The building blocks are free or grant-funded: the school qualifies for the <b>Amazon Future Engineer</b> computer science program three separate ways (rural NCES locale, 76 percent free and reduced lunch, Title I), and the 21st Century Community Learning Centers grant funds exactly the after-school care young families need. A full-day preschool-to-kindergarten pipeline uses a funnel the district already owns: its preschool runs over capacity in both facility plans.</p></div>
+<div class="card"><h3>Scholarships and incentives, done lawfully</h3>
+<p class="note">Kentucky's constitution bars paying students to enroll from public funds. It does not bar a <b>community foundation</b> from funding scholarship promises with private donations: a named college scholarship for students who complete K-5 at a district school, funded by donors and businesses, is the lawful version of an enrollment incentive, and promise-style programs are a proven draw. Paired with fee waivers, free after-school care, and transportation for nonresident transfers, the district can offer families real value that private options cannot match.</p></div>
+</div>
+<p class="note" style="margin-top:14px">The revenue upside is already priced on this site: filling North Middletown's 46 open seats nets $56,000 to $116,000 a year after real section costs, every 10 recovered students district-wide add roughly $46,000 of recurring SEEK, and under HB 563 the money follows the child to whichever district wins the family. The same law that makes leakage dangerous makes recruitment profitable. One honest caveat: the district's own June 2026 committee materials state North Middletown's current enrollment at 110, a figure whose source documentation remains requested; the last official count is 128.</p>
+</div></section>
+
+<section id="trim"><div class="wrap">
+<div class="kicker">Growth Lever Two</div>
+<h2>Cut fixed costs district-wide, where the real money is.</h2>
+<p class="lede">The district's own ledger shows why closing its smallest school moves so little: North Middletown's entire avoidable fixed base is $58,774 to $276,928 a year depending on what happens to the building and its four fixed staff. The district-wide fixed-cost levers are larger, and none of them close anything.</p>
+<table class="alt">
+<tr><th>Lever</th><th>The evidence</th><th>Scale for Bourbon</th></tr>
+<tr><td><b>Energy management</b></td><td>Kentucky's School Energy Managers Project cut the statewide school energy index from 65 to under 50 kBTU/sf and documented <b>$225 million</b> of cumulative statewide savings; Warren County runs a net-zero elementary</td><td>District utilities and plant run through a central pool plus lines like North Middletown's $53,000; a standard 10 to 20 percent program yield is low six figures a year</td></tr>
+<tr><td><b>Bus route optimization</b></td><td>Vendor-reported results run $40,000 to $50,000 per eliminated route and about 10 percent mileage reductions; rural districts spend roughly 40 percent more per student on transport</td><td>Transportation is <b>$2.7 million coded to no school</b>; the district's records response shows no routing software output has ever been produced. Ten percent is about $270,000 a year</td></tr>
+<tr><td><b>Administrative rollback</b></td><td>Already published in this analysis from the district's own budgets</td><td>Part of the $1.6 to $2.9 million alternatives menu</td></tr>
+<tr><td><b>Medicaid school-based billing</b></td><td>Kentucky's 2019 state plan amendment lets districts bill for eligible health services for <b>all</b> Medicaid-enrolled students, not just those with IEPs, at roughly 70 percent reimbursement</td><td>The district's current billing intensity is a records request away; districts commonly leave six figures unclaimed</td></tr>
+</table>
+<p class="note">Every dollar here is a recurring General Fund dollar, the kind that pays teachers, and the combined scale of these levers alone rivals the most generous closure estimate ever offered for North Middletown.</p>
+</div></section>
+
+<section id="tax"><div class="wrap">
+<div class="kicker">Growth Lever Three</div>
+<h2>Face the rate question the way every neighbor already has.</h2>
+<p class="lede">The state's own certified property values settle what happened here. From 2012 to 2025, Bourbon County's tax base grew <b>107.5 percent, second fastest of the eight area counties</b> (state median 49.5 percent). Every one of those counties rode the same boom. Eight boards captured some of it. One did not.</p>
+<table class="alt">
+<tr><th>County</th><th>Tax base growth 2012 to 2025</th><th>School rate change</th><th>Result</th></tr>
+<tr><td><b>Scott</b></td><td>+117.1%</td><td><b>+38.9%</b>, plus a 0.5% occupational tax</td><td>Revenue capacity up over 200%</td></tr>
+<tr><td><b>Bourbon</b></td><td><b>+107.5%</b></td><td><b>&minus;5.4%, the only decline</b></td><td>The region's second-best boom converted to middle-of-the-pack revenue</td></tr>
+<tr><td>Bath</td><td>+51.4%</td><td>+72.3%</td><td>Revenue capacity up 161%</td></tr>
+<tr><td>Harrison</td><td>+40.5%</td><td>+34.2%</td><td>Revenue capacity up 89%</td></tr>
+</table>
+<p class="note">Source: Kentucky Department of Revenue, Statewide Certified Property Values 2007 to 2025, archived in this repository; KDE levied-rate files. Merely holding the rate the board itself levied in 2012 would yield about $613,000 more per year today than the current 52.4 cents.</p>
+<h3 style="margin-top:22px">What the recall record actually shows</h3>
+<p class="note">The fear that stops every rate conversation is the recall petition. Three facts size that fear honestly. First, <b>the 4 percent revenue option can never be recalled</b>, and compounding it is how the neighbors built their advantage: Bourbon took it in 5 of the last 12 years while the neighbors that passed it took it 7, 8 and 9 times. No neighboring district climbed past Bourbon through above-4-percent leaps; they compounded the safe option. Second, where Kentucky communities have voted on recallable school taxes, the record is mixed and survivable: Marion County voters <b>upheld</b> their board's facilities nickel 54 to 46 in 2015, Christian County voters rejected one two-to-one in 2019, Bath County lost a vote and then re-levied. Recall fights are real, and boards win them when the plan behind the tax is concrete. Third, and closest to home: <b>Bourbon County's own voters have been offered the recall twice</b>, on the 2005-era and 2023 facilities nickels, <b>and never filed a petition either time</b>. This community's actual, demonstrated appetite for school taxes is higher than its board's.</p>
+<p class="note">One more lever no one has named: eight Kentucky districts levy an occupational license tax under KRS 160.605, including Scott County at 0.5 percent. Bourbon levies none. The utility tax, by contrast, is already at its 3 percent maximum, and the board deserves credit for that. The full mechanics of rates, the compensating rate, and House Bill 44 are worked through in the levy section below and in Section 11 of the report.</p>
+</div></section>
+
+<section id="closure" class="partband"><div class="wrap">
+<div class="kicker">Part Two</div>
+<h2>The Case Against Closure</h2>
+<p>Five questions decide whether closing North Middletown Elementary makes sense: how the school performs, what it truly costs, what a closure actually frees, what a closure risks, and what the full range of outcomes looks like when every assumption is priced. The district's own documents answer all five, and every answer points the same way. The evidence below is unchanged from the detailed analysis; only the order is new.</p>
+</div></section>
+
 <section id="school"><div class="wrap">
 <div class="kicker">Part Two</div>
 <h2>The school they want to close is the one that works.</h2>
+<div class="card" style="margin-bottom:22px">
+<h3>The district's own May 2026 table: this school costs the state average</h3>
+<p class="note">The Cost of Delivery of Services table dated May 21, 2026, prepared for the district's own planning committee, prices every school. North Middletown: <b>$19,080 per student. The Kentucky state average on the same table: $19,020.</b> The school described as too expensive to keep costs three tenths of one percent more than the average Kentucky school, on the district's own paperwork, while leading the county in every state-tested subject. The same table lists every school center, North Middletown included, as <b>Permanent</b>, shows the receiving elementaries at <b>97 and 98 percent of capacity</b>, and the high school at 112 percent. It also shows the fiscal test in the state's own facilities manual is passed with room to spare: the permanent-center standard allows a school to cost up to 150 percent of its cheapest same-grade peer, and North Middletown sits at 110 percent.</p>
+</div>
 <p class="lede">On the state's official 2024-25 tests, North Middletown is first among all four elementary schools in the county in every subject the state reports, and beats the statewide elementary average in science and writing. The state's historical files complete the arc: county math leader in every pre-COVID year on record, 2012 through 2019, and an official Distinguished rating in 2016.</p>
 
 <div class="card">
@@ -409,6 +478,10 @@ footer a{color:var(--ice)}
 <section id="math"><div class="wrap">
 <div class="kicker">Part Three &bull; Interactive</div>
 <h2>Do not take my word for it. Run the numbers yourself.</h2>
+<div class="card" style="margin-bottom:22px">
+<h3>What closure risks: the revenue loss vectors, measured</h3>
+<p class="note">Three ways a closure loses money, each now measured rather than assumed. <b>First, students who leave the district.</b> When this district closed Millersburg Elementary in 2006, a cohort-level check of the federal enrollment records shows about <b>12 percent of the displaced students left the district's rolls the following fall</b> (a 7 to 17 percent band; the simpler year-over-year method reads 24 to 29 percent and is the upper bound). The destination is visible in the same records: Paris Independent's elementary enrollment jumped 25 students above its trend in exactly that year. Once families had to drive to Paris anyway, some chose the other Paris schools; a 2026 closure would run that experiment with HB 563 making the switch free and funded, homeschool at twice its 2006 share, and a statewide virtual academy (enrollment 937 to 2,412 in its first two years) that did not exist. At the verified 12 percent, about 15 of North Middletown's students leave, taking roughly $71,000 a year in state funding, more than triple the closure grid's median saving. <b>Second, the pipeline.</b> The children in this building carry about <b>$5.6 million of remaining state funding</b> through grade 12, and roughly one in seven students at the middle and high school came through North Middletown. <b>Third, assessment erosion</b> in the town that loses its school, a risk the record cannot bound and the district has never priced. The sliders below let you set each one yourself.</p>
+</div>
 <p class="lede">These calculators run the same math as the full report and financial model. Move the sliders. Use the district's assumptions or your own. The conclusion is hard to escape either way.</p>
 
 <div class="calc-grid">
@@ -730,6 +803,34 @@ footer a{color:var(--ice)}
 <div class="totalstrip">The next public meetings are where this is decided. Show up, speak, and send a signed statement if you cannot attend.</div>
 </div></section>
 
+<section id="downloads"><div class="wrap">
+<div class="kicker">Check Everything</div>
+<h2>The full report, the model, and every source.</h2>
+<p class="lede">The two parts above are the summary. The complete evidence, with every number sourced and every method shown, is free to download, and the entire repository behind this site is public: every dataset, every script, every archived district document, and every version ever published, corrections included.</p>
+<p><a class="btn" href="Saving_North_Middletown_Elementary.pdf">Download the full report (PDF)</a> &nbsp; <a class="btn" href="NMES_Financial_Model.xlsx">Download the financial model (Excel)</a> &nbsp; <a class="btn" href="https://github.com/ryanuspsagm/SaveNMES">Browse the repository</a></p>
+</div></section>
+
+<section id="choice" class="partband"><div class="wrap">
+<div class="kicker">The Decision</div>
+<h2>Two roads: shrink to fit, or grow and thrive.</h2>
+<p>The board and the planning committee face one real choice, and it is not about one building. Shrink to fit: close the county's highest-scoring school for a median $21,571 a year, accept the leakage risk the district's own 2006 closure demonstrated, and tell every family watching that this district answers decline with retreat. Or grow and thrive: fill the seats, trim the fixed costs that actually move the budget, face the rate question every neighbor has faced, and compete for the families this county never lost.</p>
+</div></section>
+
+<section id="asks"><div class="wrap">
+<div class="kicker">On North Middletown, Specifically</div>
+<h2>Four asks that cost the district nothing.</h2>
+<div class="grid2">
+<div class="card"><h3>1. Keep the school Permanent in the facility plan</h3>
+<p class="note">List its capital needs at a lower priority. A facility plan commits no money: the regulation itself says plans are implemented "to the extent that the financial ability of the district permits," and Priority 2 exists precisely for acknowledged needs that are not yet funded. The alternative label, Transitional, saves nothing and forecloses everything: it removes the school from state facilities funding eligibility, blocks major renovation, and under the state manual's own definition declares a phase-out decided. Permanent at low priority and Transitional cost the same this year: zero. Only one of them keeps every door open.</p></div>
+<div class="card"><h3>2. Be honest that near-term savings are minimal</h3>
+<p class="note">If staff are retained and reassigned rather than eliminated, the most conservative case in the closure grid and the pattern small-district closures typically follow, the closure frees the utilities line: <b>$58,774 a year</b>, about a quarter of one percent of the budget. The restricted renovation money is capped by enrollment anyway: at today's enrollment the state formula limits restricted-fund renovation to roughly a third of replacement cost, a ceiling that rises with every student recruited back. There is no pot of building money a closure unlocks.</p></div>
+<div class="card"><h3>3. Give the school the four years to the next plan</h3>
+<p class="note">The facility plan runs on a four-year cycle. Let the community and the school run a real enrollment push, the themed program, the preschool funnel, the nonresident recruitment, the foundation scholarships, and measure it. If enrollment recovers toward the rated 174, the school's finances, its renovation ceiling, and its state funding all recover with it. If the push fails on a fair trial, the next planning cycle can revisit the question with actual evidence instead of projections.</p></div>
+<div class="card"><h3>4. Let the community carry the building's critical needs</h3>
+<p class="note">North Middletown has already shown it will fight for this school; let it fund and build for it too. A community fundraising drive and donated services, contractors, materials, labor, for the building's genuinely critical needs costs the district nothing and is how small Kentucky towns have always kept their schools standing. The district's role is one sentence in a board motion: accept the help.</p></div>
+</div>
+</div></section>
+
 <section id="act"><div class="wrap">
 <div class="kicker">Part Six</div>
 <h2>What you can do this week.</h2>
@@ -778,8 +879,9 @@ footer a{color:var(--ice)}
 </div>
 <div class="card" style="margin-top:26px">
 <h3>Read the full case</h3>
-<p>The 55-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
+<p>The 57-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived document.</p>
 <p class="note"><b>Version history</b> (every version stays public; corrections are listed in each report's corrections section):
+<a href="reports/Saving_NMES_v4.0_2026-07-31.pdf">v4.0, July 31</a> (restructured around the decision: the case for growth, the case against closure, and the choice, with the full evidence unchanged behind them. New in this release, each archived in the repository: the Department of Revenue certified-values series showing Bourbon's tax base grew 107.5 percent from 2012 to 2025, second fastest of eight area counties, while the levy fell 5.4 percent, the only decline; the tax-base composition, 51 percent residential, 35 percent farm at agricultural-use value, 14 percent commercial, with $1.1 billion of farm market value deferred by state constitutional law; the district's own May 21, 2026 Cost of Delivery table pricing North Middletown at $19,080 per student against a $19,020 state average, listing every school Permanent, and showing the receiving elementaries at 97 and 98 percent of capacity; the occupational-tax gap, levied by eight Kentucky districts including Scott County at 0.5 percent, by Bourbon at zero; the Millersburg leakage rate re-measured at cohort level, about 12 percent of displaced students leaving the rolls with the year-over-year 24 to 29 percent restated as an upper bound, and the destination visible in Paris Independent's plus-25 jump that year; the $5.6 million of remaining state funding carried by the school's current students; kindergarten intake at 149, the lowest in the federal record; the Eminence Independent growth benchmark, up 37 percent over the decade Bourbon fell 13; and the recall record, Marion County upholding its nickel 54 to 46, Christian County rejecting one two to one, and Bourbon's own two recallable nickels never petitioned. The four asks to the board are stated plainly: Permanent at lower priority, honesty about the $58,774 reassignment case, four years to grow, and accepted community help) &middot;
 <a href="reports/Saving_NMES_v3.9_2026-07-29.pdf">v3.9, July 29</a> (the district's own ledger, published: its Cost by ORG summary codes $1,285,310 to North Middletown against the $2,476,544 the 300-student breakeven was built on, and only $21.5M of a roughly $44M budget is coded to any school; on that basis the school's breakeven is 80 students and it enrolls 128. Ten corrections, five against my own case, the largest being a full rebuild of the closure grid: the fixed-cost lever now carries three measured cases instead of two estimated ones, adding the scenario where the principal, secretary and custodian are reassigned rather than cut and the closure avoids only the $58,774 of utilities. The grid goes from 1,944 combinations to 2,916, the median saving falls from $91,240 to $21,571, the share of scenarios losing money rises from 29 to 45 percent, and the range widens to minus $556,006 and plus $551,928. The site calculator now reaches both corners exactly. Also: the 99.6 percent statewide figure reattached to the $8,255 bar it belongs to, with the corrected test failing 786 of 1,151 Kentucky schools; the "38 to 69 students" bar withdrawn, because it credited each child with federal money that follows the child, and replaced with 54 to 69; the $9,848 empirical marginal cost retired, its sign depending on a membership pair the district has not published; the five-year growth figures republished as bands, about 16 / 35 to 37 / 46 to 47 percent, with the base-year counts named; the closure calculator's sliders brought back inside the published grid. New: the 44.8 percent administration increase decomposed from the district's own working budgets, with administrative salaries down, total district payroll down 0.7 percent, and central office up 7.6 percent excluding retirement payouts; the enrollment leakage measured, county children flat for 25 years while enrollment fell 10.2 percent, and the private-or-homeschool share corrected from about one in three down to 13 to 15 percent; the district's lean staffing published, 5.5 fixed positions against 11.5 and 12.25 at the receiving schools, with the per-hundred ratio that cuts the other way printed beside it; and 33 records line items answered "N/A," including every closure, feasibility, boundary and ride-time analysis. Added later the same day, after the July 29 forum question: <b>House Bill 44 worked out in full</b> &mdash; the 4 percent is a limit on revenue, not on the rate, so a board can take it every year and still publish a falling rate, which means a flat rate is not evidence either way and the nine-district comparison already nets assessment growth out; the 3.2-cent rise of 2023-24 decomposed into the 5.7-cent recallable facilities nickel levied August 17, 2023 and about 2.5 cents off the rest of the rate, labelled an inference because KDE does not publish the split by year; and the question list expanded to twelve, with the closure worksheet now required to carry its downside, enrollment leakage and assessment erosion, and a new question on why this is the region's only falling rate) &middot;
 <a href="reports/Saving_NMES_v3.8_2026-07-26.pdf">v3.8, July 26</a> (correction and new evidence release: the fill planner now charges for new NMES sections under the class caps, a cost the earlier version missed, cutting the published package from $116,000-$176,000 to $56,000-$116,000; the complete school-level cost record published, three reporting systems back to the 2000-01 report cards recovered from the Internet Archive, showing all four elementaries on one scale curve and Millersburg's 2000-01 premium ($166,000) nearly identical to NMES's today ($156,000); the 300-student breakeven reconstructed to the dollar, all-source costs divided by state-only revenue, with the corrected test failing every school in the district including both receiving schools; real breakeven for every elementary published, NMES clears its bar at double to triple) &middot;
 <a href="reports/Saving_NMES_v3.7_2026-07-26.pdf">v3.7, July 26</a> (the recallable levy options beyond 4 percent under KRS 160.470, priced at Bourbon's own $191,000-per-cent yield: four benchmark rates with the median-home cost of each, $21.16 a year per cent on the $211,600 median home; restoring the district's own 2018 rate covers the operating gap plus ending the capital sweep to within $4,551, unlocking roughly $35 million of construction capacity with nothing closed) &middot;
@@ -870,6 +972,7 @@ list.appendChild(d);
 <section id="sources"><div class="wrap">
 <div class="kicker">Check My Work</div>
 <h2>Sources</h2>
+<p class="note"><b>Added in v4.0:</b> <a href="https://revenue.ky.gov/Property/Pages/default.aspx">KY DOR Statewide Certified Property Values 2007-2025</a> (archived as build/dor_certified_property_values_2007_2025.xlsx) &middot; <a href="https://www.education.ky.gov/districts/SEEK/Pages/Taxes.aspx">KDE Historical Tax Rates by Levied Type</a> (archived) &middot; District Cost of Delivery of Services table, May 21, 2026 (presented to the Local Planning Committee) &middot; NCES CCD enrollment series for Eminence Independent, Beechwood Independent, and the Millersburg cohort analysis &middot; <a href="https://wkms.org/post/nickel-tax-opponents-record-major-victory-polls">WKMS, Christian County nickel recall (2019)</a> &middot; Marion County nickel recall result (KSBA/local reporting, 2015) &middot; <a href="https://www.mwalliance.org/blog/kentucky-school-board-association-school-energy-managers-project-2020-inspiring-efficiency">KSBA School Energy Managers Project, MEEA award ($225M statewide savings)</a> &middot; <a href="https://www.education.ky.gov/districts/Pages/School-Based-Medicaid-Services.aspx">KDE School-Based Medicaid Services</a> &middot; <a href="https://www.ed.gov/grants-and-programs/formula-grants/rural-and-insular-areas/rural-education-achievement-program-reap">US ED REAP</a> (Bourbon verified ineligible: child poverty 15.7 percent vs the 20 percent threshold) &middot; Amazon Future Engineer eligibility via NCES data.</p>
 <p class="lede">Every figure on this page traces to one of these. If you find an error, tell me and I will correct it publicly.</p>
 <ul class="src">
 <li><a href="https://www.education.ky.gov/districts/FinRept/Documents/FY2024-2025%20FA%20Bourbon%20Co%20Rev.pdf">Bourbon County Schools audited financial statements, FY2025</a></li>

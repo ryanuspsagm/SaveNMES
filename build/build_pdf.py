@@ -118,7 +118,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 3.9 &nbsp;\u2022&nbsp; July 29, 2026",
+A(Paragraph("Version 4.0 &nbsp;\u2022&nbsp; July 31, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 2.2 * inch))
@@ -191,6 +191,77 @@ P("The report closes with twelve questions the administration should have to ans
   "answered in writing.")
 
 # ================= 2. WHERE THINGS STAND =================
+H("The Decision in Brief: Two Roads", need=3.0)
+P("This report now leads with its conclusions, in the same order the full evidence appears. Part One here: the "
+  "case for growth, then the case against closure, then the choice. Every figure is sourced in the numbered "
+  "sections that follow and live in the companion workbook; nothing in these pages stands on its own "
+  "authority.")
+
+H2("The case for growth: a district-wide problem with district-wide levers")
+P("<b>The problem is not one school.</b> Elementary enrollment is down 16.5 percent from its 2016 peak while "
+  "the census shows the county's child population essentially flat for twenty-five years; kindergarten intake "
+  "hit 149 last fall, the lowest in the federal record, and fewer children have entered kindergarten than left "
+  "fifth grade in seven of the last eight years. The General Fund draws down roughly $1.1 million of reserves "
+  "a year, and the enrollment loss alone accounts for most of it: the 205 missing elementary students carry "
+  "about $948,000 a year of state funding. And the revenue posture is unique in the region: the Department of "
+  "Revenue's certified values show Bourbon County's tax base grew <b>107.5 percent from 2012 to 2025, second "
+  "fastest of the eight area counties</b>, while the school levy fell 5.4 percent, the only decline among "
+  "nine districts. Scott County rode the same boom, raised its rate 38.9 percent on top, and levies a 0.5 "
+  "percent occupational tax besides; eight Kentucky districts levy that tax, Bourbon levies none, though its "
+  "utility tax is already at the 3 percent maximum. Merely holding the 2012 rate would yield about $613,000 "
+  "more per year today.")
+P("<b>The levers.</b> First, enrollment: each returning student brings the $4,626 SEEK base against roughly "
+  "$400 of marginal cost, the recoverable pool is measured (259 registered homeschoolers, roughly 450 to 550 "
+  "county children outside the public schools, 131 nonresident students already choosing this district), and "
+  "the model is proven in-state: Eminence Independent grew from 733 to 1,006 students (up 37 percent) over "
+  "the decade Bourbon shrank 13 percent, on differentiation and open enrollment. A themed academy at North "
+  "Middletown, a preschool-to-kindergarten pipeline, foundation-funded scholarship promises (private dollars, "
+  "lawfully), and modest marketing against a measured pool are the growth plan, and filling North Middletown's "
+  "46 open seats alone nets $56,000 to $116,000 a year. Second, fixed costs: transportation is $2.7 million "
+  "coded to no school with no routing study ever produced (a ten percent optimization is about $270,000 a "
+  "year); Kentucky's school energy program documented $225 million of statewide savings; Medicaid billing "
+  "under the 2019 expansion is a records request away from being sized. Third, revenue: the never-recallable "
+  "four percent option compounds to about $978,000 a year by year three; the recallable menu beyond it is "
+  "priced in Section 9; and the recall record itself is survivable, with Marion County voters upholding their "
+  "board's nickel 54 to 46 in 2015 and Bourbon's own voters declining even to petition either of this "
+  "district's two recallable nickels.")
+
+H2("The case against closure: five answers from the district's own documents")
+P("<b>Performance.</b> North Middletown leads the county in every state-tested subject. <b>Cost.</b> The "
+  "district's own Cost of Delivery of Services table, dated May 21, 2026 and prepared for its planning "
+  "committee, prices the school at $19,080 per student against a state average of $19,020 on the same table, "
+  "three tenths of one percent apart, and within 110 percent of its cheapest same-grade peer against the 150 "
+  "percent standard in the state facilities manual. <b>What closure frees.</b> The measured fixed base is "
+  "$58,774 if the building's four fixed staff are reassigned, $227,831 if they are cut, $276,928 if the "
+  "building is sold; across 2,916 priced scenarios the median net saving is $21,571 a year and 45 percent of "
+  "scenarios lose money. <b>What closure risks.</b> This district's own 2006 closure of Millersburg Elementary "
+  "is now measured at cohort level: about 12 percent of displaced students left the district's rolls the "
+  "following fall (7 to 17 percent band; the year-over-year method reads 24 to 29 percent as an upper bound), "
+  "with Paris Independent gaining 25 students above trend in exactly that year. At 12 percent, a North "
+  "Middletown closure loses about $71,000 a year in state funding, more than triple the median saving, and "
+  "the children in the building carry $5.6 million of remaining state funding through grade 12. The exits are "
+  "wider now than in 2006: HB 563 transfers are funded, homeschool has doubled, and the statewide virtual "
+  "academy grew from 937 to 2,412 students in its first two years. <b>The receiving schools.</b> The "
+  "district's own May 2026 table shows them at 97 and 98 percent of capacity, with the middle school the only "
+  "building with room and the high school at 112 percent.")
+
+H2("The choice, and four asks that cost nothing")
+P("Shrink to fit, or grow and thrive. On North Middletown specifically, the asks are modest. <b>One:</b> "
+  "keep the school Permanent in the facility plan with its capital needs at lower priority; a plan commits no "
+  "money, Priority 2 exists for exactly this, and the Transitional label saves nothing while foreclosing "
+  "state facilities eligibility, major renovation, and replacement. <b>Two:</b> state plainly that near-term "
+  "savings are minimal; if staff are reassigned rather than cut, the closure frees the $58,774 utilities "
+  "line, and the restricted renovation money is capped by enrollment regardless, at roughly a third of "
+  "replacement cost today, a ceiling that rises with every recruited student. <b>Three:</b> give the school "
+  "the four years to the next facility plan for a measured enrollment push, and judge it on results. "
+  "<b>Four:</b> accept the community's help, fundraising and donated services, for the building's critical "
+  "needs. A closed school cannot be recalled by the children it displaces; a growth plan can be measured, "
+  "every year, by everyone.")
+A(PageBreak())
+H("Part Two: The Evidence")
+P("The sections that follow are the complete analysis: every source, every method, every correction, "
+  "in the order the questions arise. The companion workbook reproduces every calculation as live formulas.")
+
 H("2. Where Things Stand: The Decision and the Process", need=1.6)
 tbl(["Date (2026)", "Event"],
     [["Early July",
@@ -2169,7 +2240,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 3.9, July 29, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 4.0, July 31, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 
