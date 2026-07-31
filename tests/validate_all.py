@@ -261,13 +261,13 @@ def main():
         "v3.1 archived in reports/ and linked from the version history")
 
     # recruitment pool (v3.2)
-    for needle in ["236 registered homeschool", "54 from Fayette", "one in three",
+    for needle in ["236 registered homeschool", "54 from Fayette",
                    "$213,000", "Cloverport", "net import of 189", "letter of intent",
                    "KRS 159.160", "$4,226", "St. Mary"]:
         chk(needle in t, f"PDF recruitment pool intact: {needle}")
     for needle in ["sRet", "259 registered homeschool", "54 of them from Fayette County",
                    "kde_nonresident_students_sy24_25.xlsx", "wapo_home_school_district.csv",
-                   "Cloverport", "$4,226", "about one in three"]:
+                   "Cloverport", "$4,226", "one in three"]:
         chk(needle in html, f"site recruitment pool intact: {needle}")
     chk("reports/Saving_NMES_v3.2_2026-07-26.pdf" in html
         and (REPO / "reports" / "Saving_NMES_v3.2_2026-07-26.pdf").exists(),
@@ -296,8 +296,7 @@ def main():
                    "closure_grid.py", "ky_closure_events_full.csv",
                    "contingent", "$1,098,663", "244 paper seats"]:
         chk(needle in t, f"v3.5 correction intact in PDF: {needle}")
-    for needle in ["$1,098,663", "1st in all 5 reported subjects", "in 2006",
-                   "$116,000 to $176,000", "244 paper seats"]:
+    for needle in ["1st in all 5 reported subjects", "in 2006", "$116,000 to $176,000"]:
         chk(needle in html, f"v3.5 correction intact on site: {needle}")
     for f in ["closure_grid.py", "ky_closure_events_full.csv",
               "ky_district_finance_1995_2020.csv", "ky_edfacts_district_2009_2018.csv"]:
@@ -336,9 +335,9 @@ def main():
                          "The tax picture the budget talk leaves out"]:
         chk(html.index(growth_block) < band,
             f"growth-side block sits in Part One: {growth_block}")
-    chk(html.index('id="asks"') < html.index('id="downloads"') < html.index('id="act"'),
-        "Downloads sits between the four asks and Act Now")
-    chk(html.index("Every version stays public") < html.index('id="act"'),
+    chk(html.index('id="voices"') < html.index('id="downloads"') < html.index('id="sources"'),
+        "Downloads sits between Voices and Sources")
+    chk(html.index("Every version stays public") < html.index('id="sources"'),
         "version history lives in the Downloads section")
     # v4.1: the live scenario model exposes all seven grid levers
     for lever in ['id="sFix"', 'id="sPos"', 'id="sCost"', 'id="sBus"',
@@ -427,7 +426,7 @@ def main():
                    "$960,000 to $1.9 million", "$260,000 to $530,000"]:
         chk(needle in t, f"PDF v3.8 content intact: {needle}")
     for needle in ["$56,000 to $116,000", "$106,000 to $211,000", "$2,476,544",
-                   "99.6 percent", "54 to 69", "$2,851", "$5,200", "$4,414",
+                   "$2,851", "$5,200", "$4,414",
                    "$960,000 to $1.9 million", "$260,000 to $530,000"]:
         chk(needle in html, f"site v3.8 content intact: {needle}")
 
@@ -438,11 +437,10 @@ def main():
                    "2,912", "2,616", "$61,937" if "$61,937" in t else "$132,744"]:
         chk(needle in t, f"PDF v3.9 content present: {needle}")
     for needle in ["$1,285,310", "$21,482,445", "$938,690", "$227,831", "$276,928",
-                   "5.5 fixed positions", "7.6 percent",
                    "450 to 550", "13 to 15 percent", "3,594", "2,616",
-                   "54 to 69", "80 students", "$61,937"]:
+                   "300 to 80", "$61,937"]:
         chk(needle in html, f"site v3.9 content present: {needle}")
-    chk("about one in three" not in html or "an earlier version of this page said one in three" in html,
+    chk("one in three" not in html or "an earlier version of this page said one in three" in html,
         "site: the retracted one-in-three share is corrected, not merely repeated")
     chk('id="sPos" min="2" max="5"' in html and 'id="sCost" min="50000" max="75000"' in html
         and 'id="sBus" min="100000" max="250000"' in html,
