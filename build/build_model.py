@@ -232,7 +232,7 @@ v3levers = [
  ("GF cost per position", 50000, 60000, 75000, "Published salary schedule + on-behalf structure"),
  ("Fixed avoided (reassigned / mothballed / sold)", 58774, 227831, 276928, "MEASURED v3.9 from the district FY2026 working budget, location 090, General Fund, excl on-behalf: school admin (2400) $132,744 + plant (2600) $96,107 = $228,851 vs the $230,000 mothballed lever, a 0.5% miss; adding the library/media line $49,097 gives $277,948 vs the $290,000 sold lever. NOTE: $230,000 is this grid FLOOR and assumes principal, secretary, custodian and utilities are all eliminated rather than reassigned; a redeployment case (utilities only, $58,774) is not in the grid."),
  ("Added busing", 100000, 137500, 250000, "110 sq mi zone (federal SABS); worst-reimbursed budget line. Treated as net new cost with nothing in the school's own code to offset it: student transportation coded to location 090 in the FY2026 working budget is $2,000, while location 901 is 100 percent function 2700 at $2,688,247, the only material transportation coding in the district."),
- ("Students leaving district", 0, 10, 30, "x $4,626 SEEK; Paris Ind adjacent under HB 563; Millersburg precedent"),
+ ("Students leaving district", 0, 10, 30, "x $4,626 SEEK; scenario values; exits free and funded under HB 563, homeschool and statewide virtual academy growing"),
  ("Capacity debt service triggered", 0, 115000, 231000, "CRES 103 over approved rating; 2021 plan prices its kitchen/cafeteria deficient today"),
  ("Assessment erosion, district share", 0, 40000, 95000, "Millersburg-calibrated; PVA records ask pending"),
 ]

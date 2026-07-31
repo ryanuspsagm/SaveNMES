@@ -209,8 +209,8 @@ def main():
     for needle in ["-$556K to +$552K", "$22,000", "45 percent", "losing $556,000",
                    "saving $552,000", "Millersburg"]:
         chk(needle in html, f"site v3 two-tailed range intact: {needle}")
-    for needle in ["Figure 7.", "losing $556,000", "saving $552,000",
-                   "$22,000", "45 percent", "Millersburg",
+    for needle in ["Figure 7.", "Figure 8.", "losing $556,000", "saving $552,000",
+                   "$22,000", "45 percent", "Millersburg", "119 students",
                    "$50,000 to $75,000", "$41,718", "747"]:
         chk(needle in t, f"PDF v3 two-tailed range intact: {needle}")
 
@@ -250,7 +250,7 @@ def main():
         or (REPO / "build" / "chart_pptime.png").exists() or True,
         "chart_pptime generated")
     # KFICS condition index (v3.1)
-    for needle in ["Figure 13.", "Condition Index", "0.773", "0.728", "0.694",
+    for needle in ["Figure 14.", "Condition Index", "0.773", "0.728", "0.694",
                    "smallest four-year repair bill", "July 2, 2026", "0.21725",
                    "re-certified", "March 2025", "no utilization discount"]:
         chk(needle in t, f"PDF condition index intact: {needle}")
@@ -274,7 +274,7 @@ def main():
         "v3.2 archived in reports/ and linked from the version history")
 
     # the Kentucky closure record (v3.3)
-    for needle in ["Figure 8.", "339 rural", "72 towns", "$1,102", "$818",
+    for needle in ["Figure 9.", "339 rural", "72 towns", "$1,102", "$818",
                    "$8,440", "$541", "$6,250 to $7,813", "West Perry", "Adair",
                    "Meade Memorial", "Leslie County 2013", "show us the data",
                    "nine times", "ky_rural_closures_", "ky_closure_dollar_cases.csv"]:
@@ -291,7 +291,7 @@ def main():
         "v3.4 archived in reports/ and linked from the version history")
 
     # v3.5 correction release
-    for needle in ["$1,489,853", "2006 closure", "$116,000 to $176,000",
+    for needle in ["$1,489,853", "closed in 2006", "$116,000 to $176,000",
                    "42 closure events", "net 31 uncommitted seats",
                    "closure_grid.py", "ky_closure_events_full.csv",
                    "contingent", "$1,098,663", "244 paper seats"]:
@@ -307,7 +307,7 @@ def main():
         "v3.5 archived in reports/ and linked from the version history")
 
     # levy history (v3.6)
-    for needle in ["Figure 20.", "72 percent", "5.4 percent lower", "House Bill 44",
+    for needle in ["Figure 21.", "72 percent", "5.4 percent lower", "House Bill 44",
                    "five of the last twelve", "ky_levy_history_2012_2026.csv"]:
         chk(needle in t, f"PDF levy history intact: {needle}")
     for needle in ["chartLevyHist", "72.3 percent", "5.4 percent lower", "HB 44",
@@ -324,7 +324,7 @@ def main():
     es_path = REPO / "SaveNMES_Executive_Summary.pdf"
     chk(es_path.exists(), "executive summary PDF exists")
     es = " ".join(pg.extract_text() for pg in PdfReader(es_path).pages).replace("\n", " ")
-    for needle in ["107.5", "$19,080", "$21,571", "2.8 times", "Permanent", "floor"]:
+    for needle in ["107.5", "$19,080", "$21,571", "2.8 times", "Permanent", "2,412"]:
         chk(needle in es, f"executive summary intact: {needle}")
     chk("SaveNMES_Executive_Summary.pdf" in html, "site links the executive summary")
     for gone in ['id="tldr"', 'id="questions"', 'id="roadahead"']:
@@ -361,10 +361,13 @@ def main():
                    "107.5 percent", "Eminence", "149 last fall", "occupational",
                    "Marion County voters", "$5.6 million of remaining", "$613,000"]:
         chk(needle in t, f"PDF v4 decision brief intact: {needle}")
-    chk("12 percent" in t and "floor, not the ceiling" in t and "every 10 percent" in t,
-        "Millersburg 12 percent published as the floor with stepped losses")
-    chk("floor, not the ceiling" in html and "10 percent" in html and "$5.6 million" in html,
-        "site leakage card carries the step-up table and the floor framing")
+    chk("every 10 percent" in t and "every 10 percent" in html,
+        "stepped losses published as scenarios in report and site")
+    chk("12 percent of displaced" not in t and "12 percent of the displaced" not in html
+        and "floor, not the ceiling" not in t and "floor, not the ceiling" not in html,
+        "the withdrawn cohort-leakage claim is absent from report and site")
+    chk("170 to 259" in t and "170 to 259" in html,
+        "exit routes documented directly (homeschool 170 to 259) in report and site")
     chk("110" in html and "remains requested" in html,
         "the district's unsourced 110-enrollment figure is flagged, not adopted")
 
@@ -449,9 +452,8 @@ def main():
         and (REPO / "reports" / "Saving_NMES_v4.1_2026-07-31.pdf").exists()
         and (REPO / "reports" / "Saving_NMES_v4.0_2026-07-31.pdf").exists(),
         "v4.1 archived and linked; v4.0 stays archived")
-    chk("run this play before" not in t and "Joy Global" not in t
-        and "chart_millersburg" not in t.lower(),
-        "Millersburg case study removed from the report")
+    chk("run this play before" in t and "Joy Global" in t and "Figure 8." in t,
+        "Millersburg community case study restored in the report (Figure 8)")
     chk("Saving_NMES_v3.9_2026-07-29.pdf" in html, "site links the v3.9 report")
     chk("298 students" in t,
         "breakeven reconstruction lands at 298 in the report")

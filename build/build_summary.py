@@ -75,11 +75,10 @@ A(Paragraph(
   "cut, $276,928 if the building is sold; across 2,916 priced scenarios the median net saving is $21,571 a "
   "year and 45 percent of scenarios lose money. <b>The receiving schools.</b> The district's own table shows "
   "them at 97 and 98 percent of capacity, and the high school at 112 percent. <b>What closure risks.</b> "
-  "When this district closed Millersburg Elementary in 2006, about 12 percent of displaced students left the "
-  "district's rolls the following fall, and Paris Independent gained 25 students above trend in exactly that "
-  "year. Treat 2006 as the floor: exits are far wider now, with funded HB 563 transfers, homeschool at twice "
-  "its 2006 share, and a statewide virtual academy that grew from 937 to 2,412 students in its first two "
-  "years. The losses step up with every ten percent of students who leave:", body))
+  "Every exit is free and funded under today's rules: HB 563 makes a transfer to any neighboring district "
+  "free to the family and funded for the district that wins the child, registered homeschooling in this "
+  "county has climbed from 170 to 259 in five years, and the statewide virtual academy grew from 937 to "
+  "2,412 students in its first two years. The losses step up with every ten percent of students who leave:", body))
 
 step = Table(
     [[Paragraph(c, thead) for c in ["Share who leave", "Students (of 128)",
@@ -114,7 +113,7 @@ A(Paragraph(
   "recalled by the children it displaces; a growth plan can be measured, every year, by everyone.", body))
 A(HRFlowable(width="100%", thickness=0.8, color=LINE, spaceBefore=6, spaceAfter=6))
 A(Paragraph(
-  "The full 56-page report, the financial model with every calculation as live formulas, all archived "
+  "The full 57-page report, the financial model with every calculation as live formulas, all archived "
   "district documents, and every prior version with its corrections are free at SaveNMES.org and in the "
   "public repository.", ParagraphStyle("f", parent=body, fontSize=9.4, textColor=GRAY)))
 
