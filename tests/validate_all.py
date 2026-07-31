@@ -93,12 +93,12 @@ def main():
         "site shows the approved 521/422, the 198 history, and the net 31")
     chk("547" in t and "154" in t and "83 percent full" in t,
         "PDF carries the 2026 draft re-ratings and the 83 percent fill")
-    chk("547" in html and "154" in html and "83 percent full" in html,
-        "site carries the 2026 draft re-ratings and the 83 percent fill")
+    chk("547" in html and "154" in html,
+        "site carries the 2026 draft re-ratings (fill detail in the report)")
     chk("RossTarrant" in t and "$98,441,294" in t and "$8,530,093" in t,
         "PDF carries the KFICS assessment: author, district total, NMES total")
-    chk("RossTarrant" in html and "98.4" in html and "$8.5 million" in html,
-        "site carries the KFICS assessment figures")
+    chk("RossTarrant" not in html,
+        "v4.1: KFICS assessment material carried in the report, not the site")
     chk("yet to see" not in t,
         "stale assessment-not-published language removed from PDF")
     chk((REPO / "build" / "kde_ksa_2024_25.json").exists(), "KDE assessment extract archived")
@@ -115,7 +115,7 @@ def main():
     chk("Publish the official statement and the BG-1" not in t
         and "Publish the official statement and the BG-1" not in html,
         "questions no longer demand the already-public 2024 official statement")
-    chk("audio system" in html, "site states the recovered 2024 bond purpose")
+    chk("audio system" in t, "PDF states the recovered 2024 bond purpose")
     chk("first among all four" in t and "SchoolDigger index" in t,
         "PDF leads with KDE results and labels the SchoolDigger index")
     chk("1st in all 5 reported subjects" in html and "state" in html,
@@ -223,14 +223,13 @@ def main():
                    "$1,413,929", "August 17, 2023", "$82,866", "Paris Independent",
                    "Capital Funds Request", "$3.1 million"]:
         chk(needle in t, f"PDF bonding story intact: {needle}")
-    for needle in ["The $14 million plan", "$121,000 a year", "wrap-around",
-                   "Budget Monitoring Tool", "$374,000", "miscellaneous revenue",
-                   "$1,320,939", "$1,413,929", "August 17, 2023", "$82,866",
-                   "Paris Independent", "$3.1 million"]:
-        chk(needle in html, f"site bonding story intact: {needle}")
-    chk("$1,098,663" in html and "$222,276" in html
-        and "$1,098,663" in t and "$222,276" in t,
-        "capital transfer components consistent on site and in PDF")
+    for needle in ["$1,320,939", "August 17, 2023", "Paris Independent", "$3.1 million"]:
+        chk(needle in html, f"site bonding story (kept lines) intact: {needle}")
+    chk("The $14 million plan" not in html and "The bonds: a different pot" not in html
+        and 'id="chartDebt"' not in html,
+        "v4.1: bond and $14M-plan cards moved to the report only")
+    chk("$1,098,663" in t and "$222,276" in t,
+        "capital transfer components consistent in the PDF")
 
     # filled-to-capacity scenarios (Figure 6 / chartPPtime grouped bars)
     chk("chartPPtime" in html and "$14,339" in html and "$16,149" in html,
@@ -263,12 +262,8 @@ def main():
                    "smallest four-year repair bill", "July 2, 2026", "0.21725",
                    "re-certified", "March 2025", "no utilization discount"]:
         chk(needle in t, f"PDF condition index intact: {needle}")
-    for needle in ["chartCondition", "0.773", "0.728", "0.823", "0.21725",
-                   "KFICS%20Monthly%20Report%2007022026.xlsx",
-                   "Official_KFICS_Report_October_2025.xlsx",
-                   "Official_KFICS_Report_October_2023.xlsx",
-                   "only school in the district whose condition improved"]:
-        chk(needle in html, f"site condition index intact: {needle}")
+    chk('id="chartCondition"' not in html and "0.21725" not in html,
+        "v4.1: condition-index card carried in the report, not the site")
     chk("reports/Saving_NMES_v3.1_2026-07-26.pdf" in html
         and (REPO / "reports" / "Saving_NMES_v3.1_2026-07-26.pdf").exists(),
         "v3.1 archived in reports/ and linked from the version history")
@@ -314,7 +309,7 @@ def main():
                    "contingent", "$1,098,663", "244 paper seats"]:
         chk(needle in t, f"v3.5 correction intact in PDF: {needle}")
     for needle in ["$1,098,663", "1st in all 5 reported subjects", "closed in 2006",
-                   "$116,000 to $176,000", "244 paper seats", "contingent"]:
+                   "$116,000 to $176,000", "244 paper seats"]:
         chk(needle in html, f"v3.5 correction intact on site: {needle}")
     for f in ["closure_grid.py", "ky_closure_events_full.csv",
               "ky_district_finance_1995_2020.csv", "ky_edfacts_district_2009_2018.csv"]:
@@ -346,6 +341,18 @@ def main():
     chk("SaveNMES_Executive_Summary.pdf" in html, "site links the executive summary")
     for gone in ['id="tldr"', 'id="questions"', 'id="roadahead"']:
         chk(gone not in html, f"off-layout section removed: {gone}")
+    # strict layout audit: relocated blocks live in the layout's own part
+    band = html.index('<section id="closure"')
+    for growth_block in ["The fill-the-seats planner", "The 4 percent option",
+                         "Room to grow", "The children never left the county",
+                         "The tax picture the budget talk leaves out"]:
+        chk(html.index(growth_block) < band,
+            f"growth-side block sits in Part One: {growth_block}")
+    chk(html.index("Every version stays public") < html.index('id="choice"'),
+        "version history lives in the Downloads section")
+    for heading in ["What the district's own facility plans show",
+                    "Building condition, as reported to the state"]:
+        chk(heading not in html, f"off-layout card removed from site: {heading}")
     chk(not __import__("re").search(r"[\u2013\u2014]", es), "zero en/em dashes in the executive summary")
 
     # v4.0: the two-roads restructure
@@ -479,14 +486,12 @@ def main():
 
     chk("unaudited" in html and "unaudited" in t,
         "FY2026 figures labeled unaudited on site and in PDF")
-    chk((REPO / "build" / "fy2026_june_financial_packet.pdf").exists()
-        and "fy2026_june_financial_packet.pdf" in html,
-        "June 2026 financial packet archived and linked from site")
-    chk("sweep ended in both cases" in html and "balanced-budget scenario" in t,
-        "balanced-budget scenario referenced on site and in PDF")
-    chk("$21 million" in html and "$25 million" in html
-        and "$21 million" in t and "$25 million" in t,
-        "scenario capacity range $21M/$25M consistent on site and in PDF")
+    chk((REPO / "build" / "fy2026_june_financial_packet.pdf").exists(),
+        "June 2026 financial packet archived in build/")
+    chk("balanced-budget scenario" in t,
+        "balanced-budget scenario carried in the report")
+    chk("$21 million" in t and "$25 million" in t,
+        "scenario capacity range $21M/$25M consistent in the PDF")
 
     # money-story cleanup: GF-only levy base, both denominators, precise debt wording
     chk("$313,000" in t and "$978,000" in t and "386,000" not in t,

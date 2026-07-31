@@ -227,10 +227,10 @@ if bond_amt == 14000000 and "$14 million" in html and "$14 million" in pdf_flat:
 else:
     diff(f"$14M bond: model {bond_amt}, site {'$14 million' in html}, pdf {'$14 million' in pdf_flat}")
 excess = ds_vals.get("District's own KDE-filed excess cost of NMES vs peer elementaries", (None, None))[0]
-if excess == 121220 and "$121,000" in html and "$121,000" in pdf_flat:
-    match("audited excess cost $121,220 in model; site and PDF round to $121,000")
+if excess == 121220 and "$121,220" in html and "$121,000" in pdf_flat:
+    match("audited excess cost $121,220 in model and on site; PDF rounds to $121,000")
 else:
-    diff(f"excess cost: model {excess}, site {'$121,000' in html}, pdf {'$121,000' in pdf_flat}")
+    diff(f"excess cost: model {excess}, site {'$121,220' in html}, pdf {'$121,000' in pdf_flat}")
 fy26 = ds_vals.get("Net General Fund change, FY2026 (unaudited)", (None, None))[0]
 rev26 = ds_vals.get("General Fund revenue, FY2026 actual (excludes carryforward and on-behalf)", (None, None))[0]
 exp26 = ds_vals.get("General Fund expenditures, FY2026 actual", (None, None))[0]
@@ -239,44 +239,41 @@ if rev26 == 22103877 and exp26 == 22477866 and "$374,000" in html and "$374,000"
 else:
     diff(f"FY2026 close: model rev {rev26} exp {exp26}, site {'$374,000' in html}, pdf {'$374,000' in pdf_flat}")
 misc = ds_vals.get("Caveat 1: miscellaneous revenue (object 1990) budgeted at zero, received", (None, None))[0]
-if misc == 1567829 and "$1,413,929" in html and "$1,413,929" in pdf_flat:
-    match("FY2026 miscellaneous-revenue caveat ($1.57M YTD, $1,413,929 June) present in model, site, PDF")
+if misc == 1567829 and "$1.41 million" in html and "$1,413,929" in pdf_flat:
+    match("FY2026 miscellaneous-revenue caveat in model and PDF; site keeps the rounded $1.41M mention")
 else:
-    diff(f"misc revenue caveat: model {misc}, site {'$1,413,929' in html}, pdf {'$1,413,929' in pdf_flat}")
+    diff(f"misc revenue caveat: model {misc}, site {'$1.41 million' in html}, pdf {'$1,413,929' in pdf_flat}")
 xfer = ds_vals.get("Caveat 2: restricted capital money transferred INTO the General Fund in June 2026", (None, None))[0]
 if xfer == 1320939 and "$1,320,939" in html and "$1,320,939" in pdf_flat:
     match("June 2026 capital-to-GF transfer ($1,320,939) present in model, site, PDF")
 else:
     diff(f"capital transfer: model {xfer}, site {'$1,320,939' in html}, pdf {'$1,320,939' in pdf_flat}")
 gap_b, gap_c = ds_vals.get("Operating gap to close first", (None, None))
-if gap_b == 1900000 and gap_c == 373989 and "$21 million" in html and "$25 million" in html:
-    match("balanced-budget scenario inputs ($1.9M / $373,989 gaps) in model; $22M/$42M capacity quoted on site")
+if gap_b == 1900000 and gap_c == 373989 and "$21 million" in pdf_flat and "$25 million" in pdf_flat:
+    match("balanced-budget scenario inputs ($1.9M / $373,989 gaps) in model; $21M/$25M capacity quoted in the PDF")
 else:
-    diff(f"scenario: model gaps {gap_b}/{gap_c}, site $21M {'$21 million' in html}, $25M {'$25 million' in html}")
+    diff(f"scenario: model gaps {gap_b}/{gap_c}, pdf $21M {'$21 million' in pdf_flat}, $25M {'$25 million' in pdf_flat}")
 
-# ---------- 7. KFICS condition index (v3.1): site JS vs model vs PDF ----------
+# ---------- 7. KFICS condition index (v3.1): model vs PDF (site card moved to report in v4.1) ----------
 FP = wb["Facility_Plans"]
 ci_model = {FP.cell(row=r, column=1).value: [FP.cell(row=r, column=c).value for c in (2, 3, 4)]
             for r in range(67, 72)}
 nmes_ci = ci_model.get("North Middletown Elementary (1948/64)")
 cane_ci = ci_model.get("Cane Ridge Elementary (1992)")
 cent_ci = ci_model.get("Bourbon Central Elementary (1988)")
-site_nmes = re.search(r"North Middletown \(1948/64\)',data:\[([\d.,]+)\]", html)
-site_cane = re.search(r"Cane Ridge \(1992\)',data:\[([\d.,]+)\]", html)
-site_cent = re.search(r"Bourbon Central \(1988\)',data:\[([\d.,]+)\]", html)
 def _r3(v): return [round(x, 3) for x in v]
-if (nmes_ci and site_nmes and _r3(nmes_ci) == [float(x) for x in site_nmes.group(1).split(",")]
-        and cane_ci and site_cane and _r3(cane_ci) == [float(x) for x in site_cane.group(1).split(",")]
-        and cent_ci and site_cent and _r3(cent_ci) == [float(x) for x in site_cent.group(1).split(",")]):
-    match("KFICS condition index series identical site JS vs model (3 schools x 3 state reports)")
+if (nmes_ci and _r3(nmes_ci) == [0.694, 0.702, 0.773]
+        and cane_ci and _r3(cane_ci) == [0.812, 0.812, 0.728]
+        and cent_ci and _r3(cent_ci) == [0.888, 0.819, 0.823]
+        and "chartCondition" not in html):
+    match("KFICS condition index series intact in model; site card retired to the report (v4.1)")
 else:
-    diff(f"condition index: model {nmes_ci}/{cane_ci}/{cent_ci} vs site "
-         f"{site_nmes and site_nmes.group(1)}/{site_cane and site_cane.group(1)}/{site_cent and site_cent.group(1)}")
+    diff(f"condition index: model {nmes_ci}/{cane_ci}/{cent_ci}, site chart absent: {'chartCondition' not in html}")
 needs = FP["E69"].value; crv = FP["F69"].value
-if needs and crv and abs((1 - needs / crv) - 0.773295) < 0.0005 and "0.773" in pdf_flat and "0.773" in html:
-    match("NMES condition index 0.773 = 1 - 3,099,148/13,670,418 verified from state-report components; quoted on site and PDF")
+if needs and crv and abs((1 - needs / crv) - 0.773295) < 0.0005 and "0.773" in pdf_flat:
+    match("NMES condition index 0.773 = 1 - 3,099,148/13,670,418 verified from state-report components; quoted in the PDF")
 else:
-    diff(f"NMES CI recompute: needs {needs}, crv {crv}, pdf 0.773 {'0.773' in pdf_flat}, site {'0.773' in html}")
+    diff(f"NMES CI recompute: needs {needs}, crv {crv}, pdf 0.773 {'0.773' in pdf_flat}")
 
 # ---------- 8. recruitment pool (v3.2): fill planner lever, model, PDF ----------
 RD = wb["Redistricting"]
