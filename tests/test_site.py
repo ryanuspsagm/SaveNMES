@@ -148,14 +148,9 @@ def main():
             else: bad("score toggle changed nothing")
         else: bad("no score toggle checkboxes found")
 
-        kk = pg.evaluate("""() => {
-            const d=[...document.querySelectorAll('#questions details')];
-            d.forEach(x=>x.open=true);
-            return d.length + ':' + d.filter(x=>x.open && x.querySelector('p').textContent.length>20).length
-        }""")
-        total, opened = kk.split(":")
-        if total == opened == "12": ok("all 12 question accordions open with content")
-        else: bad(f"accordions {opened}/{total}")
+        gone = pg.evaluate("['tldr','questions','roadahead'].filter(i=>document.getElementById(i)).length")
+        if gone == 0: ok("off-layout sections absent (v4 simplified layout)")
+        else: bad(f"{gone} off-layout sections still present")
 
         missing = pg.evaluate("""() => [...document.querySelectorAll('nav a')]
             .map(a=>a.getAttribute('href'))

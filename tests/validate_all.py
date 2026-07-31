@@ -337,6 +337,17 @@ def main():
         and (REPO / "reports" / "Saving_NMES_v3.6_2026-07-26.pdf").exists(),
         "v3.6 archived in reports/ and linked from the version history")
 
+    # v4.1: executive summary document + simplified layout
+    es_path = REPO / "SaveNMES_Executive_Summary.pdf"
+    chk(es_path.exists(), "executive summary PDF exists")
+    es = " ".join(pg.extract_text() for pg in PdfReader(es_path).pages).replace("\n", " ")
+    for needle in ["107.5", "$19,080", "$21,571", "2.8 times", "Permanent", "floor"]:
+        chk(needle in es, f"executive summary intact: {needle}")
+    chk("SaveNMES_Executive_Summary.pdf" in html, "site links the executive summary")
+    for gone in ['id="tldr"', 'id="questions"', 'id="roadahead"']:
+        chk(gone not in html, f"off-layout section removed: {gone}")
+    chk(not __import__("re").search(r"[\u2013\u2014]", es), "zero en/em dashes in the executive summary")
+
     # v4.0: the two-roads restructure
     for needle in ["The Case for Growth", "The Case Against Closure", "Two roads",
                    "$19,080", "$19,020", "107.5", "Eminence", "occupational",
@@ -370,13 +381,13 @@ def main():
     chk("inference" in t.lower() and "inference" in html.lower(),
         "the 2.5-cent figure is labelled an inference, not a finding")
     # question list: twelve, aligned across site and report, with the two new asks
-    chk("Twelve Questions" in t and "Twelve questions" in html, "question list is twelve in both")
-    chk(html.count("<details>") >= 12, "twelve question accordions on the site")
+    chk("Twelve Questions" in t, "twelve questions carried in the report")
+    chk("twelve questions in the report" in html, "site defers the questions to the report (v4 layout)")
     chk("Ten Questions" not in t and "eleven questions" not in t.lower(),
         "no stale question counts left in the report")
     for needle in ["assessment erosion", "$138,780", "$46,260"]:
         chk(needle in t, f"PDF question 1 downside risk intact: {needle}")
-        chk(needle in html, f"site question 1 downside risk intact: {needle}")
+    chk("assessment erosion" in html, "site carries the assessment-erosion vector")
     chk("does not establish that closure causes decline" in t.replace("<i>", "").replace("</i>", "")
         or "not establish that closure causes decline" in t,
         "question 1 states the limit of the closure/population evidence")
