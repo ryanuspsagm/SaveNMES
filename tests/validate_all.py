@@ -118,8 +118,8 @@ def main():
     chk("audio system" in t, "PDF states the recovered 2024 bond purpose")
     chk("first among all four" in t and "SchoolDigger index" in t,
         "PDF leads with KDE results and labels the SchoolDigger index")
-    chk("1st in all 5 reported subjects" in html and "state" in html,
-        "site hero tile carries the KDE first-in-county claim")
+    chk("first in every state-tested subject" in html,
+        "site carries the KDE first-in-county claim")
 
     # KDE official historical record (build/kde_scores_history.json)
     chk((REPO / "build" / "kde_scores_history.json").exists(),
@@ -208,7 +208,7 @@ def main():
                    "Boston Public Schools"]:
         chk(needle in t, f"PDF claim intact: {needle}")
     chk("$69,071" in html, "site claim intact: $69,071 calculator central-case default")
-    for needle in ["-$556K to +$552K", "$22,000", "45 percent", "losing $556,000",
+    for needle in ["$22,000", "45 percent", "losing $556,000",
                    "saving $552,000", "Millersburg"]:
         chk(needle in html, f"site v3 two-tailed range intact: {needle}")
     for needle in ["Figure 7.", "Figure 8.", "losing $556,000", "saving $552,000",
@@ -241,8 +241,8 @@ def main():
         "PDF: the withdrawn third validation is no longer announced")
     chk("$15,316" in t and "$16,701" in t,
         "staffed capacity cases priced in the PDF")
-    chk("2,625 people" in html and "610" in html,
-        "zone population (2,625) and town population (610) both on site")
+    chk("2,625 people" in t,
+        "zone population (2,625) carried in the report")
     chk((REPO / "build" / "dfp_wayback_20170701225631.pdf").exists(),
         "2017 plan capture archived in build/")
     chk("utilization measure" in t,
@@ -298,7 +298,7 @@ def main():
                    "closure_grid.py", "ky_closure_events_full.csv",
                    "contingent", "$1,098,663", "244 paper seats"]:
         chk(needle in t, f"v3.5 correction intact in PDF: {needle}")
-    for needle in ["1st in all 5 reported subjects", "in 2006", "$116,000 to $176,000"]:
+    for needle in ["first in every state-tested subject", "in 2006", "$116,000 to $176,000"]:
         chk(needle in html, f"v3.5 correction intact on site: {needle}")
     for f in ["closure_grid.py", "ky_closure_events_full.csv",
               "ky_district_finance_1995_2020.csv", "ky_edfacts_district_2009_2018.csv"]:

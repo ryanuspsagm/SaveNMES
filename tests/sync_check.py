@@ -439,7 +439,7 @@ else:
     diff(f"EDFacts series mismatches: {ef_bad}")
 
 # site text spot checks
-for s, label in [("1st in all 5 reported subjects", "hero fact scores"), ("-$556K to +$552K", "hero fact closure range"),
+for s, label in [("first in every state-tested subject", "first-in-county claim"), ("losing $556,000 and saving $552,000", "closure range prose"),
                  ("$7,829,060", "GF levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),
                  ("128-student school", "enrollment in prose"), ("rated capacity of 174", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")
