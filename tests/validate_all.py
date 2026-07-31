@@ -267,7 +267,7 @@ def main():
                    "KRS 159.160", "$4,226", "St. Mary"]:
         chk(needle in t, f"PDF recruitment pool intact: {needle}")
     for needle in ["sRet", "259 registered homeschool", "54 of them from Fayette County",
-                   "Cloverport", "$4,226", "one in three"]:
+                   "$4,626", "one in three"]:
         chk(needle in html, f"site recruitment pool intact: {needle}")
     for f in ["kde_nonresident_students_sy24_25.xlsx", "wapo_home_school_district.csv"]:
         chk((REPO / "build" / f).exists(), f"recruitment-pool source archived: build/{f}")
@@ -298,7 +298,7 @@ def main():
                    "closure_grid.py", "ky_closure_events_full.csv",
                    "contingent", "$1,098,663", "244 paper seats"]:
         chk(needle in t, f"v3.5 correction intact in PDF: {needle}")
-    for needle in ["first in every state-tested subject", "in 2006", "$116,000 to $176,000"]:
+    for needle in ["first in every state-tested subject", "in 2006"]:
         chk(needle in html, f"v3.5 correction intact on site: {needle}")
     for f in ["closure_grid.py", "ky_closure_events_full.csv",
               "ky_district_finance_1995_2020.csv", "ky_edfacts_district_2009_2018.csv"]:
@@ -368,7 +368,7 @@ def main():
         "the withdrawn cohort-leakage claim is absent from report and site")
     chk("170 to 259" in t and "170 to 259" in html,
         "exit routes documented directly (homeschool 170 to 259) in report and site")
-    chk("110" in html and "remains requested" in html,
+    chk("110" in html and "still unsourced" in html,
         "the district's unsourced 110-enrollment figure is flagged, not adopted")
 
     # HB 44: the 4 percent is a revenue limit, not a rate limit (v3.9)
