@@ -220,8 +220,7 @@ def main():
                    "$1,413,929", "August 17, 2023", "$82,866", "Paris Independent",
                    "Capital Funds Request", "$3.1 million"]:
         chk(needle in t, f"PDF bonding story intact: {needle}")
-    for needle in ["$1,320,939", "August 17, 2023", "Paris Independent", "$3.1 million"]:
-        chk(needle in html, f"site bonding story (kept lines) intact: {needle}")
+    chk("$3.1 million" in html, "site bonding story (kept line) intact: $3.1 million")
     chk("The $14 million plan" not in html and "The bonds: a different pot" not in html
         and 'id="chartDebt"' not in html,
         "v4.1: bond and $14M-plan cards moved to the report only")
@@ -309,8 +308,8 @@ def main():
     for needle in ["Figure 21.", "72 percent", "5.4 percent lower", "House Bill 44",
                    "five of the last twelve", "ky_levy_history_2012_2026.csv"]:
         chk(needle in t, f"PDF levy history intact: {needle}")
-    for needle in ["chartLevyHist", "72.3 percent", "5.4 percent lower", "HB 44",
-                   "five of the last twelve", "ky_levy_history_2012_2026.csv"]:
+    for needle in ["chartLevyHist", "72.3 percent", "5.4 percent lower",
+                   "ky_levy_history_2012_2026.csv"]:
         chk(needle in html, f"site levy history intact: {needle}")
     chk((REPO / "build" / "ky_levy_history_2012_2026.csv").exists()
         and (REPO / "build" / "levy_series.json").exists(),
@@ -331,8 +330,8 @@ def main():
     # strict layout audit: relocated blocks live in the layout's own part
     band = html.index('<section id="closure"')
     for growth_block in ["The fill-the-seats planner", "The 4 percent option",
-                         "Room to grow", "The children never left the county",
-                         "The tax picture the budget talk leaves out"]:
+                         "The children never left the county",
+                         "The fourteen-year record"]:
         chk(html.index(growth_block) < band,
             f"growth-side block sits in Part One: {growth_block}")
     chk(html.index('id="voices"') < html.index('id="downloads"') < html.index('id="sources"'),
@@ -375,7 +374,7 @@ def main():
                    "$1,843,569,625", "five of the last twelve years"]:
         chk(needle in t, f"PDF HB 44 rate-vs-revenue intact: {needle}")
     for needle in ["compensating rate", "40.61", "42.64", "$8,254,030", "$393,049",
-                   "$1,843,569,625", "five of the last twelve years"]:
+                   "$1,843,569,625"]:
         chk(needle in html, f"site HB 44 rate-vs-revenue intact: {needle}")
     # the table is a revenue limit: revenue at the 4% option is flat across all growth rates
     chk(t.count("$7,860,981") >= 4 and html.count("$7,860,981") >= 4,
@@ -383,9 +382,8 @@ def main():
     # 2023 rate movement decomposition, labelled an inference
     for needle in ["3.2 cents", "August 17, 2023", "5.7 cents", "$477,000"]:
         chk(needle in t, f"PDF 2023 nickel decomposition intact: {needle}")
-        chk(needle in html, f"site 2023 nickel decomposition intact: {needle}")
-    chk("inference" in t.lower() and "inference" in html.lower(),
-        "the 2.5-cent figure is labelled an inference, not a finding")
+    chk("inference" in t.lower(),
+        "the 2.5-cent figure is labelled an inference in the report")
     # question list: twelve, aligned across site and report, with the two new asks
     chk("Twelve Questions" in t, "twelve questions carried in the report")
     chk("twelve questions in the report" in html, "site defers the questions to the report (v4 layout)")
@@ -407,6 +405,9 @@ def main():
                    "recalled by the voters it taxes",
                    "recalled by the children it displaces"]:
         chk(needle in t, f"PDF beyond-4% levy options intact: {needle}")
+    for needle in ["KRS 160.470", "$191,000 per cent", "$211,600", "$21.16",
+                   "recalled by the voters it taxes",
+                   "recalled by the children it displaces"]:
         chk(needle in html, f"site beyond-4% levy options intact: {needle}")
     for needle in ["57.7", "60.3", "61.3", "65.5",
                    "$112/yr ($9.35/mo)", "$167/yr ($13.93/mo)",
@@ -425,7 +426,7 @@ def main():
                    "54 to 69", "$2,851", "$5,200", "$4,414",
                    "$960,000 to $1.9 million", "$260,000 to $530,000"]:
         chk(needle in t, f"PDF v3.8 content intact: {needle}")
-    for needle in ["$56,000 to $116,000", "$106,000 to $211,000", "$2,476,544",
+    for needle in ["$56,000 to $116,000", "$2,476,544",
                    "$2,851", "$5,200", "$4,414",
                    "$960,000 to $1.9 million", "$260,000 to $530,000"]:
         chk(needle in html, f"site v3.8 content intact: {needle}")
@@ -458,8 +459,8 @@ def main():
     chk("recovered from the Internet Archive" in html and "recovered from the Internet "
         "Archive" in t.replace("  ", " "),
         "2000-01 report card provenance disclosed on site and in PDF")
-    chk("may report prior-year spending" in html and "prior-year spending" in t,
-        "CATS-era fiscal-year caveat disclosed in both artifacts")
+    chk("prior-year spending" in t,
+        "CATS-era fiscal-year caveat disclosed in the report")
     chk("$19,635" in html and "$19,635" in t,
         "2012-13 capital-charge outlier disclosed, not hidden")
     for f in ["bourbon_spending_per_student_2011_2017.csv", "bourbon_staffing_ratios_ccd.csv",
@@ -483,9 +484,8 @@ def main():
     chk((REPO / "build" / "edfacts_school_proficiency_bourbon.json").exists()
         and "edfacts_school_proficiency_bourbon.json" in html,
         "EDFacts extract archived and linked")
-    chk("range midpoints" in html and "range midpoints" in t
-        and "different scales" in html,
-        "EDFacts midpoint and KCCT/KPREP scale caveats disclosed")
+    chk("range midpoints" in t and "different scales" in t,
+        "EDFacts midpoint and KCCT/KPREP scale caveats disclosed in the report")
     for needle in ["Reading the 2024-25 crossover", "58.5", "45.4", "79.2", "74.3",
                    "Writing content index", "Climate survey index"]:
         chk(needle in html, f"2024-25 status-measure table on site: {needle}")

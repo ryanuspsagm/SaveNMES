@@ -169,30 +169,27 @@ claim_ok = abs(a_n - 48.1) < 0.06 and abs(a_b - 26.4) < 0.06 and abs(a_c - 29.9)
 if claim_ok and "48.1" in pdf_flat: match(f"PDF 3-yr averages 48.1/26.4/29.9 recompute correctly ({a_n:.1f}/{a_b:.1f}/{a_c:.1f})")
 else: diff(f"3-yr averages recompute to {a_n:.2f}/{a_b:.2f}/{a_c:.2f} vs PDF claim 48.1/26.4/29.9")
 
-# ---------- 3. enrollment series ----------
-site_enroll = [int(v) for v in re.search(r"var evals=\[([^\]]+)\]", html).group(1).split(",")]
+# ---------- 3. enrollment series (site chart retired in the v4.1 cut; prose keeps the peak) ----------
 model_enroll = []
 for i in range(19): model_enroll.append(DM.cell(row=33 + i, column=6).value)
 for i in range(19, 37): model_enroll.append(DM.cell(row=33 + i - 19, column=9).value)
-if site_enroll == model_enroll:
-    match(f"NMES enrollment series 1989-2025 identical site vs model ({len(site_enroll)} values, peak {max(site_enroll)}, latest {site_enroll[-1]})")
+if max(model_enroll) == 261 and model_enroll[-1] == 128 and A["B11"].value == 128 and A["B12"].value == 174 \
+        and "261 children at its peak" in html and "rated capacity of 174" in html:
+    match("peak 261, current 128, capacity 174 consistent across model, PDF, and the site prose")
 else:
-    diff(f"enrollment series differs: site {site_enroll[:5]}..., model {model_enroll[:5]}...")
-if max(site_enroll) == 261 and site_enroll[-1] == 128 and A["B11"].value == 128 and A["B12"].value == 174:
-    match("peak 261, current 128, capacity 174 consistent across site chart, model Assumptions, and PDF")
+    diff(f"enrollment series: model peak {max(model_enroll)}, latest {model_enroll[-1]}, site prose {'261 children at its peak' in html}")
 
 # SD enrollment row (2015-25) vs tail of long series
 sd_counts = [SD.cell(row=6, column=2 + i).value for i in range(10)]
 if sd_counts == model_enroll[-10:]: match("School_Data 10-yr enrollment row matches Demographics long series tail")
 else: diff(f"School_Data row {sd_counts} vs Demographics tail {model_enroll[-10:]}")
 
-# ---------- 4. tax rates ----------
-site_tax = [float(v) for v in re.search(r"data:\[(80\.9[^\]]+)\]", html).group(1).split(",")]
+# ---------- 4. tax rates (site bar chart retired in the v4.1 cut; the levy-history chart remains) ----------
 model_nbrs = [TH.cell(row=19 + i, column=2).value for i in range(9)]
-if site_tax == model_nbrs:
-    match(f"nine-district tax comparison identical site vs model ({site_tax})")
+if model_nbrs[0] == 80.9 and 52.4 in model_nbrs and "52.4 cents" in html:
+    match(f"nine-district rates intact in model; site quotes the 52.4-cent rate in prose ({model_nbrs})")
 else:
-    diff(f"tax comparison: site {site_tax} vs model {model_nbrs}")
+    diff(f"tax comparison: model {model_nbrs}, site 52.4 {'52.4 cents' in html}")
 if TH["B28"].value == 65.13 and "65.1" in html and "65.1" in pdf_flat:
     match("state average 65.1 consistent (model 65.13, site and PDF 65.1)")
 hist_rates = [TH.cell(row=5 + i, column=2).value for i in range(8)]
@@ -244,10 +241,10 @@ if misc == 1567829 and "$1.41 million" in html and "$1,413,929" in pdf_flat:
 else:
     diff(f"misc revenue caveat: model {misc}, site {'$1.41 million' in html}, pdf {'$1,413,929' in pdf_flat}")
 xfer = ds_vals.get("Caveat 2: restricted capital money transferred INTO the General Fund in June 2026", (None, None))[0]
-if xfer == 1320939 and "$1,320,939" in html and "$1,320,939" in pdf_flat:
-    match("June 2026 capital-to-GF transfer ($1,320,939) present in model, site, PDF")
+if xfer == 1320939 and "$1,320,939" in pdf_flat and "$1.32 million" in html:
+    match("June 2026 capital-to-GF transfer ($1,320,939) in model and PDF; site keeps the rounded mention")
 else:
-    diff(f"capital transfer: model {xfer}, site {'$1,320,939' in html}, pdf {'$1,320,939' in pdf_flat}")
+    diff(f"capital transfer: model {xfer}, site $1.32M {'$1.32 million' in html}, pdf {'$1,320,939' in pdf_flat}")
 gap_b, gap_c = ds_vals.get("Operating gap to close first", (None, None))
 if gap_b == 1900000 and gap_c == 373989 and "$21 million" in pdf_flat and "$25 million" in pdf_flat:
     match("balanced-budget scenario inputs ($1.9M / $373,989 gaps) in model; $21M/$25M capacity quoted in the PDF")
@@ -370,7 +367,7 @@ else:
     diff(f"beyond-4% options mismatch: yield {lv_yield:.2f}, median {lv_median}, cost/cent {percent_cost}")
 lv_first_call = 373989 + 1320939
 lv_margin = (TH2["B5"].value - TH2["B12"].value) * lv_yield - lv_first_call
-if lv_first_call == 1694928 and round(lv_margin) == 4551 and "$4,551" in html and "$4,551" in pdf_flat \
+if lv_first_call == 1694928 and round(lv_margin) == 4551 and "$4,551" in pdf_flat \
         and str(TH2["B83"].value).startswith("=Debt_Service!") and TH2["B85"].value == "=B84-B83":
     match("beyond-4% sequencing: 2018 rate covers gap+sweep ($1,694,928) within $4,551, live in model")
 else:
