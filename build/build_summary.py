@@ -53,7 +53,7 @@ A(Paragraph(
   "marginal cost. The recoverable pool is measured: 259 registered homeschoolers, roughly 450 to 550 county "
   "children outside the public schools, 131 nonresident students already choosing this district. The model is "
   "proven in-state: Eminence Independent grew 37 percent over the decade Bourbon shrank 13, on differentiation "
-  "and open enrollment. A themed academy at North Middletown, a preschool-to-kindergarten pipeline, "
+  "and open enrollment. A themed academy at North Middletown (arts, technology, or agriculture and outdoor sciences), a preschool-to-kindergarten pipeline, "
   "foundation-funded scholarship promises, and marketing against a measured pool are the plan; filling North "
   "Middletown's 46 open seats alone nets $56,000 to $116,000 a year. <b>Lever two, fixed costs.</b> "
   "Transportation is $2.7 million coded to no school with no routing study ever produced; a ten percent "

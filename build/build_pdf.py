@@ -215,7 +215,7 @@ P("<b>The levers.</b> First, enrollment: each returning student brings the $4,62
   "county children outside the public schools, 131 nonresident students already choosing this district), and "
   "the model is proven in-state: Eminence Independent grew from 733 to 1,006 students (up 37 percent) over "
   "the decade Bourbon shrank 13 percent, on differentiation and open enrollment. A themed academy at North "
-  "Middletown, a preschool-to-kindergarten pipeline, foundation-funded scholarship promises (private dollars, "
+  "Middletown (arts, technology, or agriculture and outdoor sciences), a preschool-to-kindergarten pipeline, foundation-funded scholarship promises (private dollars, "
   "lawfully), and modest marketing against a measured pool are the growth plan, and filling North Middletown's "
   "46 open seats alone nets $56,000 to $116,000 a year. Second, fixed costs: transportation is $2.7 million "
   "coded to no school with no routing study ever produced (a ten percent optimization is about $270,000 a "
