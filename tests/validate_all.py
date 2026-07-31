@@ -48,9 +48,11 @@ def main():
     chk(seq == list(range(1, seq[-1] + 1)), f"figure captions sequential ({seq})")
 
     # meeting details
-    chk("North Middletown Community Center" in html
-        and "North Middletown Community Center" in t,
-        "July 23 meeting at the Community Center in site and PDF")
+    chk("North Middletown Community Center" in t,
+        "July 23 meeting recorded in the report; passed events are off the site")
+    chk("Show up Thursday" not in html and "July 29 &bull;" not in html
+        and "Join every public forum" in html,
+        "Act Now carries future forums, not passed dates")
     chk("meeting set at the school" not in t
         and "at the school</div>" not in html, "no stale meeting location")
 
@@ -146,8 +148,8 @@ def main():
         "site has the Voices section with the story pipeline")
     chk("explicit permission" in html and "never published" in html,
         "Voices section carries the consent and verification promise")
-    chk("bourboncountycitizen.com" in html and "5:00 p.m." in html,
-        "July 29 forum time and Citizen coverage cited")
+    chk("bourboncountycitizen.com" in html,
+        "Citizen forum coverage still cited from the site")
     chk('name:"Lynne"' in html and "859-707" not in html,
         "Lynne's story published by first name, phone number kept private")
 
