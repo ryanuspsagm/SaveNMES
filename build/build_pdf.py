@@ -250,14 +250,16 @@ H2("The choice, and four asks that cost nothing")
 P("Shrink to fit, or grow and thrive. On North Middletown specifically, the asks are modest. <b>One:</b> "
   "keep the school Permanent in the facility plan with its capital needs at lower priority; a plan commits no "
   "money, Priority 2 exists for exactly this, and the Transitional label saves nothing while foreclosing "
-  "state facilities eligibility, major renovation, and replacement. <b>Two:</b> state plainly that near-term "
-  "savings are minimal; if staff are reassigned rather than cut, the closure frees the $58,774 utilities "
-  "line, and the restricted renovation money is capped by enrollment regardless, at roughly a third of "
-  "replacement cost today, a ceiling that rises with every recruited student. <b>Three:</b> give the school "
-  "the four years to the next facility plan for a measured enrollment push, and judge it on results. "
-  "<b>Four:</b> accept the community's help, fundraising and donated services, for the building's critical "
-  "needs. A closed school cannot be recalled by the children it displaces; a growth plan can be measured, "
-  "every year, by everyone.")
+  "state facilities eligibility, major renovation, and replacement. <b>Two:</b> give the school and community "
+  "the four years to the next facility plan for a measured enrollment push, against public targets set with "
+  "the board, and judge it on results. <b>Three:</b> let the school and community raise grant-based and "
+  "private funds, with donated services, for the building's critical needs, at no cost to the district. "
+  "<b>Four:</b> state publicly that the district will work to grow this school, because uncertainty is its "
+  "own enrollment killer and a sentence of commitment gives existing and future families the confidence to "
+  "enroll. The honesty behind these asks is already in the district's books: if staff are reassigned rather "
+  "than cut, a closure frees the $58,774 utilities line, and the restricted renovation money is capped by "
+  "enrollment regardless, a ceiling that rises with every recruited student. A closed school cannot be "
+  "recalled by the children it displaces; a growth plan can be measured, every year, by everyone.")
 A(PageBreak())
 H("Part Two: The Evidence")
 P("The sections that follow are the complete analysis: every source, every method, every correction, "

@@ -105,12 +105,14 @@ A(Paragraph(
   "Shrink to fit, or grow and thrive. On North Middletown specifically: <b>One,</b> keep the school Permanent "
   "in the facility plan with its capital needs at lower priority. A plan commits no money; the Transitional "
   "label saves nothing while foreclosing state facilities eligibility, major renovation, and replacement. "
-  "<b>Two,</b> state plainly that near-term savings are minimal: if staff are reassigned rather than cut, the "
-  "closure frees the $58,774 utilities line, and restricted renovation money is capped by enrollment "
-  "regardless, a ceiling that rises with every student recruited back. <b>Three,</b> give the school the four "
-  "years to the next facility plan for a measured enrollment push, judged on results. <b>Four,</b> accept the "
-  "community's fundraising and donated services for the building's critical needs. A closed school cannot be "
-  "recalled by the children it displaces; a growth plan can be measured, every year, by everyone.", body))
+  "<b>Two,</b> give the school and community the four years to the next facility plan for a measured "
+  "enrollment push, against public targets, judged on results. <b>Three,</b> let the school and community "
+  "raise grant-based and private funds, with donated services, for the building's critical needs. "
+  "<b>Four,</b> state publicly that the district will work to grow this school; uncertainty is its own "
+  "enrollment killer, and a sentence of commitment gives existing and future families the confidence to "
+  "enroll. If staff are reassigned rather than cut, a closure frees the $58,774 utilities line, so there is "
+  "no pot of money these asks would squander. A closed school cannot be recalled by the children it "
+  "displaces; a growth plan can be measured, every year, by everyone.", body))
 A(HRFlowable(width="100%", thickness=0.8, color=LINE, spaceBefore=6, spaceAfter=6))
 A(Paragraph(
   "The full 57-page report, the financial model with every calculation as live formulas, all archived "
