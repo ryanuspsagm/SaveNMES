@@ -346,8 +346,10 @@ def main():
                    "107.5 percent", "Eminence", "149 last fall", "occupational",
                    "Marion County voters", "$5.6 million of remaining", "$613,000"]:
         chk(needle in t, f"PDF v4 decision brief intact: {needle}")
-    chk("12 percent" in t and "24 to 29 percent" in t,
-        "Millersburg leakage published at the verified rate with the upper bound labeled")
+    chk("12 percent" in t and "floor, not the ceiling" in t and "every 10 percent" in t,
+        "Millersburg 12 percent published as the floor with stepped losses")
+    chk("floor, not the ceiling" in html and "10 percent" in html and "$5.6 million" in html,
+        "site leakage card carries the step-up table and the floor framing")
     chk("110" in html and "remains requested" in html,
         "the district's unsourced 110-enrollment figure is flagged, not adopted")
 
