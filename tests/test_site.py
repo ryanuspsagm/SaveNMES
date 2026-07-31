@@ -58,8 +58,8 @@ def main():
         else: ok("no JS console or page errors")
 
         n = pg.evaluate("Object.keys(Chart.instances).length")
-        if n == 12: ok(f"{n} Chart.js charts instantiated")
-        else: bad(f"expected 12 charts, got {n}")
+        if n == 8: ok(f"{n} Chart.js charts instantiated")
+        else: bad(f"expected 8 charts, got {n}")
 
         net = pg.text_content("#rNet").strip()
         verdict = pg.text_content("#rVerdict").strip()

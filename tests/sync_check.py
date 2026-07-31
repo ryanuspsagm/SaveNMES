@@ -307,22 +307,21 @@ for r in range(15, 30):
 if perry and johnson:
     pd_, pe, pf, pc = KC.cell(row=perry, column=4).value, KC.cell(row=perry, column=5).value, KC.cell(row=perry, column=6).value, KC.cell(row=perry, column=3).value
     per_kid = (pd_ * (1 + pf) - pe) / pc
-    if abs(per_kid - 3643) < 2 and "3643" in re.sub(r"[,$]", "", html) and "$3,600" in pdf_flat:
-        match("Perry 2017 per-displaced-student figure ($3,643) recomputes from model inputs; on site chart and in PDF (about $3,600)")
+    if abs(per_kid - 3643) < 2 and "$3,600" in pdf_flat:
+        match("Perry 2017 per-displaced-student figure ($3,643) recomputes from model inputs; quoted in the PDF (about $3,600)")
     else:
-        diff(f"Perry per-kid: model recompute {per_kid:.0f}, site 3643 {'3643' in re.sub(r'[,$]','',html)}, pdf $3,600 {'$3,600' in pdf_flat}")
+        diff(f"Perry per-kid: model recompute {per_kid:.0f}, pdf $3,600 {'$3,600' in pdf_flat}")
 else:
     diff("KY_Closures tab missing Perry/Johnson rows")
 plan_lo = 800000 / A["B11"].value; plan_hi = 1000000 / A["B11"].value
-if plan_lo == 6250 and abs(plan_hi - 7812.5) < 1 and "$6,250 to $7,813" in html and "$6,250 to $7,813" in pdf_flat:
-    match("plan requirement per displaced student ($6,250 to $7,813 = $800K-$1M over 128) consistent model/site/PDF")
+if plan_lo == 6250 and abs(plan_hi - 7812.5) < 1 and "$6,250 to $7,813" in pdf_flat:
+    match("plan requirement per displaced student ($6,250 to $7,813 = $800K-$1M over 128) consistent model/PDF")
 else:
     diff(f"plan per-kid: {plan_lo:.0f}/{plan_hi:.0f}")
-site_ky = re.search(r"chartKYRecord[\s\S]{0,1200}data:\[\[713,4414\],\[0,2050\],\[0,3525\],\[0,3643\],\[0,6935\],\[6250,7813\]\]", html)
-if site_ky:
-    match("site KY-record chart data matches the computed case table exactly")
+if "chartKYRecord" not in html:
+    match("KY-record chart retired to the report (v4.1); case table lives in the model and PDF")
 else:
-    diff("site KY-record chart data drifted from the case table")
+    diff("KY-record chart unexpectedly present on the simplified site")
 if KC["B5"].value == 339 and KC["B6"].value == 72 and KC["B51"].value == 0 and "339 rural" in pdf_flat:
     match("closure universe (339/72) and the zero-precedent cell consistent in model and PDF")
 else:
@@ -330,8 +329,8 @@ else:
 
 # distribution rows (v3.4)
 if (KC["C39"].value, KC["C40"].value, KC["B42"].value, KC["B43"].value) == (1102, 818, 8440, 541) \
-        and "$1,102" in html and "$8,440" in html and "$541" in html and "$818" in pdf_flat:
-    match("distribution stats (median $1,102 / plausible $818 / artifact $8,440 / corrected $541) consistent model/site/PDF")
+        and "$1,102" in pdf_flat and "$8,440" in pdf_flat and "$541" in pdf_flat and "$818" in pdf_flat:
+    match("distribution stats (median $1,102 / plausible $818 / artifact $8,440 / corrected $541) consistent model/PDF")
 else:
     diff(f"distribution rows: {KC['C39'].value}/{KC['C40'].value}/{KC['B42'].value}/{KC['B43'].value}")
 
@@ -380,7 +379,7 @@ else:
 # ---------- 12. v3.8: school costs, breakevens, growth plan ----------
 SCt = wb["School_Costs"]
 ok38 = SCt["B14"].value == 19348 and SCt["B15"].value == "=B14*128" and 19348*128 == 2476544
-ok38 &= "$2,476,544" in html and "$2,476,544" in pdf_flat and "$8,305" in html and "$8,305" in pdf_flat
+ok38 &= "$2,476,544" in html and "$2,476,544" in pdf_flat and "$8,305" in pdf_flat
 rev23 = (11808998, 20381341, 9550068, 2454)
 ok38 &= (SCt["C9"].value, SCt["D9"].value, SCt["E9"].value, SCt["B9"].value) == rev23
 ok38 &= abs(rev23[1]/rev23[3] - 8305.4) < 0.5 and abs(2476544/(rev23[1]/rev23[3]) - 298.2) < 0.5
@@ -445,7 +444,7 @@ else:
 # site text spot checks
 for s, label in [("1st in all 5 reported subjects", "hero fact scores"), ("-$556K to +$552K", "hero fact closure range"),
                  ("$7,829,060", "GF levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),
-                 ("128 students", "enrollment in prose"), ("rated capacity of 174", "capacity prose")]:
+                 ("128-student school", "enrollment in prose"), ("rated capacity of 174", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")
     else: diff(f"site text missing '{s}' ({label})")
 
