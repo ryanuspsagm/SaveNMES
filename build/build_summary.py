@@ -55,7 +55,7 @@ A(Paragraph(
   "proven in-state: Eminence Independent grew 37 percent over the decade Bourbon shrank 13, on differentiation "
   "and open enrollment. A themed academy at North Middletown (arts, technology, or agriculture and outdoor sciences), a preschool-to-kindergarten pipeline, "
   "foundation-funded scholarship promises, and marketing against a measured pool are the plan; filling North "
-  "Middletown's 46 open seats alone nets $56,000 to $116,000 a year. <b>Lever two, fixed costs.</b> "
+  "Middletown's 46 open seats alone nets $56,000 to $116,000 a year, and today's 174 rating is not the ceiling: the 2013-approved plan rated the building at 198. <b>Lever two, fixed costs.</b> "
   "Transportation is $2.7 million coded to no school with no routing study ever produced; a ten percent "
   "optimization is about $270,000 a year. Kentucky's school energy program documented $225 million of "
   "statewide savings. Medicaid billing under the 2019 expansion is a records request away from being sized. "

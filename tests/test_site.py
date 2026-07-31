@@ -102,8 +102,8 @@ def main():
 
         f1 = pg.text_content("#rFill").strip()
         fv = pg.text_content("#rFillVerdict").strip()
-        if f1 == "$55,616" and "174 of 174" in fv and "$14,827" in fv:
-            ok("fill planner defaults $55,616 (v3.8 section debit), full at $14,827")
+        if f1 == "$55,616" and "174 of the 198" in fv and "$14,827" in fv:
+            ok("fill planner defaults $55,616; at the 174 rating within the 2013-rated 198")
         else: bad(f"fill planner defaults: {f1} / {fv}")
         pg.fill("#sSec", "2"); pg.dispatch_event("#sSec", "input")
         if pg.text_content("#rFill").strip() == "$115,616": ok("fill planner high case $115,616 (2 avoided, 1 added)")
@@ -117,11 +117,11 @@ def main():
         pg.fill("#sAdd", "1"); pg.dispatch_event("#sAdd", "input")
         pg.fill("#sSec", "2"); pg.dispatch_event("#sSec", "input")
         pg.fill("#sRez", "40"); pg.dispatch_event("#sRez", "input")
-        pg.fill("#sTr", "20"); pg.dispatch_event("#sTr", "input")
+        pg.fill("#sTr", "40"); pg.dispatch_event("#sTr", "input")
         tval = pg.eval_on_selector("#sTr", "e=>e.value")
-        expect = 6 * 4626 - 46 * 400 + 2 * 60000 - 1 * 60000
-        if tval == "6" and pg.text_content("#rFill").strip() == f"${expect:,}":
-            ok("fill planner clamps at the 46 open seats")
+        expect = 30 * 4626 - 70 * 400 + 2 * 60000 - 1 * 60000
+        if tval == "30" and pg.text_content("#rFill").strip() == f"${expect:,}":
+            ok("fill planner clamps at the 70 seats up to the 2013-rated 198")
         else: bad(f"fill planner clamp: transfers={tval}")
         pg.fill("#sRez", "0"); pg.dispatch_event("#sRez", "input")
         pg.fill("#sTr", "0"); pg.dispatch_event("#sTr", "input")
@@ -135,16 +135,16 @@ def main():
         pg.fill("#sTr", "10"); pg.dispatch_event("#sTr", "input")
         pg.fill("#sRet", "16"); pg.dispatch_event("#sRet", "input")
         expect_ret = (10 + 16) * 4626 - 46 * 400 + 1 * 60000 - 1 * 60000
-        if pg.text_content("#rFill").strip() == f"${expect_ret:,}" and "174 of 174" in pg.text_content("#rFillVerdict"):
+        if pg.text_content("#rFill").strip() == f"${expect_ret:,}" and "174 of the 198" in pg.text_content("#rFillVerdict"):
             ok(f"fill planner returning-students case ${expect_ret:,}")
         else: bad(f"fill planner returns: {pg.text_content('#rFill')}")
         pg.fill("#sRez", "30"); pg.dispatch_event("#sRez", "input")
         pg.fill("#sTr", "16"); pg.dispatch_event("#sTr", "input")
         pg.fill("#sRet", "46"); pg.dispatch_event("#sRet", "input")
         vals = [pg.eval_on_selector(sel, "e=>e.value") for sel in ("#sRet", "#sTr", "#sRez")]
-        expect_prio = 46 * 4626 - 46 * 400 + 1 * 60000 - 1 * 60000
-        if vals == ["46", "0", "0"] and pg.text_content("#rFill").strip() == f"${expect_prio:,}":
-            ok("returning-students slider keeps its value; seats freed from transfers and rezoning")
+        expect_prio = 46 * 4626 - 70 * 400 + 1 * 60000 - 1 * 60000
+        if vals == ["46", "0", "24"] and pg.text_content("#rFill").strip() == f"${expect_prio:,}":
+            ok("returning-students slider keeps its value; seats freed from transfers first")
         else: bad(f"fill planner return priority: ret/tr/rez = {vals}, net {pg.text_content('#rFill')}")
 
         boxes = pg.query_selector_all(".checkrow input[type=checkbox]")
