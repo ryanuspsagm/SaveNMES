@@ -64,9 +64,6 @@ p+p{margin-top:14px}
 .chartbox.tall{height:360px}
 .checkrow{display:flex;flex-wrap:wrap;gap:14px;margin:10px 0 4px;font-size:14px}
 .checkrow label{display:flex;align-items:center;gap:6px;cursor:pointer}
-.checkme{display:inline-block;margin-top:12px;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--mist)}
-.checkme a{color:var(--royal);text-decoration:none;border-bottom:1px dotted var(--royal)}
-.checkme::before{content:"\2713";color:var(--royal);margin-right:6px;font-weight:700}
 .note{font-size:13.5px;color:var(--mist);margin-top:10px}
 .callout{background:#EAF1F9;border-left:5px solid var(--royal);border-radius:6px;padding:18px 20px;margin:20px 0 4px;font-size:16px;color:var(--navy);line-height:1.55}
 .callout b{color:var(--navy)}
@@ -164,7 +161,6 @@ footer a{color:var(--ice)}
 <h3>The General Fund, from the district's own audits</h3>
 <div class="chartbox"><canvas id="chartGF" role="img" aria-label="Bar chart of the operating deficit and fund balance, fiscal 2023 to 2025"></canvas></div>
 <p class="note">What drove it: federal pandemic aid wound down, about $2.95 million a year, attendance-based state funding fell with roughly 248 fewer funded students, and central-office administration rose 44.8 percent in two years, a rise Section 2 of the report decomposes line by line from the district's own budgets: the growth is insurance, statutory fees, retirement payouts and professional services, not administrator salaries.</p>
-<span class="checkme">Check my work: <a href="https://www.education.ky.gov/districts/FinRept/Documents/FY2024-2025%20FA%20Bourbon%20Co%20Rev.pdf">FY2025 audit</a> &middot; <a href="https://www.education.ky.gov/districts/FinRept/Documents/FY2023-2024%20FA%20Bourbon%20Co.pdf">FY2024 audit</a></span>
 </div>
 
 <div class="card">
@@ -175,7 +171,6 @@ footer a{color:var(--ice)}
 <div class="chartbox"><canvas id="chartLeak" role="img" aria-label="Line chart comparing Bourbon County school-age population, flat since 2000, against public school enrollment, which falls after 2019"></canvas></div>
 <p>So where are they? Reconciling the district rosters, the Census, and the state's own non-resident file for 2024-25 against one consistent frame, the answer is <b>about 450 to 550 children, roughly 13 to 15 percent of the county's school-age population, in private school or homeschooling.</b> A decade ago that share was around one in eleven. The ground-truth count reaches most of the way there on its own: <b>259 registered homeschool students</b> in 2022-23, up from 170 in 2018-19, plus roughly 100 at Bourbon Christian Academy and about 60 at St. Mary, which is a floor because it misses families who commute to Lexington. At the state's $4,226 net per student, those children represent about <b>$2.1 to $2.3 million a year</b> in funding that walks past both county districts.</p>
 
-<span class="checkme"><a href="https://data.census.gov/table/DECENNIALDHC2020.P14">Decennial census, children by age (2000, 2010, 2020)</a> &middot; <a href="https://www.census.gov/programs-surveys/saipe.html">Census SAIPE school-age estimates</a> &middot; <a href="https://data.census.gov/table/ACSDT5Y2024.B14003">ACS B14003, school enrollment by type</a> &middot; <a href="https://nces.ed.gov/ccd/">Federal Common Core of Data, fall enrollment</a> &middot; <a href="build/kde_nonresident_students_sy24_25.xlsx">KDE non-resident students, SY2024-25 (archived)</a></span>
 </div>
 
 </div></section>
@@ -213,7 +208,6 @@ footer a{color:var(--ice)}
 </div>
 <p class="note" style="margin-top:14px"><b>A correction I caught in my own math (v3.8):</b> earlier versions of this planner credited sections avoided at the receiving schools but never charged for sections added at NMES. Kentucky's class caps (KRS 157.360: 24 in primary through grade 3, 28 in grade 4, 29 in grade 5) mean 46 added students likely require one new section, possibly two if arrivals lump in the wrong grades, and possibly zero if the rezone is drawn grade-by-grade. The new slider prices each at the same $60,000 General Fund rate as every other position in this analysis, and the default now assumes one. The package falls from the previously published $116,000 to $176,000 to <b>$56,000 to $116,000 a year</b>; across the two section sliders, at this example's student mix, it runs from minus $64,000 (two added, none avoided, an unlikely pair since grade-lumped arrivals also empty whole cohorts at the senders) to $176,000 (none added, two avoided); different student mixes move the band with them. The cost-per-student figure now also carries each added section at $85,000 fully loaded. Same rules for both sides of the argument, even when it costs my own case money.</p>
 <p class="note">Rezoned students already ride district buses about ten miles to the Paris schools today; moving them to the school they live closest to should shorten routes, not lengthen them, an assumption the district can test against its real routing data. Transfers bring the state SEEK base with them, and the district sets its own busing policy for them. Returning homeschool and private-school students generate no state funding today, so every one who enrolls is entirely new money: $4,626 at the base, about $4,226 after supplies. The state's frozen transportation budget reimburses nothing on new miles, which is closure's problem, not this plan's. One more measured flow worth knowing: 10 Bourbon County students are enrolled in Cloverport Independent, 150 miles away, which hosts the statewide virtual academy. That is the virtual competition already collecting this district's SEEK money, and a school with room is the counteroffer.</p>
-<span class="checkme"><a href="https://www.education.ky.gov/districts/enrol/Pages/Nonresident-Student-Policy.aspx">KDE Non-Resident Student report (SY24-25)</a> &middot; <a href="build/kde_nonresident_students_sy24_25.xlsx">archived copy</a> &middot; <a href="https://github.com/washingtonpost/data_home_schooling">Washington Post homeschool records project</a> &middot; <a href="build/wapo_home_school_district.csv">archived copy</a> &middot; <a href="https://data.census.gov/table/ACSDT5Y2023.B14003?g=050XX00US21017">Census B14003, Bourbon County</a> &middot; <a href="NMES_Financial_Model.xlsx">Model, Redistricting tab rows 116-135</a></span>
 </div>
 
 <p class="note" style="margin-top:14px">The revenue upside is already priced on this site: filling North Middletown's 46 open seats nets $56,000 to $116,000 a year after real section costs, every 10 recovered students district-wide add roughly $46,000 of recurring SEEK, and under HB 563 the money follows the child to whichever district wins the family. The same law that makes leakage dangerous makes recruitment profitable. One honest caveat: the district's own June 2026 committee materials state North Middletown's current enrollment at 110, a figure whose source documentation remains requested; the last official count is 128.</p>
@@ -249,7 +243,6 @@ footer a{color:var(--ice)}
 <h3>The fourteen-year record</h3>
 <p>Bourbon County Schools taxes real estate at 52.4 cents per $100, second lowest of nine area districts and roughly 13 cents below the statewide school average. KDE's levied-rate files back to 2012 settle how unusual that is: every neighbor's rate is higher today than fourteen years ago, Bath up 72.3 percent and Scott up 38.9, while Bourbon's is 5.4 percent lower, the only decline in the region, sliding from second highest of the nine to seventh.</p>
 <div class="chartbox tall"><canvas id="chartLevyHist" role="img" aria-label="Line chart of fourteen years of school levy rates for nine area districts, every neighbor rising while Bourbon County ends lower than it began, with a companion view showing percentage changes from plus 72 percent in Bath to minus 5.4 percent in Bourbon"></canvas></div>
-<span class="checkme"><a href="https://revenue.ky.gov/News/Publications/Property%20Tax%20Rate%20Books/2025%20Property%20Tax%20Rate%20Book.pdf">KY Dept. of Revenue 2025 rate book</a> &middot; <a href="https://www.education.ky.gov/districts/SEEK/Pages/Taxes.aspx">KDE Local District Tax Levies files, 2012-13 to 2025-26</a> &middot; <a href="build/ky_levy_history_2012_2026.csv">The full series (CSV, DOR-crosschecked)</a> &middot; <a href="NMES_Financial_Model.xlsx">Model, Tax_History tab rows 56-68</a></span>
 </div>
 
 <h3 style="margin-top:22px">What the recall record actually shows</h3>
@@ -280,7 +273,6 @@ footer a{color:var(--ice)}
 </table>
 <p class="note">Read the 5 percent row. The largest rate the board can levy without exposing itself to a recall petition is <b>40.61 cents, below the 41.0 it levies now</b> &mdash; and it still collects 4 percent more money. That is why a flat or falling rate is not evidence either way, and why it is a mistake to argue about it. It is also why <b>raising the rate 4 percent is a different act entirely</b>: last year's rate times 1.04, against 5 percent assessment growth, raises about 9.2 percent more revenue, and every dollar above the 4 percent ceiling can be petitioned to the ballot. The naive rate overshoots the protected rate by exactly the assessment growth rate, every time.</p>
 
-<span class="checkme"><a href="https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=51320">KRS 160.470</a> &middot; <a href="https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=44210">KRS 132.017, recall</a> &middot; <a href="https://education.ky.gov/districts/FinRept/Pages/Local-District-Tax-Levies.aspx">KDE Local District Tax Levies</a> &middot; <a href="NMES_Financial_Model.xlsx">Model, Tax_History tab</a></span>
 <p class="note" style="margin-top:10px">Three limits, stated so nobody has to find them: new construction revenue sits outside the 4 percent cap, any rate above the compensating rate requires a public hearing, and the table runs on the General Fund levy only. This is a reading of the statutes cited, not legal advice.</p>
 
 <h3 style="margin-top:26px">Beyond the 4 percent: the recallable levy options</h3>
@@ -294,7 +286,6 @@ footer a{color:var(--ice)}
 </table>
 <p class="note">Fine print that belongs with the family numbers: vehicle rates are untouched, the homestead exemption shields about $46,000 of a senior homeowner's value, farmland is assessed at agricultural value, and renters pay only what landlords pass through.</p>
 <p class="note">Restoring the rate this board itself levied in 2018 covers the operating gap and ends the capital-to-General-Fund sweep almost to the dollar, which is what frees the restricted building stream to carry the renovation bonds; the full mechanics are in Sections 6 and 11 of the report. None of it is counted in the growth-plan totals, and none of it is a recommendation of a particular number. The point is narrower: a menu of options exists between cut nothing and close a school, every one prices out larger than the most generous closure estimate, and every one carries a built-in democratic check. <b>A levy above 4 percent can be recalled by the voters it taxes. A closed school cannot be recalled by the children it displaces.</b> This community was offered that veto twice on the facilities nickels and twice declined to use it.</p>
-<span class="checkme"><a href="https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=51320">KRS 160.470</a> &middot; <a href="https://data.census.gov/table/ACSDT5Y2023.B25077?g=050XX00US21017">Census B25077, Bourbon County median home value</a> &middot; <a href="NMES_Financial_Model.xlsx">Model, Tax_History tab rows 70-91</a></span>
 </div>
 </div></section>
 
@@ -357,7 +348,6 @@ footer a{color:var(--ice)}
 <tr><td>Writing</td><td>56</td><td>40</td><td>27</td><td>43</td></tr>
 </table></div>
 <p class="note">Kentucky Summative Assessments, all students; asterisks are state-suppressed small groups. Paris Elementary trails in every reported subject as well (science at two schools is state-suppressed). The historical record runs deeper: NMES posted the county's best official overall rate in 2023-24 (74.5, first by fourteen points) before a small tested cohort dipped in 2024-25 while still finishing first in every reported subject. One reading note on the official index, because the 2024-25 chart line crosses: the state's overall index blends each year's level with the CHANGE from the year before. On every 2024-25 status measure the state computed, NMES led Bourbon Central: the weighted reading and math content indexes (58.5 and 48.7 vs 55.5 and 45.4), every other subject, the climate survey (78.0 vs 76.5), and the safety survey (73.5 vs 72.3). The index crosses only because the change formula subtracts NMES's own 2023-24 spike and credits Bourbon Central's climb off its 50.3. A school is not worse for having been excellent last year; that is the change component working exactly as designed on a small cohort, and the state's own component file, archived below, shows it. All source data archived in this site's repository.</p>
-<span class="checkme"><a href="build/kde_ksa_2024_25.json">KDE 2024-25 extract</a> &middot; <a href="build/kde_scores_history.json">KDE 2012-2025 history extract</a> &middot; <a href="build/kyrc25_acct_bourbon_extract.csv">2024-25 accountability components, Bourbon schools (archived)</a> &middot; <a href="https://www.kyschoolreportcard.com">Kentucky School Report Card</a></span>
 </div>
 
 <div class="card">
@@ -388,7 +378,6 @@ footer a{color:var(--ice)}
 </table></div>
 
 <p class="note">Bold marks each row's leader; the asterisk is a state-suppressed cell. Four series are plotted: the official composite, the KDE reading and math average, a third-party index kept for context, and the federal EDFacts record as an independent cross-check. Definitions, the 2011-12 test change that splits the eras, and the small-school caveats are documented in the report; where the third-party index disagrees with the official record, the official record governs.</p>
-<span class="checkme"><a href="build/kde_scores_history.json">KDE history extract (archived)</a> &middot; <a href="build/edfacts_school_proficiency_bourbon.json">Federal EDFacts extract (archived)</a> &middot; <a href="https://educationdata.urban.org/documentation/schools.html">EDFacts via the Urban Institute API</a> &middot; <a href="https://www.schooldigger.com/go/KY/schools/0054000096/school.aspx">SchoolDigger, NMES year table</a></span>
 </div>
 
 <div class="card">
@@ -403,7 +392,6 @@ footer a{color:var(--ice)}
 </table></div>
 <p>Read that table honestly and two things follow. First, no school on it was mismanaged: the ranking is set entirely by enrollment, and Cane Ridge itself cost 21 percent more per student than Bourbon Central for the same scale reason NMES cost 31 percent more. The cheapest school in the county has always simply been its biggest. Second, the district has already run the closure experiment this table invites. Millersburg's premium over its receiving school was about <b>$166,000 a year in 2000-01 dollars</b>; the district closed it in 2006; and the 30-year closure record in the report (Section 8) shows the district's budget did not measurably bend. NMES's premium over the cheaper receiving school today is <b>$156,000</b>, the same experiment at almost the same number. The state's later files tell the same story in the middle years: KDE's own report-card datasets for 2011-12 through 2016-17, posted on its servers, show NMES's premium widest exactly when the building was emptiest (133 to 177 students), and two federal collections that measured school-level salaries in those years, the Civil Rights Data Collection and the NCES school-finance survey, confirm the pattern independently. The premium is not a property of this school. It is a property of the enrollment assigned to it, in every system that has ever measured it, and the fill plan above is the lever that moves it.</p>
 <p class="note">Provenance: figures as printed on the recovered report cards; the 2012-13 file prints NMES at $19,635, an obvious capital charge in a renovation year, excluded here; the three reporting systems use different definitions, so every comparison is within one system in one year.</p>
-<span class="checkme"><a href="https://www.education.ky.gov/Open-House/data/HistoricalDatasets/LEARNING_ENVIRONMENT_STUDENTS-TEACHERS_16-17.xlsx">KDE Learning Environment files (school-level spending, 2011-12 to 2016-17)</a> &middot; <a href="build/bourbon_spending_per_student_2011_2017.csv">extracted Bourbon rows (archived)</a> &middot; <a href="build/crdc_school_finance_bourbon_2011_2017.csv">federal CRDC school-level salaries (archived)</a> &middot; <a href="build/slfs_bourbon_fy16_fy17.csv">NCES school-level finance survey (archived)</a> &middot; <a href="build/bourbon_staffing_ratios_ccd.csv">CCD staffing ratios 1996-2019 (archived)</a> &middot; <a href="NMES_Financial_Model.xlsx">Model, School_Costs tab</a></span>
 </div>
 
 </div></section>
@@ -456,7 +444,6 @@ footer a{color:var(--ice)}
 <p>Version 3 of this analysis stops publishing a single savings number. Seven inputs decide what a closure nets, and every one of them now comes from a document: the district's published salary schedule, its KDE filings, the class-size caps in KRS 157.360, the federal attendance-zone map, and the exit routes now open under HB 563, homeschooling, and the statewide virtual academy. Run all 2,916 defensible combinations and the net yearly effect of closing NMES falls between <b>losing $556,000 and saving $552,000</b>. The middle half of scenarios lands between a $105,000 loss and a $146,000 gain. The median is a <b>$22,000 saving, under one cent of the district's one-dollar problem</b>, and <b>45 percent of scenarios lose money outright</b>, before $100,000 to $300,000 of one-time transition costs in year one. The plan needs $800,000 to $1,000,000 a year from this closure to carry its $14 million renovation bond; that number sits entirely outside the defensible range.</p>
 <div class="chartbox"><canvas id="chartSpectrum" role="img" aria-label="Floating bar chart showing how each of seven inputs moves the net yearly effect of closure around the central case of 131 thousand dollars"></canvas></div>
 <p class="note">Bars show how far each input alone moves the central case ($69,071). The calculator above carries these same seven levers, one slider each, and ranks whatever you set against this grid. The full grid, every lever, and every source are in the model's Closure_Model tab.</p>
-<span class="checkme"><a href="NMES_Financial_Model.xlsx">Model: Closure_Model tab, v3 sensitivity grid</a> &middot; <a href="Saving_North_Middletown_Elementary.pdf">Report Section 4, Figure 7</a></span>
 </div>
 
 <div class="card">
@@ -492,11 +479,9 @@ footer a{color:var(--ice)}
 </table></div>
 <p>Measured, the avoidable base is exactly the three cases the calculator's first slider carries: staff reassigned, <b>$58,774</b>; mothballed, <b>$227,831</b>; sold, <b>$276,928</b>. Rebuilding the closure grid on these measured lines was the largest correction this analysis has made against its own case: the median saving fell from $91,000 to <b>$21,571</b>, and the share of scenarios that lose money rose from 29 to <b>45 percent</b>. One question to the district would narrow it: which positions would be eliminated, and which reassigned?</p>
 <p class="note">The ledger settles two of the seven inputs; the rest are decisions, not accounting, which is why the range is honest about being wide.</p>
-<span class="checkme"><a href="build/cost_by_org_fy2026_summary.csv">District Cost by ORG summary (archived)</a> &middot; <a href="build/working_budget_fy2026_location090.csv">Working budget, location 090, by program (archived)</a> &middot; <a href="build/school_council_allocation_2026_27.pdf">School Council staffing allocation 2026-27</a> &middot; <a href="NMES_Financial_Model.xlsx">Model, Closure_Model and School_Costs tabs</a></span>
 </div>
 
 </div>
-<span class="checkme">Every formula here matches the downloadable financial model.</span>
 </div></section>
 
 <section id="choice" class="partband"><div class="wrap">

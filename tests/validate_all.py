@@ -267,9 +267,10 @@ def main():
                    "KRS 159.160", "$4,226", "St. Mary"]:
         chk(needle in t, f"PDF recruitment pool intact: {needle}")
     for needle in ["sRet", "259 registered homeschool", "54 of them from Fayette County",
-                   "kde_nonresident_students_sy24_25.xlsx", "wapo_home_school_district.csv",
                    "Cloverport", "$4,226", "one in three"]:
         chk(needle in html, f"site recruitment pool intact: {needle}")
+    for f in ["kde_nonresident_students_sy24_25.xlsx", "wapo_home_school_district.csv"]:
+        chk((REPO / "build" / f).exists(), f"recruitment-pool source archived: build/{f}")
     chk("reports/Saving_NMES_v3.2_2026-07-26.pdf" in html
         and (REPO / "reports" / "Saving_NMES_v3.2_2026-07-26.pdf").exists(),
         "v3.2 archived in reports/ and linked from the version history")
@@ -310,8 +311,7 @@ def main():
     for needle in ["Figure 21.", "72 percent", "5.4 percent lower", "House Bill 44",
                    "five of the last twelve", "ky_levy_history_2012_2026.csv"]:
         chk(needle in t, f"PDF levy history intact: {needle}")
-    for needle in ["chartLevyHist", "72.3 percent", "5.4 percent lower",
-                   "ky_levy_history_2012_2026.csv"]:
+    for needle in ["chartLevyHist", "72.3 percent", "5.4 percent lower"]:
         chk(needle in html, f"site levy history intact: {needle}")
     chk((REPO / "build" / "ky_levy_history_2012_2026.csv").exists()
         and (REPO / "build" / "levy_series.json").exists(),
@@ -479,13 +479,13 @@ def main():
     chk('id="tgSD" checked' in html,
         "SchoolDigger toggle defaults to checked")
     chk((REPO / "build" / "kyrc25_acct_bourbon_extract.csv").exists()
-        and "kyrc25_acct_bourbon_extract.csv" in html,
-        "2024-25 accountability component extract archived and linked")
+        ,
+        "2024-25 accountability component extract archived")
     chk('id="tgEF" checked' in html and "federal EDFacts" in html and "EDFacts" in t,
         "federal EDFacts series on site (default on) and referenced in PDF")
     chk((REPO / "build" / "edfacts_school_proficiency_bourbon.json").exists()
-        and "edfacts_school_proficiency_bourbon.json" in html,
-        "EDFacts extract archived and linked")
+        ,
+        "EDFacts extract archived")
     chk("range midpoints" in t and "different scales" in t,
         "EDFacts midpoint and KCCT/KPREP scale caveats disclosed in the report")
     for needle in ["Reading the 2024-25 crossover", "58.5", "45.4", "79.2", "74.3",
