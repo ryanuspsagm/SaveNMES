@@ -109,6 +109,17 @@ input[type=range]{width:100%;accent-color:var(--royal)}
 .alt td:last-child{white-space:nowrap;font-weight:600;color:var(--navy)}
 .totalstrip{background:var(--royal);color:var(--chalk);font-family:var(--serif);font-size:19px;padding:11px 16px;border-radius:6px;margin-top:12px;text-align:center}
 
+/* Range strip (nontechnical closure range) */
+.range-wrap{margin:16px 0 6px}
+.range-bar{position:relative;height:20px;border-radius:10px;overflow:hidden;background:linear-gradient(to right,#C9857F 0%,#EAD5D2 53%,#D6E4D4 56%,#8FB58C 100%)}
+.range-bar .zero{position:absolute;top:0;bottom:0;width:2px;background:#1F3864;opacity:.5}
+.range-bar .med{position:absolute;top:2px;bottom:2px;width:8px;margin-left:-4px;background:#1F3864;border-radius:3px}
+.range-labs{display:flex;justify-content:space-between;gap:10px;font-size:13px;margin-top:8px;color:var(--slate)}
+.range-labs div{flex:1}
+.range-labs div:nth-child(2){text-align:center}
+.range-labs div:last-child{text-align:right}
+.range-labs b{color:var(--navy)}
+
 /* Part dividers */
 .partband{background:#1F3864;color:#fff;padding:18px 0}
 .partband .kicker{color:#F5C242}
@@ -274,13 +285,13 @@ footer a{color:var(--ice)}
 <div class="card">
 <h3>What leaving families cost</h3>
 <p class="note">Every exit is free to the family and funded for the district that wins the child. The losses step up with every 10 percent who leave, at the $4,626 base plus $500 of typical add-ons, and they repeat every year.</p>
-<table class="alt">
+<div style="overflow-x:auto"><table class="alt">
 <tr><th>Share who leave</th><th>Students (of 128)</th><th>Lost per year</th><th>Lost through grade 12</th></tr>
 <tr><td>10 percent</td><td>13</td><td>about $67,000</td><td>about $650,000</td></tr>
 <tr><td>20 percent</td><td>26</td><td>about $133,000</td><td>about $1.3 million</td></tr>
 <tr><td>30 percent</td><td>38</td><td>about $195,000</td><td>about $1.9 million</td></tr>
 <tr><td>50 percent</td><td>64</td><td>about $328,000</td><td>about $3.2 million</td></tr>
-</table>
+</table></div>
 <p class="note">The current 128 students carry $5.6 to $7.4 million of remaining state funding through grade 12. A "transitional" label by itself pushes families out: nobody enrolls a kindergartner in a school marked for closing.</p>
 </div>
 </div></section>
@@ -344,10 +355,17 @@ footer a{color:var(--ice)}
 </div>
 
 <div class="card">
-<h3>The honest range: all 5,832 scenarios at once</h3>
-<p>Nobody knows exactly how a closure plays out. So we priced every combination of the seven levers: <b>5,832 scenarios</b>. The median result <b>loses $21,971 a year</b>. <b>55 percent lose money.</b> The range runs from losing $591,545 to saving $488,631. The middle half sits between losing $148,790 and saving $102,067. Every input traces to a district document. One script in the repository reproduces the whole grid.</p>
-<div class="chartbox"><canvas id="chartSpectrum" role="img" aria-label="Floating bar chart showing how each of seven inputs moves the yearly net effect of closure around the central case of 55 thousand dollars"></canvas></div>
-<p class="note">Bars show how far each lever alone moves the central case ($54,539). Families leaving is the biggest lever by far, and it is the one the district's own response never prices.</p>
+<h3>What closing could really save: a range, not one number</h3>
+<p>Nobody knows exactly how a closure plays out. So we priced it every reasonable way, 5,832 ways in all, with the district's own numbers. The honest answer runs from losing $591,545 to saving $488,631 a year:</p>
+<div class="range-wrap" role="img" aria-label="Closing NMES: the worst case loses $591,545 a year, the middle result loses $21,971 a year, and the best case saves $488,631 a year. More than half of all outcomes lose money.">
+<div class="range-bar"><i class="zero" style="left:54.5%"></i><i class="med" style="left:52.6%"></i></div>
+<div class="range-labs">
+<div><b>Worst case</b><br>loses $591,545 a year</div>
+<div><b>Middle result</b><br>loses $21,971 a year</div>
+<div><b>Best case</b><br>saves $488,631 a year</div>
+</div>
+</div>
+<p class="note">More than half of the outcomes lose money. The biggest unknown is how many families would leave, and that is the one cost the district's own plan never prices. Every input traces to a district document. One script in the repository reproduces the whole grid.</p>
 </div>
 
 <div class="card">
@@ -401,14 +419,12 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>Lever 2: Cut fixed costs district-wide, where the real money is</h3>
-<table class="alt">
-<tr><th>Lever</th><th>Evidence</th><th>Scale for Bourbon</th></tr>
-<tr><td><b>Energy management</b></td><td>Kentucky's school energy program documented $225 million of statewide savings; a 10-20 percent yield is standard</td><td>Low six figures a year</td></tr>
-<tr><td><b>Bus route optimization</b></td><td>Transportation runs $2.7 million coded to no school; no routing study has ever been produced</td><td>About $270,000 a year at 10 percent</td></tr>
-<tr><td><b>Admin restructure</b></td><td>Central office spending rose 42 percent in two years on the district's own audit table</td><td>Part of the $960K-$1.9M menu</td></tr>
-<tr><td><b>Medicaid billing</b></td><td>Kentucky lets districts bill for all Medicaid-enrolled students, not just IEPs; the district concedes an energy review is already underway</td><td>Commonly six figures unclaimed</td></tr>
-</table>
-<p class="note">Combined range: <b>$960,000 to $1.9 million a year</b>, recurring, without closing anything or cutting a single teacher.</p>
+<p><b>Smarter energy use.</b> Kentucky's school energy program has saved districts $225 million statewide. Worth low six figures a year here, and the district concedes an energy review is already underway.</p>
+<p><b>Smarter bus routes.</b> Busing runs $2.7 million a year, coded to no school, and no routing study has ever been produced. A 10 percent trim is about $270,000 a year.</p>
+<p><b>A leaner central office.</b> Spending rose 42 percent in two years on the district's own audit table.</p>
+<p><b>Medicaid billing.</b> Kentucky lets schools bill for all Medicaid-enrolled students, not just those with IEPs. Districts often leave six figures unclaimed.</p>
+<div class="totalstrip">All four together, overlap removed: $960,000 to $1.9 million a year, counted once</div>
+<p class="note">These four are parts of one total, not additions on top of it. The growth plan counts the $960,000 to $1.9 million once. Nothing here closes a school or cuts a teacher.</p>
 </div>
 
 <div class="card">
@@ -780,15 +796,6 @@ plugins:{legend:{position:'bottom',labels:{boxWidth:18,font:{size:10}}},
 tooltip:{callbacks:{label:function(c){var raw=c.datasetIndex===0?EMD[c.dataIndex]:BBD[c.dataIndex];
 return c.dataset.label+': '+c.parsed.y+' ('+raw.toLocaleString('en-US')+' students)'}}}},
 scales:{y:{min:80,max:145,grid:{color:'#E3E8F0'},title:{display:true,text:'enrollment index, 2014 = 100',font:{size:10}}}}}});
-
-/* Tornado: one-way swings around the central case ($54,539) */
-new Chart(document.getElementById('chartSpectrum'),{type:'bar',
-data:{labels:['Families leaving (0 to 50%)','Fixed positions (all kept to all cut)','Added busing ($190K to $20K)','Teachers cut (0 to 3)','Property loss ($95K to $0)','Building costs stopped (50 to 100%)','Add-ons per leaver ($1,000 to $0)'],
-datasets:[{label:'Range of net yearly effect ($K)',data:[[-140.2,187.8],[-54.5,163.6],[-72.5,97.5],[-54.4,109.0],[7.0,102.0],[27.8,101.3],[41.5,67.5]],backgroundColor:ICE,borderColor:ROYAL,borderWidth:1}]},
-options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
-plugins:{legend:{display:false},
-tooltip:{callbacks:{label:function(c){return '$'+c.raw[0]+'K to $'+c.raw[1]+'K around the $54.5K central case'}}}},
-scales:{x:{min:-160,max:200,grid:{color:'#E3E8F0'},ticks:{callback:function(v){return '$'+v+'K'}}},y:{ticks:{font:{size:10}}}}}});
 
 /* Closure calculator: the published 5,832-scenario grid, enumerated exactly
    as in build/closure_grid.py, so the rank readout is against the real grid. */
