@@ -436,11 +436,14 @@ if fills[0]-0 == 55616+400*0 - 0 and "$56,000 to $116,000" in pdf_flat:
 else:
     diff("fill package correction incomplete")
 
-# site enrollment-cost curve: (17,903 x 128 + 700 x added) / N, anchored on the KYRC25 file
-if "17903*128" in html and "(N-128)*700" in html and "chartCurve" in html:
-    match("site cost-per-student curve anchored on KYRC25 $17,903 at 128 with $700 marginal cost")
+# site enrollment-cost curve: KYRC25 anchor + the growth calculator's full central
+# marginal stack ($700 supplies + $500 busing, teacher per 22 past the absorbable
+# seats at $49,150, support hire per 75 at $28,500) - same constants as growth_grid
+if ("17903*128" in html and "(N-128)*(700+500)" in html and "49150" in html
+        and "28500" in html and "chartCurve" in html):
+    match("site cost-per-student curve counts the full marginal stack (supplies, busing, teachers, staff) at growth-grid central settings")
 else:
-    diff("site cost curve missing or off-anchor")
+    diff("site cost curve missing the full marginal stack")
 
 # ---------- 13. federal EDFacts series (v3.8 amendment) ----------
 ef_arch = json.load(open(f"{REPO}/build/edfacts_school_proficiency_bourbon.json"))

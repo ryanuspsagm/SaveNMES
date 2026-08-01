@@ -241,10 +241,10 @@ footer a{color:var(--ice)}
 <p class="note">Two reporting eras, so compare within an era, not across the gap: 2012 to 2017 is the state's school-level spending report; 2024 and 2025 are the state's total-expenditure files, a broader measure. The 2013 NMES point includes a one-time renovation charge. The state did not publish comparable school files for the middle years; the full 25-year record is in the report. In every era the pattern is the same: NMES runs a modest premium for its size, and on the newest file it sits <b>below the Kentucky elementary average</b>.</p>
 </div>
 <div class="card">
-<h3>More students, lower cost per student</h3>
-<p>Most of what NMES costs is the building and its fixed staff. Those cost the same whether 110 kids walk in or 200. Each added student costs only about $700 more. So the cost per student falls fast as the school fills:</p>
-<div class="chartbox"><canvas id="chartCurve" role="img" aria-label="Line chart: NMES cost per student falls from about $20,700 at 110 students to $17,903 at 128 today and about $11,800 at the 198-seat rating"></canvas></div>
-<p class="note">Basis: the 2024-25 state file ($17,903 per student at 128 students) plus about $700 for each added student. At 160 students the cost is about $14,500. At the 198-seat rating it is about $11,800, cheaper than every school in the county today. Shrinking runs the same math backward. The 25-year cost record is in the report.</p>
+<h3>More students, lower cost per student, with every new cost counted</h3>
+<p>Most of what NMES costs is the building and its fixed staff. Those cost the same whether 110 kids walk in or 200. Each added student brings real new costs, and this curve counts all of them: $700 of supplies and other costs, $500 of busing, a new teacher ($49,150) for every 22 added students once the roughly 40 open classroom seats fill, and a support hire ($28,500) for every 75. The cost per student still falls fast:</p>
+<div class="chartbox"><canvas id="chartCurve" role="img" aria-label="Line chart: NMES cost per student falls from about $20,600 at 110 students to $17,903 at 128 today and about $12,600 at the 198-seat rating, with small steps where new teachers and staff are hired"></canvas></div>
+<p class="note">Basis: the 2024-25 state file ($17,903 per student at 128 students) plus the same central costs as the growth calculator below: supplies, busing, teachers, and support staff, hired as enrollment triggers them (the small upward steps on the curve are those hires). At 160 students the cost is about $14,600. At the 198-seat rating, even after two new teachers and a support hire, it is about $12,600, cheaper than every school in the county today. Shrinking runs the same math backward. The 25-year cost record is in the report.</p>
 </div>
 </details>
 </div></section>
@@ -837,10 +837,19 @@ scales:{y:{grid:{color:'#E3E8F0'},ticks:{callback:function(v){return '$'+(v/1000
 x:{ticks:{font:{size:9},maxTicksLimit:14}}}}});
 })();
 
-/* Cost per student vs enrollment: fixed base spread over more kids */
+/* Cost per student vs enrollment: fixed base spread over more kids.
+   Full marginal stack at the growth calculator's central settings:
+   $700 supplies + $500 busing per student, a $49,150 teacher per 22
+   added beyond the ~40 absorbable seats, a $28,500 support hire per 75
+   added (both measured from the 110 base, matching build/growth_grid.py). */
 (function(){
 var pts=[],labels=[];
-for(var N=110;N<=200;N+=2){labels.push(N);pts.push(Math.round((17903*128+(N-128)*700)/N))}
+function cost(N){
+var teachers=Math.floor(Math.max(0,(N-110)-40)/22);
+var staff=Math.floor((N-110)/75);
+return 17903*128+(N-128)*(700+500)+teachers*49150+staff*28500;
+}
+for(var N=110;N<=200;N+=2){labels.push(N);pts.push(Math.round(cost(N)/N))}
 new Chart(document.getElementById('chartCurve'),{type:'line',
 data:{labels:labels,datasets:[{label:'Cost per student at that enrollment',data:pts,
 borderColor:NAVY,backgroundColor:'transparent',borderWidth:3,pointRadius:0,tension:0.2}]},
