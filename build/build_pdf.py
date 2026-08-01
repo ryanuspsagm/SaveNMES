@@ -1546,7 +1546,8 @@ P("Bourbon County Schools has a structural funding problem: spending has outrun 
   "service, which supports about $5.4 million of bonds at the same 4.5 percent, 20-year basis this report applies "
   "to every other bonding claim. With the sweep ended, the roughly $17.6 million of restricted bonding capacity "
   "already sitting unused comes free as well: teachers paid more, every school open, and about $23 million of "
-  "building capacity for new schools and renovations.")
+  "building capacity for new schools and renovations. At the levers' top ends the same chain runs about $3.7 "
+  "million ahead, funding a 10 percent certified raise and about $52 million of building capacity.")
 
 H2("The tax question, faced squarely")
 P("The rate history strengthens rather than weakens the community's hand. Bourbon County Schools levies 52.4 "

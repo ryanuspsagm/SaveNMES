@@ -583,6 +583,15 @@ def main():
         chk(needle in html, f"transformative surplus claim on the site: {needle}")
     chk("5 percent raise for every certified teacher" in t and "$23 million" in t,
         "transformative surplus claim in the report")
+    chk("10 percent raise" in html and "$52 million" in html
+        and "10 percent certified raise" in t and "$52 million" in t,
+        "top-end claim (10 percent raise, $52 million) on site and in report")
+    for claim, section in [("$23 million of building capacity", 'id="grow"'),
+                           ("LOSES $21,971", 'id="model"'),
+                           ("$4.6 million by grade 12", 'id="risks"')]:
+        chk(html.index(claim) > html.index(section)
+            and html.index(claim) < html.index("<details", html.index(section)),
+        f"strongest claim rides the always-visible header: {claim}")
     chk("$1.4 to $2.3 million" in t,
         "alternatives raw sums intact in the report (Medicaid removed; site quote retired)")
 

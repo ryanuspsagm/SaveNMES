@@ -463,6 +463,16 @@ if (abs(surplus - 921393) < 2 and abs(raise_cost - 507270) < 2 and abs(bonds - 5
     match("transformative check: $921K surplus funds the 5% certified raise ($507K on the $10.0M GF payroll) plus $5.4M new bonds; with the freed $17.6M, about $23M of building capacity (site+PDF)")
 else:
     diff(f"transformative check mismatch: surplus {surplus:.0f}, raise {raise_cost:.0f}, bonds {bonds:.0f}, strings on site: {('$23 million' in html)}")
+# top end: levers high + full restore -> 10% raise + ~$52M of building capacity
+surplus_hi = 3320000 + (425000 + 450000 + round(2913654*0.10) + 150000) + 1699479 - 2648086
+raise10 = 10000388 * 0.10 * 1.0145
+bonds_hi = (surplus_hi - raise10) * (1 - 1.045 ** -20) / 0.045
+if (abs(surplus_hi - 3687758) < 2 and abs(bonds_hi - 34773000) < 2000
+        and "10 percent raise" in html and "$52 million" in html
+        and "10 percent certified raise" in pdf_flat and "$52 million" in pdf_flat):
+    match("top-end transformative check: $3.69M surplus funds the 10% raise ($1.01M) plus about $35M of new bonds; roughly $52M of building capacity with the freed stream (site+PDF)")
+else:
+    diff(f"top-end check mismatch: surplus {surplus_hi:.0f}, bonds {bonds_hi:.0f}, site $52M: {('$52 million' in html)}")
 fills = (16*4626-46*400, 55616+60000)
 if fills[0]-0 == 55616+400*0 - 0 and "$56,000 to $116,000" in pdf_flat:
     match("fill package $56,000-$116,000 in the PDF; the site carries the live planner (prose quote retired in v4.2)")
