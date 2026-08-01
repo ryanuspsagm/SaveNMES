@@ -108,14 +108,16 @@ Banded figures:
    classified lines ($20,000-$37,000), scaling from the first student; busing
    $0-$1,000 per recruited student; marginal cost $400-$1,000 per student (measured
    student-scaling spend: $331).
-   RESULTS (v4.3: 25-seat headroom, teachers = floor(max(0, gain-25)/ratio)):
-   6,561 scenarios | median +$118,650/yr | ZERO negative | range +$26,260 to
-   +$296,904 | full-lever median +$142,717, ceiling +$386,904. Site default is the
-   median-rank combo (target 180, 1 per 25 past the seats, $49,150 teacher, 1 per 50
-   support at $37,000, $1,000 bus, $700 cps) = $118,670, rank 50.1%.
-   COMPARISON LINE: the median growth scenario GAINS $118,650 while the median
-   closure scenario LOSES $21,971 - a $140,621/yr swing between the two roads;
-   growth pays in every scenario while 55 percent of closure scenarios lose money.
+   RESULTS (v4.4: 25-seat headroom + selectable hiring pace 14/16/24, teachers =
+   floor(max(0, gain-25)/pace)): 6,561 scenarios | median +$102,780/yr | 17
+   negative (0.26%) | range -$26,992 to +$296,904 | full-lever median +$125,150,
+   ceiling +$386,904. Growth pays in 99.7 percent of scenarios. Site default is
+   the EXACT median combo (target 140, historical 1-per-16 pace, $49,150 teacher,
+   1 per 50 support at $37,000, $500 bus, $700 cps; no hires trigger below 153).
+   COMPARISON LINE: the median growth scenario GAINS $102,780 while the median
+   closure scenario LOSES $21,971 - a $124,751/yr swing between the two roads;
+   growth pays in 99.7 percent of its scenarios while 55 percent of closure
+   scenarios lose money.
 
 PART TWO - THE DISTRICT NEEDS GROWTH, NOT CLOSURES (district-wide)
 1. Money problem: $2.65M gap, reserves -$1.1M/yr, aid cliff + 248 fewer funded
@@ -152,6 +154,20 @@ a. Growth calc teacher trigger, three eras. v4.2 draft: ~40-seat absorption cred
    every scenario is positive (floor +$26,260); the zero-negative claim RETURNS,
    now resting on the district's own capacity standard, applied the same way the
    district charges classrooms at the receiving schools in the closure case.
+   v4.4 (2026-08-01, at the user's direction: "make the teacher ratio a selectable
+   lever with the median case set to historical ratio when enrollment was greater
+   than 200"): hiring-pace lever 14/16/24, all measured. 14 = today's 128/9.41
+   NCES FTE; 16 = the median students-per-teacher ratio in the eight CCD years
+   NMES ran over 200 (1996-2008; archived build/bourbon_staffing_ratios_ccd.csv;
+   the 1998-2000 files carry an FTE glitch, and the median is robust to it);
+   24 = the district's own K-3 cap. Median $118,650 -> $102,780; the
+   zero-negative claim is withdrawn AGAIN (17 scenarios, 0.26%, lose; floor
+   -$26,992) because hiring at today's richer staffing pace can outrun revenue
+   at maximum costs. Published claim: pays in 99.7 percent.
+f. Seat planner RETIRED from the site in v4.4 (user: duplicative of the growth
+   calculator). The $56K-$116K fill package stays in the PDF (Section 9) and the
+   model's Redistricting tab; the report's two pointers to the site planner now
+   point at the Redistricting tab.
 b. Calculator base = 110 (district's own figure, still flagged unsourced); ceiling 200
    on the slider with the 198 note (2013 state-approved rating).
 c. Property-loss lever priced $0-95K pending the PVA records response.

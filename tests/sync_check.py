@@ -52,14 +52,15 @@ if round(central) == 54539 and round(site_default) == -21790 and "-$21,790" in h
     match("model central case $54,539; site calculator opens at the median scenario (-$21,790, within $181 of the grid median)")
 else:
     diff(f"closure defaults: model central {central:.0f}, site median-scenario {site_default:.0f} shown: {'-$21,790' in html}")
-# growth calculator default: 70 added past base, 25-seat headroom (Appendix B caps),
-# 1 teacher per 25 beyond at $49,150, 1 support per 50 at $37,000, $1,000 bus, $700 cps
-growth_default = 70*(4626-700) - ((70-25)//25)*49150 - (70//50)*37000 - 1000*70
-if (growth_default == 118670 and "$118,670" in html and "$118,650" in html
+# growth calculator default: 30 added past base, 25-seat headroom (Appendix B caps),
+# historical 1-per-16 hiring pace (no hire triggers), 1 support per 50 (none triggers),
+# $500 bus, $700 cps -> the exact grid median
+growth_default = 30*(4626-700) - ((30-25)//16)*49150 - (30//50)*37000 - 500*30
+if (growth_default == 102780 and "$102,780" in html and "RATV=[14,16,24]" in html
         and "Math.max(0,gain-25)/ratio" in html):
-    match("growth calculator opens at the median scenario ($118,670, rank 50.1% of the 25-seat-headroom grid, median $118,650) and the site JS carries the headroom")
+    match("growth calculator opens at the exact grid median ($102,780) with the selectable hiring-pace lever (14 today / 16 historical over-200 / 24 district cap) and the 25-seat headroom in the site JS")
 else:
-    diff(f"growth default mismatch: {growth_default}, shown: {'$118,670' in html}, headroom JS: {'Math.max(0,gain-25)/ratio' in html}")
+    diff(f"growth default mismatch: {growth_default}, shown: {'$102,780' in html}, RATV: {'RATV=[14,16,24]' in html}, headroom JS: {'Math.max(0,gain-25)/ratio' in html}")
 if site_capv and [int(site_capv.group(i)) for i in (1, 2, 3)] == [CM["B39"].value, CM["C39"].value, CM["D39"].value] == [53519, 80279, 127039]:
     match("capture lever (53,519 / 80,279 / 127,039 = district worksheet + insurance) identical site JS and model")
 else:
@@ -300,10 +301,10 @@ else:
 
 # ---------- 8. recruitment pool (v3.2): fill planner lever, model, PDF ----------
 RD = wb["Redistricting"]
-if re.search(r"net=\(t\+h\)\*4626-\(r\+t\+h\)\*400\+s\*60000-a\*60000", html):
-    match("fill planner JS v3.8: (t+h)*4626-(r+t+h)*400+s*60000-a*60000 (NMES section debit live)")
+if not re.search(r"net=\(t\+h\)\*4626", html) and 'id="sRez"' not in html:
+    match("seat planner retired from the site in v4.4 (duplicative of the growth calculator); the fill package lives in the PDF and the Redistricting tab")
 else:
-    diff("fill planner JS v3.8 formula with NMES section debit not found")
+    diff("seat planner still present on the site after retirement")
 hs = (RD["B117"].value, RD["B118"].value)
 seek46 = 46 * A["B6"].value
 if hs == (236, 23) and "259 registered homeschool" in html and "236 registered homeschool" in pdf_flat:
@@ -451,10 +452,10 @@ else:
 # $28,500) - same constants and headroom as growth_grid
 if ("17903*128" in html and "(N-128)*(700+500)" in html and "49150" in html
         and "28500" in html and "chartCurve" in html
-        and "Math.max(0,gain-25)/22" in html):
-    match("site cost-per-student curve counts the full marginal stack past the 25-seat headroom at growth-grid central settings")
+        and "Math.max(0,gain-25)/16" in html):
+    match("site cost-per-student curve counts the full marginal stack past the 25-seat headroom at the historical 1-per-16 hiring pace")
 else:
-    diff("site cost curve missing the full marginal stack or the 25-seat headroom")
+    diff("site cost curve missing the full marginal stack, the 25-seat headroom, or the historical pace")
 
 # ---------- 13. federal EDFacts series (v3.8 amendment) ----------
 ef_arch = json.load(open(f"{REPO}/build/edfacts_school_proficiency_bourbon.json"))

@@ -112,27 +112,29 @@ def main():
         # --- Growth calculator ---
         gro = pg.text_content("#rGro").strip()
         gverd = pg.text_content("#rGroVerdict").strip()
-        if gro == "$118,670" and "70 added students" in gverd and "1 new teacher" in gverd and "1 support hire" in gverd:
-            ok("growth default is the median scenario: $118,670 at target 180 (grid median $118,650, rank 50.1%)")
+        if gro == "$102,780" and "30 added students" in gverd and "no new teachers" in gverd:
+            ok("growth default is the exact median scenario: $102,780 at target 140, historical 1-per-16 pace")
         else: bad(f"growth defaults: {gro} / {gverd}")
-        pg.fill("#sGro", "120"); pg.dispatch_event("#sGro", "input")
+        pg.fill("#sGro", "200"); pg.dispatch_event("#sGro", "input")
+        pg.fill("#sRat", "0"); pg.dispatch_event("#sRat", "input")
+        pg.fill("#sTc", "56583"); pg.dispatch_event("#sTc", "input")
         pg.fill("#sSp", "2"); pg.dispatch_event("#sSp", "input")
         pg.fill("#sGb", "1000"); pg.dispatch_event("#sGb", "input")
         pg.fill("#sCps", "1000"); pg.dispatch_event("#sCps", "input")
-        if pg.text_content("#rGro").strip() == "$26,260":
-            ok("growth grid floor $26,260 (10 students at max costs; grid-wide floor, all scenarios positive)")
+        if pg.text_content("#rGro").strip() == "-$26,992":
+            ok("growth grid floor -$26,992 (90 added, teacher per 14 at top salary, every cost maxed)")
         else: bad(f"growth floor: {pg.text_content('#rGro')}")
         pg.fill("#sGro", "153"); pg.dispatch_event("#sGro", "input")
-        pg.fill("#sTc", "56583"); pg.dispatch_event("#sTc", "input")
+        pg.fill("#sRat", "2"); pg.dispatch_event("#sRat", "input")
         if "no new teachers" in pg.text_content("#rGroVerdict"):
-            ok("headroom honored: 43 added students (to 153) hire no teacher")
+            ok("headroom honored: 43 added students (to 153) hire no teacher at the district-cap pace")
         else: bad(f"headroom verdict: {pg.text_content('#rGroVerdict')[:70]}")
         pg.fill("#sGro", "156"); pg.dispatch_event("#sGro", "input")
-        pg.fill("#sRat", "20"); pg.dispatch_event("#sRat", "input")
+        pg.fill("#sRat", "0"); pg.dispatch_event("#sRat", "input")
         if "1 new teacher" in pg.text_content("#rGroVerdict"):
-            ok("first hire lands at 21 students past the 25 open seats")
+            ok("first hire lands at 21 students past the 25 open seats at today's staffing pace")
         else: bad(f"first-hire verdict: {pg.text_content('#rGroVerdict')[:70]}")
-        pg.fill("#sRat", "25"); pg.dispatch_event("#sRat", "input")
+        pg.fill("#sRat", "1"); pg.dispatch_event("#sRat", "input")
         pg.fill("#sTc", "49150"); pg.dispatch_event("#sTc", "input")
         pg.fill("#sGro", "110"); pg.dispatch_event("#sGro", "input")
         if "No new students" in pg.text_content("#rGroVerdict"):
@@ -152,53 +154,10 @@ def main():
             ok("2018 restore scales: $849,740 at 50%")
         else: bad(f"2018 restore at 50%: {pg.text_content('#rR18')}")
 
-        # --- Fill planner (unchanged math, simplified verdict) ---
-        f1 = pg.text_content("#rFill").strip()
-        fv = pg.text_content("#rFillVerdict").strip()
-        if f1 == "$55,616" and "174 of the 198" in fv:
-            ok("fill planner defaults $55,616; at the 174 rating within the 2013-rated 198")
-        else: bad(f"fill planner defaults: {f1} / {fv}")
-        pg.fill("#sSec", "2"); pg.dispatch_event("#sSec", "input")
-        if pg.text_content("#rFill").strip() == "$115,616": ok("fill planner high case $115,616 (2 avoided, 1 added)")
-        else: bad(f"fill planner high: {pg.text_content('#rFill')}")
-        pg.fill("#sAdd2", "2"); pg.dispatch_event("#sAdd2", "input")
-        pg.fill("#sSec", "0"); pg.dispatch_event("#sSec", "input")
-        worst = 16 * 4626 - 46 * 400 - 2 * 60000
-        if pg.text_content("#rFill").strip() == f"-${abs(worst):,}":
-            ok(f"fill planner worst corner -${abs(worst):,} (2 added, 0 avoided)")
-        else: bad(f"fill planner worst corner: {pg.text_content('#rFill')}")
-        pg.fill("#sAdd2", "1"); pg.dispatch_event("#sAdd2", "input")
-        pg.fill("#sSec", "2"); pg.dispatch_event("#sSec", "input")
-        pg.fill("#sRez", "40"); pg.dispatch_event("#sRez", "input")
-        pg.fill("#sTr", "40"); pg.dispatch_event("#sTr", "input")
-        tval = pg.eval_on_selector("#sTr", "e=>e.value")
-        expect = 30 * 4626 - 70 * 400 + 2 * 60000 - 1 * 60000
-        if tval == "30" and pg.text_content("#rFill").strip() == f"${expect:,}":
-            ok("fill planner clamps at the 70 seats up to the 2013-rated 198")
-        else: bad(f"fill planner clamp: transfers={tval}")
-        pg.fill("#sRez", "0"); pg.dispatch_event("#sRez", "input")
-        pg.fill("#sTr", "0"); pg.dispatch_event("#sTr", "input")
-        pg.fill("#sRet", "0"); pg.dispatch_event("#sRet", "input")
-        if "No students moved" in pg.text_content("#rFillVerdict"):
-            ok("fill planner zero-move edge case")
-        else: bad("fill planner zero-move verdict missing")
-        # returning homeschool/private students: new money at the same base
-        pg.fill("#sSec", "1"); pg.dispatch_event("#sSec", "input")
-        pg.fill("#sRez", "20"); pg.dispatch_event("#sRez", "input")
-        pg.fill("#sTr", "10"); pg.dispatch_event("#sTr", "input")
-        pg.fill("#sRet", "16"); pg.dispatch_event("#sRet", "input")
-        expect_ret = (10 + 16) * 4626 - 46 * 400 + 1 * 60000 - 1 * 60000
-        if pg.text_content("#rFill").strip() == f"${expect_ret:,}" and "174 of the 198" in pg.text_content("#rFillVerdict"):
-            ok(f"fill planner returning-students case ${expect_ret:,}")
-        else: bad(f"fill planner returns: {pg.text_content('#rFill')}")
-        pg.fill("#sRez", "30"); pg.dispatch_event("#sRez", "input")
-        pg.fill("#sTr", "16"); pg.dispatch_event("#sTr", "input")
-        pg.fill("#sRet", "46"); pg.dispatch_event("#sRet", "input")
-        vals = [pg.eval_on_selector(sel, "e=>e.value") for sel in ("#sRet", "#sTr", "#sRez")]
-        expect_prio = 46 * 4626 - 70 * 400 + 1 * 60000 - 1 * 60000
-        if vals == ["46", "0", "24"] and pg.text_content("#rFill").strip() == f"${expect_prio:,}":
-            ok("returning-students slider keeps its value; seats freed from transfers first")
-        else: bad(f"fill planner return priority: ret/tr/rez = {vals}, net {pg.text_content('#rFill')}")
+        # --- Fill planner removed (duplicative of the growth calculator) ---
+        gone_planner = pg.evaluate("['sRez','sTr','sRet','sSec','sAdd2','rFill'].filter(i=>document.getElementById(i)).length")
+        if gone_planner == 0: ok("seat planner removed from Run the Numbers (duplicative of the growth calculator)")
+        else: bad(f"{gone_planner} seat-planner elements still present")
 
         boxes = pg.query_selector_all(".checkrow input[type=checkbox]")
         if boxes:

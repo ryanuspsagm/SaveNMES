@@ -283,7 +283,7 @@ def main():
                    "$213,000", "Cloverport", "net import of 189", "letter of intent",
                    "KRS 159.160", "$4,226", "St. Mary"]:
         chk(needle in t, f"PDF recruitment pool intact: {needle}")
-    for needle in ["sRet", "259 registered homeschool", "Fayette pulling 54 commuters",
+    for needle in ["259 registered homeschool", "Fayette pulling 54 commuters",
                    "$4,626"]:
         chk(needle in html, f"site recruitment pool intact: {needle}")
     for f in ["kde_nonresident_students_sy24_25.xlsx", "wapo_home_school_district.csv"]:
@@ -358,9 +358,8 @@ def main():
         "Downloads sits between Voices and Sources")
     chk(html.index("Every version stays public") < html.index('id="sources"'),
         "version history lives in the Downloads section")
-    chk(html.index("The fill-the-seats planner") > html.index('id="model"')
-        and html.index("The fill-the-seats planner") < html.index('id="part2"'),
-        "the NMES fill planner lives in Run the Numbers with the calculators")
+    chk("The fill-the-seats planner" not in html and 'id="sRez"' not in html,
+        "the seat planner is retired from the site (duplicative of the growth calculator)")
     chk('<details class="more" open><summary>More detail: each ask and the committees' in html,
         "four-asks detail opens expanded, committees inside, no planner")
     # v4.2: the closure calculator exposes all seven grid levers, plus the growth calculator
@@ -372,12 +371,14 @@ def main():
         chk(lever in html, f"growth-model slider present: {lever}")
     chk("5,832 scenarios" in html and 'id="rRank"' in html,
         "calculator presented as the live scenario model with a grid-rank readout")
-    chk("$118,650" in html and "every one" in html and "6,561" in html and "+$26,260" in html,
-        "growth calculator carries the published 25-seat-headroom grid stats")
-    chk("$142,800" not in html and "$67,124" not in html,
-        "the withdrawn absorption-credit and no-absorption stats are both gone")
+    chk("$102,780" in html and "99.7 percent" in html and "6,561" in html,
+        "growth calculator carries the published headroom-plus-historical-pace grid stats")
+    chk("$142,800" not in html and "$67,124" not in html and "$118,650" not in html,
+        "all superseded growth-grid medians are gone from the site")
     chk("25 added students fill seats" in html and "24 per room in K through 3" in html,
         "the 25-seat headroom is anchored to the district's own Appendix B caps on the site")
+    chk("ran over 200" in html and "RATV=[14,16,24]" in html,
+        "the hiring-pace lever is selectable and anchored to the historical over-200 ratio")
     for heading in ["What the district's own facility plans show",
                     "Building condition, as reported to the state"]:
         chk(heading not in html, f"off-layout card removed from site: {heading}")
@@ -519,8 +520,8 @@ def main():
     chk("reports/Saving_NMES_v3.8_2026-07-26.pdf" in html
         and (REPO / "reports" / "Saving_NMES_v3.8_2026-07-26.pdf").exists(),
         "v3.8 archived in reports/ and linked from the version history")
-    chk("sAdd" in html and "New sections needed at NMES" in html,
-        "fill planner carries the v3.8 NMES section-debit slider")
+    chk("New sections needed at NMES" not in html and "Redistricting tab carries" in t,
+        "v3.8 section-debit slider retired with the seat planner; the debit lives in the model's Redistricting tab")
     chk("change formula subtracts" in html and "change formula subtracts" in t,
         "2024-25 index change-component explanation on site and in PDF")
     chk('id="tgSD" checked' in html,
