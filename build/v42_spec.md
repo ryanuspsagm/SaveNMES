@@ -1,8 +1,9 @@
 # SaveNMES v5 Outline (user-edited, numbers filled) - working spec
 
 THESIS (Key Points): The case against closing NMES is clear. Across 8,748 scenarios
-built on the district's own figures, the median closure outcome LOSES $21,356 a year,
-and 55 percent of scenarios lose money. The district needs growth, not
+built on the district's own worksheet and its superintendent's own staffing figures,
+the median closure outcome saves $21,324 a year, under a tenth of one percent of the
+budget, and 45 percent of scenarios lose money outright. The district needs growth, not
 closures. We ask the board to choose the growth path, and for four things.
 
 PART ONE - THE CASE AGAINST CLOSING NMES (NMES-specific)
@@ -45,7 +46,10 @@ PART ONE - THE CASE AGAINST CLOSING NMES (NMES-specific)
    students. [have: step table]
 5. The closure model, rebuilt on the new levers (8,748 scenarios; leavers priced at
    base + the same $0/$500/$1,000 SEEK add-ons lever as the growth side):
-   - non-salary fixed capture 50-100% ($29.4K-$58.8K)
+   - non-salary fixed capture 50-100% of the district's OWN worksheet's $107,039 of
+     building-bound lines, + their ~$20K insurance saving at the full stop
+     ($53.5K/$80.3K/$127K); their other $40,693 (supplies, books, field trips,
+     printing = $318/student vs our measured $331) travels with the students
    - fixed-position retention 100-0% ($0-$218,154)
    - teacher retention 100/50/0% of the TWO positions the superintendent has stated
      a closure would eliminate (SOURCING TODO: pin the meeting/date of the statement
@@ -59,9 +63,15 @@ PART ONE - THE CASE AGAINST CLOSING NMES (NMES-specific)
      ride-time route split; per zone student $160/$492/$1,495 vs the $1,032 district
      average; the district's own routing data (requested, answered N/A) would
      replace the benchmarks
-   RESULTS: median -$21,356 (the MEDIAN closure scenario loses money, on the
-   superintendent's own teacher figure) | 55% lose | range -$469,401 to +$406,928 |
-   middle half -$128,613 to +$85,096. Anchor on district elementary cost/student
+   RESULTS: median +$21,324 | 45% lose money | range -$445,269 to +$475,193 |
+   middle half -$86,465 to +$128,405. CROSS-VALIDATED: the district's own response
+   worksheet (archived build/district_savings_response_appendix_a.png), honestly
+   netted (its $107K building lines + $20K insurance, less central busing and one
+   step of leakage, staffing retained per its own note), lands at -$2,599, beside
+   our median; its staffing sheet confirms the architecture point by point (all
+   staff retained year one; exactly 2 elementary teachers over time; $54,479
+   rookie pricing inside our $50-75K band; principal+office+custodian+library
+   $209,700 vs our measured $218,154). Anchor on district elementary cost/student
    ($17,605, May 2026 table). Reproducible: build/closure_grid.py.
 6. The growth calculator (FINAL, structurally non-negative): enrollment 110 up to
    200. Hiring scales strictly with the gain: a teacher is added only for each FULL
@@ -78,8 +88,8 @@ PART ONE - THE CASE AGAINST CLOSING NMES (NMES-specific)
    WHY IT CANNOT GO NEGATIVE: each student brings $4,626 against at most $2,000 of
    per-student charges, and a hire only triggers once its cohort's net revenue
    (20 x $3,626 = $72,520 minimum) exceeds the costliest new hire ($56,583).
-   COMPARISON LINE: the median growth scenario MAKES $142,800 while the median closure
-   scenario LOSES $21,356; growth's floor is positive (+$26,260) while 55 percent of
+   COMPARISON LINE: the median growth scenario (+$142,800) is 6.7x the median closure
+   saving (+$21,324); growth's floor is positive (+$26,260) while 45 percent of
    closure scenarios go negative, and growth's WORST case beats closure's median.
 
 PART TWO - THE DISTRICT NEEDS GROWTH, NOT CLOSURES (district-wide)
@@ -98,8 +108,8 @@ LEVER 3 - align the tax rate: 0-100% restore to 2018 = $0 to $1,699,900/yr slide
    statewide recall record [build: research]; HB 44 + options tables [have].
 GROWTH PLAN, PRICED: interactive 3-move calculator [build]; triangular-distribution
    outcome: median $2,468,969/yr, IQR $2,300,270-$2,636,282 [computed].
-THE CHOICE: two roads WITH outcome ranges: closure median -$21,356 (55% lose,
-   downside -$469K) vs growth plan median ~$2.47M.
+THE CHOICE: two roads WITH outcome ranges: closure median +$21,324 (45% lose,
+   downside -$445K) vs growth plan median ~$2.47M.
 FOUR ASKS + HOW: Permanent; 4 years with public targets [build: proposed targets
    table]; grant/private funds; public commitment. How: record -> themed academy ->
    incentives -> grants.
@@ -145,7 +155,7 @@ LATEST STATE DATA (KYRC25, 2024-25, user-supplied, archived build/KYRC25_FT_...c
   Bath $14,785, Harrison $14,689 (simple school means, labeled as such)
   Decision ladder re-anchored: allocated loss $245,760 (2024-25 costs vs 2023-24
   revenue rates, latest available) -> ~$160K after Title I skew -> ~$31K
-  NMES-specific after the district-share deduction -> the grid median (-$21,356 on the
-  superintendent's own teacher figure): the ladder (~$31K) and the grid median
-  bracket zero from opposite sides. May 2026 district table retained
+  NMES-specific after the district-share deduction -> the grid median (+$21,324 on the
+  district's own worksheet): the ladder (~$31K), the grid median (+$21K), and the
+  district's own netted worksheet (-$2.6K) all converge on a rounding error. May 2026 district table retained
   as the district's-own-paperwork exhibit; KYRC24 $19,348 retired to history.
