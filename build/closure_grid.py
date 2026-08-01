@@ -16,15 +16,17 @@ Eight levers, every value sourced in the report and the Closure_Model tab:
                              component, $100 capital outlay)
   property-value loss:       $0 / $47,500 / $95,000 (roughly 0-10 percent of an
                              estimated zone tax base; PVA records ask pending)
-  added busing:              0% / 5% / 10% of the $2.7M district transportation
-                             budget ($0 / $135,000 / $270,000)
+  added busing:              $100,000 / $185,000 / $270,000 (3.7-10% of the
+                             $2.7M district transportation budget; the floor is
+                             the route math, a 110-square-mile zone cannot be
+                             bused to Paris for free)
 
 net = capture + fixed_positions_cut + teachers_cut x cost
       - busing - leavers x (4,626 + add_ons) - property_loss
 
 Run:  python build/closure_grid.py
-Asserts the published statistics: 11,664 scenarios; median $25,394; 45 percent
-negative; range -$549,401 to +$651,928; middle half -$115,404 to +$165,903.
+Asserts the published statistics: 11,664 scenarios; median -$25,812; 55 percent
+negative; range -$549,401 to +$551,928; middle half -$151,247 to +$101,826.
 """
 import statistics
 
@@ -42,17 +44,17 @@ nets = sorted(
     for l in (0, 13, 26, 38)
     for ad in (0, 500, 1000)
     for pr in (0, 47_500, 95_000)
-    for b in (0, 0.05 * TRANSPORT, 0.10 * TRANSPORT)
+    for b in (100_000, 185_000, 270_000)
 )
 n = len(nets)
 med = statistics.median(nets)
 neg = sum(1 for x in nets if x < 0)
 
 assert n == 11_664, n
-assert round(med) == 25_394, med
-assert round(neg / n * 100) == 45, neg / n
-assert round(nets[0]) == -549_401 and round(nets[-1]) == 651_928, (nets[0], nets[-1])
-assert round(nets[n // 4]) == -115_404 and round(nets[3 * n // 4]) == 165_903
+assert round(med) == -25_812, med
+assert round(neg / n * 100) == 55, neg / n
+assert round(nets[0]) == -549_401 and round(nets[-1]) == 551_928, (nets[0], nets[-1])
+assert round(nets[n // 4]) == -151_247 and round(nets[3 * n // 4]) == 101_826
 
 print(f"{n:,} scenarios | median ${med:,.0f} | {neg / n * 100:.0f}% lose money")
 print(f"range ${nets[0]:,.0f} to ${nets[-1]:,.0f} | middle half "

@@ -1,7 +1,8 @@
 # SaveNMES v5 Outline (user-edited, numbers filled) - working spec
 
-THESIS (Key Points): The case against closing NMES is clear. Our model's median closure
-saving is $25,394 a year (11,664-scenario grid, leaver add-ons priced). The district needs growth, not
+THESIS (Key Points): The case against closing NMES is clear: across 11,664 scenarios
+the MEDIAN closure outcome loses $25,812 a year once the buses that must roll are
+priced, and 55 percent of scenarios lose money. The district needs growth, not
 closures. We ask the board to choose the growth path, and for four things.
 
 PART ONE - THE CASE AGAINST CLOSING NMES (NMES-specific)
@@ -22,7 +23,21 @@ PART ONE - THE CASE AGAINST CLOSING NMES (NMES-specific)
    for Title I skew ~$345K -> minus the district's own deficit share ~$130K ->
    decision-relevant median $33,240. One-line rebuttal: $19,348 is an allocation
    key, not a savings estimate.
-4. What closure risks is large and recurring. Feeder framing for eastern Bourbon;
+4. What closure risks is large and recurring. ANCHOR: THE OPEN-MARKET ARGUMENT.
+   Under HB 563 funding follows the child and every district competes. The district's
+   own 2024-25 numbers show the business shape: elementary runs a -$947/student/yr
+   allocated margin while middle (+$761) and high school (+$476) run positive. K-5 is
+   the acquisition cost; grades 6-12 are the margin years; you cannot have the eight
+   profitable years without winning the K-5 years. A kindergartner acquired carries
+   $63,890-$72,196 of lifetime funding; acquisition pays back in year one in every
+   growth-grid scenario; keeping NMES open costs a median $260/student/yr to protect
+   that pipeline, and 1 in 7 middle/high students came through this building. In an
+   open market you spend to acquire K-5 families and incentivize them to STAY.
+   Closing the only storefront in a 110-square-mile contested territory, with Paris
+   Independent adjacent, Fayette pulling 54 commuters, and homeschool plus the
+   statewide virtual academy open for business, is exiting the market where the
+   competition is thickest, and the transitional label is itself a churn driver.
+   Feeder framing for eastern Bourbon;
    lifetime SEEK per kindergartner = $63,890 (13 yrs at 1.0%/yr historical base growth);
    steps priced base-to-with-add-ons: 10% = $60K-$73K/yr, 20% = $120K-$146K, 30% =
    $176K-$214K; through gr12 $561K-$682K / $1.12M-$1.37M / $1.64M-$2.0M; lifetime
@@ -36,9 +51,11 @@ PART ONE - THE CASE AGAINST CLOSING NMES (NMES-specific)
    - cost per position $50-75K
    - students lost 0-100% (grid values 0/10/20/30%; slider full range)
    - property-value loss 0-10% of est. zone base ($0-95K; PVA records ask pending)
-   - busing +0-10% of district transportation ($0-270K)
-   RESULTS: median $25,394 | 45% lose money | range -$549,401 to +$651,928 |
-   middle half -$115,404 to +$165,903. Anchor on district elementary cost/student
+   - busing +$100K floor to $270K (3.7-10% of district transportation; the floor is
+     the route math: a 110-square-mile zone cannot be bused to Paris for free)
+   RESULTS: median -$25,812 (the MEDIAN closure scenario LOSES money) | 55% lose |
+   range -$549,401 to +$551,928 (ceiling = the prior published best case exactly) |
+   middle half -$151,247 to +$101,826. Anchor on district elementary cost/student
    ($17,605, May 2026 table). Reproducible: build/closure_grid.py.
 6. The growth calculator (FINAL, structurally non-negative): enrollment 110 up to
    200. Hiring scales strictly with the gain: a teacher is added only for each FULL
@@ -55,8 +72,8 @@ PART ONE - THE CASE AGAINST CLOSING NMES (NMES-specific)
    WHY IT CANNOT GO NEGATIVE: each student brings $4,626 against at most $2,000 of
    per-student charges, and a hire only triggers once its cohort's net revenue
    (20 x $3,626 = $72,520 minimum) exceeds the costliest new hire ($56,583).
-   COMPARISON LINE: the median growth scenario (+$142,800) is 5.6x the median
-   closure saving (+$25,394), and growth's WORST case beats closure's median.
+   COMPARISON LINE: the median growth scenario MAKES $142,800 while the median
+   closure scenario LOSES $25,812, and growth's WORST case beats closure's median.
 
 PART TWO - THE DISTRICT NEEDS GROWTH, NOT CLOSURES (district-wide)
 1. Money problem: $2.65M gap, reserves -$1.1M/yr, aid cliff + 248 fewer funded
@@ -74,8 +91,8 @@ LEVER 3 - align the tax rate: 0-100% restore to 2018 = $0 to $1,699,900/yr slide
    statewide recall record [build: research]; HB 44 + options tables [have].
 GROWTH PLAN, PRICED: interactive 3-move calculator [build]; triangular-distribution
    outcome: median $2,468,969/yr, IQR $2,300,270-$2,636,282 [computed].
-THE CHOICE: two roads WITH outcome ranges: closure median $25,394 (45% lose) vs growth
-   plan median ~$2.47M.
+THE CHOICE: two roads WITH outcome ranges: closure median -$25,812 (55% lose) vs
+   growth plan median ~$2.47M.
 FOUR ASKS + HOW: Permanent; 4 years with public targets [build: proposed targets
    table]; grant/private funds; public commitment. How: record -> themed academy ->
    incentives -> grants.
@@ -121,6 +138,6 @@ LATEST STATE DATA (KYRC25, 2024-25, user-supplied, archived build/KYRC25_FT_...c
   Bath $14,785, Harrison $14,689 (simple school means, labeled as such)
   Decision ladder re-anchored: allocated loss $245,760 (2024-25 costs vs 2023-24
   revenue rates, latest available) -> ~$160K after Title I skew -> ~$31K
-  NMES-specific after the district-share deduction -> $25,394 decision-relevant:
-  THE LADDER NOW CONVERGES WITH THE GRID MEDIAN. May 2026 district table retained
+  NMES-specific after the district-share deduction -> the grid median (now -$25,812
+  with the busing floor): THE LADDER AND GRID CONVERGE NEAR ZERO-TO-NEGATIVE. May 2026 district table retained
   as the district's-own-paperwork exhibit; KYRC24 $19,348 retired to history.
