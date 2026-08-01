@@ -83,7 +83,8 @@ A(Paragraph(
   "2,412 students in its first two years. The losses step up with every ten percent of students who leave, "
   "and the first year is only the start: the missing children move up a grade each year and new kindergartners "
   "follow their older siblings out, so by the time every grade from kindergarten through twelve is short, the "
-  "yearly loss is more than double the first hit (about $144,000 at ten percent, $420,000 at thirty):", body))
+  "yearly loss is more than double the first hit (about $144,000 at ten percent, $420,000 at thirty), and the "
+  "thirteen-year totals run $1.5 million to $4.6 million across those steps:", body))
 
 step = Table(
     [[Paragraph(c, thead) for c in ["Share who leave", "Students (of 128)",

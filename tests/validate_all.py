@@ -165,10 +165,13 @@ def main():
         "provenance cite on the site, top disclosure and footer")
     chk("Open Records Requests only" in t,
         "provenance cite in the report")
-    for needle in ["about $144,000", "about $287,000", "about $420,000", "about $713,000",
-                   "Per year at full effect", "first lost kindergarten class reaches grade 12"]:
+    for needle in ["$144,000", "$287,000", "$420,000", "$713,000",
+                   "Per year, full effect", "Total by grade 12",
+                   "$1.5M", "$3.1M", "$4.6M", "$7.7M",
+                   "first lost kindergarten class reaches grade 12"]:
         chk(needle in html, f"leaving escalation on the site: {needle}")
-    for needle in ["$144,000, $287,000 and $420,000", "more than double the first hit"]:
+    for needle in ["$144,000, $287,000 and $420,000", "more than double the first hit",
+                   "$1.5 million at 10 percent, $3.1 million at 20 and $4.6 million at 30"]:
         chk(needle in t, f"leaving escalation in the report: {needle}")
     chk('name:"Lynne"' in html and "859-707" not in html,
         "Lynne's story published by first name, phone number kept private")
@@ -400,7 +403,7 @@ def main():
                    "107.5 percent", "Eminence", "149 last fall", "occupational",
                    "Marion County voters", "$5.6 million of remaining", "$613,000"]:
         chk(needle in t, f"PDF v4 decision brief intact: {needle}")
-    chk("every 10 percent" in t and "Share who leave" in html,
+    chk("every 10 percent" in t and "Who leaves" in html,
         "stepped losses published as scenarios in report and site")
     chk("28 homerooms" not in html,
         "site does not adopt the district capacity claims uncritically")
