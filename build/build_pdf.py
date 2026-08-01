@@ -1537,7 +1537,15 @@ P("Bourbon County Schools has a structural funding problem: spending has outrun 
   "menu beyond four percent reaches $1.0 to $2.5 million. The three moves are the raw $1.4 to $2.3 million shown "
   "under Figure 19, cut to the published $0.9 to $1.7 million after overlap and implementation risk. Any one "
   "alone outweighs closure, whose median outcome now loses $21,971 a year. Together they balance the budget, end the sweep, free the "
-  "restricted stream to bond the renovation plan, and close nothing. The Alternatives tab prices each move live.")
+  "restricted stream to bond the renovation plan, and close nothing. The Alternatives tab prices each move live. "
+  "And the surplus is transformative: at the plan's low ends with the full 2018 restore, recurring resources run "
+  "about $3.57 million against the $2.65 million gap, roughly $920,000 a year ahead. That surplus funds a 5 "
+  "percent raise for every certified teacher, about $507,000 a year on the district's own $10.0 million General "
+  "Fund certified payroll in the fiscal 2026 working budget, and still leaves about $414,000 a year for new debt "
+  "service, which supports about $5.4 million of bonds at the same 4.5 percent, 20-year basis this report applies "
+  "to every other bonding claim. With the sweep ended, the roughly $17.6 million of restricted bonding capacity "
+  "already sitting unused comes free as well: teachers paid more, every school open, and about $23 million of "
+  "building capacity for new schools and renovations.")
 
 H2("The tax question, faced squarely")
 P("The rate history strengthens rather than weakens the community's hand. Bourbon County Schools levies 52.4 "

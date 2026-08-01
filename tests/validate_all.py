@@ -578,6 +578,11 @@ def main():
         "multi-age reorganization removed from the report")
     chk("its savings sheet says two" in t and "count supports three" in t,
         "PDF keeps the closure staffing-count judgment (v4.2: the district's own two-vs-three)")
+    for needle in ["5 percent raise for every certified teacher", "$507,000",
+                   "$5.4 million", "$23 million of building capacity"]:
+        chk(needle in html, f"transformative surplus claim on the site: {needle}")
+    chk("5 percent raise for every certified teacher" in t and "$23 million" in t,
+        "transformative surplus claim in the report")
     chk("$1.4 to $2.3 million" in t,
         "alternatives raw sums intact in the report (Medicaid removed; site quote retired)")
 

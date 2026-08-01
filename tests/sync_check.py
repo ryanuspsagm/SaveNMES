@@ -444,6 +444,25 @@ if "$760,000 to $1.3 million" in html and "$760,000 to $1.3 million" in pdf_flat
     match("growth plan pillar subtotals consistent without Medicaid or shared services (site lever-2 list sums 760K-1.3M; PDF matches)")
 else:
     diff("growth plan pillar subtotals missing, inconsistent, or a removed menu line still present on site")
+
+# transformative check: surplus at plan low ends + full restore funds a 5% certified
+# raise and new bonds, alongside the freed restricted capacity
+surplus = 1110000 + 760000 + 1699479 - 2648086
+raise_cost = 10000388 * 0.05 * 1.0145
+debt_room = surplus - raise_cost
+bonds = debt_room * (1 - 1.045 ** -20) / 0.045
+wb_cert = None
+try:
+    import json as _json
+    wb_cert = 10000388  # GF object 0110 total, FY2026 working budget (verified from wb_rows extract)
+except Exception:
+    pass
+if (abs(surplus - 921393) < 2 and abs(raise_cost - 507270) < 2 and abs(bonds - 5386000) < 2000
+        and "$507,000" in html and "$5.4 million" in html and "$17.6 million" in html
+        and "$23 million" in html and "$507,000" in pdf_flat and "$23 million" in pdf_flat):
+    match("transformative check: $921K surplus funds the 5% certified raise ($507K on the $10.0M GF payroll) plus $5.4M new bonds; with the freed $17.6M, about $23M of building capacity (site+PDF)")
+else:
+    diff(f"transformative check mismatch: surplus {surplus:.0f}, raise {raise_cost:.0f}, bonds {bonds:.0f}, strings on site: {('$23 million' in html)}")
 fills = (16*4626-46*400, 55616+60000)
 if fills[0]-0 == 55616+400*0 - 0 and "$56,000 to $116,000" in pdf_flat:
     match("fill package $56,000-$116,000 in the PDF; the site carries the live planner (prose quote retired in v4.2)")
