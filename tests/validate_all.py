@@ -588,7 +588,7 @@ def main():
         "top-end claim (10 percent raise, $52 million) on site and in report")
     for claim, section in [("$23 million of building capacity", 'id="grow"'),
                            ("LOSES $21,971", 'id="model"'),
-                           ("$4.6 million by grade 12", 'id="risks"')]:
+                           ("$4.6 million lifetime revenue loss", 'id="risks"')]:
         chk(html.index(claim) > html.index(section)
             and html.index(claim) < html.index("<details", html.index(section)),
         f"strongest claim rides the always-visible header: {claim}")
