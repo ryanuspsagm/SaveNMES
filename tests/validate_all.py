@@ -361,8 +361,10 @@ def main():
         chk(lever in html, f"growth-model slider present: {lever}")
     chk("5,832 scenarios" in html and 'id="rRank"' in html,
         "calculator presented as the live scenario model with a grid-rank readout")
-    chk("$142,800" in html and "+$26,260" in html and "6,561" in html,
-        "growth calculator carries the published base-grid stats")
+    chk("$67,124" in html and "98 percent" in html and "6,561" in html,
+        "growth calculator carries the published no-absorption grid stats")
+    chk("$142,800" not in html and "no free seats" in html.lower().replace("no free seats in", "no free seats"),
+        "the withdrawn absorption-credit stats are gone and the no-free-seats basis is stated")
     for heading in ["What the district's own facility plans show",
                     "Building condition, as reported to the state"]:
         chk(heading not in html, f"off-layout card removed from site: {heading}")

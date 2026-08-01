@@ -109,8 +109,8 @@ def main():
         # --- Growth calculator ---
         gro = pg.text_content("#rGro").strip()
         gverd = pg.text_content("#rGroVerdict").strip()
-        if gro == "$171,300" and "50 added students" in gverd:
-            ok("growth default $171,300 at target 160")
+        if gro == "$73,000" and "50 added students" in gverd and "2 new teachers" in gverd:
+            ok("growth default $73,000 at target 160 (2 teachers charged, no absorption credit)")
         else: bad(f"growth defaults: {gro} / {gverd}")
         pg.fill("#sGro", "120"); pg.dispatch_event("#sGro", "input")
         pg.fill("#sSp", "2"); pg.dispatch_event("#sSp", "input")

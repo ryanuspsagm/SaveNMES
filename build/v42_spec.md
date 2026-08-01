@@ -45,8 +45,8 @@ Banded figures:
    allocated margin while middle (+$761) and high school (+$476) run positive. K-5 is
    the acquisition cost; grades 6-12 are the margin years; you cannot have the eight
    profitable years without winning the K-5 years. A kindergartner acquired carries
-   $63,890-$72,196 of lifetime funding; acquisition pays back in year one in every
-   growth-grid scenario; keeping NMES open costs a median $260/student/yr to protect
+   $63,890-$72,196 of lifetime funding; acquisition pays back in year one in more
+   than 98 percent of growth-grid scenarios; keeping NMES open costs a median $260/student/yr to protect
    that pipeline, and 1 in 7 middle/high students came through this building. In an
    open market you spend to acquire K-5 families and incentivize them to STAY.
    Closing the only storefront in a 110-square-mile contested territory, with Paris
@@ -108,16 +108,15 @@ Banded figures:
    ($20,000-$37,000); busing
    $0-$1,000 per recruited student; marginal cost $400-$1,000 per student (measured
    student-scaling spend: $331).
-   RESULTS: 6,561 scenarios | median +$142,800/yr | ZERO negative | range +$26,260
-   to +$296,904 | at 200 enrolled median +$192,040. Exhaustive sweep of every slider
-   position bottoms out at +$2,626 (a single recruited student at max costs).
-   WHY IT CANNOT GO NEGATIVE: each student brings $4,626 against at most $2,000 of
-   per-student charges, and a hire only triggers once its cohort's net revenue
-   (20 x $3,626 = $72,520 minimum) exceeds the costliest new hire ($56,583).
-   COMPARISON LINE: the median growth scenario GAINS $142,800 while the median
-   closure scenario LOSES $21,971 - a $164,771/yr swing between the two roads;
-   growth's floor is positive (+$26,260) while 55 percent of closure scenarios go
-   negative, so growth's WORST case beats closure's MEDIAN by nearly $50K.
+   RESULTS (v4.2 review: NO absorption credit; a teacher is charged for every full
+   added cohort from the first one): 6,561 scenarios | median +$67,124/yr | 106
+   negative (1.6%) | range -$53,252 to +$255,186 | full-lever median +$87,890.
+   The losing 1.6% require the costliest teacher hired for every 20 students with
+   every other cost at maximum.
+   COMPARISON LINE: the median growth scenario GAINS $67,124 while the median
+   closure scenario LOSES $21,971 - an $89,095/yr swing between the two roads;
+   growth comes out ahead in more than 98 percent of its scenarios while 55
+   percent of closure scenarios lose money.
 
 PART TWO - THE DISTRICT NEEDS GROWTH, NOT CLOSURES (district-wide)
 1. Money problem: $2.65M gap, reserves -$1.1M/yr, aid cliff + 248 fewer funded
@@ -142,9 +141,11 @@ FOUR ASKS + HOW: Permanent; 4 years with public targets [build: proposed targets
    incentives -> grants.
 
 DECISIONS TAKEN (flag if wrong):
-a. Growth calc uses MARGINAL staffing (spec'd 1-per-20-25 as written gives a NEGATIVE
-   median, -$21,920, because it charges average staffing; marginal version is the
-   defensible economics and matches the class-cap math already published).
+a. Growth calc charges a teacher for every FULL added cohort (1 per 20-25) from
+   the first student; the earlier ~40-seat absorption credit was REMOVED in v4.2
+   review at the user's direction ("don't assume current teachers can support the
+   40 incremental students"). Median moved +$142,800 -> +$67,124 and the
+   zero-negative claim was withdrawn (1.6% of scenarios lose).
 b. Calculator base = 110 (district's own figure, still flagged unsourced); ceiling 200
    on the slider with the 198 note (2013 state-approved rating).
 c. Property-loss lever priced $0-95K pending the PVA records response.
