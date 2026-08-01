@@ -47,10 +47,11 @@ central = (CM["C39"].value + CM["C40"].value + CM["C41"].value * 54479.4
 site_capv = re.search(r"var CAPV=\[(\d+),(\d+),(\d+)\]", html)
 site_fixv = re.search(r"FIXV=\[(\d+),(\d+),(\d+)\]", html)
 site_teach = re.search(r"TEACH=108958\.80/2", html)
-if round(central) == 54539 and "$54,539" in html:
-    match("closure central case $54,539 (model Closure_Model central column == site calculator defaults)")
+site_default = (127039 + 0 + 2*54479.4 - 63000 - 38*(A["B6"].value+500) - 0)
+if round(central) == 54539 and round(site_default) == -21790 and "-$21,790" in html:
+    match("model central case $54,539; site calculator opens at the median scenario (-$21,790, within $181 of the grid median)")
 else:
-    diff(f"closure central: model {central:.0f}, site $54,539 {'$54,539' in html}")
+    diff(f"closure defaults: model central {central:.0f}, site median-scenario {site_default:.0f} shown: {'-$21,790' in html}")
 if site_capv and [int(site_capv.group(i)) for i in (1, 2, 3)] == [CM["B39"].value, CM["C39"].value, CM["D39"].value] == [53519, 80279, 127039]:
     match("capture lever (53,519 / 80,279 / 127,039 = district worksheet + insurance) identical site JS and model")
 else:

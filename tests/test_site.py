@@ -72,15 +72,18 @@ def main():
             ok("nontechnical range strip shows worst / middle / best in plain words")
         else: bad(f"range strip missing or labels wrong: {labs[:80]}")
 
-        # --- Closure calculator: v4.2 grid defaults ---
+        # --- Closure calculator: opens at the median scenario ---
+        modelopen = pg.evaluate("document.querySelector('#model details.more').open")
+        if modelopen: ok("calculators expanded by default")
+        else: bad("calculator details not open by default")
         net = pg.text_content("#rNet").strip()
         verdict = pg.text_content("#rVerdict").strip()
-        if net == "$54,539" and "2.1%" in verdict:
-            ok("closure v4.2 central default $54,539 / 2.1% of the deficit")
+        if net == "-$21,790" and "LOSES" in verdict:
+            ok("closure default is the median scenario: -$21,790 (district stance + 30% leakage)")
         else: bad(f"closure defaults: {net} / {verdict}")
         rank = pg.text_content("#rRank").strip()
-        if "5,832 scenarios" in rank and "66%" in rank and "-$21,971" in rank:
-            ok("live grid-rank readout: 66% at defaults, median -$21,971")
+        if "5,832 scenarios" in rank and "50%" in rank and "-$21,971" in rank:
+            ok("live grid-rank readout: 50% at the median default")
         else: bad(f"grid-rank readout: {rank}")
 
         # ceiling: their fullest case
@@ -109,8 +112,8 @@ def main():
         # --- Growth calculator ---
         gro = pg.text_content("#rGro").strip()
         gverd = pg.text_content("#rGroVerdict").strip()
-        if gro == "$73,000" and "50 added students" in gverd and "2 new teachers" in gverd:
-            ok("growth default $73,000 at target 160 (2 teachers charged, no absorption credit)")
+        if gro == "$67,124" and "60 added students" in gverd and "2 new teachers" in gverd and "1 support hire" in gverd:
+            ok("growth default is the exact median scenario: $67,124 at target 170")
         else: bad(f"growth defaults: {gro} / {gverd}")
         pg.fill("#sGro", "120"); pg.dispatch_event("#sGro", "input")
         pg.fill("#sSp", "2"); pg.dispatch_event("#sSp", "input")

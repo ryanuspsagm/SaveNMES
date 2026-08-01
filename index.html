@@ -293,30 +293,30 @@ footer a{color:var(--ice)}
 <div class="kicker">Run the Numbers</div>
 <h2>Two calculators. The district's own prices. Your assumptions.</h2>
 <p class="lede">The closure model prices what closing NMES nets. The growth model prices filling it instead. Both use the district's own published figures. Move any slider.</p>
-<details class="more"><summary>Open the calculators and the full range</summary>
+<details class="more" open><summary>The calculators and the full range</summary>
 
 <div class="calc-grid">
 <div class="card">
 <h3>Closure: what does it actually net?</h3>
-<p class="note">Seven levers. Staffing is priced at the district's own $54,479 fully loaded rate, and the two-to-three teacher range comes from its own appendices.</p>
-<div class="slider-row"><label>Building costs that stop <output id="oCap">Three quarters stop: $80,279</output></label>
-<input type="range" id="sCap" min="0" max="2" value="1" step="1"></div>
-<div class="slider-row"><label>Fixed positions cut (principal, custodian, library) <output id="oFix">Half cut over time: $109,077</output></label>
-<input type="range" id="sFix" min="0" max="2" value="1" step="1"></div>
+<p class="note">Seven levers, opening at the median scenario: the building sold, all staff kept in year one and two teachers cut over time (the district's own stance), mid-range busing, and 3 in 10 families leaving. Staffing is priced at the district's own $54,479 rate.</p>
+<div class="slider-row"><label>Building costs that stop <output id="oCap">All stop, building sold: $127,039</output></label>
+<input type="range" id="sCap" min="0" max="2" value="2" step="1"></div>
+<div class="slider-row"><label>Fixed positions cut (principal, custodian, library) <output id="oFix">$0: all four keep their jobs</output></label>
+<input type="range" id="sFix" min="0" max="2" value="0" step="1"></div>
 <div class="slider-row"><label>Teachers cut, at the district's $54,479 each <output id="oTea">2</output></label>
 <input type="range" id="sTea" min="0" max="3" value="2" step="1"></div>
-<div class="slider-row"><label>Families who leave the district <output id="oLeav">20% (26 students)</output></label>
-<input type="range" id="sLeav" min="0" max="100" value="20" step="1"></div>
+<div class="slider-row"><label>Families who leave the district <output id="oLeav">30% (38 students)</output></label>
+<input type="range" id="sLeav" min="0" max="100" value="30" step="1"></div>
 <div class="slider-row"><label>State add-ons lost per leaver <output id="oAdd">$500</output></label>
 <input type="range" id="sAdd" min="0" max="1000" value="500" step="50"></div>
-<div class="slider-row"><label>Property-value loss in the zone <output id="oProp">$47,500</output></label>
-<input type="range" id="sProp" min="0" max="95000" value="47500" step="2500"></div>
+<div class="slider-row"><label>Property-value loss in the zone <output id="oProp">$0</output></label>
+<input type="range" id="sProp" min="0" max="95000" value="0" step="2500"></div>
 <div class="slider-row"><label>Added busing cost per year <output id="oBus">$63,000</output></label>
 <input type="range" id="sBus" min="20000" max="190000" value="63000" step="1000"></div>
 <div class="result">
-<div class="big" id="rNet">$54,539</div>
-<div class="sub">net effect per year at these settings</div>
-<div class="bar-vs" aria-hidden="true"><i id="rBar" style="width:2.1%"></i></div>
+<div class="big" id="rNet">-$21,790</div>
+<div class="sub">net effect per year at these settings (the median scenario)</div>
+<div class="bar-vs" aria-hidden="true"><i id="rBar" style="width:0%"></i></div>
 <div class="verdict" id="rVerdict"></div>
 <div class="verdict" id="rRank" style="margin-top:8px"></div>
 </div>
@@ -325,18 +325,18 @@ footer a{color:var(--ice)}
 <div class="card">
 <h3>Growth: what does filling NMES net?</h3>
 <p class="note">Each new student brings $4,626. A teacher is charged for every full class of added students from the first one; no free seats in existing classrooms are assumed. New hires are priced from the district's own salary schedule.</p>
-<div class="slider-row"><label>Enrollment target (from 110, the district's figure, still unsourced; last official count 128) <output id="oGro">160</output></label>
-<input type="range" id="sGro" min="110" max="200" value="160" step="1"></div>
+<div class="slider-row"><label>Enrollment target (from 110, the district's figure, still unsourced; last official count 128) <output id="oGro">170</output></label>
+<input type="range" id="sGro" min="110" max="200" value="170" step="1"></div>
 <div class="slider-row"><label>Students per added teacher <output id="oRat">22</output></label>
 <input type="range" id="sRat" min="20" max="25" value="22" step="1"></div>
-<div class="slider-row"><label>New teacher cost (schedule entry to mid) <output id="oTc">$49,150</output></label>
-<input type="range" id="sTc" min="41718" max="56583" value="49150" step="1"></div>
-<div class="slider-row"><label>Support staff added <output id="oSp">1 per 75 students, $28,500</output></label>
-<input type="range" id="sSp" min="0" max="2" value="1" step="1"></div>
+<div class="slider-row"><label>New teacher cost (schedule entry to mid) <output id="oTc">$41,718</output></label>
+<input type="range" id="sTc" min="41718" max="56583" value="41718" step="1"></div>
+<div class="slider-row"><label>Support staff added <output id="oSp">1 per 50 students, $37,000</output></label>
+<input type="range" id="sSp" min="0" max="2" value="2" step="1"></div>
 <div class="slider-row"><label>Busing per new student <output id="oGb">$500</output></label>
 <input type="range" id="sGb" min="0" max="1000" value="500" step="50"></div>
-<div class="slider-row"><label>Supplies and other costs per student <output id="oCps">$700</output></label>
-<input type="range" id="sCps" min="400" max="1000" value="700" step="50"></div>
+<div class="slider-row"><label>Supplies and other costs per student <output id="oCps">$1,000</output></label>
+<input type="range" id="sCps" min="400" max="1000" value="1000" step="50"></div>
 <div class="slider-row"><label>State add-ons per new student <output id="oGad">$0</output></label>
 <input type="range" id="sGad" min="0" max="1000" value="0" step="50"></div>
 <div class="result">
@@ -372,7 +372,7 @@ footer a{color:var(--ice)}
 </div>
 
 </details>
-<div class="callout"><b>The comparison that decides it:</b> the median growth scenario GAINS $67,124 a year. The median closure scenario LOSES $21,971. Growth comes out ahead in more than 98 percent of its scenarios; closure loses money in 55 percent of its own. Same school, same honest pricing, opposite directions.</div>
+<div class="callout"><b>The bottom line:</b> grow the school, and the middle case GAINS $67,124 a year. Close it, and the middle case LOSES $21,971 a year.</div>
 </div></section>
 
 <section id="part2" class="partband"><div class="wrap">
