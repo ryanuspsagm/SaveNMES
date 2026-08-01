@@ -16,17 +16,23 @@ Eight levers, every value sourced in the report and the Closure_Model tab:
                              component, $100 capital outlay)
   property-value loss:       $0 / $47,500 / $95,000 (roughly 0-10 percent of an
                              estimated zone tax base; PVA records ask pending)
-  added busing:              $100,000 / $185,000 / $270,000 (3.7-10% of the
-                             $2.7M district transportation budget; the floor is
-                             the route math, a 110-square-mile zone cannot be
-                             bused to Paris for free)
+  added busing:              $20,000 / $63,000 / $190,000, derived bottom-up
+                             with uncertainty carried in the stops: 2-4 zone
+                             buses now terminating in Paris (~9-11 road miles
+                             farther one-way), 2 loaded legs daily plus 0-2
+                             deadhead legs, 175 days, $3.25-$4.75 per mile
+                             (KDE/NAPT benchmark band; the district's own
+                             routing data was requested and answered N/A), the
+                             high stop adding one $45,000 ride-time route
+                             split. Per zone student: $160 / $492 / $1,495
+                             against the district's $1,032 average.
 
 net = capture + fixed_positions_cut + teachers_cut x cost
       - busing - leavers x (4,626 + add_ons) - property_loss
 
 Run:  python build/closure_grid.py
-Asserts the published statistics: 11,664 scenarios; median -$25,812; 55 percent
-negative; range -$549,401 to +$551,928; middle half -$151,247 to +$101,826.
+Asserts the published statistics: 11,664 scenarios; median +$69,575; 36 percent
+negative; range -$469,401 to +$631,928; middle half -$56,860 to +$196,640.
 """
 import statistics
 
@@ -44,17 +50,17 @@ nets = sorted(
     for l in (0, 13, 26, 38)
     for ad in (0, 500, 1000)
     for pr in (0, 47_500, 95_000)
-    for b in (100_000, 185_000, 270_000)
+    for b in (20_000, 63_000, 190_000)
 )
 n = len(nets)
 med = statistics.median(nets)
 neg = sum(1 for x in nets if x < 0)
 
 assert n == 11_664, n
-assert round(med) == -25_812, med
-assert round(neg / n * 100) == 55, neg / n
-assert round(nets[0]) == -549_401 and round(nets[-1]) == 551_928, (nets[0], nets[-1])
-assert round(nets[n // 4]) == -151_247 and round(nets[3 * n // 4]) == 101_826
+assert round(med) == 69_575, med
+assert round(neg / n * 100) == 36, neg / n
+assert round(nets[0]) == -469_401 and round(nets[-1]) == 631_928, (nets[0], nets[-1])
+assert round(nets[n // 4]) == -56_860 and round(nets[3 * n // 4]) == 196_640
 
 print(f"{n:,} scenarios | median ${med:,.0f} | {neg / n * 100:.0f}% lose money")
 print(f"range ${nets[0]:,.0f} to ${nets[-1]:,.0f} | middle half "
