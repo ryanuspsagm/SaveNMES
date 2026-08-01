@@ -106,3 +106,21 @@ Delivery table, read from the slide and archived as slide10_image16.png):
   district's own claim was built on.
   NOTE: the table's own EOY 24/25 enrollment is 128, which further isolates the "110"
   figure as unsourced; growth calculator base stays 110 with the caveat.
+
+LATEST STATE DATA (KYRC25, 2024-25, user-supplied, archived build/KYRC25_FT_...csv):
+  NMES $17,903 | BCE $16,677 | CRES $16,930 | MS $15,222 | HS $15,507
+  Year over year: every school fell 7.5-10.9% as pandemic-aid spending exited;
+  NMES -7.5% ($19,348 -> $17,903)
+  Statewide elementary mean (unweighted): $19,300; median $18,205
+  -> HEADLINE UPGRADE for "not expensive": on the newest state file NMES costs 7.2%
+     BELOW the average Kentucky elementary school, and below the $19,020 state
+     average printed on the district's own May 2026 table
+  District elementary weighted (SAAR weights): $16,930 - THE calculators' anchor
+  Neighbor elementary means 2024-25: Fayette $25,064, Scott $19,054, Clark $17,502,
+  Montgomery $17,402, Bourbon $17,170, Nicholas $16,352, Paris Ind $16,241,
+  Bath $14,785, Harrison $14,689 (simple school means, labeled as such)
+  Decision ladder re-anchored: allocated loss $245,760 (2024-25 costs vs 2023-24
+  revenue rates, latest available) -> ~$160K after Title I skew -> ~$31K
+  NMES-specific after the district-share deduction -> $25,394 decision-relevant:
+  THE LADDER NOW CONVERGES WITH THE GRID MEDIAN. May 2026 district table retained
+  as the district's-own-paperwork exhibit; KYRC24 $19,348 retired to history.
