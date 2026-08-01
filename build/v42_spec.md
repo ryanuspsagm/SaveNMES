@@ -66,9 +66,9 @@ Banded figures:
      ($53.5K/$80.3K/$127K); their other $40,693 (supplies, books, field trips,
      printing = $318/student vs our measured $331) travels with the students
    - fixed-position retention 100-0% ($0-$218,154)
-   - teacher retention 100/50/0% of the TWO positions the superintendent has stated
-     a closure would eliminate (SOURCING TODO: pin the meeting/date of the statement
-     before publication)
+   - teacher retention 100/50/0% of the TWO positions the district itself prices:
+     SOURCED - "Response to the 10 Questions," Appendix A.1 ("Elementary Teachers:
+     2 positions, $108,958.80"), archived build/response_to_the_10_questions.pdf
    - cost per position $50-75K
    - students lost 0-100% (grid values 0/10/20/30%; slider full range)
    - property-value loss 0-10% of est. zone base ($0-95K; PVA records ask pending)
@@ -174,3 +174,102 @@ LATEST STATE DATA (KYRC25, 2024-25, user-supplied, archived build/KYRC25_FT_...c
   district's own worksheet): the ladder (~$31K), the grid median (+$21K), and the
   district's own netted worksheet (-$2.6K) all converge on a rounding error. May 2026 district table retained
   as the district's-own-paperwork exhibit; KYRC24 $19,348 retired to history.
+
+RESPONSE TO THE 10 QUESTIONS - FULL CROSS-REFERENCE (48 pp, received 2026-08-01,
+archived build/response_to_the_10_questions.pdf; superintendent Amy Begley's reply
+to Dr. Ryan Bradley's questions; scanned, read page by page):
+
+  STRUCTURE: pp1-3 answers to Q1-Q10; Appendix A (p4) FY26 avoidable-expense lines;
+  A.1 (p5) staffing-over-time; B (p6) redistribution capacity infographic; C (pp7-44)
+  the full RossTarrant KFICS Facilities Assessment deck; D (p45) bonded projects;
+  E (p46) admin-spending infographic; E.1 (p47) admin audit table; F (p48) academic
+  resources list.
+
+  1) THE $661,138.94 "MINIMUM savings" (Q1) = $147,732.02 (Appendix A) + $20,000
+     insurance + $493,406.92 (A.1 staffing). Verified to the penny. But:
+     - A.1's own caption: "All current staff would be retained if consolidation
+       occured. Savings would be acquired through attrition as staff across the
+       district resign" - i.e. the $493K is NOT year-one and NOT guaranteed; the
+       headline stacks a multi-year attrition hope onto year-one expenses and calls
+       the sum a minimum. Year one, by their own sheet, staffing saves $0.
+     - Appendix A mixes building-bound lines (~$107,039: utilities, sanitation,
+       phone, alarm, mowing, repairs) with student-bound lines (~$40,693: general
+       supplies, supplementary books, field trips, library books, printing) that
+       travel with the 128 students = $318/student, confirming our measured $331.
+     - No added busing cost anywhere in 48 pages, and no revenue loss for a single
+       leaving family. The two levers that drive every closure into the red are
+       simply absent from the district's accounting.
+  2) TWO TEACHERS SOURCED (resolves the grid's sourcing TODO): A.1 prices exactly
+     "Elementary Teachers: 2, $108,958.80" ($54,479.40 each, explicitly rookie
+     "0 years experience" pricing - inside our $50-75K lever band). Also 1 SpEd,
+     1 principal ($84,004.56), 1 custodian, 1 food-service manager, 1 office staff,
+     1 related arts, 1 library/intervention, 1 nurse = $493,406.92 total over time.
+  3) CAPACITY: THREE INCOMPATIBLE SETS IN THEIR OWN PAPER.
+     - Appendix B (closure pitch): BCES uses 20 of 28 classrooms, CRES 19 of 21;
+       "10 combined classrooms available"; grades 2/3/4 each need one more room;
+       net 7 spare after the move; grade-4 rooms rated 28 and grade-5 rooms 29.
+     - Appendix C KFICS (bond pitch, same document): BCES 491/499 = 98% FULL,
+       CRES 461/497 = 93%, BCMS 660/644 = 102% OVER, Preschool 209/160 = 131% OVER,
+       BCHS 783/704 = 111% OVER. NMES: 128/154 = 83% (the district's ONLY
+       under-capacity school center).
+     - May 2026 Cost of Delivery table: NMES capacity 175 at 73%.
+     - 2013 state-approved rating: NMES 198.
+     The receiving schools are "98% full" when the district asks for bond money and
+     "have 10 spare classrooms" when it wants to close NMES, in the same PDF.
+  4) KFICS NEEDS TOTALS (Appendix C summary slides): district-wide reported need
+     $98,441,294 = $91,352,242 school centers + $7,089,052 support. Per building:
+     BCHS $27,488,455 (incl. Ag Bldg $1,825,444), BCMS $22,418,692, CRES
+     $14,387,595, BCES $8,840,267, NMES $8,530,093, Preschool $7,861,696.
+     - NMES is 9.3% of the school-center need. Closing it leaves 90.7% untouched.
+     - The two receiving schools carry $23.2M of need - students would move FROM a
+       building with a $5.65M deficiency INTO buildings needing $23.2M.
+     - NMES's $8.53M splits $5,648,434 actual deficiency + $2,881,659
+       "instructional deficiency" wish list (cafeteria expansion $599,520, kitchen
+       $589,375, media center $454,109, FMD classroom $398,553, admin area
+       $340,099, art relocation, computer classroom) - expansions, not repairs.
+  5) BOND LIST (Appendix D, $5,861,281.24 of bonded projects): HS partial roof
+     $456,081; misc upgrades $1,757,000; district-wide classroom audio $2,000,000;
+     field turf + track $690,894.94; bus garage lift $615,848.93; baseball field
+     maintenance $136,113; scoreboards, basketball goals, marching band tower
+     $75,000. NMES appears NOWHERE on the bonded list - its only capital items in
+     the whole response are two window-replacement lines ($200.00 and $233.40) paid
+     from the general fund (Appendix A). Confirms the v3.9 finding.
+  6) ADMIN SPEND, TWO SERIES IN ONE DOCUMENT: Appendix E's infographic uses FY23
+     $1,102,031 -> FY25 $1,443,867 (+31.02%, "not an expansion of administrative
+     payroll," staff -2, savings $187,837.83). Appendix E.1's own "Actual Expense
+     from Financial Audit" table: FY23 $990,364 -> FY24 $1,184,538 -> FY25
+     $1,406,027 = +$415,663 = +41.97% (their caption: analyzing Dr. Bradley's 44.8%
+     claim). Drivers per E.1: central-office insurance $48,441 -> $395,552.30
+     (+$347,111.30, an 8.2x jump begging a reclassification question); one-time
+     payouts $111,103.88 (former supt $46,864.95, HR $7,151.74, instructional lead
+     $27,539.46, finance officer $29,547.73); DWT-to-payscale restructuring
+     +$84,795.26; new-finance-officer training $46,073. Gross drivers ~$589K
+     against a $416K increase, offset by $187,838 of eliminated positions.
+     Matches our v3.9 decomposition nearly line for line.
+  7) Q10 ALTERNATIVE-BY-ALTERNATIVE DISMISSALS: 4% levy "we already do this" (the
+     plan's revenue levers are the beyond-4% exoneration/recall route and the 2018
+     rate restore, which the response does not address); recruiting "we already
+     have open enrollment and accept students" (passive acceptance vs the Eminence
+     playbook of programs + marketing that grew 666->989 in six years); tax
+     delinquency "how would we force a homeowner to pay"; central office "fewer
+     positions than in previous years" (position count, while its own E.1 shows
+     spend +41.97%); transportation review "already a constant practice";
+     Medicaid "already participates"; ESPC - concedes CMTA is currently running an
+     energy-savings evaluation for the district.
+  8) SOFT CLAIMS TO QUOTE CAREFULLY: Q2 - Begley "will not include speculation as
+     guaranteed cost savings" (the $1M+ figure was facility-aging "could be");
+     Q4 - "All elementary routes are designed to be under an hour" (a design
+     standard, priced at $0 added cost, for a 110-sq-mi zone whose buses would
+     terminate 9-11 miles farther west); Q6 - savings are general-fund and could
+     raise teacher pay; Q9/Appendix F - every elementary already shares the same
+     curriculum and intervention team; the listed consolidation "gains" are
+     full-time upgrades of counselor/FRYSC/SpEd-consultant/psychologist/librarian
+     coverage - services that follow staffing dollars, not the building, and that
+     could be bought directly for a fraction of the claimed savings.
+  MODEL IMPACT: no lever changes. The response's own numbers were already adopted
+  (capture lever = its $107,039 + $20,000; teachers lever capped at its 2;
+  $54,479 inside the cost band; A.1's retained-year-one note = the retention
+  levers' rationale). What the document adds is sourcing (item 2), the capacity
+  contradiction (item 3), the 9.3% facilities share (item 4), the bond-list zero
+  (item 5), and the E vs E.1 spread (item 6) - all Part One/Part Two exhibit
+  material for the v4.2 build.

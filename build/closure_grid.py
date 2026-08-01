@@ -16,10 +16,13 @@ Eight levers, every value sourced in the report and the Closure_Model tab:
                              salary lines (school admin $131,724 + custodial
                              $37,333 + library $49,097, all measured)
   teacher retention:         100% / 50% / 0% of the two teaching positions
-                             the superintendent has stated a closure would
-                             eliminate (0 / 1 / 2); the class-cap physical
-                             ceiling of ~5 is retired in favor of the
-                             district's own figure
+                             the district itself prices in "Response to the
+                             10 Questions" Appendix A.1 ("Elementary
+                             Teachers: 2, $108,958.80", archived
+                             build/response_to_the_10_questions.pdf)
+                             (0 / 1 / 2); the class-cap physical ceiling of
+                             ~5 is retired in favor of the district's own
+                             figure
   GF cost per position:      $50,000 / $60,000 / $75,000
   students lost:             0 / 10 / 20 / 30 percent of 128 (site slider runs
                              the full 0-100%)
