@@ -120,6 +120,10 @@ def main():
         "PDF leads with KDE results and labels the SchoolDigger index")
     chk("first in the county in every subject" in html,
         "site carries the KDE first-in-county claim (v4.2 wording)")
+    chk("2011 National Blue Ribbon School" in html
+        and "2011" in t and "National Blue Ribbon" in t
+        and (REPO / "build" / "national_blue_ribbon_2011_elementary.pdf").exists(),
+        "2011 National Blue Ribbon designation on site and in report, ED list archived")
 
     # KDE official historical record (build/kde_scores_history.json)
     chk((REPO / "build" / "kde_scores_history.json").exists(),

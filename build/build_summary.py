@@ -68,7 +68,8 @@ A(Paragraph(
 A(Paragraph("THE CASE AGAINST CLOSURE", kick))
 A(Paragraph("Five answers from the district's own documents", h1))
 A(Paragraph(
-  "<b>Performance.</b> North Middletown leads the county in every state-tested subject. <b>Cost.</b> The "
+  "<b>Performance.</b> North Middletown leads the county in every state-tested subject and is a 2011 National "
+  "Blue Ribbon School, one of five Kentucky public schools honored that year. <b>Cost.</b> The "
   "district's own Cost of Delivery of Services table, May 21, 2026, prices the school at $19,080 per student "
   "against a state average of $19,020 on the same table, and within 110 percent of its cheapest same-grade "
   "peer against the 150 percent standard in the state facilities manual. <b>What closure frees.</b> The "

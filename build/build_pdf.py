@@ -233,7 +233,9 @@ P("<b>The levers.</b> First, enrollment: each returning student brings the $4,62
   "recallable nickels.")
 
 H2("The case against closure: five answers from the district's own documents")
-P("<b>Performance.</b> North Middletown leads the county in every state-tested subject. <b>Cost.</b> The "
+P("<b>Performance.</b> North Middletown leads the county in every state-tested subject, and it is a 2011 "
+  "National Blue Ribbon School, one of five Kentucky public schools so honored that year (U.S. Department of "
+  "Education list, archived in the repository). <b>Cost.</b> The "
   "district's own Cost of Delivery of Services table, dated May 21, 2026 and prepared for its planning "
   "committee, prices the school at $19,080 per student against a state average of $19,020 on the same table, "
   "three tenths of one percent apart, and within 110 percent of its cheapest same-grade peer against the 150 "
