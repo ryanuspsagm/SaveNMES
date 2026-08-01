@@ -130,9 +130,11 @@ PART TWO - THE DISTRICT NEEDS GROWTH, NOT CLOSURES (district-wide)
 LEVER 1 - grow enrollment: Eminence case study (+37%, 4-in-10 nonresident) [build:
    Eminence-vs-Bourbon index chart from eminence_series.json]; district +10% to +30%
    enrollment = +$1.11M to +$3.32M/yr net of supplies.
-LEVER 2 - inspect and cut fixed costs: total district fixed costs + cut ranges [build:
-   district-wide fixed-cost rollup]; energy, routing ~$270K, admin restructure, do not
-   cut teachers; range $960K-$1.9M.
+LEVER 2 - inspect and cut fixed costs: four priced items (non-teaching attrition,
+   admin restructuring, routes, energy; shared services REMOVED v4.4), pillar
+   $760K-$1.3M counted once; the full menu band is published RAW, $1.4M-$2.3M,
+   with NO haircut (v4.4, user direction), each line carrying its own confidence
+   rating; Runway midpoint $1.87M, plan-3 FY2029 about $4.3M.
 LEVER 3 - align the tax rate: 0-100% restore to 2018 = $0 to $1,699,900/yr slider;
    statewide recall record [build: research]; HB 44 + options tables [have].
 GROWTH PLAN, PRICED: interactive 3-move calculator [build]; triangular-distribution

@@ -231,7 +231,7 @@ if hist_rates == [61.3, 60.6, 55.9, 54.2, 49.2, 52.4, 52.4, 52.4]:
 checks = [("19,348", A["B14"].value == 19348, "per-pupil spending $19,348"),
           ("4,586", A["B5"].value == 4586, "SEEK base FY2026 $4,586"),
           ("up 20.3 percent", A["B42"].value == 2913654, "transportation trend (dollar figure lives in model B42)"),
-          ("$0.9 to $1.7 million", True, "alternatives package $0.9-1.7M")]
+          ("$1.4 to $2.3 million", True, "alternatives package $1.4-2.3M, no haircut")]
 for needle, mok, label in checks:
     if needle in pdf_flat and mok: match(f"{label}: PDF text and model agree")
     else: diff(f"{label}: pdf has '{needle}': {needle in pdf_flat}, model ok: {mok}")
@@ -240,8 +240,8 @@ for r in range(15, 25):
     if wb["Alternatives"].cell(row=r, column=1).value and "Conservative combined estimate, low" in str(wb["Alternatives"].cell(row=r, column=1).value):
         alt_low = wb["Alternatives"].cell(row=r, column=2).value
         alt_high = wb["Alternatives"].cell(row=r + 1, column=2).value
-if alt_low == 900000 and alt_high == 1700000:
-    match("alternatives conservative range $0.9M-$1.7M hardcoded identically in model and quoted in the PDF")
+if alt_low == 1393830 and alt_high == 2338281:
+    match("alternatives published band $1.4M-$2.3M = raw row sums, no haircut, in model and quoted in the PDF")
 
 # ---------- 6. bonding story: $14M plan, savings-to-bond scenarios, FY2026 close ----------
 DS = wb["Debt_Service"]

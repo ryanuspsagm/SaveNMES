@@ -582,12 +582,12 @@ cc = put(al, f"C{r}", f"=SUM(C4:C{r-1})", BLK, CUR, bold=True); cc.border = TOPL
 tot = r
 put(al, f"A{tot+2}", "COMPARISON", SEC)
 put(al, f"A{tot+3}", "Package midpoint (raw sum of ranges)"); put(al, f"B{tot+3}", f"=(B{tot}+C{tot})/2", BLK, CUR)
-put(al, f"A{tot+4}", "Conservative combined estimate, low (haircut for overlap)"); put(al, f"B{tot+4}", 900000, BLUE, CUR, fill=YEL)
+put(al, f"A{tot+4}", "Published band, low (raw row sums, no haircut)"); put(al, f"B{tot+4}", 1393830, BLUE, CUR, fill=YEL)
 put(al, f"A{tot+5}", "Conservative combined estimate, high"); put(al, f"B{tot+5}", 1700000, BLUE, CUR, fill=YEL)
-put(al, f"A{tot+6}", "Conservative midpoint (used in Runway sheet)"); put(al, f"B{tot+6}", f"=(B{tot+4}+B{tot+5})/2", BLK, CUR)
+put(al, f"A{tot+6}", "Band midpoint (used in Runway sheet)"); put(al, f"B{tot+6}", f"=(B{tot+4}+B{tot+5})/2", BLK, CUR)
 put(al, f"A{tot+7}", "Average annual GF drawdown (FY2024-25)"); put(al, f"B{tot+7}", "=GF_Summary!D16", GRN, CUR)
 put(al, f"A{tot+8}", "Closure net saving (base case)"); put(al, f"B{tot+8}", "=Closure_Model!B20", GRN, CUR)
-put(al, f"A{tot+10}", "Reading: raw row sums run about $1.4M to $2.3M; the published $0.9M to $1.7M band applies a conservative haircut for overlap and implementation risk. Medicaid and reimbursement recovery were removed from the menu in v4.2 review; shared services with Paris Independent was removed in v4.4 review. Coverage is reported against both yardsticks: the $2.65M structural gap before transfers and the roughly $1.15M net drawdown after transfers (Closure_Model rows 21 and 35 carry both for closure).", NOTE, wrap=True)
+put(al, f"A{tot+10}", "Reading: the published band IS the raw row sums, $1.4M to $2.3M, with no haircut (v4.4 review); ranges overlap and are not additive to the penny, and each line carries its own confidence rating in column F. Medicaid and reimbursement recovery were removed from the menu in v4.2 review; shared services with Paris Independent was removed in v4.4 review. Coverage is reported against both yardsticks: the $2.65M structural gap before transfers and the roughly $1.15M net drawdown after transfers (Closure_Model rows 21 and 35 carry both for closure).", NOTE, wrap=True)
 
 put(al, f"A{tot+12}", "THE GROWTH PATH: THE SAME MENU AS A DISTRICT-WIDE RECOVERY PLAN (v3.8; backs the site card and Section 9)", SEC)
 put(al, f"A{tot+13}", "Move 1: inspect fixed costs (every non-teaching position via attrition, administrative restructuring, transport, energy)")
