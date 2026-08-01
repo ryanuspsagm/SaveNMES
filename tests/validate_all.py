@@ -331,7 +331,7 @@ def main():
         chk(gone not in html, f"off-layout section removed: {gone}")
     # strict layout audit: relocated blocks live in the layout's own part
     band = html.index('<section id="closure"')
-    for growth_block in ["The fill-the-seats planner", "The 4 percent option",
+    for growth_block in ["The 4 percent option",
                          "The children never left the county",
                          "The fourteen-year record"]:
         chk(html.index(growth_block) < band,
@@ -340,6 +340,9 @@ def main():
         "Downloads sits between Voices and Sources")
     chk(html.index("Every version stays public") < html.index('id="sources"'),
         "version history lives in the Downloads section")
+    chk(html.index("The fill-the-seats planner") > html.index('id="asks"')
+        and html.index("The fill-the-seats planner") < html.index('id="act"'),
+        "the NMES fill planner lives with the four asks as the how")
     # v4.1: the live scenario model exposes all seven grid levers
     for lever in ['id="sFix"', 'id="sPos"', 'id="sCost"', 'id="sBus"',
                   'id="sLeav"', 'id="sCap"', 'id="sEro"']:
