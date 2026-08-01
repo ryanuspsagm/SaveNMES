@@ -1,4 +1,4 @@
-"""Builds the four-page Executive Summary (SaveNMES_Executive_Summary.pdf).
+"""Builds the two-page Executive Summary (SaveNMES_Executive_Summary.pdf).
 Standalone companion to the full report; every figure is sourced there."""
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import inch
@@ -31,39 +31,38 @@ A = S.append
 
 A(Paragraph("Saving North Middletown Elementary", title))
 A(Paragraph("Executive Summary • The Case for Growth, the Case Against Closure, and the Choice", sub))
-A(Paragraph("Version 4.2 • August 1, 2026 • Built from public records and Open Records Requests only • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
+A(Paragraph("Version 4.4 • August 1, 2026 • Built from public records and Open Records Requests only • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
 A(HRFlowable(width="100%", thickness=1.1, color=NAVY, spaceAfter=10))
 
 A(Paragraph("THE CASE FOR GROWTH", kick))
 A(Paragraph("A district-wide problem with district-wide levers", h1))
 A(Paragraph(
-  "<b>The problem is not one school.</b> Elementary enrollment is down 16.5 percent from its 2016 peak while "
-  "the census shows the county's child population essentially flat for twenty-five years. Kindergarten intake "
-  "hit 149 last fall, the lowest in the federal record, and fewer children have entered kindergarten than left "
-  "fifth grade in seven of the last eight years. The General Fund draws down roughly $1.1 million of reserves "
-  "a year, and the enrollment loss alone accounts for most of it: the 205 missing elementary students carry "
-  "about $948,000 a year of state funding. The revenue posture is unique in the region: the Department of "
-  "Revenue's certified values show Bourbon County's tax base grew 107.5 percent from 2012 to 2025, second "
-  "fastest of the eight area counties, while the school levy fell 5.4 percent, the only decline among nine "
-  "districts. Scott County rode the same boom, raised its rate 38.9 percent, and levies a 0.5 percent "
-  "occupational tax besides; eight Kentucky districts levy that tax, Bourbon levies none. Merely holding the "
-  "2012 rate would yield about $613,000 more per year today.", body))
+  "<b>The problem is not one school.</b> Elementary enrollment is down 16.5 percent from its 2016 peak, "
+  "while the county's child count has stayed flat for twenty-five years. Kindergarten intake hit 149 last "
+  "fall, the lowest on the federal record. The General Fund burns through about $1.1 million of reserves a "
+  "year, and the 205 missing elementary students explain most of it: about $948,000 a year of state money. "
+  "The tax side is just as clear. The county's tax base grew 107.5 percent since 2012, second fastest of "
+  "eight area counties. The school levy fell 5.4 percent, the only drop among nine districts. Holding the "
+  "2012 rate would bring in about $613,000 more per year today", body))
 A(Paragraph(
-  "<b>Lever one, enrollment.</b> Each returning student brings the $4,626 SEEK base against roughly $400 of "
-  "marginal cost. The recoverable pool is measured: 259 registered homeschoolers, roughly 450 to 550 county "
-  "children outside the public schools, 131 nonresident students already choosing this district. The model is "
-  "proven in-state: Eminence Independent grew 37 percent over the decade Bourbon shrank 13, on differentiation "
-  "and open enrollment. A themed academy at North Middletown (arts, technology, or agriculture and outdoor sciences), a preschool-to-kindergarten pipeline, "
-  "foundation-funded scholarship promises, and marketing against a measured pool are the plan; filling North "
-  "Middletown's 46 open seats alone nets $56,000 to $116,000 a year, and today's 174 rating is not the ceiling: the 2013-approved plan rated the building at 198. <b>Lever two, fixed costs.</b> "
-  "Transportation is $2.7 million coded to no school with no routing study ever produced; a ten percent "
-  "optimization is about $270,000 a year. Kentucky's school energy program documented $225 million of "
-  "statewide savings. An inspection of every non-teaching position district-wide, trimmed by attrition, is "
-  "worth $340,000 to $425,000 a year. "
-  "<b>Lever three, revenue.</b> The rate is simply lower while the tax base more than doubled. Restoring the "
-  "board's own 2018 rate brings in about $1.7 million a year. In the last ten years, across the eight "
-  "neighboring districts, voters have turned down exactly one school tax, a building nickel in Bath County; "
-  "Bourbon's own voters never even petitioned either of this district's two recallable nickels.", body))
+  "<b>Lever one, enrollment.</b> Each returning student brings the $4,626 state base against roughly $400 "
+  "of real new cost. The pool is measured: 259 registered homeschoolers, roughly 450 to 550 county children "
+  "outside the public schools, and 131 nonresident students already choosing this district. Eminence "
+  "Independent proved the model an hour away: it grew 37 percent in the decade Bourbon shrank 13. The tools "
+  "are options to weigh: a themed academy (arts, technology, or agriculture and outdoor sciences) or a "
+  "donor-funded promise scholarship that pays every NMES graduate toward college, trade school, or any "
+  "certification. The growth model prices the push with no free passes: one classroom teacher per full new "
+  "class past the 25 seats already open at the district's own class caps. It pays in every one of 19,683 "
+  "priced scenarios, with a middle case of +$140,331 a year. <b>Lever two, fixed costs.</b> Inspect every "
+  "non-teaching position district-wide and trim by attrition: $340,000 to $425,000 a year. Consider "
+  "restructuring the administration: $224,000 to $450,000. Smarter bus routes: $146,000 to $291,000 on a "
+  "$2.7 million line no routing study has ever tested. Energy contracts: $50,000 to $150,000. "
+  "<b>Lever three, revenue.</b> The rate is simply lower while the tax base more than doubled. Restoring "
+  "the board's own 2018 rate brings in about $1.7 million a year. In the last ten years, across the eight "
+  "neighboring districts, voters turned down exactly one school tax, a building nickel in Bath County. "
+  "<b>Together, the plan is transformative.</b> At its low ends it covers the whole gap, funds a 5 percent "
+  "raise for every certified teacher, and frees about $23 million of building capacity. At its top ends: a "
+  "10 percent raise and roughly $52 million. Every school stays open", body))
 
 A(Paragraph("THE CASE AGAINST CLOSURE", kick))
 A(Paragraph("Five answers from the district's own documents", h1))
@@ -109,22 +108,19 @@ A(Paragraph(
 A(Paragraph("THE CHOICE", kick))
 A(Paragraph("Two roads, and five asks that cost nothing", h1))
 A(Paragraph(
-  "Shrink to fit, or grow and thrive. On North Middletown specifically: <b>One,</b> keep the school Permanent "
-  "in the facility plan with its capital needs at lower priority. A plan commits no money; the Transitional "
-  "label saves nothing while foreclosing state facilities eligibility, major renovation, and replacement. "
-  "<b>Two,</b> give the school and community the four years to the next facility plan for a measured "
-  "enrollment push, against public targets, judged on results. <b>Three,</b> let the school and community "
-  "raise grant-based and private funds, with donated services, for the building's critical needs. "
-  "<b>Four,</b> state publicly that the district will work to grow this school; uncertainty is its own "
-  "enrollment killer, and a sentence of commitment gives existing and future families the confidence to "
-  "enroll. <b>Five,</b> stand up three committees to run the growth plan (enrollment growth, fixed costs, "
-  "revenue options); volunteers from the North Middletown community stand at the ready to help support "
-  "them. If staff are reassigned rather than cut, a closure frees the $58,774 utilities line, so there is "
-  "no pot of money these asks would squander. A closed school cannot be recalled by the children it "
-  "displaces; a growth plan can be measured, every year, by everyone.", body))
+  "Shrink to fit, or grow and thrive. On North Middletown, five asks that cost nothing. <b>One,</b> keep "
+  "the school Permanent in the facility plan; a plan commits no money, and only Permanent keeps every door "
+  "open. <b>Two,</b> give the school the four years to the next plan, with public enrollment targets, "
+  "judged on results. <b>Three,</b> let the community fund the building with grants, private money, and "
+  "donated labor. <b>Four,</b> say publicly that the district will grow this school; uncertainty is its own "
+  "enrollment killer. <b>Five,</b> stand up three committees to run the growth plan: enrollment, fixed "
+  "costs, and revenue. Volunteers from the NMES community stand at the ready to help. There is no pot of "
+  "money these asks would squander: if staff are reassigned, closure frees only the $58,774 utilities line. "
+  "A closed school cannot be recalled by the children it displaces. A growth plan can be measured, every "
+  "year, by everyone", body))
 A(HRFlowable(width="100%", thickness=0.8, color=LINE, spaceBefore=6, spaceAfter=6))
 A(Paragraph(
-  "The full 57-page report, the financial model with every calculation as live formulas, all archived "
+  "The full 58-page report, the financial model with every calculation as live formulas, all archived "
   "district documents, and every prior version with its corrections are free at SaveNMES.org and in the "
   "public repository.", ParagraphStyle("f", parent=body, fontSize=9.4, textColor=GRAY)))
 
