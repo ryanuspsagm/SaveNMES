@@ -16,16 +16,15 @@ and the district's own worksheet argue on the same basis.
                              travels with the students ($318/student, against
                              our independently measured $331) and is not
                              avoidable
-  fixed-position retention:  100% / 50% of the $218,154 of fixed-position
+  fixed-position retention:  100% / 50% / 0% of the $218,154 of fixed-position
                              salary lines (school admin $131,724 + custodial
                              $37,333 + library $49,097, all measured; the
                              district's own staffing sheet prices the same
-                             four roles at $209,700, within 4 percent).
-                             The 0%-retention (all positions cut) leg is
-                             RETIRED: the superintendent's own Appendix A.1
-                             states all current staff would be retained, so
-                             full elimination is an end state the district
-                             itself disclaims and the model does not credit
+                             four roles at $209,700, within 4 percent). The
+                             0%-retention leg is an attrition end state:
+                             Appendix A.1 states all current staff would be
+                             retained in year one, with savings recovered
+                             only as staff across the district resign
   teachers cut:              0 / 1 / 2 / 3 positions. The district's Appendix
                              A.1 prices 2 ("Elementary Teachers: 2,
                              $108,958.80"); its own Appendix B classroom
@@ -68,8 +67,8 @@ net = capture + fixed_positions_cut + teachers_cut x $54,479.40
       - busing - leavers x (4,626 + add_ons) - property_loss
 
 Run:  python build/closure_grid.py
-Asserts the published statistics: 3,888 scenarios; median -$76,005; 68 percent
-negative; range -$591,545 to +$379,554; middle half -$194,757 to +$40,328.
+Asserts the published statistics: 5,832 scenarios; median -$21,971; 55 percent
+negative; range -$591,545 to +$488,631; middle half -$148,790 to +$102,067.
 """
 import statistics
 
@@ -82,7 +81,7 @@ TEACH = 108_958.80 / 2                      # $54,479.40, the district's own
 nets = sorted(
     c + f + t * TEACH - b - l * (SEEK + ad) - pr
     for c in CAPTURE
-    for f in (0, FIXED_POS / 2)
+    for f in (0, FIXED_POS / 2, FIXED_POS)
     for t in (0, 1, 2, 3)
     for l in (0, 13, 26, 38, 51, 64)
     for ad in (0, 500, 1000)
@@ -93,11 +92,11 @@ n = len(nets)
 med = statistics.median(nets)
 neg = sum(1 for x in nets if x < 0)
 
-assert n == 3_888, n
-assert round(med) == -76_005, med
-assert round(neg / n * 100) == 68, neg / n
-assert round(nets[0]) == -591_545 and round(nets[-1]) == 379_554, (nets[0], nets[-1])
-assert round(nets[n // 4]) == -194_757 and round(nets[3 * n // 4]) == 40_328
+assert n == 5_832, n
+assert round(med) == -21_971, med
+assert round(neg / n * 100) == 55, neg / n
+assert round(nets[0]) == -591_545 and round(nets[-1]) == 488_631, (nets[0], nets[-1])
+assert round(nets[n // 4]) == -148_790 and round(nets[3 * n // 4]) == 102_067
 
 print(f"{n:,} scenarios | median ${med:,.0f} | {neg / n * 100:.0f}% lose money")
 print(f"range ${nets[0]:,.0f} to ${nets[-1]:,.0f} | middle half "
