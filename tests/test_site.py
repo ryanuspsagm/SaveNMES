@@ -112,8 +112,8 @@ def main():
         # --- Growth calculator ---
         gro = pg.text_content("#rGro").strip()
         gverd = pg.text_content("#rGroVerdict").strip()
-        if gro == "$140,384" and "70 added students" in gverd and "2 new teachers" in gverd and "1 support hire" in gverd:
-            ok("growth default is the median-rank scenario: $140,384 at target 180, today's class size, $500 add-ons")
+        if gro == "$163,944" and "44 added students" in gverd and "no new teachers" in gverd:
+            ok("growth default fills to the architect's own 154: $163,944, 44 added, no new hires")
         else: bad(f"growth defaults: {gro} / {gverd}")
         pg.fill("#sGro", "200"); pg.dispatch_event("#sGro", "input")
         pg.fill("#sRat", "0"); pg.dispatch_event("#sRat", "input")

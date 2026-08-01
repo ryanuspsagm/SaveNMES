@@ -186,6 +186,14 @@ h. Teacher trigger RE-INDEXED on classroom teachers (2026-08-01, user: "index
    Median $125,150 -> $140,331 and the zero-negative claim RETURNS (floor
    +$3,331): with the district's own open seats and classroom-indexed
    hiring, growth pays in every one of the 19,683 scenarios.
+i. Growth default moved to target 154 (2026-08-01, user: "around the 154
+   student mark or wherever the best return is around that mark"): the
+   architect's own printed capacity, reached with zero new hires (25 seats +
+   a partial class at 1 per 21; the first hire lands past 155). Default shows
+   $163,944, rank 63.9%, labeled as the fill-to-154 story; the published
+   median stays $140,331. Ask 2 reframed: themed academy is ONE option, a
+   promise scholarship endowment (donor-funded, pays every NMES graduate
+   toward any continuing education) is ANOTHER; neither presented as decided.
 b. Calculator base = 110 (district's own figure, still flagged unsourced); ceiling 200
    on the slider with the 198 note (2013 state-approved rating).
 c. Property-loss lever priced $0-95K pending the PVA records response.

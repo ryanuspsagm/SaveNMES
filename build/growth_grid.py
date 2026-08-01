@@ -94,14 +94,15 @@ neg_full = sum(1 for x in full if x < 0)
 assert neg_full == 0, neg_full
 assert round(statistics.median(base)) == 117_040, statistics.median(base)
 
-# the site default is a real grid combo at the median rank (50.0%):
-# 70 added, one class per 21 (today's class size; 2 teachers past the 25
-# seats), entry-row $41,718 teacher, 1 per 50 support at $37,000, busing at
-# its $1,000 maximum, $400 supplies, $500 add-ons (the closure default leg)
-site_default = net(70, 21, 50, 41_718, 37_000, 1000, 400, 500)
-assert site_default == 140_384, site_default
+# the site default fills to the architect's own 154 (44 added from the 110
+# base): the 25 open seats plus a partial class at 1 per 21 mean no teacher
+# and no support hire trigger; busing at its $1,000 maximum, $400 supplies,
+# $500 add-ons (the closure default leg). Not the median: a fill-to-capacity
+# story scenario (rank ~64%), while the published median stays $140,331.
+site_default = net(44, 21, 50, 41_718, 37_000, 1000, 400, 500)
+assert site_default == 163_944, site_default
 rank = sum(1 for x in full if x <= site_default) / len(full)
-assert 0.49 < rank < 0.51, rank
+assert 0.60 < rank < 0.68, rank
 
 print(f"headline (add-ons enumerated): {len(full):,} scenarios "
       f"| median ${statistics.median(full):,.0f} | floor ${full[0]:,.0f} "
