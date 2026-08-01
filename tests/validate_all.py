@@ -118,8 +118,8 @@ def main():
     chk("audio system" in t, "PDF states the recovered 2024 bond purpose")
     chk("first among all four" in t and "SchoolDigger index" in t,
         "PDF leads with KDE results and labels the SchoolDigger index")
-    chk("first in every state-tested subject" in html,
-        "site carries the KDE first-in-county claim")
+    chk("first in the county in every subject" in html,
+        "site carries the KDE first-in-county claim (v4.2 wording)")
 
     # KDE official historical record (build/kde_scores_history.json)
     chk((REPO / "build" / "kde_scores_history.json").exists(),
@@ -207,14 +207,14 @@ def main():
                    "Appendix B: The Open Records Checklist", "KRS 157.370",
                    "Boston Public Schools"]:
         chk(needle in t, f"PDF claim intact: {needle}")
-    chk("$69,071" in html, "site claim intact: $69,071 calculator central-case default")
-    for needle in ["$22,000", "45 percent", "losing $556,000",
-                   "saving $552,000", "Millersburg"]:
-        chk(needle in html, f"site v3 two-tailed range intact: {needle}")
-    for needle in ["Figure 7.", "Figure 8.", "losing $556,000", "saving $552,000",
-                   "$22,000", "45 percent", "Millersburg", "119 students",
-                   "$50,000 to $75,000", "$41,718", "747"]:
-        chk(needle in t, f"PDF v3 two-tailed range intact: {needle}")
+    chk("$54,539" in html, "site claim intact: $54,539 calculator central-case default")
+    for needle in ["$21,971", "55 percent", "losing $591,545",
+                   "saving $488,631", "Millersburg"]:
+        chk(needle in html, f"site v4.2 two-tailed range intact: {needle}")
+    for needle in ["Figure 7.", "Figure 8.", "losing $591,545", "saving $488,631",
+                   "$21,971", "55 percent", "Millersburg", "119 students",
+                   "$54,479.40", "$41,718", "747"]:
+        chk(needle in t, f"PDF v4.2 two-tailed range intact: {needle}")
 
     # bonding story: the $14M plan, the levers, and the unaudited FY2026 close
     for needle in ["$14 million plan", "wrap-around", "recallable",
@@ -222,7 +222,7 @@ def main():
                    "$1,413,929", "August 17, 2023", "$82,866", "Paris Independent",
                    "Capital Funds Request", "$3.1 million"]:
         chk(needle in t, f"PDF bonding story intact: {needle}")
-    chk("$3.1 million" in html, "site bonding story (kept line) intact: $3.1 million")
+    # v4.2 cut: the $3.1 million kept line moved to the report with the rest of the bond story
     chk("The $14 million plan" not in html and "The bonds: a different pot" not in html
         and 'id="chartDebt"' not in html,
         "v4.1: bond and $14M-plan cards moved to the report only")
@@ -266,8 +266,8 @@ def main():
                    "$213,000", "Cloverport", "net import of 189", "letter of intent",
                    "KRS 159.160", "$4,226", "St. Mary"]:
         chk(needle in t, f"PDF recruitment pool intact: {needle}")
-    for needle in ["sRet", "259 registered homeschool", "54 of them from Fayette County",
-                   "$4,626", "one in three"]:
+    for needle in ["sRet", "259 registered homeschool", "Fayette pulling 54 commuters",
+                   "$4,626"]:
         chk(needle in html, f"site recruitment pool intact: {needle}")
     for f in ["kde_nonresident_students_sy24_25.xlsx", "wapo_home_school_district.csv"]:
         chk((REPO / "build" / f).exists(), f"recruitment-pool source archived: build/{f}")
@@ -298,8 +298,8 @@ def main():
                    "closure_grid.py", "ky_closure_events_full.csv",
                    "contingent", "$1,098,663", "244 paper seats"]:
         chk(needle in t, f"v3.5 correction intact in PDF: {needle}")
-    for needle in ["first in every state-tested subject", "in 2006"]:
-        chk(needle in html, f"v3.5 correction intact on site: {needle}")
+    chk("first in the county in every subject" in html,
+        "v3.5 correction intact on site (first-in-county claim, v4.2 wording)")
     for f in ["closure_grid.py", "ky_closure_events_full.csv",
               "ky_district_finance_1995_2020.csv", "ky_edfacts_district_2009_2018.csv"]:
         chk((REPO / "build" / f).exists(), f"reproducibility file archived: build/{f}")
@@ -311,7 +311,7 @@ def main():
     for needle in ["Figure 21.", "72 percent", "5.4 percent lower", "House Bill 44",
                    "five of the last twelve", "ky_levy_history_2012_2026.csv"]:
         chk(needle in t, f"PDF levy history intact: {needle}")
-    for needle in ["chartLevyHist", "72.3 percent", "5.4 percent lower"]:
+    for needle in ["chartLevyHist", "5.4 percent lower", "107.5 percent"]:
         chk(needle in html, f"site levy history intact: {needle}")
     chk((REPO / "build" / "ky_levy_history_2012_2026.csv").exists()
         and (REPO / "build" / "levy_series.json").exists(),
@@ -324,18 +324,19 @@ def main():
     es_path = REPO / "SaveNMES_Executive_Summary.pdf"
     chk(es_path.exists(), "executive summary PDF exists")
     es = " ".join(pg.extract_text() for pg in PdfReader(es_path).pages).replace("\n", " ")
-    for needle in ["107.5", "$19,080", "$21,571", "2.8 times", "Permanent", "2,412"]:
+    for needle in ["$19,080", "$21,971", "54,479.40", "Permanent", "2,412", "5,832"]:
         chk(needle in es, f"executive summary intact: {needle}")
     chk("SaveNMES_Executive_Summary.pdf" in html, "site links the executive summary")
     for gone in ['id="tldr"', 'id="questions"', 'id="roadahead"']:
         chk(gone not in html, f"off-layout section removed: {gone}")
-    # strict layout audit: relocated blocks live in the layout's own part
-    band = html.index('<section id="closure"')
-    for growth_block in ["The 4 percent option",
-                         "The children never left the county",
-                         "The fourteen-year record"]:
-        chk(html.index(growth_block) < band,
-            f"growth-side block sits in Part One: {growth_block}")
+    # strict layout audit: v4.2 order is Part One (case) -> model -> Part Two (growth)
+    band2 = html.index('<section id="part2"')
+    for case_block in ['id="school"', 'id="cost"', 'id="frees"', 'id="risks"', 'id="model"']:
+        chk(html.index(case_block) < band2,
+            f"case-side block sits in Part One: {case_block}")
+    for growth_block in ['id="money"', 'id="grow"', "the 4 percent option", "chartLevyHist"]:
+        chk(html.index(growth_block) > band2,
+            f"growth-side block sits in Part Two: {growth_block}")
     chk(html.index('id="voices"') < html.index('id="downloads"') < html.index('id="sources"'),
         "Downloads sits between Voices and Sources")
     chk(html.index("Every version stays public") < html.index('id="sources"'),
@@ -343,21 +344,25 @@ def main():
     chk(html.index("The fill-the-seats planner") > html.index('id="asks"')
         and html.index("The fill-the-seats planner") < html.index('id="act"'),
         "the NMES fill planner lives with the four asks as the how")
-    # v4.1: the live scenario model exposes all seven grid levers
-    for lever in ['id="sFix"', 'id="sPos"', 'id="sCost"', 'id="sBus"',
-                  'id="sLeav"', 'id="sCap"', 'id="sEro"']:
-        chk(lever in html, f"scenario-model slider present: {lever}")
-    chk('id="sOther"' not in html, "combined closure-cost slider replaced by its two grid levers")
-    chk("all seven inputs in your hands" in html and 'id="rRank"' in html,
+    # v4.2: the closure calculator exposes all seven grid levers, plus the growth calculator
+    for lever in ['id="sCap"', 'id="sFix"', 'id="sTea"', 'id="sLeav"',
+                  'id="sAdd"', 'id="sProp"', 'id="sBus"']:
+        chk(lever in html, f"closure-model slider present: {lever}")
+    for lever in ['id="sGro"', 'id="sRat"', 'id="sTc"', 'id="sSp"',
+                  'id="sGb"', 'id="sCps"', 'id="sGad"']:
+        chk(lever in html, f"growth-model slider present: {lever}")
+    chk("5,832 scenarios" in html and 'id="rRank"' in html,
         "calculator presented as the live scenario model with a grid-rank readout")
+    chk("$142,800" in html and "+$26,260" in html and "6,561" in html,
+        "growth calculator carries the published base-grid stats")
     for heading in ["What the district's own facility plans show",
                     "Building condition, as reported to the state"]:
         chk(heading not in html, f"off-layout card removed from site: {heading}")
     chk(not __import__("re").search(r"[\u2013\u2014]", es), "zero en/em dashes in the executive summary")
 
     # v4.0: the two-roads restructure
-    for needle in ["The District Needs Growth, Not Closures", "The Case Against Closure", "Two roads",
-                   "$19,080", "$19,020", "107.5", "Eminence", "occupational",
+    for needle in ["The District Needs Growth, Not Closures", "The Case Against Closing NMES", "Two roads",
+                   "$19,080", "$19,020", "107.5", "Eminence",
                    "$58,774", "Permanent"]:
         chk(needle in html, f"site v4 content intact: {needle}")
     for needle in ["Decision in Brief", "Part Two: The Evidence", "$19,080", "$19,020",
@@ -366,10 +371,12 @@ def main():
         chk(needle in t, f"PDF v4 decision brief intact: {needle}")
     chk("every 10 percent" in t and "every 10 percent" in html,
         "stepped losses published as scenarios in report and site")
+    chk("28 homerooms" not in html,
+        "site does not adopt the district capacity claims uncritically")
     chk("12 percent of displaced" not in t and "12 percent of the displaced" not in html
         and "floor, not the ceiling" not in t and "floor, not the ceiling" not in html,
         "the withdrawn cohort-leakage claim is absent from report and site")
-    chk("170 to 259" in t and "170 to 259" in html,
+    chk("170 to 259" in t and "up from 170 five years ago" in html,
         "exit routes documented directly (homeschool 170 to 259) in report and site")
     chk("110" in html and "still unsourced" in html,
         "the district's unsourced 110-enrollment figure is flagged, not adopted")
@@ -378,12 +385,11 @@ def main():
     for needle in ["compensating rate", "40.61", "42.64", "$8,254,030", "$393,049",
                    "$1,843,569,625", "five of the last twelve years"]:
         chk(needle in t, f"PDF HB 44 rate-vs-revenue intact: {needle}")
-    for needle in ["compensating rate", "40.61", "42.64", "$8,254,030", "$393,049",
-                   "$1,843,569,625"]:
-        chk(needle in html, f"site HB 44 rate-vs-revenue intact: {needle}")
+    chk("compensating rate" in html,
+        "site HB 44 rate-vs-revenue: compensating-rate explanation kept (table retired to the report in v4.2)")
     # the table is a revenue limit: revenue at the 4% option is flat across all growth rates
-    chk(t.count("$7,860,981") >= 4 and html.count("$7,860,981") >= 4,
-        "4 percent revenue constant at every assessment-growth row (PDF and site)")
+    chk(t.count("$7,860,981") >= 4,
+        "4 percent revenue constant at every assessment-growth row (PDF)")
     # 2023 rate movement decomposition, labelled an inference
     for needle in ["3.2 cents", "August 17, 2023", "5.7 cents", "$477,000"]:
         chk(needle in t, f"PDF 2023 nickel decomposition intact: {needle}")
@@ -392,16 +398,18 @@ def main():
     # question list: twelve, aligned across site and report, with the two new asks
     chk("Twelve Questions" in t, "twelve questions carried in the report")
     chk("twelve questions in the report" in html, "site defers the questions to the report (v4 layout)")
+    chk("Response to the 10 Questions" in html,
+        "site cites the district response by name in the sources")
     chk("Ten Questions" not in t and "eleven questions" not in t.lower(),
         "no stale question counts left in the report")
     for needle in ["assessment erosion", "$138,780", "$46,260"]:
         chk(needle in t, f"PDF question 1 downside risk intact: {needle}")
-    chk("assessment erosion" in html, "site carries the assessment-erosion vector")
+    chk("Property-value loss" in html, "site carries the property-loss lever (v4.2 name)")
     chk("does not establish that closure causes decline" in t.replace("<i>", "").replace("</i>", "")
         or "not establish that closure causes decline" in t,
         "question 1 states the limit of the closure/population evidence")
-    chk("certified compensating rate" in t and "certified compensating rate" in html,
-        "the records ask that settles the 4 percent question is published in both")
+    chk("certified compensating rate" in t,
+        "the records ask that settles the 4 percent question is published in the report")
 
     # beyond-4% recallable levy options (v3.7)
     for needle in ["recallable levy options", "KRS 160.470", "$191,000 per cent",
@@ -410,15 +418,15 @@ def main():
                    "recalled by the voters it taxes",
                    "recalled by the children it displaces"]:
         chk(needle in t, f"PDF beyond-4% levy options intact: {needle}")
-    for needle in ["KRS 160.470", "$191,000 per cent", "$211,600", "$21.16",
+    for needle in ["KRS 160.470",
                    "recalled by the voters it taxes",
                    "recalled by the children it displaces"]:
         chk(needle in html, f"site beyond-4% levy options intact: {needle}")
     for needle in ["57.7", "60.3", "61.3", "65.5",
                    "$112/yr ($9.35/mo)", "$167/yr ($13.93/mo)",
                    "$188/yr ($15.69/mo)", "$277/yr ($23.10/mo)"]:
-        chk(needle in t and needle in html,
-            f"beyond-4% option table consistent in PDF and site: {needle}")
+        chk(needle in t,
+            f"beyond-4% option table intact in the PDF (retired from the site in v4.2): {needle}")
     chk("median of the eight area districts with Fayette excluded" in t,
         "PDF defines the regional median precisely")
     chk("reports/Saving_NMES_v3.7_2026-07-26.pdf" in html
@@ -431,9 +439,8 @@ def main():
                    "54 to 69", "$2,851", "$5,200", "$4,414",
                    "$960,000 to $1.9 million", "$260,000 to $530,000"]:
         chk(needle in t, f"PDF v3.8 content intact: {needle}")
-    for needle in ["$56,000 to $116,000", "$2,476,544",
-                   "$2,851", "$5,200", "$4,414",
-                   "$960,000 to $1.9 million", "$260,000 to $530,000"]:
+    for needle in ["$2.5 million federal", "$2,851", "$5,200", "$4,414",
+                   "$960,000 to $1.9 million"]:
         chk(needle in html, f"site v3.8 content intact: {needle}")
 
     # ---- v3.9 release content ----
@@ -442,20 +449,19 @@ def main():
                    "7.6 percent", "450 to 550", "13 to 15 percent", "3,594", "3,548",
                    "2,912", "2,616", "$61,937" if "$61,937" in t else "$132,744"]:
         chk(needle in t, f"PDF v3.9 content present: {needle}")
-    for needle in ["$1,285,310", "$21,482,445", "$938,690", "$227,831", "$276,928",
-                   "450 to 550", "13 to 15 percent", "3,594", "2,616",
-                   "300 to 80", "$61,937"]:
+    for needle in ["$938,690", "450 to 550", "13 to 15 percent", "3,594", "2,616"]:
         chk(needle in html, f"site v3.9 content present: {needle}")
     chk("one in three" not in html or "an earlier version of this page said one in three" in html,
         "site: the retracted one-in-three share is corrected, not merely repeated")
-    chk('id="sPos" min="2" max="5"' in html and 'id="sCost" min="50000" max="75000"' in html
-        and 'id="sBus" min="100000" max="250000"' in html,
-        "site calculator sliders sit inside the published grid")
-    chk("Version 4.1" in t and "July 31, 2026" in t, "PDF carries the v4.1 version block")
-    chk("reports/Saving_NMES_v4.1_2026-07-31.pdf" in html
+    chk('id="sTea" min="0" max="3"' in html and 'id="sLeav" min="0" max="100"' in html
+        and 'id="sBus" min="20000" max="190000"' in html,
+        "site calculator sliders span the published grid (leakage slider full range by design)")
+    chk("Version 4.2" in t and "August 1, 2026" in t, "PDF carries the v4.2 version block")
+    chk("reports/Saving_NMES_v4.2_2026-08-01.pdf" in html
+        and (REPO / "reports" / "Saving_NMES_v4.2_2026-08-01.pdf").exists()
         and (REPO / "reports" / "Saving_NMES_v4.1_2026-07-31.pdf").exists()
         and (REPO / "reports" / "Saving_NMES_v4.0_2026-07-31.pdf").exists(),
-        "v4.1 archived and linked; v4.0 stays archived")
+        "v4.2 archived and linked; v4.1 and v4.0 stay archived")
     chk("run this play before" in t and "Joy Global" in t and "Figure 8." in t,
         "Millersburg community case study restored in the report (Figure 8)")
     chk("Saving_NMES_v3.9_2026-07-29.pdf" in html, "site links the v3.9 report")
@@ -466,8 +472,8 @@ def main():
         "2000-01 report card provenance disclosed on site and in PDF")
     chk("prior-year spending" in t,
         "CATS-era fiscal-year caveat disclosed in the report")
-    chk("$19,635" in html and "$19,635" in t,
-        "2012-13 capital-charge outlier disclosed, not hidden")
+    chk("$19,635" in t,
+        "2012-13 capital-charge outlier disclosed in the report (site table retired in v4.2)")
     for f in ["bourbon_spending_per_student_2011_2017.csv", "bourbon_staffing_ratios_ccd.csv",
               "crdc_school_finance_bourbon_2011_2017.csv", "slfs_bourbon_fy16_fy17.csv",
               "bourbon_revenue_by_source_2020_2024.csv"]:
@@ -491,12 +497,11 @@ def main():
         "EDFacts extract archived")
     chk("range midpoints" in t and "different scales" in t,
         "EDFacts midpoint and KCCT/KPREP scale caveats disclosed in the report")
-    for needle in ["Reading the 2024-25 crossover", "58.5", "45.4", "79.2", "74.3",
-                   "Writing content index", "Climate survey index"]:
-        chk(needle in html, f"2024-25 status-measure table on site: {needle}")
+    chk("crosses above NMES in the newest year" in html,
+        "site keeps the 2024-25 crossover explanation (status table retired to the report in v4.2)")
 
-    chk("unaudited" in html and "unaudited" in t,
-        "FY2026 figures labeled unaudited on site and in PDF")
+    chk("unaudited" in t,
+        "FY2026 figures labeled unaudited in the PDF (site block retired in v4.2)")
     chk((REPO / "build" / "fy2026_june_financial_packet.pdf").exists(),
         "June 2026 financial packet archived in build/")
     chk("balanced-budget scenario" in t,
@@ -509,19 +514,18 @@ def main():
         "PDF levy uses the corrected GF base (313K/978K), old 386K gone")
     chk("$7,829,060" in t and "restricted building-fund levy" in html,
         "levy base disclosed as GF-only in PDF and site")
-    chk("over four fifths of the annual reserve drawdown" in t
-        and "one cent of the district" in t,
-        "PDF scores closure and levy against both deficit and drawdown")
-    chk("draws from reserves each year" in html and "DRAWDOWN=1145561" in html,
+    chk("over four fifths of the annual reserve drawdown" in t,
+        "PDF scores the levy against both deficit and drawdown")
+    chk("reserve drawdown" in html and "DRAWDOWN=1145561" in html,
         "site shows both denominators on the calculators")
     chk("net change across all seven" in t,
         "PDF clarifies the $430K is the net debt-service step, not the bond's payment alone")
     chk("multi-age" not in t.lower() and "multiage" not in t.lower(),
         "multi-age reorganization removed from the report")
-    chk("re-create sections" in t and "four while North Middletown" in t,
-        "PDF keeps the closure staffing-count judgment (v3 class-cap form)")
-    chk("$1.6 to $2.9 million" in t and "$1.6 to $2.9 million" in html,
-        "alternatives raw sums (v3.8: fill correction plus priced recruitment line)")
+    chk("its savings sheet says two" in t and "count supports three" in t,
+        "PDF keeps the closure staffing-count judgment (v4.2: the district's own two-vs-three)")
+    chk("$1.6 to $2.9 million" in t,
+        "alternatives raw sums intact in the report (site quote retired in v4.2)")
 
     print(f"PASS {len(ok)}")
     print(f"FAIL {len(bad)}")

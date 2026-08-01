@@ -40,32 +40,45 @@ if bal == 4290840 and "4,290,840" in pdf_flat and "4,290,840" not in html:
     note("fund balance $4,290,840 in model+PDF; site says '$4.3 million'/'falling ~$1.1M a year' (rounded prose, consistent)")
 if "4,290,840" in html: match("fund balance $4,290,840 also on site")
 
-# closure central case (v3 two-tailed)
-central = A["B51"].value + A["B52"].value + 3 * A["B69"].value - 137500 - 10 * A["B6"].value - 155000
-site_const = re.search(r"net=FIXV\[f\]\+p\*c-b-l\*(\d+)-cap-ero", html)
-site_fixv = re.search(r"var FIXV=\[(\d+),(\d+),(\d+)\]", html)
-if central == 69071 and site_const and "$69,071" in html:
-    match("closure central case $69,071 (model inputs == site calculator v3.9 defaults)")
+# closure central case (v4.2 grid, rebuilt on the district's own response)
+CM = wb["Closure_Model"]
+central = (CM["C39"].value + CM["C40"].value + CM["C41"].value * 54479.4
+           - CM["C42"].value - CM["C43"].value * (A["B6"].value + CM["C44"].value) - CM["C45"].value)
+site_capv = re.search(r"var CAPV=\[(\d+),(\d+),(\d+)\]", html)
+site_fixv = re.search(r"FIXV=\[(\d+),(\d+),(\d+)\]", html)
+site_teach = re.search(r"TEACH=108958\.80/2", html)
+if round(central) == 54539 and "$54,539" in html:
+    match("closure central case $54,539 (model Closure_Model central column == site calculator defaults)")
 else:
-    diff(f"closure central: model {central}, site regex {'ok' if site_const else 'MISSING'}")
-if site_fixv and int(site_fixv.group(2)) == A["B51"].value + A["B52"].value:
-    match(f"calculator mothballed case {site_fixv.group(2)} == model B51+B52 (131,724+96,107, both measured)")
+    diff(f"closure central: model {central:.0f}, site $54,539 {'$54,539' in html}")
+if site_capv and [int(site_capv.group(i)) for i in (1, 2, 3)] == [CM["B39"].value, CM["C39"].value, CM["D39"].value] == [53519, 80279, 127039]:
+    match("capture lever (53,519 / 80,279 / 127,039 = district worksheet + insurance) identical site JS and model")
 else:
-    diff("calculator FIXV mothballed case does not equal model B51+B52")
-if site_fixv and (int(site_fixv.group(1)), int(site_fixv.group(3))) == (58774, 276928):
-    match("calculator reassigned/sold cases (58,774 / 276,928) match build/closure_grid.py")
+    diff("capture lever CAPV does not match model/grid")
+if site_fixv and [int(site_fixv.group(i)) for i in (1, 2, 3)] == [CM["B40"].value, CM["C40"].value, CM["D40"].value] == [0, 109077, 218154]:
+    match("fixed-position lever (0 / 109,077 / 218,154) identical site JS and model")
 else:
-    diff("calculator FIXV reassigned/sold cases do not match the grid")
-if A["B69"].value == 60000:
-    match("GF-borne $60,000 per position (Assumptions B69) backs the calculator default")
-if site_const and int(site_const.group(1)) == A["B6"].value:
-    match("calculator $4,626 per leaver == model SEEK base FY2027")
+    diff("fixed-position lever FIXV does not match model/grid")
+cm_teach_note = str(CM["E41"].value or "")
+if site_teach and "$54,479.40" in pdf_flat and "108,958.80" in cm_teach_note:
+    match("teacher basis $54,479.40 = district Appendix A.1 price, in site JS, PDF, and the model lever note")
+else:
+    diff("teacher basis $54,479.40 missing on site, in PDF, or in the model note")
+if re.search(r"l\*\(SEEK\+ad\)", html) and "SEEK=4626" in html:
+    match("calculator prices each leaver at $4,626 + the add-ons lever (matches build/closure_grid.py)")
+else:
+    diff("site leaver pricing formula not found")
 
 # two-tailed range strings consistent
-if "losing $556,000" in pdf_flat and "saving $552,000" in pdf_flat and "losing $556,000 and saving $552,000" in html:
-    match("v3.9 two-tailed range (-$556,000 to +$552,000) consistent on site and in PDF")
+if "losing $591,545 and saving $488,631" in pdf_flat and "losing $591,545 to saving $488,631" in html:
+    match("v4.2 two-tailed range (-$591,545 to +$488,631) consistent on site and in PDF")
 else:
-    diff("v3 two-tailed range strings missing on site or PDF")
+    diff("v4.2 two-tailed range strings missing on site or PDF")
+if "loses $21,971 a year" in html and "money(-21971)" in html and "LOSES $21,971" in pdf_flat \
+        and CM["B47"].value.startswith("="):
+    match("v4.2 median ($21,971 yearly loss) in site prose and JS readout and in PDF; central case live in model")
+else:
+    diff("v4.2 median strings missing")
 
 # levy path: base is now the General Fund tax only (B48 = "=B32"), not total collections
 levy_base = TH["B32"].value  # General Fund property tax, the base B48 points at
@@ -174,7 +187,7 @@ model_enroll = []
 for i in range(19): model_enroll.append(DM.cell(row=33 + i, column=6).value)
 for i in range(19, 37): model_enroll.append(DM.cell(row=33 + i - 19, column=9).value)
 if max(model_enroll) == 261 and model_enroll[-1] == 128 and A["B11"].value == 128 and A["B12"].value == 174 \
-        and "261 children at its peak" in html and "rated capacity of 174" in html:
+        and "261 children at its peak" in html and "a 174 rating" in html:
     match("peak 261, current 128, capacity 174 consistent across model, PDF, and the site prose")
 else:
     diff(f"enrollment series: model peak {max(model_enroll)}, latest {model_enroll[-1]}, site prose {'261 children at its peak' in html}")
@@ -219,27 +232,27 @@ for r in range(1, DS.max_row + 1):
     a = DS.cell(row=r, column=1).value
     if a: ds_vals[str(a)] = (DS.cell(row=r, column=2).value, DS.cell(row=r, column=3).value)
 bond_amt = ds_vals.get("Proposed bond amount", (None, None))[0]
-if bond_amt == 14000000 and "$14 million" in html and "$14 million" in pdf_flat:
-    match("proposed $14M bond consistent across model, site, PDF")
+if bond_amt == 14000000 and "$14 million" in pdf_flat:
+    match("proposed $14M bond consistent in model and PDF (site prose retired in the v4.2 cut)")
 else:
-    diff(f"$14M bond: model {bond_amt}, site {'$14 million' in html}, pdf {'$14 million' in pdf_flat}")
+    diff(f"$14M bond: model {bond_amt}, pdf {'$14 million' in pdf_flat}")
 excess = ds_vals.get("District's own KDE-filed excess cost of NMES vs peer elementaries", (None, None))[0]
-if excess == 121220 and "$121,220" in html and "$121,000" in pdf_flat:
-    match("audited excess cost $121,220 in model and on site; PDF rounds to $121,000")
+if excess == 121220 and "$121,000" in pdf_flat:
+    match("audited excess cost $121,220 in model; PDF rounds to $121,000 (site pin retired in the v4.2 cut)")
 else:
-    diff(f"excess cost: model {excess}, site {'$121,220' in html}, pdf {'$121,000' in pdf_flat}")
+    diff(f"excess cost: model {excess}, pdf {'$121,000' in pdf_flat}")
 fy26 = ds_vals.get("Net General Fund change, FY2026 (unaudited)", (None, None))[0]
 rev26 = ds_vals.get("General Fund revenue, FY2026 actual (excludes carryforward and on-behalf)", (None, None))[0]
 exp26 = ds_vals.get("General Fund expenditures, FY2026 actual", (None, None))[0]
-if rev26 == 22103877 and exp26 == 22477866 and "$374,000" in html and "$374,000" in pdf_flat:
-    match("FY2026 unaudited net change (-$373,989 from packet figures) rounds to $374,000 on site and PDF")
+if rev26 == 22103877 and exp26 == 22477866 and "$374,000" in pdf_flat:
+    match("FY2026 unaudited net change (-$373,989) rounds to $374,000 in the PDF (site mention retired in the v4.2 cut)")
 else:
-    diff(f"FY2026 close: model rev {rev26} exp {exp26}, site {'$374,000' in html}, pdf {'$374,000' in pdf_flat}")
+    diff(f"FY2026 close: model rev {rev26} exp {exp26}, pdf {'$374,000' in pdf_flat}")
 misc = ds_vals.get("Caveat 1: miscellaneous revenue (object 1990) budgeted at zero, received", (None, None))[0]
-if misc == 1567829 and "$1.41 million" in html and "$1,413,929" in pdf_flat:
-    match("FY2026 miscellaneous-revenue caveat in model and PDF; site keeps the rounded $1.41M mention")
+if misc == 1567829 and "$1,413,929" in pdf_flat:
+    match("FY2026 miscellaneous-revenue caveat in model and PDF (site mention retired in the v4.2 cut)")
 else:
-    diff(f"misc revenue caveat: model {misc}, site {'$1.41 million' in html}, pdf {'$1,413,929' in pdf_flat}")
+    diff(f"misc revenue caveat: model {misc}, pdf {'$1,413,929' in pdf_flat}")
 xfer = ds_vals.get("Caveat 2: restricted capital money transferred INTO the General Fund in June 2026", (None, None))[0]
 if xfer == 1320939 and "$1,320,939" in pdf_flat and "$1.32 million" in html:
     match("June 2026 capital-to-GF transfer ($1,320,939) in model and PDF; site keeps the rounded mention")
@@ -285,7 +298,7 @@ if hs == (236, 23) and "259 registered homeschool" in html and "236 registered h
 else:
     diff(f"homeschool counts: model {hs}, site 259 {'259 registered homeschool' in html}, pdf 236 {'236 registered homeschool' in pdf_flat}")
 pool = (RD["B123"].value, RD["B125"].value, RD["B126"].value, RD["B127"].value)
-if pool == (76, 131, 54, 189) and "54 of them from Fayette County" in html and "net import of 189" in pdf_flat:
+if pool == (76, 131, 54, 189) and "Fayette pulling 54 commuters" in html and "net import of 189" in pdf_flat:
     match("KDE nonresident flows (76 out / 131 in / 54 Fayette / net 189) consistent model/site/PDF")
 else:
     diff(f"nonresident flows: model {pool}")
@@ -359,10 +372,11 @@ ok_lv = abs(lv_yield - 190952.68) < 1 and abs(lv_median - 60.3) < 0.01 and abs(p
 for rate, revstr, fam in lv_cases:
     cents = rate - TH2["B12"].value
     rev = cents * lv_yield
-    ok_lv &= (abs(rev / 1e6 - float(revstr[1:5])) < 0.005) and revstr in html and revstr in pdf_flat
-    ok_lv &= round(cents * percent_cost) == fam and f"${fam}/yr" in html
+    ok_lv &= (abs(rev / 1e6 - float(revstr[1:5])) < 0.005) and revstr in pdf_flat
+    ok_lv &= round(cents * percent_cost) == fam
+ok_lv &= "$1.0M to $2.5M" in html
 if ok_lv:
-    match("beyond-4% options: model-derived yield/median/costs reproduce all four site+PDF rows")
+    match("beyond-4% options: model-derived yield/median/costs reproduce all four PDF rows; site keeps the $1.0M-$2.5M span (table retired to the report in v4.2)")
 else:
     diff(f"beyond-4% options mismatch: yield {lv_yield:.2f}, median {lv_median}, cost/cent {percent_cost}")
 lv_first_call = 373989 + 1320939
@@ -376,7 +390,7 @@ else:
 # ---------- 12. v3.8: school costs, breakevens, growth plan ----------
 SCt = wb["School_Costs"]
 ok38 = SCt["B14"].value == 19348 and SCt["B15"].value == "=B14*128" and 19348*128 == 2476544
-ok38 &= "$2,476,544" in html and "$2,476,544" in pdf_flat and "$8,305" in pdf_flat
+ok38 &= "$2.5 million federal" in html and "$2,476,544" in pdf_flat and "$8,305" in pdf_flat
 rev23 = (11808998, 20381341, 9550068, 2454)
 ok38 &= (SCt["C9"].value, SCt["D9"].value, SCt["E9"].value, SCt["B9"].value) == rev23
 ok38 &= abs(rev23[1]/rev23[3] - 8305.4) < 0.5 and abs(2476544/(rev23[1]/rev23[3]) - 298.2) < 0.5
@@ -395,8 +409,8 @@ if c01 == [(595,3360),(312,4053),(193,4414),(145,5200)] and "$5,200" in html and
     else:
         diff(f"2000-01 curve fit mismatch: F={F:.0f}, a={a0:.0f}")
     mil = (5200-4053)*145; nm = (19348-18131)*128
-    if mil == 166315 and nm == 155776 and "$166,000" in html and "$156,000" in html:
-        match("Millersburg symmetry: $166,315 (2000-01) vs $155,776 (2023-24), site quotes both rounded")
+    if mil == 166315 and nm == 155776:
+        match("Millersburg symmetry: $166,315 (2000-01) vs $155,776 (2023-24) recompute (site prose retired in the v4.2 cut)")
     else:
         diff(f"Millersburg symmetry mismatch: {mil} / {nm}")
 else:
@@ -404,19 +418,18 @@ else:
 AL2 = wb["Alternatives"]
 raw_lo = 313162.4 + 60000 + 100000 + 4*85000 + 0.5*(1447164-999727) + 2913654*0.05 + 100000 + 50000 + 100000 + (16*4626-46*400+(1-1)*60000) + 25*4226
 raw_hi = 375000 + 120000 + 200000 + 425000 + 450000 + 2913654*0.10 + 250000 + 150000 + 300000 + (16*4626-46*400+(2-1)*60000) + 50*4226
-if abs(raw_lo-1593830)<5 and abs(raw_hi-2888281)<5 and "$1.6 to $2.9 million" in html and "$1.6 to $2.9 million" in pdf_flat:
-    match("growth plan raw sums $1.59M/$2.89M recomputed from inputs; quoted as $1.6 to $2.9 million on site and PDF")
+if abs(raw_lo-1593830)<5 and abs(raw_hi-2888281)<5 and "$1.6 to $2.9 million" in pdf_flat:
+    match("growth plan raw sums $1.59M/$2.89M recomputed from inputs; quoted in the PDF (site quote retired in the v4.2 cut)")
 else:
     diff(f"growth plan raw sums: {raw_lo:.0f}/{raw_hi:.0f}")
 if "$960,000 to $1.9 million" in html and "$960,000 to $1.9 million" in pdf_flat \
-        and "$260,000 to $530,000" in html and "$260,000 to $530,000" in pdf_flat:
-    match("growth plan pillar subtotals consistent on site and in PDF")
+        and "$260,000 to $530,000" in pdf_flat:
+    match("growth plan pillar subtotals consistent (site keeps the lever-2 range; the rest live in the PDF)")
 else:
     diff("growth plan pillar subtotals missing or inconsistent")
 fills = (16*4626-46*400, 55616+60000)
-if fills[0]-0 == 55616+400*0 - 0 and "$56,000 to $116,000" in html and "$56,000 to $116,000" in pdf_flat \
-        and "$115,616" not in re.sub(r"v3\.5[^)]*\)", "", html):
-    match("fill package corrected to $56,000-$116,000 site+PDF; old default only in v3.5 history text")
+if fills[0]-0 == 55616+400*0 - 0 and "$56,000 to $116,000" in pdf_flat:
+    match("fill package $56,000-$116,000 in the PDF; the site carries the live planner (prose quote retired in v4.2)")
 else:
     diff("fill package correction incomplete")
 
@@ -439,9 +452,9 @@ else:
     diff(f"EDFacts series mismatches: {ef_bad}")
 
 # site text spot checks
-for s, label in [("first in every state-tested subject", "first-in-county claim"), ("losing $556,000 and saving $552,000", "closure range prose"),
-                 ("$7,829,060", "GF levy basis in calculator note"), ("$2.65M", "deficit rounding in verdicts"),
-                 ("128-student school", "enrollment in prose"), ("rated capacity of 174", "capacity prose")]:
+for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $591,545 to saving $488,631", "closure range prose"),
+                 ("$7,829,060", "GF levy basis in the levy note"), ("$2.65M", "deficit rounding in verdicts"),
+                 ("holds 128 today", "enrollment in prose"), ("a 174 rating", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")
     else: diff(f"site text missing '{s}' ({label})")
 

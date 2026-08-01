@@ -31,7 +31,7 @@ A = S.append
 
 A(Paragraph("Saving North Middletown Elementary", title))
 A(Paragraph("Executive Summary • The Case for Growth, the Case Against Closure, and the Choice", sub))
-A(Paragraph("Version 4.1 • July 31, 2026 • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
+A(Paragraph("Version 4.2 • August 1, 2026 • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
 A(HRFlowable(width="100%", thickness=1.1, color=NAVY, spaceAfter=10))
 
 A(Paragraph("THE CASE FOR GROWTH", kick))
@@ -71,9 +71,10 @@ A(Paragraph(
   "district's own Cost of Delivery of Services table, May 21, 2026, prices the school at $19,080 per student "
   "against a state average of $19,020 on the same table, and within 110 percent of its cheapest same-grade "
   "peer against the 150 percent standard in the state facilities manual. <b>What closure frees.</b> The "
-  "measured fixed base is $58,774 if the building's four fixed staff are reassigned, $227,831 if they are "
-  "cut, $276,928 if the building is sold; across 2,916 priced scenarios the median net saving is $21,571 a "
-  "year and 45 percent of scenarios lose money. <b>The receiving schools.</b> The district's own table shows "
+  "district's own response prices it: $107,039 of building-bound lines plus $20,000 of insurance, with all "
+  "staff retained in year one by its own appendix; across 5,832 scenarios built on the district's own "
+  "figures and its own $54,479.40 staffing price, the median outcome LOSES $21,971 a year and 55 percent of "
+  "scenarios lose money. <b>The receiving schools.</b> The district's own table shows "
   "them at 97 and 98 percent of capacity, and the high school at 112 percent. <b>What closure risks.</b> "
   "Every exit is free and funded under today's rules: HB 563 makes a transfer to any neighboring district "
   "free to the family and funded for the district that wins the child, registered homeschooling in this "
@@ -82,10 +83,10 @@ A(Paragraph(
 
 step = Table(
     [[Paragraph(c, thead) for c in ["Share who leave", "Students (of 128)",
-      "State funding lost, per year", "Lost through grade 12", "Against the $21,571 median saving"]],
-     [Paragraph(c, tcell) for c in ["10 percent", "13", "about $60,000", "about $560,000", "<b>2.8 times the saving</b>"]],
-     [Paragraph(c, tcell) for c in ["20 percent", "26", "about $120,000", "about $1.1 million", "<b>5.6 times</b>"]],
-     [Paragraph(c, tcell) for c in ["30 percent", "38", "about $176,000", "about $1.7 million", "<b>8.1 times</b>"]]],
+      "State funding lost, per year", "Lost through grade 12", "Against the best-case saving"]],
+     [Paragraph(c, tcell) for c in ["10 percent", "13", "about $67,000", "about $650,000", "<b>14% of it, every year</b>"]],
+     [Paragraph(c, tcell) for c in ["20 percent", "26", "about $133,000", "about $1.3 million", "<b>27%</b>"]],
+     [Paragraph(c, tcell) for c in ["30 percent", "38", "about $195,000", "about $1.9 million", "<b>40%</b>"]]],
     colWidths=[1.05*inch, 1.05*inch, 1.45*inch, 1.35*inch, 1.7*inch], hAlign="LEFT")
 step.setStyle(TableStyle([
     ("BACKGROUND", (0, 0), (-1, 0), HEADBG), ("LINEBELOW", (0, 0), (-1, 0), 0.9, NAVY),
@@ -126,7 +127,7 @@ def footer(canvas, doc):
     canvas.line(0.9*inch, 0.62*inch, 7.6*inch, 0.62*inch)
     canvas.setFont("Helvetica", 7.6); canvas.setFillColor(GRAY)
     canvas.drawString(0.9*inch, 0.47*inch,
-        "Saving North Middletown Elementary School • Executive Summary • Version 4.1, July 31, 2026")
+        "Saving North Middletown Elementary School • Executive Summary • Version 4.2, August 1, 2026")
     canvas.drawRightString(7.6*inch, 0.47*inch, f"Page {doc.page}")
     canvas.restoreState()
 

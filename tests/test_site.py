@@ -58,63 +58,97 @@ def main():
         else: ok("no JS console or page errors")
 
         n = pg.evaluate("Object.keys(Chart.instances).length")
-        if n == 5: ok(f"{n} Chart.js charts instantiated")
-        else: bad(f"expected 5 charts, got {n}")
+        if n == 6: ok(f"{n} Chart.js charts instantiated")
+        else: bad(f"expected 6 charts, got {n}")
 
+        # --- Closure calculator: v4.2 grid defaults ---
         net = pg.text_content("#rNet").strip()
         verdict = pg.text_content("#rVerdict").strip()
-        if net == "$69,071" and "2.6%" in verdict and "reserves" in verdict:
-            ok("closure v3.9 central default $69,071 / 2.6% deficit + drawdown framing")
+        if net == "$54,539" and "2.1%" in verdict:
+            ok("closure v4.2 central default $54,539 / 2.1% of the deficit")
         else: bad(f"closure defaults: {net} / {verdict}")
         rank = pg.text_content("#rRank").strip()
-        if "2,916 scenarios" in rank and "%" in rank and "$21,571" in rank:
-            ok("live grid-rank readout present with median and range context")
+        if "5,832 scenarios" in rank and "66%" in rank and "-$21,971" in rank:
+            ok("live grid-rank readout: 66% at defaults, median -$21,971")
         else: bad(f"grid-rank readout: {rank}")
 
+        # ceiling: their fullest case
+        pg.fill("#sCap", "2"); pg.dispatch_event("#sCap", "input")
         pg.fill("#sFix", "2"); pg.dispatch_event("#sFix", "input")
-        pg.fill("#sPos", "5"); pg.dispatch_event("#sPos", "input")
-        pg.fill("#sCost", "75000"); pg.dispatch_event("#sCost", "input")
-        pg.fill("#sBus", "100000"); pg.dispatch_event("#sBus", "input")
+        pg.fill("#sTea", "3"); pg.dispatch_event("#sTea", "input")
         pg.fill("#sLeav", "0"); pg.dispatch_event("#sLeav", "input")
-        pg.fill("#sCap", "0"); pg.dispatch_event("#sCap", "input")
-        pg.fill("#sEro", "0"); pg.dispatch_event("#sEro", "input")
-        if pg.text_content("#rNet").strip() == "$551,928": ok("closure v3.9 favorable tail $551,928 = grid max")
+        pg.fill("#sProp", "0"); pg.dispatch_event("#sProp", "input")
+        pg.fill("#sBus", "20000"); pg.dispatch_event("#sBus", "input")
+        if pg.text_content("#rNet").strip() == "$488,631":
+            ok("closure ceiling $488,631 = grid max")
         else: bad(f"closure best case: {pg.text_content('#rNet')}")
+
+        # floor: 50% leakage corner
+        pg.fill("#sCap", "0"); pg.dispatch_event("#sCap", "input")
         pg.fill("#sFix", "0"); pg.dispatch_event("#sFix", "input")
-        pg.fill("#sPos", "2"); pg.dispatch_event("#sPos", "input")
-        pg.fill("#sCost", "50000"); pg.dispatch_event("#sCost", "input")
-        pg.fill("#sBus", "250000"); pg.dispatch_event("#sBus", "input")
-        pg.fill("#sLeav", "30"); pg.dispatch_event("#sLeav", "input")
-        pg.fill("#sCap", "231000"); pg.dispatch_event("#sCap", "input")
-        pg.fill("#sEro", "95000"); pg.dispatch_event("#sEro", "input")
-        if pg.text_content("#rNet").strip() == "-$556,006" and "LOSES" in pg.text_content("#rVerdict"):
-            ok("closure v3.9 unfavorable tail -$556,006 = grid min (calculator spans the whole grid)")
+        pg.fill("#sTea", "0"); pg.dispatch_event("#sTea", "input")
+        pg.fill("#sLeav", "50"); pg.dispatch_event("#sLeav", "input")
+        pg.fill("#sAdd", "1000"); pg.dispatch_event("#sAdd", "input")
+        pg.fill("#sProp", "95000"); pg.dispatch_event("#sProp", "input")
+        pg.fill("#sBus", "190000"); pg.dispatch_event("#sBus", "input")
+        if pg.text_content("#rNet").strip() == "-$591,545" and "LOSES" in pg.text_content("#rVerdict"):
+            ok("closure floor -$591,545 = grid min (calculator spans the whole grid)")
         else: bad(f"closure worst case: {pg.text_content('#rNet')} / {pg.text_content('#rVerdict')[:60]}")
 
+        # --- Growth calculator ---
+        gro = pg.text_content("#rGro").strip()
+        gverd = pg.text_content("#rGroVerdict").strip()
+        if gro == "$171,300" and "50 added students" in gverd:
+            ok("growth default $171,300 at target 160")
+        else: bad(f"growth defaults: {gro} / {gverd}")
+        pg.fill("#sGro", "120"); pg.dispatch_event("#sGro", "input")
+        pg.fill("#sSp", "2"); pg.dispatch_event("#sSp", "input")
+        pg.fill("#sGb", "1000"); pg.dispatch_event("#sGb", "input")
+        pg.fill("#sCps", "1000"); pg.dispatch_event("#sCps", "input")
+        if pg.text_content("#rGro").strip() == "$26,260":
+            ok("growth grid floor $26,260 (10 students at max costs)")
+        else: bad(f"growth floor: {pg.text_content('#rGro')}")
+        pg.fill("#sGro", "110"); pg.dispatch_event("#sGro", "input")
+        if "No new students" in pg.text_content("#rGroVerdict"):
+            ok("growth zero-gain edge case")
+        else: bad("growth zero-gain verdict missing")
+
+        # --- Levy compounder ---
         pg.fill("#sYrs", "1"); pg.dispatch_event("#sYrs", "input")
         lv1 = pg.text_content("#rLevy").strip()
         pg.fill("#sYrs", "3"); pg.dispatch_event("#sYrs", "input")
         lv3 = pg.text_content("#rLevy").strip()
         lverd = pg.text_content("#rLevyVerdict").strip()
         if lv1 == "$313,162" and lv3 == "$977,568" and "37%" in lverd and "drawdown" in lverd:
-            ok("levy compounder $313,162 year 1, $977,568 / 37% deficit / drawdown year 3 (GF base)")
+            ok("levy compounder $313,162 year 1, $977,568 / 37% deficit year 3 (GF base)")
         else: bad(f"levy: {lv1} / {lv3} / {lverd}")
 
+        # --- 2018-rate restore slider ---
+        r18 = pg.text_content("#rR18").strip()
+        if r18 == "$1,699,900":
+            ok("2018 restore default $1,699,900 at 100%")
+        else: bad(f"2018 restore default: {r18}")
+        pg.fill("#sR18", "50"); pg.dispatch_event("#sR18", "input")
+        if pg.text_content("#rR18").strip() == "$849,950":
+            ok("2018 restore scales: $849,950 at 50%")
+        else: bad(f"2018 restore at 50%: {pg.text_content('#rR18')}")
+
+        # --- Fill planner (unchanged math, simplified verdict) ---
         f1 = pg.text_content("#rFill").strip()
         fv = pg.text_content("#rFillVerdict").strip()
-        if f1 == "$55,616" and "174 of the 198" in fv and "$14,827" in fv:
+        if f1 == "$55,616" and "174 of the 198" in fv:
             ok("fill planner defaults $55,616; at the 174 rating within the 2013-rated 198")
         else: bad(f"fill planner defaults: {f1} / {fv}")
         pg.fill("#sSec", "2"); pg.dispatch_event("#sSec", "input")
         if pg.text_content("#rFill").strip() == "$115,616": ok("fill planner high case $115,616 (2 avoided, 1 added)")
         else: bad(f"fill planner high: {pg.text_content('#rFill')}")
-        pg.fill("#sAdd", "2"); pg.dispatch_event("#sAdd", "input")
+        pg.fill("#sAdd2", "2"); pg.dispatch_event("#sAdd2", "input")
         pg.fill("#sSec", "0"); pg.dispatch_event("#sSec", "input")
         worst = 16 * 4626 - 46 * 400 - 2 * 60000
         if pg.text_content("#rFill").strip() == f"-${abs(worst):,}":
             ok(f"fill planner worst corner -${abs(worst):,} (2 added, 0 avoided)")
         else: bad(f"fill planner worst corner: {pg.text_content('#rFill')}")
-        pg.fill("#sAdd", "1"); pg.dispatch_event("#sAdd", "input")
+        pg.fill("#sAdd2", "1"); pg.dispatch_event("#sAdd2", "input")
         pg.fill("#sSec", "2"); pg.dispatch_event("#sSec", "input")
         pg.fill("#sRez", "40"); pg.dispatch_event("#sRez", "input")
         pg.fill("#sTr", "40"); pg.dispatch_event("#sTr", "input")
@@ -156,9 +190,15 @@ def main():
             else: bad("score toggle changed nothing")
         else: bad("no score toggle checkboxes found")
 
-        gone = pg.evaluate("['tldr','questions','roadahead'].filter(i=>document.getElementById(i)).length")
-        if gone == 0: ok("off-layout sections absent (v4 simplified layout)")
-        else: bad(f"{gone} off-layout sections still present")
+        legacy = pg.evaluate("['alternatives','math','closure','tax','trim'].filter(i=>document.getElementById(i)).length")
+        if legacy == 0: ok("legacy v4.1 section ids absent")
+        else: bad(f"{legacy} legacy v4.1 section ids still present")
+
+        order = pg.evaluate("""() => ['part1','school','cost','frees','risks','model','part2','money','grow','choice','asks','act','voices','downloads','sources']
+            .map(i=>{var e=document.getElementById(i);return e?e.getBoundingClientRect().top+window.scrollY:-1})""")
+        if all(v >= 0 for v in order) and order == sorted(order):
+            ok("v4.2 section order: Part One (case) then model then Part Two (growth)")
+        else: bad(f"section order wrong or missing: {order}")
 
         missing = pg.evaluate("""() => [...document.querySelectorAll('nav a')]
             .map(a=>a.getAttribute('href'))
