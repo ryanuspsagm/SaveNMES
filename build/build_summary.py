@@ -59,10 +59,10 @@ A(Paragraph(
   "Transportation is $2.7 million coded to no school with no routing study ever produced; a ten percent "
   "optimization is about $270,000 a year. Kentucky's school energy program documented $225 million of "
   "statewide savings. Medicaid billing under the 2019 expansion is a records request away from being sized. "
-  "<b>Lever three, revenue.</b> The never-recallable four percent option compounds to about $978,000 a year "
-  "by year three. The recall record is survivable: Marion County voters upheld their board's nickel 54 to 46 "
-  "in 2015, and Bourbon's own voters declined even to petition either of this district's two recallable "
-  "nickels.", body))
+  "<b>Lever three, revenue.</b> The rate is simply lower while the tax base more than doubled. Restoring the "
+  "board's own 2018 rate brings in about $1.7 million a year. In the last ten years, across the eight "
+  "neighboring districts, voters have turned down exactly one school tax, a building nickel in Bath County; "
+  "Bourbon's own voters never even petitioned either of this district's two recallable nickels.", body))
 
 A(Paragraph("THE CASE AGAINST CLOSURE", kick))
 A(Paragraph("Five answers from the district's own documents", h1))

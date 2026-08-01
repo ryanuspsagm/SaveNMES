@@ -221,11 +221,14 @@ P("<b>The levers.</b> First, enrollment: each returning student brings the $4,62
   "2013-approved plan rated this building at 198. Second, fixed costs: transportation is $2.7 million "
   "coded to no school with no routing study ever produced (a ten percent optimization is about $270,000 a "
   "year); Kentucky's school energy program documented $225 million of statewide savings; Medicaid billing "
-  "under the 2019 expansion is a records request away from being sized. Third, revenue: the never-recallable "
-  "four percent option compounds to about $978,000 a year by year three; the recallable menu beyond it is "
-  "priced in Section 9; and the recall record itself is survivable, with Marion County voters upholding their "
-  "board's nickel 54 to 46 in 2015 and Bourbon's own voters declining even to petition either of this "
-  "district's two recallable nickels.")
+  "under the 2019 expansion is a records request away from being sized. Third, revenue: the rate is simply "
+  "lower, 52.4 cents against every neighbor but one, while the tax base more than doubled; restoring the "
+  "board's own 2018 rate yields about $1.7 million a year, priced in Section 9. The recall record next door "
+  "is thin: across the eight neighboring districts in the last ten years, voters have turned down exactly one "
+  "school tax, Bath County's building nickel, in November 2024 and again in January 2025, and no neighbor has "
+  "lost an operating rate to a recall in that decade. Statewide, Marion County voters upheld their board's "
+  "nickel 54 to 46 in 2015, and Bourbon's own voters declined even to petition either of this district's two "
+  "recallable nickels.")
 
 H2("The case against closure: five answers from the district's own documents")
 P("<b>Performance.</b> North Middletown leads the county in every state-tested subject. <b>Cost.</b> The "
@@ -2084,6 +2087,8 @@ srcs = [
  "Vermont Act 46 consolidation outcomes (2024)",
  "WKYT-TV, \u201cResidents and alumni defend small town school from closure in Bourbon County,\u201d July 16, 2026, and "
  "\u201cCommunity meeting planned for Bourbon Co. elementary school in danger of closing,\u201d July 17, 2026",
+ "WKYT-TV and FOX 56 News, coverage of the Bath County nickel-tax votes, November 2024 and January 15, 2025 "
+ "(the only school tax defeated by voters in any of the eight neighboring districts in the last ten years)",
  "FOX 56 News, coverage of the Bourbon County facility-planning meetings, July 2026; The Bourbon County Citizen, "
  "July 9 and July 16, 2026",
  "Bourbon County Schools, Comprehensive District Improvement Plan executive summary, 2024-25 (career-technical "

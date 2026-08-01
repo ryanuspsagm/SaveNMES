@@ -80,15 +80,19 @@ if "loses $21,971 a year" in html and "money(-21971)" in html and "LOSES $21,971
 else:
     diff("v4.2 median strings missing")
 
-# levy path: base is now the General Fund tax only (B48 = "=B32"), not total collections
-levy_base = TH["B32"].value  # General Fund property tax, the base B48 points at
-site_levy_base = int(re.search(r"base=(\d+),add", html).group(1))
+# levy path: 4 percent framing retired from the site (review round 2); path stays model+PDF
+levy_base = TH["B32"].value  # General Fund property tax
 cum = 0
 for i in range(3): cum += (levy_base + cum) * 0.04
-if levy_base == site_levy_base == 7829060 and round(cum) == 977568:
-    match(f"levy base $7,829,060 (GF only) and 3-yr path to $977,568 = {cum/model_deficit*100:.1f}% of deficit (model inputs == site JS)")
+if levy_base == 7829060 and round(cum) == 977568 and "sYrs" not in html:
+    match(f"levy base $7,829,060 (GF only) and 3-yr path to $977,568 live in model+PDF; 4 percent framing off the site")
 else:
-    diff(f"levy: model base {levy_base}, site {site_levy_base}, cum {cum:.0f}")
+    diff(f"levy: model base {levy_base}, cum {cum:.0f}, site 4-percent remnants: {'sYrs' in html}")
+restore_full = round((TH["B5"].value - TH["B12"].value) * TH["B32"].value / TH["B71"].value)
+if restore_full == 1699479 and "1699479" in html and "$191,000 per cent" in html:
+    match("2018 restore $1,699,479 = 8.9 cents x the model yield; site JS constant and basis note match")
+else:
+    diff(f"2018 restore: model {restore_full}, site constant {'1699479' in html}")
 y1 = levy_base * 0.04
 pdf_levy_ok = "313,000" in pdf_flat and "978,000" in pdf_flat and "639,000" in pdf_flat
 if pdf_levy_ok: match(f"PDF levy path ($313K yr1, $639K yr2, $978K yr3) matches computed ({y1:,.0f} / 638,851 / 977,568)")
@@ -374,9 +378,8 @@ for rate, revstr, fam in lv_cases:
     rev = cents * lv_yield
     ok_lv &= (abs(rev / 1e6 - float(revstr[1:5])) < 0.005) and revstr in pdf_flat
     ok_lv &= round(cents * percent_cost) == fam
-ok_lv &= "$1.0M to $2.5M" in html
 if ok_lv:
-    match("beyond-4% options: model-derived yield/median/costs reproduce all four PDF rows; site keeps the $1.0M-$2.5M span (table retired to the report in v4.2)")
+    match("beyond-4% options: model-derived yield/median/costs reproduce all four PDF rows (site now carries the 2018 restore only)")
 else:
     diff(f"beyond-4% options mismatch: yield {lv_yield:.2f}, median {lv_median}, cost/cent {percent_cost}")
 lv_first_call = 373989 + 1320939

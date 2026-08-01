@@ -118,24 +118,17 @@ def main():
             ok("growth zero-gain edge case")
         else: bad("growth zero-gain verdict missing")
 
-        # --- Levy compounder ---
-        pg.fill("#sYrs", "1"); pg.dispatch_event("#sYrs", "input")
-        lv1 = pg.text_content("#rLevy").strip()
-        pg.fill("#sYrs", "3"); pg.dispatch_event("#sYrs", "input")
-        lv3 = pg.text_content("#rLevy").strip()
-        lverd = pg.text_content("#rLevyVerdict").strip()
-        if lv1 == "$313,162" and lv3 == "$977,568" and "37%" in lverd and "drawdown" in lverd:
-            ok("levy compounder $313,162 year 1, $977,568 / 37% deficit year 3 (GF base)")
-        else: bad(f"levy: {lv1} / {lv3} / {lverd}")
-
-        # --- 2018-rate restore slider ---
+        # --- 2018-rate restore slider (the only revenue lever on the site) ---
+        gone4 = pg.evaluate("['sYrs','rLevy','rLevyVerdict'].filter(i=>document.getElementById(i)).length")
+        if gone4 == 0: ok("4 percent compounder removed from the site")
+        else: bad(f"{gone4} 4-percent-option elements still present")
         r18 = pg.text_content("#rR18").strip()
-        if r18 == "$1,699,900":
-            ok("2018 restore default $1,699,900 at 100%")
+        if r18 == "$1,699,479":
+            ok("2018 restore default $1,699,479 at 100% (ties to the $191K/cent yield)")
         else: bad(f"2018 restore default: {r18}")
         pg.fill("#sR18", "50"); pg.dispatch_event("#sR18", "input")
-        if pg.text_content("#rR18").strip() == "$849,950":
-            ok("2018 restore scales: $849,950 at 50%")
+        if pg.text_content("#rR18").strip() == "$849,740":
+            ok("2018 restore scales: $849,740 at 50%")
         else: bad(f"2018 restore at 50%: {pg.text_content('#rR18')}")
 
         # --- Fill planner (unchanged math, simplified verdict) ---

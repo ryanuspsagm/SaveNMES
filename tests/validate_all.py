@@ -334,7 +334,7 @@ def main():
     for case_block in ['id="school"', 'id="cost"', 'id="frees"', 'id="risks"', 'id="model"']:
         chk(html.index(case_block) < band2,
             f"case-side block sits in Part One: {case_block}")
-    for growth_block in ['id="money"', 'id="grow"', "the 4 percent option", "chartLevyHist"]:
+    for growth_block in ['id="money"', 'id="grow"', 'id="sR18"', "chartLevyHist"]:
         chk(html.index(growth_block) > band2,
             f"growth-side block sits in Part Two: {growth_block}")
     chk(html.index('id="voices"') < html.index('id="downloads"') < html.index('id="sources"'),
@@ -421,7 +421,19 @@ def main():
     for needle in ["KRS 160.470",
                    "recalled by the voters it taxes",
                    "recalled by the children it displaces"]:
-        chk(needle in html, f"site beyond-4% levy options intact: {needle}")
+        chk(needle in html, f"site levy-restore block intact: {needle}")
+    chk("Bath County's building nickel" in html and "November 2024" in html,
+        "site recall record: the one neighboring defeat (Bath nickel) named with dates")
+    chk("4 percent option" not in html and 'id="sYrs"' not in html,
+        "4 percent option framing removed from the site")
+    chk("Bath County" in t and "January 2025" in t,
+        "report carries the neighboring recall record (Bath nickel votes)")
+    chk("enrollment growth committee" in html.lower() and "fixed-cost committee" in html.lower()
+        and "revenue committee" in html.lower(),
+        "the three standing committees are in the asks")
+    chk("Amazon Future Engineer" in html.lower().replace("amazon future engineer", "Amazon Future Engineer")
+        or "Amazon Future Engineer" in html,
+        "ask 2 carries the differentiation tools (Amazon Future Engineer)")
     for needle in ["57.7", "60.3", "61.3", "65.5",
                    "$112/yr ($9.35/mo)", "$167/yr ($13.93/mo)",
                    "$188/yr ($15.69/mo)", "$277/yr ($23.10/mo)"]:
