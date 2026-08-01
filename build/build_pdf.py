@@ -115,15 +115,16 @@ A(Paragraph("Prepared for the North Middletown community and the members of the<
 A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
             ParagraphStyle("pf2", fontName="Helvetica", fontSize=9.5, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=6)))
-A(Paragraph("Written by a former NMES King; the analysis and report writing were accelerated with the use of an AI research assistant",
+A(Paragraph("Written by a former NMES King; the analysis and report writing were accelerated with the use of an AI research assistant.<br/>Built from public records and Open Records Requests only.",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
 A(Paragraph("Version 4.2 &nbsp;\u2022&nbsp; August 1, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 1.6 * inch))
-scope = ("This review relies only on public records: the district's audited financial statements for the "
-         "fiscal years ending June 30, 2024 and June 30, 2025; Kentucky Department of Education funding, facility, "
+scope = ("This review is built from public records and Open Records Requests only: the district's audited financial statements for the "
+         "fiscal years ending June 30, 2024 and June 30, 2025; documents the district produced in response to Open Records "
+         "Requests under KRS 61.870; Kentucky Department of Education funding, facility, "
          "and school report card data; federal enrollment records; municipal bond disclosures; state regulations; and "
          "contemporaneous local reporting. Where a figure is an estimate rather than a published number, it is labeled "
          "as an estimate and its assumptions are stated. This document is not an audit, and it alleges no misconduct "
@@ -1935,7 +1936,7 @@ P("The district holds about $4.3 million in General Fund balance and is drawing 
 
 # ================= NOTES =================
 H("Notes on the Data")
-P("I built this report from public records, and I want it held to that standard. The audited figures come from "
+P("I built this report from public records and Open Records Requests only, and I want it held to that standard. The audited figures come from "
   "the district's financial statements for the years ended June 30, 2024 and June 30, 2025, both of which carry "
   "clean opinions. Per-student spending is the state's published school-level data for 2023-24, the most recent "
   "full year posted, and should be refreshed when the next year appears. The multi-year score series in Figure 10 "

@@ -31,7 +31,7 @@ A = S.append
 
 A(Paragraph("Saving North Middletown Elementary", title))
 A(Paragraph("Executive Summary • The Case for Growth, the Case Against Closure, and the Choice", sub))
-A(Paragraph("Version 4.2 • August 1, 2026 • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
+A(Paragraph("Version 4.2 • August 1, 2026 • Built from public records and Open Records Requests only • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
 A(HRFlowable(width="100%", thickness=1.1, color=NAVY, spaceAfter=10))
 
 A(Paragraph("THE CASE FOR GROWTH", kick))

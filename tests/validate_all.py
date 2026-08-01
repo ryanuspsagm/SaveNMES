@@ -158,6 +158,10 @@ def main():
         "AI attribution phrased as acceleration on the site")
     chk("accelerated with the use of" in t,
         "AI attribution phrased as acceleration in the report")
+    chk(html.count("Built from public records and Open Records Requests only") == 2,
+        "provenance cite on the site, top disclosure and footer")
+    chk("Open Records Requests only" in t,
+        "provenance cite in the report")
     chk('name:"Lynne"' in html and "859-707" not in html,
         "Lynne's story published by first name, phone number kept private")
 
