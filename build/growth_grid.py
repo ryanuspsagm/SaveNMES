@@ -39,18 +39,20 @@ the closure case. Teachers increment beyond the 25 seats.
                          spend at location 090 is $331)
   SEEK add-ons/student:  $0 / $500 / $1,000 above the $4,626 base (at-risk,
                          exceptional-child, transportation, capital outlay);
-                         the published headline is the base-only median
+                         enumerated in the headline grid, the SAME three legs
+                         the closure model prices for each leaver, so the two
+                         models treat state add-ons symmetrically
 
 net = gain x (4,626 + add_ons - marginal) - teachers x salary
       - staff x classified - busing x gain
 teachers = floor(max(0, gain - 25) / ratio)
 
 Run:  python build/growth_grid.py
-Asserts the published statistics: base-only median +$102,780; 17 of the
-6,561 base scenarios negative (0.26 percent), floor -$26,992 (a teacher
-hired for every 14 added at the top salary with every other cost at
-maximum), ceiling +$296,904; full-lever median +$125,150, ceiling +$386,904.
-Growth pays in 99.7 percent of scenarios.
+Asserts the published statistics: headline grid (add-ons enumerated, matching
+the closure model) 19,683 scenarios, median +$125,150, floor -$26,992 (a
+teacher hired for every 14 added at the top salary with every other cost at
+maximum and no add-ons), ceiling +$386,904, 17 negative (0.09 percent).
+Growth pays in 99.9 percent of scenarios. Base-only cut: median +$102,780.
 """
 import math
 import statistics
@@ -84,22 +86,21 @@ def grid(addon_values):
 base = grid((0,))
 full = grid((0, 500, 1000))
 assert len(base) == 6_561 and len(full) == 19_683
-assert round(statistics.median(base)) == 102_780, statistics.median(base)
-assert base[0] == -26_992 and base[-1] == 296_904, (base[0], base[-1])
-neg_base = sum(1 for x in base if x < 0)
-assert neg_base == 17, neg_base
 assert round(statistics.median(full)) == 125_150, statistics.median(full)
-assert full[-1] == 386_904, full[-1]
+assert full[0] == -26_992 and full[-1] == 386_904, (full[0], full[-1])
+neg_full = sum(1 for x in full if x < 0)
+assert neg_full == 17, neg_full
+assert round(statistics.median(base)) == 102_780, statistics.median(base)
 
-# the site default is a real grid combo at the exact median: 30 added,
-# historical 1-per-16 pace, $49,150 teacher, 1 per 50 support at $37,000,
-# $500 busing, $700 supplies, base-only (no hires trigger below 153)
-site_default = net(30, 16, 50, 49_150, 37_000, 500, 700, 0)
-assert site_default == 102_780 == statistics.median(base), site_default
+# the site default is a real grid combo at the exact headline median:
+# 50 added, historical 1-per-16 pace (1 teacher past the 25 seats),
+# $49,150 teacher, 1 per 50 support at $37,000, $500 busing, $400 supplies,
+# $500 add-ons (the same default the closure model's leaver lever uses)
+site_default = net(50, 16, 50, 49_150, 37_000, 500, 400, 500)
+assert site_default == 125_150 == statistics.median(full), site_default
 
-print(f"base-only: {len(base):,} scenarios | median ${statistics.median(base):,.0f} "
-      f"| floor ${base[0]:,.0f} | ceiling ${base[-1]:,.0f} "
-      f"| {neg_base} negative")
-print(f"with add-ons lever: {len(full):,} scenarios | median ${statistics.median(full):,.0f} "
-      f"| ceiling ${full[-1]:,.0f}")
-print(f"site default: ${site_default:,} (the exact grid median)")
+print(f"headline (add-ons enumerated): {len(full):,} scenarios "
+      f"| median ${statistics.median(full):,.0f} | floor ${full[0]:,.0f} "
+      f"| ceiling ${full[-1]:,.0f} | {neg_full} negative")
+print(f"base-only cut: median ${statistics.median(base):,.0f}")
+print(f"site default: ${site_default:,} (the exact headline median)")

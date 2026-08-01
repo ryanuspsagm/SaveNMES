@@ -112,8 +112,8 @@ def main():
         # --- Growth calculator ---
         gro = pg.text_content("#rGro").strip()
         gverd = pg.text_content("#rGroVerdict").strip()
-        if gro == "$102,780" and "30 added students" in gverd and "no new teachers" in gverd:
-            ok("growth default is the exact median scenario: $102,780 at target 140, historical 1-per-16 pace")
+        if gro == "$125,150" and "50 added students" in gverd and "1 new teacher" in gverd and "1 support hire" in gverd:
+            ok("growth default is the exact median scenario: $125,150 at target 160, historical pace, $500 add-ons")
         else: bad(f"growth defaults: {gro} / {gverd}")
         pg.fill("#sGro", "200"); pg.dispatch_event("#sGro", "input")
         pg.fill("#sRat", "0"); pg.dispatch_event("#sRat", "input")
@@ -121,6 +121,7 @@ def main():
         pg.fill("#sSp", "2"); pg.dispatch_event("#sSp", "input")
         pg.fill("#sGb", "1000"); pg.dispatch_event("#sGb", "input")
         pg.fill("#sCps", "1000"); pg.dispatch_event("#sCps", "input")
+        pg.fill("#sGad", "0"); pg.dispatch_event("#sGad", "input")
         if pg.text_content("#rGro").strip() == "-$26,992":
             ok("growth grid floor -$26,992 (90 added, teacher per 14 at top salary, every cost maxed)")
         else: bad(f"growth floor: {pg.text_content('#rGro')}")

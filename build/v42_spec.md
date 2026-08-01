@@ -108,15 +108,17 @@ Banded figures:
    classified lines ($20,000-$37,000), scaling from the first student; busing
    $0-$1,000 per recruited student; marginal cost $400-$1,000 per student (measured
    student-scaling spend: $331).
-   RESULTS (v4.4: 25-seat headroom + selectable hiring pace 14/16/24, teachers =
-   floor(max(0, gain-25)/pace)): 6,561 scenarios | median +$102,780/yr | 17
-   negative (0.26%) | range -$26,992 to +$296,904 | full-lever median +$125,150,
-   ceiling +$386,904. Growth pays in 99.7 percent of scenarios. Site default is
-   the EXACT median combo (target 140, historical 1-per-16 pace, $49,150 teacher,
-   1 per 50 support at $37,000, $500 bus, $700 cps; no hires trigger below 153).
-   COMPARISON LINE: the median growth scenario GAINS $102,780 while the median
-   closure scenario LOSES $21,971 - a $124,751/yr swing between the two roads;
-   growth pays in 99.7 percent of its scenarios while 55 percent of closure
+   RESULTS (v4.4: 25-seat headroom + selectable hiring pace 14/16/24 + SEEK
+   add-ons ENUMERATED in the headline, symmetric with the closure grid):
+   19,683 scenarios | median +$125,150/yr | 17 negative (0.09%) | range
+   -$26,992 to +$386,904. Growth pays in 99.9 percent of scenarios. Base-only
+   cut: median +$102,780. Site default is the EXACT headline median combo
+   (target 160, historical 1-per-16 pace, $49,150 teacher, 1 per 50 support at
+   $37,000, $500 bus, $400 cps, $500 add-ons = the closure leaver lever's
+   default leg).
+   COMPARISON LINE: the median growth scenario GAINS $125,150 while the median
+   closure scenario LOSES $21,971 - a $147,121/yr swing between the two roads;
+   growth pays in 99.9 percent of its scenarios while 55 percent of closure
    scenarios lose money.
 
 PART TWO - THE DISTRICT NEEDS GROWTH, NOT CLOSURES (district-wide)
@@ -168,6 +170,12 @@ f. Seat planner RETIRED from the site in v4.4 (user: duplicative of the growth
    calculator). The $56K-$116K fill package stays in the PDF (Section 9) and the
    model's Redistricting tab; the report's two pointers to the site planner now
    point at the Redistricting tab.
+g. SEEK add-ons SYMMETRIC across the two grids (2026-08-01, user: "make sure
+   state add-ons for SEEK are consistent across the closure model and the
+   growth model"): both grids enumerate the same $0/$500/$1,000 legs in their
+   headline statistics (closure already did; growth's headline was base-only),
+   and both site sliders default to $500. Growth headline moved
+   $102,780/6,561/99.7% -> $125,150/19,683/99.9%.
 b. Calculator base = 110 (district's own figure, still flagged unsourced); ceiling 200
    on the slider with the 198 note (2013 state-approved rating).
 c. Property-loss lever priced $0-95K pending the PVA records response.

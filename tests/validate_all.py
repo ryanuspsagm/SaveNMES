@@ -377,10 +377,13 @@ def main():
         chk(lever in html, f"growth-model slider present: {lever}")
     chk("5,832 scenarios" in html and 'id="rRank"' in html,
         "calculator presented as the live scenario model with a grid-rank readout")
-    chk("$102,780" in html and "99.7 percent" in html and "6,561" in html,
-        "growth calculator carries the published headroom-plus-historical-pace grid stats")
-    chk("$142,800" not in html and "$67,124" not in html and "$118,650" not in html,
+    chk("$125,150" in html and "99.9 percent" in html and "19,683" in html,
+        "growth calculator carries the published symmetric-add-ons grid stats")
+    chk("$142,800" not in html and "$67,124" not in html and "$118,650" not in html
+        and "$102,780" not in html,
         "all superseded growth-grid medians are gone from the site")
+    chk("same lever as the closure model" in html and "closure model prices for each leaver" in html,
+        "SEEK add-ons stated as symmetric between the closure and growth models")
     chk("25 added students fill seats" in html and "24 per room in K through 3" in html,
         "the 25-seat headroom is anchored to the district's own Appendix B caps on the site")
     chk("ran over 200" in html and "RATV=[14,16,24]" in html,

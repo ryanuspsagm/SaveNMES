@@ -52,15 +52,19 @@ if round(central) == 54539 and round(site_default) == -21790 and "-$21,790" in h
     match("model central case $54,539; site calculator opens at the median scenario (-$21,790, within $181 of the grid median)")
 else:
     diff(f"closure defaults: model central {central:.0f}, site median-scenario {site_default:.0f} shown: {'-$21,790' in html}")
-# growth calculator default: 30 added past base, 25-seat headroom (Appendix B caps),
-# historical 1-per-16 hiring pace (no hire triggers), 1 support per 50 (none triggers),
-# $500 bus, $700 cps -> the exact grid median
-growth_default = 30*(4626-700) - ((30-25)//16)*49150 - (30//50)*37000 - 500*30
-if (growth_default == 102780 and "$102,780" in html and "RATV=[14,16,24]" in html
-        and "Math.max(0,gain-25)/ratio" in html):
-    match("growth calculator opens at the exact grid median ($102,780) with the selectable hiring-pace lever (14 today / 16 historical over-200 / 24 district cap) and the 25-seat headroom in the site JS")
+# growth calculator default: 50 added past base, 25-seat headroom (Appendix B caps),
+# historical 1-per-16 pace (1 teacher), 1 support per 50, $500 bus, $400 cps,
+# $500 SEEK add-ons (the SAME default leg the closure leaver lever uses)
+# -> the exact headline-grid median
+growth_default = 50*(4626+500-400) - ((50-25)//16)*49150 - (50//50)*37000 - 500*50
+if (growth_default == 125150 and "$125,150" in html and "RATV=[14,16,24]" in html
+        and "Math.max(0,gain-25)/ratio" in html and 'id="sGad"' in html
+        and 'id="sGad" min="0" max="1000" value="500"' in html
+        and 'id="sAdd" min="0" max="1000" value="500"' in html):
+    match("growth calculator opens at the exact headline median ($125,150) with SEEK add-ons symmetric to the closure model (same 0-1000 lever, same $500 default)")
 else:
-    diff(f"growth default mismatch: {growth_default}, shown: {'$102,780' in html}, RATV: {'RATV=[14,16,24]' in html}, headroom JS: {'Math.max(0,gain-25)/ratio' in html}")
+    has500 = 'value="500"' in html
+    diff(f"growth default mismatch: {growth_default}, shown: {'$125,150' in html}, add-ons defaults equal: {has500}")
 if site_capv and [int(site_capv.group(i)) for i in (1, 2, 3)] == [CM["B39"].value, CM["C39"].value, CM["D39"].value] == [53519, 80279, 127039]:
     match("capture lever (53,519 / 80,279 / 127,039 = district worksheet + insurance) identical site JS and model")
 else:
