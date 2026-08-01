@@ -106,7 +106,7 @@ A(Paragraph(
   "at kindergarten is lost for thirteen years.", body))
 
 A(Paragraph("THE CHOICE", kick))
-A(Paragraph("Two roads, and four asks that cost nothing", h1))
+A(Paragraph("Two roads, and five asks that cost nothing", h1))
 A(Paragraph(
   "Shrink to fit, or grow and thrive. On North Middletown specifically: <b>One,</b> keep the school Permanent "
   "in the facility plan with its capital needs at lower priority. A plan commits no money; the Transitional "
@@ -116,7 +116,9 @@ A(Paragraph(
   "raise grant-based and private funds, with donated services, for the building's critical needs. "
   "<b>Four,</b> state publicly that the district will work to grow this school; uncertainty is its own "
   "enrollment killer, and a sentence of commitment gives existing and future families the confidence to "
-  "enroll. If staff are reassigned rather than cut, a closure frees the $58,774 utilities line, so there is "
+  "enroll. <b>Five,</b> stand up three committees to run the growth plan (enrollment growth, fixed costs, "
+  "revenue options); volunteers from the North Middletown community stand at the ready to help support "
+  "them. If staff are reassigned rather than cut, a closure frees the $58,774 utilities line, so there is "
   "no pot of money these asks would squander. A closed school cannot be recalled by the children it "
   "displaces; a growth plan can be measured, every year, by everyone.", body))
 A(HRFlowable(width="100%", thickness=0.8, color=LINE, spaceBefore=6, spaceAfter=6))

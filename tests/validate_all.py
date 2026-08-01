@@ -366,8 +366,13 @@ def main():
         "version history lives in the Downloads section")
     chk("The fill-the-seats planner" not in html and 'id="sRez"' not in html,
         "the seat planner is retired from the site (duplicative of the growth calculator)")
-    chk('<details class="more" open><summary>More detail: each ask and the committees' in html,
-        "four-asks detail opens expanded, committees inside, no planner")
+    chk('<details class="more" open><summary>More detail: the five asks' in html
+        and "5. Stand up three committees" in html
+        and "Volunteers from the NMES community stand at the ready" in html,
+        "asks detail opens expanded with the committees as ask five and the volunteer pledge")
+    chk("five things" in html and "Five asks that cost the district nothing" in html
+        and "five asks that cost nothing" in t,
+        "five-asks framing consistent across hero, section, and report")
     # v4.2: the closure calculator exposes all seven grid levers, plus the growth calculator
     for lever in ['id="sCap"', 'id="sFix"', 'id="sTea"', 'id="sLeav"',
                   'id="sAdd"', 'id="sProp"', 'id="sBus"']:

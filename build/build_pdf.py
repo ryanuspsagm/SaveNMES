@@ -257,7 +257,7 @@ P("<b>Performance.</b> North Middletown leads the county in every state-tested s
   "district's own May 2026 table shows them at 97 and 98 percent of capacity, with the middle school the only "
   "building with room and the high school at 112 percent.")
 
-H2("The choice, and four asks that cost nothing")
+H2("The choice, and five asks that cost nothing")
 P("Shrink to fit, or grow and thrive. On North Middletown specifically, the asks are modest. <b>One:</b> "
   "keep the school Permanent in the facility plan with its capital needs at lower priority; a plan commits no "
   "money, Priority 2 exists for exactly this, and the Transitional label saves nothing while foreclosing "
@@ -267,7 +267,9 @@ P("Shrink to fit, or grow and thrive. On North Middletown specifically, the asks
   "private funds, with donated services, for the building's critical needs, at no cost to the district. "
   "<b>Four:</b> state publicly that the district will work to grow this school, because uncertainty is its "
   "own enrollment killer and a sentence of commitment gives existing and future families the confidence to "
-  "enroll. The honesty behind these asks is already in the district's books: if staff are reassigned rather "
+  "enroll. <b>Five:</b> stand up three committees to run the growth plan, one for enrollment growth, one for "
+  "fixed costs, one for revenue options; volunteers from the North Middletown community stand at the ready "
+  "to help support them. The honesty behind these asks is already in the district's books: if staff are reassigned rather "
   "than cut, a closure frees the $58,774 utilities line, and the restricted renovation money is capped by "
   "enrollment regardless, a ceiling that rises with every recruited student. A closed school cannot be "
   "recalled by the children it displaces; a growth plan can be measured, every year, by everyone.")
