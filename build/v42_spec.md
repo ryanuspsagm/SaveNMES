@@ -24,6 +24,21 @@ PART ONE - THE CASE AGAINST CLOSING NMES (NMES-specific)
    for Title I skew ~$345K -> minus the district's own deficit share ~$130K ->
    decision-relevant median $33,240. One-line rebuttal: $19,348 is an allocation
    key, not a savings estimate.
+SEEK ESCALATION POLICY (applies to every multi-year figure): the SEEK base is
+appropriated biennially by the General Assembly; NOTHING in law guarantees an
+increase, so multi-year values are published as a band with the basis named:
+floor = today's $4,626 held flat; central = the 18-year historical rate
+(+1.00%/yr, FY2009 $3,866 to FY2027 $4,626); ceiling = the recent 7-year rate
+(+2.10%/yr, FY2020 $4,000 to FY2027 $4,626), and add-ons ride the same band.
+Banded figures:
+  lifetime per kindergartner: $60,138 floor | $63,890 central | ~$77,000 ceiling
+    (recent rate with documented add-ons)
+  through grade 12 per 10% step: ~$561K floor | ~$648K central | ~$744K ceiling
+    (20% and 30% steps scale by 2x and 2.92x)
+  remaining funding carried by current 128 students: $5.6M floor | ~$6.5M central |
+    ~$7.4M ceiling
+  Year-one calculators stay at the flat $4,626: escalation is a multi-year story.
+
 4. What closure risks is large and recurring. ANCHOR: THE OPEN-MARKET ARGUMENT.
    Under HB 563 funding follows the child and every district competes. The district's
    own 2024-25 numbers show the business shape: elementary runs a -$947/student/yr
