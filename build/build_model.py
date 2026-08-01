@@ -562,8 +562,6 @@ alts = [
   "Cost reduction", "Medium; needs a local route model (T-1 data requested)"),
  ("Energy performance contracting", 50000, 150000, "10-25% of utilities; authorized by 702 KAR 4:160", BLUE, BLUE,
   "Cost reduction", "Medium; contracts are structured to self-fund"),
- ("Shared services with Paris Independent", 100000, 300000, "Transport, food service, back office", BLUE, BLUE,
-  "Cost reduction", "Low; needs an interlocal feasibility study"),
  ("Fill NMES to capacity (rebalance + transfers, net)", "=Redistricting!B30", "=Redistricting!B31", "Boundary rebalancing and cross-county scenario, Redistricting tab", GRN, GRN,
   "New revenue, net of costs", "High; board boundary authority, math on Redistricting tab"),
  ("District-wide recruitment beyond NMES's 46 seats (homeschool, private-school, nonresident incentives; v3.8)", "=25*(Assumptions!B6-Assumptions!B62)", "=50*(Assumptions!B6-Assumptions!B62)", "25-50 additional students at $4,226 net; pool measured on Redistricting rows 116-135 (259 registered homeschoolers, ACS pool ~1,135, net import already 189); 62 open seats exist at Bourbon Central's approved rating", GRN, GRN,
@@ -584,18 +582,18 @@ cc = put(al, f"C{r}", f"=SUM(C4:C{r-1})", BLK, CUR, bold=True); cc.border = TOPL
 tot = r
 put(al, f"A{tot+2}", "COMPARISON", SEC)
 put(al, f"A{tot+3}", "Package midpoint (raw sum of ranges)"); put(al, f"B{tot+3}", f"=(B{tot}+C{tot})/2", BLK, CUR)
-put(al, f"A{tot+4}", "Conservative combined estimate, low (haircut for overlap)"); put(al, f"B{tot+4}", 1000000, BLUE, CUR, fill=YEL)
-put(al, f"A{tot+5}", "Conservative combined estimate, high"); put(al, f"B{tot+5}", 1900000, BLUE, CUR, fill=YEL)
+put(al, f"A{tot+4}", "Conservative combined estimate, low (haircut for overlap)"); put(al, f"B{tot+4}", 900000, BLUE, CUR, fill=YEL)
+put(al, f"A{tot+5}", "Conservative combined estimate, high"); put(al, f"B{tot+5}", 1700000, BLUE, CUR, fill=YEL)
 put(al, f"A{tot+6}", "Conservative midpoint (used in Runway sheet)"); put(al, f"B{tot+6}", f"=(B{tot+4}+B{tot+5})/2", BLK, CUR)
 put(al, f"A{tot+7}", "Average annual GF drawdown (FY2024-25)"); put(al, f"B{tot+7}", "=GF_Summary!D16", GRN, CUR)
 put(al, f"A{tot+8}", "Closure net saving (base case)"); put(al, f"B{tot+8}", "=Closure_Model!B20", GRN, CUR)
-put(al, f"A{tot+10}", "Reading: raw row sums run about $1.5M to $2.6M; the published $1.0M to $1.9M band applies a conservative haircut for overlap and implementation risk. Medicaid and reimbursement recovery were removed from the menu in v4.2 review. Coverage is reported against both yardsticks: the $2.65M structural gap before transfers and the roughly $1.15M net drawdown after transfers (Closure_Model rows 21 and 35 carry both for closure).", NOTE, wrap=True)
+put(al, f"A{tot+10}", "Reading: raw row sums run about $1.4M to $2.3M; the published $0.9M to $1.7M band applies a conservative haircut for overlap and implementation risk. Medicaid and reimbursement recovery were removed from the menu in v4.2 review; shared services with Paris Independent was removed in v4.4 review. Coverage is reported against both yardsticks: the $2.65M structural gap before transfers and the roughly $1.15M net drawdown after transfers (Closure_Model rows 21 and 35 carry both for closure).", NOTE, wrap=True)
 
 put(al, f"A{tot+12}", "THE GROWTH PATH: THE SAME MENU AS A DISTRICT-WIDE RECOVERY PLAN (v3.8; backs the site card and Section 9)", SEC)
-put(al, f"A{tot+13}", "Move 1: inspect fixed costs (every non-teaching position via attrition, administrative restructuring, transport, energy, shared services)")
-put(al, f"B{tot+13}", "=SUM(B7:B11)", BLK, CUR, bold=True); put(al, f"C{tot+13}", "=SUM(C7:C11)", BLK, CUR, bold=True)
+put(al, f"A{tot+13}", "Move 1: inspect fixed costs (every non-teaching position via attrition, administrative restructuring, transport, energy)")
+put(al, f"B{tot+13}", "=SUM(B7:B10)", BLK, CUR, bold=True); put(al, f"C{tot+13}", "=SUM(C7:C10)", BLK, CUR, bold=True)
 put(al, f"A{tot+14}", "Move 2: grow enrollment instead of shrinking it (attendance recovery, fill NMES, district-wide recruitment)")
-put(al, f"B{tot+14}", "=B6+B12+B13", BLK, CUR, bold=True); put(al, f"C{tot+14}", "=C6+C12+C13", BLK, CUR, bold=True)
+put(al, f"B{tot+14}", "=B6+B11+B12", BLK, CUR, bold=True); put(al, f"C{tot+14}", "=C6+C11+C12", BLK, CUR, bold=True)
 put(al, f"A{tot+15}", "Move 3: the honest revenue conversation, year one (4 percent option plus delinquency; compounds by year three; recallable menu beyond it on Tax_History rows 70-91)")
 put(al, f"B{tot+15}", "=B4+B5", BLK, CUR, bold=True); put(al, f"C{tot+15}", "=C4+C5", BLK, CUR, bold=True)
 put(al, f"A{tot+16}", "Growth plan total (equals the raw sum above; the published band is the conservative cut of the same rows)")
@@ -789,9 +787,9 @@ for col, prev in zip("CDE", "BCD"):
     put(rw, f"{col}5", f"={prev}5-GF_Summary!$D$16", BLK, CUR)
 put(rw, "A6", "With alternatives package (conservative midpoint; half effect FY2027, full after)")
 put(rw, "B6", "=GF_Summary!D9-GF_Summary!$D$16", BLK, CUR)
-put(rw, "C6", "=B6-GF_Summary!$D$16+0.5*Alternatives!$B$20", BLK, CUR)
-put(rw, "D6", "=C6-GF_Summary!$D$16+Alternatives!$B$20", BLK, CUR)
-put(rw, "E6", "=D6-GF_Summary!$D$16+Alternatives!$B$20", BLK, CUR)
+put(rw, "C6", "=B6-GF_Summary!$D$16+0.5*Alternatives!$B$19", BLK, CUR)
+put(rw, "D6", "=C6-GF_Summary!$D$16+Alternatives!$B$19", BLK, CUR)
+put(rw, "E6", "=D6-GF_Summary!$D$16+Alternatives!$B$19", BLK, CUR)
 put(rw, "A7", "Closure only (v4.2 central case, $54,539, from FY2027)")
 put(rw, "B7", "=GF_Summary!D9-GF_Summary!$D$16", BLK, CUR)
 for col, prev in zip("CDE", "BCD"):
@@ -821,7 +819,7 @@ put(sc, "C6", "=Runway!E7", BLK, CUR)
 put(sc, "D6", "Unpublished", NOTE)
 put(sc, "E6", "Closure vote; the v3 central case covers 5.0% of the gap (10.8% at the base case, 21.3% at the favorable tail); longer rides; enrollment-loss risk", NOTE)
 put(sc, "A7", "3. Districtwide recovery plan (menu plus levy; includes rebalancing and growing NMES)")
-put(sc, "B7", "=Alternatives!B20", GRN, CUR)
+put(sc, "B7", "=Alternatives!B19", GRN, CUR)
 put(sc, "C7", "=Runway!E6", BLK, CUR)
 put(sc, "D7", "Varies by measure", NOTE)
 put(sc, "E7", "Revenue votes, administrative rollback, boundary action, HB 563 recruitment and a signature program at NMES (advanced learners is one option), implementation discipline; every school stays open", NOTE)

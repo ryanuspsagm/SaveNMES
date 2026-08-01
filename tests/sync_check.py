@@ -231,7 +231,7 @@ if hist_rates == [61.3, 60.6, 55.9, 54.2, 49.2, 52.4, 52.4, 52.4]:
 checks = [("19,348", A["B14"].value == 19348, "per-pupil spending $19,348"),
           ("4,586", A["B5"].value == 4586, "SEEK base FY2026 $4,586"),
           ("up 20.3 percent", A["B42"].value == 2913654, "transportation trend (dollar figure lives in model B42)"),
-          ("$1.0 to $1.9 million", True, "alternatives package $1.0-1.9M")]
+          ("$0.9 to $1.7 million", True, "alternatives package $0.9-1.7M")]
 for needle, mok, label in checks:
     if needle in pdf_flat and mok: match(f"{label}: PDF text and model agree")
     else: diff(f"{label}: pdf has '{needle}': {needle in pdf_flat}, model ok: {mok}")
@@ -240,8 +240,8 @@ for r in range(15, 25):
     if wb["Alternatives"].cell(row=r, column=1).value and "Conservative combined estimate, low" in str(wb["Alternatives"].cell(row=r, column=1).value):
         alt_low = wb["Alternatives"].cell(row=r, column=2).value
         alt_high = wb["Alternatives"].cell(row=r + 1, column=2).value
-if alt_low == 1000000 and alt_high == 1900000:
-    match("alternatives conservative range $1.0M-$1.9M hardcoded identically in model and quoted in the PDF")
+if alt_low == 900000 and alt_high == 1700000:
+    match("alternatives conservative range $0.9M-$1.7M hardcoded identically in model and quoted in the PDF")
 
 # ---------- 6. bonding story: $14M plan, savings-to-bond scenarios, FY2026 close ----------
 DS = wb["Debt_Service"]
@@ -433,17 +433,17 @@ if c01 == [(595,3360),(312,4053),(193,4414),(145,5200)]:
 else:
     diff(f"2000-01 report card rows mismatch in model: {c01}")
 AL2 = wb["Alternatives"]
-raw_lo = 313162.4 + 60000 + 100000 + 4*85000 + 0.5*(1447164-999727) + 2913654*0.05 + 50000 + 100000 + (16*4626-46*400+(1-1)*60000) + 25*4226
-raw_hi = 375000 + 120000 + 200000 + 425000 + 450000 + 2913654*0.10 + 150000 + 300000 + (16*4626-46*400+(2-1)*60000) + 50*4226
-if abs(raw_lo-1493830)<5 and abs(raw_hi-2638281)<5 and "$1.5 to $2.6 million" in pdf_flat:
-    match("growth plan raw sums $1.49M/$2.64M recomputed without Medicaid; quoted in the PDF")
+raw_lo = 313162.4 + 60000 + 100000 + 4*85000 + 0.5*(1447164-999727) + 2913654*0.05 + 50000 + (16*4626-46*400+(1-1)*60000) + 25*4226
+raw_hi = 375000 + 120000 + 200000 + 425000 + 450000 + 2913654*0.10 + 150000 + (16*4626-46*400+(2-1)*60000) + 50*4226
+if abs(raw_lo-1393830)<5 and abs(raw_hi-2338281)<5 and "$1.4 to $2.3 million" in pdf_flat:
+    match("growth plan raw sums $1.39M/$2.34M recomputed without Medicaid or shared services; quoted in the PDF")
 else:
     diff(f"growth plan raw sums: {raw_lo:.0f}/{raw_hi:.0f}")
-if "$860,000 to $1.6 million" in html and "$860,000 to $1.6 million" in pdf_flat \
+if "$760,000 to $1.3 million" in html and "$760,000 to $1.3 million" in pdf_flat \
         and "$260,000 to $530,000" in pdf_flat and "Medicaid" not in html:
-    match("growth plan pillar subtotals consistent without Medicaid (site lever-2 list sums 860K-1.6M; PDF matches)")
+    match("growth plan pillar subtotals consistent without Medicaid or shared services (site lever-2 list sums 760K-1.3M; PDF matches)")
 else:
-    diff("growth plan pillar subtotals missing, inconsistent, or Medicaid still present on site")
+    diff("growth plan pillar subtotals missing, inconsistent, or a removed menu line still present on site")
 fills = (16*4626-46*400, 55616+60000)
 if fills[0]-0 == 55616+400*0 - 0 and "$56,000 to $116,000" in pdf_flat:
     match("fill package $56,000-$116,000 in the PDF; the site carries the live planner (prose quote retired in v4.2)")

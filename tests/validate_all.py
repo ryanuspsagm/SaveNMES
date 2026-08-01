@@ -492,9 +492,9 @@ def main():
     for needle in ["$56,000 to $116,000", "$106,000 to $211,000",
                    "$2,476,544", "$8,305", "155 students", "99.6 percent",
                    "54 to 69", "$2,851", "$5,200", "$4,414",
-                   "$860,000 to $1.6 million", "$260,000 to $530,000"]:
+                   "$760,000 to $1.3 million", "$260,000 to $530,000"]:
         chk(needle in t, f"PDF v3.8 content intact: {needle}")
-    for needle in ["$2.5 million federal", "$860,000 to $1.6 million", "chartCurve"]:
+    for needle in ["$2.5 million federal", "$760,000 to $1.3 million", "chartCurve"]:
         chk(needle in html, f"site v3.8/v4.2 content intact: {needle}")
     chk("Medicaid" not in html, "Medicaid removed from the site's expense options")
 
@@ -578,7 +578,7 @@ def main():
         "multi-age reorganization removed from the report")
     chk("its savings sheet says two" in t and "count supports three" in t,
         "PDF keeps the closure staffing-count judgment (v4.2: the district's own two-vs-three)")
-    chk("$1.5 to $2.6 million" in t,
+    chk("$1.4 to $2.3 million" in t,
         "alternatives raw sums intact in the report (Medicaid removed; site quote retired)")
 
     print(f"PASS {len(ok)}")

@@ -185,7 +185,7 @@ P("<b>Third, the district has not yet shown its work.</b> No line-item net-savin
   "average in science and writing. The state's historical files complete the arc: county math leader in "
   "every pre-COVID year on record and an official Distinguished rating in 2016 (Section 5).")
 P("The report closes with twelve questions the administration should have to answer in writing before any vote, "
-  "a list of revenue and cost measures worth an estimated $1.0 to $1.9 million a year without closing a school, and "
+  "a list of revenue and cost measures worth an estimated $0.9 to $1.7 million a year without closing a school, and "
   "recommendations that come in stages, each with a clear number for when the Board should act. The district retains roughly $4.3 million in General Fund "
   "balance and is drawing it down at $1.1 to $1.2 million a year. There is a real problem here, and there is also "
   "time to solve it well. I am asking for one thing, and it is specific: pause any vote until the twelve questions in this report are "
@@ -1503,10 +1503,6 @@ tbl(["Measure", "Estimated annual value", "How it works"],
       "children, a nonresident market the district already wins) is in Section 9, and 62 open seats exist at "
       "Bourbon Central's approved rating. Growth, not shrinkage, is the durable fix for a small-district "
       "budget."],
-     ["Shared services with Paris Independent",
-      "$100,000-$300,000",
-      "Two school districts operate in one small county. Shared transportation, food service, and back-office "
-      "functions deserve a serious, public study."],
      ["Fill North Middletown to capacity instead of closing it",
       "$56,000 to $116,000 net, recurring",
       "Rebalance eastern attendance boundaries and recruit cross-county transfers under House Bill 563 to fill "
@@ -1517,7 +1513,7 @@ tbl(["Measure", "Estimated annual value", "How it works"],
             "new recurring revenue and recurring cost reductions, and the workbook's Alternatives tab labels each one "
             "by type with a confidence rating and what would firm it up. Values are estimates derived from the "
             "district's audited figures and state data; ranges overlap and are not additive to the penny. The "
-            "rows sum to roughly $1.5 to $2.6 million raw; the published $1.0 to $1.9 million a year applies "
+            "rows sum to roughly $1.4 to $2.3 million raw; the published $0.9 to $1.7 million a year applies "
             "a conservative haircut for overlap and implementation risk, against an annual reserve drawdown "
             "of $1.1 to $1.2 million.",
     bold_first_col=True)
@@ -1532,14 +1528,14 @@ P("Bourbon County Schools has a structural funding problem: spending has outrun 
   "that sweep is a General Fund problem every school shares. Organized as a plan, the menu above prices out as "
   "three moves. <b>Move one, inspect fixed costs</b>: every non-teaching position district-wide trimmed by "
   "attrition, administrative restructuring considered on its own merits (the district's own audit table shows "
-  "the recent growth was insurance, payouts and contracts, not new hires), transportation and energy "
-  "efficiency, and shared services, worth $860,000 to $1.6 million a year. <b>Move two, grow enrollment instead of shrinking it</b>: "
+  "the recent growth was insurance, payouts and contracts, not new hires), and transportation and energy "
+  "efficiency, worth $760,000 to $1.3 million a year. <b>Move two, grow enrollment instead of shrinking it</b>: "
   "fill North Middletown's 46 seats, recover attendance, and recruit district-wide from the measured pool of "
   "homeschool, private-school and nonresident families, worth $260,000 to $530,000 a year. <b>Move three, have "
   "the honest revenue conversation</b>: the four percent option and delinquency recovery bring $370,000 to "
   "$495,000 in year one and about $1.0 to $1.1 million by year three as the option compounds, and the recallable "
-  "menu beyond four percent reaches $1.0 to $2.5 million. The three moves are the raw $1.5 to $2.6 million shown "
-  "under Figure 19, cut to the published $1.0 to $1.9 million after overlap and implementation risk. Any one "
+  "menu beyond four percent reaches $1.0 to $2.5 million. The three moves are the raw $1.4 to $2.3 million shown "
+  "under Figure 19, cut to the published $0.9 to $1.7 million after overlap and implementation risk. Any one "
   "alone outweighs closure, whose median outcome now loses $21,971 a year. Together they balance the budget, end the sweep, free the "
   "restricted stream to bond the renovation plan, and close nothing. The Alternatives tab prices each move live.")
 
@@ -1871,7 +1867,7 @@ tbl(["Plan", "Recurring impact, year 3", "Projected FY2029 balance", "What it re
       "No decisions; the districtwide drawdown simply continues, with or without North Middletown"],
      ["2. Close NMES and consolidate", "-$591,545 to +$488,631 (median: LOSES $21,971)", "Median: gone sooner than status quo; best case $1.2M",
       "Closure vote; the median scenario loses money; longer rides; enrollment-loss risk"],
-     ["3. Districtwide recovery plan (menu plus levy)", "$1.0-$1.9 million a year", "About $3.3 million",
+     ["3. Districtwide recovery plan (menu plus levy)", "$0.9-$1.7 million a year", "About $2.9 million",
       "Revenue votes, administrative rollback, boundary action and HB 563 recruitment, implementation "
       "discipline; every school stays open"]],
     [1.85 * inch, 1.45 * inch, 1.35 * inch, 2.05 * inch],
