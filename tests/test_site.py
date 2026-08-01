@@ -112,8 +112,8 @@ def main():
         # --- Growth calculator ---
         gro = pg.text_content("#rGro").strip()
         gverd = pg.text_content("#rGroVerdict").strip()
-        if gro == "$125,150" and "50 added students" in gverd and "1 new teacher" in gverd and "1 support hire" in gverd:
-            ok("growth default is the exact median scenario: $125,150 at target 160, historical pace, $500 add-ons")
+        if gro == "$140,384" and "70 added students" in gverd and "2 new teachers" in gverd and "1 support hire" in gverd:
+            ok("growth default is the median-rank scenario: $140,384 at target 180, today's class size, $500 add-ons")
         else: bad(f"growth defaults: {gro} / {gverd}")
         pg.fill("#sGro", "200"); pg.dispatch_event("#sGro", "input")
         pg.fill("#sRat", "0"); pg.dispatch_event("#sRat", "input")
@@ -122,21 +122,21 @@ def main():
         pg.fill("#sGb", "1000"); pg.dispatch_event("#sGb", "input")
         pg.fill("#sCps", "1000"); pg.dispatch_event("#sCps", "input")
         pg.fill("#sGad", "0"); pg.dispatch_event("#sGad", "input")
-        if pg.text_content("#rGro").strip() == "-$26,992":
-            ok("growth grid floor -$26,992 (90 added, teacher per 14 at top salary, every cost maxed)")
+        if pg.text_content("#rGro").strip() == "$29,591":
+            ok("worst reachable corner still pays: $29,591 (90 added, class of 18 at top salary, every cost maxed; grid-wide floor +$3,331)")
         else: bad(f"growth floor: {pg.text_content('#rGro')}")
         pg.fill("#sGro", "153"); pg.dispatch_event("#sGro", "input")
         pg.fill("#sRat", "2"); pg.dispatch_event("#sRat", "input")
         if "no new teachers" in pg.text_content("#rGroVerdict"):
-            ok("headroom honored: 43 added students (to 153) hire no teacher at the district-cap pace")
+            ok("headroom honored: 43 added students (to 153) hire no teacher at the district-cap class size")
         else: bad(f"headroom verdict: {pg.text_content('#rGroVerdict')[:70]}")
         pg.fill("#sGro", "156"); pg.dispatch_event("#sGro", "input")
         pg.fill("#sRat", "0"); pg.dispatch_event("#sRat", "input")
         if "1 new teacher" in pg.text_content("#rGroVerdict"):
-            ok("first hire lands at 21 students past the 25 open seats at today's staffing pace")
+            ok("first hire lands at 21 students past the 25 open seats at the smaller-class setting")
         else: bad(f"first-hire verdict: {pg.text_content('#rGroVerdict')[:70]}")
         pg.fill("#sRat", "1"); pg.dispatch_event("#sRat", "input")
-        pg.fill("#sTc", "49150"); pg.dispatch_event("#sTc", "input")
+        pg.fill("#sTc", "41718"); pg.dispatch_event("#sTc", "input")
         pg.fill("#sGro", "110"); pg.dispatch_event("#sGro", "input")
         if "No new students" in pg.text_content("#rGroVerdict"):
             ok("growth zero-gain edge case")

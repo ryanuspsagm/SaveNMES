@@ -108,18 +108,18 @@ Banded figures:
    classified lines ($20,000-$37,000), scaling from the first student; busing
    $0-$1,000 per recruited student; marginal cost $400-$1,000 per student (measured
    student-scaling spend: $331).
-   RESULTS (v4.4: 25-seat headroom + selectable hiring pace 14/16/24 + SEEK
-   add-ons ENUMERATED in the headline, symmetric with the closure grid):
-   19,683 scenarios | median +$125,150/yr | 17 negative (0.09%) | range
-   -$26,992 to +$386,904. Growth pays in 99.9 percent of scenarios. Base-only
-   cut: median +$102,780. Site default is the EXACT headline median combo
-   (target 160, historical 1-per-16 pace, $49,150 teacher, 1 per 50 support at
-   $37,000, $500 bus, $400 cps, $500 add-ons = the closure leaver lever's
-   default leg).
-   COMPARISON LINE: the median growth scenario GAINS $125,150 while the median
-   closure scenario LOSES $21,971 - a $147,121/yr swing between the two roads;
-   growth pays in 99.9 percent of its scenarios while 55 percent of closure
-   scenarios lose money.
+   RESULTS (v4.4 final: 25-seat headroom + class-size lever 18/21/24 indexed
+   on CLASSROOM teachers + SEEK add-ons ENUMERATED, symmetric with the closure
+   grid): 19,683 scenarios | median +$140,331/yr | ZERO negative | range
+   +$3,331 to +$386,904. Growth pays in EVERY scenario. Base-only cut: median
+   +$117,040. Site default is the median-rank combo, 50.0% (target 180, one
+   class per 21 = today's class size, $41,718 entry-row teacher, 1 per 50
+   support at $37,000, $1,000 bus, $400 cps, $500 add-ons = the closure leaver
+   lever's default leg) = $140,384.
+   COMPARISON LINE: the median growth scenario GAINS $140,331 while the median
+   closure scenario LOSES $21,971 - a $162,302/yr swing between the two roads;
+   growth pays in every scenario while 55 percent of closure scenarios lose
+   money.
 
 PART TWO - THE DISTRICT NEEDS GROWTH, NOT CLOSURES (district-wide)
 1. Money problem: $2.65M gap, reserves -$1.1M/yr, aid cliff + 248 fewer funded
@@ -176,6 +176,16 @@ g. SEEK add-ons SYMMETRIC across the two grids (2026-08-01, user: "make sure
    headline statistics (closure already did; growth's headline was base-only),
    and both site sliders default to $500. Growth headline moved
    $102,780/6,561/99.7% -> $125,150/19,683/99.9%.
+h. Teacher trigger RE-INDEXED on classroom teachers (2026-08-01, user: "index
+   it on teacher staff not fixed staff (18 to 24 range); fixed staff can be
+   anchored on a different ratio"): the earlier 14/16 legs were all-certified
+   ratios (NCES/CCD FTE counts Title I, SpEd, part-time), too rich for a
+   class-size trigger. New legs 18/21/24: 18 = smaller classes than today,
+   21 = today's actual class size (128 across six homerooms), 24 = the
+   district's own K-3 cap. Support staff stays on its own 1/75-1/50 lever.
+   Median $125,150 -> $140,331 and the zero-negative claim RETURNS (floor
+   +$3,331): with the district's own open seats and classroom-indexed
+   hiring, growth pays in every one of the 19,683 scenarios.
 b. Calculator base = 110 (district's own figure, still flagged unsourced); ceiling 200
    on the slider with the 198 note (2013 state-approved rating).
 c. Property-loss lever priced $0-95K pending the PVA records response.

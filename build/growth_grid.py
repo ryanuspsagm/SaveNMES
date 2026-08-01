@@ -16,15 +16,16 @@ the closure case. Teachers increment beyond the 25 seats.
 
   added students:        10 to 90 (site slider runs every whole student)
   seats already open:    25 (fixed; the district's own Appendix B caps)
-  teacher trigger:       selectable hiring pace, one teacher per FULL cohort
-                         of 14 / 16 / 24 added students BEYOND the 25 open
-                         seats. Every leg is measured, not assumed:
-                         14 = today's staffing (128 students / 9.41 NCES
-                         classroom-teacher FTE = 13.6); 16 = the median
-                         students-per-teacher ratio in the eight federal-file
-                         years NMES ran over 200 students (1996-2008, CCD,
-                         archived build/bourbon_staffing_ratios_ccd.csv);
-                         24 = the district's own K-3 class cap (Appendix B).
+  teacher trigger:       selectable hiring pace, one CLASSROOM teacher per
+                         FULL new class of 18 / 21 / 24 added students BEYOND
+                         the 25 open seats. Indexed on classroom teachers
+                         (v4.4 review: 'index it on teacher staff, not fixed
+                         staff'), and every leg is a real classroom count:
+                         18 = smaller classes than the school runs today;
+                         21 = today's actual class size (128 students across
+                         six homerooms = 21.3); 24 = the district's own K-3
+                         class cap (Appendix B). Support and other fixed
+                         staff ride their own lever below, NOT this one.
                          Priced at the certified schedule's entry-to-midpoint
                          rows: $41,718 / $49,150 / $56,583 (new positions are
                          new hires, not 25-year veterans)
@@ -49,10 +50,11 @@ teachers = floor(max(0, gain - 25) / ratio)
 
 Run:  python build/growth_grid.py
 Asserts the published statistics: headline grid (add-ons enumerated, matching
-the closure model) 19,683 scenarios, median +$125,150, floor -$26,992 (a
-teacher hired for every 14 added at the top salary with every other cost at
-maximum and no add-ons), ceiling +$386,904, 17 negative (0.09 percent).
-Growth pays in 99.9 percent of scenarios. Base-only cut: median +$102,780.
+the closure model) 19,683 scenarios, median +$140,331, floor +$3,331 (a
+class of 18 at the top salary with every cost at maximum and no add-ons),
+ceiling +$386,904, ZERO negative: with the district's own 25 open seats and
+classroom-indexed hiring, growth pays in every scenario. Base-only cut:
+median +$117,040.
 """
 import math
 import statistics
@@ -69,7 +71,7 @@ def net(gain, ratio, staff_per, teacher_cost, staff_cost, bus, cps, addons):
 
 
 ARGS = dict(
-    gains=range(10, 91, 10), ratios=(14, 16, 24), staff_pers=(0, 75, 50),
+    gains=range(10, 91, 10), ratios=(18, 21, 24), staff_pers=(0, 75, 50),
     tcosts=(41_718, 49_150, 56_583), scosts=(20_000, 28_500, 37_000),
     buses=(0, 500, 1000), cpss=(400, 700, 1000),
 )
@@ -86,21 +88,23 @@ def grid(addon_values):
 base = grid((0,))
 full = grid((0, 500, 1000))
 assert len(base) == 6_561 and len(full) == 19_683
-assert round(statistics.median(full)) == 125_150, statistics.median(full)
-assert full[0] == -26_992 and full[-1] == 386_904, (full[0], full[-1])
+assert round(statistics.median(full)) == 140_331, statistics.median(full)
+assert full[0] == 3_331 and full[-1] == 386_904, (full[0], full[-1])
 neg_full = sum(1 for x in full if x < 0)
-assert neg_full == 17, neg_full
-assert round(statistics.median(base)) == 102_780, statistics.median(base)
+assert neg_full == 0, neg_full
+assert round(statistics.median(base)) == 117_040, statistics.median(base)
 
-# the site default is a real grid combo at the exact headline median:
-# 50 added, historical 1-per-16 pace (1 teacher past the 25 seats),
-# $49,150 teacher, 1 per 50 support at $37,000, $500 busing, $400 supplies,
-# $500 add-ons (the same default the closure model's leaver lever uses)
-site_default = net(50, 16, 50, 49_150, 37_000, 500, 400, 500)
-assert site_default == 125_150 == statistics.median(full), site_default
+# the site default is a real grid combo at the median rank (50.0%):
+# 70 added, one class per 21 (today's class size; 2 teachers past the 25
+# seats), entry-row $41,718 teacher, 1 per 50 support at $37,000, busing at
+# its $1,000 maximum, $400 supplies, $500 add-ons (the closure default leg)
+site_default = net(70, 21, 50, 41_718, 37_000, 1000, 400, 500)
+assert site_default == 140_384, site_default
+rank = sum(1 for x in full if x <= site_default) / len(full)
+assert 0.49 < rank < 0.51, rank
 
 print(f"headline (add-ons enumerated): {len(full):,} scenarios "
       f"| median ${statistics.median(full):,.0f} | floor ${full[0]:,.0f} "
       f"| ceiling ${full[-1]:,.0f} | {neg_full} negative")
 print(f"base-only cut: median ${statistics.median(base):,.0f}")
-print(f"site default: ${site_default:,} (the exact headline median)")
+print(f"site default: ${site_default:,} (rank {rank*100:.1f}%)")
