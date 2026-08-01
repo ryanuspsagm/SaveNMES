@@ -358,9 +358,11 @@ def main():
         "Downloads sits between Voices and Sources")
     chk(html.index("Every version stays public") < html.index('id="sources"'),
         "version history lives in the Downloads section")
-    chk(html.index("The fill-the-seats planner") > html.index('id="asks"')
-        and html.index("The fill-the-seats planner") < html.index('id="act"'),
-        "the NMES fill planner lives with the four asks as the how")
+    chk(html.index("The fill-the-seats planner") > html.index('id="model"')
+        and html.index("The fill-the-seats planner") < html.index('id="part2"'),
+        "the NMES fill planner lives in Run the Numbers with the calculators")
+    chk('<details class="more" open><summary>More detail: each ask and the committees' in html,
+        "four-asks detail opens expanded, committees inside, no planner")
     # v4.2: the closure calculator exposes all seven grid levers, plus the growth calculator
     for lever in ['id="sCap"', 'id="sFix"', 'id="sTea"', 'id="sLeav"',
                   'id="sAdd"', 'id="sProp"', 'id="sBus"']:

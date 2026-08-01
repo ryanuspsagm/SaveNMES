@@ -310,7 +310,7 @@ footer a{color:var(--ice)}
 <div class="kicker">Run the Numbers</div>
 <h2>Two calculators. The district's own prices. Your assumptions.</h2>
 <p class="lede">The closure model prices what closing NMES nets. The growth model prices filling it instead. Both use the district's own published figures. Move any slider.</p>
-<details class="more" open><summary>The calculators and the full range</summary>
+<details class="more" open><summary>The calculators, the seat planner, and the full range</summary>
 
 <div class="calc-grid">
 <div class="card">
@@ -363,6 +363,27 @@ footer a{color:var(--ice)}
 </div>
 <p class="note">No free seats are assumed: a teacher is charged for every full class of added students. Even so, growth comes out ahead in more than 98 percent of the 6,561 scenarios. Median: <b>+$67,124 a year</b>. The rare losing cases (1.6 percent) require hiring the costliest teacher for every 20 students while every other cost runs at maximum.</p>
 </div>
+</div>
+
+<div class="card">
+<h3>The fill-the-seats planner</h3>
+<p class="note">The building held 261 children at its peak. It holds 128 today against a 174 rating (198 in the 2013 state-approved plan). The pool is real: 259 registered homeschoolers, 450 to 550 county kids outside both districts, and 131 out-of-county students already driving in. The three student sliders share the 70 seats up to the 2013 rating; raising the returning-students slider frees seats from the other two.</p>
+<div class="slider-row"><label>Students rezoned from the Paris-area zones <output id="oRez">30</output></label>
+<input type="range" id="sRez" min="0" max="70" value="30" step="1"></div>
+<div class="slider-row"><label>Cross-county transfers under HB 563 <output id="oTr">16</output></label>
+<input type="range" id="sTr" min="0" max="70" value="16" step="1"></div>
+<div class="slider-row"><label>Returning homeschool and private-school students <output id="oRet">0</output></label>
+<input type="range" id="sRet" min="0" max="70" value="0" step="1"></div>
+<div class="slider-row"><label>Sections avoided at the receiving schools <output id="oSec">1</output></label>
+<input type="range" id="sSec" min="0" max="2" value="1" step="1"></div>
+<div class="slider-row"><label>New sections needed at NMES under the class caps <output id="oAdd2">1</output></label>
+<input type="range" id="sAdd2" min="0" max="3" value="1" step="1"></div>
+<div class="result">
+<div class="big" id="rFill">$55,616</div>
+<div class="sub">net new recurring dollars per year</div>
+<div class="verdict" id="rFillVerdict"></div>
+</div>
+<p class="note" style="margin-top:8px">New sections are charged at $60,000. Returning students are new money at the $4,626 base. Details in Section 9 of the report.</p>
 </div>
 
 <div class="card">
@@ -477,7 +498,7 @@ footer a{color:var(--ice)}
 <div class="kicker">On North Middletown, Specifically</div>
 <h2>Four asks that cost the district nothing.</h2>
 <p class="lede">Permanent in the plan. Four years with public targets and the tools to hit them. Let the community fund the building. Say publicly the district will grow this school. Plus three committees to run the growth plan.</p>
-<details class="more"><summary>More detail: each ask, the committees, and the seat planner</summary>
+<details class="more" open><summary>More detail: each ask and the committees</summary>
 <div class="grid2">
 <div class="card"><h3>1. Keep NMES Permanent in the facility plan</h3>
 <p class="note">A facility plan commits no money; Priority 2 exists for needs not yet funded. "Transitional" saves nothing this year either, but it blocks state facility funding and declares a phase-out. Same cost: zero. Only one keeps every door open.</p></div>
@@ -487,30 +508,9 @@ footer a{color:var(--ice)}
 <p class="note">Grants, private money, donated labor and materials can carry the building's real needs at no cost to the district. The district's role is one sentence in a board motion: accept the help.</p></div>
 <div class="card"><h3>4. Say publicly that the district will grow this school</h3>
 <p class="note">A closure cloud drives families out before any vote. A public growth commitment costs nothing and is the cheapest enrollment lever the board owns. There is no pot of money that growth would squander: if staff are reassigned, closure frees about $58,774 a year.</p></div>
-</div>
 
 <div class="card"><h3>And ask the board to stand up three committees</h3>
 <p class="note">The three levers in Part Two each need a group that owns it and reports to the public. <b>1. An enrollment growth committee</b>, charged with growing enrollment across the whole district. <b>2. A fixed-cost committee</b>, charged with inspecting every fixed cost, building by building. <b>3. A revenue committee</b>, charged with inspecting the revenue options that make the district competitive. Committees cost nothing, and they turn a plan on a website into work with names on it.</p></div>
-
-<div class="card">
-<h3>The fill-the-seats planner</h3>
-<p class="note">The building held 261 children at its peak. It holds 128 today against a 174 rating (198 in the 2013 state-approved plan). The pool is real: 259 registered homeschoolers, 450 to 550 county kids outside both districts, and 131 out-of-county students already driving in. The three student sliders share the 70 seats up to the 2013 rating; raising the returning-students slider frees seats from the other two.</p>
-<div class="slider-row"><label>Students rezoned from the Paris-area zones <output id="oRez">30</output></label>
-<input type="range" id="sRez" min="0" max="70" value="30" step="1"></div>
-<div class="slider-row"><label>Cross-county transfers under HB 563 <output id="oTr">16</output></label>
-<input type="range" id="sTr" min="0" max="70" value="16" step="1"></div>
-<div class="slider-row"><label>Returning homeschool and private-school students <output id="oRet">0</output></label>
-<input type="range" id="sRet" min="0" max="70" value="0" step="1"></div>
-<div class="slider-row"><label>Sections avoided at the receiving schools <output id="oSec">1</output></label>
-<input type="range" id="sSec" min="0" max="2" value="1" step="1"></div>
-<div class="slider-row"><label>New sections needed at NMES under the class caps <output id="oAdd2">1</output></label>
-<input type="range" id="sAdd2" min="0" max="3" value="1" step="1"></div>
-<div class="result">
-<div class="big" id="rFill">$55,616</div>
-<div class="sub">net new recurring dollars per year</div>
-<div class="verdict" id="rFillVerdict"></div>
-</div>
-<p class="note" style="margin-top:8px">New sections are charged at $60,000. Returning students are new money at the $4,626 base. Details in Section 9 of the report.</p>
 </div>
 </details>
 </div></section>
