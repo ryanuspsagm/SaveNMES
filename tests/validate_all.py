@@ -144,6 +144,9 @@ def main():
         "model School_Data cites build/kde_scores_history.json")
 
     # voices section (personal stories, published only with verified permission)
+    chk("The record is not all numbers" in html
+        and '<details class="more" open><summary>Read the stories' in html,
+        "voices lede tightened to the real-families framing and the stories open expanded")
     chk('id="voices"' in html and 'id="storyList"' in html and "var STORIES=[" in html,
         "site has the Voices section with the story pipeline")
     chk("explicit permission" in html and "never published" in html,
