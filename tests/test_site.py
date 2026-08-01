@@ -58,8 +58,8 @@ def main():
         else: ok("no JS console or page errors")
 
         n = pg.evaluate("Object.keys(Chart.instances).length")
-        if n == 5: ok(f"{n} Chart.js charts instantiated")
-        else: bad(f"expected 5 charts, got {n}")
+        if n == 6: ok(f"{n} Chart.js charts instantiated")
+        else: bad(f"expected 6 charts, got {n}")
         strip = pg.query_selector(".range-bar")
         labs = pg.text_content(".range-labs") if pg.query_selector(".range-labs") else ""
         if strip and "loses $591,545" in labs and "saves $488,631" in labs and "loses $21,971" in labs:

@@ -115,13 +115,13 @@ A(Paragraph("Prepared for the North Middletown community and the members of the<
 A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
             ParagraphStyle("pf2", fontName="Helvetica", fontSize=9.5, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=6)))
-A(Paragraph("Written by a former NMES King, with the help of an AI research assistant",
+A(Paragraph("Written by a former NMES King; the analysis and report writing were accelerated with the use of an AI research assistant",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
 A(Paragraph("Version 4.2 &nbsp;\u2022&nbsp; August 1, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
-A(Spacer(1, 2.2 * inch))
+A(Spacer(1, 1.6 * inch))
 scope = ("This review relies only on public records: the district's audited financial statements for the "
          "fiscal years ending June 30, 2024 and June 30, 2025; Kentucky Department of Education funding, facility, "
          "and school report card data; federal enrollment records; municipal bond disclosures; state regulations; and "
@@ -129,8 +129,8 @@ scope = ("This review relies only on public records: the district's audited fina
          "as an estimate and its assumptions are stated. This document is not an audit, and it alleges no misconduct "
          "by any person; both years of the district's financial statements received clean opinions from its independent "
          "auditors. Its purpose is narrower and simpler: to lay out what the public record shows, and what it does not "
-         "yet show, before an irreversible decision is made about a community's school. I am an alumnus of this school, "
-         "and I wrote this report with the help of Claude, an AI research assistant from Anthropic; every figure "
+         "yet show, before an irreversible decision is made about a community's school. I am an alumnus of this school. "
+         "The analysis and report writing were accelerated with the use of Claude, an AI research assistant from Anthropic; every figure "
          "should be re-verified against the cited primary sources before formal submission or republication.")
 st = Table([[Paragraph(scope, ParagraphStyle("scope", fontName="Times-Roman", fontSize=9.3,
                                              leading=12.6, textColor=colors.HexColor("#333333")))]],
@@ -184,7 +184,7 @@ P("<b>Third, the district has not yet shown its work.</b> No line-item net-savin
   "average in science and writing. The state's historical files complete the arc: county math leader in "
   "every pre-COVID year on record and an official Distinguished rating in 2016 (Section 5).")
 P("The report closes with twelve questions the administration should have to answer in writing before any vote, "
-  "a list of revenue and cost measures worth an estimated $1.1 to $2.1 million a year without closing a school, and "
+  "a list of revenue and cost measures worth an estimated $1.0 to $1.9 million a year without closing a school, and "
   "recommendations that come in stages, each with a clear number for when the Board should act. The district retains roughly $4.3 million in General Fund "
   "balance and is drawing it down at $1.1 to $1.2 million a year. There is a real problem here, and there is also "
   "time to solve it well. I am asking for one thing, and it is specific: pause any vote until the twelve questions in this report are "
@@ -220,8 +220,9 @@ P("<b>The levers.</b> First, enrollment: each returning student brings the $4,62
   "46 open seats alone nets $56,000 to $116,000 a year, with today's 174 rating not the ceiling: the state's "
   "2013-approved plan rated this building at 198. Second, fixed costs: transportation is $2.7 million "
   "coded to no school with no routing study ever produced (a ten percent optimization is about $270,000 a "
-  "year); Kentucky's school energy program documented $225 million of statewide savings; Medicaid billing "
-  "under the 2019 expansion is a records request away from being sized. Third, revenue: the rate is simply "
+  "year); Kentucky's school energy program documented $225 million of statewide savings; and an inspection "
+  "of every non-teaching position district-wide, trimmed by attrition rather than layoffs, is worth $340,000 "
+  "to $425,000 a year at the district's own loaded costs. Third, revenue: the rate is simply "
   "lower, 52.4 cents against every neighbor but one, while the tax base more than doubled; restoring the "
   "board's own 2018 rate yields about $1.7 million a year, priced in Section 9. The recall record next door "
   "is thin: across the eight neighboring districts in the last ten years, voters have turned down exactly one "
@@ -1483,10 +1484,6 @@ tbl(["Measure", "Estimated annual value", "How it works"],
       "$145,000-$290,000",
       "Routing software, tiered bell times, right-sized fleet, and a pause on bus purchases after $1.58 million in "
       "two years."],
-     ["Medicaid billing, E-rate, and universal-meals eligibility",
-      "$100,000-$250,000",
-      "Federal reimbursements many districts under-collect: health services for students with special needs, "
-      "technology discounts, and the Community Eligibility Provision for meals in high-poverty schools."],
      ["Energy performance contracting",
       "10-25% of utility spend",
       "State regulation (702 KAR 4:160) authorizes contracts in which guaranteed energy savings pay for the "
@@ -1512,7 +1509,7 @@ tbl(["Measure", "Estimated annual value", "How it works"],
             "new recurring revenue and recurring cost reductions, and the workbook's Alternatives tab labels each one "
             "by type with a confidence rating and what would firm it up. Values are estimates derived from the "
             "district's audited figures and state data; ranges overlap and are not additive to the penny. The "
-            "rows sum to roughly $1.6 to $2.9 million raw; the published $1.1 to $2.1 million a year applies "
+            "rows sum to roughly $1.5 to $2.6 million raw; the published $1.0 to $1.9 million a year applies "
             "a conservative haircut for overlap and implementation risk, against an annual reserve drawdown "
             "of $1.1 to $1.2 million.",
     bold_first_col=True)
@@ -1525,15 +1522,16 @@ P("Bourbon County Schools has a structural funding problem: spending has outrun 
   "of one percent of the budget. It is not the reason capital projects cannot be funded; roughly $17.6 million of "
   "restricted bonding capacity sits unused while the capital-to-operations sweep drains the building fund, and "
   "that sweep is a General Fund problem every school shares. Organized as a plan, the menu above prices out as "
-  "three moves. <b>Move one, inspect fixed costs, starting with administration</b>: central-office restraint, "
-  "attrition-based staffing alignment, transportation and energy efficiency, shared services and reimbursement "
-  "recovery, worth $960,000 to $1.9 million a year. <b>Move two, grow enrollment instead of shrinking it</b>: "
+  "three moves. <b>Move one, inspect fixed costs</b>: every non-teaching position district-wide trimmed by "
+  "attrition, administrative restructuring considered on its own merits (the district's own audit table shows "
+  "the recent growth was insurance, payouts and contracts, not new hires), transportation and energy "
+  "efficiency, and shared services, worth $860,000 to $1.6 million a year. <b>Move two, grow enrollment instead of shrinking it</b>: "
   "fill North Middletown's 46 seats, recover attendance, and recruit district-wide from the measured pool of "
   "homeschool, private-school and nonresident families, worth $260,000 to $530,000 a year. <b>Move three, have "
   "the honest revenue conversation</b>: the four percent option and delinquency recovery bring $370,000 to "
   "$495,000 in year one and about $1.0 to $1.1 million by year three as the option compounds, and the recallable "
-  "menu beyond four percent reaches $1.0 to $2.5 million. The three moves are the raw $1.6 to $2.9 million shown "
-  "under Figure 19, cut to the published $1.1 to $2.1 million after overlap and implementation risk. Any one "
+  "menu beyond four percent reaches $1.0 to $2.5 million. The three moves are the raw $1.5 to $2.6 million shown "
+  "under Figure 19, cut to the published $1.0 to $1.9 million after overlap and implementation risk. Any one "
   "alone outweighs closure, whose median outcome now loses $21,971 a year. Together they balance the budget, end the sweep, free the "
   "restricted stream to bond the renovation plan, and close nothing. The Alternatives tab prices each move live.")
 
@@ -1865,7 +1863,7 @@ tbl(["Plan", "Recurring impact, year 3", "Projected FY2029 balance", "What it re
       "No decisions; the districtwide drawdown simply continues, with or without North Middletown"],
      ["2. Close NMES and consolidate", "-$591,545 to +$488,631 (median: LOSES $21,971)", "Median: gone sooner than status quo; best case $1.2M",
       "Closure vote; the median scenario loses money; longer rides; enrollment-loss risk"],
-     ["3. Districtwide recovery plan (menu plus levy)", "$1.1-$2.1 million a year", "About $3.7 million",
+     ["3. Districtwide recovery plan (menu plus levy)", "$1.0-$1.9 million a year", "About $3.3 million",
       "Revenue votes, administrative rollback, boundary action and HB 563 recruitment, implementation "
       "discipline; every school stays open"]],
     [1.85 * inch, 1.45 * inch, 1.35 * inch, 2.05 * inch],
@@ -1912,7 +1910,7 @@ B("Face the levy each August with the numbers on the table: the four percent opt
   "record, alongside the spending decisions, because standing idle is the one answer I rule out.")
 H2("Over the next twelve months")
 B("Pursue the low-harm levers first: the collections-gap reconciliation, the 4-percent levy decision at the "
-  "September tax setting, Medicaid and meals reimbursements, transportation routing, attrition-based staffing, and "
+  "September tax setting, transportation routing, attrition-based staffing, and "
   "an administrative cost review, with quarterly public reporting against a target of cutting the operating "
   "deficit from $2.6 million to under $1.5 million by fiscal 2027 and under $800,000 by fiscal 2028.")
 B("Set up a North Middletown sustainability committee, district, city, parents, and business, to design the "

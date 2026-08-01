@@ -217,7 +217,7 @@ if hist_rates == [61.3, 60.6, 55.9, 54.2, 49.2, 52.4, 52.4, 52.4]:
 checks = [("19,348", A["B14"].value == 19348, "per-pupil spending $19,348"),
           ("4,586", A["B5"].value == 4586, "SEEK base FY2026 $4,586"),
           ("up 20.3 percent", A["B42"].value == 2913654, "transportation trend (dollar figure lives in model B42)"),
-          ("$1.1 to $2.1 million", True, "alternatives package $1.1-2.1M")]
+          ("$1.0 to $1.9 million", True, "alternatives package $1.0-1.9M")]
 for needle, mok, label in checks:
     if needle in pdf_flat and mok: match(f"{label}: PDF text and model agree")
     else: diff(f"{label}: pdf has '{needle}': {needle in pdf_flat}, model ok: {mok}")
@@ -226,8 +226,8 @@ for r in range(15, 25):
     if wb["Alternatives"].cell(row=r, column=1).value and "Conservative combined estimate, low" in str(wb["Alternatives"].cell(row=r, column=1).value):
         alt_low = wb["Alternatives"].cell(row=r, column=2).value
         alt_high = wb["Alternatives"].cell(row=r + 1, column=2).value
-if alt_low == 1100000 and alt_high == 2100000:
-    match("alternatives conservative range $1.1M-$2.1M hardcoded identically in model and quoted in PDF and site")
+if alt_low == 1000000 and alt_high == 1900000:
+    match("alternatives conservative range $1.0M-$1.9M hardcoded identically in model and quoted in the PDF")
 
 # ---------- 6. bonding story: $14M plan, savings-to-bond scenarios, FY2026 close ----------
 DS = wb["Debt_Service"]
@@ -402,13 +402,13 @@ if ok38:
 else:
     diff("300-breakeven reconstruction mismatch across model/site/PDF")
 c01 = [(SCt[f"B{r}"].value, SCt[f"C{r}"].value) for r in (49,50,51,52)]
-if c01 == [(595,3360),(312,4053),(193,4414),(145,5200)] and "$5,200" in html and "$4,414" in html:
+if c01 == [(595,3360),(312,4053),(193,4414),(145,5200)]:
     xs=[1/n for n,_ in c01]; ys=[p for _,p in c01]
     mx=sum(xs)/4; my=sum(ys)/4
     F=sum((x-mx)*(y-my) for x,y in zip(xs,ys))/sum((x-mx)**2 for x in xs)
     a0=my-F*mx
-    if abs(F-331507)<5 and abs(a0-2851)<5 and "$2,851" in html and "$332,000" in html:
-        match("2000-01 scale curve: $2,851 + $331,507/N reproduced from the four report-card points")
+    if abs(F-331507)<5 and abs(a0-2851)<5:
+        match("2000-01 scale curve: $2,851 + $331,507/N reproduced from the four report-card points (model+PDF; site card replaced by the live enrollment curve)")
     else:
         diff(f"2000-01 curve fit mismatch: F={F:.0f}, a={a0:.0f}")
     mil = (5200-4053)*145; nm = (19348-18131)*128
@@ -419,22 +419,28 @@ if c01 == [(595,3360),(312,4053),(193,4414),(145,5200)] and "$5,200" in html and
 else:
     diff(f"2000-01 report card rows mismatch in model: {c01}")
 AL2 = wb["Alternatives"]
-raw_lo = 313162.4 + 60000 + 100000 + 4*85000 + 0.5*(1447164-999727) + 2913654*0.05 + 100000 + 50000 + 100000 + (16*4626-46*400+(1-1)*60000) + 25*4226
-raw_hi = 375000 + 120000 + 200000 + 425000 + 450000 + 2913654*0.10 + 250000 + 150000 + 300000 + (16*4626-46*400+(2-1)*60000) + 50*4226
-if abs(raw_lo-1593830)<5 and abs(raw_hi-2888281)<5 and "$1.6 to $2.9 million" in pdf_flat:
-    match("growth plan raw sums $1.59M/$2.89M recomputed from inputs; quoted in the PDF (site quote retired in the v4.2 cut)")
+raw_lo = 313162.4 + 60000 + 100000 + 4*85000 + 0.5*(1447164-999727) + 2913654*0.05 + 50000 + 100000 + (16*4626-46*400+(1-1)*60000) + 25*4226
+raw_hi = 375000 + 120000 + 200000 + 425000 + 450000 + 2913654*0.10 + 150000 + 300000 + (16*4626-46*400+(2-1)*60000) + 50*4226
+if abs(raw_lo-1493830)<5 and abs(raw_hi-2638281)<5 and "$1.5 to $2.6 million" in pdf_flat:
+    match("growth plan raw sums $1.49M/$2.64M recomputed without Medicaid; quoted in the PDF")
 else:
     diff(f"growth plan raw sums: {raw_lo:.0f}/{raw_hi:.0f}")
-if "$960,000 to $1.9 million" in html and "$960,000 to $1.9 million" in pdf_flat \
-        and "$260,000 to $530,000" in pdf_flat:
-    match("growth plan pillar subtotals consistent (site keeps the lever-2 range; the rest live in the PDF)")
+if "$860,000 to $1.6 million" in html and "$860,000 to $1.6 million" in pdf_flat \
+        and "$260,000 to $530,000" in pdf_flat and "Medicaid" not in html:
+    match("growth plan pillar subtotals consistent without Medicaid (site lever-2 list sums 860K-1.6M; PDF matches)")
 else:
-    diff("growth plan pillar subtotals missing or inconsistent")
+    diff("growth plan pillar subtotals missing, inconsistent, or Medicaid still present on site")
 fills = (16*4626-46*400, 55616+60000)
 if fills[0]-0 == 55616+400*0 - 0 and "$56,000 to $116,000" in pdf_flat:
     match("fill package $56,000-$116,000 in the PDF; the site carries the live planner (prose quote retired in v4.2)")
 else:
     diff("fill package correction incomplete")
+
+# site enrollment-cost curve: (17,903 x 128 + 700 x added) / N, anchored on the KYRC25 file
+if "17903*128" in html and "(N-128)*700" in html and "chartCurve" in html:
+    match("site cost-per-student curve anchored on KYRC25 $17,903 at 128 with $700 marginal cost")
+else:
+    diff("site cost curve missing or off-anchor")
 
 # ---------- 13. federal EDFacts series (v3.8 amendment) ----------
 ef_arch = json.load(open(f"{REPO}/build/edfacts_school_proficiency_bourbon.json"))

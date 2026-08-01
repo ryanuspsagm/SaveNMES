@@ -559,8 +559,6 @@ alts = [
   "Cost reduction", "Medium; needs position- and vendor-level detail"),
  ("Transportation optimization", "=Assumptions!B42*Assumptions!B43", "=Assumptions!B42*Assumptions!B44", "5-10% of FY2025 transport expense", GRN, GRN,
   "Cost reduction", "Medium; needs a local route model (T-1 data requested)"),
- ("Medicaid billing, E-rate, meal reimbursements", 100000, 250000, "Typical under-collected federal reimbursements", BLUE, BLUE,
-  "New revenue", "Low; needs evidence current claims are being missed"),
  ("Energy performance contracting", 50000, 150000, "10-25% of utilities; authorized by 702 KAR 4:160", BLUE, BLUE,
   "Cost reduction", "Medium; contracts are structured to self-fund"),
  ("Shared services with Paris Independent", 100000, 300000, "Transport, food service, back office", BLUE, BLUE,
@@ -585,18 +583,18 @@ cc = put(al, f"C{r}", f"=SUM(C4:C{r-1})", BLK, CUR, bold=True); cc.border = TOPL
 tot = r
 put(al, f"A{tot+2}", "COMPARISON", SEC)
 put(al, f"A{tot+3}", "Package midpoint (raw sum of ranges)"); put(al, f"B{tot+3}", f"=(B{tot}+C{tot})/2", BLK, CUR)
-put(al, f"A{tot+4}", "Conservative combined estimate, low (haircut for overlap)"); put(al, f"B{tot+4}", 1100000, BLUE, CUR, fill=YEL)
-put(al, f"A{tot+5}", "Conservative combined estimate, high"); put(al, f"B{tot+5}", 2100000, BLUE, CUR, fill=YEL)
+put(al, f"A{tot+4}", "Conservative combined estimate, low (haircut for overlap)"); put(al, f"B{tot+4}", 1000000, BLUE, CUR, fill=YEL)
+put(al, f"A{tot+5}", "Conservative combined estimate, high"); put(al, f"B{tot+5}", 1900000, BLUE, CUR, fill=YEL)
 put(al, f"A{tot+6}", "Conservative midpoint (used in Runway sheet)"); put(al, f"B{tot+6}", f"=(B{tot+4}+B{tot+5})/2", BLK, CUR)
 put(al, f"A{tot+7}", "Average annual GF drawdown (FY2024-25)"); put(al, f"B{tot+7}", "=GF_Summary!D16", GRN, CUR)
 put(al, f"A{tot+8}", "Closure net saving (base case)"); put(al, f"B{tot+8}", "=Closure_Model!B20", GRN, CUR)
-put(al, f"A{tot+10}", "Reading: raw row sums run about $1.6M to $2.9M; the published $1.1M to $2.1M band applies a conservative haircut for overlap and implementation risk. Coverage is reported against both yardsticks: the $2.65M structural gap before transfers and the roughly $1.15M net drawdown after transfers (Closure_Model rows 21 and 35 carry both for closure).", NOTE, wrap=True)
+put(al, f"A{tot+10}", "Reading: raw row sums run about $1.5M to $2.6M; the published $1.0M to $1.9M band applies a conservative haircut for overlap and implementation risk. Medicaid and reimbursement recovery were removed from the menu in v4.2 review. Coverage is reported against both yardsticks: the $2.65M structural gap before transfers and the roughly $1.15M net drawdown after transfers (Closure_Model rows 21 and 35 carry both for closure).", NOTE, wrap=True)
 
 put(al, f"A{tot+12}", "THE GROWTH PATH: THE SAME MENU AS A DISTRICT-WIDE RECOVERY PLAN (v3.8; backs the site card and Section 9)", SEC)
-put(al, f"A{tot+13}", "Move 1: inspect fixed costs, starting with administration (attrition, admin restraint, transport, reimbursements, energy, shared services)")
-put(al, f"B{tot+13}", "=SUM(B7:B12)", BLK, CUR, bold=True); put(al, f"C{tot+13}", "=SUM(C7:C12)", BLK, CUR, bold=True)
+put(al, f"A{tot+13}", "Move 1: inspect fixed costs (every non-teaching position via attrition, administrative restructuring, transport, energy, shared services)")
+put(al, f"B{tot+13}", "=SUM(B7:B11)", BLK, CUR, bold=True); put(al, f"C{tot+13}", "=SUM(C7:C11)", BLK, CUR, bold=True)
 put(al, f"A{tot+14}", "Move 2: grow enrollment instead of shrinking it (attendance recovery, fill NMES, district-wide recruitment)")
-put(al, f"B{tot+14}", "=B6+B13+B14", BLK, CUR, bold=True); put(al, f"C{tot+14}", "=C6+C13+C14", BLK, CUR, bold=True)
+put(al, f"B{tot+14}", "=B6+B12+B13", BLK, CUR, bold=True); put(al, f"C{tot+14}", "=C6+C12+C13", BLK, CUR, bold=True)
 put(al, f"A{tot+15}", "Move 3: the honest revenue conversation, year one (4 percent option plus delinquency; compounds by year three; recallable menu beyond it on Tax_History rows 70-91)")
 put(al, f"B{tot+15}", "=B4+B5", BLK, CUR, bold=True); put(al, f"C{tot+15}", "=C4+C5", BLK, CUR, bold=True)
 put(al, f"A{tot+16}", "Growth plan total (equals the raw sum above; the published band is the conservative cut of the same rows)")

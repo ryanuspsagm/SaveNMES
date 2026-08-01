@@ -125,7 +125,10 @@ input[type=range]{width:100%;accent-color:var(--royal)}
 .btn.blue:hover{background:#256199}
 
 /* Sources */
-.src{font-size:14px;columns:2;column-gap:34px}
+.srcbox{background:var(--chalk);border:1px solid var(--line);border-radius:6px;padding:4px 16px;margin-top:10px}
+.srcbox summary{cursor:pointer;font-weight:600;color:var(--navy);font-size:15px;padding:10px 0;list-style-position:inside}
+.srcbox[open] summary{border-bottom:1px solid var(--line);margin-bottom:10px}
+.src{font-size:14px;columns:2;column-gap:34px;padding-bottom:10px}
 @media(max-width:720px){.src{columns:1}}
 .src li{margin-bottom:10px;break-inside:avoid}
 footer{background:var(--navy);color:#AFC0DC;padding:26px 0;font-size:14px}
@@ -159,7 +162,7 @@ footer a{color:var(--ice)}
 <li>Say publicly that the district will help this school grow.</li>
 </ol>
 </div>
-<p class="disclose">Written by Dr. Ryan Bradley, a former NMES King, with the help of an AI research assistant. Built from public records only. Full report and model at the bottom of this page.</p>
+<p class="disclose">Written by Dr. Ryan Bradley, a former NMES King. The analysis and report writing were accelerated with the use of an AI research assistant. Built from public records only. Full report and model at the bottom of this page.</p>
 </div></header>
 
 <section id="part1" class="partband"><div class="wrap">
@@ -213,16 +216,10 @@ footer a{color:var(--ice)}
 <p class="note">Neighbor elementary averages, 2024-25 state file: Fayette $25,064, Scott $19,054, Clark $17,502, Montgomery $17,402, Bourbon $17,170, Paris Independent $16,241. Every school in the county fell 7 to 11 percent this year as federal pandemic money exited.</p>
 </div>
 <div class="card">
-<h3>Small schools have always cost more per student. Everywhere. That is enrollment, not waste.</h3>
-<p>The oldest state report cards (2000-01, recovered from the Internet Archive) show all four county elementaries on one curve: about $2,851 per student plus a fixed base of about $332,000 per building. One formula predicts every school's cost within 4 percent.</p>
-<div style="overflow-x:auto"><table class="alt">
-<tr><th>School, 2000-01</th><th>Students</th><th>Reported cost per student</th><th>The curve predicts</th></tr>
-<tr><td>Bourbon Central</td><td>595</td><td>$3,360</td><td>$3,408</td></tr>
-<tr><td>Cane Ridge</td><td>312</td><td>$4,053</td><td>$3,913</td></tr>
-<tr><td>North Middletown</td><td>193</td><td>$4,414</td><td>$4,569</td></tr>
-<tr><td>Millersburg</td><td>145</td><td>$5,200</td><td>$5,137</td></tr>
-</table></div>
-<p class="note">The cheapest school has always been the biggest one. Fill the seats and the gap shrinks. The 25-year record is in the report.</p>
+<h3>More students, lower cost per student</h3>
+<p>Most of what NMES costs is the building and its fixed staff. Those cost the same whether 110 kids walk in or 200. Each added student costs only about $700 more. So the cost per student falls fast as the school fills:</p>
+<div class="chartbox"><canvas id="chartCurve" role="img" aria-label="Line chart: NMES cost per student falls from about $20,700 at 110 students to $17,903 at 128 today and about $11,800 at the 198-seat rating"></canvas></div>
+<p class="note">Basis: the 2024-25 state file ($17,903 per student at 128 students) plus about $700 for each added student. At 160 students the cost is about $14,500. At the 198-seat rating it is about $11,800, cheaper than every school in the county today. Shrinking runs the same math backward. The 25-year cost record is in the report.</p>
 </div>
 </div></section>
 
@@ -246,14 +243,13 @@ footer a{color:var(--ice)}
 </table></div>
 <p class="note">The big cost numbers quoted for this school ($2.5 million federal, $1.7 million budgeted) spread district-wide costs across buildings. Central office, district buses, and the maintenance pool do not disappear when a building closes. Per-student cost is an allocation key, not a savings estimate.</p>
 </div>
-<div class="callout"><b>The ladder from the big number to the real one.</b> Paper "allocated loss" at NMES: $245,760. Correct for the Title I skew: about $160,000. Take out the district-wide deficit share every school carries: about $31,000 is NMES-specific. Our full model's median says closure <b>loses</b> $21,971. The district's own savings sheet, netted honestly, says it loses $2,599. Three methods, one answer: closure money is a rounding error on a $33 million budget.</div>
 <div class="card">
-<h3>The district's own $661,139 claim, read closely</h3>
-<p>The district's response prices closure savings at "$661,138.94 MINIMUM." Its own appendices undo it:</p>
+<h3>The district's $661,139 claim vs the honest range</h3>
+<p>The district's response prices closure savings at "$661,138.94 MINIMUM." Hold that against the range in the model below: even our <b>best case</b>, with the building sold, three teachers cut at the district's own price, and not one family leaving, reaches $488,631. Their "minimum" sits 35 percent above our best case. Their own appendices explain the gap:</p>
 <p>&bull; <b>$493,407 of it is staffing</b>, and the same appendix says: "All current staff would be retained." The savings arrive only later, by attrition, if at all. Year one: $0.<br>
 &bull; <b>$40,693 of the expense lines travel with the students</b>: supplies, books, field trips, printing. That money is spent wherever the kids sit.<br>
 &bull; <b>Not one dollar of added busing</b> and <b>not one leaving family</b> appear anywhere in the 48-page response. Those are the two costs that push closures into the red.</p>
-<p class="note">What survives honest netting: about $107,039 of building costs plus $20,000 of insurance, minus new busing, minus every family that leaves. That is exactly what our model prices. Source: Response to the 10 Questions, archived in the repository.</p>
+<p class="note">Netted honestly, the district's own worksheet comes out $2,599 a year in the red, right beside our model's median of a $21,971 yearly loss. What survives from their sheet, about $107,039 of building costs plus $20,000 of insurance, is exactly what our model already credits. Source: Response to the 10 Questions, archived in the repository.</p>
 </div>
 </div></section>
 
@@ -402,12 +398,13 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>Lever 2: Cut fixed costs district-wide, where the real money is</h3>
-<p><b>Smarter energy use.</b> Kentucky's school energy program has saved districts $225 million statewide. Worth low six figures a year here, and the district concedes an energy review is already underway.</p>
-<p><b>Smarter bus routes.</b> Busing runs $2.7 million a year, coded to no school, and no routing study has ever been produced. A 10 percent trim is about $270,000 a year.</p>
-<p><b>A leaner central office.</b> Spending rose 42 percent in two years on the district's own audit table.</p>
-<p><b>Medicaid billing.</b> Kentucky lets schools bill for all Medicaid-enrolled students, not just those with IEPs. Districts often leave six figures unclaimed.</p>
-<div class="totalstrip">All four together, overlap removed: $960,000 to $1.9 million a year, counted once</div>
-<p class="note">These four are parts of one total, not additions on top of it. The growth plan counts the $960,000 to $1.9 million once. Nothing here closes a school or cuts a teacher.</p>
+<p><b>Inspect every non-teaching position, district-wide.</b> Trim through attrition, not layoffs, and never touch a classroom. Worth <b>$340,000 to $425,000 a year</b> at the district's own loaded costs.</p>
+<p><b>Consider restructuring the administration.</b> To be fair on the record: the district's own audit table shows the recent central-office growth came mostly from insurance, one-time payouts, and contract changes, not from new hires. A structural review is still worth <b>$224,000 to $450,000 a year</b>.</p>
+<p><b>Smarter bus routes.</b> Busing runs $2.7 million a year, coded to no school, and no routing study has ever been produced. A 5 to 10 percent trim is <b>$146,000 to $291,000 a year</b>.</p>
+<p><b>Smarter energy use.</b> Kentucky school energy contracts routinely cut utility bills 10 to 25 percent and pay for themselves. Worth <b>$50,000 to $150,000 a year</b>, and the district concedes an energy review is already underway.</p>
+<p><b>Shared services with Paris Independent.</b> Transport, food service, back office: <b>$100,000 to $300,000 a year</b>.</p>
+<div class="totalstrip">All five together, overlap removed: $860,000 to $1.6 million a year, counted once</div>
+<p class="note">These five are parts of one total, not additions on top of it. Every line is priced in the model's Alternatives tab. Nothing here closes a school or cuts a teacher.</p>
 </div>
 
 <div class="card">
@@ -426,8 +423,8 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>The plan, priced</h3>
-<p>Run all three levers together, with every input priced as a range and overlap removed: the growth plan's median is <b>$2,468,969 a year</b>, and the middle half of outcomes sits between $2.30 and $2.64 million. That balances the budget, ends the capital sweep, and closes nothing.</p>
-<div class="totalstrip">Growth plan median: $2.47M a year &bull; Closure median: LOSES $21,971 a year</div>
+<p>Run the three levers at their LOW ends, with the tax rate left alone: about <b>$2.0 million a year</b> ($1.11 million from enrollment plus $860,000 from costs). That covers about three quarters of the $2.65 million gap by itself. Add any part of the rate restore and the plan clears the whole gap with room to spare. It balances the budget, ends the capital sweep, and closes nothing.</p>
+<div class="totalstrip">Growth plan, low end: about $2.0M a year &bull; Closure median: LOSES $21,971 a year</div>
 <p class="note">Proposed public enrollment targets for NMES, the kind ask two puts on paper: 145 by fall 2027, 160 by 2028, 180 by 2029, 198 by 2030 (the building's 2013 state-approved rating). Miss them on a fair trial, and the next facility plan can revisit with evidence.</p>
 </div>
 </div></section>
@@ -482,7 +479,7 @@ footer a{color:var(--ice)}
 <h2>What you can do this week.</h2>
 <div class="act-grid">
 <div class="act"><h3>Join every public forum</h3><div class="when">Local Planning Committee &bull; Board of Education</div>
-<p>The committee that voted "transitional" and the board that will decide both meet in public, and hearings are still ahead. Dates post on the <a href="https://www.bourbon.kyschools.us">district site</a> and the <a href="https://portal.ksba.org/public/Agency.aspx?PublicAgencyID=17&amp;AgencyTypeID=1">KSBA meeting portal</a>. The committee's vote is advisory; the audience is not.</p></div>
+<p>The committee that voted "transitional" and the board that will decide both meet in public, and hearings are still ahead. The district will announce the next public forums; watch the <a href="https://www.bourbon.kyschools.us">district site</a>. The committee's vote is advisory; the audience is not.</p></div>
 <div class="act"><h3>Sign and share</h3><div class="when">Two minutes</div>
 <p>Add your name to the petition asking the board to pause any vote until the twelve questions in the report are answered in writing.</p>
 <a class="btn blue" href="https://www.change.org/p/sos-save-our-school-north-middletown-elementary" id="petitionBtn">Sign the petition</a></div>
@@ -625,41 +622,43 @@ list.appendChild(d);
 <div class="kicker">Check My Work</div>
 <h2>Sources</h2>
 <p class="lede">Every figure on this page traces to one of these. Find an error and I will correct it publicly.</p>
+<details class="srcbox">
+<summary>See every source (27)</summary>
 <ul class="src">
 <li><a href="https://www.education.ky.gov/districts/FinRept/Documents/FY2024-2025%20FA%20Bourbon%20Co%20Rev.pdf">Bourbon County Schools, audited financial statements, FY2025</a></li>
 <li><a href="https://www.education.ky.gov/districts/FinRept/Documents/FY2023-2024%20FA%20Bourbon%20Co.pdf">Bourbon County Schools, audited financial statements, FY2024</a></li>
-<li>Bourbon County Schools, Response to the 10 Questions, July 2026, with appendices A through F, archived in the repository</li>
-<li>Bourbon County Schools, Cost of Delivery of Services table, May 21, 2026, presented to the Local Planning Committee</li>
-<li>Kentucky Report Card, spending per student, 2024-25 (KYRC25), archived in the repository</li>
+<li><a href="build/response_to_the_10_questions.pdf">Bourbon County Schools, Response to the 10 Questions with appendices A to F, July 2026 (archived copy)</a></li>
+<li><a href="build/cost_of_delivery_2026_05_21.png">Bourbon County Schools, Cost of Delivery of Services table, May 21, 2026 (archived copy)</a></li>
+<li><a href="https://www.kyschoolreportcard.com">Kentucky School Report Card, spending per student, 2024-25 (extract archived in the repository)</a></li>
 <li><a href="https://education.ky.gov/districts/fac/Documents/Bourbon%20Co%20DFP.pdf">Bourbon County Schools, 2021 KBE-approved District Facility Plan</a></li>
 <li><a href="https://revenue.ky.gov/News/Publications/pages/property-tax-rate-books.aspx">Kentucky Department of Revenue, property tax rate books</a></li>
-<li><a href="https://revenue.ky.gov/Property/Pages/default.aspx">Kentucky Department of Revenue, Statewide Certified Property Values, 2007 to 2025, archived in the repository</a></li>
-<li><a href="https://www.education.ky.gov/districts/SEEK/Pages/Taxes.aspx">Kentucky Department of Education, local district tax levies and historical rates by levied type</a></li>
-<li><a href="https://www.education.ky.gov/districts/Pages/School-Based-Medicaid-Services.aspx">Kentucky Department of Education, school-based Medicaid services</a></li>
+<li><a href="https://revenue.ky.gov/Property/Pages/default.aspx">Kentucky Department of Revenue, Statewide Certified Property Values, 2007 to 2025 (archived in the repository)</a></li>
+<li><a href="https://www.education.ky.gov/districts/SEEK/Pages/Taxes.aspx">Kentucky Department of Education, local district tax levies and historical rates</a></li>
 <li><a href="https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=51320">Kentucky Revised Statutes 160.470, school tax rates and the voter recall petition</a></li>
 <li><a href="https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&ID=210054000096">National Center for Education Statistics, school data for North Middletown Elementary</a></li>
-<li><a href="https://educationdata.urban.org/documentation/schools.html">National Center for Education Statistics, CCD enrollment series for Eminence Independent, Bourbon County, and the Millersburg case study, queried via the Urban Institute API</a></li>
+<li><a href="https://educationdata.urban.org/documentation/schools.html">National Center for Education Statistics, enrollment series for Eminence Independent, Bourbon County, and Millersburg, via the Urban Institute API</a></li>
 <li><a href="https://www.ed.gov/grants-and-programs/formula-grants/rural-and-insular-areas/rural-education-achievement-program-reap">U.S. Department of Education, Rural Education Achievement Program eligibility</a></li>
-<li>Amazon Future Engineer eligibility, verified three ways against federal school data</li>
+<li><a href="https://www.amazonfutureengineer.com">Amazon Future Engineer, program and eligibility (verified against federal school data)</a></li>
 <li><a href="https://www.schooldigger.com/go/KY/schools/0054000096/school.aspx">SchoolDigger, score history built from state test data</a></li>
-<li><a href="https://www.kentuckyteacher.org/features/2011/11/blue-ribbon-school-shares-keys-to-success/">Kentucky Teacher, the 2011 Blue Ribbon feature</a></li>
+<li><a href="https://www.kentuckyteacher.org/features/2011/11/blue-ribbon-school-shares-keys-to-success/">Kentucky Teacher, the 2011 National Blue Ribbon feature</a></li>
 <li><a href="https://www.mwalliance.org/blog/kentucky-school-board-association-school-energy-managers-project-2020-inspiring-efficiency">KSBA School Energy Managers Project, the $225 million statewide savings record</a></li>
-<li><a href="https://wkms.org/post/nickel-tax-opponents-record-major-victory-polls">WKMS, the Christian County nickel recall, 2019</a></li>
 <li><a href="https://www.wkyt.com/2025/01/15/bath-county-voters-make-decision-nickel-tax/">WKYT and FOX 56, the Bath County nickel votes, November 2024 and January 2025</a></li>
-<li>KSBA and local reporting, the Marion County nickel recall result, 2015</li>
+<li><a href="https://wkms.org/post/nickel-tax-opponents-record-major-victory-polls">WKMS, the Christian County nickel recall, 2019</a></li>
+<li><a href="https://www.ksba.org/Nickeltax.aspx">Kentucky School Boards Association, the nickel tax record, including the Marion County 2015 result</a></li>
 <li><a href="https://jrre.psu.edu/sites/default/files/2019-08/17-3_1.pdf">Lyson, 2002, what a school means to a rural community</a></li>
 <li><a href="https://edworkingpapers.com/sites/default/files/ai22-530.pdf">Smith and Zimmer, 2022, school consolidation impacts</a></li>
 <li><a href="https://www.pew.org/~/media/assets/2013/02/11/philadelphia_school_closings_report.pdf">Pew Charitable Trusts, 2013, shuttered public schools</a></li>
 <li><a href="https://consortium.uchicago.edu/publications/school-closings-chicago-staff-and-student-experiences-and-academic-outcomes">University of Chicago Consortium, 2018, the Chicago school closings study</a></li>
-<li><a href="https://www.bourboncountycitizen.com/2026/07/16/bourbon-county-schools-local-planning-committee-hosts-public-forum-regarding-nmes/">The Bourbon County Citizen, coverage of the July 15 forum and the transitional vote</a></li>
-<li><a href="https://www.wkyt.com/2026/07/16/residents-alumni-defend-small-town-school-closure-bourbon-county/">WKYT, coverage of the community response, July 2026</a></li>
+<li><a href="https://www.bourboncountycitizen.com/2026/07/16/bourbon-county-schools-local-planning-committee-hosts-public-forum-regarding-nmes/">The Bourbon County Citizen, the July 15 forum and the transitional vote</a></li>
+<li><a href="https://www.wkyt.com/2026/07/16/residents-alumni-defend-small-town-school-closure-bourbon-county/">WKYT, the community response, July 2026</a></li>
 <li><a href="https://github.com/ryanuspsagm/SaveNMES">The GitHub repository: full source for this page, the report, the model, and every archived document</a></li>
 </ul>
+</details>
 </div></section>
 
 <footer><div class="wrap">
 <div class="kings">Once a King, always a King.</div>
-<p>Written by Dr. Ryan Bradley, alumnus of Bourbon County Schools and North Middletown Elementary, with the help of an AI research assistant. This site criticizes decisions and asks for documents. It attributes no motive and alleges no wrongdoing to anyone. Estimates are labeled, and every number can be tested in the downloadable model. Errors are corrected publicly, and every version and change is archived in the repository. Corrections welcome at ryanuspsagm@gmail.com. Everything here is public on <a href="https://github.com/ryanuspsagm/SaveNMES">GitHub</a>.</p>
+<p>Written by Dr. Ryan Bradley, alumnus of Bourbon County Schools and North Middletown Elementary. The analysis and report writing were accelerated with the use of an AI research assistant. This site criticizes decisions and asks for documents. It attributes no motive and alleges no wrongdoing to anyone. Estimates are labeled, and every number can be tested in the downloadable model. Errors are corrected publicly, and every version and change is archived in the repository. Corrections welcome at ryanuspsagm@gmail.com. Everything here is public on <a href="https://github.com/ryanuspsagm/SaveNMES">GitHub</a>.</p>
 </div></footer>
 
 <script>
@@ -767,6 +766,20 @@ plugins:{legend:{position:'bottom',labels:{boxWidth:18,font:{size:10}}},
 tooltip:{callbacks:{label:function(c){var raw=c.datasetIndex===0?EMD[c.dataIndex]:BBD[c.dataIndex];
 return c.dataset.label+': '+c.parsed.y+' ('+raw.toLocaleString('en-US')+' students)'}}}},
 scales:{y:{min:80,max:145,grid:{color:'#E3E8F0'},title:{display:true,text:'enrollment index, 2014 = 100',font:{size:10}}}}}});
+
+/* Cost per student vs enrollment: fixed base spread over more kids */
+(function(){
+var pts=[],labels=[];
+for(var N=110;N<=200;N+=2){labels.push(N);pts.push(Math.round((17903*128+(N-128)*700)/N))}
+new Chart(document.getElementById('chartCurve'),{type:'line',
+data:{labels:labels,datasets:[{label:'Cost per student at that enrollment',data:pts,
+borderColor:NAVY,backgroundColor:'transparent',borderWidth:3,pointRadius:0,tension:0.2}]},
+options:{responsive:true,maintainAspectRatio:false,
+plugins:{legend:{display:false},
+tooltip:{callbacks:{label:function(c){return c.parsed.x===9?'':'$'+c.parsed.y.toLocaleString("en-US")+' per student at '+c.label+' students'}}}},
+scales:{y:{grid:{color:'#E3E8F0'},ticks:{callback:function(v){return '$'+(v/1000).toFixed(0)+'K'}},title:{display:true,text:'cost per student',font:{size:10}}},
+x:{ticks:{maxTicksLimit:10},title:{display:true,text:'students enrolled (128 today, 198-seat rating)',font:{size:10}}}}}});
+})();
 
 /* Closure calculator: the published 5,832-scenario grid, enumerated exactly
    as in build/closure_grid.py, so the rank readout is against the real grid. */

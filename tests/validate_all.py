@@ -150,6 +150,14 @@ def main():
         "Voices section carries the consent and verification promise")
     chk("bourboncountycitizen.com" in html,
         "Citizen forum coverage still cited from the site")
+    chk('<details class="srcbox">' in html and html.count('<ul class="src">') == 1,
+        "sources live in one expandable block")
+    chk("portal.ksba.org" not in html and "will announce the next public forums" in html,
+        "KSBA portal link removed; district announces forums")
+    chk("accelerated with the use of an AI research assistant" in html,
+        "AI attribution phrased as acceleration on the site")
+    chk("accelerated with the use of" in t,
+        "AI attribution phrased as acceleration in the report")
     chk('name:"Lynne"' in html and "859-707" not in html,
         "Lynne's story published by first name, phone number kept private")
 
@@ -449,11 +457,11 @@ def main():
     for needle in ["$56,000 to $116,000", "$106,000 to $211,000",
                    "$2,476,544", "$8,305", "155 students", "99.6 percent",
                    "54 to 69", "$2,851", "$5,200", "$4,414",
-                   "$960,000 to $1.9 million", "$260,000 to $530,000"]:
+                   "$860,000 to $1.6 million", "$260,000 to $530,000"]:
         chk(needle in t, f"PDF v3.8 content intact: {needle}")
-    for needle in ["$2.5 million federal", "$2,851", "$5,200", "$4,414",
-                   "$960,000 to $1.9 million"]:
-        chk(needle in html, f"site v3.8 content intact: {needle}")
+    for needle in ["$2.5 million federal", "$860,000 to $1.6 million", "chartCurve"]:
+        chk(needle in html, f"site v3.8/v4.2 content intact: {needle}")
+    chk("Medicaid" not in html, "Medicaid removed from the site's expense options")
 
     # ---- v3.9 release content ----
     for needle in ["$1,285,310", "$21,482,445", "$1,018,671", "$938,690", "$227,831",
@@ -479,9 +487,8 @@ def main():
     chk("Saving_NMES_v3.9_2026-07-29.pdf" in html, "site links the v3.9 report")
     chk("298 students" in t,
         "breakeven reconstruction lands at 298 in the report")
-    chk("recovered from the Internet Archive" in html and "recovered from the Internet "
-        "Archive" in t.replace("  ", " "),
-        "2000-01 report card provenance disclosed on site and in PDF")
+    chk("recovered from the Internet Archive" in t.replace("  ", " "),
+        "2000-01 report card provenance disclosed in the report (site card replaced by the live curve)")
     chk("prior-year spending" in t,
         "CATS-era fiscal-year caveat disclosed in the report")
     chk("$19,635" in t,
@@ -536,8 +543,8 @@ def main():
         "multi-age reorganization removed from the report")
     chk("its savings sheet says two" in t and "count supports three" in t,
         "PDF keeps the closure staffing-count judgment (v4.2: the district's own two-vs-three)")
-    chk("$1.6 to $2.9 million" in t,
-        "alternatives raw sums intact in the report (site quote retired in v4.2)")
+    chk("$1.5 to $2.6 million" in t,
+        "alternatives raw sums intact in the report (Medicaid removed; site quote retired)")
 
     print(f"PASS {len(ok)}")
     print(f"FAIL {len(bad)}")
