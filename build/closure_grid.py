@@ -1,78 +1,59 @@
-"""Enumerate the v3.9 two-tailed closure grid and print its statistics.
+"""Enumerate the v4.2 closure grid and print its published statistics.
 
-The seven levers and their values (every one sourced in the report and the
-Closure_Model tab):
-  positions eliminated:  2, 3, 4, 5            (four values)
-  GF cost per position:  $50,000 / $60,000 / $75,000
-  fixed cost avoided:    $58,774 (staff reassigned, utilities only)
-                         $227,831 (mothballed: admin + custodial + plant)
-                         $276,928 (sold: the above plus library and media)
-  added busing:          $100,000 / $137,500 / $250,000
-  families leaving:      0 / 10 / 30 students at the $4,626 SEEK base
-  capacity debt service: $0 / $115,000 / $231,000
-  assessment erosion:    $0 / $40,000 / $95,000
+Eight levers, every value sourced in the report and the Closure_Model tab:
+  non-salary fixed capture:  50% / 75% / 100% of the $58,774 plant-utilities
+                             base (measured, FY2026 working budget, loc 090)
+  fixed-position retention:  100% / 50% / 0% of the $218,154 of fixed-position
+                             salary lines (school admin $131,724 + custodial
+                             $37,333 + library $49,097, all measured)
+  teacher retention:         100% to 0% of ~5 GF positions (0 / 2 / 3 / 5)
+  GF cost per position:      $50,000 / $60,000 / $75,000
+  students lost:             0 / 10 / 20 / 30 percent of 128 (site slider runs
+                             the full 0-100%)
+  SEEK add-ons per leaver:   $0 / $500 / $1,000 on top of the $4,626 base
+                             (at-risk 15% weight on a ~72% FRL school,
+                             exceptional-child weights, transportation
+                             component, $100 capital outlay)
+  property-value loss:       $0 / $47,500 / $95,000 (roughly 0-10 percent of an
+                             estimated zone tax base; PVA records ask pending)
+  added busing:              0% / 5% / 10% of the $2.7M district transportation
+                             budget ($0 / $135,000 / $270,000)
 
-4 x 3 x 3 x 3 x 3 x 3 x 3 = 2,916 combinations, equal weights.
-net = fixed + positions x cost - busing - leavers x 4626 - capdebt - erosion
-
-v3.9 rebuilt this lever on the district's own FY2026 working budget,
-location 090, General Fund, excluding state-paid on-behalf:
-  school administration (program 077)      $131,724
-  custodial (program 087)                   $37,333
-  plant, utilities, sanitation, water (987) $58,774
-  library and media (program 059)           $49,097
-The three published cases are the three decisions a district can actually
-make with those lines. v3.8 carried only two, $230,000 and $290,000, both
-estimates and both assuming every fixed position is eliminated rather than
-reassigned. Adding the reassignment case is what moves the median.
+net = capture + fixed_positions_cut + teachers_cut x cost
+      - busing - leavers x (4,626 + add_ons) - property_loss
 
 Run:  python build/closure_grid.py
-Asserts the published statistics: median +$21,571; 25th/75th percentiles
--$104,726 / +$146,274; 1,314 of 2,916 (45.06 percent, published as 45)
-negative; range -$556,006 to +$551,928.
+Asserts the published statistics: 11,664 scenarios; median $25,394; 45 percent
+negative; range -$549,401 to +$651,928; middle half -$115,404 to +$165,903.
 """
-SEEK = 4626
+import statistics
 
-# Measured fixed lines, FY2026 working budget, location 090, General Fund
-ADMIN, CUSTODIAL, PLANT, LIBRARY = 131724, 37333, 58774, 49097
-REDEPLOYED = PLANT                                  # 58,774
-MOTHBALLED = ADMIN + CUSTODIAL + PLANT              # 227,831
-SOLD = MOTHBALLED + LIBRARY                         # 276,928
+SEEK = 4626
+NONSALARY = 58774
+FIXED_POS = 131724 + 37333 + 49097          # 218,154 measured
+TRANSPORT = 2_700_000
 
 nets = sorted(
-    f + p * c - b - l * SEEK - d - e
-    for p in (2, 3, 4, 5)
-    for c in (50000, 60000, 75000)
-    for f in (REDEPLOYED, MOTHBALLED, SOLD)
-    for b in (100000, 137500, 250000)
-    for l in (0, 10, 30)
-    for d in (0, 115000, 231000)
-    for e in (0, 40000, 95000)
+    c + f + t * p - b - l * (SEEK + ad) - pr
+    for c in (0.50 * NONSALARY, 0.75 * NONSALARY, 1.00 * NONSALARY)
+    for f in (0, FIXED_POS / 2, FIXED_POS)
+    for t in (0, 2, 3, 5)
+    for p in (50_000, 60_000, 75_000)
+    for l in (0, 13, 26, 38)
+    for ad in (0, 500, 1000)
+    for pr in (0, 47_500, 95_000)
+    for b in (0, 0.05 * TRANSPORT, 0.10 * TRANSPORT)
 )
 n = len(nets)
-
-
-def pctl(p):
-    """Percentile as nets[int(p/100*n)], the convention used throughout the
-    published statistics."""
-    return nets[min(n - 1, int(p / 100 * n))]
-
-
-median = pctl(50)
+med = statistics.median(nets)
 neg = sum(1 for x in nets if x < 0)
 
-print(f"combinations: {n}")
-print(f"fixed lever: {REDEPLOYED:,} / {MOTHBALLED:,} / {SOLD:,}")
-print(f"range: {nets[0]:+,} to {nets[-1]:+,}")
-print(f"median: {median:+,.0f}")
-print(f"P25: {pctl(25):+,}")
-print(f"P75: {pctl(75):+,}")
-print(f"negative: {neg}/{n} = {neg / n * 100:.2f}%")
+assert n == 11_664, n
+assert round(med) == 25_394, med
+assert round(neg / n * 100) == 45, neg / n
+assert round(nets[0]) == -549_401 and round(nets[-1]) == 651_928, (nets[0], nets[-1])
+assert round(nets[n // 4]) == -115_404 and round(nets[3 * n // 4]) == 165_903
 
-assert (REDEPLOYED, MOTHBALLED, SOLD) == (58774, 227831, 276928)
-assert n == 2916
-assert nets[0] == -556006 and nets[-1] == 551928
-assert median == 21571
-assert pctl(25) == -104726 and pctl(75) == 146274
-assert neg == 1314  # 1314/2916 = 45.06 percent, published as "45 percent"
-print("all published statistics reproduced")
+print(f"{n:,} scenarios | median ${med:,.0f} | {neg / n * 100:.0f}% lose money")
+print(f"range ${nets[0]:,.0f} to ${nets[-1]:,.0f} | middle half "
+      f"${nets[n // 4]:,.0f} to ${nets[3 * n // 4]:,.0f}")
