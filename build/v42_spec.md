@@ -45,8 +45,8 @@ Banded figures:
    allocated margin while middle (+$761) and high school (+$476) run positive. K-5 is
    the acquisition cost; grades 6-12 are the margin years; you cannot have the eight
    profitable years without winning the K-5 years. A kindergartner acquired carries
-   $63,890-$72,196 of lifetime funding; acquisition pays back in year one in more
-   than 98 percent of growth-grid scenarios; keeping NMES open costs a median $260/student/yr to protect
+   $63,890-$72,196 of lifetime funding; acquisition pays back in year one in every
+   growth-grid scenario (v4.3); keeping NMES open costs a median $260/student/yr to protect
    that pipeline, and 1 in 7 middle/high students came through this building. In an
    open market you spend to acquire K-5 families and incentivize them to STAY.
    Closing the only storefront in a 110-square-mile contested territory, with Paris
@@ -101,22 +101,21 @@ Banded figures:
    ($17,605, May 2026 table). Reproducible: build/closure_grid.py.
 6. The growth calculator (FINAL, structurally non-negative): enrollment 110 up to
    200. Hiring scales strictly with the gain: a teacher is added only for each FULL
-   cohort of 20-25 students beyond the ~40 seats existing sections absorb, priced at
-   the certified schedule's entry-to-midpoint rows ($41,718-$56,583, because new
-   positions are new hires, not 25-year veterans); support staff from none in the best case
-   to 1 per 50 added students in the worst, at the school's own classified lines
-   ($20,000-$37,000); busing
+   cohort of 20-25 students beyond the 25 seats open at the district's own Appendix B
+   caps, priced at the certified schedule's entry-to-midpoint rows ($41,718-$56,583,
+   because new positions are new hires, not 25-year veterans); support staff from none
+   in the best case to 1 per 50 added students in the worst, at the school's own
+   classified lines ($20,000-$37,000), scaling from the first student; busing
    $0-$1,000 per recruited student; marginal cost $400-$1,000 per student (measured
    student-scaling spend: $331).
-   RESULTS (v4.2 review: NO absorption credit; a teacher is charged for every full
-   added cohort from the first one): 6,561 scenarios | median +$67,124/yr | 106
-   negative (1.6%) | range -$53,252 to +$255,186 | full-lever median +$87,890.
-   The losing 1.6% require the costliest teacher hired for every 20 students with
-   every other cost at maximum.
-   COMPARISON LINE: the median growth scenario GAINS $67,124 while the median
-   closure scenario LOSES $21,971 - an $89,095/yr swing between the two roads;
-   growth comes out ahead in more than 98 percent of its scenarios while 55
-   percent of closure scenarios lose money.
+   RESULTS (v4.3: 25-seat headroom, teachers = floor(max(0, gain-25)/ratio)):
+   6,561 scenarios | median +$118,650/yr | ZERO negative | range +$26,260 to
+   +$296,904 | full-lever median +$142,717, ceiling +$386,904. Site default is the
+   median-rank combo (target 180, 1 per 25 past the seats, $49,150 teacher, 1 per 50
+   support at $37,000, $1,000 bus, $700 cps) = $118,670, rank 50.1%.
+   COMPARISON LINE: the median growth scenario GAINS $118,650 while the median
+   closure scenario LOSES $21,971 - a $140,621/yr swing between the two roads;
+   growth pays in every scenario while 55 percent of closure scenarios lose money.
 
 PART TWO - THE DISTRICT NEEDS GROWTH, NOT CLOSURES (district-wide)
 1. Money problem: $2.65M gap, reserves -$1.1M/yr, aid cliff + 248 fewer funded
@@ -141,11 +140,18 @@ FOUR ASKS + HOW: Permanent; 4 years with public targets [build: proposed targets
    incentives -> grants.
 
 DECISIONS TAKEN (flag if wrong):
-a. Growth calc charges a teacher for every FULL added cohort (1 per 20-25) from
-   the first student; the earlier ~40-seat absorption credit was REMOVED in v4.2
-   review at the user's direction ("don't assume current teachers can support the
-   40 incremental students"). Median moved +$142,800 -> +$67,124 and the
-   zero-negative claim was withdrawn (1.6% of scenarios lose).
+a. Growth calc teacher trigger, three eras. v4.2 draft: ~40-seat absorption credit,
+   REMOVED at the user's direction ("don't assume current teachers can support the
+   40 incremental students"); median $142,800 -> $67,124, zero-negative claim
+   withdrawn. v4.3 (2026-08-01, at the user's direction: "assume 25 open seats can
+   be filled without an increment and then increment new teachers from there"):
+   headroom of 25 seats ANCHORED in the district's own Appendix B grade caps
+   (24/24/24/24/28/29 vs 2024-25 counts 22/22/19/22/16/27; six homerooms hold 153
+   against 128 enrolled; the architect slide in the same packet rates the building
+   154). Teachers increment beyond the 25 seats. Median $67,124 -> $118,650 and
+   every scenario is positive (floor +$26,260); the zero-negative claim RETURNS,
+   now resting on the district's own capacity standard, applied the same way the
+   district charges classrooms at the receiving schools in the closure case.
 b. Calculator base = 110 (district's own figure, still flagged unsourced); ceiling 200
    on the slider with the 198 note (2013 state-approved rating).
 c. Property-loss lever priced $0-95K pending the PVA records response.

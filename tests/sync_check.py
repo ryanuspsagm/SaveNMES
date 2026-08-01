@@ -52,6 +52,14 @@ if round(central) == 54539 and round(site_default) == -21790 and "-$21,790" in h
     match("model central case $54,539; site calculator opens at the median scenario (-$21,790, within $181 of the grid median)")
 else:
     diff(f"closure defaults: model central {central:.0f}, site median-scenario {site_default:.0f} shown: {'-$21,790' in html}")
+# growth calculator default: 70 added past base, 25-seat headroom (Appendix B caps),
+# 1 teacher per 25 beyond at $49,150, 1 support per 50 at $37,000, $1,000 bus, $700 cps
+growth_default = 70*(4626-700) - ((70-25)//25)*49150 - (70//50)*37000 - 1000*70
+if (growth_default == 118670 and "$118,670" in html and "$118,650" in html
+        and "Math.max(0,gain-25)/ratio" in html):
+    match("growth calculator opens at the median scenario ($118,670, rank 50.1% of the 25-seat-headroom grid, median $118,650) and the site JS carries the headroom")
+else:
+    diff(f"growth default mismatch: {growth_default}, shown: {'$118,670' in html}, headroom JS: {'Math.max(0,gain-25)/ratio' in html}")
 if site_capv and [int(site_capv.group(i)) for i in (1, 2, 3)] == [CM["B39"].value, CM["C39"].value, CM["D39"].value] == [53519, 80279, 127039]:
     match("capture lever (53,519 / 80,279 / 127,039 = district worksheet + insurance) identical site JS and model")
 else:
@@ -438,13 +446,15 @@ else:
     diff("fill package correction incomplete")
 
 # site enrollment-cost curve: KYRC25 anchor + the growth calculator's full central
-# marginal stack ($700 supplies + $500 busing, teacher per 22 past the absorbable
-# seats at $49,150, support hire per 75 at $28,500) - same constants as growth_grid
+# marginal stack ($700 supplies + $500 busing, teacher per 22 past the 25 seats
+# open at the district's own Appendix B caps at $49,150, support hire per 75 at
+# $28,500) - same constants and headroom as growth_grid
 if ("17903*128" in html and "(N-128)*(700+500)" in html and "49150" in html
-        and "28500" in html and "chartCurve" in html):
-    match("site cost-per-student curve counts the full marginal stack (supplies, busing, teachers, staff) at growth-grid central settings")
+        and "28500" in html and "chartCurve" in html
+        and "Math.max(0,gain-25)/22" in html):
+    match("site cost-per-student curve counts the full marginal stack past the 25-seat headroom at growth-grid central settings")
 else:
-    diff("site cost curve missing the full marginal stack")
+    diff("site cost curve missing the full marginal stack or the 25-seat headroom")
 
 # ---------- 13. federal EDFacts series (v3.8 amendment) ----------
 ef_arch = json.load(open(f"{REPO}/build/edfacts_school_proficiency_bourbon.json"))

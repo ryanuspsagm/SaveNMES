@@ -112,16 +112,28 @@ def main():
         # --- Growth calculator ---
         gro = pg.text_content("#rGro").strip()
         gverd = pg.text_content("#rGroVerdict").strip()
-        if gro == "$67,124" and "60 added students" in gverd and "2 new teachers" in gverd and "1 support hire" in gverd:
-            ok("growth default is the exact median scenario: $67,124 at target 170")
+        if gro == "$118,670" and "70 added students" in gverd and "1 new teacher" in gverd and "1 support hire" in gverd:
+            ok("growth default is the median scenario: $118,670 at target 180 (grid median $118,650, rank 50.1%)")
         else: bad(f"growth defaults: {gro} / {gverd}")
         pg.fill("#sGro", "120"); pg.dispatch_event("#sGro", "input")
         pg.fill("#sSp", "2"); pg.dispatch_event("#sSp", "input")
         pg.fill("#sGb", "1000"); pg.dispatch_event("#sGb", "input")
         pg.fill("#sCps", "1000"); pg.dispatch_event("#sCps", "input")
         if pg.text_content("#rGro").strip() == "$26,260":
-            ok("growth grid floor $26,260 (10 students at max costs)")
+            ok("growth grid floor $26,260 (10 students at max costs; grid-wide floor, all scenarios positive)")
         else: bad(f"growth floor: {pg.text_content('#rGro')}")
+        pg.fill("#sGro", "153"); pg.dispatch_event("#sGro", "input")
+        pg.fill("#sTc", "56583"); pg.dispatch_event("#sTc", "input")
+        if "no new teachers" in pg.text_content("#rGroVerdict"):
+            ok("headroom honored: 43 added students (to 153) hire no teacher")
+        else: bad(f"headroom verdict: {pg.text_content('#rGroVerdict')[:70]}")
+        pg.fill("#sGro", "156"); pg.dispatch_event("#sGro", "input")
+        pg.fill("#sRat", "20"); pg.dispatch_event("#sRat", "input")
+        if "1 new teacher" in pg.text_content("#rGroVerdict"):
+            ok("first hire lands at 21 students past the 25 open seats")
+        else: bad(f"first-hire verdict: {pg.text_content('#rGroVerdict')[:70]}")
+        pg.fill("#sRat", "25"); pg.dispatch_event("#sRat", "input")
+        pg.fill("#sTc", "49150"); pg.dispatch_event("#sTc", "input")
         pg.fill("#sGro", "110"); pg.dispatch_event("#sGro", "input")
         if "No new students" in pg.text_content("#rGroVerdict"):
             ok("growth zero-gain edge case")

@@ -317,7 +317,7 @@ put(rd, "A16", "Bourbon Central after (half the rezone)"); put(rd, "B16", "=B8-B
 put(rd, "A17", "Cane Ridge after (half the rezone)"); put(rd, "B17", "=B9-B12/2", BLK, NUM)
 
 put(rd, "A19", "CLASSROOMS", SEC)
-put(rd, "A20", "NMES classroom sections"); put(rd, "B20", 9, BLUE, NUM); put(rd, "C20", "9.41 classroom FTE, NCES; K-5 across nine homerooms", NOTE)
+put(rd, "A20", "NMES homerooms in use"); put(rd, "B20", 6, BLUE, NUM); put(rd, "C20", "One per grade K-5; NCES lists 9.41 classroom-teacher FTE, which also counts Title I, special ed and part-time certified", NOTE)
 put(rd, "A21", "Average class size today"); put(rd, "B21", "=B5/B20", BLK, '0.0')
 put(rd, "A22", "Average class size at capacity"); put(rd, "B22", "=B14/B20", BLK, '0.0')
 put(rd, "A23", "Statutory caps (KRS 157.360): 24 in K-3, 28 in grade 4, 29 in grades 5-6. At an even mix, 174 students exceed the single-section caps in most grades, so the lever below prices new NMES sections honestly (v3.8 correction; earlier versions omitted this charge).", NOTE, wrap=True)
@@ -345,7 +345,7 @@ put(rd, "A47", "Cane Ridge per pupil today"); put(rd, "B47", 18670, BLUE, CUR); 
 put(rd, "A48", "NMES per pupil today"); put(rd, "B48", "=Assumptions!B14", GRN, CUR)
 put(rd, "A49", "NMES filled to 174 (state-approved rating), no added teachers")
 put(rd, "B49", "=(B34+(B6-B5)*Assumptions!B62)/B6", BLK, CUR)
-put(rd, "C49", "Nine existing homerooms average 19.3 students at 174, inside every KRS 157.360 cap; only variable costs added", NOTE, wrap=True)
+put(rd, "C49", "Six existing homerooms hold 153 at the district's own Appendix B caps (24 K-3, 28 fourth, 29 fifth; 25 seats open today); filling to 174 needs one added section, priced in the row below", NOTE, wrap=True)
 put(rd, "A50", "NMES filled to 174, conservative (two teachers added anyway)")
 put(rd, "B50", "=(B34+2*Assumptions!B41+(B6-B5)*Assumptions!B62)/B6", BLK, CUR)
 put(rd, "C50", "Adds two loaded certified positions even though class sizes do not require them", NOTE, wrap=True)

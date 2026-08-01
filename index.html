@@ -225,9 +225,9 @@ footer a{color:var(--ice)}
 </div>
 <div class="card">
 <h3>More students, lower cost per student, with every new cost counted</h3>
-<p>Most of what NMES costs is the building and its fixed staff. Each added student brings real new costs, and this curve counts all of them, with no free seats assumed: $700 of supplies and other costs, $500 of busing, a new teacher ($49,150) for every 22 students added from today's 128, and a support hire ($28,500) for every 75. The cost per student still falls fast:</p>
-<div class="chartbox"><canvas id="chartCurve" role="img" aria-label="Line chart: NMES cost per student falls from about $20,600 at 110 students to $17,903 at 128 today and about $12,700 at the 198-seat rating, with steps where new teachers are hired, no free seats assumed"></canvas></div>
-<p class="note">Basis: the 2024-25 state file ($17,903 per student at 128 students) plus the same central costs as the growth calculator below: supplies, busing, teachers, and support staff, with hiring charged from the first added class and no free seats assumed (the upward steps on the curve are those hires). At 160 students the cost is about $14,900, with one new teacher paid for. At the 198-seat rating, with three new teachers paid for, it is about $12,700, cheaper than every school in the county today. Shrinking runs the same math backward. The 25-year cost record is in the report.</p>
+<p>Most of what NMES costs is the building and its fixed staff. Each added student brings real new costs, and this curve counts all of them: $700 of supplies and other costs, $500 of busing, a new teacher ($49,150) for every 22 students added beyond the 25 seats already open at the district's own class-size caps, and a support hire ($28,500) for every 75. The cost per student falls fast:</p>
+<div class="chartbox"><canvas id="chartCurve" role="img" aria-label="Line chart: NMES cost per student falls from about $20,600 at 110 students to $17,903 at 128 today and about $12,500 at the 198-seat rating, with steps where new teachers are hired beyond the 25 open seats"></canvas></div>
+<p class="note">Basis: the 2024-25 state file ($17,903 per student at 128 students) plus the same central costs as the growth calculator below: supplies, busing, teachers, and support staff. The first 25 added students fill seats the school already has open at the district's own Appendix B caps; hiring is charged beyond them (the upward steps on the curve are those hires). At 160 students the cost is about $14,600 with no new hire yet needed. At the 198-seat rating, with two new teachers paid for, it is about $12,500, cheaper than every school in the county today. Shrinking runs the same math backward. The 25-year cost record is in the report.</p>
 </div>
 </details>
 </div></section>
@@ -324,27 +324,27 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>Growth: what does filling NMES net?</h3>
-<p class="note">Each new student brings $4,626. A teacher is charged for every full class of added students from the first one; no free seats in existing classrooms are assumed. New hires are priced from the district's own salary schedule.</p>
-<div class="slider-row"><label>Enrollment target (from 110, the district's figure, still unsourced; last official count 128) <output id="oGro">170</output></label>
-<input type="range" id="sGro" min="110" max="200" value="170" step="1"></div>
-<div class="slider-row"><label>Students per added teacher <output id="oRat">22</output></label>
-<input type="range" id="sRat" min="20" max="25" value="22" step="1"></div>
-<div class="slider-row"><label>New teacher cost (schedule entry to mid) <output id="oTc">$41,718</output></label>
-<input type="range" id="sTc" min="41718" max="56583" value="41718" step="1"></div>
+<p class="note">Each new student brings $4,626. The first 25 added students fill seats the school already has open at the district's own class-size caps (its own Appendix B: 24 per room in K through 3, 28 in fourth, 29 in fifth; the six rooms hold 153 against 128 today). Beyond those seats, a teacher is charged for every full added class, priced from the district's own salary schedule.</p>
+<div class="slider-row"><label>Enrollment target (from 110, the district's figure, still unsourced; last official count 128) <output id="oGro">180</output></label>
+<input type="range" id="sGro" min="110" max="200" value="180" step="1"></div>
+<div class="slider-row"><label>Students per added teacher, past the 25 open seats <output id="oRat">25</output></label>
+<input type="range" id="sRat" min="20" max="25" value="25" step="1"></div>
+<div class="slider-row"><label>New teacher cost (schedule entry to mid) <output id="oTc">$49,150</output></label>
+<input type="range" id="sTc" min="41718" max="56583" value="49150" step="1"></div>
 <div class="slider-row"><label>Support staff added <output id="oSp">1 per 50 students, $37,000</output></label>
 <input type="range" id="sSp" min="0" max="2" value="2" step="1"></div>
-<div class="slider-row"><label>Busing per new student <output id="oGb">$500</output></label>
-<input type="range" id="sGb" min="0" max="1000" value="500" step="50"></div>
-<div class="slider-row"><label>Supplies and other costs per student <output id="oCps">$1,000</output></label>
-<input type="range" id="sCps" min="400" max="1000" value="1000" step="50"></div>
+<div class="slider-row"><label>Busing per new student <output id="oGb">$1,000</output></label>
+<input type="range" id="sGb" min="0" max="1000" value="1000" step="50"></div>
+<div class="slider-row"><label>Supplies and other costs per student <output id="oCps">$700</output></label>
+<input type="range" id="sCps" min="400" max="1000" value="700" step="50"></div>
 <div class="slider-row"><label>State add-ons per new student <output id="oGad">$0</output></label>
 <input type="range" id="sGad" min="0" max="1000" value="0" step="50"></div>
 <div class="result">
-<div class="big" id="rGro">$171,300</div>
-<div class="sub">net new dollars per year at these settings</div>
+<div class="big" id="rGro">$118,670</div>
+<div class="sub">net new dollars per year at these settings (the median scenario)</div>
 <div class="verdict" id="rGroVerdict"></div>
 </div>
-<p class="note">No free seats are assumed: a teacher is charged for every full class of added students. Even so, growth comes out ahead in more than 98 percent of the 6,561 scenarios. Median: <b>+$67,124 a year</b>. The rare losing cases (1.6 percent) require hiring the costliest teacher for every 20 students while every other cost runs at maximum.</p>
+<p class="note">With the district's own 25 open seats counted, growth pays in <b>every one</b> of the 6,561 scenarios. Median: <b>+$118,650 a year</b>. Even the worst case, the costliest teacher hired for every 20 students past the open seats with every other cost at maximum, still nets +$26,260.</p>
 </div>
 </div>
 
@@ -393,7 +393,7 @@ footer a{color:var(--ice)}
 </div>
 
 </details>
-<div class="callout"><b>The bottom line:</b> grow the school, and the middle case GAINS $67,124 a year. Close it, and the middle case LOSES $21,971 a year.</div>
+<div class="callout"><b>The bottom line:</b> grow the school, and the middle case GAINS $118,650 a year. Close it, and the middle case LOSES $21,971 a year.</div>
 </div></section>
 
 <section id="part2" class="partband"><div class="wrap">
@@ -823,13 +823,13 @@ x:{ticks:{font:{size:9},maxTicksLimit:14}}}}});
 /* Cost per student vs enrollment: fixed base spread over more kids.
    Full marginal stack at the growth calculator's central settings:
    $700 supplies + $500 busing per student, a $49,150 teacher per 22
-   added beyond the ~40 absorbable seats, a $28,500 support hire per 75
-   added (both measured from the 110 base, matching build/growth_grid.py). */
+   added beyond the 25 seats open at the district's own Appendix B caps,
+   a $28,500 support hire per 75 added (matching build/growth_grid.py). */
 (function(){
 var pts=[],labels=[];
 function cost(N){
 var gain=Math.max(0,N-128);
-var teachers=Math.floor(gain/22);
+var teachers=Math.floor(Math.max(0,gain-25)/22);
 var staff=Math.floor(gain/75);
 return 17903*128+(N-128)*(700+500)+teachers*49150+staff*28500;
 }
@@ -904,7 +904,7 @@ gb=+document.getElementById('sGb').value,
 cps=+document.getElementById('sCps').value,
 gad=+document.getElementById('sGad').value;
 var gain=target-110;
-var teachers=Math.floor(gain/ratio);
+var teachers=Math.floor(Math.max(0,gain-25)/ratio);
 var staff=SPV[sp][0]===0?0:Math.floor(gain/SPV[sp][0]);
 var net=gain*(SEEK+gad-cps)-teachers*tc-staff*SPV[sp][1]-gb*gain;
 document.getElementById('oGro').textContent=target;
