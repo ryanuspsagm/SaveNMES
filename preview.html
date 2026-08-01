@@ -140,6 +140,11 @@ input[type=range]{width:100%;accent-color:var(--royal)}
 .btn.blue{background:var(--royal);color:var(--chalk);font-weight:700}
 .btn.blue:hover{background:#256199}
 
+/* Section expanders */
+details.more{margin-top:4px}
+details.more>summary{cursor:pointer;color:var(--royal);font-weight:600;font-size:14.5px;padding:9px 0;letter-spacing:.02em}
+details.more>summary:hover{color:var(--navy)}
+
 /* Sources */
 .srcbox{background:var(--chalk);border:1px solid var(--line);border-radius:6px;padding:4px 16px;margin-top:10px}
 .srcbox summary{cursor:pointer;font-weight:600;color:var(--navy);font-size:15px;padding:10px 0;list-style-position:inside}
@@ -169,8 +174,8 @@ footer a{color:var(--ice)}
 <p class="hero-sub">On July 15, 2026, a planning committee voted to label NMES "transitional." That is step one toward closing it. I checked the district's own records. You can check every number below.</p>
 <div class="statement">
 <div class="kicker" style="color:var(--ice);margin-bottom:10px">Key Points</div>
-<p><b>The district needs growth, not closures.</b> Enrollment is down 10 percent while the county's child count is flat. Costs are up at every school. The tax rate is lower than almost every neighbor's.</p>
 <p><b>The case against closing NMES is clear.</b> It has the county's best test scores. It costs less than the average Kentucky elementary school. We priced closure 5,832 ways using the district's own numbers. The median result <b>loses $21,971 a year</b>, and 55 percent of scenarios lose money.</p>
+<p><b>The district needs growth, not closures.</b> Enrollment is down 10 percent while the county's child count is flat. Costs are up at every school. The tax rate is lower than almost every neighbor's.</p>
 <p><b>We ask the board for four things:</b></p>
 <ol>
 <li>Keep NMES Permanent in the facility plan.</li>
@@ -192,6 +197,7 @@ footer a{color:var(--ice)}
 <div class="kicker">Fact One</div>
 <h2>The school works.</h2>
 <p class="lede">On the state's 2024-25 tests, NMES is first in the county in every subject. It beats the state average in science and writing.</p>
+<details class="more"><summary>More detail: the scores</summary>
 <div class="card">
 <h3>The state's own numbers, 2024-25</h3>
 <div style="overflow-x:auto"><table class="alt">
@@ -221,16 +227,18 @@ footer a{color:var(--ice)}
 <div class="chartbox tall"><canvas id="chartScores" role="img" aria-label="Line chart of elementary school scores from 2007 to 2025"></canvas></div>
 <p class="note">One reading note. The official composite for Bourbon Central crosses above NMES in the newest year. That is not a status result: NMES led every 2024-25 subject index the state computed. The composite also scores change from the prior year, so the change formula subtracts NMES's own record 2023-24 spike (74.5, first by fourteen points). The state's component file, archived in the repository, shows it.</p>
 </div>
+</details>
 </div></section>
 
 <section id="cost"><div class="wrap">
 <div class="kicker">Fact Two</div>
 <h2>The school is not expensive.</h2>
 <p class="lede">On the newest state spending file (2024-25), NMES costs <b>$17,903 per student</b>. The average Kentucky elementary school costs $19,300. NMES runs <b>7 percent below the state average</b>.</p>
+<details class="more"><summary>More detail: the cost record</summary>
 <div class="card">
-<h3>The district's own May 2026 table says the same thing</h3>
-<p>The district's own Cost of Delivery table prices NMES at <b>$19,080</b>. The state average printed on the same page: <b>$19,020</b>. The same table lists every school, NMES included, as <b>Permanent</b>.</p>
-<p class="note">Neighbor elementary averages, 2024-25 state file: Fayette $25,064, Scott $19,054, Clark $17,502, Montgomery $17,402, Bourbon $17,170, Paris Independent $16,241. Every school in the county fell 7 to 11 percent this year as federal pandemic money exited.</p>
+<h3>What each elementary school has cost, every year the state published it</h3>
+<div class="chartbox tall"><canvas id="chartHist" role="img" aria-label="Line chart of cost per student for the three county elementary schools, 2012 to 2017 and 2024 to 2025, with the Kentucky elementary average shown for the newest two years. NMES runs a modest premium for its size and lands below the state average on the newest file."></canvas></div>
+<p class="note">Two reporting eras, so compare within an era, not across the gap: 2012 to 2017 is the state's school-level spending report; 2024 and 2025 are the state's total-expenditure files, a broader measure. The 2013 NMES point includes a one-time renovation charge. The state did not publish comparable school files for the middle years; the full 25-year record is in the report. In every era the pattern is the same: NMES runs a modest premium for its size, and on the newest file it sits <b>below the Kentucky elementary average</b>.</p>
 </div>
 <div class="card">
 <h3>More students, lower cost per student</h3>
@@ -238,12 +246,14 @@ footer a{color:var(--ice)}
 <div class="chartbox"><canvas id="chartCurve" role="img" aria-label="Line chart: NMES cost per student falls from about $20,700 at 110 students to $17,903 at 128 today and about $11,800 at the 198-seat rating"></canvas></div>
 <p class="note">Basis: the 2024-25 state file ($17,903 per student at 128 students) plus about $700 for each added student. At 160 students the cost is about $14,500. At the 198-seat rating it is about $11,800, cheaper than every school in the county today. Shrinking runs the same math backward. The 25-year cost record is in the report.</p>
 </div>
+</details>
 </div></section>
 
 <section id="frees"><div class="wrap">
 <div class="kicker">Fact Three</div>
 <h2>Closing it frees very little.</h2>
-<p class="lede">Most school spending moves with the students. Teachers still teach the same kids. Supplies, books, and field trips travel too. Only the building's own costs stop. Here is NMES's whole General Fund budget, line by line:</p>
+<p class="lede">Most school spending moves with the students. Teachers still teach the same kids. Supplies, books, and field trips travel too. Only the building's own costs stop, and the district's own $661,139 claim does not survive its own appendices.</p>
+<details class="more"><summary>More detail: the budget lines and the district's claim</summary>
 <div class="card">
 <div style="overflow-x:auto"><table class="alt">
 <tr><th>North Middletown, General Fund FY2026, excluding on-behalf</th><th>Amount</th><th>Avoided by closing?</th></tr>
@@ -268,11 +278,14 @@ footer a{color:var(--ice)}
 &bull; <b>Not one dollar of added busing</b> and <b>not one leaving family</b> appear anywhere in the 48-page response. Those are the two costs that push closures into the red.</p>
 <p class="note">Netted honestly, the district's own worksheet comes out $2,599 a year in the red, right beside our model's median of a $21,971 yearly loss. What survives from their sheet, about $107,039 of building costs plus $20,000 of insurance, is exactly what our model already credits. Source: Response to the 10 Questions, archived in the repository.</p>
 </div>
+</details>
 </div></section>
 
 <section id="risks"><div class="wrap">
 <div class="kicker">Fact Four</div>
 <h2>Closing it risks a lot, every year, forever.</h2>
+<p class="lede">Schools compete for families now, and every family that leaves takes about $5,100 a year of state money with it, permanently. That risk is bigger than anything a closure saves.</p>
+<details class="more"><summary>More detail: the market and the leak table</summary>
 <div class="card">
 <h3>Schools compete now. K-5 is where you win or lose families.</h3>
 <p>Under HB 563, state money follows the child to whichever district wins the family. The district's own numbers show the business shape: it <b>loses about $947 a year on each elementary student</b> and makes it back in middle school (+$761) and high school (+$476). Elementary is the cost of winning a family. Grades 6-12 are the payback.</p>
@@ -290,12 +303,14 @@ footer a{color:var(--ice)}
 </table></div>
 <p class="note">The current 128 students carry $5.6 to $7.4 million of remaining state funding through grade 12. A "transitional" label by itself pushes families out: nobody enrolls a kindergartner in a school marked for closing.</p>
 </div>
+</details>
 </div></section>
 
 <section id="model"><div class="wrap">
 <div class="kicker">Run the Numbers</div>
 <h2>Two calculators. The district's own prices. Your assumptions.</h2>
 <p class="lede">The closure model prices what closing NMES nets. The growth model prices filling it instead. Both use the district's own published figures. Move any slider.</p>
+<details class="more"><summary>Open the calculators and the full range</summary>
 
 <div class="calc-grid">
 <div class="card">
@@ -373,6 +388,7 @@ footer a{color:var(--ice)}
 <p class="note">Source: Response to the 10 Questions, July 2026, archived in full in the repository.</p>
 </div>
 
+</details>
 <div class="callout"><b>The comparison that decides it:</b> the median growth scenario GAINS $142,800 a year. The median closure scenario LOSES $21,971. Growth's worst case beats closure's median by nearly $50,000. Same school, same sliders, opposite directions.</div>
 </div></section>
 
@@ -385,6 +401,8 @@ footer a{color:var(--ice)}
 <section id="money"><div class="wrap">
 <div class="kicker">The Three Problems</div>
 <h2>Money, enrollment, revenue.</h2>
+<p class="lede">The gap is real: $2.65 million last year. The causes are district-wide: an enrollment leak worth about $2.2 million a year and the region's lowest tax posture. Closing one small school touches none of them.</p>
+<details class="more"><summary>More detail: the three problems, charted</summary>
 <div class="card">
 <h3>1. The money problem</h3>
 <p>The General Fund ran a $2.65 million deficit last year. Reserves fall about $1.1 million a year. Pandemic aid ended (about $2.95 million a year) and state funding fell with roughly 248 fewer funded students. The district also sweeps $1.32 million a year of restricted capital money into operations. That drains the fund that should pay for buildings.</p>
@@ -400,12 +418,14 @@ footer a{color:var(--ice)}
 <p>Bourbon taxes real estate at 52.4 cents per $100, second lowest of nine area districts. Every neighbor's rate is higher than it was fourteen years ago. Bourbon's is <b>5.4 percent lower</b>, the only decline in the region, while its tax base grew 107.5 percent, second fastest of the eight area counties.</p>
 <div class="chartbox tall"><canvas id="chartLevyHist" role="img" aria-label="Line chart of fourteen years of school levy rates for nine area districts, every neighbor rising while Bourbon County ends lower than it began"></canvas></div>
 </div>
+</details>
 </div></section>
 
 <section id="grow"><div class="wrap">
 <div class="kicker">The Three Levers</div>
 <h2>Grow enrollment. Cut fixed costs. Fix the rate.</h2>
-
+<p class="lede">Three levers the board already owns. At their low ends, with the tax rate untouched, they are worth about $2.0 million a year. The rate restore adds up to $1.7 million more.</p>
+<details class="more"><summary>More detail: the levers, priced</summary>
 <div class="card">
 <h3>Lever 1: Grow enrollment. It works in Kentucky, at this scale, an hour away.</h3>
 <p>Eminence Independent, a small district in Henry County, was shrinking too. It rebuilt around a distinctive program and open enrollment. It grew 37 percent in a decade. Four in ten of its students now come from other districts, each bringing state money.</p>
@@ -444,6 +464,7 @@ footer a{color:var(--ice)}
 <div class="totalstrip">Growth plan, low end: about $2.0M a year &bull; Closure median: LOSES $21,971 a year</div>
 <p class="note">Proposed public enrollment targets for NMES, the kind ask two puts on paper: 145 by fall 2027, 160 by 2028, 180 by 2029, 198 by 2030 (the building's 2013 state-approved rating). Miss them on a fair trial, and the next facility plan can revisit with evidence.</p>
 </div>
+</details>
 </div></section>
 
 <section id="choice" class="partband"><div class="wrap">
@@ -455,6 +476,8 @@ footer a{color:var(--ice)}
 <section id="asks"><div class="wrap">
 <div class="kicker">On North Middletown, Specifically</div>
 <h2>Four asks that cost the district nothing.</h2>
+<p class="lede">Permanent in the plan. Four years with public targets and the tools to hit them. Let the community fund the building. Say publicly the district will grow this school. Plus three committees to run the growth plan.</p>
+<details class="more"><summary>More detail: each ask, the committees, and the seat planner</summary>
 <div class="grid2">
 <div class="card"><h3>1. Keep NMES Permanent in the facility plan</h3>
 <p class="note">A facility plan commits no money; Priority 2 exists for needs not yet funded. "Transitional" saves nothing this year either, but it blocks state facility funding and declares a phase-out. Same cost: zero. Only one keeps every door open.</p></div>
@@ -489,6 +512,7 @@ footer a{color:var(--ice)}
 </div>
 <p class="note" style="margin-top:8px">New sections are charged at $60,000. Returning students are new money at the $4,626 base. Details in Section 9 of the report.</p>
 </div>
+</details>
 </div></section>
 
 <section id="act"><div class="wrap">
@@ -508,6 +532,7 @@ footer a{color:var(--ice)}
 <p>If you are a King, your story belongs in this record. Include your name, your connection to the school, and a phone number so we can verify. Nothing is published without your permission.</p>
 <a class="btn" href="mailto:ryanuspsagm@gmail.com?subject=My%20NMES%20story&body=Full%20name%3A%0A%0AMy%20connection%20to%20NMES%20%28student%2C%20parent%2C%20teacher%2C%20and%20which%20years%29%3A%0A%0ATown%20where%20I%20live%20now%3A%0A%0APhone%20number%20%28for%20verification%20only%2C%20never%20published%29%3A%0A%0AMy%20story%3A%0A%0A%0AMay%20we%20publish%20your%20story%20and%20first%20name%20on%20savenmes.org%3F%20%28yes%20or%20no%29%3A">Share your story</a></div>
 </div>
+<details class="more"><summary>More ways to help: Frankfort contacts and the QR code</summary>
 <div class="card" style="margin-top:22px">
 <h3>Take it to Frankfort</h3>
 <p>The closure is not final until the Kentucky Board of Education approves the district's facility plan. Ask each office for one thing: a fair, fully documented process, with the community's questions answered in writing, before any vote.</p>
@@ -535,6 +560,7 @@ footer a{color:var(--ice)}
 </div>
 </div>
 </div>
+</details>
 </div></section>
 
 <section id="voices"><div class="wrap">
@@ -543,6 +569,7 @@ footer a{color:var(--ice)}
 <p class="lede">About one hundred supporters filled the July 15 forum, and a thirty-minute comment period ran an hour and a half (<a href="https://www.bourboncountycitizen.com/2026/07/16/bourbon-county-schools-local-planning-committee-hosts-public-forum-regarding-nmes/">Bourbon County Citizen</a>). These voices belong in this record.</p>
 <div class="quote">There is always a solution to a problem if you persist through it.
 <small>The lesson Mrs. Mitchell's classroom taught me, 24 years ago, in this building.</small></div>
+<details class="more"><summary>Read the stories</summary>
 <div id="storyList"></div>
 <div class="card" id="storyEmpty">
 <h3>Your story could be the first one here.</h3>
@@ -550,6 +577,7 @@ footer a{color:var(--ice)}
 <a class="btn" href="mailto:ryanuspsagm@gmail.com?subject=My%20NMES%20story&body=Full%20name%3A%0A%0AMy%20connection%20to%20NMES%20%28student%2C%20parent%2C%20teacher%2C%20and%20which%20years%29%3A%0A%0ATown%20where%20I%20live%20now%3A%0A%0APhone%20number%20%28for%20verification%20only%2C%20never%20published%29%3A%0A%0AMy%20story%3A%0A%0A%0AMay%20we%20publish%20your%20story%20and%20first%20name%20on%20savenmes.org%3F%20%28yes%20or%20no%29%3A">Share your story</a>
 </div>
 <p class="note">Every story is submitted by its author or reposted with explicit permission. Identity and connection are verified before publishing. Phone numbers are never published. Any author can have their story removed by asking.</p>
+</details>
 </div></section>
 
 <script>
@@ -613,6 +641,7 @@ list.appendChild(d);
 <h2>The full report, the model, and every source.</h2>
 <p class="lede">The four-page summary, the full report, the model, and the open repository behind all of it: every dataset, every script, every archived district document, every version ever published, corrections included.</p>
 <p><a class="btn" href="SaveNMES_Executive_Summary.pdf">Executive summary (4 pages, PDF)</a> &nbsp; <a class="btn" href="Saving_North_Middletown_Elementary.pdf">Download the full report (PDF)</a> &nbsp; <a class="btn" href="NMES_Financial_Model.xlsx">Download the financial model (Excel)</a> &nbsp; <a class="btn" href="https://github.com/ryanuspsagm/SaveNMES">Browse the repository</a></p>
+<details class="more"><summary>Version history: every version stays public</summary>
 <div class="card" style="margin-top:18px">
 <h3>Every version stays public</h3>
 <p>The 57-page report, the complete financial model behind every number on this page, and the open GitHub repository holding the source for all of it, including every archived district document.</p>
@@ -633,6 +662,7 @@ list.appendChild(d);
 <a href="reports/Saving_NMES_v2.7_2026-07-25.pdf">v2.7, July 25</a> (the June 2026 capital transfer decomposed) &middot;
 <a href="reports/Saving_NMES_v2.6_2026-07-20.pdf">v2.6, July 20</a> (the bonding story and transport geography).</p>
 </div>
+</details>
 </div></section>
 
 <section id="sources"><div class="wrap">
@@ -681,6 +711,8 @@ list.appendChild(d);
 <script>
 document.addEventListener('DOMContentLoaded',function(){
 if(typeof Chart==='undefined'){return}
+document.querySelectorAll('details').forEach(function(d){d.addEventListener('toggle',function(){
+setTimeout(function(){Object.values(Chart.instances).forEach(function(c){c.resize()})},60)})});
 var NAVY='#1F3864',ROYAL='#2E75B6',GRAY='#8A93A6',LGRAY='#C9CDD4',ICE='#9DC3E6';
 Chart.defaults.font.family='-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif';
 Chart.defaults.color='#3A4356';
@@ -783,6 +815,27 @@ plugins:{legend:{position:'bottom',labels:{boxWidth:18,font:{size:10}}},
 tooltip:{callbacks:{label:function(c){var raw=c.datasetIndex===0?EMD[c.dataIndex]:BBD[c.dataIndex];
 return c.dataset.label+': '+c.parsed.y+' ('+raw.toLocaleString('en-US')+' students)'}}}},
 scales:{y:{min:80,max:145,grid:{color:'#E3E8F0'},title:{display:true,text:'enrollment index, 2014 = 100',font:{size:10}}}}}});
+
+/* Cost history: three schools, two reporting eras, state average where published */
+(function(){
+var HY=[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
+var HD={
+"North Middletown":[9715,19635,9948,10999,11521,13260,null,null,null,null,null,null,19348,17903],
+"Bourbon Central":[7351,10281,7123,8651,8705,9197,null,null,null,null,null,null,18131,16677],
+"Cane Ridge":[7740,11383,7718,9222,9655,9815,null,null,null,null,null,null,18670,16930],
+"KY elementary average":[null,null,null,null,null,null,null,null,null,null,null,null,18938,19300]};
+new Chart(document.getElementById('chartHist'),{type:'line',
+data:{labels:HY,datasets:Object.keys(HD).map(function(k){
+var isN=k==='North Middletown',isS=k==='KY elementary average';
+return {label:k,data:HD[k],borderColor:isN?NAVY:(isS?'#B8860B':(k==='Bourbon Central'?ROYAL:GRAY)),
+backgroundColor:'transparent',borderWidth:isN?3:2,pointRadius:isS?4:2.5,pointStyle:isS?'rectRot':'circle',
+spanGaps:false,tension:0.15}})},
+options:{responsive:true,maintainAspectRatio:false,
+plugins:{legend:{position:'bottom',labels:{boxWidth:16,font:{size:10}}},
+tooltip:{callbacks:{label:function(c){return c.dataset.label+': $'+c.parsed.y.toLocaleString('en-US')+' per student'}}}},
+scales:{y:{grid:{color:'#E3E8F0'},ticks:{callback:function(v){return '$'+(v/1000).toFixed(0)+'K'}}},
+x:{ticks:{font:{size:9},maxTicksLimit:14}}}}});
+})();
 
 /* Cost per student vs enrollment: fixed base spread over more kids */
 (function(){

@@ -53,13 +53,19 @@ def main():
         pg.on("pageerror", lambda e: errors.append(str(e)))
         pg.goto(url, wait_until="networkidle")
         pg.wait_for_timeout(1200)
+        # v4.2 review: sections collapse to key points; open everything for testing
+        pg.evaluate("document.querySelectorAll('details').forEach(d=>d.open=true)")
+        pg.wait_for_timeout(600)
 
         if errors: bad(f"console/page errors: {errors}")
         else: ok("no JS console or page errors")
 
         n = pg.evaluate("Object.keys(Chart.instances).length")
-        if n == 6: ok(f"{n} Chart.js charts instantiated")
-        else: bad(f"expected 6 charts, got {n}")
+        if n == 7: ok(f"{n} Chart.js charts instantiated")
+        else: bad(f"expected 7 charts, got {n}")
+        nmore = pg.evaluate("document.querySelectorAll('details.more').length")
+        if nmore >= 10: ok(f"{nmore} sections collapse to key points with More detail expanders")
+        else: bad(f"only {nmore} section expanders found")
         strip = pg.query_selector(".range-bar")
         labs = pg.text_content(".range-labs") if pg.query_selector(".range-labs") else ""
         if strip and "loses $591,545" in labs and "saves $488,631" in labs and "loses $21,971" in labs:

@@ -370,9 +370,13 @@ def main():
 
     # v4.0: the two-roads restructure
     for needle in ["The District Needs Growth, Not Closures", "The Case Against Closing NMES", "Two roads",
-                   "$19,080", "$19,020", "107.5", "Eminence",
-                   "$58,774", "Permanent"]:
+                   "107.5", "Eminence", "$58,774", "Permanent", "chartHist", "18938", "19348", "18131"]:
         chk(needle in html, f"site v4 content intact: {needle}")
+    chk(html.index("The case against closing NMES is clear.</b>")
+        < html.index("The district needs growth, not closures.</b>"),
+        "Key Points ordered like the page: case against closing first")
+    chk(html.count('<details class="more"') >= 10,
+        "sections collapse to key points with More detail expanders")
     for needle in ["Decision in Brief", "Part Two: The Evidence", "$19,080", "$19,020",
                    "107.5 percent", "Eminence", "149 last fall", "occupational",
                    "Marion County voters", "$5.6 million of remaining", "$613,000"]:
