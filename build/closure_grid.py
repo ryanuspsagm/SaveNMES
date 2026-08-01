@@ -16,11 +16,16 @@ and the district's own worksheet argue on the same basis.
                              travels with the students ($318/student, against
                              our independently measured $331) and is not
                              avoidable
-  fixed-position retention:  100% / 50% / 0% of the $218,154 of fixed-position
+  fixed-position retention:  100% / 50% of the $218,154 of fixed-position
                              salary lines (school admin $131,724 + custodial
                              $37,333 + library $49,097, all measured; the
                              district's own staffing sheet prices the same
-                             four roles at $209,700, within 4 percent)
+                             four roles at $209,700, within 4 percent).
+                             The 0%-retention (all positions cut) leg is
+                             RETIRED: the superintendent's own Appendix A.1
+                             states all current staff would be retained, so
+                             full elimination is an end state the district
+                             itself disclaims and the model does not credit
   teachers cut:              0 / 1 / 2 / 3 positions. The district's Appendix
                              A.1 prices 2 ("Elementary Teachers: 2,
                              $108,958.80"); its own Appendix B classroom
@@ -31,18 +36,23 @@ and the district's own worksheet argue on the same basis.
                              stronger of the district's two figures. Each
                              position is priced at the district's OWN fully
                              loaded basis, $54,479.40 (Appendix A.1, 0 years
-                             experience, benefits included), replacing the
-                             former $50-75K cost lever: their number, their
-                             basis. Archived
+                             experience, benefits included): their number,
+                             their basis. Archived
                              build/response_to_the_10_questions.pdf
-  students lost:             0 / 10 / 20 / 30 percent of 128 (site slider runs
-                             the full 0-100%)
+  students lost:             0 / 10 / 20 / 30 / 40 / 50 percent of 128
+                             (0 / 13 / 26 / 38 / 51 / 64 students; the site
+                             slider runs the full 0-100%)
   SEEK add-ons per leaver:   $0 / $500 / $1,000 on top of the $4,626 base
                              (at-risk 15% weight on a ~72% FRL school,
                              exceptional-child weights, transportation
                              component, $100 capital outlay)
   property-value loss:       $0 / $47,500 / $95,000 (roughly 0-10 percent of an
-                             estimated zone tax base; PVA records ask pending)
+                             estimated zone tax base; PVA records ask pending).
+                             Kept as real foregone revenue: the board's
+                             rate-setting practice does not raise rates to
+                             compensate for zone valuation losses, so a
+                             smaller base is lost revenue capacity, and the
+                             equity hit lands on zone families either way
   added busing:              $20,000 / $63,000 / $190,000, derived bottom-up
                              with uncertainty carried in the stops: 2-4 zone
                              buses now terminating in Paris (~9-11 road miles
@@ -58,8 +68,8 @@ net = capture + fixed_positions_cut + teachers_cut x $54,479.40
       - busing - leavers x (4,626 + add_ons) - property_loss
 
 Run:  python build/closure_grid.py
-Asserts the published statistics: 3,888 scenarios; median +$41,787; 40 percent
-negative; range -$445,269 to +$488,631; middle half -$68,095 to +$152,136.
+Asserts the published statistics: 3,888 scenarios; median -$76,005; 68 percent
+negative; range -$591,545 to +$379,554; middle half -$194,757 to +$40,328.
 """
 import statistics
 
@@ -72,9 +82,9 @@ TEACH = 108_958.80 / 2                      # $54,479.40, the district's own
 nets = sorted(
     c + f + t * TEACH - b - l * (SEEK + ad) - pr
     for c in CAPTURE
-    for f in (0, FIXED_POS / 2, FIXED_POS)
+    for f in (0, FIXED_POS / 2)
     for t in (0, 1, 2, 3)
-    for l in (0, 13, 26, 38)
+    for l in (0, 13, 26, 38, 51, 64)
     for ad in (0, 500, 1000)
     for pr in (0, 47_500, 95_000)
     for b in (20_000, 63_000, 190_000)
@@ -84,10 +94,10 @@ med = statistics.median(nets)
 neg = sum(1 for x in nets if x < 0)
 
 assert n == 3_888, n
-assert round(med) == 41_787, med
-assert round(neg / n * 100) == 40, neg / n
-assert round(nets[0]) == -445_269 and round(nets[-1]) == 488_631, (nets[0], nets[-1])
-assert round(nets[n // 4]) == -68_095 and round(nets[3 * n // 4]) == 152_136
+assert round(med) == -76_005, med
+assert round(neg / n * 100) == 68, neg / n
+assert round(nets[0]) == -591_545 and round(nets[-1]) == 379_554, (nets[0], nets[-1])
+assert round(nets[n // 4]) == -194_757 and round(nets[3 * n // 4]) == 40_328
 
 print(f"{n:,} scenarios | median ${med:,.0f} | {neg / n * 100:.0f}% lose money")
 print(f"range ${nets[0]:,.0f} to ${nets[-1]:,.0f} | middle half "

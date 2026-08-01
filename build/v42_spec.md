@@ -1,9 +1,9 @@
 # SaveNMES v5 Outline (user-edited, numbers filled) - working spec
 
 THESIS (Key Points): The case against closing NMES is clear. Across 3,888 scenarios
-built on the district's own worksheet and its own fully loaded staffing prices,
-the median closure outcome saves $41,787 a year, just over a tenth of one percent of
-the budget, and 40 percent of scenarios lose money outright. The district needs growth, not
+built on the district's own worksheet, its own fully loaded staffing prices, and its
+own statement that all staff would be retained, the median closure outcome LOSES
+$76,005 a year, and 68 percent of scenarios lose money outright. The district needs growth, not
 closures. We ask the board to choose the growth path, and for four things.
 
 PART ONE - THE CASE AGAINST CLOSING NMES (NMES-specific)
@@ -65,7 +65,9 @@ Banded figures:
      building-bound lines, + their ~$20K insurance saving at the full stop
      ($53.5K/$80.3K/$127K); their other $40,693 (supplies, books, field trips,
      printing = $318/student vs our measured $331) travels with the students
-   - fixed-position retention 100-0% ($0-$218,154)
+   - fixed-position retention 100-50% ($0-$109,077); the all-positions-cut leg is
+     RETIRED because the superintendent's own A.1 states all current staff would
+     be retained - full elimination is an end state the district itself disclaims
    - teachers cut 0/1/2/3, each priced at the district's OWN fully loaded basis,
      $54,479.40 (Appendix A.1, 0 years experience, benefits included; replaces
      the former $50-75K cost lever - their number, their basis). SOURCED: A.1
@@ -74,16 +76,21 @@ Banded figures:
      (six NMES homerooms absorbed, only grades 2/3/4 need a new room, so three
      homerooms are recreated and three eliminated). Archived
      build/response_to_the_10_questions.pdf
-   - students lost 0-100% (grid values 0/10/20/30%; slider full range)
-   - property-value loss 0-10% of est. zone base ($0-95K; PVA records ask pending)
+   - students lost 0-100% (grid values 0/10/20/30/40/50% = 0/13/26/38/51/64 of
+     128; slider full range)
+   - property-value loss 0-10% of est. zone base ($0-95K; PVA records ask pending);
+     kept as real foregone revenue: the board's rate practice does not raise rates
+     to compensate for zone valuation losses, so a smaller base is lost revenue
+     capacity, and the equity hit lands on zone families either way
    - busing $20K / $63K / $190K, DERIVED with uncertainty bars: 2-4 zone buses
      terminating in Paris (+9-11 road miles one-way), 2 loaded + 0-2 deadhead legs
      daily, 175 days, $3.25-$4.75/mile benchmark band, high stop adds one $45K
      ride-time route split; per zone student $160/$492/$1,495 vs the $1,032 district
      average; the district's own routing data (requested, answered N/A) would
      replace the benchmarks
-   RESULTS: median +$41,787 | 40% lose money | range -$445,269 to +$488,631 |
-   middle half -$68,095 to +$152,136. CROSS-VALIDATED: the district's own response
+   RESULTS: median -$76,005 (closure LOSES money in the median scenario) | 68%
+   lose money | range -$591,545 to +$379,554 |
+   middle half -$194,757 to +$40,328. CROSS-VALIDATED: the district's own response
    worksheet (archived build/district_savings_response_appendix_a.png), honestly
    netted (its $107K building lines + $20K insurance, less central busing and one
    step of leakage, staffing retained per its own note), lands at -$2,599, beside
@@ -107,9 +114,10 @@ Banded figures:
    WHY IT CANNOT GO NEGATIVE: each student brings $4,626 against at most $2,000 of
    per-student charges, and a hire only triggers once its cohort's net revenue
    (20 x $3,626 = $72,520 minimum) exceeds the costliest new hire ($56,583).
-   COMPARISON LINE: the median growth scenario (+$142,800) is 3.4x the median closure
-   saving (+$41,787); growth's floor is positive (+$26,260) while 40 percent of
-   closure scenarios go negative.
+   COMPARISON LINE: the median growth scenario GAINS $142,800 while the median
+   closure scenario LOSES $76,005 - a $218,805/yr swing between the two roads;
+   growth's floor is positive (+$26,260) while 68 percent of closure scenarios go
+   negative, so growth's WORST case beats closure's MEDIAN by over $100K.
 
 PART TWO - THE DISTRICT NEEDS GROWTH, NOT CLOSURES (district-wide)
 1. Money problem: $2.65M gap, reserves -$1.1M/yr, aid cliff + 248 fewer funded
@@ -127,8 +135,8 @@ LEVER 3 - align the tax rate: 0-100% restore to 2018 = $0 to $1,699,900/yr slide
    statewide recall record [build: research]; HB 44 + options tables [have].
 GROWTH PLAN, PRICED: interactive 3-move calculator [build]; triangular-distribution
    outcome: median $2,468,969/yr, IQR $2,300,270-$2,636,282 [computed].
-THE CHOICE: two roads WITH outcome ranges: closure median +$41,787 (40% lose,
-   downside -$445K) vs growth plan median ~$2.47M.
+THE CHOICE: two roads WITH outcome ranges: closure median -$76,005 (68% lose,
+   downside -$592K) vs growth plan median ~$2.47M.
 FOUR ASKS + HOW: Permanent; 4 years with public targets [build: proposed targets
    table]; grant/private funds; public commitment. How: record -> themed academy ->
    incentives -> grants.
@@ -174,10 +182,11 @@ LATEST STATE DATA (KYRC25, 2024-25, user-supplied, archived build/KYRC25_FT_...c
   Bath $14,785, Harrison $14,689 (simple school means, labeled as such)
   Decision ladder re-anchored: allocated loss $245,760 (2024-25 costs vs 2023-24
   revenue rates, latest available) -> ~$160K after Title I skew -> ~$31K
-  NMES-specific after the district-share deduction -> the grid median (+$41,787 on the
-  district's own worksheet and staffing prices): the ladder (~$31K), the grid median
-  (+$42K), and the district's own netted worksheet (-$2.6K) all converge on a
-  rounding error against a $33M budget. May 2026 district table retained
+  NMES-specific after the district-share deduction -> the grid median (-$76,005 on
+  the district's own worksheet, staffing prices, and retention statement): the
+  ladder (~+$31K), the district's own netted worksheet (-$2.6K), and the grid
+  median (-$76K) all land within a tenth of a percent of the $33M budget - and the
+  only one of the three that is positive gets there by ignoring leakage and busing. May 2026 district table retained
   as the district's-own-paperwork exhibit; KYRC24 $19,348 retired to history.
 
 RESPONSE TO THE 10 QUESTIONS - FULL CROSS-REFERENCE (48 pp, received 2026-08-01,
@@ -271,15 +280,21 @@ to Dr. Ryan Bradley's questions; scanned, read page by page):
      full-time upgrades of counselor/FRYSC/SpEd-consultant/psychologist/librarian
      coverage - services that follow staffing dollars, not the building, and that
      could be bought directly for a fraction of the claimed savings.
-  MODEL IMPACT (updated after the top-end challenge): the teacher lever was
-  re-based on this document. Teachers cut now run 0/1/2/3 - A.1 prices 2, but
-  Appendix B's own classroom arithmetic supports 3 (three homerooms eliminated
-  net), so the top leg credits the stronger of the district's two figures - and
-  each position is priced at the district's OWN fully loaded $54,479.40 (A.1,
-  0 years experience), retiring the former $50-75K cost lever. Grid becomes
-  3,888 scenarios, median +$41,787, 40% negative, ceiling +$488,631. The other
-  levers were already the response's numbers (capture = its $107,039 + $20,000;
-  A.1's retained-year-one note = the retention levers' rationale). The document
-  also adds sourcing (item 2), the capacity contradiction (item 3), the 9.3%
-  facilities share (item 4), the bond-list zero (item 5), and the E vs E.1
-  spread (item 6) - all Part One/Part Two exhibit material for the v4.2 build.
+  MODEL IMPACT (updated after the top-end and bookend challenges): the staffing
+  levers were re-based on this document, then both bookends were inspected.
+  (a) Teachers cut run 0/1/2/3 - A.1 prices 2, but Appendix B's own classroom
+  arithmetic supports 3 (three homerooms eliminated net), so the top leg credits
+  the stronger of the district's two figures - each position priced at the
+  district's OWN fully loaded $54,479.40 (A.1, 0 years experience), retiring the
+  former $50-75K cost lever. (b) The all-fixed-positions-cut leg is RETIRED:
+  A.1's own statement that all current staff would be retained makes full
+  elimination an end state the district itself disclaims; the lever now runs
+  100%/50% retention. (c) The property lever is KEPT as foregone revenue (the
+  board's rate practice does not compensate for zone valuation losses; lost
+  opportunity + zone equity cost). (d) The leakage lever spans 0-50% (0/13/26/
+  38/51/64 of 128). Grid: 3,888 scenarios, median -$76,005, 68% negative, range
+  -$591,545 to +$379,554. The other levers were already the response's numbers
+  (capture = its $107,039 + $20,000). The document also adds sourcing (item 2),
+  the capacity contradiction (item 3), the 9.3% facilities share (item 4), the
+  bond-list zero (item 5), and the E vs E.1 spread (item 6) - all Part One/Part
+  Two exhibit material for the v4.2 build.
