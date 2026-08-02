@@ -542,6 +542,14 @@ def main():
         chk(needle in t, f"Fayette comparison mirrored into the report: {needle}")
     chk("$1.9 to $2.3 million" in t and "236 students in this district's own homeschool files" in t,
         "district-specific leakage dollars mirrored into the report")
+    chk("$17,903" in t and "7 percent below" in t and "$19,299" in t,
+        "the newest-file cost headline (2024-25) mirrored into the report")
+    chk("$661,138.94 MINIMUM" in t and "$493,407 + $107,039 + $20,000 + $40,693 = $661,139" in t,
+        "the claim-card decomposition mirrored into the report body")
+    chk("$650,000, $1.3 million and $1.9 million" not in t
+        and "one in three county children" not in t
+        and "$300,000-$425,000" not in t and "$145,000-$290,000" not in t,
+        "retired first-wave totals, one-in-three pool, and stale menu rows are gone from the report")
     chk("$72 million of capacity" in html and "about $72 million of capacity" in t
         and "$72 million" in es,
         "the high-case plan scenario mirrored across site, report, and summary")
@@ -624,7 +632,7 @@ def main():
     for needle in ["Decision in Brief", "Part One: The Case Against Closing NMES",
                    "Part Two: The District Needs Growth, Not Closures", "$19,080", "$19,020",
                    "107.5 percent", "Eminence", "149 last fall", "occupational",
-                   "Marion County voters", "$5.6 million of remaining", "$613,000"]:
+                   "Marion County voters", "$5.6 to $7.4 million of remaining", "$613,000"]:
         chk(needle in t, f"PDF v4 decision brief intact: {needle}")
     chk("every 10 percent" in t and "Who leaves" in html,
         "stepped losses published as scenarios in report and site")
