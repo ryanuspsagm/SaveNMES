@@ -464,9 +464,9 @@ footer a{color:var(--ice)}
 </div>
 <div class="card">
 <h3>A case study: Fayette is in the headlines. Bourbon's gap is proportionally bigger.</h3>
-<p>Fayette County Public Schools has spent the year in the public spotlight over its finances. Credit where due: Bourbon's audited statements carry <b>clean opinions</b>. Now hold the two districts to the same fiscal year, 2025. Fayette, after its crisis, budgeted that year to hold its General Fund flat: its own budget book starts and ends the year at <b>$42 million</b>, a planned gap of about zero. Bourbon's audited statements show the same year ran <b>9.1 cents in the red for every General Fund dollar it spends</b>, the third deficit in three years:</p>
-<div class="chartbox"><canvas id="chartFay" role="img" aria-label="Bar chart comparing the fiscal 2025 General Fund gap per dollar spent: Bourbon County 9.1 cents, audited, versus Fayette County, which budgeted the year roughly flat at about zero cents. Even Fayette's worst crisis year, fiscal 2024, was about 6 cents."></canvas></div>
-<p class="note">Basis: Bourbon, FY2025 audited statements ($2,648,086 deficit before transfers against $29,097,404 of spending). Fayette, its own 2025-26 tentative budget book, archived in the repository: the FY2024-25 working General Fund begins at $42,000,000 and the 2025-26 tentative budget begins at the same $42,000,000, a planned hold; the crisis came the year before, when the balance fell $40.5 million ($82.5 million to $42 million), about 6 cents per dollar of its $671,183,390 working General Fund. Even that worst year is smaller, scaled to spending, than Bourbon's ordinary one. Nobody is writing headlines about Bourbon. The numbers say they should be.</p>
+<p>Fayette County Public Schools has spent the year in the public spotlight over its finances. Credit where due: Bourbon's audited statements carry <b>clean opinions</b>. Now hold the two districts to the same fiscal year, 2025, both on their audited books, same measure. Fayette's audit shows <b>5.7 cents in the red for every General Fund dollar it spent</b>, the year of all the headlines. Bourbon ran <b>9.1 cents in the red</b>, the third deficit in three years, more than half again Fayette's rate:</p>
+<div class="chartbox"><canvas id="chartFay" role="img" aria-label="Bar chart comparing the fiscal 2025 audited General Fund gap per dollar spent: Bourbon County 9.1 cents versus Fayette County 5.7 cents, both from audited statements, same measure."></canvas></div>
+<p class="note">Basis: each district's FY2025 audited statements, revenues less expenditures before transfers, divided by General Fund spending. Bourbon: a $2,648,086 gap against $29,097,404. Fayette: a $38,907,376 gap against $685,348,803. Fayette's own audit also shows its General Fund balance fell another $14.9 million that year, from <b>$43.3 million to $28.4 million</b>, even after transfers in, in the same year its budget book had planned to hold the fund flat. Both audits are archived in the repository. Nobody is writing headlines about Bourbon. The numbers say they should be.</p>
 </div>
 <div class="card">
 <h3>2. The enrollment problem is leakage, not demographics</h3>
@@ -786,9 +786,9 @@ options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bo
 
 /* Fayette comparison: yearly GF gap per dollar of spending */
 new Chart(document.getElementById('chartFay'),{type:'bar',
-data:{labels:['Bourbon County, FY2025 (audited)','Fayette County, FY2025 (its own budget: held flat)','Fayette County, FY2024 (its crisis year)'],
-datasets:[{label:'Cents of gap per dollar of General Fund spending',data:[9.1,0,6.0],
-backgroundColor:[NAVY,LGRAY,LGRAY],borderColor:[NAVY,GRAY,GRAY],borderWidth:1}]},
+data:{labels:['Bourbon County, FY2025 (audited)','Fayette County, FY2025 (audited)'],
+datasets:[{label:'Cents of gap per dollar of General Fund spending',data:[9.1,5.7],
+backgroundColor:[NAVY,LGRAY],borderColor:[NAVY,GRAY],borderWidth:1}]},
 options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
 plugins:{legend:{display:false},
 tooltip:{callbacks:{label:function(c){return c.parsed.x.toFixed(1)+' cents of gap per dollar of General Fund spending'}}}},

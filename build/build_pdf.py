@@ -1005,8 +1005,11 @@ P("In June 2026 the district's financial advisor, Robert W. Baird and Co., prese
   "$430,000 net debt-service step. Two of Baird's own sensitivities matter to this decision. First, "
   "<b>a loss of 50 students drops capacity to $31 million</b>: about $20,000 of building capacity walks "
   "out with every student, which prices the enrollment risk of a closure in the district's own advisor's "
-  "terms. Second, the presentation is built on the state's 2026-27 SEEK forecast of 2,174 funded "
-  "students, down again from 2,242 in fiscal 2025: the slide the growth plan exists to reverse. None of "
+  "terms. Second, the presentation is built on the state's 2026-27 SEEK forecast of 2,174.3 funded "
+  "students, and the state's own SEEK files, archived in this repository beside the presentation, verify it "
+  "line by line: the forecast report carries Bourbon County at 2,174.3 with the same $2,400,209,505 "
+  "assessment Baird prints, down from the 2,222.8 the same state series funded in fiscal 2026 and the "
+  "2,209.4 attended in fiscal 2025: the slide the growth plan exists to reverse. None of "
   "this capacity pays a teacher or closes the operating gap, and all of it depends on the restricted "
   "stream actually paying for buildings rather than being swept into operations.")
 H2("What closing a school does, and does not do, to bonding capacity")
@@ -1705,7 +1708,10 @@ P("<b>Version 4.5, August 2.</b> Both scenario grids now carry explicit lever di
   "district's advisor's June 2026 bonding presentation was archived and now anchors the capacity claims: "
   "$32 million of capacity, $126,250 of expiring SFCC offers, and about $20,000 of capacity lost per "
   "departing student, by its own sensitivity. The Fayette comparison was aligned to the same fiscal year "
-  "2025 on both sides. The district's July 2026 records response was then received and archived: it "
+  "2025 on both sides, then moved from Fayette's budget book to its audited statements (a 5.7-cent gap "
+  "per General Fund dollar against Bourbon's 9.1, both audited, same measure), and the state's own SEEK "
+  "files were archived to verify the 2,174.3 forecast independently of the advisor. "
+  "The district's July 2026 records response was then received and archived: it "
   "produced the ledger, budgets, salary schedules, bus routes, and planning records this report now cites, "
   "and answered N/A to any cost-benefit, enrollment, capacity, feasibility, or transportation analysis and "
   "any document evaluating the school's future; the report's publish-the-worksheet asks were rewritten as "
@@ -1880,8 +1886,15 @@ srcs = [
  "Robert W. Baird and Co., Bonding Capacity Presentation to the Bourbon County Schools Local Planning Committee, June 2026 "
  "($32 million current capacity from $3,252,893 of FY2027 bondable restricted revenues; sensitivities and the outstanding "
  "debt schedule), archived in this repository as build/baird_lpc_june2026.pdf",
- "Fayette County Public Schools, Tentative Budget 2025-26 (General Fund $715,685,019; beginning balances $91.6 million, "
- "$82.5 million, $42 million), archived in this repository as build/fcps_tentative_budget_2025_26.pdf",
+ "Fayette County School District, Financial Statements and Reports Required by the Single Audit Act, fiscal year ended "
+ "June 30, 2025 (General Fund revenues $646,441,427, expenditures $685,348,803, a $38,907,376 gap before transfers; fund "
+ "balance $43.3 million to $28.4 million), archived in this repository as build/fcps_audit_fy2025.pdf; its Tentative "
+ "Budget 2025-26 (General Fund $715,685,019; beginning balances $91.6 million, "
+ "$82.5 million, $42 million), archived as build/fcps_tentative_budget_2025_26.pdf",
+ "Kentucky Department of Education, SEEK calculation files: FY2026-2027 SEEK Forecast Data (May 6, 2026; Bourbon County "
+ "AADA plus growth 2,174.3, assessment $2,400,209,505) and FY2025-2026 SEEK Final Data (February 27, 2026; AADA plus "
+ "growth 2,222.755), archived in this repository as build/seek_forecast_2026_27_data.xlsx and "
+ "build/seek_final_2025_26_data.xlsx with the extract build/seek_aada_series.json",
  "Bourbon County Schools MUNIS general ledger, Cost by ORG transaction detail, fiscal 2026, archived in this repository as "
  "build/munis_cost_by_org_fy2026.pdf with the reproducible extractor build/munis_extract.py",
  "Kentucky school-level spending files behind the cost-history chart, 2013-14 through 2024-25, archived in this repository "

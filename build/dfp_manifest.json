@@ -1,4 +1,19 @@
 {
+    "fcps_audit_fy2025.pdf": {
+        "what": "Fayette County School District, Financial Statements and Reports Required by the Single Audit Act, fiscal year ended June 30, 2025 (LBMC, unmodified opinions). General Fund: revenues $646,441,427, expenditures $685,348,803, revenues less than expenditures ($38,907,376); after transfers and other financing sources the General Fund balance fell $14,929,329, from $43,291,115 to $28,361,786. Basis for the audited side of the Fayette comparison card.",
+        "source": "KDE district financial reports: education.ky.gov/districts/FinRept/Documents/FY2024-2025 FA Fayette Co Rev.pdf",
+        "retrieved": "2026-08-02"
+    },
+    "seek_forecast_2026_27_data.xlsx": {
+        "what": "KDE FY2026-2027 SEEK Forecast Data (generated May 6, 2026). Bourbon County line: Prior Year E.O.Y. AADA 2,174.3, growth 0, AADA Plus Growth 2,174.3, total assessment $2,400,209,505. Independently confirms the figures the Baird June 2026 presentation attributes to the 2026-27 Forecast SEEK Report.",
+        "source": "education.ky.gov/districts/SEEK/Documents/FY2026-2027 SEEK Forecast Data 05.06.2026.xlsx",
+        "retrieved": "2026-08-02"
+    },
+    "seek_final_2025_26_data.xlsx": {
+        "what": "KDE FY2025-2026 SEEK Final Data (published February 27, 2026). Bourbon County line: Prior Year E.O.Y. AADA 2,209.359 (fiscal 2025), second-month gain 13.396, AADA Plus Growth 2,222.755 (the attendance funded for fiscal 2026). With the forecast file above, establishes the funded-attendance slide on the state's own series; extract in seek_aada_series.json.",
+        "source": "education.ky.gov/districts/SEEK/Documents/FY2025-2026 SEEK Final Data 02.27.2026.xlsx",
+        "retrieved": "2026-08-02"
+    },
     "dfp_current.pdf": {
         "what": "Bourbon County Schools District Facility Plan, KBE approval date August 2021 (current posted plan; next DFP due June 2025)",
         "source": "https://education.ky.gov/districts/fac/Documents/Bourbon%20Co%20DFP.pdf",

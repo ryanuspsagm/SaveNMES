@@ -1,0 +1,21 @@
+{
+  "what": "Bourbon County (district 041) funded-attendance figures from the state's own SEEK reports, extracted verbatim from the archived KDE files in this directory.",
+  "fy2025_26_final": {
+    "file": "seek_final_2025_26_data.xlsx",
+    "source": "KDE, FY2025-2026 SEEK Final Data, published 02.27.2026 (education.ky.gov/districts/SEEK)",
+    "prior_year_eoy_aada": 2209.359,
+    "second_month_ada_gain": 13.396,
+    "aada_plus_growth": 2222.755,
+    "note": "AADA Plus Growth is the attendance the SEEK formula funds for fiscal 2026; Prior Year E.O.Y. AADA is fiscal 2025 end-of-year adjusted average daily attendance."
+  },
+  "fy2026_27_forecast": {
+    "file": "seek_forecast_2026_27_data.xlsx",
+    "source": "KDE, FY2026-2027 SEEK Forecast Data, published 05.06.2026 (education.ky.gov/districts/SEEK)",
+    "prior_year_eoy_aada": 2174.3,
+    "second_month_ada_gain": 0,
+    "aada_plus_growth": 2174.3,
+    "total_assessment": 2400209505,
+    "note": "Matches the Baird June 2026 presentation line 'Prior Year AADA Plus Growth 2,174.3' and its assessment of $2,400,209,505 exactly; Baird's footnote cites this same Forecast SEEK Report."
+  },
+  "retrieved": "2026-08-02"
+}

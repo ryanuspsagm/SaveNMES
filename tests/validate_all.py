@@ -455,13 +455,30 @@ def main():
     chk((REPO / "build" / "records_fulfilled_2026_07.pdf").exists(),
         "the July 2026 records response is archived")
     chk(abs(2648086 / 29097404 * 100 - 9.1) < 0.05
-        and abs((82507209.57 - 42000000) / 671183390 * 100 - 6.0) < 0.05,
-        "Fayette comparison ratios recompute (9.1 vs 6.0 cents per dollar)")
-    for needle in ['id="chartFay"', "9.1 cents in the red", "same fiscal year, 2025",
-                   "$82.5 million to $42 million", "clean opinions"]:
+        and abs(38907376 / 685348803 * 100 - 5.7) < 0.05,
+        "Fayette comparison ratios recompute, both audited (9.1 vs 5.7 cents per dollar)")
+    chk(abs((646441427 - 685348803) - (-38907376)) == 0
+        and abs((43291115 - 14929329) - 28361786) == 0,
+        "Fayette audit figures recompute: revenues minus expenditures, and the fund-balance walk")
+    for needle in ['id="chartFay"', "9.1 cents in the red", "5.7 cents in the red",
+                   "same fiscal year, 2025", "$43.3 million to $28.4 million",
+                   "$38,907,376", "$685,348,803", "clean opinions"]:
         chk(needle in html, f"Fayette case study card: {needle}")
-    chk((REPO / "build" / "fcps_tentative_budget_2025_26.pdf").exists(),
-        "FCPS budget book archived behind the Fayette comparison")
+    chk("held flat" not in html and "$82.5 million to $42 million" not in html,
+        "the budget-book basis is retired from the Fayette card")
+    chk((REPO / "build" / "fcps_audit_fy2025.pdf").exists()
+        and (REPO / "build" / "fcps_tentative_budget_2025_26.pdf").exists(),
+        "FCPS FY2025 audit and budget book both archived behind the Fayette comparison")
+    _seek = _json.load(open(REPO / "build" / "seek_aada_series.json"))
+    chk(_seek["fy2026_27_forecast"]["aada_plus_growth"] == 2174.3
+        and _seek["fy2026_27_forecast"]["total_assessment"] == 2400209505
+        and _seek["fy2025_26_final"]["aada_plus_growth"] == 2222.755
+        and abs(2209.359 + 13.396 - 2222.755) < 0.001
+        and 2174.3 < 2222.755 < 2242.5,
+        "SEEK forecast 2,174.3 verified against the state's own archived files; down again on every basis")
+    chk((REPO / "build" / "seek_forecast_2026_27_data.xlsx").exists()
+        and (REPO / "build" / "seek_final_2025_26_data.xlsx").exists(),
+        "the state's own SEEK forecast and final files are archived")
     chk(round(10000388 * 0.05 * 1.0145) == 507270,
         "plan raise cost recomputes: 5 percent of the certified payroll with the 1.45 percent load")
     _cap = (881393 - 10000388 * 0.05 * 1.0145) * 13.008 + 32000000
