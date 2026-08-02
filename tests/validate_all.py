@@ -554,6 +554,8 @@ def main():
         chk(needle in html, f"School Choice Survey embedded and linked: {needle}")
     chk(html.index(">School Choice Survey</a>") < html.index('<section id="part1"'),
         "the School Choice Survey button sits in the hero, above Part One")
+    chk(html.index('href="SaveNMES_Executive_Summary.pdf">Executive Summary (PDF)</a>') < html.index('<section id="part1"'),
+        "the executive summary download sits in the hero action row")
     chk(html.index('<section id="act"') < html.index('id="survey"') < html.index('<section id="voices"'),
         "the Count Yourself survey card lives inside the Act Now section")
     chk("formsubmit.co" not in html and 'id="svKids"' not in html,
