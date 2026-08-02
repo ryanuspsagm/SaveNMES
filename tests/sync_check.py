@@ -235,15 +235,16 @@ if not rec_bad: match("archived Sci/SS/Writing averages recompute from the per-s
 else: diff(f"Sci/SS/Writing average recompute mismatches: {rec_bad}")
 
 # the plan calculator mirrors the model's transformative chain lever for lever
-plan_ok = (760000 + 1699479 - 1738653 == 720826
-           and 'id="sPw" min="0" max="550" value="0"' in html
+plan_ok = (275 * 4226 + 760000 + 1699479 - 1738653 == 1882976
+           and 'id="sPw" min="0" max="550" value="275"' in html
            and 'id="sPt" min="0" max="10" value="0"' in html
            and "kids*4226" in html and "restore-1738653" in html
            and "*13.008" in html and "bonds+32000000" in html
            and "(15.69/8.9)" in html and "191000" in html
-           and "$1,738,653" in pdf_flat and "$2,648,086" in pdf_flat)
+           and "$1,738,653" in pdf_flat and "$2,648,086" in pdf_flat
+           and "$1,882,976" in html and "275 of 550" in html and "275 of 550" in pdf_flat)
 if plan_ok:
-    match("plan calculator: leakage lever (0-550 students at $4,226), trending FY2026 gap $1,738,653, default surplus $720,826, capacity anchored on the advisor's $32M (13.008 factor, $191K/cent, $15.69/8.9c)")
+    match("plan calculator: leakage lever (0-550 at $4,226) defaults to half the pool (275), trending FY2026 gap $1,738,653, default surplus $1,882,976 (site+PDF), capacity anchored on the advisor's $32M")
 else:
     diff("plan calculator bases or defaults out of sync with the re-based chain")
 
@@ -541,11 +542,15 @@ surplus = 760000 + 1699479 - 1738653
 raise_cost = 10000388 * 0.05 * 1.0145
 debt_room = surplus - raise_cost
 bonds = debt_room * (1 - 1.045 ** -20) / 0.045
+default_bonds = (1882976 - raise_cost) * (1 - 1.045 ** -20) / 0.045
 if (surplus == 720826 and abs(raise_cost - 507270) < 2 and abs(bonds - 2777936) < 2000
+        and abs(default_bonds - 17895188) < 6000
         and "$507,000" in html and "$2.8 million" in html and "$32 million" in html
         and "$35 million" in html and "$507,000" in pdf_flat and "$35 " in pdf_flat
-        and "$32 million" in pdf_flat and "$2.8 million" in pdf_flat):
-    match("re-based transformative check: defaults + full restore = $721K surplus over the trending gap, 5% raise ($507K) + $2.8M GF bonds + the advisor's $32M = about $35M of capacity (site+PDF)")
+        and "$32 million" in pdf_flat and "$2.8 million" in pdf_flat
+        and "$17.9 million" in html and "$17.9 million" in pdf_flat
+        and "$50 million" in html and "$50 million" in pdf_flat):
+    match("transformative check: floor $721K (raise + $2.8M bonds, ~$35M) and central-case default $1.88M (raise + $17.9M bonds, ~$50M), site+PDF")
 else:
     diff(f"transformative check mismatch: surplus {surplus:.0f}, raise {raise_cost:.0f}, bonds {bonds:.0f}, strings on site: {('$35 million' in html)}")
 # the leakage lever and the withdrawn claims

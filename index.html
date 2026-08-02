@@ -498,7 +498,7 @@ footer a{color:var(--ice)}
 <section id="grow"><div class="wrap">
 <div class="kicker">The Three Levers</div>
 <h2>Grow enrollment. Cut fixed costs. Fix the rate.</h2>
-<p class="lede">Three levers the board already owns. With costs at their <b>low end</b> and the full rate restore, the plan clears the trending $1.74 million fiscal 2026 gap with about <b>$721,000 a year to spare</b>: enough for a <b>5 percent raise for every certified teacher</b> and about <b>$35 million of building capacity</b>, anchored on the <b>$32 million the district's own financial advisor presented in June 2026</b>, before a single leaked student is recovered. Every school stays open. The math is below.</p>
+<p class="lede">Three levers the board already owns. With costs at their <b>low end</b> and the full rate restore, the plan clears the trending $1.74 million fiscal 2026 gap with about <b>$721,000 a year to spare</b>: enough for a <b>5 percent raise for every certified teacher</b> and about <b>$35 million of building capacity</b>, anchored on the <b>$32 million the district's own financial advisor presented in June 2026</b>, before a single leaked student is recovered. At the plan's central default, half the leakage pool recovered, the capacity reaches about <b>$50 million</b>. Every school stays open. The math is below.</p>
 <details class="more"><summary>More detail: the levers, priced</summary>
 <div class="card">
 <h3>Lever 1: Grow enrollment. It works in Kentucky, at this scale, an hour away.</h3>
@@ -532,10 +532,10 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>The plan, priced: set it yourself</h3>
-<p>The gap the plan must close is the district's own most current number: the June 2026 year-end ledger trends the fiscal 2026 General Fund about <b>$1.74 million in the red</b> before transfers (fiscal 2025's audited gap was $2.65 million). The cost package alone ($760,000) covers less than half of it. Add the full rate restore and the plan clears the whole trending gap with about <b>$721,000 a year to spare</b>, before a single leaked student comes back. It balances the budget, ends the capital sweep, and closes nothing.</p>
-<p><b>What the surplus buys.</b> At those same default settings, the surplus pays a <b>5 percent raise for every certified teacher</b> (about $507,000 a year) and still leaves about $214,000 for debt, roughly <b>$2.8 million of new bonds</b> on top of the <b>$32 million of bonding capacity</b> the district's own financial advisor presented in June 2026, capacity that is real only if the restricted stream pays for buildings instead of being swept into operations (the $1.32 million-a-year sweep consumes about $17 million of it). Together, about <b>$35 million of building capacity</b>, a raise, and every school open. Enrollment is pure upside on top: every 100 leaked students recovered add <b>$422,600 a year</b>, and the slider runs to the full measured pool of 550. Every step is a live formula in the model's Alternatives tab. That is the transformative version of Bourbon County Schools, and it closes nothing.</p>
-<div class="slider-row"><label>Leaked students recovered, district-wide (of the 450 to 550 county kids now in homeschool or private school; $4,226 of state revenue each) <output id="oPw">0 students ($0 a year)</output></label>
-<input type="range" id="sPw" min="0" max="550" value="0" step="10"></div>
+<p>The gap the plan must close is the district's own most current number: the June 2026 year-end ledger trends the fiscal 2026 General Fund about <b>$1.74 million in the red</b> before transfers (fiscal 2025's audited gap was $2.65 million). The floor is already enough: the cost package at its low end plus the full rate restore clears the whole trending gap with about <b>$721,000 a year to spare</b> before a single leaked student comes back, funding the 5 percent raise with roughly $2.8 million of new bonds left, about $35 million of capacity with the advisor's $32 million. It balances the budget, ends the capital sweep, and closes nothing.</p>
+<p><b>What the surplus buys.</b> The calculator opens at the plan's central case: <b>half the measured pool recovered, 275 of 550 students</b>, worth $1,162,150 a year at $4,226 each. That runs about <b>$1.88 million a year ahead</b> of the trending gap: a <b>5 percent raise for every certified teacher</b> (about $507,000 a year) with about $1.38 million left for debt, roughly <b>$17.9 million of new bonds</b> on top of the <b>$32 million of bonding capacity</b> the district's own financial advisor presented in June 2026, capacity that is real only if the restricted stream pays for buildings instead of being swept into operations (the $1.32 million-a-year sweep consumes about $17 million of it). Together, about <b>$50 million of building capacity</b>, a raise, and every school open. Every 100 recovered students move the number by <b>$422,600 a year</b>; the slider runs from zero to the full 550. Every step is a live formula in the model's Alternatives tab. That is the transformative version of Bourbon County Schools, and it closes nothing.</p>
+<div class="slider-row"><label>Leaked students recovered, district-wide (of the 450 to 550 county kids now in homeschool or private school; $4,226 of state revenue each) <output id="oPw">275 students ($1,162,150 a year)</output></label>
+<input type="range" id="sPw" min="0" max="550" value="275" step="5"></div>
 <div class="slider-row"><label>Fixed-cost package (attrition, admin, routes, energy) <output id="oPc">$760,000</output></label>
 <input type="range" id="sPc" min="760000" max="1300000" value="760000" step="10000"></div>
 <div class="slider-row"><label>2018 rate restore used <output id="oPr">100% ($1,699,479)</output></label>
@@ -543,7 +543,7 @@ footer a{color:var(--ice)}
 <div class="slider-row"><label>Raise for every certified teacher <output id="oPt">0%</output></label>
 <input type="range" id="sPt" min="0" max="10" value="0" step="1"></div>
 <div class="result">
-<div class="big" id="rPlan">$720,826</div>
+<div class="big" id="rPlan">$1,882,976</div>
 <div class="sub">surplus per year after closing the trending $1.74 million fiscal 2026 gap</div>
 <div class="verdict" id="rPlanVerdict"></div>
 </div>
@@ -562,7 +562,7 @@ footer a{color:var(--ice)}
 <div class="roads">
 <div class="road close"><div class="t">Close NMES</div><div class="n">-$130,749</div><div class="s">a year: the default closure scenario, the superintendent's own stance (all staff retained; the weighted median loses $20,007)</div></div>
 <div class="road grow"><div class="t">Grow NMES</div><div class="n">+$141,780</div><div class="s">a year: the default growth scenario, the median of 19,683 weighted scenarios</div></div>
-<div class="road plan"><div class="t">Grow the district</div><div class="n">+$2.5M</div><div class="s">a year: the Part Two plan with costs at the low end and the full 2018 restore, clearing the trending $1.74 million gap with $721,000 to spare</div></div>
+<div class="road plan"><div class="t">Grow the district</div><div class="n">+$3.6M</div><div class="s">a year: the Part Two plan at its default settings (half the leakage pool recovered, costs low, full 2018 restore), clearing the trending $1.74 million gap with $1.9 million to spare</div></div>
 </div>
 <p>Close the county's best-scoring school for a median result that loses money, and tell every family watching that this district answers decline with retreat. Or grow: fill the seats, cut the real fixed costs, fix the rate, and compete for families this county never lost. <b>The numbers are not close.</b></p>
 </div></section>

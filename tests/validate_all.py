@@ -407,7 +407,7 @@ def main():
                    "This scenario lands at about the", "19,683 weighted scenarios",
                    "The default reflects the superintendent's written statement",
                    "the median of the 19,683 weighted scenarios: 30 added students",
-                   'value="140"', "Grow the district", "+$2.5M"]:
+                   'value="140"', "Grow the district", "+$3.6M"]:
         chk(needle in html, f"v4.5 review round: {needle}")
     chk("Either way: a preschool pipeline" not in html,
         "the 'Either way' pipeline sentence removed from ask two")
@@ -418,14 +418,16 @@ def main():
     for needle in ['id="sPw"', 'id="sPc"', 'id="sPr"', 'id="sPt"', 'id="rPlan"',
                    "surplus per year after closing the trending $1.74 million fiscal 2026 gap",
                    "$4,226 of state revenue net of supplies", "shared with Paris Independent",
-                   'min="0" max="550" value="0"', "13.008",
+                   'min="0" max="550" value="275"', "13.008",
                    'id="rTax"', "To make up a loss this size with taxes instead",
                    "$15.69 a month for 8.9 cents",
                    'id="youClose"', 'id="youGrow"', "percentile scale",
                    "gold marker is your scenario"]:
         chk(needle in html, f"plan calculator / tax line / percentile bars: {needle}")
     chk(760000 + 1699479 - 1738653 == 720826,
-        "plan default surplus recomputes to $720,826 (no recovery, low costs, full restore)")
+        "plan zero-recovery floor recomputes to $720,826 (no recovery, low costs, full restore)")
+    chk(275 * 4226 == 1162150 and 1162150 + 760000 + 1699479 - 1738653 == 1882976,
+        "plan default surplus recomputes to $1,882,976 (half the pool, low costs, full restore)")
     chk(550 * 4226 == 2324300 and 100 * 4226 == 422600,
         "leakage lever recomputes: the 550-student pool at $4,226 each, $422,600 per 100")
     chk(abs(25432349.78 - 3328472.47 - 1409590.27 - 20694287.04) < 0.02
@@ -491,7 +493,10 @@ def main():
         "plan raise cost recomputes: 5 percent of the certified payroll with the 1.45 percent load")
     _cap = (720826 - 10000388 * 0.05 * 1.0145) * 13.008 + 32000000
     chk(34_600_000 < _cap < 35_000_000,
-        "plan capacity recomputes to about $35 million at the defaults (advisor-anchored)")
+        "plan capacity recomputes to about $35 million at the zero-recovery floor (advisor-anchored)")
+    _cap_def = (1882976 - 10000388 * 0.05 * 1.0145) * 13.008 + 32000000
+    chk(49_700_000 < _cap_def < 50_100_000,
+        "plan capacity recomputes to about $50 million at the central-case default (half the pool)")
     _cap_top = (550 * 4226 + 1300000 + 1699479 - 1738653 - 10000388 * 0.05 * 1.0145) * 13.008 + 32000000
     chk(71_900_000 < _cap_top < 72_200_000,
         "plan slider top ends recompute (full 550-student pool): about $72 million")

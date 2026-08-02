@@ -176,17 +176,23 @@ def main():
         # --- The plan, priced: calculator ---
         rplan = pg.text_content("#rPlan").strip()
         pverd = pg.text_content("#rPlanVerdict").strip()
-        if rplan == "$720,826" and "$32 million of bonding capacity" in pverd:
-            ok("plan calculator default: no recovery + low costs + full restore clear the trending gap by $720,826; advisor capacity cited")
-        else: bad(f"plan defaults: {rplan} / {pverd[:100]}")
+        opw0 = pg.text_content("#oPw").strip()
+        if rplan == "$1,882,976" and "$32 million of bonding capacity" in pverd and opw0 == "275 students ($1,162,150 a year)":
+            ok("plan calculator default: half the pool (275) + low costs + full restore run $1,882,976 ahead of the trending gap")
+        else: bad(f"plan defaults: {rplan} / {opw0} / {pverd[:100]}")
         pg.fill("#sPt", "5"); pg.dispatch_event("#sPt", "input")
         pverd5 = pg.text_content("#rPlanVerdict")
-        if "Pays the 5 percent raise" in pverd5 and "$2.8 million of new bonds" in pverd5 and "34.8 million of building capacity" in pverd5:
-            ok("plan defaults afford the 5% raise: $2.8M bonds, $34.8M advisor-anchored capacity")
+        if "Pays the 5 percent raise" in pverd5 and "$17.9 million of new bonds" in pverd5 and "49.9 million of building capacity" in pverd5:
+            ok("plan default affords the 5% raise: $17.9M bonds, $49.9M advisor-anchored capacity")
         else: bad(f"plan default raise: {pverd5[:110]}")
+        pg.fill("#sPw", "0"); pg.dispatch_event("#sPw", "input")
+        pverd5f = pg.text_content("#rPlanVerdict")
+        if "Pays the 5 percent raise" in pverd5f and "$2.8 million of new bonds" in pverd5f and "34.8 million of building capacity" in pverd5f:
+            ok("plan zero-recovery floor still affords the 5% raise: $2.8M bonds, $34.8M capacity")
+        else: bad(f"plan floor raise: {pverd5f[:110]}")
         pg.fill("#sPr", "60"); pg.dispatch_event("#sPr", "input")
         if "up to about a 0 percent raise" in pg.text_content("#rPlanVerdict"):
-            ok("plan calculator caps the raise honestly (5% unaffordable at a partial restore)")
+            ok("plan calculator caps the raise honestly (5% unaffordable at zero recovery and a partial restore)")
         else: bad(f"plan raise cap: {pg.text_content('#rPlanVerdict')[:90]}")
         pg.fill("#sPr", "100"); pg.dispatch_event("#sPr", "input")
         pg.fill("#sPw", "550"); pg.dispatch_event("#sPw", "input")
