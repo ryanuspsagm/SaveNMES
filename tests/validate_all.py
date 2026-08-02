@@ -502,6 +502,34 @@ def main():
     for needle in ["every 50 students lost take about $1 million of bonding capacity",
                    "2,174", "$32 million"]:
         chk(needle in html, f"Baird figures on the site: {needle}")
+    # v4.5 round 6: district-specific leakage, reserve comparison, family survey, attendance labeling
+    chk(171 + 76 == 247 and 436 - 247 == 189 and 236 * 4226 == 997336
+        and 450 * 4226 == 1901700 and 550 * 4226 == 2324300,
+        "district-specific leakage recomputes: 247 out vs 436 in (net +189); 236 homeschool at $4,226 = $997,336; county band $1.9M-$2.3M")
+    for needle in ["236 students in Bourbon County Schools' own files", "up from 156 in 2018-19",
+                   "net import of 189", "$1.9 to $2.3 million",
+                   "Bourbon already wins that competition"]:
+        chk(needle in html, f"leakage card, district-specific: {needle}")
+    chk("$2.1 to $2.3 million" not in html,
+        "the mixed-basis leakage band is retired (re-derived at the symmetric $4,226)")
+    chk(abs(4290840 / 29097404 * 100 - 14.7) < 0.05 and abs(28361786 / 685348803 * 100 - 4.1) < 0.05
+        and abs(26449318 - 29097404 + 2648086) < 1 and abs(5516305 - 1225465 - 4290840) < 1,
+        "reserve comparison recomputes from both audits: Bourbon 14.7 vs Fayette 4.1 cents per dollar; Bourbon's audit walk closes")
+    for needle in ["14.7 cents of reserve per dollar", "$4,290,840", "Reserves remaining per dollar spent"]:
+        chk(needle in html, f"Fayette card reserve comparison: {needle}")
+    chk((REPO / "build" / "bourbon_audit_fy2025.pdf").exists(),
+        "the Bourbon FY2025 audit is archived behind the gap and reserve figures")
+    for needle in ['id="famSurvey"', 'id="svKids"', 'id="svFrom"', 'id="svTo"', 'name="svChoice"',
+                   "formsubmit.co/ajax", "> Homeschool</label>", "Private school",
+                   "Another district (Paris Independent or out of county",
+                   "no name, no email, no tracking",
+                   "if the school closes, what would you actually do?"]:
+        chk(needle in html, f"family survey wired on the site: {needle}")
+    chk("SEEK pays on attendance, not on enrollment headcount" in html
+        and "funded attendance" in html and "funded attendance" in t
+        and "2,174.3 in funded" in t and "fewer funded students" not in html
+        and "fewer funded students" not in t,
+        "SEEK figures labeled as funded attendance, never conflated with enrollment")
     chk("$142,800" not in html and "$67,124" not in html and "$118,650" not in html
         and "$102,780" not in html and "$125,150" not in html,
         "all superseded growth-grid medians are gone from the site")
@@ -616,12 +644,14 @@ def main():
                    "recalled by the voters it taxes",
                    "recalled by the children it displaces"]:
         chk(needle in t, f"PDF beyond-4% levy options intact: {needle}")
-    for needle in ["KRS 160.470",
-                   "recalled by the voters it taxes",
-                   "recalled by the children it displaces"]:
-        chk(needle in html, f"site levy-restore block intact: {needle}")
-    chk("Bath County's building nickel" in html and "November 2024" in html,
-        "site recall record: the one neighboring defeat (Bath nickel) named with dates")
+    for needle in ["KRS 160.470", "not a ceiling", "$1.0 to $2.5 million a year",
+                   "41.0-cent General Fund share",
+                   "verified against KDE's own levied-rate file"]:
+        chk(needle in html, f"site levy-restore block (simplified, beyond-2018 stated): {needle}")
+    chk("Bath County's building nickel" not in html and "recall record" not in html,
+        "the recall-record note is retired from the site (report keeps it)")
+    chk(round(7829060 / 41.0 * 8.9) == 1699479 and abs(41.0 + 5.7 + 5.7 - 52.4) < 0.01,
+        "levy revenue verifies: $7,829,060 at the 41.0-cent GF share yields $190,953 per cent, $1,699,479 for 8.9 cents; 41.0 plus two 5.7 nickels = the printed 52.4")
     chk("4 percent option" not in html and 'id="sYrs"' not in html,
         "4 percent option framing removed from the site")
     chk("Bath County" in t and "January 2025" in t,

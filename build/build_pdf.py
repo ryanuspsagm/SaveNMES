@@ -918,8 +918,9 @@ P("A note on the transfers line: “net transfers and other sources” of roughl
 H2("Why it happened", need=4.0)
 fig("chart_cliff.png",
     "Figure 10. The two revenue shocks. Federal revenue in the governmental funds fell $2.95 million from FY2023 to "
-    "FY2025 as ESSER pandemic aid expired, and attendance-based state funding fell with roughly 248 fewer funded "
-    "students. Sources: audited financial statements; SEEK attendance figures reported in the audits.")
+    "FY2025 as ESSER pandemic aid expired, and attendance-based state funding fell as funded average daily "
+    "attendance dropped by roughly 248 (attendance, not enrollment headcount). Sources: audited financial "
+    "statements; SEEK attendance figures reported in the audits.")
 P("Three forces converged. One-time federal pandemic relief, the ESSER programs, wound down, taking about "
   "$2.95 million a year with it while the staff and programs it paid for remained. Average Daily Attendance, the "
   "basis of Kentucky's SEEK funding formula, fell from a pandemic hold-harmless figure of 2,490 to 2,243, a "
@@ -1005,8 +1006,9 @@ P("In June 2026 the district's financial advisor, Robert W. Baird and Co., prese
   "$430,000 net debt-service step. Two of Baird's own sensitivities matter to this decision. First, "
   "<b>a loss of 50 students drops capacity to $31 million</b>: about $20,000 of building capacity walks "
   "out with every student, which prices the enrollment risk of a closure in the district's own advisor's "
-  "terms. Second, the presentation is built on the state's 2026-27 SEEK forecast of 2,174.3 funded "
-  "students, and the state's own SEEK files, archived in this repository beside the presentation, verify it "
+  "terms. Second, the presentation is built on the state's 2026-27 SEEK forecast of 2,174.3 in funded "
+  "attendance (AADA plus growth, the attendance measure SEEK pays on, not enrollment headcount), and the "
+  "state's own SEEK files, archived in this repository beside the presentation, verify it "
   "line by line: the forecast report carries Bourbon County at 2,174.3 with the same $2,400,209,505 "
   "assessment Baird prints, down from the 2,222.8 the same state series funded in fiscal 2026 and the "
   "2,209.4 attended in fiscal 2025: the slide the growth plan exists to reverse. None of "
@@ -1730,7 +1732,13 @@ P("<b>Version 4.5, August 2.</b> Both scenario grids now carry explicit lever di
   "supporting data. A later round re-based the plan calculator twice over: the enrollment lever now prices "
   "recovered leakage students directly, zero to 550 at $4,226 each, and the plan is measured against the "
   "trending fiscal 2026 gap, $1,738,653 on the district's own June 2026 year-end ledger, beside the audited "
-  "fiscal 2025 gap of $2,648,086 it improves on.", note)
+  "fiscal 2025 gap of $2,648,086 it improves on. The same round added the family survey to the website, made "
+  "the leakage picture district-specific (236 students in Bourbon's own homeschool files at $4,226 each, "
+  "about $1.0 million a year; a net import of 189 on public-school transfers), re-derived the county leakage "
+  "band at the symmetric $4,226 cell ($1.9 to $2.3 million, from $2.1 to $2.3 million), added the audited "
+  "reserve comparison to the Fayette card (Bourbon 14.7 cents of fund balance per dollar spent, Fayette 4.1), "
+  "and re-labeled every SEEK figure as funded attendance rather than students, since SEEK pays on attendance, "
+  "not enrollment.", note)
 P("<b>Version 4.4, August 1.</b> The growth model rebuilt on the district's own standards: the first 25 "
   "added students fill seats already open at its own Appendix B class caps, teachers are hired per full "
   "new class at a selectable pace (1 per 18, 21, or 24, each a real classroom count), support staff rides "
@@ -1891,7 +1899,9 @@ srcs = [
  "recallable nickels, including Bourbon County's August 17, 2023 recallable levy; and KDE SEEK payment "
  "schedules FY2025 through FY2027 for the equalization phase-in on that nickel",
  "Bourbon County Schools, Annual Financial Report and audit, fiscal 2025 (certified real and personal "
- "property assessment of $1,843,569,625 and General Fund property tax collections of $7,829,060)",
+ "property assessment of $1,843,569,625 and General Fund property tax collections of $7,829,060; General Fund "
+ "revenues $26,449,318, expenditures $29,097,404, and an ending fund balance of $4,290,840), archived in this "
+ "repository as build/bourbon_audit_fy2025.pdf",
  "Robert W. Baird and Co., Bonding Capacity Presentation to the Bourbon County Schools Local Planning Committee, June 2026 "
  "($32 million current capacity from $3,252,893 of FY2027 bondable restricted revenues; sensitivities and the outstanding "
  "debt schedule), archived in this repository as build/baird_lpc_june2026.pdf",

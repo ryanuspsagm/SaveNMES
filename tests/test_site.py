@@ -206,6 +206,26 @@ def main():
         else: bad(f"plan shortfall: {pg.text_content('#rPlanVerdict')[:90]}")
         pg.fill("#sPr", "100"); pg.dispatch_event("#sPr", "input")
 
+        # --- family survey: validation paths, then the send path with fetch stubbed ---
+        pg.click("#svSubmit")
+        if "Please answer all three questions" in pg.text_content("#svStatus"):
+            ok("survey blocks an empty submit with a plain message")
+        else: bad(f"survey empty submit: {pg.text_content('#svStatus')[:80]}")
+        pg.select_option("#svKids", "2")
+        pg.select_option("#svFrom", "2030"); pg.select_option("#svTo", "2028")
+        pg.check('input[name="svChoice"][value="Homeschool"]')
+        pg.click("#svSubmit")
+        if "last year cannot be before the first year" in pg.text_content("#svStatus"):
+            ok("survey rejects a reversed year range")
+        else: bad(f"survey year order: {pg.text_content('#svStatus')[:80]}")
+        pg.evaluate("window.fetch = () => Promise.resolve({ok: true, json: () => Promise.resolve({})})")
+        pg.select_option("#svTo", "2034")
+        pg.click("#svSubmit")
+        pg.wait_for_function("document.getElementById('svStatus').textContent.indexOf('Thank you') === 0")
+        if "2 kid(s), 2030 to 2034, Homeschool" in pg.text_content("#svStatus"):
+            ok("survey happy path posts the three answers and confirms them back (fetch stubbed)")
+        else: bad(f"survey send: {pg.text_content('#svStatus')[:100]}")
+
         # --- 2018-rate restore slider (the only revenue lever on the site) ---
         gone4 = pg.evaluate("['sYrs','rLevy','rLevyVerdict'].filter(i=>document.getElementById(i)).length")
         if gone4 == 0: ok("4 percent compounder removed from the site")

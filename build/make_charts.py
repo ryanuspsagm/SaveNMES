@@ -64,7 +64,7 @@ a2.set_title("Average Daily Attendance (SEEK basis)")
 for x, v in zip(yrs, ada):
     a2.text(x, v + 26, f"{int(v + 0.5):,}", ha="center", fontsize=9, color=NAVY, fontweight="bold")
 a2.set_ylim(2130, 2610); clean(a2)
-a2.text(0.02, 0.05, "about 248 fewer funded students since the\npandemic hold-harmless ended",
+a2.text(0.02, 0.05, "funded attendance down about 248 since the\npandemic hold-harmless ended",
         transform=a2.transAxes, fontsize=8, color=GRAY)
 fig.tight_layout(w_pad=2.6)
 save(fig, "chart_cliff.png")

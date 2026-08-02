@@ -1,4 +1,9 @@
 {
+    "bourbon_audit_fy2025.pdf": {
+        "what": "Bourbon County School District, audited financial statements, fiscal year ended June 30, 2025. General Fund: revenues $26,449,318, expenditures $29,097,404, deficit before transfers ($2,648,086); transfers in $1,630,142, out ($207,521); fund balance $5,516,305 to $4,290,840 (14.7 cents per dollar of GF spending). Verifies the 9.1-cent gap figure and anchors the reserve comparison on the Fayette card.",
+        "source": "KDE district financial reports: education.ky.gov/districts/FinRept/Documents/FY2024-2025 FA Bourbon Co Rev.pdf",
+        "retrieved": "2026-08-02"
+    },
     "fcps_audit_fy2025.pdf": {
         "what": "Fayette County School District, Financial Statements and Reports Required by the Single Audit Act, fiscal year ended June 30, 2025 (LBMC, unmodified opinions). General Fund: revenues $646,441,427, expenditures $685,348,803, revenues less than expenditures ($38,907,376); after transfers and other financing sources the General Fund balance fell $14,929,329, from $43,291,115 to $28,361,786. Basis for the audited side of the Fayette comparison card.",
         "source": "KDE district financial reports: education.ky.gov/districts/FinRept/Documents/FY2024-2025 FA Fayette Co Rev.pdf",

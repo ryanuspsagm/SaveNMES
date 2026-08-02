@@ -338,6 +338,33 @@ footer a{color:var(--ice)}
 </details>
 </div></section>
 
+<section id="survey"><div class="wrap">
+<div class="kicker">Count Yourself</div>
+<h2>NMES families: if the school closes, what would you actually do?</h2>
+<p class="lede">The district's 48 pages assume not one family leaves. The model below prices what leaving costs. This survey measures the real number: if you have children who attend NMES now or would attend it in the future, tell us what your family would most likely do. Three questions, no names, two minutes. Totals will be published on this page and handed to the board before any vote.</p>
+<div class="card">
+<form id="famSurvey">
+<div class="slider-row"><label for="svKids">How many of your children attend or will attend elementary school?</label>
+<select id="svKids" style="padding:8px;border:1px solid var(--line);border-radius:6px;min-width:130px">
+<option value="">Choose</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6 or more</option>
+</select></div>
+<div class="slider-row"><label>Which years will they be in elementary school? (first year in, last year out)</label>
+<select id="svFrom" style="padding:8px;border:1px solid var(--line);border-radius:6px"><option value="">First year</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option><option>2031</option><option>2032</option><option>2033</option><option>2034</option><option>2035</option><option>2036</option><option>2037</option><option>2038</option></select>
+&nbsp;<select id="svTo" style="padding:8px;border:1px solid var(--line);border-radius:6px"><option value="">Last year</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option><option>2031</option><option>2032</option><option>2033</option><option>2034</option><option>2035</option><option>2036</option><option>2037</option><option>2038</option><option>2039</option><option>2040</option><option>2041</option><option>2042</option><option>2043</option></select></div>
+<div class="slider-row"><label><b>If NMES closes, our kids would most likely:</b></label>
+<div style="display:flex;flex-direction:column;gap:8px;margin-top:6px">
+<label style="font-weight:normal"><input type="radio" name="svChoice" value="Stay in Bourbon County Schools"> Stay in Bourbon County Schools (another district school)</label>
+<label style="font-weight:normal"><input type="radio" name="svChoice" value="Homeschool"> Homeschool</label>
+<label style="font-weight:normal"><input type="radio" name="svChoice" value="Private school"> Private school</label>
+<label style="font-weight:normal"><input type="radio" name="svChoice" value="Another district"> Another district (Paris Independent or out of county, free under HB 563)</label>
+</div></div>
+<button class="btn blue" type="submit" id="svSubmit">Send my answer</button>
+<div class="verdict" id="svStatus"></div>
+</form>
+<p class="note">How this works: your three answers go straight to the SaveNMES volunteers' inbox, and nothing else is collected: no name, no email, no tracking. If the send fails, your own email app opens instead with the answer prefilled. Every answer is a data point the board should see before it votes.</p>
+</div>
+</div></section>
+
 <section id="model"><div class="wrap">
 <div class="kicker">Run the Numbers</div>
 <h2>Two calculators. The district's own prices. Your assumptions.</h2>
@@ -442,18 +469,22 @@ footer a{color:var(--ice)}
 <details class="more"><summary>More detail: the three problems, charted</summary>
 <div class="card">
 <h3>1. The money problem</h3>
-<p>The General Fund ran a $2.65 million deficit in fiscal 2025, and the district's own June 2026 ledger trends fiscal 2026 about $1.74 million in the red before transfers: better, still red. Reserves fall about $1.1 million a year. Pandemic aid ended (about $2.95 million a year) and state funding fell with roughly 248 fewer funded students. The district also sweeps $1.32 million a year of restricted capital money into operations. That drains the fund that should pay for buildings. And the slide is not over: the state's own 2026-27 SEEK forecast puts funded attendance at 2,174, down again.</p>
+<p>The General Fund ran a $2.65 million deficit in fiscal 2025, and the district's own June 2026 ledger trends fiscal 2026 about $1.74 million in the red before transfers: better, still red. Reserves fall about $1.1 million a year. Pandemic aid ended (about $2.95 million a year) and state funding fell with attendance: the funded average daily attendance dropped by roughly 248 once the pandemic hold-harmless ended (SEEK pays on attendance, not on enrollment headcount). The district also sweeps $1.32 million a year of restricted capital money into operations. That drains the fund that should pay for buildings. And the slide is not over: the state's own 2026-27 SEEK forecast puts funded attendance at 2,174, down again.</p>
 <div class="chartbox"><canvas id="chartGF" role="img" aria-label="Bar chart of the operating deficit and fund balance, fiscal 2023 to 2025"></canvas></div>
 </div>
 <div class="card">
 <h3>A case study: Fayette is in the headlines. Bourbon's gap is proportionally bigger.</h3>
-<p>Fayette County Public Schools has spent the year in the public spotlight over its finances. Credit where due: Bourbon's audited statements carry <b>clean opinions</b>. Now hold the two districts to the same fiscal year, 2025, both on their audited books, same measure. Fayette's audit shows <b>5.7 cents in the red for every General Fund dollar it spent</b>, the year of all the headlines. Bourbon ran <b>9.1 cents in the red</b>, the third deficit in three years, more than half again Fayette's rate:</p>
-<div class="chartbox"><canvas id="chartFay" role="img" aria-label="Bar chart comparing the fiscal 2025 audited General Fund gap per dollar spent: Bourbon County 9.1 cents versus Fayette County 5.7 cents, both from audited statements, same measure."></canvas></div>
-<p class="note">Basis: each district's FY2025 audited statements, revenues less expenditures before transfers, divided by General Fund spending. Bourbon: a $2,648,086 gap against $29,097,404. Fayette: a $38,907,376 gap against $685,348,803. Fayette's own audit also shows its General Fund balance fell another $14.9 million that year, from <b>$43.3 million to $28.4 million</b>, even after transfers in, in the same year its budget book had planned to hold the fund flat. Both audits are archived in the repository. Nobody is writing headlines about Bourbon. The numbers say they should be.</p>
+<p>Fayette County Public Schools has spent the year in the public spotlight over its finances. Credit where due: Bourbon's audited statements carry <b>clean opinions</b>. Now hold the two districts to the same fiscal year, 2025, both on their audited books, same measures. On the yearly gap, Bourbon is worse: <b>9.1 cents in the red for every General Fund dollar spent</b>, the third deficit in three years, against Fayette's <b>5.7 cents in the red</b> in the year of all the headlines. On the cushion left, Bourbon is stronger: <b>14.7 cents of reserve per dollar of spending</b> still in the bank against Fayette's <b>4.1 cents</b>. Read together, that is the warning: Bourbon is not out of money, it is burning its larger cushion at a faster rate per dollar than the district in the headlines:</p>
+<div class="chartbox"><canvas id="chartFay" role="img" aria-label="Grouped bar chart from the fiscal 2025 audited statements. Yearly General Fund gap per dollar spent: Bourbon County 9.1 cents, Fayette County 5.7 cents. Reserves remaining per dollar spent at June 30, 2025: Bourbon 14.7 cents, Fayette 4.1 cents."></canvas></div>
+<p class="note">Basis: each district's FY2025 audited statements, same two measures. The gap is revenues less expenditures before transfers, over General Fund spending: Bourbon $2,648,086 against $29,097,404; Fayette $38,907,376 against $685,348,803. The reserve is the ending General Fund balance over the same spending: Bourbon <b>$4,290,840</b> (14.7 cents per dollar); Fayette <b>$28,361,786</b> (4.1 cents), after its balance fell another $14.9 million, from <b>$43.3 million to $28.4 million</b>, in the same year its budget book had planned to hold the fund flat. Both audits are archived in the repository. Nobody is writing headlines about Bourbon. The numbers say they should be.</p>
 </div>
 <div class="card">
 <h3>2. The enrollment problem is leakage, not demographics</h3>
-<p>The county's children never left. Census counts: 3,594 kids in 2000, 3,548 in 2020. But district enrollment fell 10.2 percent since 2014. About <b>450 to 550 county kids</b>, 13 to 15 percent, are now in homeschool or private school, including 259 registered homeschoolers, up from 170 five years ago. That is <b>$2.1 to $2.3 million a year</b> in state funding walking past both county districts. This is a competition problem, and competition problems have competition answers.</p>
+<p>The county's children never left. Census counts: 3,594 kids in 2000, 3,548 in 2020. But Bourbon County Schools' enrollment fell 10.2 percent since 2014. Where this district's missing students sit, measured:</p>
+<p>&bull; <b>Homeschool: 236 students in Bourbon County Schools' own files</b> (letters of intent under KRS 159.160), up from 156 in 2018-19, and that is a floor, since filing compliance is incomplete. At $4,226 of state money each, about <b>$1.0 million a year</b>.<br>
+&bull; <b>Private school:</b> St. Mary in Paris, the county's only private school, enrolls 96 (its split between the two districts' zones is not published), and roughly 1,200 new private seats opened within a 25-minute drive.<br>
+&bull; <b>Other districts: Bourbon already wins that competition.</b> 247 residents enroll elsewhere (171 at Paris Independent, 76 out of county), while 436 students transfer in, a net import of 189.</p>
+<p>The leak is not to other districts; it is out of public school entirely. County-wide, about <b>450 to 550 kids</b>, 13 to 15 percent, are in homeschool or private school (registered homeschooling alone is 259 across the two districts, up from 170 five years ago): <b>$1.9 to $2.3 million a year</b> of state funding walking past the public schools, at least a million of it sitting in Bourbon's own homeschool files. This is a competition problem, and competition problems have competition answers.</p>
 <div class="chartbox"><canvas id="chartLeak" role="img" aria-label="Chart comparing Bourbon County school-age population, flat since 2000, against public school enrollment, which falls after 2019"></canvas></div>
 </div>
 <div class="card">
@@ -496,8 +527,7 @@ footer a{color:var(--ice)}
 <div class="sub">recurring revenue per year, from year one</div>
 <div class="verdict" id="rR18Verdict"></div>
 </div>
-<p class="note"><b>The recall record, last ten years, all eight neighboring districts:</b> voters have turned down exactly one school tax, Bath County's building nickel, in November 2024 and again in January 2025. No neighbor has lost an operating rate like this one to a recall. Fayette's 2018 petition drive fell short of the signatures and that tax stood. Bourbon's own voters were offered the petition twice, on both facilities nickels, and never used it. <b>A levy can be recalled by the voters it taxes. A closed school cannot be recalled by the children it displaces.</b></p>
-<p class="note">Basis: about $191,000 per cent of rate, from the district's own $7,829,060 of General Fund tax collections, under KRS 160.470; the restricted building-fund levy is not counted. The full 8.9 cents costs the median homeowner $15.69 a month and scales down from there. One reading note: when property values rise, Kentucky's compensating rate math lowers the printed rate automatically, so a lower printed rate is not by itself a tax cut. Details in the report, Section 11.</p>
+<p class="note">And the 2018 rate is not a ceiling. Under KRS 160.470 the board can levy beyond it, subject to recall, and the report's Section 11 menu prices that range at <b>$1.0 to $2.5 million a year</b>. The restore is the floor of the revenue conversation, not the top. Basis, verified against KDE's own levied-rate file: about <b>$191,000 per cent of rate</b>, the district's own $7,829,060 of audited General Fund property tax collections at its 41.0-cent General Fund share of the real rate (the printed 52.4 cents minus the two 5.7-cent building nickels; the restricted building-fund levy is not counted, and tangible property moves with the rate). The full 8.9 cents costs the median homeowner $15.69 a month and scales down from there. And when property values rise, Kentucky's compensating rate math lowers the printed rate automatically, so a lower printed rate is not by itself a tax cut.</p>
 </div>
 
 <div class="card">
@@ -770,13 +800,15 @@ options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bo
 /* Fayette comparison: yearly GF gap per dollar of spending */
 new Chart(document.getElementById('chartFay'),{type:'bar',
 data:{labels:['Bourbon County, FY2025 (audited)','Fayette County, FY2025 (audited)'],
-datasets:[{label:'Cents of gap per dollar of General Fund spending',data:[9.1,5.7],
-backgroundColor:[NAVY,LGRAY],borderColor:[NAVY,GRAY],borderWidth:1}]},
+datasets:[{label:'Yearly gap, cents per dollar spent',data:[9.1,5.7],
+backgroundColor:NAVY,borderColor:NAVY,borderWidth:1},
+{label:'Reserves left June 30, 2025, cents per dollar spent',data:[14.7,4.1],
+backgroundColor:LGRAY,borderColor:GRAY,borderWidth:1}]},
 options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
-plugins:{legend:{display:false},
-tooltip:{callbacks:{label:function(c){return c.parsed.x.toFixed(1)+' cents of gap per dollar of General Fund spending'}}}},
-scales:{x:{min:0,max:10,grid:{color:'#E3E8F0'},ticks:{callback:function(v){return v+'¢'}},
-title:{display:true,text:'cents of gap per dollar of General Fund spending',font:{size:10}}},
+plugins:{legend:{display:true,position:'bottom',labels:{font:{size:10},boxWidth:14}},
+tooltip:{callbacks:{label:function(c){return c.dataset.label+': '+c.parsed.x.toFixed(1)+'¢ per dollar of General Fund spending'}}}},
+scales:{x:{min:0,max:16,grid:{color:'#E3E8F0'},ticks:{callback:function(v){return v+'¢'}},
+title:{display:true,text:'cents per dollar of General Fund spending, FY2025 audited',font:{size:10}}},
 y:{ticks:{font:{size:10}}}}}});
 
 /* Fourteen years of levies, nine districts */
@@ -1077,6 +1109,30 @@ document.getElementById('rPlanVerdict').textContent=v;
 }
 ['sPw','sPc','sPr','sPt'].forEach(function(id){document.getElementById(id).addEventListener('input',plan)});
 plan();
+
+/* Family survey: three answers, no names. Sends via formsubmit.co relay;
+   falls back to the visitor's own email app if the relay is unreachable. */
+document.getElementById('famSurvey').addEventListener('submit',function(e){
+e.preventDefault();
+var st=document.getElementById('svStatus');
+var kids=document.getElementById('svKids').value,
+f=document.getElementById('svFrom').value,
+t=document.getElementById('svTo').value,
+c=document.querySelector('input[name="svChoice"]:checked');
+if(!kids||!f||!t||!c){st.textContent='Please answer all three questions.';return}
+if(+t<+f){st.textContent='The last year cannot be before the first year.';return}
+var btn=document.getElementById('svSubmit');btn.disabled=true;st.textContent='Sending…';
+var body={_subject:'NMES family survey response',children:kids,elementary_years:f+' to '+t,choice_if_closed:c.value};
+fetch('https://formsubmit.co/ajax/ryanuspsagm@gmail.com',{method:'POST',
+headers:{'Content-Type':'application/json','Accept':'application/json'},
+body:JSON.stringify(body)})
+.then(function(r){if(!r.ok){throw new Error()}return r.json()})
+.then(function(){st.textContent='Thank you. Your answer is counted: '+kids+' kid(s), '+f+' to '+t+', '+c.value+'.'})
+.catch(function(){btn.disabled=false;
+st.textContent='The direct send did not go through, so your email app is opening with the answer prefilled. Just press send there.';
+location.href='mailto:ryanuspsagm@gmail.com?subject='+encodeURIComponent('NMES family survey response')+
+'&body='+encodeURIComponent('Children: '+kids+'\nElementary years: '+f+' to '+t+'\nIf NMES closes: '+c.value)});
+});
 
 /* 2018-rate restore slider */
 function r18(){
