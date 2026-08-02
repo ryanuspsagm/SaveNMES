@@ -64,7 +64,7 @@ rows = [
  "  Student density, route-mile math, and busing cost scenarios: Transport_Geo tab (backs Section 9).",
  "",
  "CAVEAT",
- "Prepared by a former NMES King working alongside Claude, an AI research assistant from Anthropic. Built from public records and",
+ "Prepared by a former NMES King and Bourbon County Colonel working alongside Claude, an AI research assistant from Anthropic. Built from public records and",
  "Open Records Requests only. Estimates are labeled; every figure should be re-verified against the cited primary sources before",
  "formal use. Nothing here alleges misconduct by any official.",
 ]

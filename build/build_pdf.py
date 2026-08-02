@@ -115,7 +115,7 @@ A(Paragraph("Prepared for the North Middletown community and the members of the<
 A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
             ParagraphStyle("pf2", fontName="Helvetica", fontSize=9.5, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=6)))
-A(Paragraph("Written by a former NMES King; the analysis and report writing were accelerated with the use of an AI research assistant.<br/>Built from public records and Open Records Requests only.",
+A(Paragraph("Written by a former NMES King and Bourbon County Colonel; the analysis and report writing were accelerated with the use of an AI research assistant.<br/>Built from public records and Open Records Requests only.",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
 A(Paragraph("Version 4.4 &nbsp;\u2022&nbsp; August 1, 2026",
@@ -1794,7 +1794,7 @@ ptext = ("I grew up in this school and in this town, and I cannot overstate what
          "<br/><br/>Bourbon County is no longer my home, or my family's. But the grit and perseverance it and "
          "NMES gave me still remain. Some things are worth fighting for wherever life takes you, and this school "
          "is one of them."
-         "<br/><font size=8.6 color='#555555'>A former NMES King</font>")
+         "<br/><font size=8.6 color='#555555'>A former NMES King and Bourbon County Colonel</font>")
 pbox = Table([[Paragraph(ptext, ParagraphStyle(
     "pnote", fontName="Times-Roman", fontSize=10.6, leading=14.6, textColor=colors.HexColor("#1A1A1A")))]],
     colWidths=[W])
