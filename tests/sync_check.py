@@ -490,23 +490,11 @@ if ("17903*128" in html and "(N-128)*(700+500)" in html and "49150" in html
 else:
     diff("site cost curve missing the full marginal stack, the 25-seat headroom, or the class-size pace")
 
-# ---------- 13. federal EDFacts series (v3.8 amendment) ----------
-ef_arch = json.load(open(f"{REPO}/build/edfacts_school_proficiency_bourbon.json"))
-ef_bad = []
-for key in ("NMES", "BC", "CR", "PE"):
-    m = re.search(r"ef:\{.*?" + key + r":\[([^\]]+)\]", html, re.S)
-    site_vals = [None if x.strip()=="null" else float(x) for x in m.group(1).split(",")]
-    for i, label in enumerate(range(2007, 2026)):
-        syk = f"SY{label-1}-{str(label)[2:]}"
-        rec = ef_arch["data"].get(syk, {}).get(key)
-        want = round((rec["r"]+rec["m"])/2, 1) if rec else None
-        got = site_vals[i]
-        if (got is None) != (want is None) or (want is not None and abs(got-want) > 0.05):
-            ef_bad.append((key, label, got, want))
-if not ef_bad:
-    match("EDFacts site series identical to archived federal extract (4 schools x 10 years)")
+# ---------- 13. federal EDFacts series: retired from the site (v4.4 review); archive kept in build/
+if 'id="tgEF"' not in html:
+    match("EDFacts toggle retired from the site; archived extract remains in build/")
 else:
-    diff(f"EDFacts series mismatches: {ef_bad}")
+    diff("EDFacts toggle still present after retirement")
 
 # site text spot checks
 for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $591,545 to saving $488,631", "closure range prose"),

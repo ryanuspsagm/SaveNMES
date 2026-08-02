@@ -551,8 +551,8 @@ def main():
     chk((REPO / "build" / "kyrc25_acct_bourbon_extract.csv").exists()
         ,
         "2024-25 accountability component extract archived")
-    chk('id="tgEF" checked' in html and "federal EDFacts" in html and "EDFacts" in t,
-        "federal EDFacts series on site (default on) and referenced in PDF")
+    chk('id="tgEF"' not in html and "EDFacts" in t,
+        "EDFacts series retired from the site; kept in the report")
     chk((REPO / "build" / "edfacts_school_proficiency_bourbon.json").exists()
         ,
         "EDFacts extract archived")
