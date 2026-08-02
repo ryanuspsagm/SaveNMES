@@ -421,8 +421,7 @@ def main():
     # v4.5 round 3: plan calculator, tax-compensation line, percentile-scale bars
     for needle in ['id="sPw"', 'id="sPc"', 'id="sPr"', 'id="sPt"', 'id="rPlan"',
                    "surplus per year after closing the trending $1.74 million fiscal 2026 gap",
-                   "$4,226 of state revenue net of supplies", "shared with Paris Independent",
-                   'min="0" max="550" value="275"', "13.008",
+                   "at $4,226 each", 'min="0" max="550" value="275"', "13.008",
                    'id="rTax"', "To make up a loss this size with taxes instead",
                    "$15.69 a month for 8.9 cents",
                    'id="youClose"', 'id="youGrow"', "percentile scale",
