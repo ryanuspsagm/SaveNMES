@@ -494,7 +494,7 @@ else:
 # ---------- 12. v3.8: school costs, breakevens, growth plan ----------
 SCt = wb["School_Costs"]
 ok38 = SCt["B14"].value == 19348 and SCt["B15"].value == "=B14*128" and 19348*128 == 2476544
-ok38 &= "$2.5 million federal" in html and "$2,476,544" in pdf_flat and "$8,305" in pdf_flat
+ok38 &= "$933,537" in html and "$2,476,544" in pdf_flat and "$8,305" in pdf_flat
 rev23 = (11808998, 20381341, 9550068, 2454)
 ok38 &= (SCt["C9"].value, SCt["D9"].value, SCt["E9"].value, SCt["B9"].value) == rev23
 ok38 &= abs(rev23[1]/rev23[3] - 8305.4) < 0.5 and abs(2476544/(rev23[1]/rev23[3]) - 298.2) < 0.5

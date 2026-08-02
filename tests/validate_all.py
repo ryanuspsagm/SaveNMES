@@ -619,8 +619,9 @@ def main():
                    "54 to 69", "$2,851", "$5,200", "$4,414",
                    "$760,000 to $1.3 million", "$260,000 to $530,000"]:
         chk(needle in t, f"PDF v3.8 content intact: {needle}")
-    for needle in ["$2.5 million federal", "$760,000 to $1.3 million", "chartCurve"]:
+    for needle in ["$760,000 to $1.3 million", "chartCurve"]:
         chk(needle in html, f"site v3.8/v4.2 content intact: {needle}")
+    chk("spreads district-wide costs across buildings" in t, "the federal all-in allocation caveat lives in the report")
     chk("Medicaid" not in html, "Medicaid removed from the site's expense options")
 
     # ---- v3.9 release content ----
@@ -629,8 +630,9 @@ def main():
                    "7.6 percent", "450 to 550", "13 to 15 percent", "3,594", "3,548",
                    "2,912", "2,616", "$61,937" if "$61,937" in t else "$132,744"]:
         chk(needle in t, f"PDF v3.9 content present: {needle}")
-    for needle in ["$938,690", "450 to 550", "13 to 15 percent", "3,594", "2,616"]:
+    for needle in ["450 to 550", "13 to 15 percent", "3,594", "2,616"]:
         chk(needle in html, f"site v3.9 content present: {needle}")
+    chk("$938,690" in t, "the working-budget cross-check ($938,690) lives in the report")
     chk("one in three" not in html or "an earlier version of this page said one in three" in html,
         "site: the retracted one-in-three share is corrected, not merely repeated")
     chk('id="sTea" min="0" max="3"' in html and 'id="sLeav" min="0" max="100"' in html
