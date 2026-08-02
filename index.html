@@ -323,13 +323,13 @@ footer a{color:var(--ice)}
 <div class="calc-grid">
 <div class="card">
 <h3>Closure: what does it actually net?</h3>
-<p class="note">Seven levers, opening at the median scenario: the building sold, all staff kept in year one and two teachers cut over time (the district's own stance), mid-range busing, and 3 in 10 families leaving. Staffing is priced at the district's own $54,479 rate.</p>
+<p class="note">Seven levers, opening at the district's own stance: the building sold, every position retained (the district says all staff keep their jobs, with savings recovered only as staff across the district leave by attrition), mid-range busing, and 3 in 10 families leaving. Staffing is priced at the district's own $54,479 rate.</p>
 <div class="slider-row"><label>Building costs that stop <output id="oCap">All stop, building sold: $127,039</output></label>
 <input type="range" id="sCap" min="0" max="2" value="2" step="1"></div>
 <div class="slider-row"><label>Fixed positions cut (principal, custodian, library) <output id="oFix">$0: all four keep their jobs</output></label>
 <input type="range" id="sFix" min="0" max="2" value="0" step="1"></div>
-<div class="slider-row"><label>Teachers cut, at the district's $54,479 each <output id="oTea">2</output></label>
-<input type="range" id="sTea" min="0" max="3" value="2" step="1"></div>
+<div class="slider-row"><label>Teachers cut, at the district's $54,479 each <output id="oTea">0</output></label>
+<input type="range" id="sTea" min="0" max="3" value="0" step="1"></div>
 <div class="slider-row"><label>Families who leave the district <output id="oLeav">30% (38 students)</output></label>
 <input type="range" id="sLeav" min="0" max="100" value="30" step="1"></div>
 <div class="slider-row"><label>State add-ons lost per leaver <output id="oAdd">$500</output></label>
@@ -339,8 +339,8 @@ footer a{color:var(--ice)}
 <div class="slider-row"><label>Added busing cost per year <output id="oBus">$63,000</output></label>
 <input type="range" id="sBus" min="20000" max="190000" value="63000" step="1000"></div>
 <div class="result">
-<div class="big" id="rNet">-$21,790</div>
-<div class="sub">net effect per year at these settings (the median scenario)</div>
+<div class="big" id="rNet">-$130,749</div>
+<div class="sub">net effect per year at these settings (the district's own stance: all staff retained)</div>
 <div class="bar-vs" aria-hidden="true"><i id="rBar" style="width:0%"></i></div>
 <div class="verdict" id="rVerdict"></div>
 <div class="verdict" id="rRank" style="margin-top:8px"></div>

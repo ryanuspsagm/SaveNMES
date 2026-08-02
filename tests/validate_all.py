@@ -234,7 +234,7 @@ def main():
                    "Appendix B: The Open Records Checklist", "KRS 157.370",
                    "Boston Public Schools"]:
         chk(needle in t, f"PDF claim intact: {needle}")
-    chk("-$21,790" in html, "site claim intact: -$21,790 median-scenario calculator default")
+    chk("-$130,749" in html, "site claim intact: -$130,749 district-stance calculator default")
     for needle in ["$21,971", "55 percent", "losing $591,545",
                    "saving $488,631", "Millersburg"]:
         chk(needle in html, f"site v4.2 two-tailed range intact: {needle}")

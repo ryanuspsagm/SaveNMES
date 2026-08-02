@@ -78,12 +78,12 @@ def main():
         else: bad("calculator details not open by default")
         net = pg.text_content("#rNet").strip()
         verdict = pg.text_content("#rVerdict").strip()
-        if net == "-$21,790" and "LOSES" in verdict:
-            ok("closure default is the median scenario: -$21,790 (district stance + 30% leakage)")
+        if net == "-$130,749" and "LOSES" in verdict:
+            ok("closure default is the district stance: -$130,749 (all staff retained, 30% leakage)")
         else: bad(f"closure defaults: {net} / {verdict}")
         rank = pg.text_content("#rRank").strip()
-        if "5,832 scenarios" in rank and "50%" in rank and "-$21,971" in rank:
-            ok("live grid-rank readout: 50% at the median default")
+        if "5,832 scenarios" in rank and "28%" in rank and "-$21,971" in rank:
+            ok("live grid-rank readout: 28% at the district-stance default")
         else: bad(f"grid-rank readout: {rank}")
 
         # ceiling: their fullest case

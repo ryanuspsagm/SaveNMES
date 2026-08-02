@@ -47,11 +47,11 @@ central = (CM["C39"].value + CM["C40"].value + CM["C41"].value * 54479.4
 site_capv = re.search(r"var CAPV=\[(\d+),(\d+),(\d+)\]", html)
 site_fixv = re.search(r"FIXV=\[(\d+),(\d+),(\d+)\]", html)
 site_teach = re.search(r"TEACH=108958\.80/2", html)
-site_default = (127039 + 0 + 2*54479.4 - 63000 - 38*(A["B6"].value+500) - 0)
-if round(central) == 54539 and round(site_default) == -21790 and "-$21,790" in html:
-    match("model central case $54,539; site calculator opens at the median scenario (-$21,790, within $181 of the grid median)")
+site_default = (127039 + 0 + 0*54479.4 - 63000 - 38*(A["B6"].value+500) - 0)
+if round(central) == 54539 and round(site_default) == -130749 and "-$130,749" in html:
+    match("model central case $54,539; site calculator opens at the district stance, all staff retained (-$130,749, rank 28%)")
 else:
-    diff(f"closure defaults: model central {central:.0f}, site median-scenario {site_default:.0f} shown: {'-$21,790' in html}")
+    diff(f"closure defaults: model central {central:.0f}, site district-stance {site_default:.0f} shown: {'-$130,749' in html}")
 # growth calculator default: fill to the architect's own 154 (44 added past the
 # 110 base): inside the 25-seat headroom plus a partial class at 1 per 21, so
 # zero teachers and zero support trigger; $1,000 bus, $400 cps, $500 SEEK
