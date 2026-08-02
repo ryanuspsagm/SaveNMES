@@ -524,12 +524,17 @@ def main():
         chk(needle in html, f"Fayette card reserve comparison: {needle}")
     chk((REPO / "build" / "bourbon_audit_fy2025.pdf").exists(),
         "the Bourbon FY2025 audit is archived behind the gap and reserve figures")
-    for needle in ['id="famSurvey"', 'id="svKids"', 'id="svFrom"', 'id="svTo"', 'name="svChoice"',
-                   "formsubmit.co/ajax", "> Homeschool</label>", "Private school",
-                   "Another district (Paris Independent or out of county",
-                   "no name, no email, no tracking",
+    _gform = "docs.google.com/forms/d/e/1FAIpQLSc7XylyQ-tpz6jWPN6GXVFOezVTIVZNb5OxeHjK8Nke7mEfjQ/viewform"
+    for needle in ['id="famSurvey"', f'src="https://{_gform}?embedded=true"',
+                   f'href="https://{_gform}?usp=header"',
+                   ">School Choice Survey</a>",
+                   "open the School Choice Survey in a new tab",
                    "if the school closes, what would you actually do?"]:
-        chk(needle in html, f"family survey wired on the site: {needle}")
+        chk(needle in html, f"School Choice Survey embedded and linked: {needle}")
+    chk(html.index(">School Choice Survey</a>") < html.index('<section id="part1"'),
+        "the School Choice Survey button sits in the hero, above Part One")
+    chk("formsubmit.co" not in html and 'id="svKids"' not in html,
+        "the hand-rolled survey form and relay are fully retired")
     chk("SEEK pays on attendance, not on enrollment headcount" in html
         and "funded attendance" in html and "funded attendance" in t
         and "2,174.3 in funded" in t and "fewer funded students" not in html
