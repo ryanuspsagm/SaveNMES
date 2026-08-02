@@ -430,6 +430,10 @@ def main():
         "the 'Either way' pipeline sentence removed from ask two")
     chk(30 * (4626 + 500 - 400) == 141780,
         "growth default recomputes: 30 added students at central legs = the weighted median")
+    chk("SCOSTV=[20000,28500,37000]" in html and "SPERV=[0,75,50]" in html
+        and html.count("eq/2") == 2,
+        "rank grids exact: growth enumerates all 19,683 (staff-per and staff-cost independent); "
+        "both calculators use tie-aware mid-ranks")
 
     # v4.5 round 3: plan calculator, tax-compensation line, percentile-scale bars
     for needle in ['id="sPw"', 'id="sPc"', 'id="sPr"', 'id="sPt"', 'id="rPlan"',
