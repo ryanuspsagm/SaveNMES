@@ -370,13 +370,14 @@ def main():
         "version history lives in the Downloads section")
     chk("The fill-the-seats planner" not in html and 'id="sRez"' not in html,
         "the seat planner is retired from the site (duplicative of the growth calculator)")
-    chk('<details class="more" open><summary>More detail: the five asks' in html
-        and "5. Stand up three committees" in html
+    chk('<details class="more" open><summary>More detail: the four asks' in html
+        and "5. Stand up three committees" not in html
+        and "A suggestion: three committees" in html
         and "Volunteers from the NMES community stand at the ready" in html,
-        "asks detail opens expanded with the committees as ask five and the volunteer pledge")
-    chk("five things" in html and "Five asks that cost the district nothing" in html
-        and "five asks that cost nothing" in t,
-        "five-asks framing consistent across hero, section, and report")
+        "four NMES-specific asks; committees moved to Part Two as a suggestion")
+    chk("four things" in html and "Four asks that cost the district nothing" in html
+        and "four asks that cost nothing" in t,
+        "four-asks framing consistent across hero, section, and report")
     # v4.2: the closure calculator exposes all seven grid levers, plus the growth calculator
     for lever in ['id="sCap"', 'id="sFix"', 'id="sTea"', 'id="sLeav"',
                   'id="sAdd"', 'id="sProp"', 'id="sBus"']:
@@ -477,7 +478,7 @@ def main():
         "report carries the neighboring recall record (Bath nickel votes)")
     chk("enrollment growth committee" in html.lower() and "fixed-cost committee" in html.lower()
         and "revenue committee" in html.lower(),
-        "the three standing committees are in the asks")
+        "the three standing committees live in Part Two")
     chk("Amazon Future Engineer" in html.lower().replace("amazon future engineer", "Amazon Future Engineer")
         or "Amazon Future Engineer" in html,
         "ask 2 carries the differentiation tools (Amazon Future Engineer)")

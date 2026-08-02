@@ -62,7 +62,7 @@ A(Paragraph(
   "neighboring districts, voters turned down exactly one school tax, a building nickel in Bath County. "
   "<b>Together, the plan is transformative.</b> At its low ends it covers the whole gap, funds a 5 percent "
   "raise for every certified teacher, and frees about $23 million of building capacity. At its top ends: a "
-  "10 percent raise and roughly $52 million. Every school stays open", body))
+  "10 percent raise and roughly $52 million. Every school stays open. A suggestion to run the plan: three committees, enrollment, fixed costs, and revenue; NMES volunteers stand at the ready to help", body))
 
 A(Paragraph("THE CASE AGAINST CLOSURE", kick))
 A(Paragraph("Five answers from the district's own documents", h1))
@@ -106,15 +106,14 @@ A(Paragraph(
   "at kindergarten is lost for thirteen years.", body))
 
 A(Paragraph("THE CHOICE", kick))
-A(Paragraph("Two roads, and five asks that cost nothing", h1))
+A(Paragraph("Two roads, and four asks that cost nothing", h1))
 A(Paragraph(
-  "Shrink to fit, or grow and thrive. On North Middletown, five asks that cost nothing. <b>One,</b> keep "
+  "Shrink to fit, or grow and thrive. On North Middletown, four asks that cost nothing. <b>One,</b> keep "
   "the school Permanent in the facility plan; a plan commits no money, and only Permanent keeps every door "
   "open. <b>Two,</b> give the school the four years to the next plan, with public enrollment targets, "
   "judged on results. <b>Three,</b> let the community fund the building with grants, private money, and "
   "donated labor. <b>Four,</b> say publicly that the district will grow this school; uncertainty is its own "
-  "enrollment killer. <b>Five,</b> stand up three committees to run the growth plan: enrollment, fixed "
-  "costs, and revenue. Volunteers from the NMES community stand at the ready to help. There is no pot of "
+  "enrollment killer. There is no pot of "
   "money these asks would squander: if staff are reassigned, closure frees only the $58,774 utilities line. "
   "A closed school cannot be recalled by the children it displaces. A growth plan can be measured, every "
   "year, by everyone", body))
