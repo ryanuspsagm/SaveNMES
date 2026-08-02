@@ -92,6 +92,10 @@ def main():
         if net == "-$130,749" and "26th percentile" in rank and "5,832 weighted scenarios" in rank:
             ok("closure default -$130,749 (all staff retained); percentile-only readout: 26th")
         else: bad(f"closure defaults: {net} / {rank}")
+        bl0 = (pg.text_content("#blClose").strip(), pg.text_content("#blGrow").strip())
+        if bl0 == ("−$130,749", "+$141,780"):
+            ok("bottom-line tiles open at the default scenarios (-$130,749 close, +$141,780 grow)")
+        else: bad(f"bottom-line defaults: {bl0}")
         gone_verdict = pg.evaluate("['rVerdict','rBar'].filter(i=>document.getElementById(i)).length")
         note_ok = pg.evaluate("document.body.textContent.includes(\"The default reflects the superintendent's written statement\")")
         if gone_verdict == 0 and note_ok:
@@ -112,6 +116,9 @@ def main():
         if pg.text_content("#rNet").strip() == "$484,582":
             ok("closure ceiling $484,582 = grid max (MUNIS fixed base)")
         else: bad(f"closure best case: {pg.text_content('#rNet')}")
+        if pg.text_content("#blClose").strip() == "+$484,582":
+            ok("bottom-line close tile follows the calculator (+$484,582 at the ceiling)")
+        else: bad(f"bottom-line close tile at ceiling: {pg.text_content('#blClose')}")
         if pg.text_content("#rTax").strip() == "":
             ok("tax-compensation line empty when the scenario saves money")
         else: bad(f"tax line should be empty at the ceiling: {pg.text_content('#rTax')[:60]}")
@@ -172,6 +179,9 @@ def main():
         if "No new students" in pg.text_content("#rGroVerdict"):
             ok("growth zero-gain edge case")
         else: bad("growth zero-gain verdict missing")
+        if pg.text_content("#blGrow").strip() == "+$0":
+            ok("bottom-line grow tile follows the calculator (+$0 at zero gain)")
+        else: bad(f"bottom-line grow tile at zero gain: {pg.text_content('#blGrow')}")
 
         # --- The plan, priced: calculator ---
         rplan = pg.text_content("#rPlan").strip()

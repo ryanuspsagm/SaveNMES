@@ -452,10 +452,10 @@ footer a{color:var(--ice)}
 <p class="note">Not one growth scenario loses money; the middle half runs from <b>gaining $94,520 to gaining $182,654</b>. Every input traces to a district document. One script per model in the repository reproduces every number. <b>Your growth scenario: <span id="youGrowTxt">the 50th percentile</span>.</b></p>
 
 <div class="bline">
-<div class="bl-k">The bottom line, both middle cases</div>
+<div class="bl-k">The bottom line: your two scenarios, live from the calculators above</div>
 <div class="bline-grid">
-<div class="bl grow"><div class="t">Grow it</div><div class="n">+$141,780</div><div class="s">a year</div></div>
-<div class="bl close"><div class="t">Close it</div><div class="n">&minus;$20,007</div><div class="s">a year; &minus;$130,749 with all staff retained, the superintendent's stated plan</div></div>
+<div class="bl grow"><div class="t">Grow it</div><div class="n" id="blGrow">+$141,780</div><div class="s">a year at your growth settings; the default is the weighted median, and not one scenario loses</div></div>
+<div class="bl close"><div class="t">Close it</div><div class="n" id="blClose">&minus;$130,749</div><div class="s">a year at your closure settings; the default is the superintendent's stance (all staff retained), and the weighted median loses $20,007</div></div>
 </div>
 </div>
 </div>
@@ -1037,6 +1037,7 @@ document.getElementById('rTax').textContent=net<0
  :'';
 document.getElementById('youClose').style.left=rank+'%';
 document.getElementById('youCloseTxt').textContent='the '+ord(rank)+' percentile ('+money(net)+' a year)';
+document.getElementById('blClose').textContent=(net<0?'−':'+')+money(Math.abs(net));
 }
 ['sCap','sFix','sTea','sLeav','sAdd','sProp','sBus'].forEach(function(id){document.getElementById(id).addEventListener('input',calc)});
 calc();
@@ -1089,6 +1090,7 @@ document.getElementById('youGrow').style.left=grank+'%';
 document.getElementById('youGrowTxt').textContent=gain===0
  ?'no added students yet'
  :'the '+ord(grank)+' percentile ('+money(net)+' a year)';
+document.getElementById('blGrow').textContent=(net<0?'−':'+')+money(Math.abs(net));
 }
 ['sGro','sRat','sTc','sSp','sGb','sCps','sGad'].forEach(function(id){document.getElementById(id).addEventListener('input',growth)});
 growth();
