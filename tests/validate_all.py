@@ -434,8 +434,6 @@ def main():
     for needle in ["KY5=18051", "DIST5=17090", "$18,051", "$17,090",
                    "More students means a lower cost per student"]:
         chk(needle in html, f"curve card five-year averages: {needle}")
-    chk(abs(474956.45 + 128035.50 + 33663.60 + 673.48 - 637329.03) < 0.02,
-        "bridge recomputes: about $637,000 of instructional payroll the claim leaves out")
     chk(abs(115397.25 + 49655.38 + 49051.77 - 214104.40) < 0.02,
         "MUNIS fixed-position base recomputes to $214,104.40")
     import json as _json
@@ -447,7 +445,6 @@ def main():
     chk((REPO / "build" / "munis_cost_by_org_fy2026.pdf").exists(),
         "the MUNIS Cost by ORG ledger itself is archived")
     for needle in ["Walk the ledger", 'class="walk"', "$1,285,310",
-                   "About $637,000 of instructional and student payroll",
                    "MUNIS ledger", "$933,537",
                    "What actually stops when the building closes",
                    "Where the superintendent's $661,139 comes from, and why it may never show up",
@@ -514,11 +511,16 @@ def main():
     chk((REPO / "build" / "ky_elem_spending_2012_2017.json").exists(),
         "old-era KY elementary averages archived with method and source")
 
-    # the district's $661,139 reconciled block by block against the MUNIS GF actuals
+    # the district's $661,139 taken apart on its own walk (staff retained, supplies move,
+    # what is left is the building block the ledger walk already counts)
     chk(493407 + 107039 + 20000 + 40693 == 661139,
         "the $661,139 decomposition adds up")
-    chk("$493,407 + $107,039 + $20,000 + $40,693 = $661,139" in html,
-        "the $661,139 decomposition stated on the claim card")
+    chk(661139 - 493407 - 40693 == 127039,
+        "the claim walk recomputes: claim minus retained staff minus supplies = $127,039")
+    for needle in ['$661,138.94 MINIMUM', "&minus; $493,407", "&minus; $40,693",
+                   "What is left: building costs and insurance",
+                   "so this saves $0", "already counted in the walk above"]:
+        chk(needle in html, f"claim walk on the site: {needle}")
 
     # kindergartner lifetime funding: tightened range, add-ons at both ends
     chk(13 * 5126 == 66638, "kindergartner floor recomputes: 13 years at $5,126")
