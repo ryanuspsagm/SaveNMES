@@ -965,6 +965,18 @@ P("Two more facts fill in the rest of the picture, and both cut in the community
   "opinions, the fiscal 2026 budget holds a $1,489,853 contingency, well above the state's two-percent minimum, and at "
   "the current pace of drawdown the unassigned reserve lasts roughly three more budget cycles. The problem is real. "
   "So is the time to fix it right.")
+H2("A same-year yardstick: Fayette County, on both districts' audits")
+P("Fayette County Public Schools spent the year in the headlines over its money; Bourbon did not. Hold the "
+  "two districts to the same fiscal year, 2025, on their audited statements and the same two measures, both "
+  "audits archived in this repository. The yearly gap, revenues less expenditures before transfers over "
+  "General Fund spending: Bourbon ran <b>9.1 cents in the red per dollar spent</b> ($2,648,086 against "
+  "$29,097,404), its third deficit in three years, against Fayette's <b>5.7 cents</b> ($38,907,376 against "
+  "$685,348,803) in the year of all the coverage. The cushion, the ending General Fund balance over the "
+  "same spending: Bourbon still holds <b>14.7 cents of reserve per dollar</b> ($4,290,840) against "
+  "Fayette's <b>4.1 cents</b> ($28,361,786), after Fayette's balance fell another $14.9 million, from "
+  "$43.3 million to $28.4 million, in the very year its budget book had planned to hold the fund flat. "
+  "Read together: Bourbon has the larger cushion and is burning it at a faster rate per dollar than the "
+  "district in the headlines.")
 
 # ================= 6. BONDS =================
 H("8. Bonds, Buildings, and Two Different Pots of Money")
@@ -1327,7 +1339,9 @@ P("The students are not hypothetical, and the public record measures the pool th
   "academy.")
 P("The revenue side is symmetric with the closure math in Section 4, on purpose, using the same $4,626 SEEK "
   "base cell in the workbook. A homeschool or private-school student generates no state funding for the "
-  "district today, so each one who enrolls is entirely new money: about $4,226 net of supplies. Filling all "
+  "district today, so each one who enrolls is entirely new money: about $4,226 net of supplies. At that "
+  "cell, the 236 students in this district's own homeschool files alone carry about $1.0 million a year, "
+  "and the county-wide pool of 450 to 550 carries $1.9 to $2.3 million. Filling all "
   "46 open seats at the rated 174 from this pool alone is worth about <b>$213,000 a year gross, roughly "
   "$134,000 to $194,000 net of supplies and the zero to one new section the v3.8 correction prices</b>, and "
   "requires fewer than one in five of the registered homeschoolers, or about one in twenty-five of the "
@@ -1381,7 +1395,9 @@ P("Bourbon County Schools has a structural funding problem: spending has outrun 
   "central case, half the measured pool recovered: 275 of 550 students at the same $4,226 add $1,162,150 a "
   "year, the plan runs about $1.88 million ahead of the trending gap, and after the raise about $1.38 "
   "million services roughly $17.9 million of new bonds, about $50 million of capacity with the advisor's "
-  "$32 million. Every 100 recovered students move the number by $422,600 a year "
+  "$32 million. At the sliders' top, the full 550-student pool with every lever high, the plan runs about "
+  "$3.6 million ahead: the raise plus roughly $40 million of new bonds, about $72 million of capacity. "
+  "Every 100 recovered students move the number by $422,600 a year "
   "in either direction. The building capacity beneath it is no longer this "
   "report's estimate: the district's own advisor rates it at $32 million, capacity that is real only once the "
   "sweep ends, because the sweep spends the very stream the capacity is built on. Together, about $35 "

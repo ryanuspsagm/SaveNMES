@@ -533,6 +533,14 @@ def main():
         chk(needle in html, f"Fayette card reserve comparison: {needle}")
     chk((REPO / "build" / "bourbon_audit_fy2025.pdf").exists(),
         "the Bourbon FY2025 audit is archived behind the gap and reserve figures")
+    for needle in ["on both districts' audits", "9.1 cents in the red per dollar spent",
+                   "14.7 cents of reserve per dollar"]:
+        chk(needle in t, f"Fayette comparison mirrored into the report: {needle}")
+    chk("$1.9 to $2.3 million" in t and "236 students in this district's own homeschool files" in t,
+        "district-specific leakage dollars mirrored into the report")
+    chk("$72 million of capacity" in html and "about $72 million of capacity" in t
+        and "$72 million" in es,
+        "the high-case plan scenario mirrored across site, report, and summary")
     _gform = "docs.google.com/forms/d/e/1FAIpQLSc7XylyQ-tpz6jWPN6GXVFOezVTIVZNb5OxeHjK8Nke7mEfjQ/viewform"
     for needle in ['id="famSurvey"', f'src="https://{_gform}?embedded=true"',
                    f'href="https://{_gform}?usp=header"',

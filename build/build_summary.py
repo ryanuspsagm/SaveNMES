@@ -114,7 +114,8 @@ A(Paragraph(
   "the trending gap with about $721,000 a year to spare: a 5 percent raise for every certified teacher and "
   "about $35 million of building capacity, anchored on the $32 million the district's own advisor presented "
   "in June 2026, before a single leaked student comes back. Recover half the pool and the surplus reaches "
-  "about $1.9 million a year. Every school stays open. Three committees can run it: enrollment, fixed "
+  "about $1.9 million a year; the full pool reaches about $3.6 million and about $72 million of capacity. "
+  "Every school stays open. Three committees can run it: enrollment, fixed "
   "costs, and revenue. NMES volunteers stand ready to help.", body))
 
 A(Paragraph("THE CHOICE", kick))

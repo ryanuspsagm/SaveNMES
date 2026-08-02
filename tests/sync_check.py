@@ -549,7 +549,8 @@ if (surplus == 720826 and abs(raise_cost - 507270) < 2 and abs(bonds - 2777936) 
         and "$35 million" in html and "$507,000" in pdf_flat and "$35 " in pdf_flat
         and "$32 million" in pdf_flat and "$2.8 million" in pdf_flat
         and "$17.9 million" in html and "$17.9 million" in pdf_flat
-        and "$50 million" in html and "$50 million" in pdf_flat):
+        and "$50 million" in html and "$50 million" in pdf_flat
+        and "$72 million" in html and "$72 million" in pdf_flat):
     match("transformative check: floor $721K (raise + $2.8M bonds, ~$35M) and central-case default $1.88M (raise + $17.9M bonds, ~$50M), site+PDF")
 else:
     diff(f"transformative check mismatch: surplus {surplus:.0f}, raise {raise_cost:.0f}, bonds {bonds:.0f}, strings on site: {('$35 million' in html)}")
