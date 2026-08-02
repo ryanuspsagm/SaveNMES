@@ -570,12 +570,10 @@ def main():
     for needle in ["The District Needs Growth, Not Closures", "The Case Against Closing NMES", "Two roads",
                    "107.5", "Eminence", "$79,211", "Permanent", "chartHist", "18940", "19348", "18131"]:
         chk(needle in html, f"site v4 content intact: {needle}")
-    # the district-worksheet netting note shows its own moving parts and they add up
-    chk(107039 + 20000 - 63000 - 13 * 5126 == -2599,
-        "worksheet netting recomputes: 127,039 - 63,000 - 66,638 = -2,599")
-    for needle in ["$127,039 minus $63,000 minus $66,638", "$2,599 a year in the red",
-                   "13 students at $5,126 each is $66,638"]:
-        chk(needle in html, f"worksheet netting note shows the moving parts: {needle}")
+    # the netting conclusion is retired (review, Aug 2); the two report-priced costs stay disclosed
+    chk("$2,599" not in html and "13 students at $5,126 each is $66,638" in html
+        and "prices no added busing and not one leaving family" in html,
+        "claim card keeps the unpriced-costs disclosure; the netting sentence is retired")
 
     # cost history chart: modern era 2018-2025 filled from the archived state files (build/cost_history.py)
     # and the KY elementary average extended back to 2012 (build/ky_elem_spending_2012_2017.json)
