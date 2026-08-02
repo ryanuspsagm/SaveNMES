@@ -44,6 +44,22 @@ header{background:var(--navy);color:var(--chalk);padding:30px 0 16px;position:re
 h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,5.6vw,50px);line-height:1.16;max-width:760px}
 h1 em{font-style:normal;color:var(--ice)}
 .hero-sub{margin-top:12px;color:#C9D4E8;max-width:640px;font-size:17px}
+.stat-strip{display:flex;gap:10px;margin:18px 0 4px;flex-wrap:wrap;max-width:720px}
+.stat{flex:1 1 110px;background:rgba(255,255,255,.07);border:1px solid rgba(157,195,230,.35);border-radius:8px;padding:10px 12px;text-align:center}
+.stat .n{font-family:var(--serif);font-size:clamp(19px,4.5vw,29px);color:#fff;line-height:1.1}
+.stat .n.bad{color:#F0B9B2}.stat .n.good{color:#BFE3BC}
+.stat .l{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--ice);margin-top:5px;line-height:1.35}
+.hero-cta{display:flex;gap:10px;margin:16px 0 4px;flex-wrap:wrap}
+.btn-gold{display:inline-block;background:#F5C242;color:#1F3864;font-weight:700;padding:11px 18px;border-radius:8px;text-decoration:none}
+.btn-ghost{display:inline-block;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55);font-weight:600;padding:10px 18px;border-radius:8px;text-decoration:none}
+nav a[href="#act"]{color:#F5C242;font-weight:700}
+.roads{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 10px;max-width:720px}
+.road{border-radius:10px;padding:16px 12px;text-align:center;border:1px solid rgba(255,255,255,.25)}
+.road .t{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#D9E2F3}
+.road .n{font-family:var(--serif);font-size:clamp(21px,5vw,34px);line-height:1.15;margin-top:4px}
+.road.close{background:rgba(160,60,50,.28)}.road.close .n{color:#F0B9B2}
+.road.grow{background:rgba(70,130,70,.30)}.road.grow .n{color:#BFE3BC}
+.road .s{font-size:12.5px;color:#C9D4E8;margin-top:4px}
 .bluerule{width:72px;height:3px;background:var(--ice);margin:14px 0}
 .statement{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);border-left:4px solid var(--ice);border-radius:6px;margin-top:14px;padding:13px 17px;max-width:760px}
 .statement p{color:#DCE5F4;font-size:15.5px;margin:0 0 9px}
@@ -156,9 +172,18 @@ footer a{color:var(--ice)}
 <h1><em>Save</em> North Middletown Elementary School.</h1>
 <div class="bluerule"></div>
 <p class="hero-sub">On July 15, 2026, a planning committee voted to label NMES "transitional." That is step one toward closing it. We did a deep dive into the public records, and filed Open Records Requests, to analyze this decision and better inform the Board of Education. You can check every number below.</p>
+<div class="stat-strip">
+<div class="stat"><div class="n bad">-$21,971</div><div class="l">a year: the middle closure result</div></div>
+<div class="stat"><div class="n good">+$140,331</div><div class="l">a year: the middle growth result</div></div>
+<div class="stat"><div class="n good">$23M-$52M</div><div class="l">building capacity the growth plan frees</div></div>
+</div>
+<div class="hero-cta">
+<a class="btn-gold" href="https://www.change.org/p/sos-save-our-school-north-middletown-elementary">Sign the petition</a>
+<a class="btn-ghost" href="mailto:larry.begley@bourbon.kyschools.us,bradley.purcell@bourbon.kyschools.us,jonathan.ott@bourbon.kyschools.us,mandy.thornberry@bourbon.kyschools.us,miranda.wyles@bourbon.kyschools.us,shane.buckler@bourbon.kyschools.us?subject=Please%20pause%20the%20North%20Middletown%20Elementary%20vote&body=I%20am%20asking%20the%20Board%20to%20pause%20any%20vote%20on%20North%20Middletown%20Elementary%20until%20the%20ten%20questions%20in%20the%20community%20report%20are%20answered%20in%20writing%20and%20in%20public.">Email the board</a>
+</div>
 <div class="statement">
 <div class="kicker" style="color:var(--ice);margin-bottom:10px">Key Points</div>
-<p><b>The case against closing NMES is clear.</b> It has the county's best test scores. It costs less than the average Kentucky elementary school. We priced closure 5,832 ways using the district's own numbers. The median result <b>loses $21,971 a year</b>, and 55 percent of scenarios lose money.</p>
+<p><b>The case against closing NMES is clear.</b> It has the county's best test scores and costs less than the average Kentucky elementary school. We priced closure 5,832 ways with the district's own numbers, and 55 percent of them lose money.</p>
 <p><b>The district needs growth, not closures.</b> Enrollment is down 10 percent while the county's child count is flat. Costs are up at every school. The tax rate is lower than almost every neighbor's.</p>
 <p><b>We ask the board for five things:</b></p>
 <ol>
@@ -446,6 +471,10 @@ footer a{color:var(--ice)}
 <section id="choice" class="partband"><div class="wrap">
 <div class="kicker">The Decision</div>
 <h2>Two roads.</h2>
+<div class="roads">
+<div class="road close"><div class="t">Close it</div><div class="n">-$21,971</div><div class="s">a year: the middle of 5,832 scenarios</div></div>
+<div class="road grow"><div class="t">Grow it</div><div class="n">+$140,331</div><div class="s">a year: the middle of 19,683 scenarios</div></div>
+</div>
 <p>Close the county's best-scoring school for a median result that loses money, and tell every family watching that this district answers decline with retreat. Or grow: fill the seats, cut the real fixed costs, fix the rate, and compete for families this county never lost. <b>The numbers are not close.</b></p>
 </div></section>
 
