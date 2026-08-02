@@ -145,6 +145,40 @@ st.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#F3F5F
 A(st)
 A(PageBreak())
 
+# ================= CONTENTS =================
+H("Contents")
+toc_style = ParagraphStyle("toc", fontName="Times-Roman", fontSize=10.6, leading=16.5,
+                           textColor=colors.HexColor("#1A1A1A"), leftIndent=14)
+toc_part = ParagraphStyle("tocp", fontName="Helvetica-Bold", fontSize=10.2, leading=15,
+                          textColor=NAVY, spaceBefore=9, spaceAfter=2)
+for part, items in [
+    ("Opening", ["1. Executive Summary", "The Decision in Brief: Two Roads"]),
+    ("Part One: The Case Against Closing NMES",
+     ["2. Academic Performance: The District Would Be Closing Its Best Elementary School",
+      "3. The School Is Not Expensive: The Cost Record",
+      "4. The Million-Dollar Question: What Closing the School Would Actually Save",
+      "5. What Closure Risks: The Record Where It Has Been Tried",
+      "6. What Can't Be Quantified: A Town and Its Heartbeat"]),
+    ("Part Two: The District Needs Growth, Not Closures",
+     ["7. The District's Finances: A Real Problem With Clear Causes",
+      "8. Bonds, Buildings, and Two Different Pots of Money",
+      "9. Where the Money Is Actually Going: Administrative Growth",
+      "10. The Alternatives on the Table: Grow, Don't Close"]),
+    ("The Decision",
+     ["11. The Decision, and the Four Asks"]),
+    ("Back Matter",
+     ["Notes on the Data", "Sources", "Appendix A: Plain-Language Glossary",
+      "Appendix B: Other Supporting Data"])]:
+    A(Paragraph(part, toc_part))
+    for it in items:
+        A(Paragraph(it, toc_style))
+A(Spacer(1, 10))
+P("The order above follows SaveNMES.org section for section: the case against closing, the priced models, "
+  "the district-wide growth plan, and the choice. Figures and tables are numbered in a single sequence "
+  "through the report. Every figure traces to an archived source document and runs as a live formula in the "
+  "companion workbook.", note)
+A(PageBreak())
+
 # ================= 1. EXECUTIVE SUMMARY =================
 H("1. Executive Summary")
 P("On July 15, 2026, the Local Planning Committee of Bourbon County Schools voted to reclassify North "
@@ -260,22 +294,11 @@ P("<b>The levers.</b> First, enrollment: each returning student brings the $4,62
   "nickel 54 to 46 in 2015, and Bourbon's own voters declined even to petition either of this district's two "
   "recallable nickels.")
 
-H2("The choice, and four asks that cost nothing")
-P("Shrink to fit, or grow and thrive. On North Middletown specifically, the asks are modest. <b>One:</b> "
-  "keep the school Permanent in the facility plan with its capital needs at lower priority; a plan commits no "
-  "money, Priority 2 exists for exactly this, and the Transitional label saves nothing while foreclosing "
-  "state facilities eligibility, major renovation, and replacement. <b>Two:</b> give the school and community "
-  "the four years to the next facility plan for a measured enrollment push, against public targets set with "
-  "the board, and judge it on results; the tools are options to weigh, a themed academy in arts, technology, "
-  "or agriculture and outdoor sciences, or a donor-funded promise scholarship that pays every North Middletown "
-  "graduate toward college, trade school, or any certification. <b>Three:</b> let the school and community raise grant-based and "
-  "private funds, with donated services, for the building's critical needs, at no cost to the district. "
-  "<b>Four:</b> state publicly that the district will work to grow this school, because uncertainty is its "
-  "own enrollment killer and a sentence of commitment gives existing and future families the confidence to "
-  "enroll. The honesty behind these asks is already in the district's books: if staff are reassigned rather "
-  "than cut, a closure frees the $79,211 of building costs in its own ledger, and the restricted renovation money is capped by "
-  "enrollment regardless, a ceiling that rises with every recruited student. A closed school cannot be "
-  "recalled by the children it displaces; a growth plan can be measured, every year, by everyone.")
+H2("The choice")
+P("Shrink to fit, or grow and thrive. On North Middletown specifically, the asks are modest, they cost the "
+  "district nothing, and they put no money at risk: if staff are reassigned rather than cut, a closure frees "
+  "only the $79,211 of building costs in the district's own ledger. The four asks that cost nothing are "
+  "stated in full, with their timing, in Section 11.")
 A(PageBreak())
 
 # ================= PART ONE =================
@@ -1348,7 +1371,8 @@ P("Bourbon County Schools has a structural funding problem: spending has outrun 
   "close is also the district's own most current number: its June 2026 year-end ledger trends the fiscal "
   "2026 General Fund at <b>$1,738,653</b> in the red before transfers ($20,694,287 of revenue against "
   "$22,432,940 of spending; the on-behalf entries cancel in the gap, the audit will refine it, and the "
-  "audited fiscal 2025 gap was $2,648,086). With the cost package at its low end, the full 2018 restore, "
+  "audited fiscal 2025 gap was $2,648,086; Section 8 walks the same year-end packet line by line). With "
+  "the cost package at its low end, the full 2018 restore, "
   "and not one student recovered, the plan clears the trending gap with about $721,000 a year to spare, "
   "enough to fund a 5 percent raise for every certified teacher, about "
   "$507,000 a year on the district's own $10.0 million General Fund certified payroll, and still leave about "
@@ -1583,6 +1607,22 @@ tbl(["Plan", "Recurring impact, year 3", "Projected FY2029 balance", "What it re
             "school open, and rebalancing and growing North Middletown ($56,000 to $116,000 a year, Section 10) "
             "is one line inside its menu. Scenarios and Runway tabs of the companion workbook.",
     bold_first_col=True)
+H2("The four asks, in full")
+P("<b>One:</b> keep the school Permanent in the facility plan with its capital needs at lower priority; a "
+  "plan commits no money, Priority 2 exists for exactly this, and the Transitional label saves nothing while "
+  "foreclosing state facilities eligibility, major renovation, and replacement. <b>Two:</b> give the school "
+  "and community the four years to the next facility plan for a measured enrollment push, against public "
+  "targets set with the board, and judge it on results; the tools are options to weigh, a themed academy in "
+  "arts, technology, or agriculture and outdoor sciences, or a donor-funded promise scholarship that pays "
+  "every North Middletown graduate toward college, trade school, or any certification. <b>Three:</b> let the "
+  "school and community raise grant-based and private funds, with donated services, for the building's "
+  "critical needs, at no cost to the district. <b>Four:</b> state publicly that the district will work to "
+  "grow this school, because uncertainty is its own enrollment killer and a sentence of commitment gives "
+  "existing and future families the confidence to enroll. The honesty behind these asks is already in the "
+  "district's books: if staff are reassigned rather than cut, a closure frees the $79,211 of building costs "
+  "in its own ledger, and the restricted renovation money is capped by enrollment regardless, a ceiling that "
+  "rises with every recruited student. A closed school cannot be recalled by the children it displaces; a "
+  "growth plan can be measured, every year, by everyone.")
 asktext = ("<b>The ask, plainly stated:</b> the community requests that the Board of Education pause any vote on "
            "the facility plan, or on the future of North Middletown Elementary, until the closure worksheet, with both sides of "
            "the ledger, is published and the four asks are answered in writing and in public. A pause is fully within the Board's power: boards control "

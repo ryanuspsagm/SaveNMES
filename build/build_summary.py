@@ -34,27 +34,35 @@ A(Paragraph("Executive Summary • The Case Against Closure, the Case for Growth
 A(Paragraph("Version 4.5 • August 2, 2026 • Built from public records and Open Records Requests only • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
 A(HRFlowable(width="100%", thickness=1.1, color=NAVY, spaceAfter=10))
 
-A(Paragraph("PART ONE", kick))
-A(Paragraph("The case against closing NMES: five answers from the district's own documents", h1))
+A(Paragraph("WHAT HAPPENED", kick))
 A(Paragraph(
-  "<b>Performance.</b> North Middletown leads the county in every state-tested subject and is a 2011 National "
-  "Blue Ribbon School, one of five Kentucky public schools honored that year. <b>Cost.</b> The "
-  "district's own Cost of Delivery of Services table, May 21, 2026, prices the school at $19,080 per student "
-  "against a state average of $19,020 on the same table, and within 110 percent of its cheapest same-grade "
-  "peer against the 150 percent standard in the state facilities manual. <b>What closure frees.</b> The "
-  "district's own response prices it: $107,039 of building-bound lines plus $20,000 of insurance, with all "
-  "staff retained in year one by its own appendix; across 5,832 scenarios built on the district's own "
-  "figures and its own $54,479.40 staffing price, the median outcome LOSES $20,007 a year and 55 percent of "
-  "scenarios lose money. <b>The receiving schools.</b> The district's own table shows "
-  "them at 97 and 98 percent of capacity, and the high school at 112 percent. <b>What closure risks.</b> "
-  "Every exit is free and funded under today's rules: HB 563 makes a transfer to any neighboring district "
-  "free to the family and funded for the district that wins the child, registered homeschooling in this "
-  "county has climbed from 170 to 259 in five years, and the statewide virtual academy grew from 937 to "
-  "2,412 students in its first two years. The losses step up with every ten percent of students who leave, "
-  "and the first year is only the start: the missing children move up a grade each year and new kindergartners "
-  "follow their older siblings out, so by the time every grade from kindergarten through twelve is short, the "
-  "yearly loss is more than double the first hit (about $144,000 at ten percent, $420,000 at thirty), and the "
-  "thirteen-year totals run $1.5 million to $4.6 million across those steps:", body))
+  "On July 15, 2026, a planning committee voted to label North Middletown Elementary “transitional.” "
+  "That is the first step toward closing the school. The vote is advisory. The elected Board of Education "
+  "decides. We checked the public records so the Board and the public can see the whole picture before any "
+  "vote. Every number below is sourced in the full report and runs as a live formula in the companion "
+  "workbook.", body))
+
+A(Paragraph("PART ONE", kick))
+A(Paragraph("The case against closing NMES: four facts from the district's own documents", h1))
+A(Paragraph(
+  "<b>Fact one: it is the county's best elementary school.</b> On the state's 2024-25 tests, North "
+  "Middletown ranks first among the county's four elementary schools in every tested subject. It was a "
+  "National Blue Ribbon School in 2011, one of five in Kentucky that year. <b>Fact two: it is not "
+  "expensive.</b> The district's own cost table, dated May 21, 2026, prices the school at $19,080 per "
+  "student. The state average on the same table is $19,020. The gap is three tenths of one percent.", body))
+A(Paragraph(
+  "<b>Fact three: closing it frees very little.</b> Start from everything the district spent on the school "
+  "last year: $1,285,310, from its own ledger. Almost all of it moves with the children or pays for itself. "
+  "Only the building's own costs stop: $79,211 a year if staff keep their jobs, up to $127,039 if the "
+  "building is sold. The superintendent's written response says all staff would be retained, and it prices "
+  "those staff at its own $54,479.40 loaded cost. We priced 5,832 closure scenarios on the district's own "
+  "figures. The middle case LOSES $20,007 a year, and 55 percent of the scenarios lose money.", body))
+A(Paragraph(
+  "<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state money follows each child to "
+  "whichever district wins the family. Registered homeschooling in this county grew from 170 to 259 in five "
+  "years. The state virtual academy grew from 937 to 2,412 students in two years. Every family that leaves "
+  "takes about $5,100 a year of state money with it, and the loss grows as the missing kids reach every "
+  "grade:", body))
 
 step = Table(
     [[Paragraph(c, thead) for c in ["Share who leave", "Students (of 128)",
@@ -71,41 +79,39 @@ step.setStyle(TableStyle([
 A(step)
 A(Spacer(1, 6))
 A(Paragraph(
-  "The children in the building carry about $5.6 million of remaining state funding through grade 12, and "
-  "roughly one in seven students at the middle and high school came through North Middletown. A family lost "
-  "at kindergarten is lost for thirteen years.", body))
+  "The children in the building carry about $5.6 million of state funding through grade 12. One in seven "
+  "students at the middle and high school came through North Middletown. A family lost at kindergarten is "
+  "lost for thirteen years.", body))
+A(Paragraph(
+  "<b>The bottom line, from the two priced models:</b> grow the school and the middle case GAINS $141,780 "
+  "a year, with not one losing scenario in 19,683. Close it and the middle case LOSES $20,007 a year.", body))
 
 A(Paragraph("PART TWO", kick))
 A(Paragraph("The district needs growth, not closures: three levers the board already owns", h1))
 A(Paragraph(
-  "<b>The problem is not one school.</b> Elementary enrollment is down 16.5 percent from its 2016 peak, "
-  "while the county's child count has stayed flat for twenty-five years. Kindergarten intake hit 149 last "
-  "fall, the lowest on the federal record. The General Fund burns through about $1.1 million of reserves a "
-  "year, and the 205 missing elementary students explain most of it: about $948,000 a year of state money. "
-  "The tax side is just as clear. The county's tax base grew 107.5 percent since 2012, second fastest of "
-  "eight area counties. The school levy fell 5.4 percent, the only drop among nine districts. Holding the "
-  "2012 rate would bring in about $613,000 more per year today", body))
+  "<b>The money problem is real, and it is district-wide.</b> The General Fund ran a $2.65 million deficit "
+  "in fiscal 2025. The district's own June 2026 ledger trends fiscal 2026 about $1.74 million in the red: "
+  "better, still red. The causes are plain. Pandemic aid ended. Funded attendance fell by about 248 once "
+  "the pandemic hold-harmless ended. And the revenue posture is unique in the region: the county's tax "
+  "base grew 107.5 percent since 2012, second fastest of eight area counties, while the school levy fell "
+  "5.4 percent, the only drop among nine districts. Every neighbor's base grew too. Their boards raised "
+  "rates anyway.", body))
 A(Paragraph(
-  "<b>Lever one, enrollment.</b> Each returning student brings the $4,626 state base against roughly $400 "
-  "of real new cost. The pool is measured: 259 registered homeschoolers, roughly 450 to 550 county children "
-  "outside the public schools, and 131 nonresident students already choosing this district. Eminence "
-  "Independent proved the model an hour away: it grew 37 percent in the decade Bourbon shrank 13. The tools "
-  "are options to weigh: a themed academy (arts, technology, or agriculture and outdoor sciences) or a "
-  "donor-funded promise scholarship that pays every NMES graduate toward college, trade school, or any "
-  "certification. The growth model prices the push with no free passes: one classroom teacher per full new "
-  "class past the 25 seats already open at the district's own class caps. It pays in every one of 19,683 "
-  "priced scenarios, with a middle case of +$141,780 a year. <b>Lever two, fixed costs.</b> Inspect every "
-  "non-teaching position district-wide and trim by attrition: $340,000 to $425,000 a year. Consider "
-  "restructuring the administration: $224,000 to $450,000. Smarter bus routes: $146,000 to $291,000 on a "
-  "$2.7 million line no routing study has ever tested. Energy contracts: $50,000 to $150,000. "
-  "<b>Lever three, revenue.</b> The rate is simply lower while the tax base more than doubled. Restoring "
-  "the board's own 2018 rate brings in about $1.7 million a year. In the last ten years, across the eight "
-  "neighboring districts, voters turned down exactly one school tax, a building nickel in Bath County. "
-  "<b>Together, the plan is transformative.</b> With costs at the low end and the full rate restore it "
-  "clears the trending fiscal 2026 gap (about $1.74 million on the district's own June 2026 ledger) with "
-  "about $721,000 a year to spare: a 5 percent raise for every certified teacher and about $35 million of "
-  "building capacity, anchored on the $32 million the district's own financial advisor presented in June "
-  "2026, before a single leaked student is recovered. Every school stays open. A suggestion to run the plan: three committees, enrollment, fixed costs, and revenue; NMES volunteers stand at the ready to help", body))
+  "<b>Lever one, enrollment.</b> Each recovered student brings about $4,226 of state money after supplies. "
+  "The pool is measured: 236 students sit in Bourbon's own homeschool files, and 450 to 550 county kids are "
+  "outside the public schools altogether. Eminence Independent proved the model an hour away: it grew 37 "
+  "percent in the decade Bourbon shrank 13. Growth pays in every one of 19,683 priced scenarios, with a "
+  "middle case of +$141,780 a year. <b>Lever two, fixed costs.</b> Trim every non-teaching position by "
+  "attrition: $340,000 to $425,000 a year. Weigh an administrative restructuring: $224,000 to $450,000. "
+  "Smarter bus routes: $146,000 to $291,000 on a $2.7 million line no routing study has ever tested. Energy "
+  "contracts: $50,000 to $150,000. <b>Lever three, revenue.</b> The rate is simply lower while the tax base "
+  "more than doubled. Restoring the board's own 2018 rate brings in about $1.7 million a year, and the rate "
+  "menu beyond it reaches $1.0 to $2.5 million. <b>Together, the plan is transformative.</b> With costs at "
+  "the low end and the full restore, it clears the trending gap with about $721,000 a year to spare: a 5 "
+  "percent raise for every certified teacher and about $35 million of building capacity, anchored on the "
+  "$32 million the district's own advisor presented in June 2026, before a single leaked student comes "
+  "back. Recover half the pool and the surplus reaches about $1.9 million a year. Every school stays open. "
+  "Three committees can run it: enrollment, fixed costs, and revenue. NMES volunteers stand ready to help.", body))
 
 A(Paragraph("THE CHOICE", kick))
 A(Paragraph("Two roads, and four asks that cost nothing", h1))
@@ -115,10 +121,10 @@ A(Paragraph(
   "open. <b>Two,</b> give the school the four years to the next plan, with public enrollment targets, "
   "judged on results. <b>Three,</b> let the community fund the building with grants, private money, and "
   "donated labor. <b>Four,</b> say publicly that the district will grow this school; uncertainty is its own "
-  "enrollment killer. There is no pot of "
-  "money these asks would squander: if staff are reassigned, closure frees only the $58,774 utilities line. "
+  "enrollment killer. These asks put no money at risk: if staff keep their jobs, closing frees only "
+  "$79,211 of building costs on the district's own ledger. "
   "A closed school cannot be recalled by the children it displaces. A growth plan can be measured, every "
-  "year, by everyone", body))
+  "year, by everyone.", body))
 A(HRFlowable(width="100%", thickness=0.8, color=LINE, spaceBefore=6, spaceAfter=6))
 A(Paragraph(
   "The full 58-page report, the financial model with every calculation as live formulas, all archived "
