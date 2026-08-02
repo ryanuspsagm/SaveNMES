@@ -126,6 +126,16 @@ input[type=range]{width:100%;accent-color:var(--royal)}
 .alt td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
 .alt td:last-child{white-space:nowrap;font-weight:600;color:var(--navy)}
 .totalstrip{background:var(--royal);color:var(--chalk);font-family:var(--serif);font-size:19px;padding:11px 16px;border-radius:6px;margin-top:12px;text-align:center}
+.bline{margin-top:16px}
+.bline .bl-k{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:#5B6B85;text-align:center;margin-bottom:8px}
+.bline-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.bline-grid{grid-template-columns:1fr}}
+.bl{border-radius:10px;padding:14px 12px 12px;text-align:center;border:1px solid}
+.bl .t{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.bl .n{font-family:var(--serif);font-size:clamp(26px,6vw,34px);line-height:1.1;margin-top:3px}
+.bl .s{font-size:12.5px;color:#5B6B85;margin-top:5px;line-height:1.45}
+.bl.grow{background:#EDF5EC;border-color:#C7DFC4}.bl.grow .t,.bl.grow .n{color:#2E6B33}
+.bl.close{background:#FAEFEC;border-color:#E7C6BF}.bl.close .t,.bl.close .n{color:#A03C32}
 
 /* Range strip (nontechnical closure range) */
 .range-wrap{margin:16px 0 6px}
@@ -451,7 +461,13 @@ footer a{color:var(--ice)}
 </div>
 <p class="note">Not one growth scenario loses money; the middle half runs from <b>gaining $94,520 to gaining $182,654</b>. Every input traces to a district document. One script per model in the repository reproduces every number. <b>Your growth scenario: <span id="youGrowTxt">the 50th percentile</span>.</b></p>
 
-<div class="totalstrip"><b>The bottom line:</b> grow it and the middle case GAINS $141,780 a year. Close it and the middle case LOSES $20,007, and $130,749 with all staff retained, the superintendent's own stated plan.</div>
+<div class="bline">
+<div class="bl-k">The bottom line, both middle cases</div>
+<div class="bline-grid">
+<div class="bl grow"><div class="t">Grow it</div><div class="n">+$141,780</div><div class="s">a year</div></div>
+<div class="bl close"><div class="t">Close it</div><div class="n">&minus;$20,007</div><div class="s">a year; &minus;$130,749 with all staff retained, the superintendent's stated plan</div></div>
+</div>
+</div>
 </div>
 
 </details>

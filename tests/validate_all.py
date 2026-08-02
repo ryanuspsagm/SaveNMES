@@ -247,7 +247,10 @@ def main():
     # v4.5 consolidated card: both bars, IQR bands, weighting disclosed, bottom line
     for needle in ["Every scenario, side by side", "middle half", 'class="iqr"',
                    "triangular weight", "$137,095", "$98,603", "$94,520", "$182,654",
-                   "The bottom line:"]:
+                   "The bottom line, both middle cases", 'class="bline"',
+                   '<div class="bl grow"><div class="t">Grow it</div><div class="n">+$141,780</div>',
+                   '<div class="bl close"><div class="t">Close it</div><div class="n">&minus;$20,007</div>',
+                   "&minus;$130,749 with all staff retained, the superintendent's stated plan"]:
         chk(needle in html, f"consolidated range card: {needle}")
     chk(html.count('class="iqr"') == 2, "IQR band on both bars")
     chk("$140,331" not in html and "$21,971" not in html,
