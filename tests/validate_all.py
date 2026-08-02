@@ -237,16 +237,16 @@ def main():
     chk("-$130,749" in html and "if all staff are retained" in html
         and "superintendent's written response" in html,
         "all-staff-retained figure shown beside the median and attributed to the superintendent's response")
-    for needle in ["$17,982", "54 percent", "losing $591,545",
-                   "saving $488,631", "Millersburg"]:
+    for needle in ["$20,007", "55 percent", "losing $591,545",
+                   "saving $484,582", "Millersburg"]:
         chk(needle in html, f"site v4.5 two-tailed range intact: {needle}")
-    for needle in ["Figure 7.", "Figure 8.", "losing $591,545", "saving $488,631",
-                   "$17,982", "54 percent", "Millersburg", "119 students",
+    for needle in ["Figure 7.", "Figure 8.", "losing $591,545", "saving $484,582",
+                   "$20,007", "55 percent", "Millersburg", "119 students",
                    "$54,479.40", "$41,718", "747"]:
         chk(needle in t, f"PDF v4.5 two-tailed range intact: {needle}")
     # v4.5 consolidated card: both bars, IQR bands, weighting disclosed, bottom line
     for needle in ["Every scenario, side by side", "middle half", 'class="iqr"',
-                   "triangular weight", "$135,672", "$101,417", "$94,520", "$182,654",
+                   "triangular weight", "$137,095", "$98,603", "$94,520", "$182,654",
                    "The bottom line:"]:
         chk(needle in html, f"consolidated range card: {needle}")
     chk(html.count('class="iqr"') == 2, "IQR band on both bars")
@@ -361,7 +361,7 @@ def main():
     es_path = REPO / "SaveNMES_Executive_Summary.pdf"
     chk(es_path.exists(), "executive summary PDF exists")
     es = " ".join(pg.extract_text() for pg in PdfReader(es_path).pages).replace("\n", " ")
-    for needle in ["$19,080", "$17,982", "54,479.40", "Permanent", "2,412", "5,832"]:
+    for needle in ["$19,080", "$20,007", "54,479.40", "Permanent", "2,412", "5,832"]:
         chk(needle in es, f"executive summary intact: {needle}")
     chk("SaveNMES_Executive_Summary.pdf" in html, "site links the executive summary")
     for gone in ['id="tldr"', 'id="questions"', 'id="roadahead"']:
@@ -434,11 +434,22 @@ def main():
     for needle in ["KY5=18051", "DIST5=17090", "$18,051", "$17,090",
                    "More students means a lower cost per student"]:
         chk(needle in html, f"curve card five-year averages: {needle}")
-    chk(397700 + 107175 + 81442 + 33676 == 619993,
-        "bridge recomputes: about $620,000 of classroom payroll the claim leaves out")
-    for needle in ["What the district leaves out of the $938,690:",
-                   "What the district adds that the $938,690 never held:",
-                   "about $620,000 of classroom payroll"]:
+    chk(abs(474956.45 + 128035.50 + 33663.60 + 673.48 - 637329.03) < 0.02,
+        "bridge recomputes: about $637,000 of instructional payroll the claim leaves out")
+    chk(abs(115397.25 + 49655.38 + 49051.77 - 214104.40) < 0.02,
+        "MUNIS fixed-position base recomputes to $214,104.40")
+    import json as _json
+    _mu = _json.load(open(REPO / "build" / "munis_nmes_fy2026.json"))
+    chk(_mu["nmes_gf_total"] == 933537.06
+        and _mu["derived"]["fixed_positions_base"] == 214104.40
+        and _mu["derived"]["building_within_2610"] == 79211.17,
+        "archived MUNIS extract carries the published GF total, fixed base and building block")
+    chk((REPO / "build" / "munis_cost_by_org_fy2026.pdf").exists(),
+        "the MUNIS Cost by ORG ledger itself is archived")
+    for needle in ["What the district leaves out of the $933,537:",
+                   "What the district adds that the school's ledger never held:",
+                   "about $637,000 of instructional and student payroll",
+                   "MUNIS ledger", "$933,537"]:
         chk(needle in html, f"938-to-661 bridge: {needle}")
     chk(abs(2648086 / 29097404 * 100 - 9.1) < 0.05
         and abs((82507209.57 - 42000000) / 671183390 * 100 - 6.0) < 0.05,
@@ -470,7 +481,7 @@ def main():
 
     # v4.0: the two-roads restructure
     for needle in ["The District Needs Growth, Not Closures", "The Case Against Closing NMES", "Two roads",
-                   "107.5", "Eminence", "$58,774", "Permanent", "chartHist", "18940", "19348", "18131"]:
+                   "107.5", "Eminence", "$79,211", "Permanent", "chartHist", "18940", "19348", "18131"]:
         chk(needle in html, f"site v4 content intact: {needle}")
     # the district-worksheet netting note shows its own moving parts and they add up
     chk(107039 + 20000 - 63000 - 13 * 5126 == -2599,
@@ -490,7 +501,7 @@ def main():
     chk((REPO / "build" / "ky_elem_spending_2012_2017.json").exists(),
         "old-era KY elementary averages archived with method and source")
 
-    # the district's $661,139 reconciled block by block against the $938,690 GF table
+    # the district's $661,139 reconciled block by block against the MUNIS GF actuals
     chk(493407 + 107039 + 20000 + 40693 == 661139,
         "the $661,139 decomposition adds up")
     for needle in ["Reconciling the two numbers", "$493,407 + $107,039 + $20,000 + $40,693 = $661,139"]:
@@ -699,7 +710,7 @@ def main():
         and "10 percent certified raise" in t and "$52 million" in t,
         "top-end claim (10 percent raise, $52 million) on site and in report")
     for claim, section in [("$23 million of building capacity", 'id="grow"'),
-                           ("LOSES $17,982", 'id="model"'),
+                           ("LOSES $20,007", 'id="model"'),
                            ("$4.6 million lifetime revenue loss", 'id="risks"')]:
         chk(html.index(claim) > html.index(section)
             and html.index(claim) < html.index("<details", html.index(section)),

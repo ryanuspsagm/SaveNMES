@@ -68,7 +68,7 @@ def main():
         else: bad(f"only {nmore} section expanders found")
         strip = pg.query_selector(".range-bar")
         labs = pg.text_content(".range-labs") if pg.query_selector(".range-labs") else ""
-        if strip and "loses $591,545" in labs and "saves $488,631" in labs and "loses $17,982" in labs:
+        if strip and "loses $591,545" in labs and "saves $484,582" in labs and "loses $20,007" in labs:
             ok("nontechnical range strip shows worst / middle / best in plain words")
         else: bad(f"range strip missing or labels wrong: {labs[:80]}")
         nbars = pg.evaluate("document.querySelectorAll('.range-bar').length")
@@ -109,8 +109,8 @@ def main():
         pg.fill("#sLeav", "0"); pg.dispatch_event("#sLeav", "input")
         pg.fill("#sProp", "0"); pg.dispatch_event("#sProp", "input")
         pg.fill("#sBus", "20000"); pg.dispatch_event("#sBus", "input")
-        if pg.text_content("#rNet").strip() == "$488,631":
-            ok("closure ceiling $488,631 = grid max")
+        if pg.text_content("#rNet").strip() == "$484,582":
+            ok("closure ceiling $484,582 = grid max (MUNIS fixed base)")
         else: bad(f"closure best case: {pg.text_content('#rNet')}")
         if pg.text_content("#rTax").strip() == "":
             ok("tax-compensation line empty when the scenario saves money")

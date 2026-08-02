@@ -139,8 +139,8 @@ arow(47, "Administrative rollback share of 2-yr growth", 0.5, PCT, "Judgment cal
 arow(48, "Attrition positions, district-wide", 4, NUM, "Judgment call", fill=YEL)
 
 put(a, "A50", "CLOSURE SCENARIO JUDGMENTS (estimates; district must replace with actuals)", SEC)
-arow(51, "School administration avoided (principal, secretary, extended day)", 131724, CUR, "MEASURED v3.9: district FY2026 working budget, location 090, General Fund program 077, excl on-behalf. Was a $175,000 estimate through v3.8.", fill=YEL)
-arow(52, "Plant operations avoided (custodial + utilities, sanitation, water)", 96107, CUR, "MEASURED v3.9: same source, custodial program 087 $37,333 + plant program 987 $58,774. B51+B52 = $227,831, the grid's mothballed case. Was a $115,000 estimate through v3.8.", fill=YEL)
+arow(51, "School administration avoided (principal, office)", 115397, CUR, "MEASURED v4.5: district MUNIS ledger, FY2026 actuals, org 090 functions 2410+2420 (build/munis_extract.py). Was $131,724 from the working budget through the prior release.", fill=YEL)
+arow(52, "Plant operations avoided (custodial + building costs)", 128867, CUR, "MEASURED v4.5: MUNIS ledger, org 090 function 2610 actuals: custodial pay and benefits $49,655 + building utilities, disposal, telecom, supplies and repairs $79,211. Was $96,107 from the working budget.", fill=YEL)
 arow(53, "Teaching positions truly eliminated", 3, NUM, "Estimate; via attrition only", fill=YEL)
 arow(54, "Added busing cost per year", 137500, CUR, "Estimate; midpoint of $75K-$200K", fill=YEL)
 arow(55, "Students leaving the district on closure", 10, NUM, "Judgment call; see sensitivity table", fill=YEL)
@@ -230,7 +230,7 @@ put(c, "A37", "V4.2 TWO-TAILED SENSITIVITY: SEVEN LEVERS, 5,832 COMBINATIONS (ba
 put(c, "A38", "Lever (low / central / high)", BOLDW, fill=HDR); put(c, "B38", "Low", BOLDW, fill=HDR); put(c, "C38", "Central", BOLDW, fill=HDR); put(c, "D38", "High", BOLDW, fill=HDR); put(c, "E38", "Source", BOLDW, fill=HDR)
 v3levers = [
  ("Non-salary capture (their worksheet, + insurance at the full stop)", 53519, 80279, 127039, "District Response Appendix A: $107,039 of building-bound lines (utilities, telecom, maintenance, custodial supplies) captured at 50/75/100 percent, plus its ~$20,000 insurance figure at the full stop. The worksheet's other $40,693 (supplies, books, field trips, printing = $318/student vs our measured $331) travels with the students."),
- ("Fixed positions cut over time (school admin + custodial + library)", 0, 109077, 218154, "Measured lines: $131,724 + $37,333 + $49,097 = $218,154 (the district's own A.1 prices the same four roles at $209,700, within 4 percent, and states all current staff are retained in year one; the full-cut leg is an attrition end state)"),
+ ("Fixed positions cut over time (school admin + custodial + library)", 0, 107052.2, 214104.4, "MUNIS FY2026 actuals: school administration $115,397 + custodial $49,655 + library $49,052 = $214,104 (the district's own A.1 prices the same four roles at $209,700, within 2 percent, and states all current staff are retained in year one; the full-cut leg is an attrition end state)"),
  ("Teachers cut (grid legs 0/1/2/3) x $54,479.40 each", 0, 2, 3, "Priced at the district's OWN fully loaded 0-years-experience figure, $54,479.40 (Response Appendix A.1: 'Elementary Teachers: 2, $108,958.80'). The top leg credits 3 because Appendix B's own classroom count eliminates three homerooms net."),
  ("Added busing", 20000, 63000, 190000, "Derived bottom-up with uncertainty: 2-4 zone buses terminating in Paris (~9-11 road miles farther one-way), 2 loaded + 0-2 deadhead legs daily, 175 days, $3.25-$4.75/mile (KDE/NAPT band), high stop adds one $45,000 route split. Per zone student $160/$492/$1,495 vs the $1,032 district average. The district's routing data was requested and answered N/A."),
  ("Students leaving district (grid legs 0/13/26/38/51/64)", 0, 26, 64, "0 to 50 percent of 128, x ($4,626 SEEK base + the add-ons lever); exits free and funded under HB 563, homeschool and statewide virtual academy growing. CONSERVATIVE: this is the year-one wave only; if the same share of each entering class keeps leaving, the missing students more than double (x13/6) once every grade K-12 is short"),
@@ -242,14 +242,14 @@ for i, (lbl, lo, ce, hi, src) in enumerate(v3levers):
     put(c, f"A{rr}", lbl); put(c, f"B{rr}", lo, BLUE, CUR if lo > 100 else NUM); put(c, f"C{rr}", ce, BLUE, CUR if ce > 100 else NUM); put(c, f"D{rr}", hi, BLUE, CUR if hi > 100 else NUM); put(c, f"E{rr}", src, NOTE)
 put(c, "A47", "Central case: net yearly effect")
 put(c, "B47", "=C39+C40+C41*54479.4-C42-C43*(Assumptions!B6+C44)-C45", BLK, CUR, bold=True)
-put(c, "C47", "$54,539: about 2.1 percent of the structural deficit", NOTE)
+put(c, "C47", "$52,514: about 2.0 percent of the structural deficit", NOTE)
 put(c, "A48", "Unfavorable tail (all levers adverse)")
 put(c, "B48", "=B39+B40+B41*54479.4-D42-D43*(Assumptions!B6+D44)-D45", BLK, CUR)
 put(c, "C48", "-$591,545 a year: the closure loses money", NOTE)
 put(c, "A49", "Favorable tail (all levers favorable)")
 put(c, "B49", "=D39+D40+D41*54479.4-B42-B43*(Assumptions!B6+B44)-B45", BLK, CUR)
-put(c, "C49", "+$488,631 a year: the district's fullest documented case, still below the plan's $800K-$1M requirement", NOTE)
-put(c, "A50", "Distribution of all 5,832 combinations enumerated by build/closure_grid.py: capture, fixed-position, add-ons, property and busing levers take three values each, teachers four (0/1/2/3) and leavers six (0/13/26/38/51/64): 3^5 x 4 x 6 = 5,832. v4.5 lever weights: triangular 1-2-1 on the five levers with a documented central setting; uniform on teachers and leavers, where the record gives no defensible center. Weighted median -$17,982 (the median scenario LOSES money); middle half -$135,672 to +$101,417; 54 percent of weighted scenarios negative; range -$591,545 to +$488,631 (unweighted median -$21,971, 55 percent negative). One-time transition costs $100K-$300K in year one are additional. REBUILT IN v4.2 on the district's own 48-page Response to the 10 Questions (archived build/response_to_the_10_questions.pdf): the capture lever uses its Appendix A worksheet, every staffing position is priced at its own fully loaded $54,479.40 (Appendix A.1), the teacher top leg follows its own Appendix B classroom count, and the leakage lever runs to 50 percent. The v3.9 grid (2,916 scenarios, median +$21,571, 45 percent negative) is retained in the version history.", NOTE, wrap=True)
+put(c, "C49", "+$484,582 a year: the district's fullest documented case, still below the plan's $800K-$1M requirement", NOTE)
+put(c, "A50", "Distribution of all 5,832 combinations enumerated by build/closure_grid.py: capture, fixed-position, add-ons, property and busing levers take three values each, teachers four (0/1/2/3) and leavers six (0/13/26/38/51/64): 3^5 x 4 x 6 = 5,832. v4.5 lever weights: triangular 1-2-1 on the five levers with a documented central setting; uniform on teachers and leavers, where the record gives no defensible center. Weighted median -$20,007 (the median scenario LOSES money); middle half -$137,095 to +$98,603; 55 percent of weighted scenarios negative; range -$591,545 to +$484,582 (unweighted median -$24,431). v4.5 MUNIS pass: the fixed-position lever now uses FY2026 actuals from the district's own ledger ($214,104) instead of working-budget lines ($218,154). One-time transition costs $100K-$300K in year one are additional. REBUILT IN v4.2 on the district's own 48-page Response to the 10 Questions (archived build/response_to_the_10_questions.pdf): the capture lever uses its Appendix A worksheet, every staffing position is priced at its own fully loaded $54,479.40 (Appendix A.1), the teacher top leg follows its own Appendix B classroom count, and the leakage lever runs to 50 percent. The v3.9 grid (2,916 scenarios, median +$21,571, 45 percent negative) is retained in the version history.", NOTE, wrap=True)
 put(c, "A52", "HOSTILE PAPER CASE, PUBLISHED WITH ITS REFUTATION", SEC)
 put(c, "A53", "Every absorbed student priced at the empirical $9,848 marginal")
 put(c, "B53", "=Assumptions!B14*Assumptions!B11-128*Redistricting!B111-137500-10*Assumptions!B6", BLK, CUR)
@@ -679,9 +679,9 @@ put(d, f"F{r}", "Payment is approximately the operating amount the plan frees up
 put(d, f"A{r}", "WHAT EACH SAVINGS ESTIMATE COULD ACTUALLY BOND", SEC); r += 1
 put(d, f"A{r}", "Bond principal supported = annual savings x present-value annuity factor at the rate and term above", NOTE); r += 1
 sav_rows = [
- ("District's own KDE-filed excess cost of NMES vs peer elementaries", 121220, "Above the v4.2 closure model's central case ($54,539); the weighted median itself is negative (-$17,982)"),
- ("Closure model median (v4.5 weighted grid)", -17982, "Closure_Model tab, 5,832-combination grid; the median scenario loses money"),
- ("Closure model best case (v4.2 favorable tail)", 488631, "Closure_Model tab B49"),
+ ("District's own KDE-filed excess cost of NMES vs peer elementaries", 121220, "Above the closure model's central case ($52,514); the weighted median itself is negative (-$20,007)"),
+ ("Closure model median (v4.5 weighted grid)", -20007, "Closure_Model tab, 5,832-combination grid; the median scenario loses money"),
+ ("Closure model best case (favorable tail)", 484582, "Closure_Model tab B49"),
  ("Administration's claim, July 15, 2026", 900000, "Unpublished derivation; reconcile with KDE-filed school-level spending"),
 ]
 for label, sv, note6 in sav_rows:
@@ -806,11 +806,11 @@ put(rw, "B6", "=GF_Summary!D9-GF_Summary!$D$16", BLK, CUR)
 put(rw, "C6", "=B6-GF_Summary!$D$16+0.5*Alternatives!$B$19", BLK, CUR)
 put(rw, "D6", "=C6-GF_Summary!$D$16+Alternatives!$B$19", BLK, CUR)
 put(rw, "E6", "=D6-GF_Summary!$D$16+Alternatives!$B$19", BLK, CUR)
-put(rw, "A7", "Closure only (v4.2 central case, $54,539, from FY2027)")
+put(rw, "A7", "Closure only (central case, $52,514, from FY2027)")
 put(rw, "B7", "=GF_Summary!D9-GF_Summary!$D$16", BLK, CUR)
 for col, prev in zip("CDE", "BCD"):
     put(rw, f"{col}7", f"={prev}7-GF_Summary!$D$16+Closure_Model!$B$47", BLK, CUR)
-put(rw, "A9", "Closure range check (v4.5): at the +$488,631 best case FY2029 ends near $1.2M; at the -$17,982 weighted median the reserves go slightly FASTER than status quo; 54 percent of weighted scenarios lose money and drain reserves faster than doing nothing.", NOTE, wrap=True)
+put(rw, "A9", "Closure range check (v4.5): at the +$484,582 best case FY2029 ends near $1.2M; at the -$20,007 weighted median the reserves go slightly FASTER than status quo; 55 percent of weighted scenarios lose money and drain reserves faster than doing nothing.", NOTE, wrap=True)
 put(rw, "A8", "2% contingency floor (approx., FY2025 basis)")
 for col in "BCDE":
     put(rw, f"{col}8", "=GF_Summary!$D$14", GRN, CUR)

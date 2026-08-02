@@ -436,20 +436,20 @@ print("capacity scenarios done")
 # ---- V3: two-tailed closure spectrum + tornado ----
 fig, (a1, a2) = plt.subplots(2, 1, figsize=(6.9, 5.8), height_ratios=[1, 1.5])
 a1.axvspan(-592, 0, color="#F3E4E0", zorder=0)
-a1.axvspan(0, 489, color="#EAF0E7", zorder=0)
-a1.axvspan(-136, 101, color="#C9D6EA", zorder=1, alpha=0.9)
-a1.plot([-592, 489], [0.5, 0.5], color="#666666", lw=1.2, zorder=2)
-for v, lab in [(-592, "worst case\n\\$592K lost"), (489, "best case\n\\$489K saved")]:
+a1.axvspan(0, 485, color="#EAF0E7", zorder=0)
+a1.axvspan(-137, 99, color="#C9D6EA", zorder=1, alpha=0.9)
+a1.plot([-592, 485], [0.5, 0.5], color="#666666", lw=1.2, zorder=2)
+for v, lab in [(-592, "worst case\n\\$592K lost"), (485, "best case\n\\$485K saved")]:
     a1.plot([v], [0.5], marker="|", markersize=16, color="#444444", zorder=3)
     a1.annotate(lab, xy=(v, 0.5), xytext=(v, 0.16), ha="center", fontsize=7.8)
-a1.plot([-18], [0.5], marker="D", markersize=9, color=NAVY, zorder=4)
-a1.annotate("median: \\$18K LOST", xy=(-18, 0.5), xytext=(-18, 0.68), ha="center", fontsize=8.2, fontweight="bold", color=NAVY)
-a1.annotate("middle half:\n\\$136K lost to \\$101K saved", xy=(-18, 0.5), xytext=(120, 0.06), ha="center", fontsize=7.4, color="#39506e")
+a1.plot([-20], [0.5], marker="D", markersize=9, color=NAVY, zorder=4)
+a1.annotate("median: \\$20K LOST", xy=(-20, 0.5), xytext=(-20, 0.68), ha="center", fontsize=8.2, fontweight="bold", color=NAVY)
+a1.annotate("middle half:\n\\$137K lost to \\$99K saved", xy=(-20, 0.5), xytext=(120, 0.06), ha="center", fontsize=7.4, color="#39506e")
 a1.annotate("the plan needs \\$800K to \\$1M\nfrom the closure", xy=(700, 0.5), xytext=(660, 0.78), ha="center",
             fontsize=7.8, color="#8a4a2b", fontweight="bold",
             arrowprops=dict(arrowstyle="->", color="#8a4a2b", lw=0.9))
 a1.plot([700, 900], [0.5, 0.5], color="#8a4a2b", lw=3, solid_capstyle="butt")
-a1.text(-380, 0.86, "closure loses money in\n54% of scenarios", ha="center", fontsize=7.8, color="#7a3b2e", fontweight="bold")
+a1.text(-380, 0.86, "closure loses money in\n55% of scenarios", ha="center", fontsize=7.8, color="#7a3b2e", fontweight="bold")
 a1.set_xlim(-680, 940); a1.set_ylim(0, 1)
 a1.axvline(0, color="#888888", lw=0.9, linestyle=(0, (3, 2)))
 a1.set_yticks([])
@@ -457,20 +457,20 @@ a1.set_xticks([-600, -400, -200, 0, 200, 400, 600, 800])
 a1.set_xticklabels(["-\\$600K", "-\\$400K", "-\\$200K", "\\$0", "+\\$200K", "+\\$400K", "+\\$600K", "+\\$800K"], fontsize=7.8)
 a1.set_title("Net yearly effect of closing NMES: all 5,832 combinations, on the district's own figures")
 for sp in ("top", "right", "left"): a1.spines[sp].set_visible(False)
-levers3 = [("Families leaving district\n(0 up to 50%)", -140.2, 187.8),
-           ("Fixed positions\n(all kept vs all cut over time)", -54.5, 163.6),
-           ("Added busing (\\$190K down to \\$20K)", -72.5, 97.5),
-           ("Teachers cut (0 up to 3,\nat their \\$54,479.40 each)", -54.4, 109.0),
-           ("Property loss (\\$95K down to \\$0)", 7.0, 102.0),
-           ("Building costs stopped (50 to 100%)", 27.8, 101.3),
-           ("Add-ons per leaver (\\$1,000 down to \\$0)", 41.5, 67.5)][::-1]
+levers3 = [("Families leaving district\n(0 up to 50%)", -142.3, 185.8),
+           ("Fixed positions\n(all kept vs all cut over time)", -54.5, 159.6),
+           ("Added busing (\\$190K down to \\$20K)", -74.5, 95.5),
+           ("Teachers cut (0 up to 3,\nat their \\$54,479.40 each)", -56.4, 107.0),
+           ("Property loss (\\$95K down to \\$0)", 5.0, 100.0),
+           ("Building costs stopped (50 to 100%)", 25.8, 99.3),
+           ("Add-ons per leaver (\\$1,000 down to \\$0)", 39.5, 65.5)][::-1]
 yy = np.arange(len(levers3))
 for i, (lab, lo, hi) in enumerate(levers3):
     a2.barh(i, hi - lo, left=lo, height=0.55, color="#9DC3E6", edgecolor=BLUE, linewidth=0.8)
     a2.text(lo - 6, i, f"{lo:.0f}", ha="right", va="center", fontsize=7)
     a2.text(hi + 6, i, f"{hi:.0f}", ha="left", va="center", fontsize=7)
-a2.axvline(54.5, color=NAVY, lw=1.4, linestyle=(0, (4, 2)))
-a2.text(58, len(levers3) - 0.45, "central case \\$55K", fontsize=7.6, color=NAVY, fontweight="bold")
+a2.axvline(52.5, color=NAVY, lw=1.4, linestyle=(0, (4, 2)))
+a2.text(56, len(levers3) - 0.45, "central case \\$53K", fontsize=7.6, color=NAVY, fontweight="bold")
 a2.axvline(0, color="#888888", lw=0.9, linestyle=(0, (3, 2)))
 a2.set_yticks(yy); a2.set_yticklabels([l[0] for l in levers3], fontsize=7.2)
 a2.set_xlabel("Net yearly effect (\\$K), central case, moving one lever at a time")

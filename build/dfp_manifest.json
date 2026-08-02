@@ -104,5 +104,10 @@
         "what": "Fayette County Public Schools Tentative Budget 2025-26 (23 pages). Carries the figures used in the Fayette comparison card: General Fund $715,685,019 (85.8 percent of the $834,325,808 total budget); GF beginning balances $91,592,335.97 (FY2022-23 actual), $82,507,209.57 (FY2023-24 actual), $42,000,000 (FY2024-25 working), a two-year drop of $49.6 million; FY2024-25 working GF total $671,183,390; 6 percent contingency $42,941,101.",
         "source": "fcps.net public budget documents, retrieved July 2026.",
         "retrieved": "2026-08-02"
+    },
+    "munis_cost_by_org_fy2026.pdf": {
+        "what": "The district's own MUNIS general ledger, Cost by ORG transaction detail, fiscal 2026 (203 pages): every expenditure transaction with its full fund-org-function-object account string, vendor, dates and signed amount, plus the first-page org summary (six school orgs totalling $21,482,444.56; org 090 NMES $1,285,310.36). Source of the FY2026 actuals used in the school's General Fund table, the reconciliation bridge, the breakeven bars, and the closure grid's fixed-position lever. Parsed reproducibly by build/munis_extract.py, which validates its own parse against the report's summary to the penny; extract archived as build/munis_nmes_fy2026.json.",
+        "source": "District records production (Cost by ORG report, produced July 2026).",
+        "retrieved": "2026-08-02"
     }
 }

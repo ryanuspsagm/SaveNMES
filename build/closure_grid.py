@@ -28,11 +28,12 @@ ceiling are the grid's true extremes and do not depend on weights.
                              printing, travels with the students
                              ($318/student, against our independently
                              measured $331) and is not avoidable
-  fixed-position retention:  100% / 50% / 0% of the $218,154 of fixed-position
-                             salary lines (school admin $131,724 + custodial
-                             $37,333 + library $49,097, all measured; the
-                             district's own staffing sheet prices the same
-                             four roles at $209,700, within 4 percent). The
+  fixed-position retention:  100% / 50% / 0% of the $214,104 of fixed-position
+                             lines in the district's own MUNIS ledger, FY2026
+                             actuals (school admin $115,397 + custodial
+                             $49,655 + library $49,052; the district's own
+                             staffing sheet prices the same four roles at
+                             $209,700, within 2 percent). The
                              0%-retention leg is an attrition end state:
                              Appendix A.1 states all current staff would be
                              retained in year one, with savings recovered
@@ -90,10 +91,10 @@ net = capture + fixed_positions_cut + teachers_cut x $54,479.40
       - busing - leavers x (4,626 + add_ons) - property_loss
 
 Run:  python build/closure_grid.py
-Asserts the published statistics: 5,832 scenarios; weighted median -$17,982;
-54 percent lose money; middle half -$135,672 to +$101,417; range -$591,545
-to +$488,631; the all-staff-retained site default (-$130,749) sits at the
-26th percentile. Unweighted median -$21,971 kept as a cross-check: the
+Asserts the published statistics: 5,832 scenarios; weighted median -$20,007;
+55 percent lose money; middle half -$137,095 to +$98,603; range -$591,545
+to +$484,582; the all-staff-retained site default (-$130,749) sits at the
+26th percentile. Unweighted median -$24,431 kept as a cross-check: the
 weighting moves the median by about $4,000 and changes no conclusion.
 """
 import statistics
@@ -102,7 +103,10 @@ from itertools import product
 SEEK = 4626
 TEACH = 108_958.80 / 2                      # $54,479.40, the district's own
                                             # fully loaded rookie (Appendix A.1)
-FIXED_POS = 131724 + 37333 + 49097          # 218,154 measured
+FIXED_POS = 115397.25 + 49655.38 + 49051.77  # 214,104.40: MUNIS FY2026 actuals
+                                              # (school admin 2410+2420, custodial
+                                              # block of 2610, library 2222; see
+                                              # build/munis_extract.py)
 
 TRI = (1, 2, 1)
 CAPTURE = [(53_519, 1), (80_279, 2), (127_039, 1)]           # triangular
@@ -139,13 +143,13 @@ default = 127_039 - 63_000 - 38 * (SEEK + 500)   # all staff retained, central l
 default_rank = sum(w for v, w in pairs if v <= default) / total_w
 
 assert n == 5_832, n
-assert round(med) == -17_982, med
-assert round(p25) == -135_672 and round(p75) == 101_417, (p25, p75)
-assert round(neg * 100) == 54, neg
-assert round(nets[0]) == -591_545 and round(nets[-1]) == 488_631, (nets[0], nets[-1])
+assert round(med) == -20_007, med
+assert round(p25) == -137_095 and round(p75) == 98_603, (p25, p75)
+assert round(neg * 100) == 55, neg
+assert round(nets[0]) == -591_545 and round(nets[-1]) == 484_582, (nets[0], nets[-1])
 assert round(default) == -130_749, default
 assert 0.24 < default_rank < 0.28, default_rank
-assert round(statistics.median(nets)) == -21_971   # unweighted cross-check
+assert round(statistics.median(nets)) == -24_431   # unweighted cross-check
 
 print(f"{n:,} scenarios | weighted median ${med:,.0f} | {neg * 100:.0f}% lose money")
 print(f"range ${nets[0]:,.0f} to ${nets[-1]:,.0f} | middle half "
