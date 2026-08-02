@@ -391,13 +391,13 @@ def main():
     chk("$142,800" not in html and "$67,124" not in html and "$118,650" not in html
         and "$102,780" not in html and "$125,150" not in html,
         "all superseded growth-grid medians are gone from the site")
-    chk("same lever as the closure model" in html and "closure model prices for each leaver" in html,
-        "SEEK add-ons stated as symmetric between the closure and growth models")
-    chk("25 added students fill seats" in html and "24 per room in K through 3" in html,
-        "the 25-seat headroom is anchored to the district's own Appendix B caps on the site")
+    chk("same lever as the closure model" in html and "closure grid prices for each leaver" in t,
+        "SEEK add-ons stated as symmetric (site slider label; full statement in the report)")
+    chk("25 added students fill seats" in html and "24 students per room in kindergarten through grade 3" in t,
+        "the 25-seat headroom on the site; the Appendix B cap detail in the report")
     chk("RATV=[18,21,24]" in html and "today's class size" in html
-        and "six homerooms" in html and "Support staff is priced on its own lever" in html,
-        "the class-size lever is indexed on classroom teachers with support staff separate")
+        and "six homerooms hold 153" in t and "Support staff is priced on its own lever" in t,
+        "the class-size lever indexed on classroom teachers (site JS); homeroom and support detail in the report")
     for heading in ["What the district's own facility plans show",
                     "Building condition, as reported to the state"]:
         chk(heading not in html, f"off-layout card removed from site: {heading}")

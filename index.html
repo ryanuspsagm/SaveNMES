@@ -223,13 +223,13 @@ footer a{color:var(--ice)}
 <div class="card">
 <h3>What each elementary school has cost, every year the state published it</h3>
 <div class="chartbox tall"><canvas id="chartHist" role="img" aria-label="Line chart of cost per student for the three county elementary schools, 2012 to 2017 and 2024 to 2025, with the Kentucky elementary average shown for the newest two years. NMES runs a modest premium for its size and lands below the state average on the newest file."></canvas></div>
-<p class="note">Two reporting eras, so compare within an era, not across the gap: 2012 to 2017 is the state's school-level spending report; 2024 and 2025 are the state's total-expenditure files, a broader measure. The 2013 NMES point includes a one-time renovation charge. The state did not publish comparable school files for the middle years; the full 25-year record is in the report. In every era the pattern is the same: NMES runs a modest premium for its size, and on the newest file it sits <b>below the Kentucky elementary average</b>.</p>
+<p class="note">Two reporting eras, so compare within an era, not across the gap. The 2013 NMES point includes a one-time renovation charge. In every era the pattern is the same: NMES runs a modest premium for its size, and on the newest file it sits <b>below the Kentucky elementary average</b>.</p>
 </div>
 <div class="card">
 <h3>More students, lower cost per student, with every new cost counted</h3>
 <p>Most of what NMES costs is the building and its fixed staff. Each added student brings real new costs, and this curve counts all of them: $700 of supplies, $500 of busing, a teacher ($49,150) for every 21 added past the 25 open seats, and a support hire ($28,500) for every 75. One per 21 is the school's actual class size today. The cost per student falls fast:</p>
 <div class="chartbox"><canvas id="chartCurve" role="img" aria-label="Line chart: NMES cost per student falls from about $20,600 at 110 students to $17,903 at 128 today and about $12,500 at the 198-seat rating, with steps where new teachers are hired beyond the 25 open seats"></canvas></div>
-<p class="note">Basis: the 2024-25 state file ($17,903 per student at 128 students) plus the same central costs as the growth calculator below: supplies, busing, classroom teachers at today's actual class size, and support staff. The first 25 added students fill seats the school already has open at the district's own Appendix B caps; hiring is charged beyond them (the upward steps on the curve are those hires). At 160 students the cost is about $14,600 with no new hire yet needed. At the 198 seats the state approved in 2013 (today's plan rates the building 174), with two new teachers paid for, it is about $12,500, cheaper than every school in the county today. Shrinking runs the same math backward. The 25-year cost record is in the report.</p>
+<p class="note">Basis: the 2024-25 state file plus the same costs as the growth calculator; the upward steps are new hires. At 160 students, about $14,600 with no new hire yet needed. At the 198 seats the state approved in 2013, about $12,500, cheaper than every school in the county today. Shrinking runs the same math backward. Method and the 25-year record are in the report.</p>
 </div>
 </details>
 </div></section>
@@ -286,7 +286,7 @@ footer a{color:var(--ice)}
 <tr><td>30% (38)</td><td>$195,000</td><td>$420,000</td><td>$4.6M</td></tr>
 <tr><td>50% (64)</td><td>$328,000</td><td>$713,000</td><td>$7.7M</td></tr>
 </table></div>
-<p class="note">Figures rounded. Full effect assumes the same share of each new class keeps choosing elsewhere, at today's class size of about 21. It arrives when the first lost kindergarten class reaches grade 12. The total column adds up all thirteen years: the first wave plus the kindergarten classes that follow it out. The current 128 students carry $5.6 to $7.4 million of remaining state funding through grade 12. A "transitional" label by itself pushes families out: nobody enrolls a kindergartner in a school marked for closing.</p>
+<p class="note">Figures rounded. Full effect arrives when the first lost kindergarten class reaches grade 12; the total column adds all thirteen years. The current 128 students carry $5.6 to $7.4 million of remaining state funding through grade 12. A "transitional" label by itself pushes families out: nobody enrolls a kindergartner in a school marked for closing.</p>
 </div>
 </details>
 </div></section>
@@ -326,7 +326,7 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>Growth: what does filling NMES net?</h3>
-<p class="note">The building held 261 children at its peak. It holds 128 today against a 174 rating (198 in the 2013 plan). The pool is real: 259 registered homeschoolers, 450 to 550 county kids outside both districts, and 131 out-of-county students already driving in. Each new student brings $4,626. The first 25 added students fill seats already open at the district's own class-size caps (its own Appendix B: 24 per room in K through 3, 28 in fourth, 29 in fifth; six rooms hold 153). Past those seats, a teacher is charged for every full new class, at the district's own salary schedule.</p>
+<p class="note">The building held 261 children at its peak. It holds 128 today against a 174 rating. The pool is real: 259 registered homeschoolers, 450 to 550 county kids outside both districts, and 131 already driving in. Each new student brings $4,626. The first 25 added students fill seats already open at the district's own class caps; past them, a teacher is charged for every full new class.</p>
 <div class="slider-row"><label>Enrollment target (from 110, the district's figure, still unsourced; last official count 128) <output id="oGro">154</output></label>
 <input type="range" id="sGro" min="110" max="200" value="154" step="1"></div>
 <div class="slider-row"><label>Class size for new classrooms, past the 25 open seats <output id="oRat">1 teacher per 21: today's class size</output></label>
@@ -346,7 +346,7 @@ footer a{color:var(--ice)}
 <div class="sub">net new dollars per year at these settings (filling to the architect's own 154)</div>
 <div class="verdict" id="rGroVerdict"></div>
 </div>
-<p class="note">The default target is 154, the capacity the district's own architect printed for the building, reached with <b>no new classroom</b>: the first hire is not needed until past 155. The class-size lever hires classroom teachers only, and every setting is a real classroom count: 1 per 18 is smaller classes than the school runs today, 1 per 21 is today's actual class size (128 students across six homerooms), and 1 per 24 is the district's own K-3 cap. Support staff is priced on its own lever above, at 1 per 75 or 1 per 50 added students. State add-ons run the same $0, $500, $1,000 legs the closure model prices for each leaver, so the two models treat them alike. With the 25 open seats counted, growth pays in <b>every one</b> of the 19,683 scenarios. Median: <b>+$140,331 a year</b>. Even the worst case, a class of 18 at the top salary with every cost at maximum, still nets +$3,331.</p>
+<p class="note">The default fills to 154, the district's own architect rating, with no new hires. Growth pays in <b>every one</b> of the 19,683 scenarios. Median: <b>+$140,331 a year</b>; even the worst case nets +$3,331. Every lever is anchored in a district document; the full method is in the report.</p>
 </div>
 </div>
 
@@ -436,7 +436,7 @@ footer a{color:var(--ice)}
 <div class="card">
 <h3>The plan, priced</h3>
 <p>Run the three levers at their LOW ends, with the tax rate left alone: about <b>$1.9 million a year</b> ($1.11 million from enrollment plus $760,000 from costs). That covers about 70 percent of the $2.65 million gap by itself. Add any part of the rate restore and the plan clears the whole gap with room to spare. It balances the budget, ends the capital sweep, and closes nothing.</p>
-<p><b>What the surplus buys.</b> At those same low ends with the full restore, the plan runs about <b>$920,000 a year ahead</b> of the gap. That funds a <b>5 percent raise for every certified teacher</b> (about $507,000 a year on the district's own $10.0 million General Fund certified payroll, FY2026 working budget) and still leaves about $414,000 a year for new debt, supporting about <b>$5.4 million of bonds</b> at the district's own 4.5 percent, 20-year basis. Ending the capital sweep frees the <b>$17.6 million</b> of restricted bonding capacity already sitting unused. Together: teachers paid more, every school open, and roughly <b>$23 million of building capacity</b> for new schools and renovations. At the levers' <b>top ends</b> the same chain funds a <b>10 percent raise</b> (about $1.0 million a year) and still leaves about $2.7 million a year for new debt, about <b>$35 million of bonds</b>, roughly <b>$52 million of building capacity</b> with the freed restricted stream. That is the transformative version of Bourbon County Schools, and it closes nothing.</p>
+<p><b>What the surplus buys.</b> At the low ends with the full restore, the plan runs about <b>$920,000 a year ahead</b> of the gap: a <b>5 percent raise for every certified teacher</b> (about $507,000 a year) plus about <b>$5.4 million of new bonds</b>, and ending the sweep frees <b>$17.6 million</b> more, roughly <b>$23 million of building capacity</b>. At the top ends: a <b>10 percent raise</b> and roughly <b>$52 million</b>. Every step is a live formula in the model's Alternatives tab. That is the transformative version of Bourbon County Schools, and it closes nothing.</p>
 <div class="totalstrip">Growth plan, low end: about $2.0M a year &bull; Closure median: LOSES $21,971 a year</div>
 <p class="note">Proposed public enrollment targets for NMES, the kind ask two puts on paper: 145 by fall 2027, 160 by 2028, 180 by 2029, 198 by 2030 (the building's 2013 state-approved rating). Miss them on a fair trial, and the next facility plan can revisit with evidence.</p>
 </div>
