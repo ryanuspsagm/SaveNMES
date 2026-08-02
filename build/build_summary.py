@@ -1,4 +1,4 @@
-"""Builds the two-page Executive Summary (SaveNMES_Executive_Summary.pdf).
+"""Builds the three-page Executive Summary (SaveNMES_Executive_Summary.pdf).
 Standalone companion to the full report; every figure is sourced there."""
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import inch
@@ -89,7 +89,7 @@ A(Spacer(1, 6))
 A(Paragraph(
   "The first wave is only the start: the missing kids climb one grade a year, so by year eight every grade "
   "is short and the yearly loss is more than double the first hit. The children in the building carry "
-  "about $5.6 to $7.4 million of state funding through grade 12. One in seven students at the middle and "
+  "about $6.2 to $6.9 million of remaining state funding through grade 12. One in seven students at the middle and "
   "high school came through North Middletown. A family lost at kindergarten is lost for thirteen years.", body))
 A(Paragraph(
   "<b>The bottom line, from the two priced models:</b> grow the school and the middle case GAINS $141,780 "
@@ -111,12 +111,12 @@ B("<b>Lever one, enrollment.</b> Each recovered student brings about $4,226 of s
   "The pool is measured: 236 students sit in Bourbon's own homeschool files, and 450 to 550 Bourbon County "
   "Schools kids are homeschooled, in private school, or enrolled in another district, worth $1.9 to $2.3 "
   "million a year. "
-  "Eminence Independent proved the model an hour away: it grew 37 "
-  "percent in the decade Bourbon shrank 13. Growth pays in every one of 19,683 priced scenarios, with a "
+  "Eminence Independent proved the model an hour away: it grew 35 "
+  "percent in the decade Bourbon Schools shrank 10. Growth pays in every one of 19,683 priced scenarios, with a "
   "middle case of +$141,780 a year.")
 B("<b>Lever two, fixed costs.</b> Trim every non-teaching position by attrition: $340,000 to $425,000 a "
   "year. Weigh an administrative restructuring: $224,000 to $450,000. Smarter bus routes: $146,000 to "
-  "$291,000 on a $2.7 million line no routing study has ever tested. Energy contracts: $50,000 to "
+  "$291,000 on a $2.9 million line no routing study has ever tested. Energy contracts: $50,000 to "
   "$150,000. Counted once, the package is $760,000 to $1.3 million a year.")
 B("<b>Lever three, revenue.</b> The rate is simply lower while the tax base more than doubled. Restoring "
   "the board's own 2018 rate brings in about $1.7 million a year, and the rate menu beyond it reaches $1.0 "

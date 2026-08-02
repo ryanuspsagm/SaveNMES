@@ -374,9 +374,9 @@ def main():
     es = " ".join(pg.extract_text() for pg in PdfReader(es_path).pages).replace("\n", " ")
     for needle in ["$19,080", "$20,007", "54,479.40", "Permanent", "2,412", "5,832",
                    "$144,000", "$287,000", "$420,000", "$713,000",
-                   "$1.5 million", "$4.6 million", "$7.7 million", "$5.6 to $7.4 million"]:
+                   "$1.5 million", "$4.6 million", "$7.7 million", "$6.2 to $6.9 million"]:
         chk(needle in es, f"executive summary intact: {needle}")
-    for needle in ["$144,000", "$287,000", "$420,000", "$713,000", "$7.7M", "$5.6 to $7.4 million"]:
+    for needle in ["$144,000", "$287,000", "$420,000", "$713,000", "$7.7M", "$6.2 to $6.9 million"]:
         chk(needle in html, f"leave-table basis mirrored on the site: {needle}")
     chk("SaveNMES_Executive_Summary.pdf" in html, "site links the executive summary")
     for gone in ['id="tldr"', 'id="questions"', 'id="roadahead"']:
@@ -644,7 +644,7 @@ def main():
     for needle in ["Part One: The Case Against Closing NMES",
                    "Part Two: The District Needs Growth, Not Closures", "$19,080", "$19,020",
                    "107.5 percent", "Eminence", "149 last fall", "occupational",
-                   "Marion County voters", "$5.6 to $7.4 million of remaining", "$613,000"]:
+                   "Marion County voters", "$6.2 to $6.9 million of remaining", "$573,000"]:
         chk(needle in t, f"PDF v4 opening and relocated brief facts intact: {needle}")
     for needle in ["mirrors the executive summary published at SaveNMES.org",
                    "Fact one: it is the county's best elementary school",
@@ -759,7 +759,7 @@ def main():
     for needle in ["$1,285,310", "$21,482,445", "$1,018,671", "$938,690", "$227,831",
                    "$276,928", "5.5 fixed positions", "$30,410,725", "$30,201,047",
                    "7.6 percent", "450 to 550", "13 to 15 percent", "3,594", "3,548",
-                   "2,912", "2,616", "$61,937" if "$61,937" in t else "$132,744"]:
+                   "2,912", "2,616", "$66,860"]:
         chk(needle in t, f"PDF v3.9 content present: {needle}")
     for needle in ["450 to 550", "13 to 15 percent", "3,594", "2,616"]:
         chk(needle in html, f"site v3.9 content present: {needle}")
