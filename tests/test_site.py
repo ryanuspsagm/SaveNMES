@@ -176,14 +176,22 @@ def main():
         # --- The plan, priced: calculator ---
         rplan = pg.text_content("#rPlan").strip()
         pverd = pg.text_content("#rPlanVerdict").strip()
-        if rplan == "$921,393" and "$5.4 million of new bonds" in pverd and "23.0 million of building capacity" in pverd:
-            ok("plan calculator default: $921,393 surplus buys the 5% raise, $5.4M bonds, $23.0M capacity")
+        if rplan == "$71,393" and "$32 million of bonding capacity" in pverd:
+            ok("plan calculator default: low ends + full restore clear the gap by $71,393; advisor capacity cited")
         else: bad(f"plan defaults: {rplan} / {pverd[:100]}")
-        pg.fill("#sPt", "10"); pg.dispatch_event("#sPt", "input")
-        if "up to about a 9 percent raise" in pg.text_content("#rPlanVerdict"):
-            ok("plan calculator caps the raise honestly (10% unaffordable at the low ends)")
-        else: bad(f"plan raise cap: {pg.text_content('#rPlanVerdict')[:90]}")
         pg.fill("#sPt", "5"); pg.dispatch_event("#sPt", "input")
+        if "up to about a 0 percent raise" in pg.text_content("#rPlanVerdict"):
+            ok("plan calculator caps the raise honestly (5% unaffordable at the low ends)")
+        else: bad(f"plan raise cap: {pg.text_content('#rPlanVerdict')[:90]}")
+        pg.fill("#sPw", "530000"); pg.dispatch_event("#sPw", "input")
+        pg.fill("#sPc", "1300000"); pg.dispatch_event("#sPc", "input")
+        pverd2 = pg.text_content("#rPlanVerdict")
+        if pg.text_content("#rPlan").strip() == "$881,393" and "$4.9 million of new bonds" in pverd2 and "36.9 million of building capacity" in pverd2:
+            ok("plan top ends: $881,393 surplus buys the 5% raise, $4.9M bonds, $36.9M advisor-anchored capacity")
+        else: bad(f"plan top ends: {pg.text_content('#rPlan')} / {pverd2[:100]}")
+        pg.fill("#sPw", "260000"); pg.dispatch_event("#sPw", "input")
+        pg.fill("#sPc", "760000"); pg.dispatch_event("#sPc", "input")
+        pg.fill("#sPt", "0"); pg.dispatch_event("#sPt", "input")
         pg.fill("#sPr", "0"); pg.dispatch_event("#sPr", "input")
         if "short of closing the $2.65 million gap" in pg.text_content("#rPlanVerdict"):
             ok("plan calculator reports the shortfall when the gap is not closed")

@@ -109,5 +109,10 @@
         "what": "The district's own MUNIS general ledger, Cost by ORG transaction detail, fiscal 2026 (203 pages): every expenditure transaction with its full fund-org-function-object account string, vendor, dates and signed amount, plus the first-page org summary (six school orgs totalling $21,482,444.56; org 090 NMES $1,285,310.36). Source of the FY2026 actuals used in the school's General Fund table, the reconciliation bridge, the breakeven bars, and the closure grid's fixed-position lever. Parsed reproducibly by build/munis_extract.py, which validates its own parse against the report's summary to the penny; extract archived as build/munis_nmes_fy2026.json.",
         "source": "District records production (Cost by ORG report, produced July 2026).",
         "retrieved": "2026-08-02"
+    },
+    "baird_lpc_june2026.pdf": {
+        "what": "Bonding Capacity Presentation by Robert W. Baird & Co., the district's financial advisor, to the Local Planning Committee, June 2026 (8 pages). Rates current bonding capacity at $32 million from $3,252,893 of FY2027 bondable restricted revenues (FSPK nickel $1,200,105 + recallable nickel $1,200,105 + state equalization $552,990 + 80 percent capital outlay $173,944 + $126,250 of unexpired SFCC offers, expiring January 2028 through January 2034). Sensitivities: a loss of 50 students drops capacity to $31 million (about $20,000 of capacity per student); rates 100bp lower raise it to $35 million. Outstanding debt $14,420,000 total ($13,066,437 district share), including the 2024 bond with a General-Fund-paid debt service column of about $231,000 a year. Assumes the 2026-27 Forecast SEEK Report (AADA 2,174.3), $679 FSPK equalization, HB 757 sunset FY2046, conservative June 15 2026 rates.",
+        "source": "District facility planning process, LPC meeting materials, June 2026.",
+        "retrieved": "2026-08-02"
     }
 }

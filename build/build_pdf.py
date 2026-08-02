@@ -992,6 +992,22 @@ B("<b>The construction fund ran a negative $1.43 million restricted balance at J
   "prioritized and paid for out of cash flow in the same years the operating budget went into deficit. The fiscal 2024 audit also "
   "notes the district held $23.5 million in unused bonding capacity as of June 30, 2024, borrowing room for buildings that, again, "
   "cannot pay teachers either way.")
+H2("The district's own June 2026 bonding numbers, from its own advisor")
+P("In June 2026 the district's financial advisor, Robert W. Baird and Co., presented the bonding picture to "
+  "the planning committee, and the presentation is archived in this repository. Its numbers anchor this "
+  "section. Bondable restricted revenues for fiscal 2027: $3,252,893, built from the two nickels "
+  "($1,200,105 each), their state equalization ($552,990), 80 percent of capital outlay ($173,944), and "
+  "$126,250 a year of unexpired SFCC offers of assistance that expire between January 2028 and January "
+  "2034, use-them-or-lose-them money. Current bonding capacity: <b>$32 million</b>. Outstanding debt: "
+  "$14,420,000, of which the district share is $13,066,437; the 2024 bond's schedule carries about "
+  "$231,000 a year in a column marked as paid from the General Fund, which corroborates this report's "
+  "$430,000 net debt-service step. Two of Baird's own sensitivities matter to this decision. First, "
+  "<b>a loss of 50 students drops capacity to $31 million</b>: about $20,000 of building capacity walks "
+  "out with every student, which prices the enrollment risk of a closure in the district's own advisor's "
+  "terms. Second, the presentation is built on the state's 2026-27 SEEK forecast of 2,174 funded "
+  "students, down again from 2,242 in fiscal 2025: the slide the growth plan exists to reverse. None of "
+  "this capacity pays a teacher or closes the operating gap, and all of it depends on the restricted "
+  "stream actually paying for buildings rather than being swept into operations.")
 H2("What closing a school does, and does not do, to bonding capacity")
 P("A district's ability to borrow for buildings is simple math set by statute and regulation, and it is worth "
   "walking through, because “bonding capacity” is likely to surface in the closure debate. Kentucky districts "
@@ -1300,8 +1316,9 @@ P("Bourbon County Schools has a structural funding problem: spending has outrun 
   "salaries are hard to raise, capital projects wait, and North Middletown is being blamed for it. North "
   "Middletown is not the reason salaries cannot increase; its excess cost is about $156,000 a year against the "
   "cheaper receiving school ($121,220 on the district's own KDE-filed comparison to the peer average), six tenths "
-  "of one percent of the budget. It is not the reason capital projects cannot be funded; roughly $17.6 million of "
-  "restricted bonding capacity sits unused while the capital-to-operations sweep drains the building fund, and "
+  "of one percent of the budget. It is not the reason capital projects cannot be funded; the district's own "
+  "financial advisor presented $32 million of bonding capacity to the planning committee in June 2026 (Baird, "
+  "archived in this repository), while the capital-to-operations sweep consumes about $17 million of it, and "
   "that sweep is a General Fund problem every school shares. Organized as a plan, the menu above prices out as "
   "three moves. <b>Move one, inspect fixed costs</b>: every non-teaching position district-wide trimmed by "
   "attrition, administrative restructuring considered on its own merits (the district's own audit table shows "
@@ -1316,15 +1333,19 @@ P("Bourbon County Schools has a structural funding problem: spending has outrun 
   "Alternatives tab. Any one "
   "alone outweighs closure, whose median outcome now loses $20,007 a year. Together they balance the budget, end the sweep, free the "
   "restricted stream to bond the renovation plan, and close nothing. The Alternatives tab prices each move live. "
-  "And the surplus is transformative: at the plan's low ends with the full 2018 restore, recurring resources run "
-  "about $3.57 million against the $2.65 million gap, roughly $920,000 a year ahead. That surplus funds a 5 "
-  "percent raise for every certified teacher, about $507,000 a year on the district's own $10.0 million General "
-  "Fund certified payroll in the fiscal 2026 working budget, and still leaves about $414,000 a year for new debt "
-  "service, which supports about $5.4 million of bonds at the same 4.5 percent, 20-year basis this report applies "
-  "to every other bonding claim. With the sweep ended, the roughly $17.6 million of restricted bonding capacity "
-  "already sitting unused comes free as well: teachers paid more, every school open, and about $23 million of "
-  "building capacity for new schools and renovations. At the levers' top ends the same chain runs about $3.7 "
-  "million ahead, funding a 10 percent certified raise and about $52 million of building capacity. A suggestion for running "
+  "And the surplus is transformative. A correction first, because this chain carried an error: an earlier "
+  "version priced the enrollment lever at $1.1 to $3.3 million a year, a figure the model's own Move 2 rows "
+  "never supported; the corrected band is $260,000 to $530,000, and every downstream claim is re-derived "
+  "here. At the plan's low ends with the full 2018 restore, recurring resources run about $2.72 million "
+  "against the $2.65 million gap: the budget balances with about $71,000 to spare. At the top ends the same "
+  "chain runs about $881,000 a year ahead, funding a 5 percent raise for every certified teacher, about "
+  "$507,000 a year on the district's own $10.0 million General Fund certified payroll, and leaving about "
+  "$374,000 for new debt service, about $4.9 million of GF-leveraged bonds at the same 4.5 percent, 20-year "
+  "basis this report applies to every other bonding claim. The building capacity beneath it is no longer this "
+  "report's estimate: the district's own advisor rates it at $32 million, capacity that is real only once the "
+  "sweep ends, because the sweep spends the very stream the capacity is built on. Together, roughly $37 "
+  "million of building capacity, teachers paid more, and every school open. The earlier 10-percent-raise and "
+  "$52 million top-end claims are withdrawn with the lever correction. A suggestion for running "
   "the plan: stand up three committees, one each for enrollment growth, fixed costs, and revenue options; "
   "volunteers from the North Middletown community stand at the ready to help support them.")
 
@@ -1416,7 +1437,7 @@ fig("chart_levy_history.png",
     "levied rates by tax year. Bottom: percentage change from 2012 to 2025. Bourbon County is the only "
     "district in the region whose levied rate is lower today than in 2012. Rates are levied rates, not "
     "revenue effort; see the House Bill 44 note in the text. Data archived as build/ky_levy_history_"
-    "2012_2026.csv.")
+    "2012_2026.csv.", width=5.7 * inch)
 
 H2("The four percent is a limit on revenue, not on the rate")
 P("That distinction decides an argument raised at every public meeting on this proposal, so it belongs in the "
@@ -1500,9 +1521,10 @@ P("Restoring the rate this district itself levied in 2018 closes about two third
   "the sweep is what frees the restricted building stream to carry bonds. Restoring the 2018 rate raises "
   "$1,699,479, covering that requirement to within $4,551. The rate this board itself levied eight years ago "
   "is, almost to the dollar, the make-the-General-Fund-stand-alone rate. Once the General Fund stands alone, "
-  "the nickel residual carries the $14 million renovation, the roughly $17.6 million of unused restricted "
-  "capacity becomes genuinely pledgeable, and the phasing-in nickel equalization adds about $3.6 million "
-  "more: roughly $35 million of construction capacity, for $15.69 a month on the median home, without "
+  "the nickel residual carries the $14 million renovation, the restricted capacity becomes genuinely "
+  "pledgeable, and the phasing-in nickel equalization adds about $3.6 million more: roughly $35 million of "
+  "construction capacity, a figure the district's own advisor corroborated in June 2026 by rating current "
+  "capacity at $32 million on the same restricted stream, for $15.69 a month on the median home, without "
   "pledging a cent of the new levy to a bond and without closing anything. Pledged straight to construction "
   "instead, the four options carry about $13.2, $19.6, $22.1, and $32.5 million at the model's 4.5 percent, "
   "20-year assumption. The Harrison and median options are honest partial steps; they leave about $680,000 "
@@ -1670,7 +1692,15 @@ P("<b>Version 4.5, August 2.</b> Both scenario grids now carry explicit lever di
   "working-budget line items everywhere they appeared; the parse reproduces the ledger's own org totals to "
   "the penny, the school's General Fund actuals ($933,537) land within 0.55 percent of the budget "
   "($938,690), the fixed-position lever re-based to $214,104, and the closure median moved to a $20,007 "
-  "yearly loss with the ceiling at $484,582. The report "
+  "yearly loss with the ceiling at $484,582. Two more changes the same day: FIRST, a correction. The plan's "
+  "enrollment lever had been published at $1.1 to $3.3 million a year, unsupported by the model's own Move 2 "
+  "rows ($260,000 to $530,000); the corrected band now governs, the low-end plan clears the gap only with "
+  "the full restore (about $71,000 to spare), the top ends fund the 5 percent raise and about $4.9 million "
+  "of new bonds, and the earlier 10-percent-raise and $52 million claims are withdrawn. SECOND, the "
+  "district's advisor's June 2026 bonding presentation was archived and now anchors the capacity claims: "
+  "$32 million of capacity, $126,250 of expiring SFCC offers, and about $20,000 of capacity lost per "
+  "departing student, by its own sensitivity. The Fayette comparison was aligned to the same fiscal year "
+  "2025 on both sides. The report "
   "was then restructured to follow the website's flow end to end: Part One the case against closing, Part "
   "Two the growth plan, ending on the asks. The twelve-questions section and the Open Records appendix were "
   "removed (their requests live on in the asks and the named records gaps), and the process record, the "
@@ -1837,13 +1867,24 @@ srcs = [
  "schedules FY2025 through FY2027 for the equalization phase-in on that nickel",
  "Bourbon County Schools, Annual Financial Report and audit, fiscal 2025 (certified real and personal "
  "property assessment of $1,843,569,625 and General Fund property tax collections of $7,829,060)",
+ "Robert W. Baird and Co., Bonding Capacity Presentation to the Bourbon County Schools Local Planning Committee, June 2026 "
+ "($32 million current capacity from $3,252,893 of FY2027 bondable restricted revenues; sensitivities and the outstanding "
+ "debt schedule), archived in this repository as build/baird_lpc_june2026.pdf",
+ "Fayette County Public Schools, Tentative Budget 2025-26 (General Fund $715,685,019; beginning balances $91.6 million, "
+ "$82.5 million, $42 million), archived in this repository as build/fcps_tentative_budget_2025_26.pdf",
+ "Bourbon County Schools MUNIS general ledger, Cost by ORG transaction detail, fiscal 2026, archived in this repository as "
+ "build/munis_cost_by_org_fy2026.pdf with the reproducible extractor build/munis_extract.py",
+ "Kentucky school-level spending files behind the cost-history chart, 2013-14 through 2024-25, archived in this repository "
+ "(SPENDING_PER_STUDENT and Kentucky Report Card financial transparency files; statewide elementary averages in "
+ "build/ky_elem_spending_2012_2017.json), with the reproducible extractor build/cost_history.py",
+ "Kentucky Department of Education assessment files behind the science, social studies and writing score series, 2017-18 "
+ "through 2024-25, extracted with sources and suppression flags to build/kde_subjects_history.json",
 ]
 for i, s in enumerate(srcs, 1):
     A(Paragraph(f"{i}. {s}", ParagraphStyle("src", parent=note, fontSize=8.4, leading=10.8, spaceAfter=2.7)))
 
 # ================= GLOSSARY =================
-A(PageBreak())
-H("Appendix A: Plain-Language Glossary")
+H("Appendix A: Plain-Language Glossary", need=2.2)
 gl = [
  ["ADA (Average Daily Attendance)", "The average number of students actually present each day; the main driver of state funding."],
  ["BG-1", "The state form that authorizes a school construction project's scope and budget."],

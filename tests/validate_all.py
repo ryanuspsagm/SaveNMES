@@ -406,7 +406,7 @@ def main():
                    "This scenario lands at about the", "19,683 weighted scenarios",
                    "The default reflects the superintendent's written statement",
                    "the median of the 19,683 weighted scenarios: 30 added students",
-                   'value="140"', "Grow the district", "+$1.9M"]:
+                   'value="140"', "Grow the district", "+$2.7M"]:
         chk(needle in html, f"v4.5 review round: {needle}")
     chk("Either way: a preschool pipeline" not in html,
         "the 'Either way' pipeline sentence removed from ask two")
@@ -416,14 +416,14 @@ def main():
     # v4.5 round 3: plan calculator, tax-compensation line, percentile-scale bars
     for needle in ['id="sPw"', 'id="sPc"', 'id="sPr"', 'id="sPt"', 'id="rPlan"',
                    "surplus per year after closing the $2.65 million gap",
-                   "$111,000 a year per percentage point", "13.008",
+                   "the model's Move 2 band ($260,000 to $530,000 a year net of costs)", "13.008",
                    'id="rTax"', "To make up a loss this size with taxes instead",
                    "$15.69 a month for 8.9 cents",
                    'id="youClose"', 'id="youGrow"', "percentile scale",
                    "gold marker is your scenario"]:
         chk(needle in html, f"plan calculator / tax line / percentile bars: {needle}")
-    chk(10 * 111000 + 760000 + 1699479 - 2648086 == 921393,
-        "plan default surplus recomputes to $921,393")
+    chk(260000 + 760000 + 1699479 - 2648086 == 71393,
+        "plan default surplus recomputes to $71,393 (corrected Move-2 lever)")
 
     # v4.5 round 4: curve card averages, 938-to-661 bridge, Fayette case study
     chk(round((15691 + 17416 + 18910 + 18940 + 19299) / 5) == 18051
@@ -454,16 +454,23 @@ def main():
     chk(abs(2648086 / 29097404 * 100 - 9.1) < 0.05
         and abs((82507209.57 - 42000000) / 671183390 * 100 - 6.0) < 0.05,
         "Fayette comparison ratios recompute (9.1 vs 6.0 cents per dollar)")
-    for needle in ['id="chartFay"', "9.1 cents per dollar", "$91.6 million to a budgeted $42 million",
-                   "clean opinions"]:
+    for needle in ['id="chartFay"', "9.1 cents in the red", "same fiscal year, 2025",
+                   "$82.5 million to $42 million", "clean opinions"]:
         chk(needle in html, f"Fayette case study card: {needle}")
     chk((REPO / "build" / "fcps_tentative_budget_2025_26.pdf").exists(),
         "FCPS budget book archived behind the Fayette comparison")
     chk(round(10000388 * 0.05 * 1.0145) == 507270,
         "plan raise cost recomputes: 5 percent of the certified payroll with the 1.45 percent load")
-    _cap = (921393 - 10000388 * 0.05 * 1.0145) * 13.008 + 17600000
-    chk(22_900_000 < _cap < 23_100_000,
-        "plan capacity recomputes to about $23 million at the published defaults")
+    _cap = (881393 - 10000388 * 0.05 * 1.0145) * 13.008 + 32000000
+    chk(36_700_000 < _cap < 37_100_000,
+        "plan capacity recomputes to about $37 million at the top ends (advisor-anchored)")
+    chk((REPO / "build" / "baird_lpc_june2026.pdf").exists(),
+        "the advisor's June 2026 bonding presentation is archived")
+    chk(abs(3252893 - (1200105 + 1200105 + 276245 + 276745 + 173944 + 126250)) == 501,
+        "Baird restricted-revenue stack reconciles to its own $3,252,893 within its own $501 rounding")
+    for needle in ["every 50 students lost take about $1 million of bonding capacity",
+                   "2,174", "$32 million"]:
+        chk(needle in html, f"Baird figures on the site: {needle}")
     chk("$142,800" not in html and "$67,124" not in html and "$118,650" not in html
         and "$102,780" not in html and "$125,150" not in html,
         "all superseded growth-grid medians are gone from the site")
@@ -702,14 +709,14 @@ def main():
     chk("its savings sheet says two" in t and "count supports three" in t,
         "PDF keeps the closure staffing-count judgment (v4.2: the district's own two-vs-three)")
     for needle in ["5 percent raise for every certified teacher", "$507,000",
-                   "$5.4 million", "$23 million of building capacity"]:
+                   "$4.9 million", "$37 million of building capacity"]:
         chk(needle in html, f"transformative surplus claim on the site: {needle}")
-    chk("5 percent raise for every certified teacher" in t and "$23 million" in t,
-        "transformative surplus claim in the report")
-    chk("10 percent raise" in html and "$52 million" in html
-        and "10 percent certified raise" in t and "$52 million" in t,
-        "top-end claim (10 percent raise, $52 million) on site and in report")
-    for claim, section in [("$23 million of building capacity", 'id="grow"'),
+    chk("5 percent raise for every certified teacher" in t and "$37 " in t and "$32 million" in t,
+        "corrected transformative claim in the report, advisor-anchored")
+    chk("10 percent raise" not in html and "$52 million" not in html
+        and "withdrawn with the lever correction" in t,
+        "the 10-percent-raise / $52 million claims are withdrawn (lever correction)")
+    for claim, section in [("$37 million of building capacity", 'id="grow"'),
                            ("LOSES $20,007", 'id="model"'),
                            ("$4.6 million lifetime revenue loss", 'id="risks"')]:
         chk(html.index(claim) > html.index(section)

@@ -235,15 +235,15 @@ if not rec_bad: match("archived Sci/SS/Writing averages recompute from the per-s
 else: diff(f"Sci/SS/Writing average recompute mismatches: {rec_bad}")
 
 # the plan calculator mirrors the model's transformative chain lever for lever
-plan_ok = (10 * 111000 + 760000 + 1699479 - 2648086 == 921393
-           and 'id="sPw" min="0" max="30" value="10"' in html
-           and 'id="sPt" min="0" max="10" value="5"' in html
-           and "pw*111000" in html and "*13.008" in html
+plan_ok = (260000 + 760000 + 1699479 - 2648086 == 71393
+           and 'id="sPw" min="260000" max="530000" value="260000"' in html
+           and 'id="sPt" min="0" max="10" value="0"' in html
+           and "*13.008" in html and "bonds+32000000" in html
            and "(15.69/8.9)" in html and "191000" in html)
 if plan_ok:
-    match("plan calculator: default levers reproduce the transformative check ($921,393 surplus) and the JS carries the model's own bases (111K/point, 13.008 factor, $191K/cent, $15.69/8.9c)")
+    match("plan calculator: corrected Move-2 lever ($260K-$530K), low-end default clears the gap by $71,393, capacity anchored on the advisor's $32M (13.008 factor, $191K/cent, $15.69/8.9c)")
 else:
-    diff("plan calculator bases or defaults out of sync with the model chain")
+    diff("plan calculator bases or defaults out of sync with the corrected model chain")
 
 # model School_Data KDE history block vs the same source file
 kh_years_keys = ["2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17",
@@ -534,7 +534,7 @@ else:
 
 # transformative check: surplus at plan low ends + full restore funds a 5% certified
 # raise and new bonds, alongside the freed restricted capacity
-surplus = 1110000 + 760000 + 1699479 - 2648086
+surplus = 530000 + 1300000 + 1699479 - 2648086
 raise_cost = 10000388 * 0.05 * 1.0145
 debt_room = surplus - raise_cost
 bonds = debt_room * (1 - 1.045 ** -20) / 0.045
@@ -544,22 +544,22 @@ try:
     wb_cert = 10000388  # GF object 0110 total, FY2026 working budget (verified from wb_rows extract)
 except Exception:
     pass
-if (abs(surplus - 921393) < 2 and abs(raise_cost - 507270) < 2 and abs(bonds - 5386000) < 2000
-        and "$507,000" in html and "$5.4 million" in html and "$17.6 million" in html
-        and "$23 million" in html and "$507,000" in pdf_flat and "$23 million" in pdf_flat):
-    match("transformative check: $921K surplus funds the 5% certified raise ($507K on the $10.0M GF payroll) plus $5.4M new bonds; with the freed $17.6M, about $23M of building capacity (site+PDF)")
+if (abs(surplus - 881393) < 2 and abs(raise_cost - 507270) < 2 and abs(bonds - 4866596) < 2000
+        and "$507,000" in html and "$4.9 million" in html and "$32 million" in html
+        and "$37 million" in html and "$507,000" in pdf_flat and "$37 " in pdf_flat
+        and "$32 million" in pdf_flat):
+    match("corrected transformative check: top ends + full restore = $881K surplus, 5% raise ($507K) + $4.9M GF bonds + the advisor's $32M = about $37M of capacity (site+PDF)")
 else:
-    diff(f"transformative check mismatch: surplus {surplus:.0f}, raise {raise_cost:.0f}, bonds {bonds:.0f}, strings on site: {('$23 million' in html)}")
+    diff(f"transformative check mismatch: surplus {surplus:.0f}, raise {raise_cost:.0f}, bonds {bonds:.0f}, strings on site: {('$37 million' in html)}")
 # top end: levers high + full restore -> 10% raise + ~$52M of building capacity
-surplus_hi = 3320000 + (425000 + 450000 + round(2913654*0.10) + 150000) + 1699479 - 2648086
-raise10 = 10000388 * 0.10 * 1.0145
-bonds_hi = (surplus_hi - raise10) * (1 - 1.045 ** -20) / 0.045
-if (abs(surplus_hi - 3687758) < 2 and abs(bonds_hi - 34773000) < 2000
-        and "10 percent raise" in html and "$52 million" in html
-        and "10 percent certified raise" in pdf_flat and "$52 million" in pdf_flat):
-    match("top-end transformative check: $3.69M surplus funds the 10% raise ($1.01M) plus about $35M of new bonds; roughly $52M of building capacity with the freed stream (site+PDF)")
+low_surplus = 260000 + 760000 + 1699479 - 2648086
+if (low_surplus == 71393 and "$71,000 to spare" in html
+        and "10 percent raise" not in html and "$52 million" not in html
+        and "withdrawn with the lever correction" in pdf_flat
+        and "$260,000 to $530,000" in html and "$260,000 to $530,000" in pdf_flat):
+    match("lever correction: Move 2 band ($260K-$530K) governs on site and in PDF; low ends + full restore clear the gap by $71K; the 10%-raise/$52M claims are withdrawn")
 else:
-    diff(f"top-end check mismatch: surplus {surplus_hi:.0f}, bonds {bonds_hi:.0f}, site $52M: {('$52 million' in html)}")
+    diff(f"lever correction incomplete: low surplus {low_surplus}, 10%-claim still on site: {('10 percent raise' in html)}")
 fills = (16*4626-46*400, 55616+60000)
 if fills[0]-0 == 55616+400*0 - 0 and "$56,000 to $116,000" in pdf_flat:
     match("fill package $56,000-$116,000 in the PDF; the site carries the live planner (prose quote retired in v4.2)")
