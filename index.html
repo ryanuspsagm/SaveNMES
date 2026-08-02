@@ -257,7 +257,7 @@ footer a{color:var(--ice)}
 <label><input type="checkbox" id="tgKC"> KDE composite (includes the state's climate survey)</label>
 </div>
 <div class="chartbox tall"><canvas id="chartScores" role="img" aria-label="Line chart of elementary school scores from 2007 to 2025"></canvas></div>
-<p class="note">The chart defaults to real test results: reading and math, plus the other three tested subjects (science, social studies, writing). The official composite is off by default because it is not a pure test score. It folds in the state's school climate survey and a score for change against the prior year. That change piece is why Bourbon Central's composite crosses above NMES in the newest year: NMES led every 2024-25 subject index the state computed, but the change formula subtracts NMES's own record 2023-24 spike (74.5, first by fourteen points). The state's component file, archived in the repository, shows it. One more note: the state hides scores for very small groups, so in some years the science, social studies and writing line averages only the subjects the state published for that school.</p>
+<p class="note">The chart defaults to the five real test subjects. The official composite is off by default: it is not a pure test score (it folds in a climate survey and a change-from-last-year piece), which is why Bourbon Central's composite crosses NMES in the newest year even though NMES led every 2024-25 subject the state computed. The state's component file, archived in the repository, shows it.</p>
 </div>
 </details>
 </div></section>
@@ -270,13 +270,13 @@ footer a{color:var(--ice)}
 <div class="card">
 <h3>What each elementary school has cost, every year the state published it</h3>
 <div class="chartbox tall"><canvas id="chartHist" role="img" aria-label="Line chart of cost per student for the three county elementary schools and the Kentucky elementary average, 2014 to 2025. NMES runs a modest premium for its size and sits below the state average on the newest file."></canvas></div>
-<p class="note">The chart starts in 2014: the 2013 file carries a one-time renovation charge at NMES that would swamp the scale (the earlier years stay in the archived data). Two reporting eras remain: the state changed how it reports school spending after 2016-17, so compare within an era, not across the break. In the older era NMES ran above the state elementary average, the expected premium for a school this size under the old method. In the modern era NMES sat <b>below the Kentucky elementary average</b> in five of the eight years, ran above it from 2022 to 2024, and is back 7 percent below on the newest file.</p>
+<p class="note">The chart starts in 2014: the 2013 file carries a one-time renovation charge that would swamp the scale. The state changed its reporting method after 2016-17, so compare within an era. In the modern era NMES sat <b>below the Kentucky elementary average</b> in five of the eight years and is 7 percent below on the newest file.</p>
 </div>
 <div class="card">
 <h3>More students means a lower cost per student</h3>
 <p>Most of what NMES costs is the building and its fixed staff. Add students and that cost spreads over more children, so the cost per student falls, even counting every new cost: supplies, busing, and new hires as classes fill. NMES already costs less than the five-year Kentucky elementary average today, and from about 135 students it runs cheaper than the county's other elementaries too:</p>
 <div class="chartbox"><canvas id="chartCurve" role="img" aria-label="Line chart: NMES cost per student falls from about $20,600 at 110 students to $17,903 at 128 today and about $12,500 at the 198-seat rating, with steps where new teachers are hired beyond the 25 open seats. Dashed reference lines mark the five-year Kentucky elementary average of $18,051 and the five-year county elementary average of $17,090."></canvas></div>
-<p class="note">Basis: the 2024-25 state file plus the same costs as the growth calculator; the upward steps are new hires. The dashed lines are five-year averages (2021-2025) from the same state files: <b>Kentucky elementary schools $18,051</b>, the <b>county's three elementaries $17,090</b>. At the 198 seats the state approved in 2013, about $12,500, cheaper than every school in the county today. One per 21 is the school's actual class size today; shrinking runs the same math backward.</p>
+<p class="note">Dashed lines are five-year averages from the same state files: <b>Kentucky elementary schools $18,051</b>, the <b>county's three elementaries $17,090</b>. At the 198 seats the state approved in 2013, about $12,500 per student: cheaper than every school in the county today. One per 21 is today's class size; the upward steps are new hires.</p>
 </div>
 </details>
 </div></section>
@@ -335,7 +335,7 @@ footer a{color:var(--ice)}
 </div>
 <div class="card">
 <h3>What leaving families cost</h3>
-<p class="note">Every exit is free to the family and funded for the district that wins the child. And the first wave is only the start. The missing kids move up a grade each year, and new kindergartners follow their older siblings out. Once every grade from K through 12 is short, the yearly loss is more than double the first hit. Priced at the $4,626 base plus $500 of typical add-ons.</p>
+<p class="note">Every exit is free to the family and funded for the district that wins the child. Once every grade from K through 12 is short, the yearly loss is more than double the first hit. Priced at the $4,626 base plus $500 of typical add-ons.</p>
 <div style="overflow-x:auto"><table class="alt">
 <tr><th>Who leaves</th><th>Year one</th><th>Per year, full effect</th><th>Total by grade 12</th></tr>
 <tr><td>10% (13 kids)</td><td>$67,000</td><td>$144,000</td><td>$1.5M</td></tr>
@@ -344,7 +344,7 @@ footer a{color:var(--ice)}
 <tr><td>50% (64)</td><td>$328,000</td><td>$713,000</td><td>$7.7M</td></tr>
 </table></div>
 <div class="chartbox"><canvas id="chartLeave" role="img" aria-label="Line chart of the yearly state funding loss growing over thirteen years for each leaving share. At 30 percent leaving, the loss grows from about $195,000 in year one to about $422,000 a year from year eight on, once the missing grades reach all the way through the high school."></canvas></div>
-<p class="note">Figures rounded. The chart shows how each year's loss grows: the missing grades climb one grade a year, and the full rate arrives in year eight, when the first lost kindergarten class reaches grade 12; from then on every grade is short and the loss levels off. The <b>Total by grade 12</b> column is the overall lifetime loss tied to the NMES leaver pool once it penetrates all the way through the high school: all thirteen years added. The current 128 students carry $5.6 to $7.4 million of remaining state funding through grade 12. And leavers cost buildings too: by the district's own advisor's June 2026 presentation, every 50 students lost take about $1 million of bonding capacity with them, roughly $20,000 each. A "transitional" label by itself pushes families out: nobody enrolls a kindergartner in a school marked for closing.</p>
+<p class="note">The loss grows until year eight, when the first lost kindergarten class reaches grade 12. The <b>Total by grade 12</b> column adds all thirteen years, the lifetime loss once the leaver pool penetrates all the way through the high school. And by the district's own advisor's June 2026 presentation, every 50 students lost take about $1 million of bonding capacity with them.</p>
 </div>
 </details>
 </div></section>
@@ -379,7 +379,7 @@ footer a{color:var(--ice)}
 <div class="verdict" id="rRank"></div>
 <div class="verdict" id="rTax" style="margin-top:8px"></div>
 </div>
-<p class="note">The default reflects the superintendent's written statement: all staff retained, savings arriving only by attrition. The tax line prices a loss at the district's own $191,000 per cent of rate and the median homeowner's $15.69 a month for 8.9 cents.</p>
+<p class="note">The default reflects the superintendent's written statement: all staff retained, savings arriving only by attrition. The tax line prices a loss at the district's own $191,000 per cent of rate ($7,829,060 of audited collections; the restricted building-fund levy is not counted) and the median homeowner's $15.69 a month for 8.9 cents.</p>
 </div>
 
 <div class="card">
@@ -466,7 +466,7 @@ footer a{color:var(--ice)}
 <h3>A case study: Fayette is in the headlines. Bourbon's gap is proportionally bigger.</h3>
 <p>Fayette County Public Schools has spent the year in the public spotlight over its finances. Credit where due: Bourbon's audited statements carry <b>clean opinions</b>. Now hold the two districts to the same fiscal year, 2025, both on their audited books, same measures. On the yearly gap, Bourbon is worse: <b>9.1 cents in the red for every General Fund dollar spent</b>, the third deficit in three years, against Fayette's <b>5.7 cents in the red</b> in the year of all the headlines. On the cushion left, Bourbon is stronger: <b>14.7 cents of reserve per dollar of spending</b> still in the bank against Fayette's <b>4.1 cents</b>. Read together, that is the warning: Bourbon is not out of money, it is burning its larger cushion at a faster rate per dollar than the district in the headlines:</p>
 <div class="chartbox"><canvas id="chartFay" role="img" aria-label="Grouped bar chart from the fiscal 2025 audited statements. Yearly General Fund gap per dollar spent: Bourbon County 9.1 cents, Fayette County 5.7 cents. Reserves remaining per dollar spent at June 30, 2025: Bourbon 14.7 cents, Fayette 4.1 cents."></canvas></div>
-<p class="note">Basis: each district's FY2025 audited statements, same two measures. The gap is revenues less expenditures before transfers, over General Fund spending: Bourbon $2,648,086 against $29,097,404; Fayette $38,907,376 against $685,348,803. The reserve is the ending General Fund balance over the same spending: Bourbon <b>$4,290,840</b> (14.7 cents per dollar); Fayette <b>$28,361,786</b> (4.1 cents), after its balance fell another $14.9 million, from <b>$43.3 million to $28.4 million</b>, in the same year its budget book had planned to hold the fund flat. Both audits are archived in the repository. Nobody is writing headlines about Bourbon. The numbers say they should be.</p>
+<p class="note">Basis, both FY2025 audits, archived in the repository: gaps of $2,648,086 against $29,097,404 (Bourbon) and $38,907,376 against $685,348,803 (Fayette); reserves of <b>$4,290,840</b> and <b>$28,361,786</b>, after Fayette's balance fell $14.9 million, from <b>$43.3 million to $28.4 million</b>, in a year its budget book planned flat. Nobody is writing headlines about Bourbon. The numbers say they should be.</p>
 </div>
 <div class="card">
 <h3>2. The enrollment problem is leakage, not demographics</h3>
@@ -494,7 +494,7 @@ footer a{color:var(--ice)}
 <h3>Lever 1: Grow enrollment. It works in Kentucky, at this scale, an hour away.</h3>
 <p>Eminence Independent, a small district in Henry County, was shrinking too. It rebuilt around a distinctive program and open enrollment. It grew 37 percent in a decade. Four in ten of its students now come from other districts, each bringing state money.</p>
 <div class="chartbox"><canvas id="chartEm" role="img" aria-label="Line chart indexing Eminence Independent enrollment growth against Bourbon County decline, 2014 to 2023"></canvas></div>
-<p class="note">Federal fall counts, indexed to 2014 = 100. Eminence: 733 to 991. Bourbon: 2,912 to 2,616. District-wide, the model prices enrollment recovery at <b>$260,000 to $530,000 a year</b> net of costs: attendance recovery, filling NMES, and 25 to 50 students recruited from the measured pool. <b>Correction:</b> an earlier version of this page valued this lever at $1.1 to $3.3 million; that figure was not supported by the model's own rows and has been corrected here and everywhere it flowed.</p>
+<p class="note">Federal fall counts, indexed to 2014 = 100. Eminence: 733 to 991. Bourbon: 2,912 to 2,616. The model's near-term band for district-wide enrollment recovery is <b>$260,000 to $530,000 a year</b> net of costs. <b>Correction:</b> an earlier version valued this lever at $1.1 to $3.3 million, unsupported by the model's own rows; corrected here and everywhere it flowed.</p>
 </div>
 
 <div class="card">
@@ -509,7 +509,7 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>Lever 3: Restore the tax rate to its 2018 level</h3>
-<p>The rate is simply lower. Bourbon levies 52.4 cents, second lowest of nine districts, and less than this same board levied in 2018. Meanwhile the county's tax base has more than doubled since 2012. Restoring the board's own 2018 rate, 8.9 cents, brings in up to <b>$1.7 million a year</b>: real resources to compete for families.</p>
+<p>The rate is simply lower. Bourbon levies 52.4 cents, second lowest of nine districts, and less than this same board levied in 2018. Meanwhile the county's tax base has more than doubled since 2012. Restoring the board's own 2018 rate, 8.9 cents, brings in up to <b>$1.7 million a year</b>: real resources to compete for families. And the 2018 rate is not a ceiling: under KRS 160.470 the board can go beyond it, subject to voter recall, a menu the report prices at <b>$1.0 to $2.5 million a year</b>.</p>
 <div class="slider-row" style="margin-top:14px"><label>Restore the board's own 2018 rate: how much of the 8.9 cents? <output id="oR18">100%</output></label>
 <input type="range" id="sR18" min="0" max="100" value="100" step="5"></div>
 <div class="result">
@@ -517,7 +517,6 @@ footer a{color:var(--ice)}
 <div class="sub">recurring revenue per year, from year one</div>
 <div class="verdict" id="rR18Verdict"></div>
 </div>
-<p class="note">And the 2018 rate is not a ceiling. Under KRS 160.470 the board can levy beyond it, subject to recall, and the report's Section 11 menu prices that range at <b>$1.0 to $2.5 million a year</b>. The restore is the floor of the revenue conversation, not the top. Basis, verified against KDE's own levied-rate file: about <b>$191,000 per cent of rate</b>, the district's own $7,829,060 of audited General Fund property tax collections at its 41.0-cent General Fund share of the real rate (the printed 52.4 cents minus the two 5.7-cent building nickels; the restricted building-fund levy is not counted, and tangible property moves with the rate). The full 8.9 cents costs the median homeowner $15.69 a month and scales down from there. And when property values rise, Kentucky's compensating rate math lowers the printed rate automatically, so a lower printed rate is not by itself a tax cut.</p>
 </div>
 
 <div class="card">
@@ -540,7 +539,7 @@ footer a{color:var(--ice)}
 <p class="note">Proposed public enrollment targets for NMES, the kind ask two puts on paper: 145 by fall 2027, 160 by 2028, 180 by 2029, 198 by 2030 (the building's 2013 state-approved rating). Miss them on a fair trial, and the next facility plan can revisit with evidence. Every line above is from the district's own documents, with the full basis in the report's Section 10 and live formulas in the model's Alternatives tab.</p>
 </div>
 <div class="card"><h3>A suggestion: three committees to run the growth plan</h3>
-<p class="note">The three levers in Part Two each need a group that owns it and reports to the public. <b>1. An enrollment growth committee</b>, charged with growing enrollment across the whole district. <b>2. A fixed-cost committee</b>, charged with inspecting every fixed cost, building by building. <b>3. A revenue committee</b>, charged with inspecting the revenue options that make the district competitive. Committees cost nothing, and they turn a plan on a website into work with names on it. Volunteers from the NMES community stand at the ready to help support these.</p></div>
+<p class="note">One group per lever, each reporting to the public: <b>an enrollment growth committee</b>, <b>a fixed-cost committee</b>, and <b>a revenue committee</b>. Committees cost nothing, and they turn a plan on a website into work with names on it. Volunteers from the NMES community stand at the ready to help support these.</p></div>
 </details>
 </div></section>
 
@@ -564,7 +563,7 @@ footer a{color:var(--ice)}
 <div class="card"><h3>1. Keep NMES Permanent in the facility plan</h3>
 <p class="note">A facility plan commits no money; Priority 2 exists for needs not yet funded. "Transitional" saves nothing this year either, but it blocks state facility funding and declares a phase-out. Same cost: zero. Only one keeps every door open.</p></div>
 <div class="card"><h3>2. Give the school four years, with public targets, and the tools to hit them</h3>
-<p class="note">The facility plan runs on a four-year cycle. Set public enrollment targets and let the school and community run a real push. The tools are options to weigh, not settled plans. <b>One option: a themed academy</b> in arts, technology, or agriculture and outdoor sciences, built on the county's best test record. <b>Another: a promise scholarship</b>, funded by donors and grants, that pays every NMES graduate toward college, trade school, or any certification. It gives families a lasting reason to enroll, and it costs the district nothing. Hit the targets and everything recovers. Miss them fairly, and the next plan decides with evidence.</p></div>
+<p class="note">Set public enrollment targets and let the school and community run a real push, judged on results. The tools are options to weigh: <b>a themed academy</b> in arts, technology, or agriculture and outdoor sciences, or <b>a promise scholarship</b>, funded by donors and grants, that pays every NMES graduate toward college, trade school, or any certification. It gives families a lasting reason to enroll, and it costs the district nothing. Hit the targets and everything recovers. Miss them fairly, and the next plan decides with evidence.</p></div>
 <div class="card"><h3>3. Let the community fund the building</h3>
 <p class="note">Grants, private money, donated labor and materials can carry the building's real needs at no cost to the district. The district's role is one sentence in a board motion: accept the help.</p></div>
 <div class="card"><h3>4. Say publicly that the district will grow this school</h3>

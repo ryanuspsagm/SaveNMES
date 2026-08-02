@@ -627,8 +627,8 @@ def main():
     for needle in ["compensating rate", "40.61", "42.64", "$8,254,030", "$393,049",
                    "$1,843,569,625", "five of the last twelve years"]:
         chk(needle in t, f"PDF HB 44 rate-vs-revenue intact: {needle}")
-    chk("compensating rate" in html,
-        "site HB 44 rate-vs-revenue: compensating-rate explanation kept (table retired to the report in v4.2)")
+    chk("compensating rate" in t and "compensating rate" not in html,
+        "the compensating-rate mechanics live in the report; the site levy card stays simple")
     # the table is a revenue limit: revenue at the 4% option is flat across all growth rates
     chk(t.count("$7,860,981") >= 4,
         "4 percent revenue constant at every assessment-growth row (PDF)")
@@ -662,10 +662,11 @@ def main():
                    "recalled by the voters it taxes",
                    "recalled by the children it displaces"]:
         chk(needle in t, f"PDF beyond-4% levy options intact: {needle}")
-    for needle in ["KRS 160.470", "not a ceiling", "$1.0 to $2.5 million a year",
-                   "41.0-cent General Fund share",
-                   "verified against KDE's own levied-rate file"]:
-        chk(needle in html, f"site levy-restore block (simplified, beyond-2018 stated): {needle}")
+    for needle in ["KRS 160.470", "not a ceiling", "$1.0 to $2.5 million a year"]:
+        chk(needle in html, f"site levy card (beyond-2018 stated in prose): {needle}")
+    for needle in ["41.0-cent General Fund share",
+                   "verified against KDE's own levied-rate file", "$190,953 per cent"]:
+        chk(needle in t, f"levy verification basis lives in the report: {needle}")
     chk("Bath County's building nickel" not in html and "recall record" not in html,
         "the recall-record note is retired from the site (report keeps it)")
     chk(round(7829060 / 41.0 * 8.9) == 1699479 and abs(41.0 + 5.7 + 5.7 - 52.4) < 0.01,
@@ -746,8 +747,8 @@ def main():
         "v3.8 archived in reports/ and linked from the version history")
     chk("New sections needed at NMES" not in html and "Redistricting tab carries" in t,
         "v3.8 section-debit slider retired with the seat planner; the debit lives in the model's Redistricting tab")
-    chk("change formula subtracts" in html and "change formula subtracts" in t,
-        "2024-25 index change-component explanation on site and in PDF")
+    chk("change-from-last-year piece" in html and "change formula subtracts" in t,
+        "2024-25 index change-component: simple on the site, full explanation in the PDF")
     chk('id="tgSD" checked' in html,
         "SchoolDigger toggle defaults to checked")
     chk('id="tgKP" checked' in html and 'id="tgKO" checked' in html,
@@ -767,7 +768,7 @@ def main():
         "EDFacts extract archived")
     chk("range midpoints" in t and "different scales" in t,
         "EDFacts midpoint and KCCT/KPREP scale caveats disclosed in the report")
-    chk("crosses above NMES in the newest year" in html,
+    chk("crosses NMES in the newest year" in html,
         "site keeps the 2024-25 crossover explanation (status table retired to the report in v4.2)")
 
     chk("unaudited" in t,
