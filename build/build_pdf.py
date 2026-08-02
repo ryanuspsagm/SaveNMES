@@ -469,8 +469,9 @@ P("The real breakeven question is the marginal one: at what enrollment do a scho
   "comfortably, which is how school finance is supposed to work. The full grid version in this section, with position, busing, and leaver effects, "
   "brackets North Middletown between 20 and 122 students. Every construction of the question except one, "
   "all-source costs divided by state-only revenue, says this school brings in more than closing it could recover. One request follows: "
-  "publish the worksheet behind the 300. If it differs from this reconstruction, the district's own records "
-  "are the fastest way to show it.")
+  "note the July 2026 records response: asked for any cost-benefit analysis of the school, the district "
+  "answered N/A, so this reconstruction stands as the only public version of the 300 (records response, "
+  "archived in this repository).")
 
 # ================= 4. MILLION DOLLAR QUESTION =================
 H("4. The Million-Dollar Question: What Closing the School Would Actually Save")
@@ -1173,7 +1174,8 @@ P("I deliberately rely on the audited totals rather than individual salaries, be
   "come from official records: the Kentucky Department of Education's annual superintendent salary file and the "
   "district's own board-adopted administrator salary schedule, which sets pay by formula, a base teacher salary "
   "multiplied by a responsibility increment and an extended work year. Those records, current and for the past "
-  "five years, are a public-records request away.")
+  "five years, were produced in the district's July 2026 records response (salary schedules 2023-2026, "
+  "payroll expenditure reports, and three working budgets).")
 
 # ================= 9. ALTERNATIVES =================
 H("10. The Alternatives on the Table: Grow, Don't Close")
@@ -1621,10 +1623,13 @@ P("The district holds about $4.3 million in General Fund balance and is drawing 
   "county's best elementary school, in the town that would lose the most, on the strength of an unpublished "
   "number, would be a permanent answer to a solvable problem. The community is not asking the Board to ignore the "
   "deficit. It is asking the administration to show its work. Before an irreversible decision, the district "
-  "should publish the staffing, receiving-school capacity, transportation, building, enrollment-retention, tax, "
+  "faces a record now settled by its own July 2026 records response: asked for any cost-benefit analysis, "
+  "enrollment study, capacity study, feasibility study, transportation study, or document evaluating the "
+  "future use of NMES, the district answered N/A to every one. The analyses do not exist. Before any vote, "
+  "the Board should require the administration to create the staffing, receiving-school capacity, transportation, building, enrollment-retention, tax, "
   "and interfund-transfer analyses needed to compare closure against complete keep-open and districtwide recovery "
   "plans. Revenue or reductions, the Board must choose one and own it; standing still simply spends the reserves "
-  "and settles nothing. Pause the vote. Publish the worksheets.")
+  "and settles nothing. Pause the vote. Create the analysis the records response says does not exist.")
 
 # ================= NOTES =================
 H("Notes on the Data")
@@ -1700,7 +1705,12 @@ P("<b>Version 4.5, August 2.</b> Both scenario grids now carry explicit lever di
   "district's advisor's June 2026 bonding presentation was archived and now anchors the capacity claims: "
   "$32 million of capacity, $126,250 of expiring SFCC offers, and about $20,000 of capacity lost per "
   "departing student, by its own sensitivity. The Fayette comparison was aligned to the same fiscal year "
-  "2025 on both sides. The report "
+  "2025 on both sides. The district's July 2026 records response was then received and archived: it "
+  "produced the ledger, budgets, salary schedules, bus routes, and planning records this report now cites, "
+  "and answered N/A to any cost-benefit, enrollment, capacity, feasibility, or transportation analysis and "
+  "any document evaluating the school's future; the report's publish-the-worksheet asks were rewritten as "
+  "that finding, and the money section was rebuilt as a plain ledger walk from the $1,285,310 all-funds "
+  "total. The report "
   "was then restructured to follow the website's flow end to end: Part One the case against closing, Part "
   "Two the growth plan, ending on the asks. The twelve-questions section and the Open Records appendix were "
   "removed (their requests live on in the asks and the named records gaps), and the process record, the "
@@ -1743,8 +1753,8 @@ P("Corrections policy: errors identified in this report will be corrected public
   "corrected version will carry a new version number and date. Every version, and the line-by-line history of "
   "every change to the report, model and website, is archived at github.com/ryanuspsagm/SaveNMES. Send "
   "corrections, with the source that supports them, to ryanuspsagm@gmail.com. The same standard is asked of the "
-  "district: publish the worksheet, and if this report's numbers are wrong, its own records are the fastest way "
-  "to show it.", note)
+  "district: its July 2026 records response answered N/A to any closure analysis, so if this report's numbers "
+  "are wrong, creating and publishing the analysis is the fastest way to show it.", note)
 
 # ================= SOURCES =================
 H("Sources")
@@ -1879,6 +1889,9 @@ srcs = [
  "build/ky_elem_spending_2012_2017.json), with the reproducible extractor build/cost_history.py",
  "Kentucky Department of Education assessment files behind the science, social studies and writing score series, 2017-18 "
  "through 2024-25, extracted with sources and suppression flags to build/kde_subjects_history.json",
+ "Bourbon County Schools, index of records fulfilled in response to the July 2026 open records requests (received July 20-21, "
+ "2026; N/A answers for any cost-benefit, enrollment, capacity, feasibility, or transportation analysis and any document "
+ "evaluating the future use of NMES), archived in this repository as build/records_fulfilled_2026_07.pdf",
 ]
 for i, s in enumerate(srcs, 1):
     A(Paragraph(f"{i}. {s}", ParagraphStyle("src", parent=note, fontSize=8.4, leading=10.8, spaceAfter=2.7)))
@@ -2053,7 +2066,8 @@ P("The KFICS Facilities Assessment prepared by RossTarrant Architects, presented
   "the middle school $22.4 million, and the districtwide total is <b>$98,441,294</b>, more than four times the "
   "unused bonding capacity in Section 8. Closing the second-least-needy building avoids $8.5 million of "
   "restricted-fund need, moves its children into buildings needing $23.2 million, and does nothing about a $98 "
-  "million problem. The full report behind the slides remains unpublished and is a standing records ask. Two "
+  "million problem. The full KFICS assessment was produced in the July 2026 records response and is archived "
+  "in this repository. Two "
   "points bound the building question. Any renovation would be paid from the restricted facility funds described "
   "in Section 8, which cannot close the operating deficit either way. And the receiving schools have little room: "
   "approved ratings are 521 at Bourbon Central and 422 at Cane Ridge, so at today's 459 and 453 there are 90 "
@@ -2120,7 +2134,8 @@ P("One scenario, run in the workbook's Redistricting tab. Rezone 30 students to 
   "$14,827 with the added section ($14,339 without, $15,316 with two), purely by filling seats. Two assumptions "
   "are flagged in yellow in the workbook for the district to replace with real data: that rezoned students' bus "
   "routes shorten or hold because they are chosen by proximity, and the receiving schools' grade-by-grade "
-  "capacities, already a records ask in Question 3. The district holds the geocoded student counts and routing "
+  "capacities, now a settled record: the July 2026 records response produced the current bus routes but "
+  "answered N/A for GIS files, routing-software reports, and ride-time analyses. The district holds the geocoded student counts and routing "
   "data to run the full version, and it should, before any vote.")
 fig("chart_balance.png",
     "Figure 19. One rebalancing scenario: North Middletown fills to its rated 174 while Bourbon Central and Cane "
@@ -2152,7 +2167,7 @@ tbl(["Zone", "Approx. area (sq mi)", "Elementary students", "Students per sq mi"
      ["District overall", "289", "1,040", "3.6"]],
     [2.6 * inch, 1.35 * inch, 1.45 * inch, 1.3 * inch],
     caption="Official zone areas from the federal School Attendance Boundary Survey (2015-16 collection); "
-            "students shown are each school's cited enrollment, the closest public proxy for zone residents. The vintage is the caveat: the district should confirm nothing has moved since (a records request away).",
+            "students shown are each school's cited enrollment, the closest public proxy for zone residents. The July 2026 records response confirms it: current boundaries sit in board policy, and the district reports no newer maps, no GIS files, and no reassignment scenarios (all N/A).",
     bold_first_col=True)
 fig("chart_map.png",
     "Figure 20. Where the students are: the district's official attendance zones from the federal School "
@@ -2263,12 +2278,13 @@ tbl(["Measure", "Estimated annual value", "How it works"],
             "reserve drawdown of $1.1 to $1.2 million.",
     bold_first_col=True)
 
-H2("The worksheet the district should publish, downside included")
-P("The central records ask survives the report's restructuring in one paragraph. Publish the closure "
-  "worksheet line by line: the net recurring General Fund saving, meaning costs that truly disappear, minus "
-  "added transportation, receiving-school costs, and the carrying or disposal cost of the building. And "
-  "publish the downside alongside it, because a worksheet carrying only one side of the ledger is not a "
-  "worksheet. Two risks belong on that page and neither appears in anything the district has produced. "
+H2("The closure analysis the district confirms does not exist")
+P("The July 2026 records response settled the central question of this report's records asks: asked for any "
+  "cost-benefit analysis of closing, consolidating, or repurposing the school, the district answered N/A. "
+  "None exists. When that analysis is created, and it should be created in writing before any vote, it "
+  "should run line by line: the net recurring General Fund saving, meaning costs that truly disappear, minus "
+  "added transportation, receiving-school costs, and the carrying or disposal cost of the building, with "
+  "the downside beside it, because a worksheet carrying only one side of the ledger is not a worksheet. Two risks belong on that page and neither appears in anything the district has produced. "
   "<b>First, children who leave the district rather than change schools.</b> Each one takes the SEEK base "
   "with them, $4,626 at the fiscal 2027 rate, every year, permanently; ten students is $46,260 a year and "
   "thirty is $138,780. This report's grid prices that leakage rather than assuming zero, and the risk is "

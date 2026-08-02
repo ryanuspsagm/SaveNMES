@@ -232,7 +232,7 @@ v3levers = [
  ("Non-salary capture (their worksheet, + insurance at the full stop)", 53519, 80279, 127039, "District Response Appendix A: $107,039 of building-bound lines (utilities, telecom, maintenance, custodial supplies) captured at 50/75/100 percent, plus its ~$20,000 insurance figure at the full stop. The worksheet's other $40,693 (supplies, books, field trips, printing = $318/student vs our measured $331) travels with the students."),
  ("Fixed positions cut over time (school admin + custodial + library)", 0, 107052.2, 214104.4, "MUNIS FY2026 actuals: school administration $115,397 + custodial $49,655 + library $49,052 = $214,104 (the district's own A.1 prices the same four roles at $209,700, within 2 percent, and states all current staff are retained in year one; the full-cut leg is an attrition end state)"),
  ("Teachers cut (grid legs 0/1/2/3) x $54,479.40 each", 0, 2, 3, "Priced at the district's OWN fully loaded 0-years-experience figure, $54,479.40 (Response Appendix A.1: 'Elementary Teachers: 2, $108,958.80'). The top leg credits 3 because Appendix B's own classroom count eliminates three homerooms net."),
- ("Added busing", 20000, 63000, 190000, "Derived bottom-up with uncertainty: 2-4 zone buses terminating in Paris (~9-11 road miles farther one-way), 2 loaded + 0-2 deadhead legs daily, 175 days, $3.25-$4.75/mile (KDE/NAPT band), high stop adds one $45,000 route split. Per zone student $160/$492/$1,495 vs the $1,032 district average. The district's routing data was requested and answered N/A."),
+ ("Added busing", 20000, 63000, 190000, "Derived bottom-up with uncertainty: 2-4 zone buses terminating in Paris (~9-11 road miles farther one-way), 2 loaded + 0-2 deadhead legs daily, 175 days, $3.25-$4.75/mile (KDE/NAPT band), high stop adds one $45,000 route split. Per zone student $160/$492/$1,495 vs the $1,032 district average. The July 2026 records response produced the current routes but answered N/A for any routing study or ride-time analysis."),
  ("Students leaving district (grid legs 0/13/26/38/51/64)", 0, 26, 64, "0 to 50 percent of 128, x ($4,626 SEEK base + the add-ons lever); exits free and funded under HB 563, homeschool and statewide virtual academy growing. CONSERVATIVE: this is the year-one wave only; if the same share of each entering class keeps leaving, the missing students more than double (x13/6) once every grade K-12 is short"),
  ("SEEK add-ons lost per leaver", 0, 500, 1000, "At-risk weight (15% of base on a ~72% FRL school), exceptional-child weights, transportation component, $100 capital outlay"),
  ("Property-value loss (zone tax base)", 0, 47500, 95000, "Roughly 0-10 percent of an estimated zone base; kept as foregone revenue because the board's rate practice does not raise rates to recapture zone valuation losses; PVA records ask pending"),
@@ -297,7 +297,7 @@ put(gr, "A15", "Context: NMES enrolled 160 students as recently as 2019-20 (see 
 # ================= REDISTRICTING =================
 rd = sheet("Redistricting", [56, 15, 58])
 put(rd, "A1", "Fill the Kings' Seats: Boundary Rebalancing and Cross-County Scenario", TITLE)
-put(rd, "A2", "A planning scenario, not a routing study. The district holds the geocoded student counts and routing data a true optimization needs; releasing them is a records ask in the report.", NOTE, wrap=True)
+put(rd, "A2", "A planning scenario, not a routing study. The July 2026 records response produced current bus routes but answered N/A for GIS files, routing-software reports, and ride-time analyses; the optimization inputs do not exist in public form.", NOTE, wrap=True)
 
 put(rd, "A4", "CURRENT ELEMENTARY MAP (2024-25 counts as cited in report Sections 4 and 9)", SEC)
 put(rd, "A5", "NMES enrollment"); put(rd, "B5", "=Assumptions!B11", GRN, NUM)
@@ -411,7 +411,7 @@ put(rd, "C87", "Bourbon Central; Cane Ridge in the next row", NOTE)
 put(rd, "A88", "Stress case, Cane Ridge")
 put(rd, "B88", "=(8606870-23*Assumptions!B62)/(461-23)", BLK, CUR)
 put(rd, "A91", "VARIABLE-COST VALIDATION, BOTH DIRECTIONS (added 7/26)", SEC)
-put(rd, "A92", "Class-cap staffing check (KRS 157.360: 24 in K-3, 28 in grade 4, 29 in grade 5). At an even grade mix, 174 students need about 11 sections against 9 existing rooms, and 154 need about 10; the supplies-only counterfactual is therefore the BEST case, and the staffed cases below are the honest base cases. Grade-by-grade enrollment is a records ask; a mix weighted to grades 4-5 needs fewer sections.", NOTE, wrap=True)
+put(rd, "A92", "Class-cap staffing check (KRS 157.360: 24 in K-3, 28 in grade 4, 29 in grade 5). At an even grade mix, 174 students need about 11 sections against 9 existing rooms, and 154 need about 10; the supplies-only counterfactual is therefore the BEST case, and the staffed cases below are the honest base cases. The July 2026 records response provided an elementary capacity graphic but no grade-by-grade files (building maps withheld for security); a mix weighted to grades 4-5 needs fewer sections.", NOTE, wrap=True)
 put(rd, "A93", "NMES at 174 with two added sections (base case)")
 put(rd, "B93", "=(B34+2*Assumptions!B41+(B6-B5)*Assumptions!B62)/B6", BLK, CUR)
 put(rd, "C93", "Same as the conservative row above; cheapest of the three on the 2023-24 filing", NOTE, wrap=True)
@@ -469,7 +469,7 @@ put(rd, "A135", "Total added students from all sources (rezone + transfers + ret
 put(rd, "A89", "NMES at 174 stays the cheapest of the three after the move, by a wider margin than before it (about $4,400 vs $3,800). The district-level cash case is booked separately and conservatively above as the net recurring benefit: consolidated sections at the senders, HB 563 SEEK revenue from out-of-county transfers, and capacity relief at Cane Ridge, which runs 31 students over its rating. The same symmetry runs the other way: closing NMES would lower the receiving schools' per-pupil optics while saving almost nothing in total, which is the closure case's weakness in one sentence.", NOTE, wrap=True)
 put(rd, "A39", "ASSUMPTIONS THE DISTRICT'S DATA SHOULD REPLACE", SEC)
 put(rd, "A40", "Rezoned students are drawn only from homes closer to NMES than to their assigned school, so bus routes shorten or hold even; the district's routing data would settle it.", NOTE, wrap=True)
-put(rd, "A41", "Receiving-school relief is booked only as one to two avoided or redeployed sections; grade-by-grade capacities at Bourbon Central and Cane Ridge are a records ask (report Question 3).", NOTE, wrap=True)
+put(rd, "A41", "Receiving-school relief is booked only as one to two avoided or redeployed sections; the July 2026 records response provided a capacity graphic; grade-by-grade room files were not shared (building maps withheld for security), so relief stays conservatively booked.", NOTE, wrap=True)
 put(rd, "A42", "SEEK for rezoned in-county students is unchanged (same district); only cross-county transfers add revenue.", NOTE, wrap=True)
 put(rd, "A43", "Per-student figures pair the latest published spending year (2023-24) with the current enrollment count; refresh when the 2024-25 spending data posts.", NOTE, wrap=True)
 

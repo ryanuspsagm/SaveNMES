@@ -79,8 +79,10 @@ ceiling are the grid's true extremes and do not depend on weights.
                              buses now terminating in Paris (~9-11 road miles
                              farther one-way), 2 loaded legs daily plus 0-2
                              deadhead legs, 175 days, $3.25-$4.75 per mile
-                             (KDE/NAPT benchmark band; the district's own
-                             routing data was requested and answered N/A), the
+                             (KDE/NAPT benchmark band; the July 2026 records
+                             response produced the current routes but answered
+                             N/A for any routing study or ride-time
+                             analysis), the
                              high stop adding one $45,000 ride-time route
                              split. Per zone student: $160 / $492 / $1,495
                              against the district's $1,032 average.

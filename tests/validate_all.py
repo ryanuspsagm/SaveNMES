@@ -446,11 +446,17 @@ def main():
         "archived MUNIS extract carries the published GF total, fixed base and building block")
     chk((REPO / "build" / "munis_cost_by_org_fy2026.pdf").exists(),
         "the MUNIS Cost by ORG ledger itself is archived")
-    for needle in ["What the district leaves out of the $933,537:",
-                   "What the district adds that the school's ledger never held:",
-                   "about $637,000 of instructional and student payroll",
-                   "MUNIS ledger", "$933,537"]:
-        chk(needle in html, f"938-to-661 bridge: {needle}")
+    for needle in ["Walk the ledger", 'class="walk"', "$1,285,310",
+                   "About $637,000 of instructional and student payroll",
+                   "MUNIS ledger", "$933,537",
+                   "What actually stops when the building closes",
+                   "Where the superintendent's $661,139 comes from, and why it may never show up",
+                   "N/A. None exists"]:
+        chk(needle in html, f"ledger walk and claim card: {needle}")
+    chk(abs(1285310.36 - 182951.88 - 161879.99 - 6941.43 - 933537.06) < 0.02,
+        "ledger walk recomputes: all-funds total minus federal, food service and activity = the General Fund")
+    chk((REPO / "build" / "records_fulfilled_2026_07.pdf").exists(),
+        "the July 2026 records response is archived")
     chk(abs(2648086 / 29097404 * 100 - 9.1) < 0.05
         and abs((82507209.57 - 42000000) / 671183390 * 100 - 6.0) < 0.05,
         "Fayette comparison ratios recompute (9.1 vs 6.0 cents per dollar)")
@@ -511,8 +517,8 @@ def main():
     # the district's $661,139 reconciled block by block against the MUNIS GF actuals
     chk(493407 + 107039 + 20000 + 40693 == 661139,
         "the $661,139 decomposition adds up")
-    for needle in ["Reconciling the two numbers", "$493,407 + $107,039 + $20,000 + $40,693 = $661,139"]:
-        chk(needle in html, f"661K vs 938K reconciliation: {needle}")
+    chk("$493,407 + $107,039 + $20,000 + $40,693 = $661,139" in html,
+        "the $661,139 decomposition stated on the claim card")
 
     # kindergartner lifetime funding: tightened range, add-ons at both ends
     chk(13 * 5126 == 66638, "kindergartner floor recomputes: 13 years at $5,126")
@@ -558,8 +564,8 @@ def main():
     # v4.5 restructure: questions section and ORR checklist removed; report ends on the asks
     chk("Twelve Questions" not in t and "twelve questions" not in t,
         "questions section removed from the report; the worksheet ask carries the demand")
-    chk("until the closure worksheet is published" in html,
-        "site petition line asks for the worksheet, not the retired questions list")
+    chk("until a written closure analysis with both sides of the ledger exists" in html,
+        "site petition line reflects the N/A records finding")
     chk("Response to the 10 Questions" in html,
         "site cites the district response by name in the sources")
     chk("The Open Records Checklist" not in t,

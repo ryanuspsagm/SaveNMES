@@ -122,6 +122,14 @@ input[type=range]{width:100%;accent-color:var(--royal)}
 .range-bar .you{position:absolute;top:-5px;bottom:-5px;width:12px;margin-left:-6px;background:var(--gold,#F5C242);border:2px solid #1F3864;border-radius:6px;z-index:2;transition:left .25s}
 @media (prefers-reduced-motion:reduce){.range-bar .you{transition:none}}
 .range-title{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:17px;margin:16px 0 0}
+.walk{margin:10px 0}
+.walk .wrow{display:flex;justify-content:space-between;gap:12px;padding:9px 2px;border-bottom:1px solid #E3E8F0;align-items:baseline}
+.walk .wl{flex:1;font-size:14.5px}
+.walk .wl .ws{display:block;font-size:12.5px;color:var(--slate);margin-top:2px}
+.walk .wa{font-family:var(--serif);font-weight:700;color:var(--navy);white-space:nowrap;font-size:15.5px}
+.walk .wrow.total{background:#EAF1F9;border-radius:6px;padding:10px;border-bottom:none;margin:6px 0}
+.walk .wrow.stop .wa{color:#2E6B2E}
+.walk .wrow.gone .wa{color:#8A8F98}
 .range-labs{display:flex;justify-content:space-between;gap:10px;font-size:13px;margin-top:8px;color:var(--slate)}
 .range-labs div{flex:1}
 .range-labs div:nth-child(2){text-align:center}
@@ -265,32 +273,39 @@ footer a{color:var(--ice)}
 <section id="frees"><div class="wrap">
 <div class="kicker">Fact Three</div>
 <h2>Closing it frees very little.</h2>
-<p class="lede">Most school spending moves with the students. Teachers still teach the same kids. Supplies, books, and field trips travel too. <b>Only the building's own costs stop: $79,211 a year if staff are reassigned (the building's actual utilities, disposal, telecom and supplies in the district's own ledger), up to $127,039 if the building is sold</b> (the district's own worksheet). The district's own $661,139 claim does not survive its own appendices.</p>
-<details class="more"><summary>More detail: the budget lines and the district's claim</summary>
+<p class="lede">Start from everything the district spent on this school last year: <b>$1,285,310</b>, from its own ledger. Most of it moves with the children or pays for itself. <b>Only the building's own costs stop: $79,211 a year if staff are reassigned, up to $127,039 if the building is sold</b> (the district's own worksheet). The superintendent's $661,139 claim does not survive the district's own paperwork.</p>
+<details class="more"><summary>More detail: the ledger walk and the district's claim</summary>
 <div class="card">
-<div style="overflow-x:auto"><table class="alt">
-<tr><th>North Middletown, General Fund FY2026 actuals, from the district's MUNIS ledger</th><th>Amount</th><th>Avoided by closing?</th></tr>
-<tr><td>Regular classroom instruction</td><td>$474,956</td><td>No: sections move with the children</td></tr>
-<tr><td>Other instructional programs</td><td>$128,036</td><td>No: programs follow the students</td></tr>
-<tr><td>School administration: principal, office</td><td>$115,397</td><td>Only if the people are cut, not moved</td></tr>
-<tr><td>Building: utilities, disposal, telecom, supplies, repairs</td><td>$79,211</td><td>Yes, if the building is closed</td></tr>
-<tr><td>Custodial (pay and benefits)</td><td>$49,655</td><td>Only if the person is cut, not moved</td></tr>
-<tr><td>Library and media</td><td>$49,052</td><td>Only if the person is cut, not moved</td></tr>
-<tr><td>Student health services</td><td>$33,664</td><td>Partly: follows students</td></tr>
-<tr><td>Transportation and other</td><td>$2,893</td><td>No</td></tr>
-<tr><td>Special education coded at the school</td><td>$673</td><td>No: NMES special education staffing is carried at the district office, and services follow the child</td></tr>
-<tr><td><b>Total General Fund actuals</b></td><td><b>$933,537</b></td><td></td></tr>
-</table></div>
-<p class="note">Source: the district's own MUNIS ledger, the 203-page Cost by ORG transaction detail (FY2026, archived in the repository); the parse reproduces the report's own org totals to the penny, and the extractor is public. The FY2026 working budget put the same General Fund total at $938,690, within 0.55 percent of the $933,537 the ledger shows. The big cost numbers quoted for this school ($2.5 million federal, $1.7 million budgeted) spread district-wide costs across buildings. Central office, district buses, and the maintenance pool do not disappear when a building closes. Per-student cost is an allocation key, not a savings estimate.</p>
+<h3>Walk the ledger: what closing can and cannot save</h3>
+<p>Every number below is from the district's own MUNIS ledger, fiscal 2026. Start at the top and take away everything that keeps getting spent no matter what:</p>
+<div class="walk">
+<div class="wrow total"><span class="wl"><b>Everything spent on NMES last year</b><span class="ws">all funds, the district's own ledger</span></span><span class="wa">$1,285,310</span></div>
+<div class="wrow gone"><span class="wl">Federal and grant money<span class="ws">follows the child to the next school</span></span><span class="wa">&minus; $182,952</span></div>
+<div class="wrow gone"><span class="wl">Food service<span class="ws">pays for itself from meal money</span></span><span class="wa">&minus; $161,880</span></div>
+<div class="wrow gone"><span class="wl">Student activity money<span class="ws">the students' own funds</span></span><span class="wa">&minus; $6,941</span></div>
+<div class="wrow total"><span class="wl"><b>General Fund: the money actually in play</b></span><span class="wa">$933,537</span></div>
+<div class="wrow gone"><span class="wl">Classroom teaching<span class="ws">moves: the same kids need the same teachers</span></span><span class="wa">$474,956</span></div>
+<div class="wrow gone"><span class="wl">Other instructional programs<span class="ws">moves with the students</span></span><span class="wa">$128,036</span></div>
+<div class="wrow gone"><span class="wl">Principal and office<span class="ws">saved only if the people are cut; the superintendent says all staff keep their jobs</span></span><span class="wa">$115,397</span></div>
+<div class="wrow stop"><span class="wl"><b>The building itself: utilities, disposal, phone, supplies, repairs</b><span class="ws">STOPS when the building closes</span></span><span class="wa">$79,211</span></div>
+<div class="wrow gone"><span class="wl">Custodian<span class="ws">saved only if cut; the superintendent says retained</span></span><span class="wa">$49,655</span></div>
+<div class="wrow gone"><span class="wl">Library<span class="ws">saved only if cut; the superintendent says retained</span></span><span class="wa">$49,052</span></div>
+<div class="wrow gone"><span class="wl">Student health<span class="ws">mostly follows the students</span></span><span class="wa">$33,664</span></div>
+<div class="wrow gone"><span class="wl">Transportation and other<span class="ws">does not stop</span></span><span class="wa">$2,893</span></div>
+<div class="wrow gone"><span class="wl">Special education coded at the school<span class="ws">services follow the child; the special-education staff sit at the district office</span></span><span class="wa">$673</span></div>
+<div class="wrow total stop"><span class="wl"><b>What actually stops when the building closes</b><span class="ws">plus $20,000 of district-held insurance and the rest of their worksheet's building lines if it is sold: at most $127,039</span></span><span class="wa">$79,211</span></div>
+</div>
+<p class="note">Source: the district's own MUNIS ledger, the 203-page Cost by ORG transaction detail (FY2026, archived in the repository); the parse reproduces the ledger's own totals to the penny, and the extractor is public. The FY2026 working budget put the same General Fund total at $938,690, within 0.55 percent of the $933,537 the ledger shows. The big cost numbers quoted for this school ($2.5 million federal, $1.7 million budgeted) spread district-wide costs across buildings; central office, district buses, and the maintenance pool do not disappear when a building closes.</p>
 </div>
 <div class="card">
-<h3>The district's $661,139 claim vs the honest range</h3>
-<p>The district's response prices closure savings at "$661,138.94 MINIMUM." Hold that against the range in the model below: even our <b>best case</b>, with the building sold, three teachers cut at the district's own price, and not one family leaving, reaches $484,582. Their "minimum" sits 36 percent above our best case. Their own appendices explain the gap:</p>
-<p>&bull; <b>$493,407 of it is staffing</b>, and the same appendix says: "All current staff would be retained." The savings arrive only later, by attrition, if at all. Year one: $0.<br>
-&bull; <b>$40,693 of the expense lines travel with the students</b>: supplies, books, field trips, printing. That money is spent wherever the kids sit.<br>
-&bull; <b>Not one dollar of added busing</b> and <b>not one leaving family</b> appear anywhere in the 48-page response. Those are the two costs that push closures into the red.</p>
-<p><b>Reconciling the two numbers.</b> The table above is what the school actually spent from the General Fund, from the district's own MUNIS ledger: $933,537. The district's $661,139 is a savings claim built from four blocks: $493,407 of staffing priced with benefits, $107,039 of building costs, $20,000 of district-held insurance, and $40,693 of supplies. $493,407 + $107,039 + $20,000 + $40,693 = $661,139. The bridge between the two runs in both directions. <b>What the district leaves out of the $933,537:</b> about $637,000 of instructional and student payroll that moves with the children (regular instruction $474,956, other instructional programs $128,036, student health $33,664, and the $673 of special education the ledger codes at the school). Even their own claim does not count it as savings, because those teachers teach the same kids wherever they sit. <b>What the district adds that the school's ledger never held:</b> the $20,000 of insurance carried at the district level, and staffing priced at district-wide loaded rates rather than the school's own payroll. That is how a $933,537 ledger becomes a $661,139 claim. Their own appendix then takes back the biggest block: all staff are retained, so the staffing money arrives only by attrition, if at all. The supplies travel with the students. What survives is <b>$127,039</b>, the same building-and-insurance money our model credits.</p>
-<p class="note">Net their own sheet honestly and it loses money. Keep what survives, $107,039 of building costs plus $20,000 of insurance ($127,039, exactly what our model credits). Subtract the two costs their 48 pages never count: about $63,000 a year of central busing to haul the zone's kids to Paris, and the state funding that leaves if just 10 percent of families go (13 students at $5,126 each is $66,638). That is $127,039 minus $63,000 minus $66,638, or <b>$2,599 a year in the red</b>, right beside our model's median $20,007 yearly loss. Source: Response to the 10 Questions, archived in the repository.</p>
+<h3>Where the superintendent's $661,139 comes from, and why it may never show up</h3>
+<p>The district's response prices closure savings at "$661,138.94 MINIMUM." The number is four blocks: <b>$493,407 of staffing priced with benefits + $107,039 of building costs + $20,000 of district-held insurance + $40,693 of supplies</b>. $493,407 + $107,039 + $20,000 + $40,693 = $661,139. It is bigger than the school's whole ledger walk above because it prices staff at loaded district rates and adds insurance the school's budget never held. And even our <b>best case</b>, the building sold, three teachers cut at their own price, not one family leaving, reaches $484,582; their "minimum" sits 36 percent above it.</p>
+<p>Why it may never show up, in their own documents' words:</p>
+<p>&bull; <b>$493,407 is staffing, and their own appendix says "All current staff would be retained."</b> The money arrives only if people later quit and are not replaced. Year one: $0.<br>
+&bull; <b>$40,693 is supplies, books, and field trips.</b> That money is spent wherever the kids sit.<br>
+&bull; What is left is <b>$127,039</b> of building costs and insurance, the same money the ledger walk above already counts. About $637,000 of instructional and student payroll never enters their claim at all, because it moves with the children.<br>
+&bull; <b>Not one dollar of added busing and not one leaving family</b> appear anywhere in their 48 pages. Keep what survives ($127,039), subtract about $63,000 a year of busing to Paris, and let just 10 percent of families go (13 students at $5,126 each is $66,638). That is $127,039 minus $63,000 minus $66,638: <b>$2,599 a year in the red</b>, right beside our model's median $20,007 yearly loss.</p>
+<p class="note"><b>One more thing, now on the record.</b> Our records request asked the district for any cost-benefit analysis of closing, consolidating, or repurposing the school. The district's written answer, July 2026: <b>N/A. None exists.</b> The same response answered N/A for any enrollment study, capacity study, feasibility study, transportation study, and any document evaluating the future use of NMES (records response, archived in the repository). Sources: Response to the 10 Questions and the July 2026 records response, both archived.</p>
 </div>
 </details>
 </div></section>
@@ -546,7 +561,7 @@ footer a{color:var(--ice)}
 <div class="act"><h3>Join every public forum</h3><div class="when">Local Planning Committee &bull; Board of Education</div>
 <p>The committee that voted "transitional" and the board that will decide both meet in public, and hearings are still ahead. The district will announce the next public forums; watch the <a href="https://www.bourbon.kyschools.us">district site</a>. The committee's vote is advisory; the audience is not.</p></div>
 <div class="act"><h3>Sign and share</h3><div class="when">Two minutes</div>
-<p>Add your name to the petition asking the board to pause any vote until the closure worksheet is published with both sides of the ledger.</p>
+<p>Add your name to the petition asking the board to pause any vote until a written closure analysis with both sides of the ledger exists. The district's own records response says none does.</p>
 <a class="btn blue" href="https://www.change.org/p/sos-save-our-school-north-middletown-elementary" id="petitionBtn">Sign the petition</a></div>
 <div class="act"><h3>Write the board</h3><div class="when">Five minutes</div>
 <p>Superintendent Larry Begley and board members Bradley Purcell (chairman), Jonathan Ott (vice chairman), Mandy Thornberry, Miranda Wyles, and Shane Buckler. Ask for one thing: answers in writing before any vote.</p>
@@ -668,7 +683,7 @@ list.appendChild(d);
 <details class="more"><summary>Version history: every version stays public</summary>
 <div class="card" style="margin-top:18px">
 <h3>Every version stays public</h3>
-<p>The 57-page report and the complete financial model behind every number on this page. The open GitHub repository holds the source for all of it, including every archived district document.</p>
+<p>The 58-page report and the complete financial model behind every number on this page. The open GitHub repository holds the source for all of it, including every archived district document.</p>
 <p class="note"><b>Version history</b> (each report's corrections section lists what changed and why):
 <a href="reports/Saving_NMES_v4.5_2026-08-02.pdf">v4.5, August 2</a> (explicit lever weights on both grids, triangular where the record pins a center, uniform where it does not; middle halves published; KY average back to 2012 on the cost chart) &middot;
 <a href="reports/Saving_NMES_v4.4_2026-08-01.pdf">v4.4, August 1</a> (growth model on the district's own class caps, all 19,683 scenarios pay; the transformative check; five asks; Blue Ribbon added; version history replaces correction notes) &middot;
