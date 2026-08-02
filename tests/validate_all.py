@@ -408,8 +408,13 @@ def main():
 
     # v4.0: the two-roads restructure
     for needle in ["The District Needs Growth, Not Closures", "The Case Against Closing NMES", "Two roads",
-                   "107.5", "Eminence", "$58,774", "Permanent", "chartHist", "18938", "19348", "18131"]:
+                   "107.5", "Eminence", "$58,774", "Permanent", "chartHist", "18940", "19348", "18131"]:
         chk(needle in html, f"site v4 content intact: {needle}")
+    # cost history chart: modern era 2018-2025 filled from the archived state files (build/cost_history.py)
+    for needle in ["13581,13838,12903,15406,19080,19003",
+                   "14540,14193,14434,15691,17416,18910,18940,19299",
+                   "$19,299", "five of the eight years"]:
+        chk(needle in html, f"cost history modern era filled: {needle}")
     chk(html.index("The case against closing NMES is clear.</b>")
         < html.index("The district needs growth, not closures.</b>"),
         "Key Points ordered like the page: case against closing first")

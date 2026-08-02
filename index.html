@@ -237,12 +237,12 @@ footer a{color:var(--ice)}
 <section id="cost"><div class="wrap">
 <div class="kicker">Fact Two</div>
 <h2>The school is not expensive.</h2>
-<p class="lede">On the newest state spending file (2024-25), NMES costs <b>$17,903 per student</b>. The average Kentucky elementary school costs $19,300. NMES runs <b>7 percent below the state average</b>.</p>
+<p class="lede">On the newest state spending file (2024-25), NMES costs <b>$17,903 per student</b>. The average Kentucky elementary school costs $19,299. NMES runs <b>7 percent below the state average</b>.</p>
 <details class="more"><summary>More detail: the cost record</summary>
 <div class="card">
 <h3>What each elementary school has cost, every year the state published it</h3>
-<div class="chartbox tall"><canvas id="chartHist" role="img" aria-label="Line chart of cost per student for the three county elementary schools, 2012 to 2017 and 2024 to 2025, with the Kentucky elementary average shown for the newest two years. NMES runs a modest premium for its size and lands below the state average on the newest file."></canvas></div>
-<p class="note">Two reporting eras, so compare within an era, not across the gap. The 2013 NMES point includes a one-time renovation charge. In every era the pattern is the same: NMES runs a modest premium for its size, and on the newest file it sits <b>below the Kentucky elementary average</b>.</p>
+<div class="chartbox tall"><canvas id="chartHist" role="img" aria-label="Line chart of cost per student for the three county elementary schools from 2012 to 2025, with the Kentucky elementary average shown from 2018 onward. NMES runs a modest premium for its size and sits below the state average on the newest file."></canvas></div>
+<p class="note">Two reporting eras: the state changed how it reports school spending after 2016-17, so compare within an era, not across the break. The 2013 NMES point includes a one-time renovation charge. In the modern era NMES sat <b>below the Kentucky elementary average</b> in five of the eight years, ran above it from 2022 to 2024, and is back 7 percent below on the newest file.</p>
 </div>
 <div class="card">
 <h3>More students, lower cost per student, with every new cost counted</h3>
@@ -795,10 +795,10 @@ scales:{y:{min:80,max:145,grid:{color:'#E3E8F0'},title:{display:true,text:'enrol
 (function(){
 var HY=[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
 var HD={
-"North Middletown":[9715,19635,9948,10999,11521,13260,null,null,null,null,null,null,19348,17903],
-"Bourbon Central":[7351,10281,7123,8651,8705,9197,null,null,null,null,null,null,18131,16677],
-"Cane Ridge":[7740,11383,7718,9222,9655,9815,null,null,null,null,null,null,18670,16930],
-"KY elementary average":[null,null,null,null,null,null,null,null,null,null,null,null,18938,19300]};
+"North Middletown":[9715,19635,9948,10999,11521,13260,13581,13838,12903,15406,19080,19003,19348,17903],
+"Bourbon Central":[7351,10281,7123,8651,8705,9197,11201,11804,12159,14011,15619,17410,18131,16677],
+"Cane Ridge":[7740,11383,7718,9222,9655,9815,11544,12052,12168,14621,16137,17403,18670,16930],
+"KY elementary average":[null,null,null,null,null,null,14540,14193,14434,15691,17416,18910,18940,19299]};
 new Chart(document.getElementById('chartHist'),{type:'line',
 data:{labels:HY,datasets:Object.keys(HD).map(function(k){
 var isN=k==='North Middletown',isS=k==='KY elementary average';
