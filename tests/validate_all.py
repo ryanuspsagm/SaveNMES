@@ -257,6 +257,9 @@ def main():
                    "getElementById('blClose')", "getElementById('blGrow')"]:
         chk(needle in html, f"consolidated range card: {needle}")
     chk(html.count('class="iqr"') == 2, "IQR band on both bars")
+    chk('<details class="more"><summary>More detail: every scenario, side by side</summary>' in html
+        and '</details>\n\n<div class="bline">' in html,
+        "the side-by-side range card is collapsed by default; the live bottom line stays visible outside it")
     chk("$140,331" not in html and "$21,971" not in html,
         "old unweighted medians retired from the site")
 
@@ -701,6 +704,15 @@ def main():
     chk("enrollment growth committee" in html.lower() and "fixed-cost committee" in html.lower()
         and "revenue committee" in html.lower(),
         "the three standing committees live in Part Two")
+    chk("three standing committees" in html and "progress report at every board meeting" in html
+        and "236 homeschool households" in html and "routing study" in html
+        and "2018 rate" in html,
+        "each committee card bullet carries its lever's charge")
+    chk("three standing committees" in t and "236 homeschool households" in t
+        and "progress report at every board meeting" in t,
+        "report Section 10 mirrors the expanded committee charges")
+    chk("three standing committees" in es and "enrollment growth, fixed costs, and revenue" in es,
+        "executive summary carries the committee suggestion")
     chk("Amazon Future Engineer" in html.lower().replace("amazon future engineer", "Amazon Future Engineer")
         or "Amazon Future Engineer" in html,
         "ask 2 carries the differentiation tools (Amazon Future Engineer)")

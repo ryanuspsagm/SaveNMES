@@ -126,8 +126,9 @@ A(Paragraph(
   "about $35 million of building capacity, anchored on the $32 million the district's own advisor presented "
   "in June 2026, before a single leaked student comes back. Recover half the pool and the surplus reaches "
   "about $1.9 million a year; the full pool reaches about $3.6 million and about $72 million of capacity. "
-  "Every school stays open. Three committees can run it: enrollment, fixed "
-  "costs, and revenue. NMES volunteers stand ready to help.", body))
+  "Every school stays open. To run it, the board should create three standing committees, one per lever, "
+  "each reporting publicly: enrollment growth, fixed costs, and revenue. NMES volunteers stand ready to "
+  "serve on all three.", body))
 
 A(Paragraph("THE CHOICE", kick))
 A(Paragraph("Two roads, and four asks that cost nothing", h1))
@@ -148,7 +149,7 @@ A(Paragraph(
   "year, by everyone.", body))
 A(HRFlowable(width="100%", thickness=0.8, color=LINE, spaceBefore=6, spaceAfter=6))
 A(Paragraph(
-  "The full 59-page report, the financial model with every calculation as live formulas, all archived "
+  "The full 60-page report, the financial model with every calculation as live formulas, all archived "
   "district documents, and every prior version with its corrections are free at SaveNMES.org and in the "
   "public repository.", ParagraphStyle("f", parent=body, fontSize=9.4, textColor=GRAY)))
 

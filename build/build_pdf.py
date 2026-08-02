@@ -1428,8 +1428,17 @@ P("Bourbon County Schools has a structural funding problem: spending has outrun 
   "sweep ends, because the sweep spends the very stream the capacity is built on. Together, about $35 "
   "million of building capacity, teachers paid more, and every school open. The earlier 10-percent-raise and "
   "$52 million top-end claims are withdrawn with the lever correction. A suggestion for running "
-  "the plan: stand up three committees, one each for enrollment growth, fixed costs, and revenue options; "
-  "volunteers from the North Middletown community stand at the ready to help support them.")
+  "the plan: the board should create three standing committees, one per lever, each with a public charge "
+  "and a progress report at every board meeting. An enrollment growth committee would work to win families "
+  "back: reach the 236 homeschool households in the district's own files, market the county's top-scoring "
+  "elementary to the 450 to 550 county children outside the public schools, and own the public enrollment "
+  "targets. A fixed-cost committee would drive the $760,000 to $1.3 million package: commission the routing "
+  "study the $2.7 million transportation line has never had, review every non-teaching vacancy before it is "
+  "refilled, and put the energy contracts out to bid. A revenue committee would lay the rate choices in "
+  "front of the public: what each step on the menu funds, what it costs the median homeowner per month, and "
+  "a path back to the board's own 2018 rate. Committees cost nothing, and they turn a plan on paper into "
+  "work with names on it; volunteers from the North Middletown community stand at the ready to serve on "
+  "all three.")
 
 H2("The growth model, priced like the closure model")
 P("The growth side is priced with the same discipline as the closure grid, and on the district's own "

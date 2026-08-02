@@ -53,6 +53,9 @@ def main():
         pg.on("pageerror", lambda e: errors.append(str(e)))
         pg.goto(url, wait_until="networkidle")
         pg.wait_for_timeout(1200)
+        sbs = pg.evaluate("document.querySelectorAll('#model details.more')[1].open")
+        if not sbs: ok("side-by-side scenario card collapsed by default")
+        else: bad("side-by-side scenario card should start collapsed")
         # v4.2 review: sections collapse to key points; open everything for testing
         pg.evaluate("document.querySelectorAll('details').forEach(d=>d.open=true)")
         pg.wait_for_timeout(600)
