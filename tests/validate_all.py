@@ -245,8 +245,11 @@ def main():
                    "$54,479.40", "$41,718", "747"]:
         chk(needle in t, f"PDF v4.5 two-tailed range intact: {needle}")
     # v4.5 consolidated card: both bars, IQR bands, weighting disclosed, bottom line
+    chk("triangular 1-2-1 weight" in t and "counts double (a triangular weight)" not in html
+        and "percentile scale</b>" not in html,
+        "the weighting method lives in the report; the side-by-side card stays simple")
     for needle in ["Every scenario, side by side", "middle half", 'class="iqr"',
-                   "triangular weight", "$137,095", "$98,603", "$94,520", "$182,654",
+                   "$137,095", "$98,603", "$94,520", "$182,654",
                    "The bottom line: your two scenarios, live from the calculators above", 'class="bline"',
                    '<div class="n" id="blGrow">+$141,780</div>',
                    '<div class="n" id="blClose">&minus;$130,749</div>',
@@ -424,7 +427,7 @@ def main():
                    "at $4,226 each", 'min="0" max="550" value="275"', "13.008",
                    'id="rTax"', "To make up a loss this size with taxes instead",
                    "$15.69 a month for 8.9 cents",
-                   'id="youClose"', 'id="youGrow"', "percentile scale",
+                   'id="youClose"', 'id="youGrow"',
                    "gold marker is your scenario"]:
         chk(needle in html, f"plan calculator / tax line / percentile bars: {needle}")
     chk(760000 + 1699479 - 1738653 == 720826,
