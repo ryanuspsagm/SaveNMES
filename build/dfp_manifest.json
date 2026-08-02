@@ -1,4 +1,14 @@
 {
+    "nmes_zone_blocks_2020.json": {
+        "what": "2020 Census blocks for Bourbon County (821 blocks: 9,112 housing units, population 20,252) assigned to the three Bourbon County Schools attendance zones by point-in-polygon against the archived SABS boundaries. NMES zone: 1,188 housing units (13.0 percent of county), population 2,625, 110.1 square miles (38.0 percent of county land). The 2,616 unassigned housing units are the Paris Independent school territory. Input to nmes_zone_roll_estimate.py.",
+        "source": "Census TIGERweb REST service, Tracts_Blocks layer 2 (2020 blocks), HU100/POP100/AREALAND/centroids; zone polygons from build/sabs_zones.json (NCES EDGE SABS 2015-16).",
+        "retrieved": "2026-08-02"
+    },
+    "nmes_zone_roll_estimate.json": {
+        "what": "ESTIMATE of the NMES zone's share of the district's property assessment roll, built because no parcel-level roll with values is publicly downloadable: zone assessed value $310M-$411M (central $359M), 12.9-17.1 percent of the district's $2,400,209,505 FY2027 SEEK assessment (central 14.9 percent), roughly $1.0-1.3 million a year of General Fund property tax. Method and LOW/CENTRAL/HIGH assumptions in nmes_zone_roll_estimate.py: census-block housing shares for dwellings and vehicles, land share for farm at use value, stated bands for commercial, tangible and PSC. Supersede with the PVA parcel roll when produced.",
+        "source": "Computed from nmes_zone_blocks_2020.json, the 2025 DOR certified values by class, and the FY2027 SEEK assessments; reproducible via build/nmes_zone_roll_estimate.py.",
+        "retrieved": "2026-08-02"
+    },
     "bourbon_audit_fy2025.pdf": {
         "what": "Bourbon County School District, audited financial statements, fiscal year ended June 30, 2025. General Fund: revenues $26,449,318, expenditures $29,097,404, deficit before transfers ($2,648,086); transfers in $1,630,142, out ($207,521); fund balance $5,516,305 to $4,290,840 (14.7 cents per dollar of GF spending). Verifies the 9.1-cent gap figure and anchors the reserve comparison on the Fayette card.",
         "source": "KDE district financial reports: education.ky.gov/districts/FinRept/Documents/FY2024-2025 FA Bourbon Co Rev.pdf",

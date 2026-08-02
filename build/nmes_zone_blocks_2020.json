@@ -1,0 +1,29 @@
+{
+ "county": {
+  "HU": 9112,
+  "POP": 20252,
+  "AREA": 750447851.0
+ },
+ "rural_hu": 3113,
+ "zones": {
+  "Cane Ridge Elementary School": {
+   "HU": 2342,
+   "POP": 5016,
+   "AREA": 309405703.0,
+   "RHU": 1377
+  },
+  "North Middletown Elementary School": {
+   "HU": 1188,
+   "POP": 2625,
+   "AREA": 285206824.0,
+   "RHU": 866
+  },
+  "Bourbon Central Elementary School": {
+   "HU": 2966,
+   "POP": 6961,
+   "AREA": 150474267.0,
+   "RHU": 870
+  }
+ },
+ "unassigned_hu": 2616
+}

@@ -1,0 +1,41 @@
+{
+ "what": "Estimated share of the Bourbon County Schools assessment roll sitting inside the NMES attendance zone. An estimate, not the roll: replace with the PVA parcel file when produced.",
+ "census_blocks": {
+  "county_hu": 9112,
+  "zone_hu": 1188,
+  "zone_hu_share": 0.1304,
+  "zone_pop": 2625,
+  "zone_pop_share": 0.1296,
+  "zone_land_share": 0.38,
+  "paris_territory_hu": 2616
+ },
+ "dor_2025_pools": {
+  "housing_incl_farm_residences": 1441819662,
+  "farm_land_use_value": 319048948,
+  "commercial": 283842980,
+  "tangible": 138223550,
+  "psc": 129355169,
+  "motor_vehicles_boats": 252955881
+ },
+ "district_assessment_fy2027": 2400209505,
+ "paris_independent_assessment_fy2027": 444349093,
+ "estimate": {
+  "low": {
+   "zone_dollars": 309642291,
+   "share_of_district_roll": 0.129
+  },
+  "central": {
+   "zone_dollars": 358727764,
+   "share_of_district_roll": 0.1495
+  },
+  "high": {
+   "zone_dollars": 410651667,
+   "share_of_district_roll": 0.1711
+  }
+ },
+ "gf_property_tax_from_zone": {
+  "low": 1009949,
+  "central": 1170444,
+  "high": 1339552
+ }
+}
