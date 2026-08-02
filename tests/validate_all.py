@@ -414,7 +414,10 @@ def main():
                    "This scenario lands at about the", "19,683 weighted scenarios",
                    "The default reflects the superintendent's written statement",
                    "the median of the 19,683 weighted scenarios: 30 added students",
-                   'value="140"', "Grow the district", "+$3.6M"]:
+                   'value="140"', "Grow the district", "+$3.6M",
+                   'class="forksvg"', ">SHRINK TO FIT</text>", ">GROW AND THRIVE</text>",
+                   "Shrink to Fit: close NMES", "Grow and Thrive: grow NMES",
+                   'class="fork-grid"']:
         chk(needle in html, f"v4.5 review round: {needle}")
     chk("Either way: a preschool pipeline" not in html,
         "the 'Either way' pipeline sentence removed from ask two")

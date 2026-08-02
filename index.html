@@ -55,6 +55,10 @@ h1 em{font-style:normal;color:var(--ice)}
 nav a[href="#act"]{color:#F5C242;font-weight:700}
 .roads{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0 10px;max-width:960px}
 @media (max-width:700px){.roads{grid-template-columns:1fr}}
+.forksvg{display:block;width:100%;max-width:560px;height:auto;margin:6px auto 14px}
+.fork-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 10px;max-width:960px}
+.fork-grid .road{margin-bottom:12px}.fork-grid .road:last-child{margin-bottom:0}
+@media (max-width:700px){.fork-grid{grid-template-columns:1fr}}
 .road{border-radius:10px;padding:16px 12px;text-align:center;border:1px solid rgba(255,255,255,.25)}
 .road .t{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#D9E2F3}
 .road .n{font-family:var(--serif);font-size:clamp(21px,5vw,34px);line-height:1.15;margin-top:4px}
@@ -331,7 +335,7 @@ footer a{color:var(--ice)}
 <div class="card">
 <h3>Schools compete now. K-5 is where you win or lose families.</h3>
 <p>Under HB 563, state money follows the child to whichever district wins the family.</p>
-<p>A kindergartner carries <b>about $67,000 to $76,000</b> of state funding over 13 years: $5,126 a year at today's rates ($4,626 base plus this school's ~$500 of add-ons), $66,638 if funding never rises again and $75,716 at the historical 2.1 percent yearly growth (nothing in law guarantees any increase). One in seven current middle and high schoolers came through NMES. Closing the only school on the east side of a 110-square-mile zone is quitting the market where the competition is thickest: Paris Independent next door; Montgomery, Clark, and Scott counties a short drive away and free to any family under HB 563; Fayette pulling 54 commuters; homeschool and the state virtual academy open for business.</p>
+<p>A kindergartner carries <b>about $67,000 to $76,000</b> of state money over 13 years: $5,126 a year at today's rates, $66,638 if funding never rises, $75,716 at its historical growth. One in seven current middle and high schoolers came through NMES. And the exits are everywhere: Paris Independent next door; Montgomery, Clark, and Scott counties a short drive away, free under HB 563; Fayette pulling 54 commuters; homeschool and the state virtual academy open for business. Closing the only school on the east side quits the market where the competition is thickest.</p>
 </div>
 <div class="card">
 <h3>What leaving families cost</h3>
@@ -459,27 +463,27 @@ footer a{color:var(--ice)}
 <details class="more"><summary>More detail: the three problems, charted</summary>
 <div class="card">
 <h3>1. The money problem</h3>
-<p>The General Fund ran a $2.65 million deficit in fiscal 2025, and the district's own June 2026 ledger trends fiscal 2026 about $1.74 million in the red before transfers: better, still red. Reserves fall about $1.1 million a year. Pandemic aid ended (about $2.95 million a year) and state funding fell with attendance: the funded average daily attendance dropped by roughly 248 once the pandemic hold-harmless ended (SEEK pays on attendance, not on enrollment headcount). The district also sweeps $1.32 million a year of restricted capital money into operations. That drains the fund that should pay for buildings. And the slide is not over: the state's own 2026-27 SEEK forecast puts funded attendance at 2,174, down again.</p>
+<p>The General Fund ran a $2.65 million deficit in fiscal 2025. The district's own June 2026 ledger trends fiscal 2026 about $1.74 million in the red: better, still red. Reserves fall about $1.1 million a year. The causes are plain. Pandemic aid ended. Funded attendance dropped by roughly 248, and SEEK pays on attendance, not on enrollment headcount. And the district sweeps $1.32 million a year of restricted building money into operations, draining the fund that should pay for buildings. The slide is not over: the state's own 2026-27 SEEK forecast puts funded attendance at 2,174, down again.</p>
 <div class="chartbox"><canvas id="chartGF" role="img" aria-label="Bar chart of the operating deficit and fund balance, fiscal 2023 to 2025"></canvas></div>
 </div>
 <div class="card">
 <h3>A case study: Fayette is in the headlines. Bourbon's gap is proportionally bigger.</h3>
-<p>Fayette County Public Schools has spent the year in the public spotlight over its finances. Credit where due: Bourbon's audited statements carry <b>clean opinions</b>. Now hold the two districts to the same fiscal year, 2025, both on their audited books, same measures. On the yearly gap, Bourbon is worse: <b>9.1 cents in the red for every General Fund dollar spent</b>, the third deficit in three years, against Fayette's <b>5.7 cents in the red</b> in the year of all the headlines. On the cushion left, Bourbon is stronger: <b>14.7 cents of reserve per dollar of spending</b> still in the bank against Fayette's <b>4.1 cents</b>. Read together, that is the warning: Bourbon is not out of money, it is burning its larger cushion at a faster rate per dollar than the district in the headlines:</p>
+<p>Fayette has spent the year in the headlines over its money. Bourbon's audited books carry <b>clean opinions</b>, credit where due. Now compare both districts in the same fiscal year, 2025, on their audits. The yearly gap: Bourbon ran <b>9.1 cents in the red for every General Fund dollar spent</b>, its third deficit in three years, against Fayette's <b>5.7 cents in the red</b>. The cushion: Bourbon still holds <b>14.7 cents of reserve per dollar of spending</b> against Fayette's <b>4.1 cents</b>. That is the warning: Bourbon has the bigger cushion and is burning it faster than the district in the headlines:</p>
 <div class="chartbox"><canvas id="chartFay" role="img" aria-label="Grouped bar chart from the fiscal 2025 audited statements. Yearly General Fund gap per dollar spent: Bourbon County 9.1 cents, Fayette County 5.7 cents. Reserves remaining per dollar spent at June 30, 2025: Bourbon 14.7 cents, Fayette 4.1 cents."></canvas></div>
 <p class="note">Basis, both FY2025 audits, archived in the repository: gaps of $2,648,086 against $29,097,404 (Bourbon) and $38,907,376 against $685,348,803 (Fayette); reserves of <b>$4,290,840</b> and <b>$28,361,786</b>, after Fayette's balance fell $14.9 million, from <b>$43.3 million to $28.4 million</b>, in a year its budget book planned flat. Nobody is writing headlines about Bourbon. The numbers say they should be.</p>
 </div>
 <div class="card">
 <h3>2. The enrollment problem is leakage, not demographics</h3>
 <p>The county's children never left. Census counts: 3,594 kids in 2000, 3,548 in 2020. But Bourbon County Schools' enrollment fell 10.2 percent since 2014. Where this district's missing students sit, measured:</p>
-<p>&bull; <b>Homeschool: 236 students in Bourbon County Schools' own files</b> (letters of intent under KRS 159.160), up from 156 in 2018-19, and that is a floor, since filing compliance is incomplete. At $4,226 of state money each, about <b>$1.0 million a year</b>.<br>
+<p>&bull; <b>Homeschool: 236 students in Bourbon County Schools' own files</b> (letters of intent under KRS 159.160), up from 156 in 2018-19, and that count is a floor. At $4,226 of state money each, about <b>$1.0 million a year</b>.<br>
 &bull; <b>Private school:</b> St. Mary in Paris, the county's only private school, enrolls 96 (its split between the two districts' zones is not published), and roughly 1,200 new private seats opened within a 25-minute drive.<br>
 &bull; <b>Other districts: Bourbon already wins that competition.</b> 247 residents enroll elsewhere (171 at Paris Independent, 76 out of county), while 436 students transfer in, a net import of 189.</p>
-<p>The leak is not to other districts; it is out of public school entirely. County-wide, about <b>450 to 550 kids</b>, 13 to 15 percent, are in homeschool or private school (registered homeschooling alone is 259 across the two districts, up from 170 five years ago): <b>$1.9 to $2.3 million a year</b> of state funding walking past the public schools, at least a million of it sitting in Bourbon's own homeschool files. This is a competition problem, and competition problems have competition answers.</p>
+<p>The leak is not to other districts; it is out of public school entirely. County-wide, about <b>450 to 550 kids</b>, 13 to 15 percent, are in homeschool or private school (registered homeschooling alone is 259, up from 170 five years ago): <b>$1.9 to $2.3 million a year</b> walking past the public schools. This is a competition problem, and competition problems have competition answers.</p>
 <div class="chartbox"><canvas id="chartLeak" role="img" aria-label="Chart comparing Bourbon County school-age population, flat since 2000, against public school enrollment, which falls after 2019"></canvas></div>
 </div>
 <div class="card">
 <h3>3. The revenue problem</h3>
-<p>Bourbon taxes real estate at 52.4 cents per $100, second lowest of nine area districts. Every neighbor's rate is higher than it was fourteen years ago. Bourbon's is <b>5.4 percent lower</b>, the only decline in the region, while its tax base grew 107.5 percent, second fastest of the eight area counties. And growth is no explanation: every neighbor's base grew too, and their boards <b>raised rates anyway</b>. Eight boards facing the same growth chose to keep more revenue to compete with; one did not.</p>
+<p>Bourbon taxes real estate at 52.4 cents per $100, second lowest of nine area districts. Every neighbor's rate is higher than fourteen years ago; Bourbon's is <b>5.4 percent lower</b>, the only drop in the region, while its tax base grew 107.5 percent, second fastest of the eight area counties. Growth is no excuse: every neighbor's base grew too, and their boards <b>raised rates anyway</b>. Eight boards kept more revenue to compete with; one did not.</p>
 <div class="chartbox tall"><canvas id="chartLevyHist" role="img" aria-label="Line chart of fourteen years of school levy rates for nine area districts, every neighbor rising while Bourbon County ends lower than it began"></canvas></div>
 </div>
 </details>
@@ -488,7 +492,11 @@ footer a{color:var(--ice)}
 <section id="grow"><div class="wrap">
 <div class="kicker">The Three Levers</div>
 <h2>Grow enrollment. Cut fixed costs. Fix the rate.</h2>
-<p class="lede">Three levers the board already owns. With costs at their <b>low end</b> and the full rate restore, the plan clears the trending $1.74 million fiscal 2026 gap with about <b>$721,000 a year to spare</b>: enough for a <b>5 percent raise for every certified teacher</b> and about <b>$35 million of building capacity</b>, anchored on the <b>$32 million the district's own financial advisor presented in June 2026</b>, before a single leaked student is recovered. At the plan's central default, half the leakage pool recovered, the capacity reaches about <b>$50 million</b>. Every school stays open. The math is below.</p>
+<p class="lede">Three levers the board already owns: enrollment, fixed costs, and the tax rate. Every version of the plan clears the trending $1.74 million fiscal 2026 gap and funds a <b>5 percent raise for every certified teacher</b>:</p>
+<p class="lede">&bull; <b>Low:</b> not one student recovered, costs at the low end, full 2018 restore: about <b>$721,000 a year to spare</b> and about <b>$35 million of building capacity</b>.<br>
+&bull; <b>Middle, the default:</b> half the leakage pool comes back (275 students): about <b>$1.9 million to spare</b> and about <b>$50 million of capacity</b>.<br>
+&bull; <b>High:</b> the full pool and every lever: about <b>$3.6 million to spare</b> and about <b>$72 million of capacity</b>.</p>
+<p class="lede">All three stand on the <b>$32 million the district's own financial advisor presented in June 2026</b>. Every school stays open. The math is below.</p>
 <details class="more"><summary>More detail: the levers, priced</summary>
 <div class="card">
 <h3>Lever 1: Grow enrollment. It works in Kentucky, at this scale, an hour away.</h3>
@@ -521,8 +529,8 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>The plan, priced: set it yourself</h3>
-<p>The gap the plan must close is the district's own most current number: the June 2026 year-end ledger trends the fiscal 2026 General Fund about <b>$1.74 million in the red</b> before transfers (fiscal 2025's audited gap was $2.65 million). The floor is already enough: the cost package at its low end plus the full rate restore clears the whole trending gap with about <b>$721,000 a year to spare</b> before a single leaked student comes back, funding the 5 percent raise with roughly $2.8 million of new bonds left, about $35 million of capacity with the advisor's $32 million. It balances the budget, ends the capital sweep, and closes nothing.</p>
-<p><b>What the surplus buys.</b> The calculator opens at the plan's central case: <b>half the measured pool recovered, 275 of 550 students</b>, worth $1,162,150 a year at $4,226 each. That runs about <b>$1.88 million a year ahead</b> of the trending gap: a <b>5 percent raise for every certified teacher</b> (about $507,000 a year) with about $1.38 million left for debt, roughly <b>$17.9 million of new bonds</b> on top of the <b>$32 million of bonding capacity</b> the district's own financial advisor presented in June 2026, capacity that is real only if the restricted stream pays for buildings instead of being swept into operations (the $1.32 million-a-year sweep consumes about $17 million of it). Together, about <b>$50 million of building capacity</b>, a raise, and every school open. Every 100 recovered students move the number by <b>$422,600 a year</b>; the slider runs from zero to the full 550. Every step is a live formula in the model's Alternatives tab. That is the transformative version of Bourbon County Schools, and it closes nothing.</p>
+<p>The plan must close the district's most current gap: the June 2026 ledger trends fiscal 2026 about <b>$1.74 million in the red</b> (fiscal 2025's audited gap was $2.65 million). The floor already clears it: low costs plus the full rate restore leave about <b>$721,000 a year to spare</b> before a single student comes back, funding the 5 percent raise with roughly $2.8 million of new bonds left, about $35 million of capacity with the advisor's $32 million. It balances the budget, ends the capital sweep, and closes nothing.</p>
+<p><b>What the surplus buys.</b> The calculator opens at the middle case: <b>275 of 550 students recovered</b>, worth $1,162,150 a year at $4,226 each. That runs about <b>$1.88 million a year ahead</b> of the gap: the <b>5 percent raise for every certified teacher</b> (about $507,000 a year) plus roughly <b>$17.9 million of new bonds</b> on top of the <b>$32 million of bonding capacity</b> from the district's own advisor, real only once the $1.32 million-a-year capital sweep ends. Together, about <b>$50 million of building capacity</b>, a raise, and every school open. Every 100 recovered students move it by <b>$422,600 a year</b>. Every step is a live formula in the model's Alternatives tab.</p>
 <div class="slider-row"><label>Leaked students recovered, district-wide (of the 450 to 550 county kids now in homeschool or private school; $4,226 of state revenue each) <output id="oPw">275 students ($1,162,150 a year)</output></label>
 <input type="range" id="sPw" min="0" max="550" value="275" step="5"></div>
 <div class="slider-row"><label>Fixed-cost package (attrition, admin, routes, energy) <output id="oPc">$760,000</output></label>
@@ -546,12 +554,26 @@ footer a{color:var(--ice)}
 <section id="choice" class="partband"><div class="wrap">
 <div class="kicker">The Decision</div>
 <h2>Two roads.</h2>
-<div class="roads">
-<div class="road close"><div class="t">Close NMES</div><div class="n">-$130,749</div><div class="s">a year: the default closure scenario, the superintendent's own stance (all staff retained; the weighted median loses $20,007)</div></div>
-<div class="road grow"><div class="t">Grow NMES</div><div class="n">+$141,780</div><div class="s">a year: the default growth scenario, the median of 19,683 weighted scenarios</div></div>
-<div class="road plan"><div class="t">Grow the district</div><div class="n">+$3.6M</div><div class="s">a year: the Part Two plan at its default settings (half the leakage pool recovered, costs low, full 2018 restore), clearing the trending $1.74 million gap with $1.9 million to spare</div></div>
+<svg class="forksvg" viewBox="0 0 640 250" role="img" aria-label="A road forks in two. The left branch is Shrink to Fit: close the county's best school. The right branch is Grow and Thrive: fill seats, cut real costs, fix the rate.">
+<path d="M320 250 L320 185" stroke="#43597E" stroke-width="46" stroke-linecap="round" fill="none"/>
+<path d="M320 195 C320 140, 230 130, 160 62" stroke="#7A4640" stroke-width="40" stroke-linecap="round" fill="none"/>
+<path d="M320 195 C320 140, 410 130, 480 62" stroke="#3F6B44" stroke-width="40" stroke-linecap="round" fill="none"/>
+<path d="M320 250 L320 190" stroke="#F5C242" stroke-width="2.5" stroke-dasharray="8 8" fill="none"/>
+<path d="M320 195 C320 140, 230 130, 160 62" stroke="#F0B9B2" stroke-width="2.5" stroke-dasharray="8 8" fill="none"/>
+<path d="M320 195 C320 140, 410 130, 480 62" stroke="#BFE3BC" stroke-width="2.5" stroke-dasharray="8 8" fill="none"/>
+<text x="150" y="34" text-anchor="middle" fill="#F0B9B2" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="bold" letter-spacing="2">SHRINK TO FIT</text>
+<text x="490" y="34" text-anchor="middle" fill="#BFE3BC" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="bold" letter-spacing="2">GROW AND THRIVE</text>
+</svg>
+<div class="fork-grid">
+<div class="fork-col">
+<div class="road close"><div class="t">Shrink to Fit: close NMES</div><div class="n">-$130,749</div><div class="s">a year: the default closure scenario, the superintendent's own stance (all staff keep their jobs; the weighted median loses $20,007)</div></div>
 </div>
-<p>Close the county's best-scoring school for a median result that loses money, and tell every family watching that this district answers decline with retreat. Or grow: fill the seats, cut the real fixed costs, fix the rate, and compete for families this county never lost. <b>The numbers are not close.</b></p>
+<div class="fork-col">
+<div class="road grow"><div class="t">Grow and Thrive: grow NMES</div><div class="n">+$141,780</div><div class="s">a year: the default growth scenario, the median of 19,683 weighted scenarios</div></div>
+<div class="road plan"><div class="t">Grow the district</div><div class="n">+$3.6M</div><div class="s">a year: the growth plan at its defaults, clearing the trending $1.74 million gap with $1.9 million to spare</div></div>
+</div>
+</div>
+<p>One road closes the county's best school, and the middle case loses money. The other fills seats, cuts real costs, fixes the rate, and competes for families this county never lost. <b>The numbers are not close.</b></p>
 </div></section>
 
 <section id="asks"><div class="wrap">
