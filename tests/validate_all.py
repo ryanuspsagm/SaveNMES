@@ -231,7 +231,7 @@ def main():
 
     # headline claims
     for needle in ["$116,000 to $176,000", "2,648,086", "$23.5",
-                   "Appendix B: The Open Records Checklist", "KRS 157.370",
+                   "Appendix B: Other Supporting Data", "KRS 157.370",
                    "Boston Public Schools"]:
         chk(needle in t, f"PDF claim intact: {needle}")
     chk("-$130,749" in html and "if all staff are retained" in html
@@ -482,7 +482,8 @@ def main():
         "Key Points ordered like the page: case against closing first")
     chk(html.count('<details class="more"') >= 10,
         "sections collapse to key points with More detail expanders")
-    for needle in ["Decision in Brief", "Part Two: The Evidence", "$19,080", "$19,020",
+    for needle in ["Decision in Brief", "Part One: The Case Against Closing NMES",
+                   "Part Two: The District Needs Growth, Not Closures", "$19,080", "$19,020",
                    "107.5 percent", "Eminence", "149 last fall", "occupational",
                    "Marion County voters", "$5.6 million of remaining", "$613,000"]:
         chk(needle in t, f"PDF v4 decision brief intact: {needle}")
@@ -512,15 +513,17 @@ def main():
         chk(needle in t, f"PDF 2023 nickel decomposition intact: {needle}")
     chk("inference" in t.lower(),
         "the 2.5-cent figure is labelled an inference in the report")
-    # question list: twelve, aligned across site and report, with the two new asks
-    chk("Twelve Questions" in t, "twelve questions carried in the report")
-    chk("twelve questions in the report" in html, "site defers the questions to the report (v4 layout)")
+    # v4.5 restructure: questions section and ORR checklist removed; report ends on the asks
+    chk("Twelve Questions" not in t and "twelve questions" not in t,
+        "questions section removed from the report; the worksheet ask carries the demand")
+    chk("until the closure worksheet is published" in html,
+        "site petition line asks for the worksheet, not the retired questions list")
     chk("Response to the 10 Questions" in html,
         "site cites the district response by name in the sources")
-    chk("Ten Questions" not in t and "eleven questions" not in t.lower(),
-        "no stale question counts left in the report")
+    chk("The Open Records Checklist" not in t,
+        "the Open Records appendix is removed from the report")
     for needle in ["assessment erosion", "$138,780", "$46,260"]:
-        chk(needle in t, f"PDF question 1 downside risk intact: {needle}")
+        chk(needle in t, f"worksheet downside risks preserved in the supporting-data appendix: {needle}")
     chk("Property-value loss" in html, "site carries the property-loss lever (v4.2 name)")
     chk("does not establish that closure causes decline" in t.replace("<i>", "").replace("</i>", "")
         or "not establish that closure causes decline" in t,

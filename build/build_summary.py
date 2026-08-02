@@ -30,42 +30,12 @@ S = []
 A = S.append
 
 A(Paragraph("Saving North Middletown Elementary", title))
-A(Paragraph("Executive Summary • The Case for Growth, the Case Against Closure, and the Choice", sub))
+A(Paragraph("Executive Summary • The Case Against Closure, the Case for Growth, and the Choice", sub))
 A(Paragraph("Version 4.5 • August 2, 2026 • Built from public records and Open Records Requests only • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
 A(HRFlowable(width="100%", thickness=1.1, color=NAVY, spaceAfter=10))
 
-A(Paragraph("THE CASE FOR GROWTH", kick))
-A(Paragraph("A district-wide problem with district-wide levers", h1))
-A(Paragraph(
-  "<b>The problem is not one school.</b> Elementary enrollment is down 16.5 percent from its 2016 peak, "
-  "while the county's child count has stayed flat for twenty-five years. Kindergarten intake hit 149 last "
-  "fall, the lowest on the federal record. The General Fund burns through about $1.1 million of reserves a "
-  "year, and the 205 missing elementary students explain most of it: about $948,000 a year of state money. "
-  "The tax side is just as clear. The county's tax base grew 107.5 percent since 2012, second fastest of "
-  "eight area counties. The school levy fell 5.4 percent, the only drop among nine districts. Holding the "
-  "2012 rate would bring in about $613,000 more per year today", body))
-A(Paragraph(
-  "<b>Lever one, enrollment.</b> Each returning student brings the $4,626 state base against roughly $400 "
-  "of real new cost. The pool is measured: 259 registered homeschoolers, roughly 450 to 550 county children "
-  "outside the public schools, and 131 nonresident students already choosing this district. Eminence "
-  "Independent proved the model an hour away: it grew 37 percent in the decade Bourbon shrank 13. The tools "
-  "are options to weigh: a themed academy (arts, technology, or agriculture and outdoor sciences) or a "
-  "donor-funded promise scholarship that pays every NMES graduate toward college, trade school, or any "
-  "certification. The growth model prices the push with no free passes: one classroom teacher per full new "
-  "class past the 25 seats already open at the district's own class caps. It pays in every one of 19,683 "
-  "priced scenarios, with a middle case of +$141,780 a year. <b>Lever two, fixed costs.</b> Inspect every "
-  "non-teaching position district-wide and trim by attrition: $340,000 to $425,000 a year. Consider "
-  "restructuring the administration: $224,000 to $450,000. Smarter bus routes: $146,000 to $291,000 on a "
-  "$2.7 million line no routing study has ever tested. Energy contracts: $50,000 to $150,000. "
-  "<b>Lever three, revenue.</b> The rate is simply lower while the tax base more than doubled. Restoring "
-  "the board's own 2018 rate brings in about $1.7 million a year. In the last ten years, across the eight "
-  "neighboring districts, voters turned down exactly one school tax, a building nickel in Bath County. "
-  "<b>Together, the plan is transformative.</b> At its low ends it covers the whole gap, funds a 5 percent "
-  "raise for every certified teacher, and frees about $23 million of building capacity. At its top ends: a "
-  "10 percent raise and roughly $52 million. Every school stays open. A suggestion to run the plan: three committees, enrollment, fixed costs, and revenue; NMES volunteers stand at the ready to help", body))
-
-A(Paragraph("THE CASE AGAINST CLOSURE", kick))
-A(Paragraph("Five answers from the district's own documents", h1))
+A(Paragraph("PART ONE", kick))
+A(Paragraph("The case against closing NMES: five answers from the district's own documents", h1))
 A(Paragraph(
   "<b>Performance.</b> North Middletown leads the county in every state-tested subject and is a 2011 National "
   "Blue Ribbon School, one of five Kentucky public schools honored that year. <b>Cost.</b> The "
@@ -105,6 +75,36 @@ A(Paragraph(
   "roughly one in seven students at the middle and high school came through North Middletown. A family lost "
   "at kindergarten is lost for thirteen years.", body))
 
+A(Paragraph("PART TWO", kick))
+A(Paragraph("The district needs growth, not closures: three levers the board already owns", h1))
+A(Paragraph(
+  "<b>The problem is not one school.</b> Elementary enrollment is down 16.5 percent from its 2016 peak, "
+  "while the county's child count has stayed flat for twenty-five years. Kindergarten intake hit 149 last "
+  "fall, the lowest on the federal record. The General Fund burns through about $1.1 million of reserves a "
+  "year, and the 205 missing elementary students explain most of it: about $948,000 a year of state money. "
+  "The tax side is just as clear. The county's tax base grew 107.5 percent since 2012, second fastest of "
+  "eight area counties. The school levy fell 5.4 percent, the only drop among nine districts. Holding the "
+  "2012 rate would bring in about $613,000 more per year today", body))
+A(Paragraph(
+  "<b>Lever one, enrollment.</b> Each returning student brings the $4,626 state base against roughly $400 "
+  "of real new cost. The pool is measured: 259 registered homeschoolers, roughly 450 to 550 county children "
+  "outside the public schools, and 131 nonresident students already choosing this district. Eminence "
+  "Independent proved the model an hour away: it grew 37 percent in the decade Bourbon shrank 13. The tools "
+  "are options to weigh: a themed academy (arts, technology, or agriculture and outdoor sciences) or a "
+  "donor-funded promise scholarship that pays every NMES graduate toward college, trade school, or any "
+  "certification. The growth model prices the push with no free passes: one classroom teacher per full new "
+  "class past the 25 seats already open at the district's own class caps. It pays in every one of 19,683 "
+  "priced scenarios, with a middle case of +$141,780 a year. <b>Lever two, fixed costs.</b> Inspect every "
+  "non-teaching position district-wide and trim by attrition: $340,000 to $425,000 a year. Consider "
+  "restructuring the administration: $224,000 to $450,000. Smarter bus routes: $146,000 to $291,000 on a "
+  "$2.7 million line no routing study has ever tested. Energy contracts: $50,000 to $150,000. "
+  "<b>Lever three, revenue.</b> The rate is simply lower while the tax base more than doubled. Restoring "
+  "the board's own 2018 rate brings in about $1.7 million a year. In the last ten years, across the eight "
+  "neighboring districts, voters turned down exactly one school tax, a building nickel in Bath County. "
+  "<b>Together, the plan is transformative.</b> At its low ends it covers the whole gap, funds a 5 percent "
+  "raise for every certified teacher, and frees about $23 million of building capacity. At its top ends: a "
+  "10 percent raise and roughly $52 million. Every school stays open. A suggestion to run the plan: three committees, enrollment, fixed costs, and revenue; NMES volunteers stand at the ready to help", body))
+
 A(Paragraph("THE CHOICE", kick))
 A(Paragraph("Two roads, and four asks that cost nothing", h1))
 A(Paragraph(
@@ -119,7 +119,7 @@ A(Paragraph(
   "year, by everyone", body))
 A(HRFlowable(width="100%", thickness=0.8, color=LINE, spaceBefore=6, spaceAfter=6))
 A(Paragraph(
-  "The full 58-page report, the financial model with every calculation as live formulas, all archived "
+  "The full 55-page report, the financial model with every calculation as live formulas, all archived "
   "district documents, and every prior version with its corrections are free at SaveNMES.org and in the "
   "public repository.", ParagraphStyle("f", parent=body, fontSize=9.4, textColor=GRAY)))
 
@@ -130,7 +130,7 @@ def footer(canvas, doc):
     canvas.line(0.9*inch, 0.62*inch, 7.6*inch, 0.62*inch)
     canvas.setFont("Helvetica", 7.6); canvas.setFillColor(GRAY)
     canvas.drawString(0.9*inch, 0.47*inch,
-        "Saving North Middletown Elementary School • Executive Summary • Version 4.2, August 1, 2026")
+        "Saving North Middletown Elementary School • Executive Summary • Version 4.5, August 2, 2026")
     canvas.drawRightString(7.6*inch, 0.47*inch, f"Page {doc.page}")
     canvas.restoreState()
 
