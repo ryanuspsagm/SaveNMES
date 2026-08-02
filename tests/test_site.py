@@ -169,6 +169,10 @@ def main():
             else: bad("score toggle changed nothing")
         else: bad("no score toggle checkboxes found")
 
+        defaults_ok = pg.evaluate("!document.getElementById('tgKC').checked && document.getElementById('tgKO').checked && document.getElementById('tgKP').checked")
+        if defaults_ok: ok("scores chart defaults: subjects on, composite off")
+        else: bad("scores chart defaults wrong (tgKC should be off, tgKP/tgKO on)")
+
         legacy = pg.evaluate("['alternatives','math','closure','tax','trim'].filter(i=>document.getElementById(i)).length")
         if legacy == 0: ok("legacy v4.1 section ids absent")
         else: bad(f"{legacy} legacy v4.1 section ids still present")

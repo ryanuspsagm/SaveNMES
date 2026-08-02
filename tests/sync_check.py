@@ -121,8 +121,10 @@ years_model = list(range(2007, 2020)) + list(range(2021, 2026))
 def model_row(r):
     return {y: SD.cell(row=r, column=2+i).value for i, y in enumerate(years_model)}
 
-# the site now carries three selectable sources: comp (KDE official composite),
-# pd (KDE reading/math average), sd (SchoolDigger third-party index)
+# the site now carries four selectable sources: pd (KDE reading/math average),
+# oth (KDE science/social studies/writing average), sd (SchoolDigger third-party
+# index), comp (KDE official composite, off by default: it folds in the climate
+# survey and a change score)
 def site_block(src):
     blk = re.search(src + r":\{(.*?)\]\}", html, re.S).group(1) + "]"
     out = {}
@@ -157,6 +159,29 @@ if not comp_bad: match("site KDE composite series matches build/kde_scores_histo
 else: diff(f"site KDE composite mismatches: {comp_bad}")
 if not pd_bad: match("site KDE reading/math average series matches build/kde_scores_history.json")
 else: diff(f"site KDE R/M average mismatches: {pd_bad}")
+
+# site 'oth' series (science / social studies / writing average) vs the archived extract
+subj = json.load(open(f"{REPO}/build/kde_subjects_history.json"))
+site_oth = site_block("oth")
+oth_bad = []
+for yk, row in subj["avg"].items():
+    y = int(yk[:4]) + 1
+    for key in ("NMES", "BC", "CR", "PE"):
+        want = row[key]
+        got = site_oth[key].get(y)
+        if (got is None) != (want is None) or (want is not None and abs(got - want) > 0.06):
+            oth_bad.append((key, y, got, want))
+if not oth_bad: match("site KDE science/social studies/writing average series matches build/kde_subjects_history.json (all schools, all years)")
+else: diff(f"site KDE Sci/SS/Writing average mismatches: {oth_bad}")
+rec_bad = []
+for yk, row in subj["per_subject"].items():
+    for key, subs in row.items():
+        vals = [v for v in subs.values() if v is not None]
+        want = round(sum(vals) / len(vals), 1) if vals else None
+        if want != subj["avg"][yk][key]:
+            rec_bad.append((yk, key, want, subj["avg"][yk][key]))
+if not rec_bad: match("archived Sci/SS/Writing averages recompute from the per-subject values")
+else: diff(f"Sci/SS/Writing average recompute mismatches: {rec_bad}")
 
 # model School_Data KDE history block vs the same source file
 kh_years_keys = ["2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17",

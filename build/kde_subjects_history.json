@@ -1,0 +1,201 @@
+{
+ "source": "School-level percent proficient or distinguished in the three non-reading/math tested subjects (science, social studies, writing), all students / all tested students, elementary level, for the four Bourbon County elementary schools. 2017-18 and 2018-19 from KDE ACCOUNTABILITY_PROFICIENCY_LEVEL files (Wayback Machine captures of education.ky.gov, demographic TST); 2020-21 from the KDE assessment file (social studies was not tested that year); 2021-22 and 2022-23 from KDE accountable_assessment_performance files (subject CW = Combined Writing); 2023-24 and 2024-25 from the Kentucky Report Card ACCT Kentucky Summative Assessment datasets (kyschoolreportcard.com). Asterisk-suppressed cells stored as null.",
+ "method_note": "avg = mean over the subjects the state published for that school and year (suppressed cells excluded); null when nothing was published. 2019-20 has no data: state testing was cancelled.",
+ "retrieved": "2026-08-02",
+ "per_subject": {
+  "2017-18": {
+   "BC": {
+    "Science": 23.9,
+    "Social Studies": 28.2,
+    "Writing": 32.0
+   },
+   "CR": {
+    "Science": 22.2,
+    "Writing": 43.0,
+    "Social Studies": 51.2
+   },
+   "NMES": {
+    "Science": 33.3,
+    "Social Studies": 40.0,
+    "Writing": 60.0
+   },
+   "PE": {
+    "Social Studies": 9.4,
+    "Writing": 9.4,
+    "Science": 10.2
+   }
+  },
+  "2018-19": {
+   "BC": {
+    "Science": 17.2,
+    "Writing": 56.8,
+    "Social Studies": 35.2
+   },
+   "CR": {
+    "Social Studies": 49.0,
+    "Writing": 54.2,
+    "Science": 24.6
+   },
+   "NMES": {
+    "Social Studies": 57.1,
+    "Writing": 52.4,
+    "Science": 44.0
+   },
+   "PE": {
+    "Writing": 40.4,
+    "Science": 8.6,
+    "Social Studies": 17.0
+   }
+  },
+  "2020-21": {
+   "BC": {
+    "Science": 18.5,
+    "Writing": 36.8
+   },
+   "CR": {
+    "Science": 26.4,
+    "Writing": 47.0
+   },
+   "NMES": {
+    "Science": null,
+    "Writing": 50.0
+   },
+   "PE": {
+    "Science": null,
+    "Writing": null
+   }
+  },
+  "2021-22": {
+   "BC": {
+    "Writing": 30.0,
+    "Science": 20.0,
+    "Social Studies": 25.0
+   },
+   "CR": {
+    "Science": 20.0,
+    "Writing": 30.0,
+    "Social Studies": 33.0
+   },
+   "NMES": {
+    "Science": null,
+    "Writing": 42.0,
+    "Social Studies": 19.0
+   },
+   "PE": {
+    "Writing": null,
+    "Science": 19.0,
+    "Social Studies": 26.0
+   }
+  },
+  "2022-23": {
+   "BC": {
+    "Science": 21.0,
+    "Writing": 51.0,
+    "Social Studies": 34.0
+   },
+   "CR": {
+    "Writing": 10.0,
+    "Social Studies": 23.0,
+    "Science": 47.0
+   },
+   "NMES": {
+    "Writing": null,
+    "Social Studies": 28.0,
+    "Science": null
+   },
+   "PE": {
+    "Writing": 27.0,
+    "Science": null,
+    "Social Studies": 22.0
+   }
+  },
+  "2023-24": {
+   "BC": {
+    "Science": 24.0,
+    "Social Studies": 29.0,
+    "Writing": 51.0
+   },
+   "CR": {
+    "Science": 18.0,
+    "Social Studies": 43.0,
+    "Writing": 53.0
+   },
+   "NMES": {
+    "Science": 33.0,
+    "Social Studies": 50.0,
+    "Writing": 46.0
+   },
+   "PE": {
+    "Science": null,
+    "Social Studies": 16.0,
+    "Writing": null
+   }
+  },
+  "2024-25": {
+   "BC": {
+    "Science": 26.0,
+    "Social Studies": 31.0,
+    "Writing": 40.0
+   },
+   "CR": {
+    "Science": null,
+    "Social Studies": 27.0,
+    "Writing": 27.0
+   },
+   "NMES": {
+    "Science": 53.0,
+    "Social Studies": 36.0,
+    "Writing": 56.0
+   },
+   "PE": {
+    "Science": null,
+    "Social Studies": 22.0,
+    "Writing": 4.0
+   }
+  }
+ },
+ "avg": {
+  "2017-18": {
+   "NMES": 44.4,
+   "BC": 28.0,
+   "CR": 38.8,
+   "PE": 9.7
+  },
+  "2018-19": {
+   "NMES": 51.2,
+   "BC": 36.4,
+   "CR": 42.6,
+   "PE": 22.0
+  },
+  "2020-21": {
+   "NMES": 50.0,
+   "BC": 27.6,
+   "CR": 36.7,
+   "PE": null
+  },
+  "2021-22": {
+   "NMES": 30.5,
+   "BC": 25.0,
+   "CR": 27.7,
+   "PE": 22.5
+  },
+  "2022-23": {
+   "NMES": 28.0,
+   "BC": 35.3,
+   "CR": 26.7,
+   "PE": 24.5
+  },
+  "2023-24": {
+   "NMES": 43.0,
+   "BC": 34.7,
+   "CR": 38.0,
+   "PE": 16.0
+  },
+  "2024-25": {
+   "NMES": 48.3,
+   "BC": 32.3,
+   "CR": 27.0,
+   "PE": 13.0
+  }
+ }
+}

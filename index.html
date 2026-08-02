@@ -224,12 +224,13 @@ footer a{color:var(--ice)}
 <label><input type="checkbox" id="tgPE"> Paris Elementary</label>
 </div>
 <div class="checkrow">
-<label><input type="checkbox" id="tgKC" checked> KDE official composite</label>
 <label><input type="checkbox" id="tgKP" checked> KDE reading and math average</label>
+<label><input type="checkbox" id="tgKO" checked> KDE science, social studies, writing average</label>
 <label><input type="checkbox" id="tgSD" checked> SchoolDigger index (third party)</label>
+<label><input type="checkbox" id="tgKC"> KDE composite (includes the state's climate survey)</label>
 </div>
 <div class="chartbox tall"><canvas id="chartScores" role="img" aria-label="Line chart of elementary school scores from 2007 to 2025"></canvas></div>
-<p class="note">One reading note. The official composite for Bourbon Central crosses above NMES in the newest year. That is not a status result: NMES led every 2024-25 subject index the state computed. The composite also scores change from the prior year, so the change formula subtracts NMES's own record 2023-24 spike (74.5, first by fourteen points). The state's component file, archived in the repository, shows it.</p>
+<p class="note">The chart defaults to real test results: reading and math, plus the other three tested subjects (science, social studies, writing). The official composite is off by default because it is not a pure test score. It folds in the state's school climate survey and a score for change against the prior year. That change piece is why Bourbon Central's composite crosses above NMES in the newest year: NMES led every 2024-25 subject index the state computed, but the change formula subtracts NMES's own record 2023-24 spike (74.5, first by fourteen points). The state's component file, archived in the repository, shows it. One more note: the state hides scores for very small groups, so in some years the science, social studies and writing line averages only the subjects the state published for that school.</p>
 </div>
 </details>
 </div></section>
@@ -280,7 +281,7 @@ footer a{color:var(--ice)}
 <p>&bull; <b>$493,407 of it is staffing</b>, and the same appendix says: "All current staff would be retained." The savings arrive only later, by attrition, if at all. Year one: $0.<br>
 &bull; <b>$40,693 of the expense lines travel with the students</b>: supplies, books, field trips, printing. That money is spent wherever the kids sit.<br>
 &bull; <b>Not one dollar of added busing</b> and <b>not one leaving family</b> appear anywhere in the 48-page response. Those are the two costs that push closures into the red.</p>
-<p class="note">Netted honestly, the district's own worksheet comes out $2,599 a year in the red, right beside our model's median of a $21,971 yearly loss. What survives from their sheet, about $107,039 of building costs plus $20,000 of insurance, is exactly what our model already credits. Source: Response to the 10 Questions, archived in the repository.</p>
+<p class="note">Net their own sheet honestly and it loses money. Keep what survives, $107,039 of building costs plus $20,000 of insurance ($127,039, exactly what our model credits). Subtract the two costs their 48 pages never count: about $63,000 a year of central busing to haul the zone's kids to Paris, and the state funding that leaves if just 10 percent of families go (13 students at $5,126 each is $66,638). That is $127,039 minus $63,000 minus $66,638, or <b>$2,599 a year in the red</b>, right beside our model's median $21,971 yearly loss. Source: Response to the 10 Questions, archived in the repository.</p>
 </div>
 </details>
 </div></section>
@@ -749,13 +750,18 @@ NMES:[56.5,63.9,68.6,87.9,85.8,72.5,67.6,56.6,56.9,48.7,49.3,40.0,50.4,null,null
 BC:[77.5,81.9,72.6,69.6,63.0,74.7,67.6,51.8,52.1,30.0,34.0,32.8,39.9,null,20.0,29.9,29.0,23.8,26.5],
 CR:[35.2,50.9,56.2,65.5,34.5,34.0,49.6,51.0,51.1,57.5,50.4,41.4,38.8,null,23.8,38.7,34.6,35.8,19.3],
 PE:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,16.8,12.2]},
+oth:{
+NMES:[null,null,null,null,null,null,null,null,null,null,null,44.4,51.2,null,50.0,30.5,28.0,43.0,48.3],
+BC:[null,null,null,null,null,null,null,null,null,null,null,28.0,36.4,null,27.6,25.0,35.3,34.7,32.3],
+CR:[null,null,null,null,null,null,null,null,null,null,null,38.8,42.6,null,36.7,27.7,26.7,38.0,27.0],
+PE:[null,null,null,null,null,null,null,null,null,null,null,9.7,22.0,null,null,22.5,24.5,16.0,13.0]},
 };
-var SRCSTYLE={comp:{suffix:' (KDE composite)',dash:[],pt:'circle'},pd:{suffix:' (KDE R/M avg)',dash:[6,3],pt:'triangle'},sd:{suffix:' (SchoolDigger)',dash:[2,3],pt:'rect'}};
+var SRCSTYLE={comp:{suffix:' (KDE composite)',dash:[],pt:'circle'},pd:{suffix:' (KDE R/M avg)',dash:[6,3],pt:'triangle'},oth:{suffix:' (KDE Sci/SS/Writing avg)',dash:[3,3],pt:'star'},sd:{suffix:' (SchoolDigger)',dash:[2,3],pt:'rect'}};
 function mkDs(k,src){var st=SRCSTYLE[src];return{label:S[k].label+st.suffix,data:SRCDATA[src][k],borderColor:S[k].color,backgroundColor:S[k].color,borderWidth:src==='comp'?S[k].w:Math.max(1.2,S[k].w-1),borderDash:st.dash,pointStyle:st.pt,pointRadius:2.5,spanGaps:false,tension:0.15}}
 function buildDatasets(){
 var out=[];
 var schools=[['tgNMES','NMES'],['tgBC','BC'],['tgCR','CR'],['tgPE','PE']];
-var srcs=[['tgKC','comp'],['tgKP','pd'],['tgSD','sd']];
+var srcs=[['tgKP','pd'],['tgKO','oth'],['tgSD','sd'],['tgKC','comp']];
 schools.forEach(function(sc){if(!document.getElementById(sc[0]).checked)return;
 srcs.forEach(function(sr){if(document.getElementById(sr[0]).checked){out.push(mkDs(sc[1],sr[1]))}})});
 return out;
@@ -765,7 +771,7 @@ data:{labels:yrs,datasets:buildDatasets()},
 options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:18,font:{size:10}}}},
 scales:{y:{min:0,max:101,grid:{color:'#E3E8F0'}},x:{ticks:{maxTicksLimit:10}}}}});
 function syncToggles(){scoreChart.data.datasets=buildDatasets();scoreChart.update()}
-['tgNMES','tgBC','tgCR','tgPE','tgKC','tgKP','tgSD'].forEach(function(id){document.getElementById(id).addEventListener('change',syncToggles)});
+['tgNMES','tgBC','tgCR','tgPE','tgKP','tgKO','tgSD','tgKC'].forEach(function(id){document.getElementById(id).addEventListener('change',syncToggles)});
 
 /* The children stayed, the enrollment did not */
 new Chart(document.getElementById('chartLeak'),{type:'bar',

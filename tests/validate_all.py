@@ -410,6 +410,13 @@ def main():
     for needle in ["The District Needs Growth, Not Closures", "The Case Against Closing NMES", "Two roads",
                    "107.5", "Eminence", "$58,774", "Permanent", "chartHist", "18940", "19348", "18131"]:
         chk(needle in html, f"site v4 content intact: {needle}")
+    # the district-worksheet netting note shows its own moving parts and they add up
+    chk(107039 + 20000 - 63000 - 13 * 5126 == -2599,
+        "worksheet netting recomputes: 127,039 - 63,000 - 66,638 = -2,599")
+    for needle in ["$127,039 minus $63,000 minus $66,638", "$2,599 a year in the red",
+                   "13 students at $5,126 each is $66,638"]:
+        chk(needle in html, f"worksheet netting note shows the moving parts: {needle}")
+
     # cost history chart: modern era 2018-2025 filled from the archived state files (build/cost_history.py)
     for needle in ["13581,13838,12903,15406,19080,19003",
                    "14540,14193,14434,15691,17416,18910,18940,19299",
@@ -553,6 +560,13 @@ def main():
         "2024-25 index change-component explanation on site and in PDF")
     chk('id="tgSD" checked' in html,
         "SchoolDigger toggle defaults to checked")
+    chk('id="tgKP" checked' in html and 'id="tgKO" checked' in html,
+        "subject score series default on (reading/math and science/SS/writing)")
+    chk('id="tgKC" checked' not in html,
+        "composite toggle defaults to off")
+    for needle in ["includes the state's climate survey", "not a pure test score",
+                   "science, social studies, writing average"]:
+        chk(needle in html, f"scores chart relabel and explainer: {needle}")
     chk((REPO / "build" / "kyrc25_acct_bourbon_extract.csv").exists()
         ,
         "2024-25 accountability component extract archived")
