@@ -31,7 +31,7 @@ A = S.append
 
 A(Paragraph("Saving North Middletown Elementary", title))
 A(Paragraph("Executive Summary • The Case for Growth, the Case Against Closure, and the Choice", sub))
-A(Paragraph("Version 4.4 • August 1, 2026 • Built from public records and Open Records Requests only • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
+A(Paragraph("Version 4.5 • August 2, 2026 • Built from public records and Open Records Requests only • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
 A(HRFlowable(width="100%", thickness=1.1, color=NAVY, spaceAfter=10))
 
 A(Paragraph("THE CASE FOR GROWTH", kick))
@@ -53,7 +53,7 @@ A(Paragraph(
   "donor-funded promise scholarship that pays every NMES graduate toward college, trade school, or any "
   "certification. The growth model prices the push with no free passes: one classroom teacher per full new "
   "class past the 25 seats already open at the district's own class caps. It pays in every one of 19,683 "
-  "priced scenarios, with a middle case of +$140,331 a year. <b>Lever two, fixed costs.</b> Inspect every "
+  "priced scenarios, with a middle case of +$141,780 a year. <b>Lever two, fixed costs.</b> Inspect every "
   "non-teaching position district-wide and trim by attrition: $340,000 to $425,000 a year. Consider "
   "restructuring the administration: $224,000 to $450,000. Smarter bus routes: $146,000 to $291,000 on a "
   "$2.7 million line no routing study has ever tested. Energy contracts: $50,000 to $150,000. "
@@ -74,7 +74,7 @@ A(Paragraph(
   "peer against the 150 percent standard in the state facilities manual. <b>What closure frees.</b> The "
   "district's own response prices it: $107,039 of building-bound lines plus $20,000 of insurance, with all "
   "staff retained in year one by its own appendix; across 5,832 scenarios built on the district's own "
-  "figures and its own $54,479.40 staffing price, the median outcome LOSES $21,971 a year and 55 percent of "
+  "figures and its own $54,479.40 staffing price, the median outcome LOSES $17,982 a year and 54 percent of "
   "scenarios lose money. <b>The receiving schools.</b> The district's own table shows "
   "them at 97 and 98 percent of capacity, and the high school at 112 percent. <b>What closure risks.</b> "
   "Every exit is free and funded under today's rules: HB 563 makes a transfer to any neighboring district "

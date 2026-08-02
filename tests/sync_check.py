@@ -49,7 +49,7 @@ site_fixv = re.search(r"FIXV=\[(\d+),(\d+),(\d+)\]", html)
 site_teach = re.search(r"TEACH=108958\.80/2", html)
 site_default = (127039 + 0 + 0*54479.4 - 63000 - 38*(A["B6"].value+500) - 0)
 if round(central) == 54539 and round(site_default) == -130749 and "-$130,749" in html:
-    match("model central case $54,539; site calculator opens at the district stance, all staff retained (-$130,749, rank 28%)")
+    match("model central case $54,539; site calculator opens at the district stance, all staff retained (-$130,749, weighted rank 26%)")
 else:
     diff(f"closure defaults: model central {central:.0f}, site district-stance {site_default:.0f} shown: {'-$130,749' in html}")
 # growth calculator default: fill to the architect's own 154 (44 added past the
@@ -84,15 +84,65 @@ else:
     diff("site leaver pricing formula not found")
 
 # two-tailed range strings consistent
-if "losing $591,545 and saving $488,631" in pdf_flat and "losing $591,545 to saving $488,631" in html:
+if "losing $591,545 and saving $488,631" in pdf_flat and "losing $591,545" in html \
+        and "saving $488,631" in html:
     match("v4.2 two-tailed range (-$591,545 to +$488,631) consistent on site and in PDF")
 else:
     diff("v4.2 two-tailed range strings missing on site or PDF")
-if "loses $21,971 a year" in html and "money(-21971)" in html and "LOSES $21,971" in pdf_flat \
+if "loses $17,982 a year" in html and "money(-17982)" in html and "LOSES $17,982" in pdf_flat \
         and CM["B47"].value.startswith("="):
-    match("v4.2 median ($21,971 yearly loss) in site prose and JS readout and in PDF; central case live in model")
+    match("v4.5 weighted median ($17,982 yearly loss) in site prose and JS readout and in PDF; central case live in model")
 else:
-    diff("v4.2 median strings missing")
+    diff("v4.5 weighted median strings missing")
+
+# v4.5 weighted grid stats: recompute both grids with the published 1-2-1 /
+# uniform lever weights and check every published statistic
+from itertools import product as _prod
+import math as _math
+_T = 108958.80 / 2
+_cl = sorted(
+    (c + f + t * _T - b - l * (4626 + ad) - pr,
+     wc * wf * wa * wp * wb)
+    for c, wc in ((53519, 1), (80279, 2), (127039, 1))
+    for f, wf in ((0, 1), (109077, 2), (218154, 1))
+    for t in (0, 1, 2, 3)
+    for l in (0, 13, 26, 38, 51, 64)
+    for ad, wa in ((0, 1), (500, 2), (1000, 1))
+    for pr, wp in ((0, 1), (47500, 2), (95000, 1))
+    for b, wb in ((20000, 1), (63000, 2), (190000, 1)))
+_tw = sum(w for _, w in _cl)
+def _wp(pairs, tw, q):
+    cum = 0
+    for v, w in pairs:
+        cum += w
+        if cum >= q * tw:
+            return v
+_neg = sum(w for v, w in _cl if v < 0) / _tw
+def _gnet(g, r, sp, tc, sc, b, c, ad):
+    te = _math.floor(max(0, g - 25) / r)
+    st = 0 if sp == 0 else _math.floor(g / sp)
+    return g * (4626 + ad - c) - te * tc - st * sc - b * g
+_gr = sorted(
+    (_gnet(g, r, sp, tc, sc, b, c, ad), w2 * w3 * w4 * w5 * w6 * w7 * w8)
+    for g in range(10, 91, 10)
+    for r, w2 in ((18, 1), (21, 2), (24, 1))
+    for sp, w3 in ((0, 1), (75, 2), (50, 1))
+    for tc, w4 in ((41718, 1), (49150, 2), (56583, 1))
+    for sc, w5 in ((20000, 1), (28500, 2), (37000, 1))
+    for b, w6 in ((0, 1), (500, 2), (1000, 1))
+    for c, w7 in ((400, 1), (700, 2), (1000, 1))
+    for ad, w8 in ((0, 1), (500, 2), (1000, 1)))
+_gtw = sum(w for _, w in _gr)
+ok_w = (round(_wp(_cl, _tw, 0.5)) == -17982 and round(_wp(_cl, _tw, 0.25)) == -135672
+        and round(_wp(_cl, _tw, 0.75)) == 101417 and round(_neg * 100) == 54
+        and _wp(_gr, _gtw, 0.5) == 141780 and _wp(_gr, _gtw, 0.25) == 94520
+        and _wp(_gr, _gtw, 0.75) == 182654)
+site_w = all(s in html for s in ("$17,982", "$135,672", "$101,417", "$141,780",
+                                 "$94,520", "$182,654", "54 percent"))
+if ok_w and site_w:
+    match("v4.5 weighted stats recompute (closure median/IQR/share, growth median/IQR) and all seven appear on the site")
+else:
+    diff(f"v4.5 weighted stats: recompute ok={ok_w}, site tokens ok={site_w}")
 
 # levy path: 4 percent framing retired from the site (review round 2); path stays model+PDF
 levy_base = TH["B32"].value  # General Fund property tax
@@ -522,7 +572,7 @@ else:
     diff("EDFacts toggle still present after retirement")
 
 # site text spot checks
-for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $591,545 to saving $488,631", "closure range prose"),
+for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $591,545 a year to saving $488,631 a year", "closure range prose"),
                  ("$7,829,060", "GF levy basis in the levy note"), ("$2.65M", "deficit rounding in verdicts"),
                  ("holds 128 today", "enrollment in prose"), ("a 174 rating", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")

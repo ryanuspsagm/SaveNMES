@@ -237,13 +237,21 @@ def main():
     chk("-$130,749" in html and "if all staff are retained" in html
         and "superintendent's written response" in html,
         "all-staff-retained figure shown beside the median and attributed to the superintendent's response")
-    for needle in ["$21,971", "55 percent", "losing $591,545",
+    for needle in ["$17,982", "54 percent", "losing $591,545",
                    "saving $488,631", "Millersburg"]:
-        chk(needle in html, f"site v4.2 two-tailed range intact: {needle}")
+        chk(needle in html, f"site v4.5 two-tailed range intact: {needle}")
     for needle in ["Figure 7.", "Figure 8.", "losing $591,545", "saving $488,631",
-                   "$21,971", "55 percent", "Millersburg", "119 students",
+                   "$17,982", "54 percent", "Millersburg", "119 students",
                    "$54,479.40", "$41,718", "747"]:
-        chk(needle in t, f"PDF v4.2 two-tailed range intact: {needle}")
+        chk(needle in t, f"PDF v4.5 two-tailed range intact: {needle}")
+    # v4.5 consolidated card: both bars, IQR bands, weighting disclosed, bottom line
+    for needle in ["Every scenario, side by side", "middle half", 'class="iqr"',
+                   "triangular weight", "$135,672", "$101,417", "$94,520", "$182,654",
+                   "The bottom line:"]:
+        chk(needle in html, f"consolidated range card: {needle}")
+    chk(html.count('class="iqr"') == 2, "IQR band on both bars")
+    chk("$140,331" not in html and "$21,971" not in html,
+        "old unweighted medians retired from the site")
 
     # bonding story: the $14M plan, the levers, and the unaudited FY2026 close
     for needle in ["$14 million plan", "wrap-around", "recallable",
@@ -353,7 +361,7 @@ def main():
     es_path = REPO / "SaveNMES_Executive_Summary.pdf"
     chk(es_path.exists(), "executive summary PDF exists")
     es = " ".join(pg.extract_text() for pg in PdfReader(es_path).pages).replace("\n", " ")
-    for needle in ["$19,080", "$21,971", "54,479.40", "Permanent", "2,412", "5,832"]:
+    for needle in ["$19,080", "$17,982", "54,479.40", "Permanent", "2,412", "5,832"]:
         chk(needle in es, f"executive summary intact: {needle}")
     chk("SaveNMES_Executive_Summary.pdf" in html, "site links the executive summary")
     for gone in ['id="tldr"', 'id="questions"', 'id="roadahead"']:
@@ -387,9 +395,9 @@ def main():
     for lever in ['id="sGro"', 'id="sRat"', 'id="sTc"', 'id="sSp"',
                   'id="sGb"', 'id="sCps"', 'id="sGad"']:
         chk(lever in html, f"growth-model slider present: {lever}")
-    chk("5,832 scenarios" in html and 'id="rRank"' in html,
-        "calculator presented as the live scenario model with a grid-rank readout")
-    chk("$140,331" in html and "every one" in html and "19,683" in html and "+$3,331" in html,
+    chk("5,832 weighted scenarios" in html and 'id="rRank"' in html,
+        "calculator presented as the live weighted scenario model with a grid-rank readout")
+    chk("$141,780" in html and "every one" in html and "19,683" in html and "+$3,331" in html,
         "growth calculator carries the published classroom-indexed grid stats")
     chk("$142,800" not in html and "$67,124" not in html and "$118,650" not in html
         and "$102,780" not in html and "$125,150" not in html,
@@ -418,10 +426,25 @@ def main():
         chk(needle in html, f"worksheet netting note shows the moving parts: {needle}")
 
     # cost history chart: modern era 2018-2025 filled from the archived state files (build/cost_history.py)
+    # and the KY elementary average extended back to 2012 (build/ky_elem_spending_2012_2017.json)
     for needle in ["13581,13838,12903,15406,19080,19003",
-                   "14540,14193,14434,15691,17416,18910,18940,19299",
+                   "8282,8797,8731,9625,10334,11130,14540,14193,14434,15691,17416,18910,18940,19299",
                    "$19,299", "five of the eight years"]:
-        chk(needle in html, f"cost history modern era filled: {needle}")
+        chk(needle in html, f"cost history filled, KY average back to 2012: {needle}")
+    chk((REPO / "build" / "ky_elem_spending_2012_2017.json").exists(),
+        "old-era KY elementary averages archived with method and source")
+
+    # the district's $661,139 reconciled block by block against the $938,690 GF table
+    chk(493407 + 107039 + 20000 + 40693 == 661139,
+        "the $661,139 decomposition adds up")
+    for needle in ["Reconciling the two numbers", "$493,407 + $107,039 + $20,000 + $40,693 = $661,139"]:
+        chk(needle in html, f"661K vs 938K reconciliation: {needle}")
+
+    # kindergartner lifetime funding: tightened range, add-ons at both ends
+    chk(13 * 5126 == 66638, "kindergartner floor recomputes: 13 years at $5,126")
+    for needle in ["about $67,000 to $76,000", "$66,638 if funding never rises", "$75,716"]:
+        chk(needle in html, f"kindergartner range tightened: {needle}")
+    chk("$60,000 to $77,000" not in html, "old loose kindergartner range retired")
     chk(html.index("The case against closing NMES is clear.</b>")
         < html.index("The district needs growth, not closures.</b>"),
         "Key Points ordered like the page: case against closing first")
@@ -530,7 +553,11 @@ def main():
     chk('id="sTea" min="0" max="3"' in html and 'id="sLeav" min="0" max="100"' in html
         and 'id="sBus" min="20000" max="190000"' in html,
         "site calculator sliders span the published grid (leakage slider full range by design)")
-    chk("Version 4.2" in t and "August 1, 2026" in t, "PDF carries the v4.2 version block")
+    chk("Version 4.5" in t and "August 2, 2026" in t and "Version 4.2" in t,
+        "PDF carries the v4.5 version block and the v4.2 history entry")
+    chk("Saving_NMES_v4.5_2026-08-02.pdf" in html
+        and (REPO / "reports" / "Saving_NMES_v4.5_2026-08-02.pdf").exists(),
+        "v4.5 archived in reports/ and linked from the version history")
     chk("reports/Saving_NMES_v4.2_2026-08-01.pdf" in html
         and (REPO / "reports" / "Saving_NMES_v4.2_2026-08-01.pdf").exists()
         and (REPO / "reports" / "Saving_NMES_v4.1_2026-07-31.pdf").exists()
@@ -613,7 +640,7 @@ def main():
         and "10 percent certified raise" in t and "$52 million" in t,
         "top-end claim (10 percent raise, $52 million) on site and in report")
     for claim, section in [("$23 million of building capacity", 'id="grow"'),
-                           ("LOSES $21,971", 'id="model"'),
+                           ("LOSES $17,982", 'id="model"'),
                            ("$4.6 million lifetime revenue loss", 'id="risks"')]:
         chk(html.index(claim) > html.index(section)
             and html.index(claim) < html.index("<details", html.index(section)),

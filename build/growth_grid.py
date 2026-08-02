@@ -1,4 +1,17 @@
-"""Enumerate the v4.4 growth grid and print its published statistics.
+"""Enumerate the v4.5 growth grid and print its published statistics.
+
+WEIGHTING (v4.5, matching the closure grid). Each lever carries an explicit
+distribution and scenario weights multiply. Triangular (1-2-1, the documented
+central setting counts double) where the record pins a center; uniform where
+it does not. Here every cost lever is triangular, because every middle leg is
+the documented central read: class size 21 is today's actual (128 students in
+six homerooms), $49,150 is the certified schedule's middle row, $28,500 the
+middle classified line, $500 busing and $700 marginal cost the middles of
+their derived bands, $500 add-ons the documented read of this school's
+actual add-ons. The added-students count stays UNIFORM: it is the target the
+board chooses, not a chance the model should weight. The floor and ceiling
+are the grid's true extremes and do not depend on weights.
+
 
 The growth calculator prices recruiting NMES from 110 (the district's own
 figure, source documentation still requested; last official count 128) up to
@@ -50,14 +63,16 @@ teachers = floor(max(0, gain - 25) / ratio)
 
 Run:  python build/growth_grid.py
 Asserts the published statistics: headline grid (add-ons enumerated, matching
-the closure model) 19,683 scenarios, median +$140,331, floor +$3,331 (a
-class of 18 at the top salary with every cost at maximum and no add-ons),
-ceiling +$386,904, ZERO negative: with the district's own 25 open seats and
-classroom-indexed hiring, growth pays in every scenario. Base-only cut:
-median +$117,040.
+the closure model) 19,683 scenarios, weighted median +$141,780, middle half
++$94,520 to +$182,654, floor +$3,331 (a class of 18 at the top salary with
+every cost at maximum and no add-ons), ceiling +$386,904, ZERO negative: with
+the district's own 25 open seats and classroom-indexed hiring, growth pays in
+every scenario. Base-only cut: weighted median +$117,780. Unweighted median
++$140,331 kept as a cross-check.
 """
 import math
 import statistics
+from itertools import product
 
 SEEK = 4626
 HEADROOM = 25  # open seats at the district's own Appendix B caps
@@ -70,42 +85,61 @@ def net(gain, ratio, staff_per, teacher_cost, staff_cost, bus, cps, addons):
             - staff * staff_cost - bus * gain)
 
 
-ARGS = dict(
-    gains=range(10, 91, 10), ratios=(18, 21, 24), staff_pers=(0, 75, 50),
-    tcosts=(41_718, 49_150, 56_583), scosts=(20_000, 28_500, 37_000),
-    buses=(0, 500, 1000), cpss=(400, 700, 1000),
-)
+GAINS = [(g, 1) for g in range(10, 91, 10)]                  # uniform: board's target
+RATIOS = [(18, 1), (21, 2), (24, 1)]                         # triangular: 21 = today
+STAFF_PERS = [(0, 1), (75, 2), (50, 1)]                      # triangular
+TCOSTS = [(41_718, 1), (49_150, 2), (56_583, 1)]             # triangular
+SCOSTS = [(20_000, 1), (28_500, 2), (37_000, 1)]             # triangular
+BUSES = [(0, 1), (500, 2), (1000, 1)]                        # triangular
+CPSS = [(400, 1), (700, 2), (1000, 1)]                       # triangular
+ADDONS_FULL = [(0, 1), (500, 2), (1000, 1)]                  # triangular
+ADDONS_BASE = [(0, 1)]
 
 
-def grid(addon_values):
+def grid(addon_pairs):
     return sorted(
-        net(g, r, sp, tc, sc, b, c, ad)
-        for g in ARGS["gains"] for r in ARGS["ratios"] for sp in ARGS["staff_pers"]
-        for tc in ARGS["tcosts"] for sc in ARGS["scosts"]
-        for b in ARGS["buses"] for c in ARGS["cpss"] for ad in addon_values)
+        (net(g, r, sp, tc, sc, b, c, ad), w1 * w2 * w3 * w4 * w5 * w6 * w7 * w8)
+        for (g, w1), (r, w2), (sp, w3), (tc, w4), (sc, w5), (b, w6), (c, w7), (ad, w8)
+        in product(GAINS, RATIOS, STAFF_PERS, TCOSTS, SCOSTS, BUSES, CPSS, addon_pairs))
 
 
-base = grid((0,))
-full = grid((0, 500, 1000))
+def wpct(pairs, q):
+    tot = sum(w for _, w in pairs)
+    c = 0
+    for v, w in pairs:
+        c += w
+        if c >= q * tot:
+            return v
+
+
+base = grid(ADDONS_BASE)
+full = grid(ADDONS_FULL)
+full_nets = [v for v, _ in full]
 assert len(base) == 6_561 and len(full) == 19_683
-assert round(statistics.median(full)) == 140_331, statistics.median(full)
-assert full[0] == 3_331 and full[-1] == 386_904, (full[0], full[-1])
-neg_full = sum(1 for x in full if x < 0)
+med = wpct(full, 0.50)
+p25, p75 = wpct(full, 0.25), wpct(full, 0.75)
+assert med == 141_780, med
+assert p25 == 94_520 and p75 == 182_654, (p25, p75)
+assert full_nets[0] == 3_331 and full_nets[-1] == 386_904
+neg_full = sum(1 for x in full_nets if x < 0)
 assert neg_full == 0, neg_full
-assert round(statistics.median(base)) == 117_040, statistics.median(base)
+assert wpct(base, 0.50) == 117_780, wpct(base, 0.50)
+assert round(statistics.median(full_nets)) == 140_331   # unweighted cross-check
 
 # the site default fills to the architect's own 154 (44 added from the 110
 # base): the 25 open seats plus a partial class at 1 per 21 mean no teacher
 # and no support hire trigger; busing at its $1,000 maximum, $400 supplies,
 # $500 add-ons (the closure default leg). Not the median: a fill-to-capacity
-# story scenario (rank ~64%), while the published median stays $140,331.
+# story scenario (rank ~64%), while the published median stays $141,780.
 site_default = net(44, 21, 50, 41_718, 37_000, 1000, 400, 500)
 assert site_default == 163_944, site_default
-rank = sum(1 for x in full if x <= site_default) / len(full)
+tot_w = sum(w for _, w in full)
+rank = sum(w for v, w in full if v <= site_default) / tot_w
 assert 0.60 < rank < 0.68, rank
 
 print(f"headline (add-ons enumerated): {len(full):,} scenarios "
-      f"| median ${statistics.median(full):,.0f} | floor ${full[0]:,.0f} "
-      f"| ceiling ${full[-1]:,.0f} | {neg_full} negative")
-print(f"base-only cut: median ${statistics.median(base):,.0f}")
+      f"| weighted median ${med:,.0f} | middle half ${p25:,.0f} to ${p75:,.0f} "
+      f"| floor ${full_nets[0]:,.0f} | ceiling ${full_nets[-1]:,.0f} | {neg_full} negative")
+print(f"base-only cut: weighted median ${wpct(base, 0.50):,.0f}")
 print(f"site default: ${site_default:,} (rank {rank*100:.1f}%)")
+print(f"unweighted median ${statistics.median(full_nets):,.0f} (cross-check)")

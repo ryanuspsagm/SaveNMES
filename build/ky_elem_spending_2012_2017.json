@@ -1,0 +1,21 @@
+{
+ "source": "KDE LEARNING_ENVIRONMENT_STUDENTS-TEACHERS files, 2011-12 through 2016-17 (the same statewide files behind build/bourbon_spending_per_student_2011_2017.csv), column SPENDING_PER_STDNT.",
+ "method": "Mean of SPENDING_PER_STDNT over every Kentucky school with 'elementary' in its name, positive published values only, same name-based rule as the modern era in build/cost_history.py. Bourbon school values in the same files reproduce the chart's published 2012-2017 points exactly.",
+ "n_schools": {
+  "2011-12": 676,
+  "2012-13": 667,
+  "2013-14": 655,
+  "2014-15": 652,
+  "2015-16": 659,
+  "2016-17": 661
+ },
+ "ky_elementary_average": {
+  "2011-12": 8282,
+  "2012-13": 8797,
+  "2013-14": 8731,
+  "2014-15": 9625,
+  "2015-16": 10334,
+  "2016-17": 11130
+ },
+ "retrieved": "2026-08-02"
+}

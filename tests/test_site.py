@@ -68,9 +68,15 @@ def main():
         else: bad(f"only {nmore} section expanders found")
         strip = pg.query_selector(".range-bar")
         labs = pg.text_content(".range-labs") if pg.query_selector(".range-labs") else ""
-        if strip and "loses $591,545" in labs and "saves $488,631" in labs and "loses $21,971" in labs:
+        if strip and "loses $591,545" in labs and "saves $488,631" in labs and "loses $17,982" in labs:
             ok("nontechnical range strip shows worst / middle / best in plain words")
         else: bad(f"range strip missing or labels wrong: {labs[:80]}")
+        nbars = pg.evaluate("document.querySelectorAll('.range-bar').length")
+        niqr = pg.evaluate("document.querySelectorAll('.range-bar .iqr').length")
+        glabs = pg.evaluate("document.querySelectorAll('.range-labs')[1] ? document.querySelectorAll('.range-labs')[1].textContent : ''")
+        if nbars == 2 and niqr == 2 and "gains $141,780" in glabs and "gains $3,331" in glabs:
+            ok("consolidated card: closure and growth bars side by side, IQR band on each")
+        else: bad(f"consolidated range card wrong: bars={nbars} iqr={niqr} growth labs: {glabs[:80]}")
 
         # --- Closure calculator: opens at the median scenario ---
         modelopen = pg.evaluate("document.querySelector('#model details.more').open")
@@ -82,8 +88,8 @@ def main():
             ok("closure default is the district stance: -$130,749 (all staff retained, 30% leakage)")
         else: bad(f"closure defaults: {net} / {verdict}")
         rank = pg.text_content("#rRank").strip()
-        if "5,832 scenarios" in rank and "28%" in rank and "-$21,971" in rank:
-            ok("live grid-rank readout: 28% at the district-stance default")
+        if "5,832 weighted scenarios" in rank and "26%" in rank and "-$17,982" in rank:
+            ok("live weighted grid-rank readout: 26% at the district-stance default")
         else: bad(f"grid-rank readout: {rank}")
 
         # ceiling: their fullest case

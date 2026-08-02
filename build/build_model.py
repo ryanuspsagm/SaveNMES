@@ -249,7 +249,7 @@ put(c, "C48", "-$591,545 a year: the closure loses money", NOTE)
 put(c, "A49", "Favorable tail (all levers favorable)")
 put(c, "B49", "=D39+D40+D41*54479.4-B42-B43*(Assumptions!B6+B44)-B45", BLK, CUR)
 put(c, "C49", "+$488,631 a year: the district's fullest documented case, still below the plan's $800K-$1M requirement", NOTE)
-put(c, "A50", "Distribution of all 5,832 combinations, equal weights, enumerated by build/closure_grid.py: capture, fixed-position, add-ons, property and busing levers take three values each, teachers four (0/1/2/3) and leavers six (0/13/26/38/51/64): 3^5 x 4 x 6 = 5,832. Median -$21,971 (the median scenario LOSES money); middle half -$148,790 to +$102,067; 55 percent of scenarios negative; range -$591,545 to +$488,631. One-time transition costs $100K-$300K in year one are additional. REBUILT IN v4.2 on the district's own 48-page Response to the 10 Questions (archived build/response_to_the_10_questions.pdf): the capture lever uses its Appendix A worksheet, every staffing position is priced at its own fully loaded $54,479.40 (Appendix A.1), the teacher top leg follows its own Appendix B classroom count, and the leakage lever runs to 50 percent. The v3.9 grid (2,916 scenarios, median +$21,571, 45 percent negative) is retained in the version history.", NOTE, wrap=True)
+put(c, "A50", "Distribution of all 5,832 combinations enumerated by build/closure_grid.py: capture, fixed-position, add-ons, property and busing levers take three values each, teachers four (0/1/2/3) and leavers six (0/13/26/38/51/64): 3^5 x 4 x 6 = 5,832. v4.5 lever weights: triangular 1-2-1 on the five levers with a documented central setting; uniform on teachers and leavers, where the record gives no defensible center. Weighted median -$17,982 (the median scenario LOSES money); middle half -$135,672 to +$101,417; 54 percent of weighted scenarios negative; range -$591,545 to +$488,631 (unweighted median -$21,971, 55 percent negative). One-time transition costs $100K-$300K in year one are additional. REBUILT IN v4.2 on the district's own 48-page Response to the 10 Questions (archived build/response_to_the_10_questions.pdf): the capture lever uses its Appendix A worksheet, every staffing position is priced at its own fully loaded $54,479.40 (Appendix A.1), the teacher top leg follows its own Appendix B classroom count, and the leakage lever runs to 50 percent. The v3.9 grid (2,916 scenarios, median +$21,571, 45 percent negative) is retained in the version history.", NOTE, wrap=True)
 put(c, "A52", "HOSTILE PAPER CASE, PUBLISHED WITH ITS REFUTATION", SEC)
 put(c, "A53", "Every absorbed student priced at the empirical $9,848 marginal")
 put(c, "B53", "=Assumptions!B14*Assumptions!B11-128*Redistricting!B111-137500-10*Assumptions!B6", BLK, CUR)
@@ -679,8 +679,8 @@ put(d, f"F{r}", "Payment is approximately the operating amount the plan frees up
 put(d, f"A{r}", "WHAT EACH SAVINGS ESTIMATE COULD ACTUALLY BOND", SEC); r += 1
 put(d, f"A{r}", "Bond principal supported = annual savings x present-value annuity factor at the rate and term above", NOTE); r += 1
 sav_rows = [
- ("District's own KDE-filed excess cost of NMES vs peer elementaries", 121220, "Above the v4.2 closure model's central case ($54,539); the v4.2 median itself is negative (-$21,971)"),
- ("Closure model median (v4.2 two-tailed grid)", -21971, "Closure_Model tab, 5,832-combination grid; the median scenario loses money"),
+ ("District's own KDE-filed excess cost of NMES vs peer elementaries", 121220, "Above the v4.2 closure model's central case ($54,539); the weighted median itself is negative (-$17,982)"),
+ ("Closure model median (v4.5 weighted grid)", -17982, "Closure_Model tab, 5,832-combination grid; the median scenario loses money"),
  ("Closure model best case (v4.2 favorable tail)", 488631, "Closure_Model tab B49"),
  ("Administration's claim, July 15, 2026", 900000, "Unpublished derivation; reconcile with KDE-filed school-level spending"),
 ]
@@ -810,7 +810,7 @@ put(rw, "A7", "Closure only (v4.2 central case, $54,539, from FY2027)")
 put(rw, "B7", "=GF_Summary!D9-GF_Summary!$D$16", BLK, CUR)
 for col, prev in zip("CDE", "BCD"):
     put(rw, f"{col}7", f"={prev}7-GF_Summary!$D$16+Closure_Model!$B$47", BLK, CUR)
-put(rw, "A9", "Closure range check (v4.2): at the +$488,631 best case FY2029 ends near $1.2M; at the -$21,971 median the reserves go slightly FASTER than status quo; 55 percent of scenarios lose money and drain reserves faster than doing nothing.", NOTE, wrap=True)
+put(rw, "A9", "Closure range check (v4.5): at the +$488,631 best case FY2029 ends near $1.2M; at the -$17,982 weighted median the reserves go slightly FASTER than status quo; 54 percent of weighted scenarios lose money and drain reserves faster than doing nothing.", NOTE, wrap=True)
 put(rw, "A8", "2% contingency floor (approx., FY2025 basis)")
 for col in "BCDE":
     put(rw, f"{col}8", "=GF_Summary!$D$14", GRN, CUR)
