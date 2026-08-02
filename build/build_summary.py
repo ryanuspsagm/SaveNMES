@@ -44,7 +44,8 @@ A(Paragraph(
   "That is the first step toward closing the school. The vote is advisory. The elected Board of Education "
   "decides. We checked the public records so the Board and the public can see the whole picture before any "
   "vote. Every number below is sourced in the full report and runs as a live formula in the companion "
-  "workbook.", body))
+  "workbook. Where the record forces an assumption, we make it, state it, and publish it openly so it can "
+  "be challenged: the calculators at SaveNMES.org let anyone replace our assumptions with their own.", body))
 
 A(Paragraph("PART ONE", kick))
 A(Paragraph("The case against closing NMES: four facts from the district's own documents", h1))

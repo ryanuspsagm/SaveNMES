@@ -190,7 +190,10 @@ P("On July 15, 2026, the Local Planning Committee of Bourbon County Schools vote
   "of Education. Superintendent Larry Begley has said publicly that “the decision is not final.” I checked "
   "the public records so the Board and the public can see the whole picture before any vote. This opening "
   "mirrors the executive summary published at SaveNMES.org; every figure below is sourced in the numbered "
-  "sections that follow and runs as a live formula in the companion workbook.", lede)
+  "sections that follow and runs as a live formula in the companion workbook. Where the record forces an "
+  "assumption, this report makes one, states it where it is used, and publishes it openly so it can be "
+  "challenged: every assumption is a live input in the workbook and the calculators, and corrections are "
+  "made publicly.", lede)
 
 H2("Part One. The case against closing NMES: four facts from the district's own documents")
 B("<b>Fact one: it is the county's best elementary school.</b> On the state's 2024-25 tests, North "
@@ -209,8 +212,8 @@ B("<b>Fact three: closing it frees very little.</b> Start from everything the di
   "those staff at its own $54,479.40 loaded cost. The superintendent's $661,139 savings claim does not "
   "survive the district's own paperwork: with staff retained and supplies moving with the kids, only "
   "$127,039 of it remains. This report priced 5,832 closure scenarios on the district's own figures: the "
-  "net effect runs from losing $591,545 a year to saving $484,582, the median outcome LOSES $20,007 a "
-  "year, and 55 percent of scenarios lose money outright (Section 4).")
+  "range runs from losing $591,545 a year to saving $484,582, the median LOSES $20,007, and 55 percent "
+  "lose money (Section 4).")
 B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state money follows each child to "
   "whichever district wins the family. Registered homeschooling in this county grew from 170 to 259 in five "
   "years. The state virtual academy grew from 937 to 2,412 students in two years. Every family that leaves "
@@ -231,8 +234,8 @@ P("Read the escalation across the table's columns: every 10 percent of the schoo
   "years the losses total roughly $1.5 million at 10 percent, $3.1 million at 20 and $4.6 million at 30. "
   "The children in the building carry about $6.2 to $6.9 million of remaining state funding through grade 12 "
   "(their actual grade counts are 1,339 student-years, priced at the $4,626 base to $5,126 with add-ons). "
-  "One in seven students at the middle and high school came through North Middletown. A family lost at "
-  "kindergarten is lost for thirteen years. <b>The bottom line, from the two priced models:</b> grow the "
+  "One in seven middle and high schoolers came through North Middletown; a family lost at kindergarten is "
+  "lost for thirteen years. <b>The bottom line, from the two priced models:</b> grow the "
   "school and the middle case GAINS $141,780 a year, with not one losing scenario in 19,683. Close it and "
   "the middle case LOSES $20,007 a year.")
 
@@ -279,10 +282,9 @@ B("<b>Four:</b> say publicly that the district will work to grow this school; un
   "enrollment killer.")
 P("These asks put no money at risk: if staff keep their jobs, closing frees only $79,211 of building costs "
   "on the district's own ledger. A closed school cannot be recalled by the children it displaces; a growth "
-  "plan can be measured, every year, by everyone. The timing ask is specific: pause any vote until the "
-  "closure worksheet is published with both sides of the ledger and the four asks are answered in writing "
-  "and in public (Section 11).")
-A(PageBreak())
+  "plan can be measured by everyone, every year. The timing ask: pause any vote until the closure "
+  "worksheet is published with both sides of the ledger and the four asks are answered in public "
+  "(Section 11).")
 
 # ================= PART ONE =================
 H("Part One: The Case Against Closing NMES")

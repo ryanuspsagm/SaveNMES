@@ -730,6 +730,9 @@ def main():
         "report Section 10 mirrors the expanded committee charges")
     chk("three standing committees" in es and "enrollment growth, fixed costs, and revenue" in es,
         "executive summary carries the committee suggestion")
+    for name, txt in (("site", html), ("report", t), ("summary", es)):
+        chk("openly so it can be challenged" in txt,
+            f"upfront assumptions disclosure on the {name}: stated, published, open to challenge")
     chk("Amazon Future Engineer" in html.lower().replace("amazon future engineer", "Amazon Future Engineer")
         or "Amazon Future Engineer" in html,
         "ask 2 carries the differentiation tools (Amazon Future Engineer)")
