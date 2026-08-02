@@ -473,9 +473,10 @@ def main():
     for needle in ["Walk the ledger", 'class="walk"', "$1,285,310",
                    "MUNIS ledger", "$933,537",
                    "What actually stops when the building closes",
-                   "Where the superintendent's $661,139 comes from, and why it may never show up",
-                   "N/A. None exists"]:
+                   "Where the superintendent's $661,139 comes from, and why it may never show up"]:
         chk(needle in html, f"ledger walk and claim card: {needle}")
+    chk("N/A. None exists" not in html and "None exists" in t,
+        "the N/A finding and the busing/leaver pricing live in the report; the claim card stays lean")
     chk(abs(1285310.36 - 182951.88 - 161879.99 - 6941.43 - 933537.06) < 0.02,
         "ledger walk recomputes: all-funds total minus federal, food service and activity = the General Fund")
     chk((REPO / "build" / "records_fulfilled_2026_07.pdf").exists(),
@@ -595,10 +596,11 @@ def main():
     for needle in ["The District Needs Growth, Not Closures", "The Case Against Closing NMES", "Two roads",
                    "107.5", "Eminence", "$79,211", "Permanent", "chartHist", "18940", "19348", "18131"]:
         chk(needle in html, f"site v4 content intact: {needle}")
-    # the netting conclusion is retired (review, Aug 2); the two report-priced costs stay disclosed
-    chk("$2,599" not in html and "13 students at $5,126 each is $66,638" in html
+    # the netting conclusion is retired (review, Aug 2); the priced busing/leaver costs moved to the report
+    chk("$2,599" not in html and "13 students at $5,126 each is $66,638" not in html
+        and "13 students at $5,126 each is $66,638" in t
         and "prices no added busing and not one leaving family" in html,
-        "claim card keeps the unpriced-costs disclosure; the netting sentence is retired")
+        "claim card keeps the unpriced-costs disclosure; the cost pricing lives in the report")
 
     # cost history chart: modern era 2018-2025 filled from the archived state files (build/cost_history.py)
     # and the KY elementary average extended back to 2012 (build/ky_elem_spending_2012_2017.json)
