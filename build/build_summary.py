@@ -149,7 +149,7 @@ A(Paragraph(
   "year, by everyone.", body))
 A(HRFlowable(width="100%", thickness=0.8, color=LINE, spaceBefore=6, spaceAfter=6))
 A(Paragraph(
-  "The full 60-page report, the financial model with every calculation as live formulas, all archived "
+  "The full 50-page report, the financial model with every calculation as live formulas, all archived "
   "district documents, and every prior version with its corrections are free at SaveNMES.org and in the "
   "public repository.", ParagraphStyle("f", parent=body, fontSize=9.4, textColor=GRAY)))
 

@@ -632,11 +632,19 @@ def main():
         "Key Points ordered like the page: case against closing first")
     chk(html.count('<details class="more"') >= 10,
         "sections collapse to key points with More detail expanders")
-    for needle in ["Decision in Brief", "Part One: The Case Against Closing NMES",
+    for needle in ["Part One: The Case Against Closing NMES",
                    "Part Two: The District Needs Growth, Not Closures", "$19,080", "$19,020",
                    "107.5 percent", "Eminence", "149 last fall", "occupational",
                    "Marion County voters", "$5.6 to $7.4 million of remaining", "$613,000"]:
-        chk(needle in t, f"PDF v4 decision brief intact: {needle}")
+        chk(needle in t, f"PDF v4 opening and relocated brief facts intact: {needle}")
+    for needle in ["mirrors the executive summary published at SaveNMES.org",
+                   "Fact one: it is the county's best elementary school",
+                   "Fact four: closing it risks a lot",
+                   "Lever one, enrollment", "Lever three, revenue",
+                   "Shrink to fit, or grow and thrive",
+                   "Supporting Data and Appendices"]:
+        chk(needle in t, f"report opening mirrors the exec summary doc: {needle}")
+    chk("Decision in Brief" not in t, "the duplicative Decision in Brief section is retired")
     chk("every 10 percent" in t and "Who leaves" in html,
         "stepped losses published as scenarios in report and site")
     chk("28 homerooms" not in html,
