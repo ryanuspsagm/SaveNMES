@@ -235,15 +235,17 @@ if not rec_bad: match("archived Sci/SS/Writing averages recompute from the per-s
 else: diff(f"Sci/SS/Writing average recompute mismatches: {rec_bad}")
 
 # the plan calculator mirrors the model's transformative chain lever for lever
-plan_ok = (260000 + 760000 + 1699479 - 2648086 == 71393
-           and 'id="sPw" min="260000" max="530000" value="260000"' in html
+plan_ok = (760000 + 1699479 - 1738653 == 720826
+           and 'id="sPw" min="0" max="550" value="0"' in html
            and 'id="sPt" min="0" max="10" value="0"' in html
+           and "kids*4226" in html and "restore-1738653" in html
            and "*13.008" in html and "bonds+32000000" in html
-           and "(15.69/8.9)" in html and "191000" in html)
+           and "(15.69/8.9)" in html and "191000" in html
+           and "$1,738,653" in pdf_flat and "$2,648,086" in pdf_flat)
 if plan_ok:
-    match("plan calculator: corrected Move-2 lever ($260K-$530K), low-end default clears the gap by $71,393, capacity anchored on the advisor's $32M (13.008 factor, $191K/cent, $15.69/8.9c)")
+    match("plan calculator: leakage lever (0-550 students at $4,226), trending FY2026 gap $1,738,653, default surplus $720,826, capacity anchored on the advisor's $32M (13.008 factor, $191K/cent, $15.69/8.9c)")
 else:
-    diff("plan calculator bases or defaults out of sync with the corrected model chain")
+    diff("plan calculator bases or defaults out of sync with the re-based chain")
 
 # model School_Data KDE history block vs the same source file
 kh_years_keys = ["2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17",
@@ -532,34 +534,31 @@ if "$760,000 to $1.3 million" in html and "$760,000 to $1.3 million" in pdf_flat
 else:
     diff("growth plan pillar subtotals missing, inconsistent, or a removed menu line still present on site")
 
-# transformative check: surplus at plan low ends + full restore funds a 5% certified
-# raise and new bonds, alongside the freed restricted capacity
-surplus = 530000 + 1300000 + 1699479 - 2648086
+# transformative check: default settings (no recovery, low costs, full restore) clear the
+# trending FY2026 gap, fund the 5% certified raise, and leave debt room, alongside the
+# freed restricted capacity
+surplus = 760000 + 1699479 - 1738653
 raise_cost = 10000388 * 0.05 * 1.0145
 debt_room = surplus - raise_cost
 bonds = debt_room * (1 - 1.045 ** -20) / 0.045
-wb_cert = None
-try:
-    import json as _json
-    wb_cert = 10000388  # GF object 0110 total, FY2026 working budget (verified from wb_rows extract)
-except Exception:
-    pass
-if (abs(surplus - 881393) < 2 and abs(raise_cost - 507270) < 2 and abs(bonds - 4866596) < 2000
-        and "$507,000" in html and "$4.9 million" in html and "$32 million" in html
-        and "$37 million" in html and "$507,000" in pdf_flat and "$37 " in pdf_flat
-        and "$32 million" in pdf_flat):
-    match("corrected transformative check: top ends + full restore = $881K surplus, 5% raise ($507K) + $4.9M GF bonds + the advisor's $32M = about $37M of capacity (site+PDF)")
+if (surplus == 720826 and abs(raise_cost - 507270) < 2 and abs(bonds - 2777936) < 2000
+        and "$507,000" in html and "$2.8 million" in html and "$32 million" in html
+        and "$35 million" in html and "$507,000" in pdf_flat and "$35 " in pdf_flat
+        and "$32 million" in pdf_flat and "$2.8 million" in pdf_flat):
+    match("re-based transformative check: defaults + full restore = $721K surplus over the trending gap, 5% raise ($507K) + $2.8M GF bonds + the advisor's $32M = about $35M of capacity (site+PDF)")
 else:
-    diff(f"transformative check mismatch: surplus {surplus:.0f}, raise {raise_cost:.0f}, bonds {bonds:.0f}, strings on site: {('$37 million' in html)}")
-# top end: levers high + full restore -> 10% raise + ~$52M of building capacity
-low_surplus = 260000 + 760000 + 1699479 - 2648086
-if (low_surplus == 71393 and "$71,000 to spare" in html
+    diff(f"transformative check mismatch: surplus {surplus:.0f}, raise {raise_cost:.0f}, bonds {bonds:.0f}, strings on site: {('$35 million' in html)}")
+# the leakage lever and the withdrawn claims
+top_surplus = 550 * 4226 + 1300000 + 1699479 - 1738653
+if (top_surplus == 3585126 and "$721,000 a year to spare" in html
+        and "$721,000 a year to spare" in pdf_flat
+        and "$422,600 a year" in html and "$422,600 a year" in pdf_flat
         and "10 percent raise" not in html and "$52 million" not in html
         and "withdrawn with the lever correction" in pdf_flat
         and "$260,000 to $530,000" in html and "$260,000 to $530,000" in pdf_flat):
-    match("lever correction: Move 2 band ($260K-$530K) governs on site and in PDF; low ends + full restore clear the gap by $71K; the 10%-raise/$52M claims are withdrawn")
+    match("leakage lever: 0-550 students at $4,226 on site and in PDF ($422,600 per 100); defaults clear the trending gap by $721K; the 10%-raise/$52M claims stay withdrawn; the Move 2 band survives as the near-term view")
 else:
-    diff(f"lever correction incomplete: low surplus {low_surplus}, 10%-claim still on site: {('10 percent raise' in html)}")
+    diff(f"leakage lever incomplete: top surplus {top_surplus}, 10%-claim still on site: {('10 percent raise' in html)}")
 fills = (16*4626-46*400, 55616+60000)
 if fills[0]-0 == 55616+400*0 - 0 and "$56,000 to $116,000" in pdf_flat:
     match("fill package $56,000-$116,000 in the PDF; the site carries the live planner (prose quote retired in v4.2)")

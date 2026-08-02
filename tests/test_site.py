@@ -176,25 +176,33 @@ def main():
         # --- The plan, priced: calculator ---
         rplan = pg.text_content("#rPlan").strip()
         pverd = pg.text_content("#rPlanVerdict").strip()
-        if rplan == "$71,393" and "$32 million of bonding capacity" in pverd:
-            ok("plan calculator default: low ends + full restore clear the gap by $71,393; advisor capacity cited")
+        if rplan == "$720,826" and "$32 million of bonding capacity" in pverd:
+            ok("plan calculator default: no recovery + low costs + full restore clear the trending gap by $720,826; advisor capacity cited")
         else: bad(f"plan defaults: {rplan} / {pverd[:100]}")
         pg.fill("#sPt", "5"); pg.dispatch_event("#sPt", "input")
+        pverd5 = pg.text_content("#rPlanVerdict")
+        if "Pays the 5 percent raise" in pverd5 and "$2.8 million of new bonds" in pverd5 and "34.8 million of building capacity" in pverd5:
+            ok("plan defaults afford the 5% raise: $2.8M bonds, $34.8M advisor-anchored capacity")
+        else: bad(f"plan default raise: {pverd5[:110]}")
+        pg.fill("#sPr", "60"); pg.dispatch_event("#sPr", "input")
         if "up to about a 0 percent raise" in pg.text_content("#rPlanVerdict"):
-            ok("plan calculator caps the raise honestly (5% unaffordable at the low ends)")
+            ok("plan calculator caps the raise honestly (5% unaffordable at a partial restore)")
         else: bad(f"plan raise cap: {pg.text_content('#rPlanVerdict')[:90]}")
-        pg.fill("#sPw", "530000"); pg.dispatch_event("#sPw", "input")
+        pg.fill("#sPr", "100"); pg.dispatch_event("#sPr", "input")
+        pg.fill("#sPw", "550"); pg.dispatch_event("#sPw", "input")
         pg.fill("#sPc", "1300000"); pg.dispatch_event("#sPc", "input")
         pverd2 = pg.text_content("#rPlanVerdict")
-        if pg.text_content("#rPlan").strip() == "$881,393" and "$4.9 million of new bonds" in pverd2 and "36.9 million of building capacity" in pverd2:
-            ok("plan top ends: $881,393 surplus buys the 5% raise, $4.9M bonds, $36.9M advisor-anchored capacity")
-        else: bad(f"plan top ends: {pg.text_content('#rPlan')} / {pverd2[:100]}")
-        pg.fill("#sPw", "260000"); pg.dispatch_event("#sPw", "input")
+        opw = pg.text_content("#oPw").strip()
+        if (pg.text_content("#rPlan").strip() == "$3,585,126" and "$40.0 million of new bonds" in pverd2
+                and "72.0 million of building capacity" in pverd2 and opw == "550 students ($2,324,300 a year)"):
+            ok("plan slider tops: the full 550-student pool prices at $2,324,300; surplus $3,585,126 buys the 5% raise, $40.0M bonds, $72.0M capacity")
+        else: bad(f"plan top ends: {pg.text_content('#rPlan')} / {opw} / {pverd2[:100]}")
+        pg.fill("#sPw", "0"); pg.dispatch_event("#sPw", "input")
         pg.fill("#sPc", "760000"); pg.dispatch_event("#sPc", "input")
         pg.fill("#sPt", "0"); pg.dispatch_event("#sPt", "input")
         pg.fill("#sPr", "0"); pg.dispatch_event("#sPr", "input")
-        if "short of closing the $2.65 million gap" in pg.text_content("#rPlanVerdict"):
-            ok("plan calculator reports the shortfall when the gap is not closed")
+        if "short of closing the trending $1.74 million fiscal 2026 gap" in pg.text_content("#rPlanVerdict"):
+            ok("plan calculator reports the shortfall against the trending gap when it is not closed")
         else: bad(f"plan shortfall: {pg.text_content('#rPlanVerdict')[:90]}")
         pg.fill("#sPr", "100"); pg.dispatch_event("#sPr", "input")
 

@@ -348,7 +348,8 @@ def main():
     for needle in ["Figure 21.", "72 percent", "5.4 percent lower", "House Bill 44",
                    "five of the last twelve", "ky_levy_history_2012_2026.csv"]:
         chk(needle in t, f"PDF levy history intact: {needle}")
-    for needle in ["chartLevyHist", "5.4 percent lower", "107.5 percent"]:
+    for needle in ["chartLevyHist", "5.4 percent lower", "107.5 percent",
+                   "raised rates anyway", "one did not"]:
         chk(needle in html, f"site levy history intact: {needle}")
     chk((REPO / "build" / "ky_levy_history_2012_2026.csv").exists()
         and (REPO / "build" / "levy_series.json").exists(),
@@ -406,7 +407,7 @@ def main():
                    "This scenario lands at about the", "19,683 weighted scenarios",
                    "The default reflects the superintendent's written statement",
                    "the median of the 19,683 weighted scenarios: 30 added students",
-                   'value="140"', "Grow the district", "+$2.7M"]:
+                   'value="140"', "Grow the district", "+$2.5M"]:
         chk(needle in html, f"v4.5 review round: {needle}")
     chk("Either way: a preschool pipeline" not in html,
         "the 'Either way' pipeline sentence removed from ask two")
@@ -415,15 +416,22 @@ def main():
 
     # v4.5 round 3: plan calculator, tax-compensation line, percentile-scale bars
     for needle in ['id="sPw"', 'id="sPc"', 'id="sPr"', 'id="sPt"', 'id="rPlan"',
-                   "surplus per year after closing the $2.65 million gap",
-                   "the model's Move 2 band ($260,000 to $530,000 a year net of costs)", "13.008",
+                   "surplus per year after closing the trending $1.74 million fiscal 2026 gap",
+                   "$4,226 of state revenue net of supplies", "shared with Paris Independent",
+                   'min="0" max="550" value="0"', "13.008",
                    'id="rTax"', "To make up a loss this size with taxes instead",
                    "$15.69 a month for 8.9 cents",
                    'id="youClose"', 'id="youGrow"', "percentile scale",
                    "gold marker is your scenario"]:
         chk(needle in html, f"plan calculator / tax line / percentile bars: {needle}")
-    chk(260000 + 760000 + 1699479 - 2648086 == 71393,
-        "plan default surplus recomputes to $71,393 (corrected Move-2 lever)")
+    chk(760000 + 1699479 - 1738653 == 720826,
+        "plan default surplus recomputes to $720,826 (no recovery, low costs, full restore)")
+    chk(550 * 4226 == 2324300 and 100 * 4226 == 422600,
+        "leakage lever recomputes: the 550-student pool at $4,226 each, $422,600 per 100")
+    chk(abs(25432349.78 - 3328472.47 - 1409590.27 - 20694287.04) < 0.02
+        and abs(22477866.08 - 44926.00 - 22432940.08) < 0.02
+        and abs(20694287.04 - 22432940.08 + 1738653.04) < 0.02,
+        "trending FY2026 gap recomputes from the June packet GL: revenues before transfers minus spending = -$1,738,653")
 
     # v4.5 round 4: curve card averages, 938-to-661 bridge, Fayette case study
     chk(round((15691 + 17416 + 18910 + 18940 + 19299) / 5) == 18051
@@ -481,9 +489,12 @@ def main():
         "the state's own SEEK forecast and final files are archived")
     chk(round(10000388 * 0.05 * 1.0145) == 507270,
         "plan raise cost recomputes: 5 percent of the certified payroll with the 1.45 percent load")
-    _cap = (881393 - 10000388 * 0.05 * 1.0145) * 13.008 + 32000000
-    chk(36_700_000 < _cap < 37_100_000,
-        "plan capacity recomputes to about $37 million at the top ends (advisor-anchored)")
+    _cap = (720826 - 10000388 * 0.05 * 1.0145) * 13.008 + 32000000
+    chk(34_600_000 < _cap < 35_000_000,
+        "plan capacity recomputes to about $35 million at the defaults (advisor-anchored)")
+    _cap_top = (550 * 4226 + 1300000 + 1699479 - 1738653 - 10000388 * 0.05 * 1.0145) * 13.008 + 32000000
+    chk(71_900_000 < _cap_top < 72_200_000,
+        "plan slider top ends recompute (full 550-student pool): about $72 million")
     chk((REPO / "build" / "baird_lpc_june2026.pdf").exists(),
         "the advisor's June 2026 bonding presentation is archived")
     chk(abs(3252893 - (1200105 + 1200105 + 276245 + 276745 + 173944 + 126250)) == 501,
@@ -736,14 +747,14 @@ def main():
     chk("its savings sheet says two" in t and "count supports three" in t,
         "PDF keeps the closure staffing-count judgment (v4.2: the district's own two-vs-three)")
     for needle in ["5 percent raise for every certified teacher", "$507,000",
-                   "$4.9 million", "$37 million of building capacity"]:
+                   "$2.8 million", "$35 million of building capacity"]:
         chk(needle in html, f"transformative surplus claim on the site: {needle}")
-    chk("5 percent raise for every certified teacher" in t and "$37 " in t and "$32 million" in t,
-        "corrected transformative claim in the report, advisor-anchored")
+    chk("5 percent raise for every certified teacher" in t and "$35 " in t and "$32 million" in t,
+        "re-based transformative claim in the report, advisor-anchored")
     chk("10 percent raise" not in html and "$52 million" not in html
         and "withdrawn with the lever correction" in t,
         "the 10-percent-raise / $52 million claims are withdrawn (lever correction)")
-    for claim, section in [("$37 million of building capacity", 'id="grow"'),
+    for claim, section in [("$35 million of building capacity", 'id="grow"'),
                            ("LOSES $20,007", 'id="model"'),
                            ("$4.6 million lifetime revenue loss", 'id="risks"')]:
         chk(html.index(claim) > html.index(section)

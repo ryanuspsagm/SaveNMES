@@ -101,10 +101,11 @@ A(Paragraph(
   "<b>Lever three, revenue.</b> The rate is simply lower while the tax base more than doubled. Restoring "
   "the board's own 2018 rate brings in about $1.7 million a year. In the last ten years, across the eight "
   "neighboring districts, voters turned down exactly one school tax, a building nickel in Bath County. "
-  "<b>Together, the plan is transformative.</b> At its low ends with the full rate restore it clears the "
-  "whole gap. At its top ends it funds a 5 percent raise for every certified teacher and about $37 million "
-  "of building capacity, anchored on the $32 million the district's own financial advisor presented in June "
-  "2026. Every school stays open. A suggestion to run the plan: three committees, enrollment, fixed costs, and revenue; NMES volunteers stand at the ready to help", body))
+  "<b>Together, the plan is transformative.</b> With costs at the low end and the full rate restore it "
+  "clears the trending fiscal 2026 gap (about $1.74 million on the district's own June 2026 ledger) with "
+  "about $721,000 a year to spare: a 5 percent raise for every certified teacher and about $35 million of "
+  "building capacity, anchored on the $32 million the district's own financial advisor presented in June "
+  "2026, before a single leaked student is recovered. Every school stays open. A suggestion to run the plan: three committees, enrollment, fixed costs, and revenue; NMES volunteers stand at the ready to help", body))
 
 A(Paragraph("THE CHOICE", kick))
 A(Paragraph("Two roads, and four asks that cost nothing", h1))
