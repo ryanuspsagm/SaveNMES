@@ -424,6 +424,30 @@ def main():
         chk(needle in html, f"plan calculator / tax line / percentile bars: {needle}")
     chk(10 * 111000 + 760000 + 1699479 - 2648086 == 921393,
         "plan default surplus recomputes to $921,393")
+
+    # v4.5 round 4: curve card averages, 938-to-661 bridge, Fayette case study
+    chk(round((15691 + 17416 + 18910 + 18940 + 19299) / 5) == 18051
+        and round(((15406 + 14011 + 14621) / 3 + (19080 + 15619 + 16137) / 3
+                   + (19003 + 17410 + 17403) / 3 + (19348 + 18131 + 18670) / 3
+                   + (17903 + 16677 + 16930) / 3) / 5) == 17090,
+        "five-year averages recompute from the chart's own series (KY $18,051, county $17,090)")
+    for needle in ["KY5=18051", "DIST5=17090", "$18,051", "$17,090",
+                   "More students means a lower cost per student"]:
+        chk(needle in html, f"curve card five-year averages: {needle}")
+    chk(397700 + 107175 + 81442 + 33676 == 619993,
+        "bridge recomputes: about $620,000 of classroom payroll the claim leaves out")
+    for needle in ["What the district leaves out of the $938,690:",
+                   "What the district adds that the $938,690 never held:",
+                   "about $620,000 of classroom payroll"]:
+        chk(needle in html, f"938-to-661 bridge: {needle}")
+    chk(abs(2648086 / 29097404 * 100 - 9.1) < 0.05
+        and abs((82507209.57 - 42000000) / 671183390 * 100 - 6.0) < 0.05,
+        "Fayette comparison ratios recompute (9.1 vs 6.0 cents per dollar)")
+    for needle in ['id="chartFay"', "9.1 cents per dollar", "$91.6 million to a budgeted $42 million",
+                   "clean opinions"]:
+        chk(needle in html, f"Fayette case study card: {needle}")
+    chk((REPO / "build" / "fcps_tentative_budget_2025_26.pdf").exists(),
+        "FCPS budget book archived behind the Fayette comparison")
     chk(round(10000388 * 0.05 * 1.0145) == 507270,
         "plan raise cost recomputes: 5 percent of the certified payroll with the 1.45 percent load")
     _cap = (921393 - 10000388 * 0.05 * 1.0145) * 13.008 + 17600000

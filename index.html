@@ -254,10 +254,10 @@ footer a{color:var(--ice)}
 <p class="note">The chart starts in 2014: the 2013 file carries a one-time renovation charge at NMES that would swamp the scale (the earlier years stay in the archived data). Two reporting eras remain: the state changed how it reports school spending after 2016-17, so compare within an era, not across the break. In the older era NMES ran above the state elementary average, the expected premium for a school this size under the old method. In the modern era NMES sat <b>below the Kentucky elementary average</b> in five of the eight years, ran above it from 2022 to 2024, and is back 7 percent below on the newest file.</p>
 </div>
 <div class="card">
-<h3>More students, lower cost per student, with every new cost counted</h3>
-<p>Most of what NMES costs is the building and its fixed staff. Each added student brings real new costs, and this curve counts all of them: $700 of supplies, $500 of busing, a teacher ($49,150) for every 21 added past the 25 open seats, and a support hire ($28,500) for every 75. One per 21 is the school's actual class size today. The cost per student falls fast:</p>
-<div class="chartbox"><canvas id="chartCurve" role="img" aria-label="Line chart: NMES cost per student falls from about $20,600 at 110 students to $17,903 at 128 today and about $12,500 at the 198-seat rating, with steps where new teachers are hired beyond the 25 open seats"></canvas></div>
-<p class="note">Basis: the 2024-25 state file plus the same costs as the growth calculator; the upward steps are new hires. At 160 students, about $14,600 with no new hire yet needed. At the 198 seats the state approved in 2013, about $12,500, cheaper than every school in the county today. Shrinking runs the same math backward. Method and the 25-year record are in the report.</p>
+<h3>More students means a lower cost per student</h3>
+<p>Most of what NMES costs is the building and its fixed staff. Add students and that cost spreads over more children, so the cost per student falls, even counting every new cost: supplies, busing, and new hires as classes fill. NMES already costs less than the five-year Kentucky elementary average today, and from about 135 students it runs cheaper than the county's other elementaries too:</p>
+<div class="chartbox"><canvas id="chartCurve" role="img" aria-label="Line chart: NMES cost per student falls from about $20,600 at 110 students to $17,903 at 128 today and about $12,500 at the 198-seat rating, with steps where new teachers are hired beyond the 25 open seats. Dashed reference lines mark the five-year Kentucky elementary average of $18,051 and the five-year county elementary average of $17,090."></canvas></div>
+<p class="note">Basis: the 2024-25 state file plus the same costs as the growth calculator; the upward steps are new hires. The dashed lines are five-year averages (2021-2025) from the same state files: <b>Kentucky elementary schools $18,051</b>, the <b>county's three elementaries $17,090</b>. At the 198 seats the state approved in 2013, about $12,500, cheaper than every school in the county today. One per 21 is the school's actual class size today; shrinking runs the same math backward.</p>
 </div>
 </details>
 </div></section>
@@ -289,7 +289,7 @@ footer a{color:var(--ice)}
 <p>&bull; <b>$493,407 of it is staffing</b>, and the same appendix says: "All current staff would be retained." The savings arrive only later, by attrition, if at all. Year one: $0.<br>
 &bull; <b>$40,693 of the expense lines travel with the students</b>: supplies, books, field trips, printing. That money is spent wherever the kids sit.<br>
 &bull; <b>Not one dollar of added busing</b> and <b>not one leaving family</b> appear anywhere in the 48-page response. Those are the two costs that push closures into the red.</p>
-<p><b>Reconciling the two numbers.</b> The table above is the school's General Fund budget: $938,690. The district's $661,139 is not a different count of the same budget; it is a savings claim built from four blocks: $493,407 of staffing priced with benefits (the table's salary lines carry none), $107,039 of building costs, $20,000 of district-held insurance, and $40,693 of supplies. $493,407 + $107,039 + $20,000 + $40,693 = $661,139. Their own appendix then takes back the biggest block: all staff are retained, so the staffing money arrives only by attrition, if at all. The supplies travel with the students. What survives is <b>$127,039</b>, the same building-and-insurance money our model credits.</p>
+<p><b>Reconciling the two numbers.</b> The table above is the school's General Fund budget: $938,690. The district's $661,139 is a savings claim built from four blocks: $493,407 of staffing priced with benefits, $107,039 of building costs, $20,000 of district-held insurance, and $40,693 of supplies. $493,407 + $107,039 + $20,000 + $40,693 = $661,139. The bridge between the two runs in both directions. <b>What the district leaves out of the $938,690:</b> about $620,000 of classroom payroll that moves with the children (regular instruction $397,700, special education $107,175, primary and other instruction $81,442, student support $33,676). Even their own claim does not count it as savings, because those teachers teach the same kids wherever they sit. <b>What the district adds that the $938,690 never held:</b> the benefits on every claimed position (their staffing is fully loaded; the table's salary lines carry none) and the $20,000 of insurance held at the district level, not in the school's budget. That is how a $938,690 budget becomes a $661,139 claim. Their own appendix then takes back the biggest block: all staff are retained, so the staffing money arrives only by attrition, if at all. The supplies travel with the students. What survives is <b>$127,039</b>, the same building-and-insurance money our model credits.</p>
 <p class="note">Net their own sheet honestly and it loses money. Keep what survives, $107,039 of building costs plus $20,000 of insurance ($127,039, exactly what our model credits). Subtract the two costs their 48 pages never count: about $63,000 a year of central busing to haul the zone's kids to Paris, and the state funding that leaves if just 10 percent of families go (13 students at $5,126 each is $66,638). That is $127,039 minus $63,000 minus $66,638, or <b>$2,599 a year in the red</b>, right beside our model's median $17,982 yearly loss. Source: Response to the 10 Questions, archived in the repository.</p>
 </div>
 </details>
@@ -427,6 +427,12 @@ footer a{color:var(--ice)}
 <h3>1. The money problem</h3>
 <p>The General Fund ran a $2.65 million deficit last year. Reserves fall about $1.1 million a year. Pandemic aid ended (about $2.95 million a year) and state funding fell with roughly 248 fewer funded students. The district also sweeps $1.32 million a year of restricted capital money into operations. That drains the fund that should pay for buildings.</p>
 <div class="chartbox"><canvas id="chartGF" role="img" aria-label="Bar chart of the operating deficit and fund balance, fiscal 2023 to 2025"></canvas></div>
+</div>
+<div class="card">
+<h3>A case study: Fayette is in the headlines. Bourbon's gap is proportionally bigger.</h3>
+<p>Fayette County Public Schools has spent the year in the public spotlight over its finances. Credit where due: Bourbon's audited statements carry <b>clean opinions</b>, and Fayette's own budget book shows a General Fund balance that fell from <b>$91.6 million to a budgeted $42 million in two years</b>. But an audit grades the bookkeeping, not the trajectory, and scale changes the picture. Fayette's worst, headline-making year drew down about $40.5 million, roughly <b>6 cents of every General Fund dollar it spends</b>. Bourbon's deficit before transfers ran <b>9.1 cents per dollar</b> last year, half again Fayette's crisis year, and the fund has run in the red three years straight:</p>
+<div class="chartbox"><canvas id="chartFay" role="img" aria-label="Bar chart comparing the yearly General Fund gap per dollar spent: Bourbon County 9.1 cents in fiscal 2025 versus Fayette County 6.0 cents in its worst recent year"></canvas></div>
+<p class="note">Basis: Bourbon, FY2025 audited statements ($2,648,086 deficit before transfers against $29,097,404 of spending). Fayette, its own 2025-26 tentative budget book, archived in the repository: General Fund beginning balance $82,507,210 (FY2023-24 actual) to $42,000,000 (FY2024-25 working), against its $671,183,390 working General Fund. Nobody is writing headlines about Bourbon. Scaled to size, the numbers say they should be.</p>
 </div>
 <div class="card">
 <h3>2. The enrollment problem is leakage, not demographics</h3>
@@ -744,6 +750,18 @@ datasets:[{label:'Result before transfers ($M)',data:[-0.237,-2.535,-2.648],back
 {label:'Year-end fund balance ($M)',data:[6.583,5.516,4.291],backgroundColor:NAVY}]},
 options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{grid:{color:'#E3E8F0'}}}}});
 
+/* Fayette comparison: yearly GF gap per dollar of spending */
+new Chart(document.getElementById('chartFay'),{type:'bar',
+data:{labels:['Bourbon County, FY2025 (every year looks like this)','Fayette County, FY2024 (its headline crisis year)'],
+datasets:[{label:'Cents of gap per dollar of General Fund spending',data:[9.1,6.0],
+backgroundColor:[NAVY,LGRAY],borderColor:[NAVY,GRAY],borderWidth:1}]},
+options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+plugins:{legend:{display:false},
+tooltip:{callbacks:{label:function(c){return c.parsed.x.toFixed(1)+' cents of gap per dollar of General Fund spending'}}}},
+scales:{x:{min:0,max:10,grid:{color:'#E3E8F0'},ticks:{callback:function(v){return v+'¢'}},
+title:{display:true,text:'cents of gap per dollar of General Fund spending',font:{size:10}}},
+y:{ticks:{font:{size:10}}}}}});
+
 /* Fourteen years of levies, nine districts */
 var LV={"Bourbon County":[55.4,57.6,57.3,59.1,58.8,60.0,61.3,60.6,55.9,54.2,49.2,52.4,52.4,52.4],
 "Paris Ind":[61.0,64.1,66.5,69.0,71.6,74.4,78.3,80.4,68.7,74.5,71.5,71.5,71.5,71.5],
@@ -873,11 +891,16 @@ var staff=Math.floor(gain/75);
 return 17903*128+(N-128)*(700+500)+teachers*49150+staff*28500;
 }
 for(var N=110;N<=200;N+=2){labels.push(N);pts.push(Math.round(cost(N)/N))}
+var KY5=18051,DIST5=17090;
 new Chart(document.getElementById('chartCurve'),{type:'line',
-data:{labels:labels,datasets:[{label:'Cost per student at that enrollment',data:pts,
-borderColor:NAVY,backgroundColor:'transparent',borderWidth:3,pointRadius:0,tension:0.2}]},
+data:{labels:labels,datasets:[{label:'NMES cost per student at that enrollment',data:pts,
+borderColor:NAVY,backgroundColor:'transparent',borderWidth:3,pointRadius:0,tension:0.2},
+{label:'KY elementary 5-yr average $18,051',data:labels.map(function(){return KY5}),
+borderColor:'#B8860B',backgroundColor:'transparent',borderWidth:1.6,borderDash:[6,4],pointRadius:0},
+{label:'County elementary 5-yr average $17,090',data:labels.map(function(){return DIST5}),
+borderColor:GRAY,backgroundColor:'transparent',borderWidth:1.6,borderDash:[2,3],pointRadius:0}]},
 options:{responsive:true,maintainAspectRatio:false,
-plugins:{legend:{display:false},
+plugins:{legend:{display:true,position:'bottom',labels:{boxWidth:14,font:{size:9.5}}},
 tooltip:{callbacks:{label:function(c){return c.parsed.x===9?'':'$'+c.parsed.y.toLocaleString("en-US")+' per student at '+c.label+' students'}}}},
 scales:{y:{grid:{color:'#E3E8F0'},ticks:{callback:function(v){return '$'+(v/1000).toFixed(0)+'K'}},title:{display:true,text:'cost per student',font:{size:10}}},
 x:{ticks:{maxTicksLimit:10},title:{display:true,text:'students enrolled (128 today, 198-seat rating)',font:{size:10}}}}}});

@@ -99,5 +99,10 @@
         "what": "Statewide elementary-school average spending per student, 2011-12 through 2016-17 (old reporting era), computed with the same name-based rule as the modern era; used for the KY average line on the site's cost-history chart.",
         "source": "KDE LEARNING_ENVIRONMENT_STUDENTS-TEACHERS statewide files (education.ky.gov historical datasets, fetched July 2026).",
         "retrieved": "2026-08-02"
+    },
+    "fcps_tentative_budget_2025_26.pdf": {
+        "what": "Fayette County Public Schools Tentative Budget 2025-26 (23 pages). Carries the figures used in the Fayette comparison card: General Fund $715,685,019 (85.8 percent of the $834,325,808 total budget); GF beginning balances $91,592,335.97 (FY2022-23 actual), $82,507,209.57 (FY2023-24 actual), $42,000,000 (FY2024-25 working), a two-year drop of $49.6 million; FY2024-25 working GF total $671,183,390; 6 percent contingency $42,941,101.",
+        "source": "fcps.net public budget documents, retrieved July 2026.",
+        "retrieved": "2026-08-02"
     }
 }
