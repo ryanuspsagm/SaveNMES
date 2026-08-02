@@ -234,9 +234,9 @@ def main():
                    "Appendix B: Other Supporting Data", "KRS 157.370",
                    "Boston Public Schools"]:
         chk(needle in t, f"PDF claim intact: {needle}")
-    chk("-$130,749" in html and "if all staff are retained" in html
-        and "superintendent's written response" in html,
-        "all-staff-retained figure shown beside the median and attributed to the superintendent's response")
+    chk("-$130,749" in html and "all staff retained" in html
+        and "superintendent's written statement" in html,
+        "all-staff-retained figure shown at the calculator default and attributed to the superintendent")
     for needle in ["$20,007", "55 percent", "losing $591,545",
                    "saving $484,582", "Millersburg"]:
         chk(needle in html, f"site v4.5 two-tailed range intact: {needle}")
