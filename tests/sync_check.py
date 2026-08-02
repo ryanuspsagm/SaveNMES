@@ -406,8 +406,9 @@ if hs == (236, 23) and "259 registered homeschool" in html and "236 registered h
 else:
     diff(f"homeschool counts: model {hs}, site 259 {'259 registered homeschool' in html}, pdf 236 {'236 registered homeschool' in pdf_flat}")
 pool = (RD["B123"].value, RD["B125"].value, RD["B126"].value, RD["B127"].value)
-if pool == (76, 131, 54, 189) and "Fayette pulling 54 commuters" in html and "net import of 189" in pdf_flat:
-    match("KDE nonresident flows (76 out / 131 in / 54 Fayette / net 189) consistent model/site/PDF")
+if pool == (76, 131, 54, 189) and "Fayette pulling 54 commuters" in html \
+        and "247 Bourbon County Schools residents enrolled in another district" in pdf_flat:
+    match("KDE nonresident flows (76 out / 131 in / 54 Fayette; 247 exports counted in the pool) consistent model/site/PDF")
 else:
     diff(f"nonresident flows: model {pool}")
 if seek46 == 212796 and "$213,000" in pdf_flat and RD["B131"].value == "=Assumptions!B6-Assumptions!B62":

@@ -564,7 +564,7 @@ alts = [
   "Cost reduction", "Medium; contracts are structured to self-fund"),
  ("Fill NMES to capacity (rebalance + transfers, net)", "=Redistricting!B30", "=Redistricting!B31", "Boundary rebalancing and cross-county scenario, Redistricting tab", GRN, GRN,
   "New revenue, net of costs", "High; board boundary authority, math on Redistricting tab"),
- ("District-wide recruitment beyond NMES's 46 seats (homeschool, private-school, nonresident incentives; v3.8)", "=25*(Assumptions!B6-Assumptions!B62)", "=50*(Assumptions!B6-Assumptions!B62)", "25-50 additional students at $4,226 net; pool measured on Redistricting rows 116-135 (259 registered homeschoolers, ACS pool ~1,135, net import already 189); 62 open seats exist at Bourbon Central's approved rating", GRN, GRN,
+ ("District-wide recruitment beyond NMES's 46 seats (homeschool, private-school, nonresident incentives; v3.8)", "=25*(Assumptions!B6-Assumptions!B62)", "=50*(Assumptions!B6-Assumptions!B62)", "25-50 additional students at $4,226 net; pool measured on Redistricting rows 116-135 (236 in the district's own homeschool files, 247 residents enrolled in other districts, 450-550 in all with private school); 62 open seats exist at Bourbon Central's approved rating", GRN, GRN,
   "New revenue", "Medium; needs an enrollment marketing plan and incentive design"),
 ]
 r = 4

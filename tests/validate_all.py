@@ -310,8 +310,8 @@ def main():
 
     # recruitment pool (v3.2)
     for needle in ["236 registered homeschool", "54 from Fayette",
-                   "$213,000", "Cloverport", "net import of 189", "letter of intent",
-                   "KRS 159.160", "$4,226", "St. Mary"]:
+                   "$213,000", "Cloverport", "247 Bourbon County Schools residents",
+                   "letter of intent", "KRS 159.160", "$4,226", "St. Mary"]:
         chk(needle in t, f"PDF recruitment pool intact: {needle}")
     for needle in ["259 registered homeschool", "Fayette pulling 54 commuters",
                    "$4,626"]:
@@ -525,13 +525,16 @@ def main():
                    "2,174", "$32 million"]:
         chk(needle in html, f"Baird figures on the site: {needle}")
     # v4.5 round 6: district-specific leakage, reserve comparison, family survey, attendance labeling
-    chk(171 + 76 == 247 and 436 - 247 == 189 and 236 * 4226 == 997336
+    chk(171 + 76 == 247 and 236 + 247 == 483 and 236 * 4226 == 997336
         and 450 * 4226 == 1901700 and 550 * 4226 == 2324300,
-        "district-specific leakage recomputes: 247 out vs 436 in (net +189); 236 homeschool at $4,226 = $997,336; county band $1.9M-$2.3M")
+        "district-specific leakage recomputes: 171+76=247 exports; 236+247=483 documented; 236 homeschool at $4,226 = $997,336; band $1.9M-$2.3M")
     for needle in ["236 students in Bourbon County Schools' own files", "up from 156 in 2018-19",
-                   "net import of 189", "$1.9 to $2.3 million",
-                   "Bourbon already wins that competition"]:
+                   "247 Bourbon County Schools residents", "reach 483",
+                   "homeschooled, in private school, or enrolled in another district",
+                   "$1.9 to $2.3 million"]:
         chk(needle in html, f"leakage card, district-specific: {needle}")
+    chk("net import" not in html and "wins that competition" not in html,
+        "the net-import framing is retired from the site; exports are counted in the pool")
     chk("$2.1 to $2.3 million" not in html,
         "the mixed-basis leakage band is retired (re-derived at the symmetric $4,226)")
     chk(abs(4290840 / 29097404 * 100 - 14.7) < 0.05 and abs(28361786 / 685348803 * 100 - 4.1) < 0.05
