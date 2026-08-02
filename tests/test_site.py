@@ -164,17 +164,17 @@ def main():
         if pg.evaluate("document.getElementById('youGrow').style.left") != "50%":
             ok("growth percentile marker follows the calculator (moved off 50% at the corner)")
         else: bad("growth percentile marker did not move")
-        pg.fill("#sGro", "153"); pg.dispatch_event("#sGro", "input")
+        pg.fill("#sGro", "150"); pg.dispatch_event("#sGro", "input")
         pg.fill("#sRat", "2"); pg.dispatch_event("#sRat", "input")
         teach_ds = pg.evaluate("document.getElementById('rGro').dataset.teachers")
         if teach_ds == "0":
-            ok("headroom honored: 43 added students (to 153) hire no teacher at the district-cap class size")
+            ok("headroom honored: 40 added students (to 150) hire no teacher at the district-cap class size")
         else: bad(f"headroom teachers: {teach_ds}")
-        pg.fill("#sGro", "156"); pg.dispatch_event("#sGro", "input")
+        pg.fill("#sGro", "155"); pg.dispatch_event("#sGro", "input")
         pg.fill("#sRat", "0"); pg.dispatch_event("#sRat", "input")
         teach_ds = pg.evaluate("document.getElementById('rGro').dataset.teachers")
         if teach_ds == "1":
-            ok("first hire lands at 21 students past the 25 open seats at the smaller-class setting")
+            ok("first hire lands at 20 students past the 25 open seats at the smaller-class setting")
         else: bad(f"first-hire teachers: {teach_ds}")
         pg.fill("#sRat", "1"); pg.dispatch_event("#sRat", "input")
         pg.fill("#sTc", "41718"); pg.dispatch_event("#sTc", "input")

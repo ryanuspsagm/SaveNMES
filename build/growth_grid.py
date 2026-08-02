@@ -27,7 +27,11 @@ the building at 154, corroborating the count. This is the same standard the
 district uses when it charges new classrooms at the receiving schools in
 the closure case. Teachers increment beyond the 25 seats.
 
-  added students:        10 to 90 (site slider runs every whole student)
+  added students:        10 to 90 (the site slider moves in five-student
+                         steps, which keeps every reachable setting inside
+                         the grid's published floor and ceiling; off-step
+                         targets can price a few thousand dollars below the
+                         grid floor because the teacher trigger steps)
   seats already open:    25 (fixed; the district's own Appendix B caps)
   teacher trigger:       selectable hiring pace, one CLASSROOM teacher per
                          FULL new class of 18 / 21 / 24 added students BEYOND

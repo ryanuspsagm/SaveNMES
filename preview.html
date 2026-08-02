@@ -386,8 +386,8 @@ footer a{color:var(--ice)}
 <input type="range" id="sFix" min="0" max="2" value="0" step="1"></div>
 <div class="slider-row"><label>Teachers cut, at the district's $54,479 each <output id="oTea">0</output></label>
 <input type="range" id="sTea" min="0" max="3" value="0" step="1"></div>
-<div class="slider-row"><label>Families who leave the district <output id="oLeav">30% (38 students)</output></label>
-<input type="range" id="sLeav" min="0" max="100" value="30" step="1"></div>
+<div class="slider-row"><label>Families who leave the district (the grid prices up to half the school) <output id="oLeav">30% (38 students)</output></label>
+<input type="range" id="sLeav" min="0" max="50" value="30" step="1"></div>
 <div class="slider-row"><label>State add-ons lost per leaver <output id="oAdd">$500</output></label>
 <input type="range" id="sAdd" min="0" max="1000" value="500" step="50"></div>
 <div class="slider-row"><label>Property-value loss in the zone <output id="oProp">$0</output></label>
@@ -407,7 +407,7 @@ footer a{color:var(--ice)}
 <h3>Growth: what does filling NMES net?</h3>
 <p class="note">The building held 261 children at its peak. It holds 128 today against a 174 rating. The pool is real: 236 in this district's own homeschool files, 450 to 550 Bourbon County Schools kids in homeschool, private school, or another district, and 131 already driving in. Each new student brings $4,626. The first 25 added students fill seats already open at the district's own class caps; past them, a teacher is charged for every full new class.</p>
 <div class="slider-row"><label>Enrollment target (from 110, the district's figure, still unsourced; last official count 128) <output id="oGro">140</output></label>
-<input type="range" id="sGro" min="110" max="200" value="140" step="1"></div>
+<input type="range" id="sGro" min="110" max="200" value="140" step="5"></div>
 <div class="slider-row"><label>Class size for new classrooms, past the 25 open seats <output id="oRat">1 teacher per 21: today's class size</output></label>
 <input type="range" id="sRat" min="0" max="2" value="1" step="1"></div>
 <div class="slider-row"><label>New teacher cost (schedule entry to mid) <output id="oTc">$49,150</output></label>
@@ -425,7 +425,7 @@ footer a{color:var(--ice)}
 <div class="sub">net new dollars per year at these settings</div>
 <div class="verdict" id="rGroVerdict"></div>
 </div>
-<p class="note">The calculator opens at the median of the 19,683 weighted scenarios: 30 added students, no new hires needed. Every lever is anchored in a district document; the full method is in the report.</p>
+<p class="note">The calculator opens at the median of the 19,683 weighted scenarios: 30 added students, no new hires needed. The target moves in five-student steps so every reachable setting prices inside the grid's published floor and ceiling. Every lever is anchored in a district document; the full method is in the report.</p>
 </div>
 </div>
 

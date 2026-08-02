@@ -56,7 +56,8 @@ ceiling are the grid's true extremes and do not depend on weights.
                              Archived build/response_to_the_10_questions.pdf
   students lost:             0 / 10 / 20 / 30 / 40 / 50 percent of 128
                              (0 / 13 / 26 / 38 / 51 / 64 students; the site
-                             slider runs the full 0-100%). UNIFORM: how many
+                             slider caps at the same 50%, so the calculator
+                             never prices outside the grid). UNIFORM: how many
                              families leave is the genuine unknown, the one
                              cost the district's response never prices, and
                              the record offers no central estimate

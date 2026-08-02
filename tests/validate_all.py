@@ -766,9 +766,12 @@ def main():
     chk("$938,690" in t, "the working-budget cross-check ($938,690) lives in the report")
     chk("one in three" not in html or "an earlier version of this page said one in three" in html,
         "site: the retracted one-in-three share is corrected, not merely repeated")
-    chk('id="sTea" min="0" max="3"' in html and 'id="sLeav" min="0" max="100"' in html
-        and 'id="sBus" min="20000" max="190000"' in html,
-        "site calculator sliders span the published grid (leakage slider full range by design)")
+    chk('id="sTea" min="0" max="3"' in html and 'id="sLeav" min="0" max="50"' in html
+        and 'id="sBus" min="20000" max="190000"' in html
+        and 'id="sGro" min="110" max="200" value="140" step="5"' in html,
+        "site calculator sliders span exactly the published grids: leakage capped at the grid's 50 "
+        "percent, growth target in five-student steps, so no reachable setting prices outside the "
+        "published floors and ceilings")
     chk("Version 4.5" in t and "August 2, 2026" in t and "Version 4.2" in t,
         "PDF carries the v4.5 version block and the v4.2 history entry")
     chk("Saving_NMES_v4.5_2026-08-02.pdf" in html
