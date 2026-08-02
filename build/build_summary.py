@@ -52,9 +52,11 @@ B("<b>Fact one: it is the county's best elementary school.</b> On the state's 20
   "Middletown ranks first among the county's four elementary schools in every tested subject, and it beats "
   "the state average in science and writing. It was a "
   "National Blue Ribbon School in 2011, one of five in Kentucky that year.")
-B("<b>Fact two: it is not expensive.</b> The district's own cost table, dated May 21, 2026, prices the "
-  "school at $19,080 per student. The state average on the same table is $19,020. The gap is three tenths "
-  "of one percent.")
+B("<b>Fact two: it is not expensive.</b> On the newest state spending file (2024-25), NMES costs $17,903 "
+  "per student. The average Kentucky elementary school costs $19,299, so NMES runs 7 percent below the "
+  "state average. The district's own cost table, dated May 21, 2026, agrees: it prices the school at "
+  "$19,080 per student against a state average of $19,020 on the same table, a gap of three tenths of one "
+  "percent.")
 B("<b>Fact three: closing it frees very little.</b> Start from everything the district spent on the school "
   "last year: $1,285,310, from its own ledger. Almost all of it moves with the children or pays for itself. "
   "Only the building's own costs stop: $79,211 a year if staff keep their jobs, up to $127,039 if the "
