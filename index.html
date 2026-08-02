@@ -118,6 +118,9 @@ input[type=range]{width:100%;accent-color:var(--royal)}
 .range-bar .med{position:absolute;top:2px;bottom:2px;width:8px;margin-left:-4px;background:#1F3864;border-radius:3px}
 .range-bar .iqr{position:absolute;top:0;bottom:0;background:rgba(31,56,100,.18);border-left:2px solid rgba(31,56,100,.5);border-right:2px solid rgba(31,56,100,.5)}
 .range-bar.grow{background:linear-gradient(to right,#DCE8DA 0%,#8FB58C 100%)}
+.range-bar{overflow:visible}
+.range-bar .you{position:absolute;top:-5px;bottom:-5px;width:12px;margin-left:-6px;background:var(--gold,#F5C242);border:2px solid #1F3864;border-radius:6px;z-index:2;transition:left .25s}
+@media (prefers-reduced-motion:reduce){.range-bar .you{transition:none}}
 .range-title{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:17px;margin:16px 0 0}
 .range-labs{display:flex;justify-content:space-between;gap:10px;font-size:13px;margin-top:8px;color:var(--slate)}
 .range-labs div{flex:1}
@@ -346,8 +349,9 @@ footer a{color:var(--ice)}
 <div class="big" id="rNet">-$130,749</div>
 <div class="sub">net effect per year at these settings</div>
 <div class="verdict" id="rRank"></div>
+<div class="verdict" id="rTax" style="margin-top:8px"></div>
 </div>
-<p class="note">The default reflects the superintendent's written statement: all staff retained, savings arriving only by attrition.</p>
+<p class="note">The default reflects the superintendent's written statement: all staff retained, savings arriving only by attrition. The tax line prices a loss at the district's own $191,000 per cent of rate and the median homeowner's $15.69 a month for 8.9 cents.</p>
 </div>
 
 <div class="card">
@@ -378,29 +382,29 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>Every scenario, side by side</h3>
-<p>Nobody knows exactly how either road plays out. So we priced both every reasonable way with the district's own numbers: 5,832 closure scenarios, 19,683 growth scenarios. Where the record pins a central setting it counts double (a triangular weight); true unknowns, like how many families leave, count every setting equally. The shaded band on each bar is the <b>middle half</b> of outcomes.</p>
+<p>Nobody knows exactly how either road plays out. So we priced both every reasonable way with the district's own numbers: 5,832 closure scenarios, 19,683 growth scenarios. Where the record pins a central setting it counts double (a triangular weight); true unknowns, like how many families leave, count every setting equally. Each bar below is a <b>percentile scale</b>: the worst scenario sits at the left end, the best at the right, and every step along the bar is one percentile of the weighted scenarios. The shaded middle is the <b>middle half</b>, the navy tick is the median, and the <b>gold marker is your scenario</b> from the calculators above; move any slider and it moves.</p>
 
 <div class="range-title">Close it</div>
-<div class="range-wrap" role="img" aria-label="Closing NMES: outcomes run from losing $591,545 a year to saving $488,631 a year. The middle half runs from losing $135,672 to saving $101,417, the middle result loses $17,982, and 54 percent of outcomes lose money.">
-<div class="range-bar"><i class="iqr" style="left:42.2%;width:21.9%"></i><i class="zero" style="left:54.8%"></i><i class="med" style="left:53.1%"></i></div>
+<div class="range-wrap" role="img" aria-label="Percentile scale for closing NMES: outcomes run from losing $591,545 a year at the left end to saving $488,631 a year at the right. The middle half is shaded, the median tick loses $17,982, the zero line sits at the 54th percentile because 54 percent of outcomes lose money, and a gold marker shows the calculator scenario, at the 26th percentile by default.">
+<div class="range-bar"><i class="iqr" style="left:25%;width:50%"></i><i class="zero" style="left:54%"></i><i class="med" style="left:50%"></i><i class="you" id="youClose" style="left:26%"></i></div>
 <div class="range-labs">
 <div><b>Worst case</b><br>loses $591,545 a year</div>
 <div><b>Middle result</b><br>loses $17,982 a year</div>
 <div><b>Best case</b><br>saves $488,631 a year</div>
 </div>
 </div>
-<p class="note">54 percent of outcomes lose money; the middle half runs from <b>losing $135,672 to saving $101,417</b>. The biggest unknown is how many families would leave, and that is the one cost the district's own plan never prices.</p>
+<p class="note">54 percent of outcomes lose money, so the zero line sits at the 54th percentile; the middle half runs from <b>losing $135,672 to saving $101,417</b>. The biggest unknown is how many families would leave, and that is the one cost the district's own plan never prices. <b>Your closure scenario: <span id="youCloseTxt">the 26th percentile</span>.</b></p>
 
 <div class="range-title">Grow it</div>
-<div class="range-wrap" role="img" aria-label="Growing NMES: outcomes run from gaining $3,331 a year to gaining $386,904 a year. The middle half runs from gaining $94,520 to gaining $182,654, the middle result gains $141,780, and no scenario loses money.">
-<div class="range-bar grow"><i class="iqr" style="left:23.8%;width:23.0%"></i><i class="med" style="left:36.1%"></i></div>
+<div class="range-wrap" role="img" aria-label="Percentile scale for growing NMES: outcomes run from gaining $3,331 a year at the left end to gaining $386,904 a year at the right. The middle half is shaded, the median tick gains $141,780, no scenario loses money, and a gold marker shows the calculator scenario, at the 50th percentile by default.">
+<div class="range-bar grow"><i class="iqr" style="left:25%;width:50%"></i><i class="med" style="left:50%"></i><i class="you" id="youGrow" style="left:50%"></i></div>
 <div class="range-labs">
 <div><b>Worst case</b><br>gains $3,331 a year</div>
 <div><b>Middle result</b><br>gains $141,780 a year</div>
 <div><b>Best case</b><br>gains $386,904 a year</div>
 </div>
 </div>
-<p class="note">Not one growth scenario loses money; the middle half runs from <b>gaining $94,520 to gaining $182,654</b>. Every input traces to a district document. One script per model in the repository reproduces every number.</p>
+<p class="note">Not one growth scenario loses money; the middle half runs from <b>gaining $94,520 to gaining $182,654</b>. Every input traces to a district document. One script per model in the repository reproduces every number. <b>Your growth scenario: <span id="youGrowTxt">the 50th percentile</span>.</b></p>
 
 <div class="totalstrip"><b>The bottom line:</b> grow it and the middle case GAINS $141,780 a year. Close it and the middle case LOSES $17,982, and $130,749 with all staff retained, the superintendent's own stated plan.</div>
 </div>
@@ -474,9 +478,23 @@ footer a{color:var(--ice)}
 </div>
 
 <div class="card">
-<h3>The plan, priced</h3>
+<h3>The plan, priced: set it yourself</h3>
 <p>Run the three levers at their LOW ends, with the tax rate left alone: about <b>$1.9 million a year</b> ($1.11 million from enrollment plus $760,000 from costs). That covers about 70 percent of the $2.65 million gap by itself. Add any part of the rate restore and the plan clears the whole gap with room to spare. It balances the budget, ends the capital sweep, and closes nothing.</p>
 <p><b>What the surplus buys.</b> At the low ends with the full restore, the plan runs about <b>$920,000 a year ahead</b> of the gap: a <b>5 percent raise for every certified teacher</b> (about $507,000 a year) plus about <b>$5.4 million of new bonds</b>, and ending the sweep frees <b>$17.6 million</b> more, roughly <b>$23 million of building capacity</b>. At the top ends: a <b>10 percent raise</b> and roughly <b>$52 million</b>. Every step is a live formula in the model's Alternatives tab. That is the transformative version of Bourbon County Schools, and it closes nothing.</p>
+<div class="slider-row"><label>Leaked students won back, district-wide <output id="oPw">10% ($1,110,000 a year)</output></label>
+<input type="range" id="sPw" min="0" max="30" value="10" step="1"></div>
+<div class="slider-row"><label>Fixed-cost package (attrition, admin, routes, energy) <output id="oPc">$760,000</output></label>
+<input type="range" id="sPc" min="760000" max="1300000" value="760000" step="10000"></div>
+<div class="slider-row"><label>2018 rate restore used <output id="oPr">100% ($1,699,479)</output></label>
+<input type="range" id="sPr" min="0" max="100" value="100" step="5"></div>
+<div class="slider-row"><label>Raise for every certified teacher <output id="oPt">5%</output></label>
+<input type="range" id="sPt" min="0" max="10" value="5" step="1"></div>
+<div class="result">
+<div class="big" id="rPlan">$921,393</div>
+<div class="sub">surplus per year after closing the $2.65 million gap</div>
+<div class="verdict" id="rPlanVerdict"></div>
+</div>
+<p class="note">Basis, every line from the model: winning back leaked students is worth about $111,000 a year per percentage point (the $1.1 to $3.3 million band); the raise is priced on the $10,000,388 certified General Fund payroll with its 1.45 percent load; what is left after the raise services 4.5 percent, 20-year bonds (factor 13.008); and clearing the gap ends the capital sweep, freeing $17.6 million of restricted capacity on top of the new bonds.</p>
 <div class="totalstrip">Growth plan, low end: about $1.9M a year &bull; Closure median: LOSES $17,982 a year</div>
 <p class="note">Proposed public enrollment targets for NMES, the kind ask two puts on paper: 145 by fall 2027, 160 by 2028, 180 by 2029, 198 by 2030 (the building's 2013 state-approved rating). Miss them on a fair trial, and the next facility plan can revisit with evidence.</p>
 </div>
@@ -923,8 +941,16 @@ document.getElementById('oBus').textContent=money(b);
 var net=CAPV[c]+FIXV[f]+t*TEACH-b-l*(SEEK+ad)-pr;
 document.getElementById('rNet').textContent=money(net);
 var below=0;for(var gi=0;gi<GRID.length&&GRID[gi][0]<net;gi++){below+=GRID[gi][1]}
-document.getElementById('rRank').textContent='This scenario lands at about the '+ord(Math.round(below/GRIDW*100))+
+var rank=Math.round(below/GRIDW*100);
+document.getElementById('rRank').textContent='This scenario lands at about the '+ord(rank)+
 ' percentile of the 5,832 weighted scenarios.';
+document.getElementById('rTax').textContent=net<0
+ ?'To make up a loss this size with taxes instead, the rate would have to rise about '+
+  (-net/191000).toFixed(1)+' cents per $100, about $'+((-net/191000)*(15.69/8.9)).toFixed(2)+
+  ' a month for the median homeowner.'
+ :'';
+document.getElementById('youClose').style.left=rank+'%';
+document.getElementById('youCloseTxt').textContent='the '+ord(rank)+' percentile ('+money(net)+' a year)';
 }
 ['sCap','sFix','sTea','sLeav','sAdd','sProp','sBus'].forEach(function(id){document.getElementById(id).addEventListener('input',calc)});
 calc();
@@ -968,13 +994,49 @@ document.getElementById('oCps').textContent=money(cps);
 document.getElementById('oGad').textContent=money(gad);
 var rg=document.getElementById('rGro');
 rg.textContent=money(net);rg.dataset.teachers=teachers;rg.dataset.staff=staff;
-if(gain===0){document.getElementById('rGroVerdict').textContent='No new students, no new money. Move the first slider.'}
-else{var below=0;for(var gi=0;gi<GGRID.length&&GGRID[gi][0]<net;gi++){below+=GGRID[gi][1]}
-document.getElementById('rGroVerdict').textContent='This scenario lands at about the '+ord(Math.round(below/GGRIDW*100))+
-' percentile of the 19,683 weighted scenarios.'}
+var below=0;for(var gi=0;gi<GGRID.length&&GGRID[gi][0]<net;gi++){below+=GGRID[gi][1]}
+var grank=Math.round(below/GGRIDW*100);
+document.getElementById('rGroVerdict').textContent=gain===0
+ ?'No new students, no new money. Move the first slider.'
+ :'This scenario lands at about the '+ord(grank)+' percentile of the 19,683 weighted scenarios.';
+document.getElementById('youGrow').style.left=grank+'%';
+document.getElementById('youGrowTxt').textContent=gain===0
+ ?'no added students yet'
+ :'the '+ord(grank)+' percentile ('+money(net)+' a year)';
 }
 ['sGro','sRat','sTc','sSp','sGb','sCps','sGad'].forEach(function(id){document.getElementById(id).addEventListener('input',growth)});
 growth();
+
+/* The plan, priced: three levers + the raise, surplus to bonds and capacity.
+   Mirrors the model's Alternatives-tab transformative check. */
+function plan(){
+var pw=+document.getElementById('sPw').value,
+pc=+document.getElementById('sPc').value,
+pr=+document.getElementById('sPr').value,
+pt=+document.getElementById('sPt').value;
+var enroll=pw*111000,restore=Math.round(1699479*pr/100);
+var surplus=enroll+pc+restore-2648086;
+document.getElementById('oPw').textContent=pw+'% ('+money(enroll)+' a year)';
+document.getElementById('oPc').textContent=money(pc);
+document.getElementById('oPr').textContent=pr+'% ('+money(restore)+')';
+document.getElementById('oPt').textContent=pt+'%';
+document.getElementById('rPlan').textContent=money(surplus);
+var v;
+if(surplus<0){v='These settings fall '+money(-surplus)+' short of closing the $2.65 million gap. The raise and the bonds need the gap closed first.'}
+else{
+var raiseCost=10000388*pt/100*1.0145;
+if(raiseCost>surplus){
+var maxR=Math.floor(surplus/(10000388*1.0145/100));
+v='The surplus covers up to about a '+maxR+' percent raise at these settings. Lower the raise slider or push a lever.'}
+else{
+var bonds=(surplus-raiseCost)*13.008,cap=bonds+17600000;
+v='Pays the '+pt+' percent raise ('+money(raiseCost)+' a year), leaves '+money(surplus-raiseCost)+
+' for debt: about $'+(bonds/1e6).toFixed(1)+' million of new bonds, plus $17.6 million freed by ending the sweep. About $'+
+(cap/1e6).toFixed(1)+' million of building capacity, and nothing closes.'}}
+document.getElementById('rPlanVerdict').textContent=v;
+}
+['sPw','sPc','sPr','sPt'].forEach(function(id){document.getElementById(id).addEventListener('input',plan)});
+plan();
 
 /* 2018-rate restore slider */
 function r18(){

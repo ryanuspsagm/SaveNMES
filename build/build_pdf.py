@@ -2040,7 +2040,10 @@ P("<b>Version 4.5, August 2.</b> Both scenario grids now carry explicit lever di
   "calculators now state only the percentile their settings reflect, the growth calculator opens at the "
   "weighted median itself (30 added students, $141,780), the decision panel shows the three default "
   "scenarios side by side, the leaving-cost escalation is charted year by year, and the website cost "
-  "chart starts at 2014 because the 2013 file carries the one-time renovation charge.", note)
+  "chart starts at 2014 because the 2013 file carries the one-time renovation charge. The growth plan "
+  "itself became a calculator (levers, raise, bonds and building capacity, on the model's own bases), the "
+  "closure calculator prices any loss in cents of tax rate and dollars a month for the median homeowner, "
+  "and the scenario bars became percentile scales with a live marker tied to the calculators.", note)
 P("<b>Version 4.4, August 1.</b> The growth model rebuilt on the district's own standards: the first 25 "
   "added students fill seats already open at its own Appendix B class caps, teachers are hired per full "
   "new class at a selectable pace (1 per 18, 21, or 24, each a real classroom count), support staff rides "

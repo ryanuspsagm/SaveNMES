@@ -412,6 +412,23 @@ def main():
         "the 'Either way' pipeline sentence removed from ask two")
     chk(30 * (4626 + 500 - 400) == 141780,
         "growth default recomputes: 30 added students at central legs = the weighted median")
+
+    # v4.5 round 3: plan calculator, tax-compensation line, percentile-scale bars
+    for needle in ['id="sPw"', 'id="sPc"', 'id="sPr"', 'id="sPt"', 'id="rPlan"',
+                   "surplus per year after closing the $2.65 million gap",
+                   "$111,000 a year per percentage point", "13.008",
+                   'id="rTax"', "To make up a loss this size with taxes instead",
+                   "$15.69 a month for 8.9 cents",
+                   'id="youClose"', 'id="youGrow"', "percentile scale",
+                   "gold marker is your scenario"]:
+        chk(needle in html, f"plan calculator / tax line / percentile bars: {needle}")
+    chk(10 * 111000 + 760000 + 1699479 - 2648086 == 921393,
+        "plan default surplus recomputes to $921,393")
+    chk(round(10000388 * 0.05 * 1.0145) == 507270,
+        "plan raise cost recomputes: 5 percent of the certified payroll with the 1.45 percent load")
+    _cap = (921393 - 10000388 * 0.05 * 1.0145) * 13.008 + 17600000
+    chk(22_900_000 < _cap < 23_100_000,
+        "plan capacity recomputes to about $23 million at the published defaults")
     chk("$142,800" not in html and "$67,124" not in html and "$118,650" not in html
         and "$102,780" not in html and "$125,150" not in html,
         "all superseded growth-grid medians are gone from the site")

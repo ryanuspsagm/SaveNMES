@@ -233,6 +233,17 @@ for yk, row in subj["per_subject"].items():
 if not rec_bad: match("archived Sci/SS/Writing averages recompute from the per-subject values")
 else: diff(f"Sci/SS/Writing average recompute mismatches: {rec_bad}")
 
+# the plan calculator mirrors the model's transformative chain lever for lever
+plan_ok = (10 * 111000 + 760000 + 1699479 - 2648086 == 921393
+           and 'id="sPw" min="0" max="30" value="10"' in html
+           and 'id="sPt" min="0" max="10" value="5"' in html
+           and "pw*111000" in html and "*13.008" in html
+           and "(15.69/8.9)" in html and "191000" in html)
+if plan_ok:
+    match("plan calculator: default levers reproduce the transformative check ($921,393 surplus) and the JS carries the model's own bases (111K/point, 13.008 factor, $191K/cent, $15.69/8.9c)")
+else:
+    diff("plan calculator bases or defaults out of sync with the model chain")
+
 # model School_Data KDE history block vs the same source file
 kh_years_keys = ["2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17",
                  "2017-18", "2018-19", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25"]
@@ -572,7 +583,7 @@ else:
     diff("EDFacts toggle still present after retirement")
 
 # site text spot checks
-for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $591,545 a year to saving $488,631 a year", "closure range prose"),
+for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $591,545 a year at the left end to saving $488,631 a year", "closure range prose"),
                  ("$7,829,060", "GF levy basis in the levy note"), ("$2.65 million", "deficit figure in prose"),
                  ("holds 128 today", "enrollment in prose"), ("a 174 rating", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")

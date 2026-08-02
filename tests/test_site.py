@@ -77,6 +77,11 @@ def main():
         if nbars == 2 and niqr == 2 and "gains $141,780" in glabs and "gains $3,331" in glabs:
             ok("consolidated card: closure and growth bars side by side, IQR band on each")
         else: bad(f"consolidated range card wrong: bars={nbars} iqr={niqr} growth labs: {glabs[:80]}")
+        you_c = pg.evaluate("document.getElementById('youClose').style.left")
+        you_g = pg.evaluate("document.getElementById('youGrow').style.left")
+        if you_c == "26%" and you_g == "50%":
+            ok("percentile-scale bars: gold markers at the calculator defaults (26th / 50th)")
+        else: bad(f"percentile markers at defaults: close={you_c} grow={you_g}")
 
         # --- Closure calculator: opens at the median scenario ---
         modelopen = pg.evaluate("document.querySelector('#model details.more').open")
@@ -92,6 +97,10 @@ def main():
         if gone_verdict == 0 and note_ok:
             ok("closure verdict text removed; retained-staff default note present")
         else: bad(f"closure readout cleanup: leftover={gone_verdict} note={note_ok}")
+        tax = pg.text_content("#rTax").strip()
+        if "0.7 cents" in tax and "a month for the median homeowner" in tax:
+            ok("tax-compensation line at the default loss: 0.7 cents of rate")
+        else: bad(f"tax line at default: {tax[:80]}")
 
         # ceiling: their fullest case
         pg.fill("#sCap", "2"); pg.dispatch_event("#sCap", "input")
@@ -103,6 +112,9 @@ def main():
         if pg.text_content("#rNet").strip() == "$488,631":
             ok("closure ceiling $488,631 = grid max")
         else: bad(f"closure best case: {pg.text_content('#rNet')}")
+        if pg.text_content("#rTax").strip() == "":
+            ok("tax-compensation line empty when the scenario saves money")
+        else: bad(f"tax line should be empty at the ceiling: {pg.text_content('#rTax')[:60]}")
 
         # floor: 50% leakage corner
         pg.fill("#sCap", "0"); pg.dispatch_event("#sCap", "input")
@@ -115,6 +127,12 @@ def main():
         if pg.text_content("#rNet").strip() == "-$591,545" and "0th percentile" in pg.text_content("#rRank"):
             ok("closure floor -$591,545 = grid min (calculator spans the whole grid)")
         else: bad(f"closure worst case: {pg.text_content('#rNet')} / {pg.text_content('#rRank')[:60]}")
+        if pg.evaluate("document.getElementById('youClose').style.left") == "0%":
+            ok("closure percentile marker follows the calculator (0% at the floor)")
+        else: bad(f"marker at floor: {pg.evaluate('document.getElementById(`youClose`).style.left')}")
+        if "3.1 cents" in pg.text_content("#rTax"):
+            ok("tax-compensation line at the full-loss floor: 3.1 cents of rate")
+        else: bad(f"tax line at floor: {pg.text_content('#rTax')[:80]}")
 
         # --- Growth calculator ---
         gro = pg.text_content("#rGro").strip()
@@ -133,6 +151,9 @@ def main():
         if pg.text_content("#rGro").strip() == "$29,591":
             ok("worst reachable corner still pays: $29,591 (90 added, class of 18 at top salary, every cost maxed; grid-wide floor +$3,331)")
         else: bad(f"growth floor: {pg.text_content('#rGro')}")
+        if pg.evaluate("document.getElementById('youGrow').style.left") != "50%":
+            ok("growth percentile marker follows the calculator (moved off 50% at the corner)")
+        else: bad("growth percentile marker did not move")
         pg.fill("#sGro", "153"); pg.dispatch_event("#sGro", "input")
         pg.fill("#sRat", "2"); pg.dispatch_event("#sRat", "input")
         teach_ds = pg.evaluate("document.getElementById('rGro').dataset.teachers")
@@ -151,6 +172,23 @@ def main():
         if "No new students" in pg.text_content("#rGroVerdict"):
             ok("growth zero-gain edge case")
         else: bad("growth zero-gain verdict missing")
+
+        # --- The plan, priced: calculator ---
+        rplan = pg.text_content("#rPlan").strip()
+        pverd = pg.text_content("#rPlanVerdict").strip()
+        if rplan == "$921,393" and "$5.4 million of new bonds" in pverd and "23.0 million of building capacity" in pverd:
+            ok("plan calculator default: $921,393 surplus buys the 5% raise, $5.4M bonds, $23.0M capacity")
+        else: bad(f"plan defaults: {rplan} / {pverd[:100]}")
+        pg.fill("#sPt", "10"); pg.dispatch_event("#sPt", "input")
+        if "up to about a 9 percent raise" in pg.text_content("#rPlanVerdict"):
+            ok("plan calculator caps the raise honestly (10% unaffordable at the low ends)")
+        else: bad(f"plan raise cap: {pg.text_content('#rPlanVerdict')[:90]}")
+        pg.fill("#sPt", "5"); pg.dispatch_event("#sPt", "input")
+        pg.fill("#sPr", "0"); pg.dispatch_event("#sPr", "input")
+        if "short of closing the $2.65 million gap" in pg.text_content("#rPlanVerdict"):
+            ok("plan calculator reports the shortfall when the gap is not closed")
+        else: bad(f"plan shortfall: {pg.text_content('#rPlanVerdict')[:90]}")
+        pg.fill("#sPr", "100"); pg.dispatch_event("#sPr", "input")
 
         # --- 2018-rate restore slider (the only revenue lever on the site) ---
         gone4 = pg.evaluate("['sYrs','rLevy','rLevyVerdict'].filter(i=>document.getElementById(i)).length")
