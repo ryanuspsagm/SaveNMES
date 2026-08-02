@@ -369,8 +369,12 @@ def main():
     es_path = REPO / "SaveNMES_Executive_Summary.pdf"
     chk(es_path.exists(), "executive summary PDF exists")
     es = " ".join(pg.extract_text() for pg in PdfReader(es_path).pages).replace("\n", " ")
-    for needle in ["$19,080", "$20,007", "54,479.40", "Permanent", "2,412", "5,832"]:
+    for needle in ["$19,080", "$20,007", "54,479.40", "Permanent", "2,412", "5,832",
+                   "$144,000", "$287,000", "$420,000", "$713,000",
+                   "$1.5 million", "$4.6 million", "$7.7 million", "$5.6 to $7.4 million"]:
         chk(needle in es, f"executive summary intact: {needle}")
+    for needle in ["$144,000", "$287,000", "$420,000", "$713,000", "$7.7M", "$5.6 to $7.4 million"]:
+        chk(needle in html, f"leave-table basis mirrored on the site: {needle}")
     chk("SaveNMES_Executive_Summary.pdf" in html, "site links the executive summary")
     for gone in ['id="tldr"', 'id="questions"', 'id="roadahead"']:
         chk(gone not in html, f"off-layout section removed: {gone}")

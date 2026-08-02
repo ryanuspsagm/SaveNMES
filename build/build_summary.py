@@ -68,11 +68,12 @@ B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state mon
 
 step = Table(
     [[Paragraph(c, thead) for c in ["Share who leave", "Students (of 128)",
-      "State funding lost, per year", "Lost through grade 12", "Against the best-case saving"]],
-     [Paragraph(c, tcell) for c in ["10 percent", "13", "about $67,000", "about $650,000", "<b>14% of it, every year</b>"]],
-     [Paragraph(c, tcell) for c in ["20 percent", "26", "about $133,000", "about $1.3 million", "<b>28%</b>"]],
-     [Paragraph(c, tcell) for c in ["30 percent", "38", "about $195,000", "about $1.9 million", "<b>40%</b>"]]],
-    colWidths=[1.05*inch, 1.05*inch, 1.45*inch, 1.35*inch, 1.7*inch], hAlign="LEFT")
+      "Year one", "Per year, full effect", "Total by grade 12"]],
+     [Paragraph(c, tcell) for c in ["10 percent", "13", "$67,000", "$144,000", "<b>$1.5 million</b>"]],
+     [Paragraph(c, tcell) for c in ["20 percent", "26", "$133,000", "$287,000", "<b>$3.1 million</b>"]],
+     [Paragraph(c, tcell) for c in ["30 percent", "38", "$195,000", "$420,000", "<b>$4.6 million</b>"]],
+     [Paragraph(c, tcell) for c in ["50 percent", "64", "$328,000", "$713,000", "<b>$7.7 million</b>"]]],
+    colWidths=[1.15*inch, 1.15*inch, 1.15*inch, 1.5*inch, 1.65*inch], hAlign="LEFT")
 step.setStyle(TableStyle([
     ("BACKGROUND", (0, 0), (-1, 0), HEADBG), ("LINEBELOW", (0, 0), (-1, 0), 0.9, NAVY),
     ("LINEBELOW", (0, -1), (-1, -1), 0.6, LINE), ("TOPPADDING", (0, 0), (-1, -1), 3.5),
@@ -81,9 +82,10 @@ step.setStyle(TableStyle([
 A(step)
 A(Spacer(1, 6))
 A(Paragraph(
-  "The children in the building carry about $5.6 million of state funding through grade 12. One in seven "
-  "students at the middle and high school came through North Middletown. A family lost at kindergarten is "
-  "lost for thirteen years.", body))
+  "The first wave is only the start: the missing kids climb one grade a year, so by year eight every grade "
+  "is short and the yearly loss is more than double the first hit. The children in the building carry "
+  "about $5.6 to $7.4 million of state funding through grade 12. One in seven students at the middle and "
+  "high school came through North Middletown. A family lost at kindergarten is lost for thirteen years.", body))
 A(Paragraph(
   "<b>The bottom line, from the two priced models:</b> grow the school and the middle case GAINS $141,780 "
   "a year, with not one losing scenario in 19,683. Close it and the middle case LOSES $20,007 a year.", body))
