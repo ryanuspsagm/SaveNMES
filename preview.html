@@ -69,12 +69,14 @@ h1 em{font-style:normal;color:var(--ice)}
 .btn-gold{display:inline-block;background:#F5C242;color:#1F3864;font-weight:700;padding:11px 18px;border-radius:8px;text-decoration:none}
 .btn-ghost{display:inline-block;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55);font-weight:600;padding:10px 18px;border-radius:8px;text-decoration:none}
 nav a[href="#act"]{color:#F5C242;font-weight:700}
-.roads{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 10px;max-width:720px}
+.roads{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0 10px;max-width:960px}
+@media (max-width:700px){.roads{grid-template-columns:1fr}}
 .road{border-radius:10px;padding:16px 12px;text-align:center;border:1px solid rgba(255,255,255,.25)}
 .road .t{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#D9E2F3}
 .road .n{font-family:var(--serif);font-size:clamp(21px,5vw,34px);line-height:1.15;margin-top:4px}
 .road.close{background:rgba(160,60,50,.28)}.road.close .n{color:#F0B9B2}
 .road.grow{background:rgba(70,130,70,.30)}.road.grow .n{color:#BFE3BC}
+.road.plan{background:rgba(245,194,66,.16);border-color:rgba(245,194,66,.5)}.road.plan .n{color:#F5D98F}
 .road .s{font-size:12.5px;color:#C9D4E8;margin-top:4px}
 .bluerule{width:72px;height:3px;background:var(--ice);margin:14px 0}
 .statement{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);border-left:4px solid var(--ice);border-radius:6px;margin-top:14px;padding:13px 17px;max-width:760px}
@@ -262,8 +264,8 @@ footer a{color:var(--ice)}
 <details class="more"><summary>More detail: the cost record</summary>
 <div class="card">
 <h3>What each elementary school has cost, every year the state published it</h3>
-<div class="chartbox tall"><canvas id="chartHist" role="img" aria-label="Line chart of cost per student for the three county elementary schools and the Kentucky elementary average, 2012 to 2025. NMES runs a modest premium for its size and sits below the state average on the newest file."></canvas></div>
-<p class="note">Two reporting eras: the state changed how it reports school spending after 2016-17, so compare within an era, not across the break. The 2013 NMES point includes a one-time renovation charge. In the older era NMES ran above the state elementary average, the expected premium for a 177-student school under the old method. In the modern era NMES sat <b>below the Kentucky elementary average</b> in five of the eight years, ran above it from 2022 to 2024, and is back 7 percent below on the newest file.</p>
+<div class="chartbox tall"><canvas id="chartHist" role="img" aria-label="Line chart of cost per student for the three county elementary schools and the Kentucky elementary average, 2014 to 2025. NMES runs a modest premium for its size and sits below the state average on the newest file."></canvas></div>
+<p class="note">The chart starts in 2014: the 2013 file carries a one-time renovation charge at NMES that would swamp the scale (the earlier years stay in the archived data). Two reporting eras remain: the state changed how it reports school spending after 2016-17, so compare within an era, not across the break. In the older era NMES ran above the state elementary average, the expected premium for a school this size under the old method. In the modern era NMES sat <b>below the Kentucky elementary average</b> in five of the eight years, ran above it from 2022 to 2024, and is back 7 percent below on the newest file.</p>
 </div>
 <div class="card">
 <h3>More students, lower cost per student, with every new cost counted</h3>
@@ -327,7 +329,8 @@ footer a{color:var(--ice)}
 <tr><td>30% (38)</td><td>$195,000</td><td>$420,000</td><td>$4.6M</td></tr>
 <tr><td>50% (64)</td><td>$328,000</td><td>$713,000</td><td>$7.7M</td></tr>
 </table></div>
-<p class="note">Figures rounded. Full effect arrives when the first lost kindergarten class reaches grade 12; the total column adds all thirteen years. The current 128 students carry $5.6 to $7.4 million of remaining state funding through grade 12. A "transitional" label by itself pushes families out: nobody enrolls a kindergartner in a school marked for closing.</p>
+<div class="chartbox"><canvas id="chartLeave" role="img" aria-label="Line chart of the yearly state funding loss growing over thirteen years for each leaving share. At 30 percent leaving, the loss grows from about $195,000 in year one to about $422,000 a year from year eight on, once the missing grades reach all the way through the high school."></canvas></div>
+<p class="note">Figures rounded. The chart shows how each year's loss grows: the missing grades climb one grade a year, and the full rate arrives in year eight, when the first lost kindergarten class reaches grade 12; from then on every grade is short and the loss levels off. The <b>Total by grade 12</b> column is the overall lifetime loss tied to the NMES leaver pool once it penetrates all the way through the high school: all thirteen years added. The current 128 students carry $5.6 to $7.4 million of remaining state funding through grade 12. A "transitional" label by itself pushes families out: nobody enrolls a kindergartner in a school marked for closing.</p>
 </div>
 </details>
 </div></section>
@@ -358,36 +361,35 @@ footer a{color:var(--ice)}
 <input type="range" id="sBus" min="20000" max="190000" value="63000" step="1000"></div>
 <div class="result">
 <div class="big" id="rNet">-$130,749</div>
-<div class="sub">net effect per year at these settings (the district's own stance: all staff retained)</div>
-<div class="bar-vs" aria-hidden="true"><i id="rBar" style="width:0%"></i></div>
-<div class="verdict" id="rVerdict"></div>
-<div class="verdict" id="rRank" style="margin-top:8px"></div>
+<div class="sub">net effect per year at these settings</div>
+<div class="verdict" id="rRank"></div>
 </div>
+<p class="note">The default reflects the superintendent's written statement: all staff retained, savings arriving only by attrition.</p>
 </div>
 
 <div class="card">
 <h3>Growth: what does filling NMES net?</h3>
 <p class="note">The building held 261 children at its peak. It holds 128 today against a 174 rating. The pool is real: 259 registered homeschoolers, 450 to 550 county kids outside both districts, and 131 already driving in. Each new student brings $4,626. The first 25 added students fill seats already open at the district's own class caps; past them, a teacher is charged for every full new class.</p>
-<div class="slider-row"><label>Enrollment target (from 110, the district's figure, still unsourced; last official count 128) <output id="oGro">154</output></label>
-<input type="range" id="sGro" min="110" max="200" value="154" step="1"></div>
+<div class="slider-row"><label>Enrollment target (from 110, the district's figure, still unsourced; last official count 128) <output id="oGro">140</output></label>
+<input type="range" id="sGro" min="110" max="200" value="140" step="1"></div>
 <div class="slider-row"><label>Class size for new classrooms, past the 25 open seats <output id="oRat">1 teacher per 21: today's class size</output></label>
 <input type="range" id="sRat" min="0" max="2" value="1" step="1"></div>
-<div class="slider-row"><label>New teacher cost (schedule entry to mid) <output id="oTc">$41,718</output></label>
-<input type="range" id="sTc" min="41718" max="56583" value="41718" step="1"></div>
+<div class="slider-row"><label>New teacher cost (schedule entry to mid) <output id="oTc">$49,150</output></label>
+<input type="range" id="sTc" min="41718" max="56583" value="49150" step="1"></div>
 <div class="slider-row"><label>Support staff added <output id="oSp">1 per 50 students, $37,000</output></label>
 <input type="range" id="sSp" min="0" max="2" value="2" step="1"></div>
-<div class="slider-row"><label>Busing per new student <output id="oGb">$1,000</output></label>
-<input type="range" id="sGb" min="0" max="1000" value="1000" step="50"></div>
+<div class="slider-row"><label>Busing per new student <output id="oGb">$0</output></label>
+<input type="range" id="sGb" min="0" max="1000" value="0" step="50"></div>
 <div class="slider-row"><label>Supplies and other costs per student <output id="oCps">$400</output></label>
 <input type="range" id="sCps" min="400" max="1000" value="400" step="50"></div>
 <div class="slider-row"><label>State add-ons per new student (same lever as the closure model) <output id="oGad">$500</output></label>
 <input type="range" id="sGad" min="0" max="1000" value="500" step="50"></div>
 <div class="result">
-<div class="big" id="rGro">$163,944</div>
-<div class="sub">net new dollars per year at these settings (filling to the architect's own 154)</div>
+<div class="big" id="rGro">$141,780</div>
+<div class="sub">net new dollars per year at these settings</div>
 <div class="verdict" id="rGroVerdict"></div>
 </div>
-<p class="note">The default fills to 154, the district's own architect rating, with no new hires. Growth pays in <b>every one</b> of the 19,683 scenarios. Median: <b>+$141,780 a year</b>; even the worst case nets +$3,331. Every lever is anchored in a district document; the full method is in the report.</p>
+<p class="note">The calculator opens at the median of the 19,683 weighted scenarios: 30 added students, no new hires needed. Every lever is anchored in a district document; the full method is in the report.</p>
 </div>
 </div>
 
@@ -492,7 +494,7 @@ footer a{color:var(--ice)}
 <h3>The plan, priced</h3>
 <p>Run the three levers at their LOW ends, with the tax rate left alone: about <b>$1.9 million a year</b> ($1.11 million from enrollment plus $760,000 from costs). That covers about 70 percent of the $2.65 million gap by itself. Add any part of the rate restore and the plan clears the whole gap with room to spare. It balances the budget, ends the capital sweep, and closes nothing.</p>
 <p><b>What the surplus buys.</b> At the low ends with the full restore, the plan runs about <b>$920,000 a year ahead</b> of the gap: a <b>5 percent raise for every certified teacher</b> (about $507,000 a year) plus about <b>$5.4 million of new bonds</b>, and ending the sweep frees <b>$17.6 million</b> more, roughly <b>$23 million of building capacity</b>. At the top ends: a <b>10 percent raise</b> and roughly <b>$52 million</b>. Every step is a live formula in the model's Alternatives tab. That is the transformative version of Bourbon County Schools, and it closes nothing.</p>
-<div class="totalstrip">Growth plan, low end: about $2.0M a year &bull; Closure median: LOSES $17,982 a year</div>
+<div class="totalstrip">Growth plan, low end: about $1.9M a year &bull; Closure median: LOSES $17,982 a year</div>
 <p class="note">Proposed public enrollment targets for NMES, the kind ask two puts on paper: 145 by fall 2027, 160 by 2028, 180 by 2029, 198 by 2030 (the building's 2013 state-approved rating). Miss them on a fair trial, and the next facility plan can revisit with evidence.</p>
 </div>
 <div class="card"><h3>A suggestion: three committees to run the growth plan</h3>
@@ -504,8 +506,9 @@ footer a{color:var(--ice)}
 <div class="kicker">The Decision</div>
 <h2>Two roads.</h2>
 <div class="roads">
-<div class="road close"><div class="t">Close it</div><div class="n">-$17,982</div><div class="s">a year: the middle of 5,832 scenarios (-$130,749 with all staff retained)</div></div>
-<div class="road grow"><div class="t">Grow it</div><div class="n">+$141,780</div><div class="s">a year: the middle of 19,683 scenarios</div></div>
+<div class="road close"><div class="t">Close NMES</div><div class="n">-$130,749</div><div class="s">a year: the default closure scenario, the superintendent's own stance (all staff retained; the weighted median loses $17,982)</div></div>
+<div class="road grow"><div class="t">Grow NMES</div><div class="n">+$141,780</div><div class="s">a year: the default growth scenario, the median of 19,683 weighted scenarios</div></div>
+<div class="road plan"><div class="t">Grow the district</div><div class="n">+$1.9M</div><div class="s">a year: the Part Two plan at its low ends, covering about 70 percent of the gap before any rate restore</div></div>
 </div>
 <p>Close the county's best-scoring school for a median result that loses money, and tell every family watching that this district answers decline with retreat. Or grow: fill the seats, cut the real fixed costs, fix the rate, and compete for families this county never lost. <b>The numbers are not close.</b></p>
 </div></section>
@@ -519,7 +522,7 @@ footer a{color:var(--ice)}
 <div class="card"><h3>1. Keep NMES Permanent in the facility plan</h3>
 <p class="note">A facility plan commits no money; Priority 2 exists for needs not yet funded. "Transitional" saves nothing this year either, but it blocks state facility funding and declares a phase-out. Same cost: zero. Only one keeps every door open.</p></div>
 <div class="card"><h3>2. Give the school four years, with public targets, and the tools to hit them</h3>
-<p class="note">The facility plan runs on a four-year cycle. Set public enrollment targets and let the school and community run a real push. The tools are options to weigh, not settled plans. <b>One option: a themed academy</b> in arts, technology, or agriculture and outdoor sciences, built on the county's best test record. <b>Another: a promise scholarship</b>, funded by donors and grants, that pays every NMES graduate toward college, trade school, or any certification. It gives families a lasting reason to enroll, and it costs the district nothing. Either way: a preschool pipeline, after-school care, free HB 563 transfers, and 259 registered homeschoolers to win back. Hit the targets and everything recovers. Miss them fairly, and the next plan decides with evidence.</p></div>
+<p class="note">The facility plan runs on a four-year cycle. Set public enrollment targets and let the school and community run a real push. The tools are options to weigh, not settled plans. <b>One option: a themed academy</b> in arts, technology, or agriculture and outdoor sciences, built on the county's best test record. <b>Another: a promise scholarship</b>, funded by donors and grants, that pays every NMES graduate toward college, trade school, or any certification. It gives families a lasting reason to enroll, and it costs the district nothing. Hit the targets and everything recovers. Miss them fairly, and the next plan decides with evidence.</p></div>
 <div class="card"><h3>3. Let the community fund the building</h3>
 <p class="note">Grants, private money, donated labor and materials can carry the building's real needs at no cost to the district. The district's role is one sentence in a board motion: accept the help.</p></div>
 <div class="card"><h3>4. Say publicly that the district will grow this school</h3>
@@ -835,12 +838,12 @@ scales:{y:{min:80,max:145,grid:{color:'#E3E8F0'},title:{display:true,text:'enrol
 
 /* Cost history: three schools, two reporting eras, state average where published */
 (function(){
-var HY=[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
+var HY=[2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
 var HD={
-"North Middletown":[9715,19635,9948,10999,11521,13260,13581,13838,12903,15406,19080,19003,19348,17903],
-"Bourbon Central":[7351,10281,7123,8651,8705,9197,11201,11804,12159,14011,15619,17410,18131,16677],
-"Cane Ridge":[7740,11383,7718,9222,9655,9815,11544,12052,12168,14621,16137,17403,18670,16930],
-"KY elementary average":[8282,8797,8731,9625,10334,11130,14540,14193,14434,15691,17416,18910,18940,19299]};
+"North Middletown":[9948,10999,11521,13260,13581,13838,12903,15406,19080,19003,19348,17903],
+"Bourbon Central":[7123,8651,8705,9197,11201,11804,12159,14011,15619,17410,18131,16677],
+"Cane Ridge":[7718,9222,9655,9815,11544,12052,12168,14621,16137,17403,18670,16930],
+"KY elementary average":[8731,9625,10334,11130,14540,14193,14434,15691,17416,18910,18940,19299]};
 new Chart(document.getElementById('chartHist'),{type:'line',
 data:{labels:HY,datasets:Object.keys(HD).map(function(k){
 var isN=k==='North Middletown',isS=k==='KY elementary average';
@@ -879,12 +882,31 @@ scales:{y:{grid:{color:'#E3E8F0'},ticks:{callback:function(v){return '$'+(v/1000
 x:{ticks:{maxTicksLimit:10},title:{display:true,text:'students enrolled (128 today, 198-seat rating)',font:{size:10}}}}}});
 })();
 
+/* Leaving families: yearly loss escalation, years 1-13. Same math as the
+   table: min(year+5,13)/6 of the leaver pool short, at $5,126 per student. */
+(function(){
+var LY=[];for(var t=1;t<=13;t++){LY.push('Yr '+t)}
+function esc(students){var out=[];for(var t=1;t<=13;t++){out.push(Math.round(Math.min(t+5,13)/6*students*5126))}return out}
+var LSER=[[ '10% leave (13 kids)',13,LGRAY,1.5],['20% (26)',26,ROYAL,1.5],['30% (38)',38,NAVY,3],['50% (64)',64,'#C0625E',1.5]];
+new Chart(document.getElementById('chartLeave'),{type:'line',
+data:{labels:LY,datasets:LSER.map(function(s){
+return {label:s[0],data:esc(s[1]),borderColor:s[2],backgroundColor:'transparent',
+borderWidth:s[3],pointRadius:s[3]>2?2.5:1.5,tension:0.1}})},
+options:{responsive:true,maintainAspectRatio:false,
+plugins:{legend:{position:'bottom',labels:{boxWidth:14,font:{size:10}}},
+tooltip:{callbacks:{label:function(c){return c.dataset.label+': $'+c.parsed.y.toLocaleString('en-US')+' lost that year'}}}},
+scales:{y:{grid:{color:'#E3E8F0'},ticks:{callback:function(v){return '$'+(v/1000).toFixed(0)+'K'}},title:{display:true,text:'state funding lost per year',font:{size:10}}},
+x:{ticks:{font:{size:9},maxTicksLimit:13}}}}});
+})();
+
 /* Closure calculator: the published 5,832-scenario grid, enumerated exactly
    as in build/closure_grid.py with the same 1-2-1 triangular weights on
    documented-central levers (uniform on teachers and leavers), so the rank
    readout is against the real weighted grid. */
-var DEFICIT=2648086,DRAWDOWN=1145561,SEEK=4626,TEACH=108958.80/2;
+var SEEK=4626,TEACH=108958.80/2;
 function money(n){n=Math.round(n);return (n<0?'-$':'$')+Math.abs(n).toLocaleString('en-US')}
+function ord(n){var m10=n%10,m100=n%100;
+return n+(m10===1&&m100!==11?'st':m10===2&&m100!==12?'nd':m10===3&&m100!==13?'rd':'th')}
 var CAPV=[53519,80279,127039],
 CAPL=['Half stop: $53,519','Three quarters stop: $80,279','All stop, building sold: $127,039'],
 FIXV=[0,109077,218154],
@@ -916,26 +938,31 @@ document.getElementById('oAdd').textContent=money(ad);
 document.getElementById('oProp').textContent=money(pr);
 document.getElementById('oBus').textContent=money(b);
 var net=CAPV[c]+FIXV[f]+t*TEACH-b-l*(SEEK+ad)-pr;
-var pct=Math.max(0,net/DEFICIT*100);
-var pctD=Math.max(0,net/DRAWDOWN*100);
 document.getElementById('rNet').textContent=money(net);
-document.getElementById('rBar').style.width=Math.min(100,pct).toFixed(1)+'%';
-document.getElementById('rVerdict').textContent=(net<0
- ?'At these settings, closing LOSES the district '+money(-net)+' a year. 54% of the 5,832 weighted scenarios land below zero.'
- :'That covers '+pct.toFixed(1)+'% of the $2.65M deficit, or '+pctD.toFixed(0)+'% of the $1.15M yearly reserve drawdown.');
-var below=0;for(var gi=0;gi<GRID.length&&GRID[gi][0]<=net;gi++){below+=GRID[gi][1]}
-var rank=Math.round(below/GRIDW*100);
-document.getElementById('rRank').textContent='Your scenario nets at least as much as about '+rank+
-'% of the 5,832 weighted scenarios (median '+money(-17982)+', range '+money(-591545)+' to '+money(488631)+').';
+var below=0;for(var gi=0;gi<GRID.length&&GRID[gi][0]<net;gi++){below+=GRID[gi][1]}
+document.getElementById('rRank').textContent='This scenario lands at about the '+ord(Math.round(below/GRIDW*100))+
+' percentile of the 5,832 weighted scenarios.';
 }
 ['sCap','sFix','sTea','sLeav','sAdd','sProp','sBus'].forEach(function(id){document.getElementById(id).addEventListener('input',calc)});
 calc();
 
-/* Growth calculator: mirrors build/growth_grid.py */
+/* Growth calculator: mirrors build/growth_grid.py, weighted like the closure grid */
 var SPV=[[0,0],[75,28500],[50,37000]],
 SPL=['None added','1 per 75 students, $28,500','1 per 50 students, $37,000'],
 RATV=[18,21,24],
 RATL=['1 teacher per 18: smaller classes than today','1 teacher per 21: today\'s class size','1 teacher per 24: the district\'s own K-3 class cap'];
+var GGRIDW=0;
+var GGRID=(function(){
+var out=[];
+[10,20,30,40,50,60,70,80,90].forEach(function(g){RATV.forEach(function(r,ri){
+SPV.forEach(function(sv,si){[41718,49150,56583].forEach(function(tc,ti){
+[0,500,1000].forEach(function(b,bi){[400,700,1000].forEach(function(c,ci){
+[0,500,1000].forEach(function(ad,ai){
+var te=Math.floor(Math.max(0,g-25)/r),st=sv[0]===0?0:Math.floor(g/sv[0]);
+var w=W3[ri]*W3[si]*W3[ti]*W3[bi]*W3[ci]*W3[ai];GGRIDW+=w;
+out.push([g*(SEEK+ad-c)-te*tc-st*sv[1]-b*g,w])})})})})})})});
+return out.sort(function(a,b){return a[0]-b[0]});
+})();
 function growth(){
 var target=+document.getElementById('sGro').value,
 rat=+document.getElementById('sRat').value,
@@ -956,12 +983,12 @@ document.getElementById('oSp').textContent=SPL[sp];
 document.getElementById('oGb').textContent=money(gb);
 document.getElementById('oCps').textContent=money(cps);
 document.getElementById('oGad').textContent=money(gad);
-document.getElementById('rGro').textContent=money(net);
-document.getElementById('rGroVerdict').textContent=gain===0
- ?'No new students, no new money. Move the first slider.'
- :gain+' added students bring '+money(gain*(SEEK+gad))+' against '+
-  (teachers>0?teachers+' new teacher'+(teachers>1?'s':''):'no new teachers')+
-  (staff>0?' and '+staff+' support hire'+(staff>1?'s':''):'')+'.';
+var rg=document.getElementById('rGro');
+rg.textContent=money(net);rg.dataset.teachers=teachers;rg.dataset.staff=staff;
+if(gain===0){document.getElementById('rGroVerdict').textContent='No new students, no new money. Move the first slider.'}
+else{var below=0;for(var gi=0;gi<GGRID.length&&GGRID[gi][0]<net;gi++){below+=GGRID[gi][1]}
+document.getElementById('rGroVerdict').textContent='This scenario lands at about the '+ord(Math.round(below/GGRIDW*100))+
+' percentile of the 19,683 weighted scenarios.'}
 }
 ['sGro','sRat','sTc','sSp','sGb','sCps','sGad'].forEach(function(id){document.getElementById(id).addEventListener('input',growth)});
 growth();

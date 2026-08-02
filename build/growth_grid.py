@@ -126,16 +126,16 @@ assert neg_full == 0, neg_full
 assert wpct(base, 0.50) == 117_780, wpct(base, 0.50)
 assert round(statistics.median(full_nets)) == 140_331   # unweighted cross-check
 
-# the site default fills to the architect's own 154 (44 added from the 110
-# base): the 25 open seats plus a partial class at 1 per 21 mean no teacher
-# and no support hire trigger; busing at its $1,000 maximum, $400 supplies,
-# $500 add-ons (the closure default leg). Not the median: a fill-to-capacity
-# story scenario (rank ~64%), while the published median stays $141,780.
-site_default = net(44, 21, 50, 41_718, 37_000, 1000, 400, 500)
-assert site_default == 163_944, site_default
+# the site default (v4.5 review) is the weighted median scenario itself:
+# 30 added students (target 140), inside the 25 open seats plus a partial
+# class at 1 per 21, so no teacher and no support hire trigger; central legs
+# on class size, teacher cost and add-ons; $0 busing, $400 supplies. The
+# calculator readout states only the percentile the chosen settings reflect.
+site_default = net(30, 21, 50, 49_150, 37_000, 0, 400, 500)
+assert site_default == 141_780 == med, site_default
 tot_w = sum(w for _, w in full)
-rank = sum(w for v, w in full if v <= site_default) / tot_w
-assert 0.60 < rank < 0.68, rank
+rank = sum(w for v, w in full if v < site_default) / tot_w
+assert 0.48 < rank < 0.52, rank
 
 print(f"headline (add-ons enumerated): {len(full):,} scenarios "
       f"| weighted median ${med:,.0f} | middle half ${p25:,.0f} to ${p75:,.0f} "

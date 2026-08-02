@@ -29,11 +29,10 @@ A = wb["Assumptions"]; TH = wb["Tax_History"]; SD = wb["School_Data"]; DM = wb["
 
 # ---------- 1. core scalars ----------
 model_deficit = A["B24"].value - A["B21"].value
-site_deficit = int(re.search(r"var DEFICIT=(\d+)", html).group(1))
-if model_deficit == site_deficit == 2648086 and "2,648,086" in pdf_flat:
-    match(f"FY2025 structural deficit $2,648,086 (model computed, site JS, PDF text)")
+if model_deficit == 2648086 and "2,648,086" in pdf_flat and "$2.65 million" in html:
+    match(f"FY2025 structural deficit $2,648,086 (model computed, PDF text; site prose $2.65 million; the site JS constant retired with the v4.5 percentile-only readouts)")
 else:
-    diff(f"deficit: model {model_deficit}, site {site_deficit}, pdf has 2,648,086: {'2,648,086' in pdf_flat}")
+    diff(f"deficit: model {model_deficit}, pdf has 2,648,086: {'2,648,086' in pdf_flat}, site prose: {'$2.65 million' in html}")
 
 bal = A["B29"].value
 if bal == 4290840 and "4,290,840" in pdf_flat and "4,290,840" not in html:
@@ -52,19 +51,20 @@ if round(central) == 54539 and round(site_default) == -130749 and "-$130,749" in
     match("model central case $54,539; site calculator opens at the district stance, all staff retained (-$130,749, weighted rank 26%)")
 else:
     diff(f"closure defaults: model central {central:.0f}, site district-stance {site_default:.0f} shown: {'-$130,749' in html}")
-# growth calculator default: fill to the architect's own 154 (44 added past the
-# 110 base): inside the 25-seat headroom plus a partial class at 1 per 21, so
-# zero teachers and zero support trigger; $1,000 bus, $400 cps, $500 SEEK
-# add-ons (the SAME default leg the closure leaver lever uses)
-growth_default = 44*(4626+500-400) - ((44-25)//21)*41718 - (44//50)*37000 - 1000*44
-if (growth_default == 163944 and "$163,944" in html and "RATV=[18,21,24]" in html
+# growth calculator default (v4.5 review): the weighted median scenario itself.
+# 30 added students (target 140): inside the 25-seat headroom plus a partial
+# class at 1 per 21, so zero teachers and zero support trigger; $0 bus, $400
+# cps, $500 SEEK add-ons (the SAME default leg the closure leaver lever uses)
+growth_default = 30*(4626+500-400) - ((30-25)//21)*49150 - (30//50)*37000 - 0*30
+if (growth_default == 141780 and "$141,780" in html and "RATV=[18,21,24]" in html
         and "Math.max(0,gain-25)/ratio" in html and 'id="sGad"' in html
+        and 'id="sGro" min="110" max="200" value="140"' in html
         and 'id="sGad" min="0" max="1000" value="500"' in html
         and 'id="sAdd" min="0" max="1000" value="500"' in html):
-    match("growth calculator opens filling to the architect's own 154 ($163,944, no new hires) with the class-size lever indexed on classroom teachers and SEEK add-ons symmetric to the closure model")
+    match("growth calculator opens at the weighted median ($141,780, target 140, no new hires) with the class-size lever indexed on classroom teachers and SEEK add-ons symmetric to the closure model")
 else:
     has500 = 'value="500"' in html
-    diff(f"growth default mismatch: {growth_default}, shown: {'$163,944' in html}, add-ons defaults equal: {has500}")
+    diff(f"growth default mismatch: {growth_default}, shown: {'$141,780' in html}, add-ons defaults equal: {has500}")
 if site_capv and [int(site_capv.group(i)) for i in (1, 2, 3)] == [CM["B39"].value, CM["C39"].value, CM["D39"].value] == [53519, 80279, 127039]:
     match("capture lever (53,519 / 80,279 / 127,039 = district worksheet + insurance) identical site JS and model")
 else:
@@ -89,8 +89,8 @@ if "losing $591,545 and saving $488,631" in pdf_flat and "losing $591,545" in ht
     match("v4.2 two-tailed range (-$591,545 to +$488,631) consistent on site and in PDF")
 else:
     diff("v4.2 two-tailed range strings missing on site or PDF")
-if "loses $17,982 a year" in html and "money(-17982)" in html and "LOSES $17,982" in pdf_flat \
-        and CM["B47"].value.startswith("="):
+if "loses $17,982 a year" in html and "percentile of the 5,832 weighted scenarios" in html \
+        and "LOSES $17,982" in pdf_flat and CM["B47"].value.startswith("="):
     match("v4.5 weighted median ($17,982 yearly loss) in site prose and JS readout and in PDF; central case live in model")
 else:
     diff("v4.5 weighted median strings missing")
@@ -573,7 +573,7 @@ else:
 
 # site text spot checks
 for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $591,545 a year to saving $488,631 a year", "closure range prose"),
-                 ("$7,829,060", "GF levy basis in the levy note"), ("$2.65M", "deficit rounding in verdicts"),
+                 ("$7,829,060", "GF levy basis in the levy note"), ("$2.65 million", "deficit figure in prose"),
                  ("holds 128 today", "enrollment in prose"), ("a 174 rating", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")
     else: diff(f"site text missing '{s}' ({label})")

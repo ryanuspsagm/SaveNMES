@@ -1578,8 +1578,8 @@ P("The result: across all 19,683 priced scenarios, growth pays in every single o
   "central reads; uniform on the enrollment target, which is the board's choice, not a chance), the median "
   "gains $141,780 a year and the middle half runs from $94,520 to $182,654; even the worst case, a class "
   "of 18 at the top salary with every cost at its maximum, "
-  "still nets $3,331. The website's calculator opens at the fill-to-154 scenario, the architect's own "
-  "capacity, reached with no new hires: about $163,944 a year. The same stack drives the cost-per-student "
+  "still nets $3,331. The website's calculator opens at the weighted median itself: 30 added students, 140 "
+  "total, no new hires needed, $141,780 a year. The same stack drives the cost-per-student "
   "curve: at 160 students the school costs about $14,600 per student with no new hire yet needed, and at "
   "the 198 seats the state approved in 2013, with two new teachers paid for, about $12,500, cheaper than "
   "every school in the county today. One script in the repository, build/growth_grid.py, reproduces the "
@@ -2036,7 +2036,11 @@ P("<b>Version 4.5, August 2.</b> Both scenario grids now carry explicit lever di
   "its range. The Kentucky elementary average on the cost chart was extended back to 2012 from the same "
   "state files as the school lines. The kindergartner lifetime-funding range tightened to $67,000-$76,000 "
   "with add-ons counted at both ends. The district's $661,139 claim is now reconciled block by block "
-  "against the school's $938,690 General Fund budget.", note)
+  "against the school's $938,690 General Fund budget. A review round the same day: both website "
+  "calculators now state only the percentile their settings reflect, the growth calculator opens at the "
+  "weighted median itself (30 added students, $141,780), the decision panel shows the three default "
+  "scenarios side by side, the leaving-cost escalation is charted year by year, and the website cost "
+  "chart starts at 2014 because the 2013 file carries the one-time renovation charge.", note)
 P("<b>Version 4.4, August 1.</b> The growth model rebuilt on the district's own standards: the first 25 "
   "added students fill seats already open at its own Appendix B class caps, teachers are hired per full "
   "new class at a selectable pace (1 per 18, 21, or 24, each a real classroom count), support staff rides "

@@ -61,8 +61,8 @@ def main():
         else: ok("no JS console or page errors")
 
         n = pg.evaluate("Object.keys(Chart.instances).length")
-        if n == 7: ok(f"{n} Chart.js charts instantiated")
-        else: bad(f"expected 7 charts, got {n}")
+        if n == 8: ok(f"{n} Chart.js charts instantiated")
+        else: bad(f"expected 8 charts, got {n}")
         nmore = pg.evaluate("document.querySelectorAll('details.more').length")
         if nmore >= 10: ok(f"{nmore} sections collapse to key points with More detail expanders")
         else: bad(f"only {nmore} section expanders found")
@@ -83,14 +83,15 @@ def main():
         if modelopen: ok("calculators expanded by default")
         else: bad("calculator details not open by default")
         net = pg.text_content("#rNet").strip()
-        verdict = pg.text_content("#rVerdict").strip()
-        if net == "-$130,749" and "LOSES" in verdict:
-            ok("closure default is the district stance: -$130,749 (all staff retained, 30% leakage)")
-        else: bad(f"closure defaults: {net} / {verdict}")
         rank = pg.text_content("#rRank").strip()
-        if "5,832 weighted scenarios" in rank and "26%" in rank and "-$17,982" in rank:
-            ok("live weighted grid-rank readout: 26% at the district-stance default")
-        else: bad(f"grid-rank readout: {rank}")
+        if net == "-$130,749" and "26th percentile" in rank and "5,832 weighted scenarios" in rank:
+            ok("closure default -$130,749 (all staff retained); percentile-only readout: 26th")
+        else: bad(f"closure defaults: {net} / {rank}")
+        gone_verdict = pg.evaluate("['rVerdict','rBar'].filter(i=>document.getElementById(i)).length")
+        note_ok = pg.evaluate("document.body.textContent.includes(\"The default reflects the superintendent's written statement\")")
+        if gone_verdict == 0 and note_ok:
+            ok("closure verdict text removed; retained-staff default note present")
+        else: bad(f"closure readout cleanup: leftover={gone_verdict} note={note_ok}")
 
         # ceiling: their fullest case
         pg.fill("#sCap", "2"); pg.dispatch_event("#sCap", "input")
@@ -111,16 +112,17 @@ def main():
         pg.fill("#sAdd", "1000"); pg.dispatch_event("#sAdd", "input")
         pg.fill("#sProp", "95000"); pg.dispatch_event("#sProp", "input")
         pg.fill("#sBus", "190000"); pg.dispatch_event("#sBus", "input")
-        if pg.text_content("#rNet").strip() == "-$591,545" and "LOSES" in pg.text_content("#rVerdict"):
+        if pg.text_content("#rNet").strip() == "-$591,545" and "0th percentile" in pg.text_content("#rRank"):
             ok("closure floor -$591,545 = grid min (calculator spans the whole grid)")
-        else: bad(f"closure worst case: {pg.text_content('#rNet')} / {pg.text_content('#rVerdict')[:60]}")
+        else: bad(f"closure worst case: {pg.text_content('#rNet')} / {pg.text_content('#rRank')[:60]}")
 
         # --- Growth calculator ---
         gro = pg.text_content("#rGro").strip()
         gverd = pg.text_content("#rGroVerdict").strip()
-        if gro == "$163,944" and "44 added students" in gverd and "no new teachers" in gverd:
-            ok("growth default fills to the architect's own 154: $163,944, 44 added, no new hires")
-        else: bad(f"growth defaults: {gro} / {gverd}")
+        gteach = pg.evaluate("document.getElementById('rGro').dataset.teachers")
+        if gro == "$141,780" and "50th percentile" in gverd and "19,683 weighted scenarios" in gverd and gteach == "0":
+            ok("growth default is the weighted median: $141,780, target 140, no hires; percentile-only readout")
+        else: bad(f"growth defaults: {gro} / {gverd} / teachers={gteach}")
         pg.fill("#sGro", "200"); pg.dispatch_event("#sGro", "input")
         pg.fill("#sRat", "0"); pg.dispatch_event("#sRat", "input")
         pg.fill("#sTc", "56583"); pg.dispatch_event("#sTc", "input")
@@ -133,14 +135,16 @@ def main():
         else: bad(f"growth floor: {pg.text_content('#rGro')}")
         pg.fill("#sGro", "153"); pg.dispatch_event("#sGro", "input")
         pg.fill("#sRat", "2"); pg.dispatch_event("#sRat", "input")
-        if "no new teachers" in pg.text_content("#rGroVerdict"):
+        teach_ds = pg.evaluate("document.getElementById('rGro').dataset.teachers")
+        if teach_ds == "0":
             ok("headroom honored: 43 added students (to 153) hire no teacher at the district-cap class size")
-        else: bad(f"headroom verdict: {pg.text_content('#rGroVerdict')[:70]}")
+        else: bad(f"headroom teachers: {teach_ds}")
         pg.fill("#sGro", "156"); pg.dispatch_event("#sGro", "input")
         pg.fill("#sRat", "0"); pg.dispatch_event("#sRat", "input")
-        if "1 new teacher" in pg.text_content("#rGroVerdict"):
+        teach_ds = pg.evaluate("document.getElementById('rGro').dataset.teachers")
+        if teach_ds == "1":
             ok("first hire lands at 21 students past the 25 open seats at the smaller-class setting")
-        else: bad(f"first-hire verdict: {pg.text_content('#rGroVerdict')[:70]}")
+        else: bad(f"first-hire teachers: {teach_ds}")
         pg.fill("#sRat", "1"); pg.dispatch_event("#sRat", "input")
         pg.fill("#sTc", "41718"); pg.dispatch_event("#sTc", "input")
         pg.fill("#sGro", "110"); pg.dispatch_event("#sGro", "input")

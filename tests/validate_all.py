@@ -397,8 +397,21 @@ def main():
         chk(lever in html, f"growth-model slider present: {lever}")
     chk("5,832 weighted scenarios" in html and 'id="rRank"' in html,
         "calculator presented as the live weighted scenario model with a grid-rank readout")
-    chk("$141,780" in html and "every one" in html and "19,683" in html and "+$3,331" in html,
+    chk("$141,780" in html and "every single scenario pays" in html and "19,683" in html
+        and "$3,331" in html,
         "growth calculator carries the published classroom-indexed grid stats")
+    # v4.5 review round: median default, percentile-only readouts, three roads,
+    # leaving-escalation chart
+    for needle in ['id="chartLeave"', "penetrates all the way through the high school",
+                   "This scenario lands at about the", "19,683 weighted scenarios",
+                   "The default reflects the superintendent's written statement",
+                   "the median of the 19,683 weighted scenarios: 30 added students",
+                   'value="140"', "Grow the district", "+$1.9M"]:
+        chk(needle in html, f"v4.5 review round: {needle}")
+    chk("Either way: a preschool pipeline" not in html,
+        "the 'Either way' pipeline sentence removed from ask two")
+    chk(30 * (4626 + 500 - 400) == 141780,
+        "growth default recomputes: 30 added students at central legs = the weighted median")
     chk("$142,800" not in html and "$67,124" not in html and "$118,650" not in html
         and "$102,780" not in html and "$125,150" not in html,
         "all superseded growth-grid medians are gone from the site")
@@ -428,9 +441,11 @@ def main():
     # cost history chart: modern era 2018-2025 filled from the archived state files (build/cost_history.py)
     # and the KY elementary average extended back to 2012 (build/ky_elem_spending_2012_2017.json)
     for needle in ["13581,13838,12903,15406,19080,19003",
-                   "8282,8797,8731,9625,10334,11130,14540,14193,14434,15691,17416,18910,18940,19299",
-                   "$19,299", "five of the eight years"]:
-        chk(needle in html, f"cost history filled, KY average back to 2012: {needle}")
+                   "8731,9625,10334,11130,14540,14193,14434,15691,17416,18910,18940,19299",
+                   "$19,299", "five of the eight years", "The chart starts in 2014"]:
+        chk(needle in html, f"cost history filled, KY average shown, 2013 outlier trimmed: {needle}")
+    chk("19635" not in html and "HY=[2014," in html,
+        "cost chart starts at 2014; the 2013 renovation-spike year is off the chart")
     chk((REPO / "build" / "ky_elem_spending_2012_2017.json").exists(),
         "old-era KY elementary averages archived with method and source")
 
@@ -623,8 +638,8 @@ def main():
         "levy base disclosed as GF-only in PDF and site")
     chk("over four fifths of the annual reserve drawdown" in t,
         "PDF scores the levy against both deficit and drawdown")
-    chk("reserve drawdown" in html and "DRAWDOWN=1145561" in html,
-        "site shows both denominators on the calculators")
+    chk("reserve drawdown" in t and "percentile of the 5,832 weighted scenarios" in html,
+        "PDF keeps both denominators; site calculators simplified to percentile readouts (v4.5 review)")
     chk("net change across all seven" in t,
         "PDF clarifies the $430K is the net debt-service step, not the bond's payment alone")
     chk("multi-age" not in t.lower() and "multiage" not in t.lower(),
