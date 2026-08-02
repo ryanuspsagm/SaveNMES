@@ -345,10 +345,10 @@ if bond_amt == 14000000 and "$14 million" in pdf_flat:
 else:
     diff(f"$14M bond: model {bond_amt}, pdf {'$14 million' in pdf_flat}")
 excess = ds_vals.get("District's own KDE-filed excess cost of NMES vs peer elementaries", (None, None))[0]
-if excess == 121220 and "$121,000" in pdf_flat:
-    match("audited excess cost $121,220 in model; PDF rounds to $121,000 (site pin retired in the v4.2 cut)")
+if excess == 121220 and "$121,220" in pdf_flat:
+    match("audited excess cost $121,220 consistent in model and PDF (site pin retired in the v4.2 cut)")
 else:
-    diff(f"excess cost: model {excess}, pdf {'$121,000' in pdf_flat}")
+    diff(f"excess cost: model {excess}, pdf {'$121,220' in pdf_flat}")
 fy26 = ds_vals.get("Net General Fund change, FY2026 (unaudited)", (None, None))[0]
 rev26 = ds_vals.get("General Fund revenue, FY2026 actual (excludes carryforward and on-behalf)", (None, None))[0]
 exp26 = ds_vals.get("General Fund expenditures, FY2026 actual", (None, None))[0]
@@ -367,8 +367,8 @@ if xfer == 1320939 and "$1,320,939" in pdf_flat and "$1.32 million" in html:
 else:
     diff(f"capital transfer: model {xfer}, site $1.32M {'$1.32 million' in html}, pdf {'$1,320,939' in pdf_flat}")
 gap_b, gap_c = ds_vals.get("Operating gap to close first", (None, None))
-if gap_b == 1900000 and gap_c == 373989 and "$21 million" in pdf_flat and "$25 million" in pdf_flat:
-    match("balanced-budget scenario inputs ($1.9M / $373,989 gaps) in model; $21M/$25M capacity quoted in the PDF")
+if gap_b == 1900000 and gap_c == 373989 and "$21 million" not in pdf_flat:
+    match("balanced-budget scenario inputs ($1.9M / $373,989 gaps) live in the model; the $21M/$25M walk retired from the report")
 else:
     diff(f"scenario: model gaps {gap_b}/{gap_c}, pdf $21M {'$21 million' in pdf_flat}, $25M {'$25 million' in pdf_flat}")
 
@@ -498,12 +498,12 @@ else:
 # ---------- 12. v3.8: school costs, breakevens, growth plan ----------
 SCt = wb["School_Costs"]
 ok38 = SCt["B14"].value == 19348 and SCt["B15"].value == "=B14*128" and 19348*128 == 2476544
-ok38 &= "$933,537" in html and "$2,476,544" in pdf_flat and "$8,305" in pdf_flat
+ok38 &= "$933,537" in html and "$2,476,544" in pdf_flat
 rev23 = (11808998, 20381341, 9550068, 2454)
 ok38 &= (SCt["C9"].value, SCt["D9"].value, SCt["E9"].value, SCt["B9"].value) == rev23
 ok38 &= abs(rev23[1]/rev23[3] - 8305.4) < 0.5 and abs(2476544/(rev23[1]/rev23[3]) - 298.2) < 0.5
 if ok38:
-    match("300-breakeven reconstruction: cost 128 x 19,348 = $2,476,544 exact; state-only $8,305 -> 298 (model/site/PDF)")
+    match("300-breakeven reconstruction: cost 128 x 19,348 = $2,476,544 exact; state-only $8,305 -> 298 (model; PDF keeps the $2,476,544 anchor, full reconstruction in the workbook)")
 else:
     diff("300-breakeven reconstruction mismatch across model/site/PDF")
 c01 = [(SCt[f"B{r}"].value, SCt[f"C{r}"].value) for r in (49,50,51,52)]

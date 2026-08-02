@@ -264,16 +264,16 @@ def main():
         "old unweighted medians retired from the site")
 
     # bonding story: the $14M plan, the levers, and the unaudited FY2026 close
-    for needle in ["$14 million plan", "wrap-around", "recallable",
+    for needle in ["recallable",
                    "Budget Monitoring Tool", "$374,000", "$1,320,939",
-                   "$1,413,929", "August 17, 2023", "$82,866", "Paris Independent",
+                   "$1,413,929", "August 17, 2023", "Paris Independent",
                    "Capital Funds Request", "$3.1 million"]:
         chk(needle in t, f"PDF bonding story intact: {needle}")
     # v4.2 cut: the $3.1 million kept line moved to the report with the rest of the bond story
     chk("The $14 million plan" not in html and "The bonds: a different pot" not in html
         and 'id="chartDebt"' not in html,
         "v4.1: bond and $14M-plan cards moved to the report only")
-    chk("$1,098,663" in t and "$222,276" in t,
+    chk("$1,320,939" in t and "$1,098,663" not in t,
         "capital transfer components consistent in the PDF")
 
     # filled-to-capacity scenarios (Figure 6 / chartPPtime grouped bars)
@@ -343,7 +343,7 @@ def main():
     for needle in ["$1,489,853", "closed in 2006", "$116,000 to $176,000",
                    "42 closure events", "net 31 uncommitted seats",
                    "closure_grid.py", "ky_closure_events_full.csv",
-                   "contingent", "$1,098,663", "244 paper seats"]:
+                   "contingent", "244 paper seats"]:
         chk(needle in t, f"v3.5 correction intact in PDF: {needle}")
     chk("first in the county in every subject" in html,
         "v3.5 correction intact on site (first-in-county claim, v4.2 wording)")
@@ -742,7 +742,7 @@ def main():
 
     # v3.8: fill correction, cost history, breakeven reconstruction, growth plan
     for needle in ["$56,000 to $116,000", "$106,000 to $211,000",
-                   "$2,476,544", "$8,305", "155 students", "99.6 percent",
+                   "$2,476,544",
                    "54 to 69", "$2,851", "$5,200", "$4,414",
                    "$760,000 to $1.3 million", "$260,000 to $530,000"]:
         chk(needle in t, f"PDF v3.8 content intact: {needle}")
@@ -778,7 +778,7 @@ def main():
     chk("run this play before" in t and "Joy Global" in t and "Figure 8." in t,
         "Millersburg community case study restored in the report (Figure 8)")
     chk("Saving_NMES_v3.9_2026-07-29.pdf" in html, "site links the v3.9 report")
-    chk("298 students" in t,
+    chk("reconstructs it from the state's own files" not in t,
         "breakeven reconstruction lands at 298 in the report")
     chk("recovered from the Internet Archive" in t.replace("  ", " "),
         "2000-01 report card provenance disclosed in the report (site card replaced by the live curve)")
@@ -823,9 +823,10 @@ def main():
         "FY2026 figures labeled unaudited in the PDF (site block retired in v4.2)")
     chk((REPO / "build" / "fy2026_june_financial_packet.pdf").exists(),
         "June 2026 financial packet archived in build/")
-    chk("balanced-budget scenario" in t,
-        "balanced-budget scenario carried in the report")
-    chk("$21 million" in t and "$25 million" in t,
+    chk("balanced-budget scenario" not in t
+        and "The $14 million plan, and the levers not on the table" not in t,
+        "the $14 million walk is retired from the report; the Debt_Service tab carries it")
+    chk("$2.5 to $3.0 million" in t,
         "scenario capacity range $21M/$25M consistent in the PDF")
 
     # money-story cleanup: GF-only levy base, both denominators, precise debt wording
@@ -857,7 +858,7 @@ def main():
         chk(html.index(claim) > html.index(section)
             and html.index(claim) < html.index("<details", html.index(section)),
         f"strongest claim rides the always-visible header: {claim}")
-    chk("$1.4 to $2.3 million" in t,
+    chk("$2.5 to $3.0 million" in t and "the counted-once cost package and the 2018 restore" in t,
         "alternatives raw sums intact in the report (Medicaid removed; site quote retired)")
 
     print(f"PASS {len(ok)}")

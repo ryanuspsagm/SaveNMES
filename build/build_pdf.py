@@ -411,52 +411,6 @@ P("The middle years confirm it: KDE's own report-card datasets for 2011-12 throu
   "comparisons; and the three reporting systems use different definitions, so every comparison here is "
   "within one system in one year. The School_Costs tab carries all of it live.")
 
-H2("The 300-student breakeven, reconstructed from the state's own files")
-P("At the July committee meeting a figure was cited: North Middletown needs about 300 students to break even. "
-  "No worksheet has been published with it, so this version reconstructs it from the state's own files. The "
-  "cost side is $2,476,544: 128 students times the $19,348 per-student total on the 2023-24 state report "
-  "card, a figure that includes federal spending and the state's on-behalf pension payments and that the "
-  "federal report allocates to the school rather than the district's own budget coding to it. The revenue "
-  "side that yields 300 is state revenue alone: in 2022-23, state sources came to $8,305 per member, and "
-  "$2,476,544 divided by $8,305 gives 298 students. One other route reaches about the same place: "
-  "$1,285,310, the cost the district's own Cost by ORG summary codes to this school, divided by the $4,626 "
-  "SEEK base, gives 278. Both routes are the same construction, a whole-cost numerator over a single "
-  "revenue stream. But the district collects three streams per student, not one: in 2023-24, $5,475 local, "
-  "$7,128 state, and $3,380 federal, $15,983 in all. The 300 construction counts every dollar of cost from "
-  "all three sources, then credits the school only the state share of what its students bring in; the "
-  "$8,855 per student of local and federal revenue those same children generate, more than the state share, "
-  "is counted on the cost side and skipped on the revenue side. Run the same fraction with matching "
-  "definitions and the breakeven is 155 students, not 300.")
-tbl(["School", "All-in cost per pupil", "Enrolled", "Corrected-test breakeven", "Short by"],
-    [["North Middletown", "$19,348", "128", "155", "27"],
-     ["Bourbon Central", "$18,131", "459", "521", "62"],
-     ["Cane Ridge", "$18,670", "453", "529", "76"],
-     ["Bourbon County Middle", "$16,673", "590", "615", "25"],
-     ["Bourbon County High", "$17,404", "766", "834", "68"]],
-    [W * 0.28, W * 0.20, W * 0.14, W * 0.24, W * 0.14],
-    caption="The corrected average-cost test (all-in cost against the district's full $15,983 revenue per "
-            "member) applied to every school the district owns. Every school fails, including both receiving "
-            "schools; Cane Ridge falls short by 76 students and about $1.2 million a year, nearly three times "
-            "North Middletown's shortfall. Statewide, 1,146 of the 1,151 Kentucky schools with reported data, 99.6 "
-            "percent, spend more per student than the $8,255 bar the 300 implies; on the corrected test in "
-            "this table, against the district's full $15,983 revenue per member, 786 of them, 68 percent, "
-            "still fail. Nobody reads Cane Ridge's number as a closure argument, and rightly so: an "
-            "average-cost breakeven in a drawdown year measures the district's budget, not any school. "
-            "Model, School_Costs tab.")
-P("The real breakeven question is the marginal one: at what enrollment do a school's students bring in more "
-  "than closing it could actually save? Set each school's fixed site base, principal, office, and plant, "
-  "against the state guarantee actually at risk when a family leaves the district, and North Middletown "
-  "clears its bar at 58 students on its own MUNIS-ledger principal, office and plant actuals, 69 once the "
-  "library and media line is counted with them, while enrolling 128. This version drops the lower bar "
-  "published in v3.8, which credited each child with $3,380 of federal money: Title I is a district "
-  "allocation driven by resident poverty, so it follows the child to the receiving building and relieves "
-  "the General Fund by nothing. The same test puts Cane Ridge's bar at 132 and Bourbon Central's at 130; "
-  "every school clears comfortably, which is how school finance is supposed to work. Every construction of "
-  "the question except one, all-source costs divided by state-only revenue, says this school brings in more "
-  "than closing it could recover. And asked for any cost-benefit analysis of the school, the district's "
-  "July 2026 records response answered N/A, so this reconstruction stands as the only public version of "
-  "the 300 (records response, archived in this repository).")
-
 # ================= 4. MILLION DOLLAR QUESTION =================
 H("4. The Million-Dollar Question: What Closing the School Would Actually Save")
 P("The case for closure rests on a single public statement: that keeping North Middletown Elementary open \u201ccost "
@@ -555,7 +509,7 @@ P("The grid is built on the district's own 48-page response. Seven levers, each 
   "$137,095 loss and a $98,603 saving, the median outcome <b>LOSES $20,007 a year</b>, and 55 percent of "
   "scenarios lose money outright, before $100,000 to $300,000 of one-time transition costs in the first "
   "year (unweighted, the median is a $24,431 loss; the weighting changes no "
-  "conclusion). The plan's own requirement, $800,000 to $1,000,000 a year, sits entirely outside the range. "
+  "conclusion). The plan's own requirement, the superintendent's stated need to free up $800,000 to $1,000,000 a year of operating money to bond a $14 million renovation, sits entirely outside the range. "
   "One more thing closure does not buy: borrowing room. Bonding capacity is built from restricted revenue "
   "streams that do not grow when a school closes (Section 8).")
 fig("chart_closure_spectrum.png",
@@ -1013,52 +967,14 @@ P("As the 2024 issue and the other series settle into their schedules, the distr
   "(the net change across all seven series, some rising and the 2013 issue maturing, not the 2024 bond's "
   "payment alone). The state's SFCC participates in the qualifying issues, paying $1,568,809 of principal "
   "over the life of the bonds. None of the seven outstanding issues names North Middletown Elementary.")
-H2("The $14 million plan, and the levers not on the table")
-P("At the July 15, 2026 planning committee meeting, the superintendent stated that the district must free up "
-  "$800,000 to $1,000,000 a year in operating money to bond $14 million. That is a general-fund bond: the payment "
-  "would come from the budget that pays teachers. Debt service on $14 million runs roughly $0.8 to $1.1 million a "
-  "year depending on term, about the same size as the school's claimed operating cost, so money saved by a "
-  "closure would go to debt service and the general fund deficit itself would not shrink. The published savings "
-  "estimates also do not support a bond of that size: bond capacity is annual savings capitalized, and the "
-  "district's own KDE-filed school-level spending puts North Middletown's full excess cost near $121,000 a year, "
-  "which supports about $1.6 million of bonds. This report's two-tailed best case, $484,582, supports about $6.3 million, and its median, a $20,007 yearly loss, supports none. "
-  "Of the available estimates, only the administration's own unpublished figure reaches $14 million. The "
-  "workbook's Debt_Service tab runs every scenario.")
-P("Three funding sources are available without a closure. First, the restricted capacity itself: the FY2024 "
-  "audit's $23.5 million, less the local share of the 2024 issue, leaves roughly $18 million, and the debt "
-  "schedule shows why it is usable now: district-paid payments hold near $1.58 million a year through 2030, "
-  "fall to about $1.32 million in 2031 to 2035, and drop below $400,000 after 2035, a shape a standard "
-  "wrap-around structure fills exactly. Second, the nickel stream is stronger than this report first "
-  "described, a correction that runs in the district's favor: KDE's files show Bourbon already levies a "
-  "recallable nickel alongside the original facilities nickel, levied August 17, 2023 with no recall "
-  "petition filed, so the community has accepted a facilities tax twice, and state equalization on it is "
-  "phasing in, $82,866 on the FY2025 schedule and $276,246 a year at full value on the FY2027 schedule, new "
-  "restricted revenue that expands bonding capacity with no board action. Third, SFCC offers of assistance, "
-  "already carrying $1.57 million of current principal. These raise amounts comparable to the plan's $14 "
-  "million, so the decision is a choice among funding mechanisms. The workbook's Debt_Service tab combines "
-  "them into a balanced-budget scenario: close the operating gap first, end the sweep so the building-fund "
-  "stream is free to pledge, then fund construction from the remainder plus the new nickel equalization. It "
-  "supports roughly $21 million of capacity in the conservative case and about $25 million on the FY2026 "
-  "trend; the growth plan in Section 10, which adds the full 2018 restore, clears the trending gap in "
-  "every case.")
-H2("The June 2026 capital transfer: what the year-end packet reveals")
-P("The June 2026 year-end packet, archived in this repository, documents a transaction that decodes the plan. "
-  "In June 2026 the district moved $1,320,939 of restricted capital money into the general fund: $1,098,663 "
-  "from the Building Fund and $222,276 from Capital Outlay, which ended the year at exactly zero. The "
-  "transfer is lawful, exercised through a Capital Funds Request under a flexibility provision Kentucky's "
-  "budget acts have carried since 2020. Its significance is simple. The Building Fund collects about $2.5 "
-  "million a year from the two facilities nickels; debt service consumes about $1.38 million; the roughly "
-  "$1.1 million residual is precisely the restricted stream that could service a $14 million bond, and in "
-  "fiscal 2026 it plugged the operating budget instead. So the plan, decoded from the district's own books: "
-  "let the general fund stand on its own, stop the sweep, and pledge the nickel residual to the bond. Any "
-  "recurring million dollars performs that function; the closure is one candidate among several, and the "
-  "smallest-yield one.")
 H2("Where the general fund is actually trending: the unaudited FY2026 close")
 P("The district's own KDE Budget Monitoring Tool, in the June 2026 packet on the board's July 16 agenda and "
   "archived in this repository, shows fiscal 2026 closing down roughly $374,000, the best result in three "
   "years, against audited drawdowns of $1.07 million and $1.23 million in the two years before. The same "
-  "packet shows how that headline was built: two June entries, the $1,320,939 capital transfer described "
-  "above and a $1,413,929 receipt booked to miscellaneous revenue in period 12 against a budget of zero, "
+  "packet shows how that headline was built: two June entries, a $1,320,939 transfer of restricted capital "
+  "money into the general fund (lawful, through a Capital Funds Request, and precisely the sweep the "
+  "growth plan would end) and a $1,413,929 receipt booked to miscellaneous revenue in period 12 against a "
+  "budget of zero, "
   "account for nearly all of it, and the packet's variance row reconciles to the dollar. The genuine "
   "improvements are real but modest: SEEK revenue $402,000 over budget and payroll falling through ordinary "
   "attrition. Excluding the capital transfer, the year is down about $1.7 million; excluding the "
@@ -1266,8 +1182,8 @@ P("The revenue side is symmetric with the closure math in Section 4, on purpose,
 H2("The growth path: the same menu as a district-wide recovery plan")
 P("Bourbon County Schools has a structural funding problem: spending has outrun revenue at every building, "
   "salaries are hard to raise, capital projects wait, and North Middletown is being blamed for it. It is not "
-  "the reason salaries cannot increase (its excess cost is about $156,000 a year, six tenths of one percent "
-  "of the budget), and it is not the reason capital projects cannot be funded: the district's own financial "
+  "the reason salaries cannot increase (its excess cost is about $156,000 a year, $121,220 on the "
+  "district's own KDE-filed comparison to the peer average, six tenths of one percent of the budget), and it is not the reason capital projects cannot be funded: the district's own financial "
   "advisor presented $32 million of bonding capacity to the planning committee in June 2026 (Baird, archived "
   "in this repository), while the capital-to-operations sweep consumes about $17 million of it, a General "
   "Fund problem every school shares. Organized as a plan, the menu above prices out as "
@@ -1277,14 +1193,14 @@ P("Bourbon County Schools has a structural funding problem: spending has outrun 
   "efficiency, worth $760,000 to $1.3 million a year. <b>Move two, grow enrollment instead of shrinking it</b>: "
   "fill North Middletown's 46 seats, recover attendance, and recruit district-wide from the measured pool of "
   "homeschool, private-school and nonresident families, worth $260,000 to $530,000 a year. <b>Move three, have "
-  "the honest revenue conversation</b>: the four percent option and delinquency recovery bring $370,000 to "
-  "$495,000 in year one and about $1.0 to $1.1 million by year three as the option compounds, and the recallable "
-  "menu beyond four percent reaches $1.0 to $2.5 million. The three moves are the $1.4 to $2.3 million shown "
-  "under Figure 21, published with no haircut; each line's confidence and overlap are disclosed on the "
-  "Alternatives tab. Any one "
+  "the honest revenue conversation</b>: restore the board's own 2018 rate, worth about $1.7 million a year "
+  "with Bourbon still taxing below five of its eight neighbors, with the recallable rate menu beyond it "
+  "reaching $1.0 to $2.5 million and delinquency recovery adding $60,000 to $120,000 on top. Together the "
+  "counted-once cost package and the 2018 restore alone are worth about $2.5 to $3.0 million a year "
+  "(Figure 21; each line's confidence and overlap are disclosed on the Alternatives tab). Any one move "
   "alone outweighs closure, whose median outcome now loses $20,007 a year. Together they balance the budget, end the sweep, free the "
-  "restricted stream to bond the renovation plan, and close nothing. The Alternatives tab prices each move live. "
-  "And the surplus is transformative. The website's plan calculator prices the enrollment lever directly: "
+  "restricted stream to bond the renovation plan, and close nothing. The Alternatives tab prices each move live.")
+P("And the surplus is transformative. The website's plan calculator prices the enrollment lever directly: "
   "recovered leakage students themselves, zero to the full measured "
   "pool of 550, each at the same $4,226 net-of-supplies cell the closure model uses. The gap the plan must "
   "close is also the district's own most current number: its June 2026 year-end ledger trends the fiscal "
@@ -1307,7 +1223,8 @@ P("Bourbon County Schools has a structural funding problem: spending has outrun 
   "report's estimate: the district's own advisor rates it at $32 million, capacity that is real only once the "
   "sweep ends, because the sweep spends the very stream the capacity is built on. Together, about $35 "
   "million of building capacity, teachers paid more, and every school open. The earlier 10-percent-raise and "
-  "$52 million top-end claims are withdrawn with the lever correction. A suggestion for running "
+  "$52 million top-end claims are withdrawn with the lever correction.")
+P("A suggestion for running "
   "the plan: the board should create three standing committees, one per lever, each with a public charge "
   "and a progress report at every board meeting. An enrollment growth committee would work to win families "
   "back: reach the 236 homeschool households in the district's own files, market the county's top-scoring "
@@ -1368,15 +1285,17 @@ P("Where the money lands is equally clear. Of the $9.9 million the property tax 
   "delinquencies of roughly two to four percent of certified yield, the kind every Kentucky district carries, "
   "not revenue the board declined to levy. The menu above counts only a partial recovery of them for exactly "
   "that reason: honest numbers cut both ways, and I built this report to take the cut.")
-P("What remains is the option the board controls every August. Under KRS 160.470 the board may set a rate "
-  "producing four percent more revenue from existing property than the compensating rate, with no recall "
-  "exposure attached. Taken on the General Fund levy of $7,829,060, the part that can actually pay teachers, that "
-  "is roughly $313,000 of new recurring revenue in year one, about $639,000 a year by year two, and about $978,000 a year by "
-  "year three, more than a third of the structural deficit and over four fifths of the annual reserve drawdown, "
-  "from a district that would still tax below Harrison, Scott, Bath, Clark, Paris Independent, and "
-  "Fayette. (The restricted building-fund levy, which cannot pay operating costs, is excluded from this base, the "
-  "same restricted-funds rule this report applies to closure.) Section 11 carries the recommendation and the "
-  "companion workbook carries the math. To be clear, the "
+P("What remains is the choice the board controls every August: the rate itself. The anchor of this report's "
+  "revenue lever is the rate this board levied in 2018, 61.3 cents, whose restoration raises about $1.7 "
+  "million a year on the General Fund levy of $7,829,060, the part that can actually pay teachers, with "
+  "Bourbon still taxing below five of its eight neighbors: Fayette, Paris Independent, Clark, Bath, and "
+  "Scott. The four percent revenue growth KRS 160.470 allows without recall exposure is a revenue cap, not "
+  "a rate move, and it is not the ask here; for scale, it compounds to roughly $313,000 in its first year, "
+  "about $639,000 in its second, and about $978,000 a year by its third, over four fifths of the annual "
+  "reserve drawdown, and the next subsection walks why a board can take it every year while the printed "
+  "rate still falls. (The restricted building-fund levy, which cannot pay operating costs, is excluded from "
+  "this base, the same restricted-funds rule this report applies to closure.) Section 11 carries the "
+  "recommendation and the companion workbook carries the math. To be clear, the "
   "levy is one option, not the only one: the menu above lists other revenue and cost measures, and deeper "
   "spending reductions are always available to a board willing to make them. But the math is simple and it "
   "does not bend. Either spending comes down or revenue goes up, and a district drawing down a million "
@@ -1460,8 +1379,8 @@ P("One movement in Figure 16 needs explaining. Bourbon's total levied rate rose 
   "teacher, and it rose in the same year the operating levy appears to have fallen.")
 
 H2("Beyond the four percent: the recallable levy options")
-P("The four percent option is the largest increase the board can take without offering voters a veto. It is "
-  "not the ceiling. Kentucky law (KRS 160.470) lets the board levy any rate, with the portion above four "
+P("The four percent revenue growth is the most the board can collect without offering voters a veto. It is "
+  "not the ceiling, and the rate is the real lever. Kentucky law (KRS 160.470) lets the board levy any rate, with the portion above four "
   "percent subject to a voter recall petition, and that is exactly how every neighboring district in Figure "
   "21 climbed past Bourbon. Each option below is priced at Bourbon's own audited yield of about $191,000 per "
   "cent of rate: $7,829,060 of General Fund collections across the 41.0 General Fund cents in KDE's "
@@ -1524,7 +1443,7 @@ tbl(["Plan", "Recurring impact, year 3", "Projected FY2029 balance", "What it re
       "No decisions; the districtwide drawdown simply continues, with or without North Middletown"],
      ["2. Close NMES and consolidate", "-$591,545 to +$484,582 (median: LOSES $20,007)", "Median: gone sooner than status quo; best case $1.2M",
       "Closure vote; the median scenario loses money; longer rides; enrollment-loss risk"],
-     ["3. Districtwide recovery plan (menu plus levy)", "$1.4-$2.3 million a year", "About $4.3 million",
+     ["3. Districtwide recovery plan (menu plus 2018 restore)", "$2.5-$3.0 million a year", "About $4.3 million or better",
       "Revenue votes, administrative rollback, boundary action and HB 563 recruitment, implementation "
       "discipline; every school stays open"]],
     [1.85 * inch, 1.45 * inch, 1.35 * inch, 2.05 * inch],
@@ -1578,16 +1497,16 @@ B("Decline to adopt any facility plan carrying a \u201ctransitional\u201d design
   "applications (the BG-1s behind the already-public high school roof and audio-system purpose), and the "
   "school-level climate-and-safety survey results are public.")
 B("A working threshold for the Board: if documented net recurring General Fund savings fall below roughly "
-  "$400,000 to $500,000 a year, a range the four percent revenue option alone reaches by its second year "
+  "$400,000 to $500,000 a year, less than a third of the $1.7 million that restoring the 2018 rate raises "
   "without closing a school, closure "
   "fails on its own financial terms.")
-B("Face the levy each August with the numbers on the table: the four percent option adds roughly $313,000 of "
-  "recurring revenue in year one and about $978,000 a year by year three if taken three years running, "
-  "while Bourbon would still tax below six of its eight neighbors. Take it or reject it, but decide on the "
-  "record, alongside the spending decisions, because standing idle is the one answer I rule out.")
+B("Face the levy each August with the rate on the table, not just the revenue formula: restoring the "
+  "board's own 2018 rate raises about $1.7 million a year, and Bourbon would still tax below five of its "
+  "eight neighbors. Adopt it or reject it, but decide on the record, alongside the spending decisions, "
+  "because standing idle is the one answer I rule out.")
 H2("Over the next twelve months")
-B("Pursue the low-harm levers first: the collections-gap reconciliation, the 4-percent levy decision at the "
-  "September tax setting, transportation routing, attrition-based staffing, and "
+B("Pursue the low-harm levers first: the collections-gap reconciliation, the levy decision at the "
+  "September tax setting with the 2018 restore priced on the table, transportation routing, attrition-based staffing, and "
   "an administrative cost review, with quarterly public reporting against a target of cutting the operating "
   "deficit from $2.6 million to under $1.5 million by fiscal 2027 and under $800,000 by fiscal 2028.")
 B("Set up a North Middletown sustainability committee, district, city, parents, and business, to design the "
@@ -1710,7 +1629,11 @@ P("<b>Version 4.5, August 2.</b> Both scenario grids now carry explicit lever di
   "Schools and now includes residents enrolled in other districts alongside homeschool and private school: "
   "the two documented counts alone, 236 homeschool filings and 247 students enrolled elsewhere, reach 483, "
   "so the 450 to 550 band and its $1.9 to $2.3 million pricing are unchanged and conservative, and the "
-  "net-import framing was retired. A condensation pass closed the release: the opening was rewritten to mirror the "
+  "net-import framing was retired. Three deep-dive sections then came out at the community's direction, "
+  "the 300-student-breakeven reconstruction, the $14 million plan walk, and the June 2026 "
+  "capital-transfer decomposition, with their key facts kept in Sections 4 and 8 and the full math in the "
+  "workbook, and the revenue ask was re-anchored on restoring the 2018 rate, still below five of the "
+  "eight neighbors, rather than on the four percent revenue option. A condensation pass closed the release: the opening was rewritten to mirror the "
   "executive summary document, the back matter was retitled Supporting Data and Appendices, duplicated "
   "passages were removed, and the report was tightened from 60 to 50 pages with every figure and table "
   "retained.", note)
@@ -2211,11 +2134,11 @@ P("The savings from doing this well are documented, not hypothetical. Boston Pub
   "as free GIS files, and Figure 20 is drawn directly from that file, fetched by the repository's "
   "build/fetch_sabs.py, so anyone can reproduce it in one step.")
 tbl(["Measure", "Estimated annual value", "How it works"],
-    [["Take the annual 4% property-tax adjustment",
-      "about $313,000 in year one; about $978,000 by year three, recurring",
-      "State law (KRS 160.470) lets the Board collect up to 4% more revenue from existing property each year without "
-      "a recall election. Assessments grew 7.4% last year; each year the adjustment is skipped is revenue foregone "
-      "permanently."],
+    [["Restore the board's own 2018 rate (61.3 cents)",
+      "about $1.7 million a year, recurring",
+      "The rate this board itself levied in 2018, restored, still leaves Bourbon taxing below five of its "
+      "eight neighbors. Under KRS 160.470 the portion above four percent revenue growth is subject to voter "
+      "recall, a built-in democratic check; priced at the district's own $191,000 per cent."],
      ["Improve delinquent-tax recovery (partial)",
       "$60,000-$120,000",
       "FY2025 collections ran $239,126 (2.4 percent) below certified yield, an ordinary delinquency level; "
@@ -2255,9 +2178,10 @@ tbl(["Measure", "Estimated annual value", "How it works"],
             "new recurring revenue and recurring cost reductions, and the workbook's Alternatives tab labels each one "
             "by type with a confidence rating and what would firm it up. Values are estimates derived from the "
             "district's audited figures and state data; ranges overlap and are not additive to the penny. The "
-            "rows sum to $1.4 to $2.3 million a year, and that band is the published number, with no haircut "
-            "applied; each line carries its own confidence rating on the Alternatives tab, against an annual "
-            "reserve drawdown of $1.1 to $1.2 million.",
+            "2018 restore plus the counted-once cost package alone is $2.5 to $3.0 million a year, against an "
+            "annual reserve drawdown of $1.1 to $1.2 million; the remaining lines overlap the growth plan's "
+            "enrollment lever, and each carries its own confidence rating on the Alternatives tab, which also "
+            "prices the KRS 160.470 four percent revenue mechanics row by row.",
     bold_first_col=True)
 
 H2("The closure analysis the district confirms does not exist")
