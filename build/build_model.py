@@ -455,7 +455,7 @@ put(rd, "A118", "Registered homeschoolers, Paris Independent (2022-23)"); put(rd
 put(rd, "A119", "County total registered homeschoolers (a floor; KY letter compliance is incomplete)"); put(rd, "B119", "=B117+B118", BLK, NUM, bold=True)
 put(rd, "A120", "County school-age (5-17) residents in private school OR homeschool (ACS 2019-23; the Census asks these as one combined answer; margin of error +/-299)"); put(rd, "B120", 1135, BLUE, NUM)
 put(rd, "A121", "Same figure, ACS 2014-18 window: the pool nearly tripled in five years"); put(rd, "B121", 422, BLUE, NUM)
-put(rd, "A122", "Of the current pool, seats at the county's ONLY private school (St. Mary, Paris, PK-5; federal Private School Survey 2023-24)"); put(rd, "B122", 96, BLUE, NUM)
+put(rd, "A122", "Of the current pool, seats at St. Mary (Paris, PK-5; federal Private School Survey 2023-24). Bourbon Christian Academy (Millersburg, K-12) is absent from that voluntary survey, so its students are uncounted and the pool stays a floor"); put(rd, "B122", 96, BLUE, NUM)
 put(rd, "A123", "Bourbon Co residents enrolled in OUT-OF-COUNTY public districts (KDE Non-Resident Student report, SY2024-25)"); put(rd, "B123", 76, BLUE, NUM)
 put(rd, "A124", "  of which Cloverport Independent, host of the statewide virtual academy: a 150-mile 'commute' that is really virtual enrollment"); put(rd, "B124", 10, BLUE, NUM)
 put(rd, "A125", "Out-of-county students already enrolled in Bourbon Co schools (same KDE report)"); put(rd, "B125", 131, BLUE, NUM)

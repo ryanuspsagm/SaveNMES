@@ -313,6 +313,14 @@ def main():
                    "$213,000", "Cloverport", "247 Bourbon County Schools residents",
                    "letter of intent", "KRS 159.160", "$4,226", "St. Mary"]:
         chk(needle in t, f"PDF recruitment pool intact: {needle}")
+    chk("Bourbon Christian Academy" in t and "Bourbon Christian Academy" in html
+        and any("Bourbon Christian Academy" in v for v in cells),
+        "second private school named on site, report, and model")
+    chk("only private school" not in t and "only private school" not in html
+        and not any("ONLY private school" in v for v in cells),
+        "corrected: St. Mary no longer called the county's only private school")
+    chk((REPO / "build" / "bourbon_christian_academy_home_2026_08.html").exists(),
+        "Bourbon Christian Academy source page archived in build/")
     for needle in ["259 registered homeschool", "Fayette pulling 54 commuters",
                    "$4,626"]:
         chk(needle in html, f"site recruitment pool intact: {needle}")

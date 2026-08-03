@@ -9,7 +9,7 @@ public source cited in the report and on the site.
 
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
-- `Saving_North_Middletown_Elementary.pdf` - the 49-page report.
+- `Saving_North_Middletown_Elementary.pdf` - the 50-page report.
 - `SaveNMES_Executive_Summary.pdf` - the two-page executive summary (built by `build/build_summary.py`).
 - `NMES_Financial_Model.xlsx` - the 17-tab financial model (455 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
