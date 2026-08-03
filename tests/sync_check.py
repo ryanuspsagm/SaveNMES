@@ -153,11 +153,11 @@ if levy_base == 7829060 and round(cum) == 977568 and "sYrs" not in html:
     match(f"levy base $7,829,060 (GF only) and 3-yr path to $977,568 live in model+PDF; 4 percent framing off the site")
 else:
     diff(f"levy: model base {levy_base}, cum {cum:.0f}, site 4-percent remnants: {'sYrs' in html}")
-restore_full = round((TH["B5"].value - TH["B12"].value) * TH["B32"].value / TH["B71"].value)
-if restore_full == 1699479 and "1699479" in html and "$191,000 per cent" in html:
-    match("2018 restore $1,699,479 = 8.9 cents x the model yield; site JS constant and basis note match")
+restore_full = round((TH["B5"].value - TH["B12"].value) * 1661885191 / 10000)
+if restore_full == 1479078 and "1479078" in html and "$166,189 per cent" in html:
+    match("2018 restore $1,479,078 = 8.9 cents x the certified real base; site JS constant and basis note match")
 else:
-    diff(f"2018 restore: model {restore_full}, site constant {'1699479' in html}")
+    diff(f"2018 restore: computed {restore_full}, site constant {'1479078' in html}")
 y1 = levy_base * 0.04
 pdf_levy_ok = "313,000" in pdf_flat and "978,000" in pdf_flat and "639,000" in pdf_flat
 if pdf_levy_ok: match(f"PDF levy path ($313K yr1, $639K yr2, $978K yr3) matches computed ({y1:,.0f} / 638,851 / 977,568)")
@@ -235,16 +235,16 @@ if not rec_bad: match("archived Sci/SS/Writing averages recompute from the per-s
 else: diff(f"Sci/SS/Writing average recompute mismatches: {rec_bad}")
 
 # the plan calculator mirrors the model's transformative chain lever for lever
-plan_ok = (275 * 4226 + 760000 + 1699479 - 1738653 == 1882976
+plan_ok = (275 * 4226 + 760000 + 1479078 - 1738653 == 1662575
            and 'id="sPw" min="0" max="550" value="275"' in html
            and 'id="sPt" min="0" max="10" value="0"' in html
            and "kids*4226" in html and "restore-1738653" in html
            and "*13.008" in html and "bonds+32000000" in html
-           and "(15.69/8.9)" in html and "191000" in html
+           and "(15.69/8.9)" in html and "166189" in html
            and "$1,738,653" in pdf_flat and "$2,648,086" in pdf_flat
-           and "$1,882,976" in html and "275 of 550" in html and "275 of 550" in pdf_flat)
+           and "$1,662,575" in html and "275 of 550" in html and "275 of 550" in pdf_flat)
 if plan_ok:
-    match("plan calculator: leakage lever (0-550 at $4,226) defaults to half the pool (275), trending FY2026 gap $1,738,653, default surplus $1,882,976 (site+PDF), capacity anchored on the advisor's $32M")
+    match("plan calculator: leakage lever (0-550 at $4,226) defaults to half the pool (275), trending FY2026 gap $1,738,653, default surplus $1,662,575 (site+PDF), capacity anchored on the advisor's $32M")
 else:
     diff("plan calculator bases or defaults out of sync with the re-based chain")
 
@@ -367,7 +367,7 @@ if xfer == 1320939 and "$1,320,939" in pdf_flat and "$1.32 million" in html:
 else:
     diff(f"capital transfer: model {xfer}, site $1.32M {'$1.32 million' in html}, pdf {'$1,320,939' in pdf_flat}")
 gap_b, gap_c = ds_vals.get("Operating gap to close first", (None, None))
-if gap_b == 1900000 and gap_c == 373989 and "$21 million" not in pdf_flat:
+if gap_b == 1787918 and gap_c == 373989 and "$21 million" not in pdf_flat:
     match("balanced-budget scenario inputs ($1.9M / $373,989 gaps) live in the model; the $21M/$25M walk retired from the report")
 else:
     diff(f"scenario: model gaps {gap_b}/{gap_c}, pdf $21M {'$21 million' in pdf_flat}, $25M {'$25 million' in pdf_flat}")
@@ -469,15 +469,15 @@ else:
     diff(f"levy model endpoints: {TH2['B58'].value}/{TH2['O58'].value}/{TH2['O66'].value}")
 
 # ---------- 11. beyond-4% recallable levy options (v3.7) ----------
-lv_yield = TH2["B32"].value / TH2["B71"].value          # 7,829,060 / 41.0
+lv_yield = 1661885191 / 10000                            # certified real base per cent
 lv_median = sorted(TH2[f"O{r}"].value for r in (58, 59, 60, 61, 63, 64, 65, 66))
 lv_median = (lv_median[3] + lv_median[4]) / 2            # median of eight, Fayette excluded
-lv_cases = [(TH2["B24"].value, "$1.01 million", 112),    # Harrison 57.7
-            (lv_median,        "$1.51 million", 167),    # regional median 60.3
-            (TH2["B5"].value,  "$1.70 million", 188),    # Bourbon's own 2018 rate 61.3
-            (TH2["O61"].value, "$2.50 million", 277)]    # Clark 65.5
+lv_cases = [(TH2["B24"].value, "$0.88 million", 112),    # Harrison 57.7
+            (lv_median,        "$1.31 million", 167),    # regional median 60.3
+            (TH2["B5"].value,  "$1.48 million", 188),    # Bourbon's own 2018 rate 61.3
+            (TH2["O61"].value, "$2.18 million", 277)]    # Clark 65.5
 percent_cost = TH2["B73"].value * 0.01 / 100             # $21.16 per cent on the median home
-ok_lv = abs(lv_yield - 190952.68) < 1 and abs(lv_median - 60.3) < 0.01 and abs(percent_cost - 21.16) < 0.005
+ok_lv = abs(lv_yield - 166188.52) < 1 and abs(lv_median - 60.3) < 0.01 and abs(percent_cost - 21.16) < 0.005
 for rate, revstr, fam in lv_cases:
     cents = rate - TH2["B12"].value
     rev = cents * lv_yield
@@ -489,9 +489,10 @@ else:
     diff(f"beyond-4% options mismatch: yield {lv_yield:.2f}, median {lv_median}, cost/cent {percent_cost}")
 lv_first_call = 373989 + 1320939
 lv_margin = (TH2["B5"].value - TH2["B12"].value) * lv_yield - lv_first_call
-if lv_first_call == 1694928 and round(lv_margin) == 4551 and "$4,551" in pdf_flat \
+if lv_first_call == 1694928 and -216100 < round(lv_margin) < -215600 and "$216,000" in pdf_flat \
+        and "$4,551" not in pdf_flat \
         and str(TH2["B83"].value).startswith("=Debt_Service!") and TH2["B85"].value == "=B84-B83":
-    match("beyond-4% sequencing: 2018 rate covers gap+sweep ($1,694,928) within $4,551, live in model")
+    match("beyond-4% sequencing: 2018 rate covers the close and most of the sweep, about $216,000 remaining from the cost package; the old $4,551 precision claim is gone")
 else:
     diff(f"beyond-4% sequencing: first call {lv_first_call}, margin {lv_margin:.0f}")
 
@@ -539,26 +540,26 @@ else:
 # transformative check: default settings (no recovery, low costs, full restore) clear the
 # trending FY2026 gap, fund the 5% certified raise, and leave debt room, alongside the
 # freed restricted capacity
-surplus = 760000 + 1699479 - 1738653
+surplus = 760000 + 1479078 - 1738653
 raise_cost = 10000388 * 0.05 * 1.0145
 debt_room = surplus - raise_cost
 bonds = debt_room * (1 - 1.045 ** -20) / 0.045
-default_bonds = (1882976 - raise_cost) * (1 - 1.045 ** -20) / 0.045
-if (surplus == 720826 and abs(raise_cost - 507270) < 2 and abs(bonds - 2777936) < 2000
-        and abs(default_bonds - 17895188) < 6000
-        and "$507,000" in html and "$2.8 million" in html and "$32 million" in html
-        and "$35 million" in html and "$507,000" in pdf_flat and "$35 " in pdf_flat
-        and "$32 million" in pdf_flat and "$2.8 million" in pdf_flat
-        and "$17.9 million" in html and "$17.9 million" in pdf_flat
-        and "$50 million" in html and "$50 million" in pdf_flat
-        and "$72 million" in html and "$72 million" in pdf_flat):
-    match("transformative check: floor $721K (raise + $2.8M bonds, ~$35M) and central-case default $1.88M (raise + $17.9M bonds, ~$50M), site+PDF")
+default_bonds = (1662575 - raise_cost) * (1 - 1.045 ** -20) / 0.045
+if (surplus == 500425 and abs(raise_cost - 507270) < 2 and surplus < raise_cost
+        and raise_cost - surplus < 7000
+        and abs(default_bonds - 15027967) < 6000
+        and "$507,000" in pdf_flat and "within $7,000" in html and "within $7,000" in pdf_flat
+        and "$32 million" in html and "$32 million" in pdf_flat
+        and "$15.0 million" in pdf_flat
+        and "$47 million" in html and "$47 million" in pdf_flat
+        and "$69 million" in html and "$69 million" in pdf_flat):
+    match("transformative check: floor $500K (within $7K of the raise, advisor's $32M) and central-case default $1.66M (raise + $15.0M bonds, ~$47M), site+PDF")
 else:
-    diff(f"transformative check mismatch: surplus {surplus:.0f}, raise {raise_cost:.0f}, bonds {bonds:.0f}, strings on site: {('$35 million' in html)}")
+    diff(f"transformative check mismatch: surplus {surplus:.0f}, raise {raise_cost:.0f}, default bonds {default_bonds:.0f}")
 # the leakage lever and the withdrawn claims
-top_surplus = 550 * 4226 + 1300000 + 1699479 - 1738653
-if (top_surplus == 3585126 and "$721,000 a year to spare" in html
-        and "$721,000 a year to spare" in pdf_flat
+top_surplus = 550 * 4226 + 1300000 + 1479078 - 1738653
+if (top_surplus == 3364725 and "$500,000 a year to spare" in html
+        and "$500,000 a year to spare" in pdf_flat
         and "$422,600 a year" in html and "$422,600 a year" in pdf_flat
         and "10 percent raise" not in html and "$52 million" not in html
         and "withdrawn with the lever correction" in pdf_flat
@@ -591,7 +592,7 @@ else:
 
 # site text spot checks
 for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $591,545 a year at the left end to saving $484,582 a year", "closure range prose"),
-                 ("$7,829,060", "GF levy basis in the levy note"), ("$2.65 million", "deficit figure in prose"),
+                 ("$166,189 per cent", "certified real-estate yield in the levy note"), ("$2.65 million", "deficit figure in prose"),
                  ("holds 128 today", "enrollment in prose"), ("a 174 rating", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")
     else: diff(f"site text missing '{s}' ({label})")

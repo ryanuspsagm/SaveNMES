@@ -9,7 +9,7 @@ public source cited in the report and on the site.
 
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
-- `Saving_North_Middletown_Elementary.pdf` - the 50-page report.
+- `Saving_North_Middletown_Elementary.pdf` - the 52-page report.
 - `SaveNMES_Executive_Summary.pdf` - the two-page executive summary (built by `build/build_summary.py`).
 - `NMES_Financial_Model.xlsx` - the 17-tab financial model (459 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
@@ -147,15 +147,17 @@ corrections section lists what changed and why.
   $2.9M. New School_Costs model tab carries all of it live.
 - v3.7 (July 26, 2026): the recallable levy options beyond 4 percent
   (KRS 160.470), priced at Bourbon's own audited yield of about $191,000
-  per cent of General Fund rate ($7,829,060 across 41.0 GF cents). Four
+  per cent of rate (v4.6 correction: $166,189 per real cent from the
+  audit's certified valuation split; the original blended $190,953
+  mixed tangible taxed at 64.5 cents into a real-rate move). Four
   benchmark rates (match Harrison 57.7, the regional median 60.3 with
   Fayette excluded, Bourbon's own 2018 rate 61.3, Clark 65.5) with the
   cost to the median $211,600 home ($21.16 per year per cent) and the
   direct bond capacity of each. Sequencing result: restoring the 2018
-  rate raises $1,699,479, covering the FY2026-trend operating gap plus
-  the end of the $1,320,939 capital sweep ($1,694,928) to within $4,551,
-  which unlocks roughly $35 million of construction capacity with
-  nothing closed. Site levy card, report Section 9, Tax_History rows
+  rate raises about $1,479,000, covering the operating close and most
+  of the $1,320,939 capital sweep, the balance well inside the cost
+  package, which unlocks roughly $35 million of construction capacity
+  with nothing closed. Site levy card, report Section 9, Tax_History rows
   70-91, all formulas live.
 - v3.6 (July 26, 2026): fourteen years of school levies across nine area
   districts, from KDE's Local District Tax Levies files (Total Real

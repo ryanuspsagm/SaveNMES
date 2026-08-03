@@ -105,8 +105,8 @@ def main():
             ok("closure verdict text removed; retained-staff default note present")
         else: bad(f"closure readout cleanup: leftover={gone_verdict} note={note_ok}")
         tax = pg.text_content("#rTax").strip()
-        if "0.7 cents" in tax and "a month for the median homeowner" in tax:
-            ok("tax-compensation line at the default loss: 0.7 cents of rate")
+        if "0.8 cents" in tax and "a month for the median homeowner" in tax:
+            ok("tax-compensation line at the default loss: 0.8 cents of rate on the certified real base")
         else: bad(f"tax line at default: {tax[:80]}")
 
         # ceiling: their fullest case
@@ -140,8 +140,8 @@ def main():
         if pg.evaluate("document.getElementById('youClose').style.left") == "0%":
             ok("closure percentile marker follows the calculator (0% at the floor)")
         else: bad(f"marker at floor: {pg.evaluate('document.getElementById(`youClose`).style.left')}")
-        if "3.1 cents" in pg.text_content("#rTax"):
-            ok("tax-compensation line at the full-loss floor: 3.1 cents of rate")
+        if "3.6 cents" in pg.text_content("#rTax"):
+            ok("tax-compensation line at the full-loss floor: 3.6 cents of rate")
         else: bad(f"tax line at floor: {pg.text_content('#rTax')[:80]}")
 
         # --- Growth calculator ---
@@ -190,31 +190,31 @@ def main():
         rplan = pg.text_content("#rPlan").strip()
         pverd = pg.text_content("#rPlanVerdict").strip()
         opw0 = pg.text_content("#oPw").strip()
-        if rplan == "$1,882,976" and "$32 million of bonding capacity" in pverd and opw0 == "275 students ($1,162,150 a year)":
-            ok("plan calculator default: half the pool (275) + low costs + full restore run $1,882,976 ahead of the trending gap")
+        if rplan == "$1,662,575" and "$32 million of bonding capacity" in pverd and opw0 == "275 students ($1,162,150 a year)":
+            ok("plan calculator default: half the pool (275) + low costs + full restore run $1,662,575 ahead of the trending gap")
         else: bad(f"plan defaults: {rplan} / {opw0} / {pverd[:100]}")
         pg.fill("#sPt", "5"); pg.dispatch_event("#sPt", "input")
         pverd5 = pg.text_content("#rPlanVerdict")
-        if "Pays the 5 percent raise" in pverd5 and "$17.9 million of new bonds" in pverd5 and "49.9 million of building capacity" in pverd5:
-            ok("plan default affords the 5% raise: $17.9M bonds, $49.9M advisor-anchored capacity")
+        if "Pays the 5 percent raise" in pverd5 and "$15.0 million of new bonds" in pverd5 and "47.0 million of building capacity" in pverd5:
+            ok("plan default affords the 5% raise: $15.0M bonds, $47.0M advisor-anchored capacity")
         else: bad(f"plan default raise: {pverd5[:110]}")
         pg.fill("#sPw", "0"); pg.dispatch_event("#sPw", "input")
         pverd5f = pg.text_content("#rPlanVerdict")
-        if "Pays the 5 percent raise" in pverd5f and "$2.8 million of new bonds" in pverd5f and "34.8 million of building capacity" in pverd5f:
-            ok("plan zero-recovery floor still affords the 5% raise: $2.8M bonds, $34.8M capacity")
+        if "covers up to about a 4 percent raise" in pverd5f:
+            ok("plan zero-recovery floor lands within $7,000 of the 5% raise: calculator honestly caps at 4%")
         else: bad(f"plan floor raise: {pverd5f[:110]}")
         pg.fill("#sPr", "60"); pg.dispatch_event("#sPr", "input")
-        if "up to about a 0 percent raise" in pg.text_content("#rPlanVerdict"):
-            ok("plan calculator caps the raise honestly (5% unaffordable at zero recovery and a partial restore)")
+        if "fall $91,206 short" in pg.text_content("#rPlanVerdict"):
+            ok("plan calculator reports the shortfall honestly (zero recovery + 60% restore misses the gap)")
         else: bad(f"plan raise cap: {pg.text_content('#rPlanVerdict')[:90]}")
         pg.fill("#sPr", "100"); pg.dispatch_event("#sPr", "input")
         pg.fill("#sPw", "550"); pg.dispatch_event("#sPw", "input")
         pg.fill("#sPc", "1300000"); pg.dispatch_event("#sPc", "input")
         pverd2 = pg.text_content("#rPlanVerdict")
         opw = pg.text_content("#oPw").strip()
-        if (pg.text_content("#rPlan").strip() == "$3,585,126" and "$40.0 million of new bonds" in pverd2
-                and "72.0 million of building capacity" in pverd2 and opw == "550 students ($2,324,300 a year)"):
-            ok("plan slider tops: the full 550-student pool prices at $2,324,300; surplus $3,585,126 buys the 5% raise, $40.0M bonds, $72.0M capacity")
+        if (pg.text_content("#rPlan").strip() == "$3,364,725" and "$37.2 million of new bonds" in pverd2
+                and "69.2 million of building capacity" in pverd2 and opw == "550 students ($2,324,300 a year)"):
+            ok("plan slider tops: the full 550-student pool prices at $2,324,300; surplus $3,364,725 buys the 5% raise, $37.2M bonds, $69.2M capacity")
         else: bad(f"plan top ends: {pg.text_content('#rPlan')} / {opw} / {pverd2[:100]}")
         pg.fill("#sPw", "0"); pg.dispatch_event("#sPw", "input")
         pg.fill("#sPc", "760000"); pg.dispatch_event("#sPc", "input")
@@ -243,12 +243,12 @@ def main():
         if gone4 == 0: ok("4 percent compounder removed from the site")
         else: bad(f"{gone4} 4-percent-option elements still present")
         r18 = pg.text_content("#rR18").strip()
-        if r18 == "$1,699,479":
-            ok("2018 restore default $1,699,479 at 100% (ties to the $191K/cent yield)")
+        if r18 == "$1,479,078":
+            ok("2018 restore default $1,479,078 at 100% (ties to the $166,189/cent certified real yield)")
         else: bad(f"2018 restore default: {r18}")
         pg.fill("#sR18", "50"); pg.dispatch_event("#sR18", "input")
-        if pg.text_content("#rR18").strip() == "$849,740":
-            ok("2018 restore scales: $849,740 at 50%")
+        if pg.text_content("#rR18").strip() == "$739,539":
+            ok("2018 restore scales: $739,539 at 50%")
         else: bad(f"2018 restore at 50%: {pg.text_content('#rR18')}")
 
         # --- Fill planner removed (duplicative of the growth calculator) ---

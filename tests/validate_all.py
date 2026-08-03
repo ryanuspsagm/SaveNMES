@@ -333,7 +333,7 @@ def main():
     # the Kentucky closure record (v3.3)
     for needle in ["Figure 9.", "339 rural", "72 towns", "$1,102", "$818",
                    "$8,440", "$541", "$6,250 to $7,813", "West Perry", "Adair",
-                   "Meade Memorial", "Leslie County 2013", "show us the data",
+                   "Meade Memorial", "Leslie County 2013", "we would welcome being wrong",
                    "nine times", "ky_rural_closures_", "ky_closure_dollar_cases.csv"]:
         chk(needle in t, f"PDF KY closure record intact: {needle}")
     chk("chartKYRecord" not in html and "chartKYDist" not in html,
@@ -367,7 +367,7 @@ def main():
                    "five of the last twelve", "ky_levy_history_2012_2026.csv"]:
         chk(needle in t, f"PDF levy history intact: {needle}")
     for needle in ["chartLevyHist", "5.4 percent lower", "107.5 percent",
-                   "raised rates anyway", "one did not"]:
+                   "a decision, not an admission", "chose to keep more revenue"]:
         chk(needle in html, f"site levy history intact: {needle}")
     chk((REPO / "build" / "ky_levy_history_2012_2026.csv").exists()
         and (REPO / "build" / "levy_series.json").exists(),
@@ -408,8 +408,8 @@ def main():
         and "A suggestion: three committees" in html
         and "Volunteers from the NMES community stand at the ready" in html,
         "four NMES-specific asks; committees moved to Part Two as a suggestion")
-    chk("four things" in html and "Four asks that cost the district nothing" in html
-        and "four asks that cost nothing" in t,
+    chk("four things" in html and "Four asks that commit no new money" in html
+        and "four asks that commit no new money" in t,
         "four-asks framing consistent across hero, section, and report")
     # v4.2: the closure calculator exposes all seven grid levers, plus the growth calculator
     for lever in ['id="sCap"', 'id="sFix"', 'id="sTea"', 'id="sLeav"',
@@ -420,7 +420,7 @@ def main():
         chk(lever in html, f"growth-model slider present: {lever}")
     chk("5,832 weighted scenarios" in html and 'id="rRank"' in html,
         "calculator presented as the live weighted scenario model with a grid-rank readout")
-    chk("$141,780" in html and "every single scenario pays" in html and "19,683" in html
+    chk("$141,780" in html and "every scenario in which students arrive pays" in html and "19,683" in html
         and "$3,331" in html,
         "growth calculator carries the published classroom-indexed grid stats")
     # v4.5 review round: median default, percentile-only readouts, three roads,
@@ -429,7 +429,7 @@ def main():
                    "This scenario lands at about the", "19,683 weighted scenarios",
                    "The default reflects the superintendent's written statement",
                    "the median of the 19,683 weighted scenarios: 30 added students",
-                   'value="140"', "Grow the district", "+$3.6M",
+                   'value="140"', "Grow the district", "+$3.4M",
                    'class="forksvg"', ">SHRINK TO FIT</text>", ">GROW AND THRIVE</text>",
                    "Shrink to Fit: close NMES", "Grow and Thrive: grow NMES",
                    'class="fork-grid"']:
@@ -452,10 +452,10 @@ def main():
                    'id="youClose"', 'id="youGrow"',
                    "gold marker is your scenario"]:
         chk(needle in html, f"plan calculator / tax line / percentile bars: {needle}")
-    chk(760000 + 1699479 - 1738653 == 720826,
-        "plan zero-recovery floor recomputes to $720,826 (no recovery, low costs, full restore)")
-    chk(275 * 4226 == 1162150 and 1162150 + 760000 + 1699479 - 1738653 == 1882976,
-        "plan default surplus recomputes to $1,882,976 (half the pool, low costs, full restore)")
+    chk(760000 + 1479078 - 1738653 == 500425,
+        "plan zero-recovery floor recomputes to $500,425 (no recovery, low costs, full restore)")
+    chk(275 * 4226 == 1162150 and 1162150 + 760000 + 1479078 - 1738653 == 1662575,
+        "plan default surplus recomputes to $1,662,575 (half the pool, low costs, full restore)")
     chk(550 * 4226 == 2324300 and 100 * 4226 == 422600,
         "leakage lever recomputes: the 550-student pool at $4,226 each, $422,600 per 100")
     chk(abs(25432349.78 - 3328472.47 - 1409590.27 - 20694287.04) < 0.02
@@ -520,15 +520,15 @@ def main():
         "the state's own SEEK forecast and final files are archived")
     chk(round(10000388 * 0.05 * 1.0145) == 507270,
         "plan raise cost recomputes: 5 percent of the certified payroll with the 1.45 percent load")
-    _cap = (720826 - 10000388 * 0.05 * 1.0145) * 13.008 + 32000000
-    chk(34_600_000 < _cap < 35_000_000,
-        "plan capacity recomputes to about $35 million at the zero-recovery floor (advisor-anchored)")
-    _cap_def = (1882976 - 10000388 * 0.05 * 1.0145) * 13.008 + 32000000
-    chk(49_700_000 < _cap_def < 50_100_000,
-        "plan capacity recomputes to about $50 million at the central-case default (half the pool)")
-    _cap_top = (550 * 4226 + 1300000 + 1699479 - 1738653 - 10000388 * 0.05 * 1.0145) * 13.008 + 32000000
-    chk(71_900_000 < _cap_top < 72_200_000,
-        "plan slider top ends recompute (full 550-student pool): about $72 million")
+    _cap = (500425 - 10000388 * 0.05 * 1.0145) * 13.008 + 32000000
+    chk(31_800_000 < _cap < 32_000_000,
+        "plan floor sits just under the advisor's $32 million: the floor is within $7,000 of the raise")
+    _cap_def = (1662575 - 10000388 * 0.05 * 1.0145) * 13.008 + 32000000
+    chk(46_900_000 < _cap_def < 47_200_000,
+        "plan capacity recomputes to about $47 million at the central-case default (half the pool)")
+    _cap_top = (550 * 4226 + 1300000 + 1479078 - 1738653 - 10000388 * 0.05 * 1.0145) * 13.008 + 32000000
+    chk(69_000_000 < _cap_top < 69_300_000,
+        "plan slider top ends recompute (full 550-student pool): about $69 million")
     chk((REPO / "build" / "baird_lpc_june2026.pdf").exists(),
         "the advisor's June 2026 bonding presentation is archived")
     chk(abs(3252893 - (1200105 + 1200105 + 276245 + 276745 + 173944 + 126250)) == 501,
@@ -573,8 +573,8 @@ def main():
         and "one in three county children" not in t
         and "$300,000-$425,000" not in t and "$145,000-$290,000" not in t,
         "retired first-wave totals, one-in-three pool, and stale menu rows are gone from the report")
-    chk("$72 million of capacity" in html and "about $72 million of capacity" in t
-        and "$72 million" in es,
+    chk("$69 million" in html and "about $69 million of capacity" in t
+        and "$69 million" in es,
         "the high-case plan scenario mirrored across site, report, and summary")
     _jform = "form.jotform.com/262137656784064"
     for needle in ['id="famSurvey"', f'src="https://{_jform}"',
@@ -658,7 +658,7 @@ def main():
     for needle in ["Part One: The Case Against Closing NMES",
                    "Part Two: The District Needs Growth, Not Closures", "$19,080", "$19,020",
                    "107.5 percent", "Eminence", "149 last fall", "occupational",
-                   "Marion County voters", "$6.2 to $6.9 million of remaining", "$573,000"]:
+                   "Marion County voters", "$6.2 to $6.9 million of remaining", "$499,000"]:
         chk(needle in t, f"PDF v4 opening and relocated brief facts intact: {needle}")
     for needle in ["mirrors the executive summary published at SaveNMES.org",
                    "Fact one: it is the county's best elementary school",
@@ -713,21 +713,24 @@ def main():
         "the records ask that settles the 4 percent question is published in the report")
 
     # beyond-4% recallable levy options (v3.7)
-    for needle in ["recallable levy options", "KRS 160.470", "$191,000 per cent",
-                   "$211,600", "$21.16", "$1,699,479", "$4,551",
-                   "$13.2, $19.6, $22.1, and $32.5 million",
+    for needle in ["recallable levy options", "KRS 160.470", "$166,189",
+                   "$211,600", "$21.16", "about $1,479,000", "$1,661,885,191",
+                   "$11.5, $17.1, $19.2, and $28.3 million",
                    "recalled by the voters it taxes",
                    "recalled by the children it displaces"]:
         chk(needle in t, f"PDF beyond-4% levy options intact: {needle}")
-    for needle in ["KRS 160.470", "not a ceiling", "$1.0 to $2.5 million a year"]:
+    for needle in ["KRS 160.470", "not a ceiling", "$0.9 to $2.2 million a year", "subject to voter recall"]:
         chk(needle in html, f"site levy card (beyond-2018 stated in prose): {needle}")
-    for needle in ["41.0-cent General Fund share",
-                   "verified against KDE's own levied-rate file", "$190,953 per cent"]:
-        chk(needle in t, f"levy verification basis lives in the report: {needle}")
+    for needle in ["$1,843,569,625", "$9,880,143", "64.5 tangible",
+                   "$181,684,434", "corrected here and"]:
+        chk(needle in t, f"levy per-cent derivation lives in the report: {needle}")
     chk("Bath County's building nickel" not in html and "recall record" not in html,
         "the recall-record note is retired from the site (report keeps it)")
-    chk(round(7829060 / 41.0 * 8.9) == 1699479 and abs(41.0 + 5.7 + 5.7 - 52.4) < 0.01,
-        "levy revenue verifies: $7,829,060 at the 41.0-cent GF share yields $190,953 per cent, $1,699,479 for 8.9 cents; 41.0 plus two 5.7 nickels = the printed 52.4")
+    chk(1661885191 + 181684434 == 1843569625
+        and abs(0.00524 * 1661885191 + 0.00645 * 181684434 - 9880143) < 2
+        and round(1661885191 / 10000 * 8.9) == 1479078
+        and abs(41.0 + 5.7 + 5.7 - 52.4) < 0.01,
+        "levy yield verifies: the audit's valuation splits at its own calculated levy; $166,189 per real cent, $1,479,078 for 8.9 cents; 41.0 plus two 5.7 nickels = the printed 52.4")
     chk("4 percent option" not in html and 'id="sYrs"' not in html,
         "4 percent option framing removed from the site")
     chk("Bath County" in t and "January 2025" in t,
@@ -781,7 +784,7 @@ def main():
     # ---- v3.9 release content ----
     for needle in ["$1,285,310", "$21,482,445", "$1,018,671", "$938,690", "$227,831",
                    "$276,928", "5.5 fixed positions", "$30,410,725", "$30,201,047",
-                   "7.6 percent", "450 to 550", "13 to 15 percent", "3,594", "3,548",
+                   "6.3 percent", "450 to 550", "13 to 15 percent", "3,594", "3,548",
                    "2,912", "2,616", "$66,860"]:
         chk(needle in t, f"PDF v3.9 content present: {needle}")
     for needle in ["450 to 550", "13 to 15 percent", "3,594", "2,616"]:
@@ -795,8 +798,8 @@ def main():
         "site calculator sliders span exactly the published grids: leakage capped at the grid's 50 "
         "percent, growth target in five-student steps, so no reachable setting prices outside the "
         "published floors and ceilings")
-    chk("Version 4.5" in t and "August 2, 2026" in t and "Version 4.2" in t,
-        "PDF carries the v4.5 version block and the v4.2 history entry")
+    chk("Version 4.6" in t and "August 3, 2026" in t and "Version 4.5" in t and "Version 4.2" in t,
+        "PDF carries the v4.6 correction block and the v4.5 and v4.2 history entries")
     chk("Saving_NMES_v4.5_2026-08-02.pdf" in html
         and (REPO / "reports" / "Saving_NMES_v4.5_2026-08-02.pdf").exists(),
         "v4.5 archived in reports/ and linked from the version history")
@@ -856,7 +859,7 @@ def main():
     chk("balanced-budget scenario" not in t
         and "The $14 million plan, and the levers not on the table" not in t,
         "the $14 million walk is retired from the report; the Debt_Service tab carries it")
-    chk("$2.5 to $3.0 million" in t,
+    chk("$2.2 to $2.8 million" in t,
         "scenario capacity range $21M/$25M consistent in the PDF")
 
     # money-story cleanup: GF-only levy base, both denominators, precise debt wording
@@ -874,21 +877,21 @@ def main():
         "multi-age reorganization removed from the report")
     chk("its savings sheet says two" in t and "count supports three" in t,
         "PDF keeps the closure staffing-count judgment (v4.2: the district's own two-vs-three)")
-    for needle in ["5 percent raise for every certified teacher", "$507,000",
-                   "$2.8 million", "$35 million of building capacity"]:
+    for needle in ["5 percent raise for every certified teacher", "$500,000 a year to spare",
+                   "$32 million of building capacity", "$47 million of capacity"]:
         chk(needle in html, f"transformative surplus claim on the site: {needle}")
-    chk("5 percent raise for every certified teacher" in t and "$35 " in t and "$32 million" in t,
-        "re-based transformative claim in the report, advisor-anchored")
+    chk("5 percent raise for every certified teacher" in t and "within $7,000" in t and "$32 million" in t,
+        "re-based transformative claim in the report, advisor-anchored, floor honestly short of the raise")
     chk("10 percent raise" not in html and "$52 million" not in html
         and "withdrawn with the lever correction" in t,
         "the 10-percent-raise / $52 million claims are withdrawn (lever correction)")
-    for claim, section in [("$35 million of building capacity", 'id="grow"'),
+    for claim, section in [("$32 million of building capacity", 'id="grow"'),
                            ("LOSES $20,007", 'id="model"'),
                            ("$4.6 million lifetime revenue loss", 'id="risks"')]:
         chk(html.index(claim) > html.index(section)
             and html.index(claim) < html.index("<details", html.index(section)),
         f"strongest claim rides the always-visible header: {claim}")
-    chk("$2.5 to $3.0 million" in t and "the counted-once cost package and the 2018 restore" in t,
+    chk("$2.2 to $2.8 million" in t and "the counted-once cost package and the 2018 restore" in t,
         "alternatives raw sums intact in the report (Medicaid removed; site quote retired)")
 
     print(f"PASS {len(ok)}")

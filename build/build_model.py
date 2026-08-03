@@ -38,7 +38,7 @@ def put(ws, cell, val, font=BLK, fmt=None, fill=None, bold=False, wrap=False):
 # ================= README =================
 rm = sheet("ReadMe", [110])
 put(rm, "A1", "Saving North Middletown Elementary School: Financial Model", TITLE)
-put(rm, "A2", "Companion workbook to the July 2026 report 'A Deep Dive into Bourbon County Schools' (Bourbon County, Kentucky)", NOTE)
+put(rm, "A2", "Companion workbook to the report 'Saving North Middletown Elementary School: A Close Look at Bourbon County Schools' (v4.6, August 2026)", NOTE)
 rows = [
  "",
  "PURPOSE",
@@ -56,12 +56,12 @@ rows = [
  "  Audited figures: Bourbon County School District audited financial statements, FY2023-24 and FY2024-25 (posted by KDE).",
  "  Per-pupil spending: Kentucky School Report Card school-level (ESSA) expenditure data, 2023-24.",
  "  SEEK base amounts: Kentucky 2024-2026 and 2026-2028 state budgets. Enrollment/capacity: NCES; 2021 KBE-approved facility plan.",
- "  Multi-year school scores and NMES enrollment history: School_Data tab (backs report Figures 6, 7, and 11).",
- "  County demographics and the full 1989-2025 NMES enrollment series: Demographics tab (backs Section 9 and Figure 14).",
- "  Tax rates, fund split, delinquency check, and the 4% three-year path: Tax_History tab (backs Figure 18).",
+ "  Multi-year school scores and NMES enrollment history: School_Data tab (backs report Figures 1 and 2).",
+ "  County demographics and the full 1989-2025 NMES enrollment series: Demographics tab (backs Section 10 and Figure 14).",
+ "  Tax rates, fund split, delinquency check, and the recallable options: Tax_History tab (backs Section 10 and Figures 15 and 16).",
  "  Boundary rebalancing and fill-to-capacity scenario: Redistricting tab (backs the Section 9 worked example and Figure 15).",
- "  Bonding capacity components and what closure can and cannot change: Debt_Service tab (backs Section 6).",
- "  Student density, route-mile math, and busing cost scenarios: Transport_Geo tab (backs Section 9).",
+ "  Bonding capacity components and what closure can and cannot change: Debt_Service tab (backs Section 8).",
+ "  Student density, route-mile math, and busing cost scenarios: Transport_Geo tab (backs Appendix B).",
  "",
  "CAVEAT",
  "Prepared by a former NMES King and Bourbon County Colonel working alongside Claude, an AI research assistant from Anthropic. Built from public records and",
@@ -140,7 +140,7 @@ arow(48, "Attrition positions, district-wide", 4, NUM, "Judgment call", fill=YEL
 
 put(a, "A50", "CLOSURE SCENARIO JUDGMENTS (estimates; district must replace with actuals)", SEC)
 arow(51, "School administration avoided (principal, office)", 115397, CUR, "MEASURED v4.5: district MUNIS ledger, FY2026 actuals, org 090 functions 2410+2420 (build/munis_extract.py). Was $131,724 from the working budget (program view; the function view prints $132,744, School_Costs!G32) through the prior release.", fill=YEL)
-arow(52, "Plant operations avoided (custodial + building costs)", 128867, CUR, "MEASURED v4.5: MUNIS ledger, org 090 function 2610 actuals: custodial pay and benefits $49,655 + building utilities, disposal, telecom, supplies and repairs $79,211. Was $96,107 from the working budget.", fill=YEL)
+arow(52, "Plant operations avoided (custodial + building costs)", 128866, CUR, "MEASURED v4.5: MUNIS ledger, org 090 function 2610 actuals: custodial pay and benefits $49,655 + building utilities, disposal, telecom, supplies and repairs $79,211. Was $96,107 from the working budget.", fill=YEL)
 arow(53, "Teaching positions truly eliminated", 3, NUM, "Estimate; via attrition only", fill=YEL)
 arow(54, "Added busing cost per year", 137500, CUR, "Estimate; midpoint of $75K-$200K", fill=YEL)
 arow(55, "Students leaving the district on closure", 10, NUM, "Judgment call; see sensitivity table", fill=YEL)
@@ -208,7 +208,7 @@ put(c, "A15", "RECURRING OFFSETS (new costs and lost revenue)", SEC)
 put(c, "A16", "Added busing"); put(c, "B16", "=Assumptions!B54", GRN, CUR)
 put(c, "A17", "SEEK revenue lost to departing students (FY2027 base)"); put(c, "B17", "=Assumptions!B55*Assumptions!B6", GRN, CUR)
 put(c, "A18", "Total offsets", bold=True); put(c, "B18", "=SUM(B16:B17)", BLK, CUR, bold=True)
-put(c, "A20", "NET RECURRING GENERAL FUND SAVING", bold=True)
+put(c, "A20", "NET RECURRING GENERAL FUND SAVING (LEGACY single-point scenario on superseded inputs; the published model is the 5,832-scenario grid at row 37, median a $20,007 LOSS)", bold=True)
 nc = put(c, "B20", "=B13-B18", BLK, CUR, bold=True); nc.border = TOPLINE
 put(c, "A21", "Share of the structural deficit ($2.65M) | of the reserve drawdown ($1.15M)")
 put(c, "B21", "=B20/(Assumptions!B24-Assumptions!B21)", BLK, PCT)
@@ -226,7 +226,7 @@ put(c, "A34", "All-in cost per position (salary + state-paid on-behalf; filing b
 put(c, "C34", "Correct for KDE per-pupil comparisons; the district books $6.94M of on-behalf in FY2026", NOTE, wrap=True)
 put(c, "A35", "GF-borne cost per position (salary + ~5%)"); put(c, "B35", "=Assumptions!B69", GRN, CUR)
 put(c, "C35", "Published schedule: Rank III $41,718 (yr 0) to Rank I $71,447 (yr 29-30). The state pays TRS and KEHP on behalf of districts; eliminating a GF position saves the GF only $50K-$75K", NOTE, wrap=True)
-put(c, "A37", "V4.2 TWO-TAILED SENSITIVITY: SEVEN LEVERS, 5,832 COMBINATIONS (backs Figure 7)", SEC)
+put(c, "A37", "V4.2 TWO-TAILED SENSITIVITY: SEVEN LEVERS, 5,832 COMBINATIONS (backs Figure 5; THIS GRID, not the legacy single-point rows above, is the published closure model)", SEC)
 put(c, "A38", "Lever (low / central / high)", BOLDW, fill=HDR); put(c, "B38", "Low", BOLDW, fill=HDR); put(c, "C38", "Central", BOLDW, fill=HDR); put(c, "D38", "High", BOLDW, fill=HDR); put(c, "E38", "Source", BOLDW, fill=HDR)
 v3levers = [
  ("Non-salary capture (their worksheet, + insurance at the full stop)", 53519, 80279, 127039, "District Response Appendix A: $107,039 of building-bound lines (utilities, telecom, maintenance, custodial supplies) captured at 50/75/100 percent, plus its ~$20,000 insurance figure at the full stop. The worksheet's other $40,693 (supplies, books, field trips, printing = $318/student vs our measured $331) travels with the students."),
@@ -248,13 +248,13 @@ put(c, "B48", "=B39+B40+B41*54479.4-D42-D43*(Assumptions!B6+D44)-D45", BLK, CUR)
 put(c, "C48", "-$591,545 a year: the closure loses money", NOTE)
 put(c, "A49", "Favorable tail (all levers favorable)")
 put(c, "B49", "=D39+D40+D41*54479.4-B42-B43*(Assumptions!B6+B44)-B45", BLK, CUR)
-put(c, "C49", "+$484,582 a year: the district's fullest documented case, still below the plan's $800K-$1M requirement", NOTE)
+put(c, "C49", "+$484,582 a year: the grid's best case (every lever at its closure-friendliest), still below the plan's $800K-$1M requirement", NOTE)
 put(c, "A50", "Distribution of all 5,832 combinations enumerated by build/closure_grid.py: capture, fixed-position, add-ons, property and busing levers take three values each, teachers four (0/1/2/3) and leavers six (0/13/26/38/51/64): 3^5 x 4 x 6 = 5,832. v4.5 lever weights: triangular 1-2-1 on the five levers with a documented central setting; uniform on teachers and leavers, where the record gives no defensible center. Weighted median -$20,007 (the median scenario LOSES money); middle half -$137,095 to +$98,603; 55 percent of weighted scenarios negative; range -$591,545 to +$484,582 (unweighted median -$24,431). v4.5 MUNIS pass: the fixed-position lever now uses FY2026 actuals from the district's own ledger ($214,104) instead of working-budget lines ($218,154). One-time transition costs $100K-$300K in year one are additional. REBUILT IN v4.2 on the district's own 48-page Response to the 10 Questions (archived build/response_to_the_10_questions.pdf): the capture lever uses its Appendix A worksheet, every staffing position is priced at its own fully loaded $54,479.40 (Appendix A.1), the teacher top leg follows its own Appendix B classroom count, and the leakage lever runs to 50 percent. The v3.9 grid (2,916 scenarios, median +$21,571, 45 percent negative) is retained in the version history.", NOTE, wrap=True)
 put(c, "A52", "HOSTILE PAPER CASE, PUBLISHED WITH ITS REFUTATION", SEC)
 put(c, "A53", "Every absorbed student priced at the $9,848 slope (withdrawn in v3.9; kept for the record)")
 put(c, "B53", "=Assumptions!B14*Assumptions!B11-128*9848-137500-10*Assumptions!B6", BLK, CUR)
 put(c, "C53", "About $1.03M on paper, and the $9,848 slope itself was withdrawn in v3.9 (Redistricting row 111). Kept because the refutation stands either way: it requires Cane Ridge at 525 students against its approved 422 rating and Bourbon Central at 555 against 521: exactly the overcrowding the $14M renovation exists to cure. The savings pre-spend the bond.", NOTE, wrap=True)
-put(c, "A55", "MILLERSBURG, 2007: THE COUNTY'S OWN PRECEDENT (backs Figure 8)", SEC)
+put(c, "A55", "MILLERSBURG, CLOSED 2006 (2006-07 CCD FILE; STUDENTS TO THE 2007 CANE RIDGE ADDITION): THE COUNTY'S OWN PRECEDENT (backs Figure 6)", SEC)
 put(c, "A56", "Millersburg Elementary final enrollment (fall 2005; last operated SY 2005-06, closed status in the 2006-07 federal CCD file; distinct from the private military institute, which closed permanently July 2006)"); put(c, "B56", 119, BLUE, NUM)
 put(c, "C56", "NCES CCD; series 153-133-145-139-137-127-129-119; closed 2007; students to Cane Ridge (2007 addition)", NOTE, wrap=True)
 put(c, "A57", "Millersburg population 1980/1990/2000/2010/2020"); put(c, "B57", "987 / 937 / 842 / 792 / 747", NOTE)
@@ -446,7 +446,7 @@ for i, (lbl, a, b2, c2, wname) in enumerate(fair):
     rr = 103 + i
     put(rd, f"A{rr}", lbl); put(rd, f"B{rr}", a, BLUE, CUR); put(rd, f"C{rr}", b2, BLUE, CUR); put(rd, f"D{rr}", c2, BLUE, CUR); put(rd, f"E{rr}", wname, NOTE)
 put(rd, "A110", "Same-building ratings across four consecutive plans: NMES 198-152-174-154, Bourbon Central 564-611-521-640, Cane Ridge 500-550-422-547. Swings up to 128 seats with no major construction after 2009. The 2017 plan (recovered from the Internet Archive; KBE minutes June 7, 2017 corroborate) lists NMES at 154 enrolled against 152 capacity: OVER capacity.", NOTE, wrap=True)
-put(rd, "A111", "VALIDATION AGAINST ACTUALS: withdrawn in v3.9. The two-school cost slope used here depended on memberships (491 and 461) that appear in no archived source file and that contradict B8 and B9 above, and its sign flips from plus $9,848 to minus $941 to minus $22,564 across the three plausible membership pairs. The honest bound is the break-even marginal cost already computed live in rows 57 to 60.", NOTE, wrap=True)
+put(rd, "A111", "VALIDATION AGAINST ACTUALS: withdrawn in v3.9. The two-school cost slope used here depended on memberships (491 and 461, later corroborated as 2023-24 SAAR in the 2026 draft plan, Facility_Plans rows 30-31) that contradict the fall counts in B8 and B9 above, and its sign flips from plus $9,848 to minus $941 to minus $22,564 across the three plausible membership pairs. The honest bound is the break-even marginal cost already computed live in rows 57 to 60.", NOTE, wrap=True)
 put(rd, "A114", "Extreme bound: NMES's own year-over-year cost change 2022-23 to 2023-24 ($259,888 lower with 16 fewer students, about $16,243 per student, which folds in deliberate staffing cuts) gives $18,527 at 174: under Cane Ridge, marginally over Bourbon Central. Even the most hostile actuals-derived number does not restore the cost case.", NOTE, wrap=True)
 
 put(rd, "A116", "THE RECRUITMENT POOL: WHERE FILL-THE-SEATS STUDENTS CAN COME FROM (measured; year noted per row; sources archived under build/)", SEC)
@@ -519,7 +519,7 @@ put(tg, "A32", "All-in cost per additional bus-year"); put(tg, "B32", 55000, BLU
 put(tg, "A33", "Bottom-up added busing cost, low", bold=True); c33 = put(tg, "B33", "=B29", BLK, CUR, bold=True); c33.border = TOPLINE
 put(tg, "A34", "Bottom-up added busing cost, high", bold=True); put(tg, "B34", "=B30+B31*B32", BLK, CUR, bold=True)
 put(tg, "A35", "Report's planning range (Closure_Model offset basis)"); put(tg, "B35", "Between $75,000 and $200,000", NOTE)
-put(tg, "A36", "The bottom-up estimate lands inside the planning range; the $137,500 midpoint used in the Closure_Model stands. Note what closure does not remove: every square mile of the eastern county stays in the coverage area, with longer rides on it, roughly 15 to 20 added minutes each way on US 460.", NOTE, wrap=True)
+put(tg, "A36", "The bottom-up estimate lands inside the planning range. The $137,500 midpoint survives only in the legacy single-point rows; the published grid's central busing figure is the bottom-up $63,000 (Closure_Model row 42). Note what closure does not remove: every square mile of the eastern county stays in the coverage area, with longer rides on it, roughly 15 to 20 added minutes each way on US 460.", NOTE, wrap=True)
 
 put(tg, "A38", "WHAT REBALANCING CHANGES (Redistricting tab scenario)", SEC)
 put(tg, "A39", "Students rezoned to NMES"); put(tg, "B39", "=Redistricting!B12", GRN, NUM)
@@ -594,7 +594,7 @@ put(al, f"A{tot+4}", "Published band, low (raw row sums, no haircut)"); put(al, 
 put(al, f"A{tot+5}", "Published band, high (raw row sums, no haircut; the pre-v4.4 conservative $1.7M high is retired)"); put(al, f"B{tot+5}", f"=C{tot}", BLK, CUR)
 put(al, f"A{tot+6}", "Band midpoint (used in Runway sheet)"); put(al, f"B{tot+6}", f"=(B{tot+4}+B{tot+5})/2", BLK, CUR)
 put(al, f"A{tot+7}", "Average annual GF drawdown (FY2024-25)"); put(al, f"B{tot+7}", "=GF_Summary!D16", GRN, CUR)
-put(al, f"A{tot+8}", "Closure net saving (base case)"); put(al, f"B{tot+8}", "=Closure_Model!B20", GRN, CUR)
+put(al, f"A{tot+8}", "Closure net saving (LEGACY single-point base case, superseded by the grid median of -$20,007 at Closure_Model row 50)"); put(al, f"B{tot+8}", "=Closure_Model!B20", GRN, CUR)
 put(al, f"A{tot+10}", "Reading: the raw-row band is $1.39M to $2.34M with no haircut (v4.4 review). The published headline is now the 2018 restore plus the counted-once cost package, $2.5M to $3.0M a year (transformative check below). Ranges overlap and are not additive to the penny, and each line carries its own confidence rating in column F. Medicaid and reimbursement recovery were removed from the menu in v4.2 review; shared services with Paris Independent was removed in v4.4 review. Coverage is reported against both yardsticks: the $2.65M structural gap before transfers and the roughly $1.15M net drawdown after transfers (Closure_Model row 21 carries both for closure).", NOTE, wrap=True)
 
 put(al, f"A{tot+12}", "THE GROWTH PATH: THE SAME MENU AS A DISTRICT-WIDE RECOVERY PLAN (v3.8; backs the site card and Section 9)", SEC)
@@ -602,13 +602,13 @@ put(al, f"A{tot+13}", "Move 1: inspect fixed costs (every non-teaching position 
 put(al, f"B{tot+13}", "=SUM(B7:B10)", BLK, CUR, bold=True); put(al, f"C{tot+13}", "=SUM(C7:C10)", BLK, CUR, bold=True)
 put(al, f"A{tot+14}", "Move 2: grow enrollment instead of shrinking it (attendance recovery, fill NMES, district-wide recruitment)")
 put(al, f"B{tot+14}", "=B6+B11+B12", BLK, CUR, bold=True); put(al, f"C{tot+14}", "=C6+C11+C12", BLK, CUR, bold=True)
-put(al, f"A{tot+15}", "Move 3: the honest revenue conversation, year one (this cell keeps the 4 percent + delinquency mechanics for continuity; the published lead lever is the 2018 restore, about $1.7M a year, Tax_History rows 82-89)")
+put(al, f"A{tot+15}", "Move 3: the honest revenue conversation, year one (this cell keeps the 4 percent + delinquency mechanics for continuity; the published lead lever is the 2018 restore, about $1.5M a year, Tax_History rows 82-89)")
 put(al, f"B{tot+15}", "=B4+B5", BLK, CUR, bold=True); put(al, f"C{tot+15}", "=C4+C5", BLK, CUR, bold=True)
 
 put(al, f"A{tot+17}", "THE TRANSFORMATIVE CHECK (v4.5: enrollment lever re-based on recovered leakage students at $4,226 each; gap re-based on the trending fiscal 2026 ledger; capacity anchored on the district advisor's June 2026 presentation)", SEC)
 put(al, f"A{tot+18}", "Plan levers at the website defaults: 275 of 550 leakage students recovered (275 x $4,226 = $1,162,150) + costs at the $760K low end"); put(al, f"B{tot+18}", 1922150, BLUE, CUR)
 put(al, f"C{tot+18}", "CORRECTED twice: an earlier release used $1.11M-$3.33M for the enrollment lever; the Move 2 rows price the near-term band at $260K-$530K; the website slider now prices the lever directly as recovered leakage students, 0 to the measured 550-student pool, at the $4,226 net-of-supplies cell in B49 legs. Every 100 recovered add $422,600 a year on top of this check.", NOTE)
-put(al, f"A{tot+19}", "Full 2018 rate restore (Tax_History basis)"); put(al, f"B{tot+19}", 1699479, BLUE, CUR)
+put(al, f"A{tot+19}", "Full 2018 rate restore (live from Tax_History D79, certified real base; v4.6 correction from the blended $1,699,479)"); put(al, f"B{tot+19}", "=Tax_History!D79", BLK, CUR)
 put(al, f"A{tot+20}", "Trending structural gap, fiscal 2026 (June 2026 year-end ledger, before transfers)"); put(al, f"B{tot+20}", 1738653, BLUE, CUR)
 put(al, f"C{tot+20}", "District's own June 2026 GL: $20,694,287 of revenue against $22,432,940 of spending before transfers (fund balance $3,328,472 to $2,954,484 after $1,409,590 of transfers in; on-behalf cancels in the gap). The audited fiscal 2025 gap, Assumptions!B24-B21, was $2,648,086.", NOTE)
 put(al, f"A{tot+21}", "Recurring surplus after the trending gap (website defaults + full restore)"); put(al, f"B{tot+21}", f"=B{tot+18}+B{tot+19}-B{tot+20}", BLK, CUR, bold=True)
@@ -621,7 +621,7 @@ put(al, f"B{tot+24}", f"=B{tot+23}*(1-1.045^-20)/0.045", BLK, CUR, bold=True)
 put(al, f"A{tot+25}", "Bonding capacity per the district's own advisor (Baird, June 2026; build/baird_lpc_june2026.pdf)"); put(al, f"B{tot+25}", 32000000, BLUE, CUR)
 put(al, f"C{tot+25}", "From $3,252,893 of FY2027 bondable restricted revenues. Real only if the restricted stream pays for buildings: the $1.32M-a-year capital-to-operations sweep consumes about $17M of this capacity.", NOTE)
 put(al, f"A{tot+26}", "Building capacity, together"); put(al, f"B{tot+26}", f"=B{tot+24}+B{tot+25}", BLK, CUR, bold=True)
-put(al, f"A{tot+27}", "Reading: at the website defaults (half the pool recovered, costs at the low end, full restore) the plan runs about $1.88M ahead of the trending fiscal 2026 gap, funds the 5 percent certified raise, and leaves about $1.38M for debt: about $17.9M of new GF-leveraged bonds plus the advisor's $32M, about $50 million of building capacity with every school open. The zero-recovery floor still clears the gap with about $721K to spare (raise + $2.8M of bonds, about $35M). At the slider top (all 550 recovered, levers high) the plan runs about $3.6M ahead: the raise plus about $40M of bonds, about $72M of capacity. Every 100 recovered leakage students move the surplus by $422,600 a year. The earlier 10-percent-raise / $52M top-end claim is withdrawn with the lever correction.", NOTE, wrap=True)
+put(al, f"A{tot+27}", "Reading: at the website defaults (half the pool recovered, costs at the low end, full restore) the plan runs about $1.66M ahead of the trending fiscal 2026 gap, funds the 5 percent certified raise, and leaves about $1.16M for debt: about $15.0M of new GF-leveraged bonds plus the advisor's $32M, about $47 million of building capacity with every school open. The zero-recovery floor still clears the gap with about $500K to spare, within $7,000 of the full raise; two recovered students close the difference. At the slider top (all 550 recovered, levers high) the plan runs about $3.4M ahead: the raise plus about $37M of bonds, about $69M of capacity. Every 100 recovered leakage students move the surplus by $422,600 a year. The earlier 10-percent-raise / $52M top-end claim is withdrawn with the lever correction.", NOTE, wrap=True)
 put(al, f"A{tot+28}", "Baird sensitivities, their own June 2026 numbers: minus 50 students drops capacity to $31M (about $20,000 of bonding capacity per student); rates 100bp lower raise it to $35M. Unexpired SFCC offers of $126,250 a year expire January 2028 through January 2034.", NOTE, wrap=True)
 put(al, f"A{tot+16}", "Growth plan total (equals the raw sum above; the published band is the conservative cut of the same rows)")
 put(al, f"B{tot+16}", f"=B{tot+13}+B{tot+14}+B{tot+15}", BLK, CUR, bold=True); put(al, f"C{tot+16}", f"=C{tot+13}+C{tot+14}+C{tot+15}", BLK, CUR, bold=True)
@@ -760,7 +760,7 @@ put(d, f"A{r}", "Two cases differ only in the operating gap assumed. Conservativ
 put(d, f"A{r}", "trend uses the unaudited FY2026 net change. The sweep is ended in both cases; only genuine remainder services debt.", NOTE); r += 1
 put(d, f"B{r}", "Conservative", BOLDW, fill=HDR); put(d, f"C{r}", "FY2026 trend", BOLDW, fill=HDR); r += 1
 put(d, f"A{r}", "Operating gap to close first")
-put(d, f"B{r}", 1900000, BLUE, CUR); put(d, f"C{r}", 373989, BLUE, CUR)
+put(d, f"B{r}", 1787918, BLUE, CUR); put(d, f"C{r}", 373989, BLUE, CUR)
 put(d, f"F{r}", "Editable. $1.9M = FY2026 result excluding the unidentified receipt; $373,989 = FY2026 unaudited net change", NOTE, wrap=True); gap_r = r; r += 1
 put(d, f"A{r}", "New recurring revenue: 4 percent levy taken three years running (mechanics case; with the published 2018 restore instead, the gap clears in every case: Alternatives transformative check)")
 put(d, f"B{r}", "=Tax_History!B32*(1.04^3-1)", GRN, CUR); put(d, f"C{r}", "=Tax_History!B32*(1.04^3-1)", GRN, CUR)
@@ -841,10 +841,10 @@ put(sc, "C5", "=Runway!E5", BLK, CUR)
 put(sc, "D5", "None", NOTE)
 put(sc, "E5", "No decisions; the districtwide drawdown, which NMES did not cause, simply continues on the straight line with or without the school", NOTE)
 put(sc, "A6", "2. Close NMES and consolidate")
-put(sc, "B6", "=Closure_Model!B20", GRN, CUR)
+put(sc, "B6", -20007, BLUE, CUR)
 put(sc, "C6", "=Runway!E7", BLK, CUR)
 put(sc, "D6", "Unpublished", NOTE)
-put(sc, "E6", "Closure vote; the weighted median LOSES $20,007 a year; the district's fullest documented case covers 9.1% of the $2.65M gap, the grid central case 2.0%, and the +$484,582 tail 18.3%; longer rides; enrollment-loss risk", NOTE)
+put(sc, "E6", "Closure vote; the weighted median LOSES $20,007 a year (B6 is the grid median; the legacy single-point Closure_Model!B20 is superseded); the legacy base case covers 9.1% of the $2.65M gap, the grid central case 2.0%, and the +$484,582 best-case tail 18.3%; longer rides; enrollment-loss risk", NOTE)
 put(sc, "A7", "3. Districtwide recovery plan (menu plus levy; includes rebalancing and growing NMES)")
 put(sc, "B7", "=Alternatives!B19", GRN, CUR)
 put(sc, "C7", "=Runway!E6", BLK, CUR)
@@ -860,7 +860,7 @@ put(sc, "A9", "Reading: the question before the board is not closure versus no c
 # ================= TAX_HISTORY =================
 th = sheet("Tax_History", [36, 13, 13, 13, 13, 13, 48])
 put(th, "A1", "Property Tax Rates, Fund Split, Delinquency, and the 4% Option", TITLE)
-put(th, "A2", "Backs Section 9 and Figure 18 of the report. Rates in cents per $100. DOR rate books primary for 2023-2025; 2018-2022 verified secondary; 2005-2017 not retrieved and not interpolated.", NOTE)
+put(th, "A2", "Backs Section 10 and Figures 15 and 16 of the report. Rates in cents per $100. DOR rate books primary for 2023-2025; 2018-2022 verified secondary; 2005-2017 not retrieved and not interpolated.", NOTE)
 
 put(th, "A4", "BOURBON COUNTY SCHOOLS, REAL ESTATE RATE BY TAX YEAR", SEC)
 trates = [("2018", 61.3), ("2019", 60.6), ("2020", 55.9), ("2021", 54.2),
@@ -874,7 +874,7 @@ put(th, "A15", "Motor vehicle rate"); put(th, "B15", 54.7, BLUE, "0.0")
 put(th, "A16", "Utility gross receipts"); put(th, "B16", 0.03, BLUE, PCT)
 
 put(th, "A18", "AREA DISTRICTS, LEVIED REAL ESTATE RATE 2024-25", SEC)
-nbrs = [("Fayette County", 80.9), ("Paris Independent", 71.5), ("Clark County", 66.8),
+nbrs = [("Fayette County", 80.9), ("Paris Independent", 71.5), ("Clark County", 65.5),
         ("Bath County", 63.4), ("Scott County", 62.9), ("Harrison County", 57.7),
         ("Montgomery County", 52.5), ("Bourbon County", 52.4), ("Nicholas County", 43.1)]
 r = 19
@@ -998,7 +998,7 @@ put(sd, "A8", "Rated capacity (2021 facility plan)"); put(sd, "B8", 174, BLUE, N
 put(sd, "A9", "Open seats, 2024-25"); put(sd, "B9", "=B8-K6", BLK, NUM)
 put(sd, "A11", "Note: the superintendent has publicly said 'around 100'; a '118' figure could not be verified in any official record.", NOTE)
 
-put(sd, "A13", "ELEMENTARY SCORES BY YEAR, 2007-2025 (backs Figures 6 and 7)", SEC)
+put(sd, "A13", "ELEMENTARY SCORES BY YEAR, 2007-2025 (backs Figures 1 and 2)", SEC)
 syrs = [str(y) for y in range(2007, 2020)] + [str(y) for y in range(2021, 2026)]
 put(sd, "A14", "School (district)", bold=True)
 for i, y in enumerate(syrs):
@@ -1115,7 +1115,7 @@ put(sd, "A62", "Third-party check: the SchoolDigger index above correlates about
 fp = sheet("Facility_Plans", [42, 12, 12, 12, 12, 50])
 put(fp, "A1", "What the District's Own Facility Plans Show", TITLE)
 put(fp, "A2", "Sources: District Facilities Plan, KBE approval June 2013 (Wayback Machine capture) and District Facility Plan, KBE approval August 2021 "
-              "(currently posted; next plan due June 2025). Both archived in this repository under build/. Figures read enrollment/capacity; the 2021 "
+              "(currently posted; the 2026 draft plan now pending would replace it). Both archived in this repository under build/. Figures read enrollment/capacity; the 2021 "
               "preschool line (272/200, with the plan's note of 80 full-day plus 192 half-day students) confirms the order.", NOTE, wrap=True)
 fhdrs = ["School", "2013 enr", "2013 cap", "2021 enr", "2021 cap", "Note"]
 for i, h in enumerate(fhdrs):
@@ -1240,7 +1240,7 @@ put(kc, "A7", "Closure events with clean district finance data"); put(kc, "B7", 
 put(kc, "A8", "Median district per-pupil spending growth vs state, year before to 3 years after (pct pts)"); put(kc, "B8", -0.05, BLUE, "0.00")
 put(kc, "A9", "Same, vs districts of similar size (within 40 percent of enrollment)"); put(kc, "B9", -0.24, BLUE, "0.00")
 put(kc, "A10", "Districts growing slower than benchmark after closing"); put(kc, "B10", "=84/163", BLK, '0.0%')
-put(kc, "A11", "Closures most like this plan (single small elementary, nothing built): count / median saving"); put(kc, "B11", 37, BLUE, NUM); put(kc, "C11", 0, BLUE, NUM)
+put(kc, "A11", "Closures most like this plan (single small elementary, nothing built): count / raw median per displaced student (inside the plausible window the median is $541; see report Section 5)"); put(kc, "B11", 27, BLUE, NUM); put(kc, "C11", 8440, BLUE, CUR)
 put(kc, "A13", "THE DOLLAR TEST: BUDGET GAP VS STATE TREND, CREDITED ENTIRELY TO THE CLOSURE (A GENEROUS CEILING), PER DISPLACED STUDENT", SEC)
 kchdrs = ["Case", "Closed", "Students displaced", "Spending, year before", "Spending, 3 yrs after", "State growth", "Counterfactual", "Gap per year", "Gap per student", "Note"]
 for i, h in enumerate(kchdrs):
@@ -1310,8 +1310,8 @@ put(th, "A68", "Bourbon County is the only district in the region whose levied r
 
 put(th, "A70", "BEYOND THE 4 PERCENT: THE RECALLABLE LEVY OPTIONS (KRS 160.470; backs the levy card and Section 9)", SEC)
 put(th, "A71", "General Fund share of the levied 52.4 cents (KDE levied-rates file: 41.0 GF + 5.7 FSPK + 5.7 recallable)"); put(th, "B71", 41.0, BLUE, "0.0")
-put(th, "A72", "Yield per cent of General Fund rate, per year"); put(th, "B72", "=B32/B71", BLK, CUR)
-put(th, "G72", "FY2025 GF collections divided by the 41.0 GF cents: about $191,000 per cent. Real and personal property only; tangible and motor vehicle rates untouched, so every figure below is conservative", NOTE, wrap=True)
+put(th, "A72", "Yield per cent of REAL ESTATE rate, per year (certified real base / 10,000)"); put(th, "B72", "=1661885191/10000", BLK, CUR)
+put(th, "G72", "CORRECTED in v4.6: the FY2025 audit's certified valuation of $1,843,569,625 splits, at its own calculated levy of $9,880,143 with rates 52.4 real / 64.5 tangible, into $1,661,885,191 real and $181,684,434 tangible; one real cent yields $166,189 at full collection. The earlier blended figure ($7,829,060 collections / 41.0 cents = $190,953) mixed tangible taxed at 64.5 cents into a real-rate move and overstated the options below by about 13 percent. Tangible (already 64.5, above every option) and motor vehicle rates do not move", NOTE, wrap=True)
 put(th, "A73", "Median owner-occupied home value, Bourbon County (Census ACS 2019-2023, table B25077)"); put(th, "B73", 211600, BLUE, CUR)
 put(th, "A74", "Cost per added cent to that household, per year"); put(th, "B74", "=B73*0.01/100", BLK, '"$"#,##0.00')
 put(th, "G74", "$21.16 a year, $1.76 a month, per added cent. Homestead exemption shields about $46,000 of a senior homeowner's value; farmland is assessed at agricultural use value, not market; renters pay only what landlords pass through", NOTE, wrap=True)
@@ -1337,12 +1337,12 @@ put(th, "B83", f"=Debt_Service!C{gap_r}+Debt_Service!B{swp_r}", BLK, CUR)
 put(th, "G83", "$373,989 gap plus the $1,320,939 sweep = $1,694,928. Ending the sweep is what frees the building-fund residual to service new bonds", NOTE, wrap=True)
 put(th, "A84", "Revenue from restoring the 2018 rate"); put(th, "B84", "=D79", BLK, CUR)
 put(th, "A85", "Margin after the gap is closed and the sweep ended"); put(th, "B85", "=B84-B83", BLK, CUR, bold=True)
-put(th, "G85", "About $4,551. The rate this board itself levied in 2018 is, almost to the dollar, the make-the-General-Fund-stand-alone rate", NOTE, wrap=True)
+put(th, "G85", "Negative about $216,000: the restore covers the operating close and most of the sweep; the remainder sits well inside the cost package's $760,000 floor. An earlier version showed +$4,551 on the blended per-cent basis, corrected in v4.6", NOTE, wrap=True)
 put(th, "A86", "Capacity unlocked once the sweep ends: nickel-residual bond"); put(th, "B86", f"=Debt_Service!B{bfres_r+1}", BLK, CUR)
 put(th, "A87", "  plus remaining restricted capacity (FY2024 audit less the 2024 issue)"); put(th, "B87", f"=Debt_Service!B{rrc_r}", BLK, CUR)
 put(th, "A88", "  plus bonds the new nickel equalization supports"); put(th, "B88", f"=Debt_Service!B{nick_r+1}", BLK, CUR)
 put(th, "A89", "Construction capacity unlocked without pledging a cent of the new levy"); put(th, "B89", "=B86+B87+B88", BLK, CUR, bold=True)
-put(th, "G89", "Roughly $35 million, for $15.69 a month on the median home, with nothing closed. The Harrison and median options are honest partial steps, leaving about $680,000 and $190,000 a year to find from the alternatives menu before the sweep can end; the Clark option adds about $10.5 million more direct capacity from its surplus", NOTE, wrap=True)
+put(th, "G89", "Roughly $35 million, for $15.69 a month on the median home, with nothing closed. The Harrison and median options are honest partial steps, leaving about $814,000 and $382,000 a year to find from the alternatives menu before the sweep can end; the Clark option adds about $6.3 million more direct capacity from its surplus", NOTE, wrap=True)
 put(th, "A93", "HOUSE BILL 44: THE 4 PERCENT IS A LIMIT ON REVENUE, NOT ON THE RATE (backs Section 11 and Question 2)", SEC)
 put(th, "A94", "Certified real and personal property assessment, FY2025 (audit)"); put(th, "B94", 1843569625, BLUE, CUR)
 put(th, "A95", "General Fund rate levied, cents per $100"); put(th, "B95", "=B71", BLK, "0.00")
