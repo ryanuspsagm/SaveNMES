@@ -110,8 +110,8 @@ A(Paragraph(
   "rates anyway.", body))
 B("<b>Lever one, enrollment.</b> Each recovered student brings about $4,226 of state money after supplies. "
   "The pool is measured: 236 students sit in Bourbon's own homeschool files, and 450 to 550 Bourbon County "
-  "Schools kids are homeschooled, in private school, or enrolled in another district, worth $1.9 to $2.3 "
-  "million a year. "
+  "Schools kids are homeschooled, in private school, or enrolled in another district, worth $2.1 to $2.5 "
+  "million a year at the full $4,626 SEEK base. "
   "Eminence Independent proved the model an hour away: it grew 35 "
   "percent in the decade Bourbon Schools shrank 10. Growth pays in every one of 19,683 priced scenarios, with a "
   "middle case of +$141,780 a year.")

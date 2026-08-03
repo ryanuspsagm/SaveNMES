@@ -251,8 +251,8 @@ P("<b>The money problem is real, and it is district-wide.</b> The General Fund r
   "rates anyway (Sections 7 and 10).")
 B("<b>Lever one, enrollment.</b> Each recovered student brings about $4,226 of state money after supplies. "
   "The pool is measured: 236 students sit in Bourbon's own homeschool files, and 450 to 550 Bourbon County "
-  "Schools kids are homeschooled, in private school, or enrolled in another district, worth $1.9 to $2.3 "
-  "million a year. Eminence Independent proved "
+  "Schools kids are homeschooled, in private school, or enrolled in another district, worth $2.1 to $2.5 "
+  "million a year at the full $4,626 SEEK base. Eminence Independent proved "
   "the model an hour away: it grew 35 percent in the decade Bourbon Schools shrank 10. Growth pays in every one of "
   "19,683 priced scenarios, with a middle case of +$141,780 a year.")
 B("<b>Lever two, fixed costs.</b> Trim every non-teaching position by attrition: $340,000 to $425,000 a "
@@ -1176,10 +1176,11 @@ P("The students are not hypothetical, and the public record measures the pool th
   "550 band is conservative.")
 P("The revenue side is symmetric with the closure math in Section 4, on purpose, using the same $4,626 SEEK "
   "base cell in the workbook. A homeschool or private-school student generates no state funding for the "
-  "district today, so each one who enrolls is entirely new money: about $4,226 net of supplies. At that "
-  "cell, the 236 students in this district's own homeschool files alone carry about $1.0 million a year, "
-  "and the full 450 to 550 pool, homeschool, private school, and out-of-district enrollment together, "
-  "carries $1.9 to $2.3 million. Filling all "
+  "district today, so each one who enrolls is entirely new money: $4,626 of SEEK a year, about $4,226 after "
+  "supplies. At the full check, the 450 to 550 pool, homeschool, private school, and out-of-district "
+  "enrollment together, is $2.1 to $2.5 million a year the district is not collecting; net of supplies, "
+  "the 236 students in this district's own homeschool files alone carry about $1.0 million a year and "
+  "the full pool $1.9 to $2.3 million. Filling all "
   "46 open seats at the rated 174 from this pool alone is worth about <b>$213,000 a year gross, roughly "
   "$134,000 to $194,000 net of supplies and the zero to one new section the v3.8 correction prices</b>, and "
   "requires fewer than one in five of the registered homeschoolers. The model's Redistricting tab carries a "
@@ -1680,7 +1681,11 @@ P("<b>Version 4.5, August 2.</b> Both scenario grids now carry explicit lever di
   "retained. A reader correction after release: St. Mary in Paris had been called the county's sole "
   "private school; Bourbon Christian Academy in Millersburg (K-12, founded 2002, grown from a homeschool "
   "group) is the second, absent from the voluntary federal survey that sourced the claim, and its "
-  "uncounted students only make the 450 to 550 pool more conservative.", note)
+  "uncounted students only make the 450 to 550 pool more conservative. In the same review round, the "
+  "pool's headline pricing moved to the undiscounted $4,626 SEEK base, $2.1 to $2.5 million a year the "
+  "district is not collecting, since forgone revenue is the full check; the net-of-supplies $1.9 to "
+  "$2.3 million stays published in Section 10, and the plan calculator still credits recovered students "
+  "only at $4,226.", note)
 P("<b>Version 4.4, August 1.</b> The growth model rebuilt on the district's own standards: the first 25 "
   "added students fill seats already open at its own Appendix B class caps, teachers are hired per full "
   "new class at a selectable pace (1 per 18, 21, or 24, each a real classroom count), support staff rides "

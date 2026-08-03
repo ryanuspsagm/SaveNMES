@@ -538,12 +538,13 @@ def main():
         chk(needle in html, f"Baird figures on the site: {needle}")
     # v4.5 round 6: district-specific leakage, reserve comparison, family survey, attendance labeling
     chk(171 + 76 == 247 and 236 + 247 == 483 and 236 * 4226 == 997336
-        and 450 * 4226 == 1901700 and 550 * 4226 == 2324300,
-        "district-specific leakage recomputes: 171+76=247 exports; 236+247=483 documented; 236 homeschool at $4,226 = $997,336; band $1.9M-$2.3M")
+        and 450 * 4226 == 1901700 and 550 * 4226 == 2324300
+        and 450 * 4626 == 2081700 and 550 * 4626 == 2544300,
+        "district-specific leakage recomputes: 171+76=247 exports; 236+247=483 documented; 236 homeschool at $4,226 = $997,336; net band $1.9M-$2.3M; gross band $2.1M-$2.5M")
     for needle in ["236 students in Bourbon County Schools' own files", "up from 156 in 2018-19",
                    "247 Bourbon County Schools residents", "reach 483",
                    "homeschooled, in private school, or enrolled in another district",
-                   "$1.9 to $2.3 million"]:
+                   "$2.1 to $2.5 million", "full $4,626 SEEK check"]:
         chk(needle in html, f"leakage card, district-specific: {needle}")
     chk("net import" not in html and "wins that competition" not in html,
         "the net-import framing is retired from the site; exports are counted in the pool")
@@ -559,8 +560,11 @@ def main():
     for needle in ["on both districts' audits", "9.1 cents in the red per dollar spent",
                    "14.7 cents of reserve per dollar"]:
         chk(needle in t, f"Fayette comparison mirrored into the report: {needle}")
-    chk("$1.9 to $2.3 million" in t and "236 students in this district's own homeschool files" in t,
-        "district-specific leakage dollars mirrored into the report")
+    chk("$2.1 to $2.5 million" in t and "$1.9 to $2.3 million" in t
+        and "236 students in this district's own homeschool files" in t,
+        "leakage dollars in the report: gross $2.1-$2.5M headline with the net $1.9-$2.3M beside it")
+    chk("$2.1 to $2.5 million" in es and "full $4,626 SEEK base" in es,
+        "summary carries the gross pool pricing at the full SEEK base")
     chk("$17,903" in t and "7 percent below" in t and "$19,299" in t,
         "the newest-file cost headline (2024-25) mirrored into the report")
     chk("$661,138.94 MINIMUM" in t and "$493,407 + $107,039 + $20,000 + $40,693 = $661,139" in t,
