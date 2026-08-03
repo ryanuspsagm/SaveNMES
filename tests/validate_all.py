@@ -750,6 +750,18 @@ def main():
     for name, txt in (("site", html), ("report", t), ("summary", es)):
         chk("openly so it can be challenged" in txt,
             f"upfront assumptions disclosure on the {name}: stated, published, open to challenge")
+    dfw = wb["Defaults"]
+    chk(dfw["B5"].value == 17903 and dfw["B13"].value == 1285310
+        and dfw["B34"].value == "=B17+C17-63000-38*(Assumptions!B6+500)"
+        and dfw["B35"].value == "=30*(Assumptions!B6+500-400)"
+        and dfw["C39"].value == 275 and dfw["B42"].value == "=Tax_History!D79"
+        and dfw["B31"].value == "=SUMPRODUCT(B30:G30,{13,12,11,10,9,8})"
+        and 22+22+19+22+16+27 == 128
+        and round(128*0.30)*(4626+500) == 194788
+        and round(round(128*0.30)*13/6)*(4626+500) == 420332
+        and abs(128*0.30*(4626+500)*23.5 - 4625702.4) < 1
+        and 1339*4626 == 6194214 and 1339*5126 == 6863714,
+        "model Defaults tab: every published scenario default lives as inputs and formulas, and the conventions recompute")
     chk("group of volunteers" in t and "Dr. Ryan Bradley" in t
         and "A personal note from Dr. Ryan Bradley" in t,
         "report cover carries the group byline; personal note attributed by name")

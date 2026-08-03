@@ -56,6 +56,7 @@ rows = [
  "  Audited figures: Bourbon County School District audited financial statements, FY2023-24 and FY2024-25 (posted by KDE).",
  "  Per-pupil spending: Kentucky School Report Card school-level (ESSA) expenditure data, 2023-24.",
  "  SEEK base amounts: Kentucky 2024-2026 and 2026-2028 state budgets. Enrollment/capacity: NCES; 2021 KBE-approved facility plan.",
+ "  Every published scenario default (the four facts, the leaver table, both calculator defaults, the plan floor/default/top, Eminence, the ledger breakevens) as live formulas: Defaults tab.",
  "  Multi-year school scores and NMES enrollment history: School_Data tab (backs report Figures 1 and 2).",
  "  County demographics and the full 1989-2025 NMES enrollment series: Demographics tab (backs Section 10 and Figure 14).",
  "  Tax rates, fund split, delinquency check, and the recallable options: Tax_History tab (backs Section 10 and Figures 15 and 16).",
@@ -157,6 +158,99 @@ put(a, "A65", "DISTRICT-FAVORABLE CLOSURE CASE (red-team upper bound)", SEC)
 arow(66, "Positions eliminated, favorable case", 5, NUM, "Upper bound tested in Closure_Model", fill=YEL)
 arow(67, "Added busing, favorable (low) case", 75000, CUR, "Low end of the $75K-$200K range", fill=YEL)
 arow(69, "GF-borne loaded cost per certified position (v3)", 60000, CUR, "Published salary schedule $41,718-$71,447; state pays TRS/KEHP on-behalf; GF keeps salary + ~5%. Range $50K-$75K", fill=YEL)
+
+
+# ================= DEFAULTS (published scenario defaults, all live) =================
+df = sheet("Defaults", [58, 15, 15, 15, 15, 60])
+put(df, "A1", "Published Scenario Defaults: every headline number on the site, executive summary, and report, as live formulas", TITLE)
+put(df, "A2", "One row per published default. Blue cells are sourced inputs; black cells compute. If a formula here disagrees with a published artifact, the artifact is wrong: say so and it will be corrected publicly.", NOTE)
+
+put(df, "A4", "FACT ONE AND TWO: THE SCHOOL AND ITS COST (Sections 2 and 3)", SEC)
+put(df, "A5", "NMES per-student cost, newest state file (2024-25)"); put(df, "B5", 17903, BLUE, CUR)
+put(df, "A6", "Kentucky elementary average, same file"); put(df, "B6", 19299, BLUE, CUR)
+put(df, "A7", "NMES below the state average"); put(df, "B7", "=1-B5/B6", BLK, PCT, bold=True); put(df, "F7", "Published: 7 percent below", NOTE)
+put(df, "A8", "District's own cost-of-delivery table, May 21, 2026: NMES / state average"); put(df, "B8", 19080, BLUE, CUR); put(df, "C8", 19020, BLUE, CUR)
+put(df, "A9", "Gap on the district's own table"); put(df, "B9", "=B8/C8-1", BLK, PCT); put(df, "F9", "Published: three tenths of one percent", NOTE)
+put(df, "A10", "Share of middle and high schoolers who came through NMES (128 of the 1,040 elementary seats)"); put(df, "B10", "=Assumptions!B11/1040", BLK, PCT); put(df, "F10", "Published: about one in eight", NOTE)
+
+put(df, "A12", "FACT THREE: THE LEDGER WALK AND THE $661,139 CLAIM (Section 4)", SEC)
+put(df, "A13", "All-funds dollars coded to org 090, fiscal 2025 MUNIS Cost by ORG"); put(df, "B13", 1285310, BLUE, CUR)
+put(df, "A14", "Non-General-Fund dollars in that total (grants, on-behalf and other funds, per the ledger's fund split)"); put(df, "B14", 182952, BLUE, CUR); put(df, "C14", 161880, BLUE, CUR); put(df, "D14", 6941, BLUE, CUR)
+put(df, "A15", "General Fund actuals coded to the school"); put(df, "B15", "=B13-B14-C14-D14", BLK, CUR, bold=True); put(df, "F15", "Published: $933,537 (within 0.55 percent of the $938,690 budget view)", NOTE)
+put(df, "A16", "Building-bound costs on the ledger (utilities, disposal, telecom, supplies, repairs)"); put(df, "B16", 79211, BLUE, CUR)
+put(df, "A17", "District worksheet: avoidable expense lines / insurance"); put(df, "B17", 107039, BLUE, CUR); put(df, "C17", 20000, BLUE, CUR)
+put(df, "A18", "Staff-retained saving (ledger) and building-sold ceiling (worksheet)"); put(df, "B18", "=B16", BLK, CUR, bold=True); put(df, "C18", "=B17+C17", BLK, CUR, bold=True)
+put(df, "A19", "The district's $661,139 decomposition: staffing + avoidable lines + insurance + supplies"); put(df, "B19", 493407, BLUE, CUR); put(df, "C19", "=B17", BLK, CUR); put(df, "D19", "=C17", BLK, CUR); put(df, "E19", 40693, BLUE, CUR)
+put(df, "A20", "Sum (the claim) and what remains in year one with staff retained and supplies moving"); put(df, "B20", "=B19+C19+D19+E19", BLK, CUR, bold=True); put(df, "C20", "=C18", BLK, CUR, bold=True)
+
+put(df, "A22", "FACT FOUR: WHAT LEAVING FAMILIES COST (the published table, all four rows)", SEC)
+put(df, "A23", "Per-leaver funding: SEEK base + typical add-ons"); put(df, "B23", "=Assumptions!B6+500", BLK, CUR); put(df, "F23", "$5,126 at the FY2027 base", NOTE)
+put(df, "A24", "Share who leave / students (of 128) / year one / per year at full effect / total by grade 12", bold=True)
+for i, pct in enumerate([0.10, 0.20, 0.30, 0.50]):
+    rr = 25 + i
+    put(df, f"A{rr}", f"{int(pct*100)} percent of the school")
+    put(df, f"B{rr}", f"=ROUND(128*{pct},0)", BLK, NUM)
+    put(df, f"C{rr}", f"=B{rr}*$B$23", BLK, CUR)
+    put(df, f"D{rr}", f"=ROUND(B{rr}*13/6,0)*$B$23", BLK, CUR)
+    put(df, f"E{rr}", f"=128*{pct}*$B$23*23.5", BLK, CUR)
+put(df, "F24", "Year one and full effect price whole students (the site chart's convention); the grade-12 total prices the exact share times the 23.5-year factor: (6+7+8+9+10+11+12+6x13)/6 years of escalating cohorts. Reproduces the published $67K/$144K/$1.5M through $328K/$713K/$7.7M rows.", NOTE, wrap=True)
+put(df, "A30", "Carried funding of the current 128 students: grade counts (K-5) x years to grade 12"); 
+for i, (cnt, yrs) in enumerate(zip([22, 22, 19, 22, 16, 27], [13, 12, 11, 10, 9, 8])):
+    put(df, get_column_letter(2+i) + "30", cnt, BLUE, NUM)
+put(df, "A31", "Student-years, and the carried band at the $4,626 base / $5,126 with add-ons")
+put(df, "B31", "=SUMPRODUCT(B30:G30,{13,12,11,10,9,8})", BLK, NUM, bold=True)
+put(df, "C31", "=B31*Assumptions!B6", BLK, CUR); put(df, "D31", "=B31*(Assumptions!B6+500)", BLK, CUR)
+put(df, "F31", "Published: 1,339 student-years, $6.2 to $6.9 million", NOTE)
+
+put(df, "A33", "THE TWO CALCULATOR DEFAULTS (the numbers on the site's cards)", SEC)
+put(df, "A34", "Closure default: district staffing stance + our mid-range leaver and busing estimates")
+put(df, "B34", "=B17+C17-63000-38*(Assumptions!B6+500)", BLK, CUR, bold=True)
+put(df, "F34", "= $127,039 kept, minus $63,000 of busing, minus 38 leavers (30 percent) at $5,126: the published -$130,749, the 26th percentile of the 5,832-scenario grid; the weighted median is a $20,007 loss (Closure_Model row 50)", NOTE, wrap=True)
+put(df, "A35", "Growth default: 30 added students at the grid's low busing and supplies")
+put(df, "B35", "=30*(Assumptions!B6+500-400)", BLK, CUR, bold=True)
+put(df, "F35", "The published +$141,780, the weighted median of the 19,683-scenario grid (Growth_Model rows 17-19); at the central $500 busing and $700 supplies the same 30 students net about $118,000", NOTE, wrap=True)
+
+put(df, "A37", "THE PLAN: FLOOR, DEFAULT, AND TOP (the site plan calculator's three published cases)", SEC)
+put(df, "A38", "", ); put(df, "B38", "Floor", BOLD); put(df, "C38", "Default", BOLD); put(df, "D38", "Top", BOLD)
+put(df, "A39", "Recovered leakage students (of the 550-student pool)"); put(df, "B39", 0, BLUE, NUM); put(df, "C39", 275, BLUE, NUM); put(df, "D39", 550, BLUE, NUM)
+put(df, "A40", "Enrollment lever at $4,226 net of supplies"); 
+for col in "BCD": put(df, f"{col}40", f"={col}39*(Assumptions!B6-Assumptions!B62)", BLK, CUR)
+put(df, "A41", "Counted-once fixed-cost package"); put(df, "B41", 760000, BLUE, CUR); put(df, "C41", 760000, BLUE, CUR); put(df, "D41", 1300000, BLUE, CUR)
+put(df, "A42", "Full 2018 rate restore (live from Tax_History)"); 
+for col in "BCD": put(df, f"{col}42", "=Tax_History!D79", BLK, CUR)
+put(df, "A43", "Trending fiscal 2026 gap (June 2026 ledger, before transfers)"); 
+for col in "BCD": put(df, f"{col}43", 1738653, BLUE, CUR)
+put(df, "A44", "Surplus after the gap", bold=True)
+for col in "BCD": put(df, f"{col}44", f"={col}40+{col}41+{col}42-{col}43", BLK, CUR, bold=True)
+put(df, "A45", "5 percent certified raise ($10,000,388 GF certified payroll x 5% x 1.0145)"); 
+for col in "BCD": put(df, f"{col}45", "=10000388*0.05*1.0145", BLK, CUR)
+put(df, "A46", "Left for new debt service (negative at the floor: within $7,000 of the raise)")
+for col in "BCD": put(df, f"{col}46", f"={col}44-{col}45", BLK, CUR)
+put(df, "A47", "New bonds at 4.5 percent, 20 years (factor below), floored at zero")
+for col in "BCD": put(df, f"{col}47", f"=MAX({col}46,0)*$B$50", BLK, CUR)
+put(df, "A48", "Building capacity with the advisor's $32 million", bold=True)
+for col in "BCD": put(df, f"{col}48", f"={col}47+32000000", BLK, CUR, bold=True)
+put(df, "F44", "Published: about $500,000 / $1,662,575 / $3.4 million to spare", NOTE)
+put(df, "F48", "Published: the advisor's $32 million at the floor; about $47 million at the default; about $69 million at the top", NOTE)
+put(df, "A50", "Annuity factor, 4.5 percent, 20 years"); put(df, "B50", "=(1-1.045^-20)/0.045", BLK, '0.000')
+
+put(df, "A52", "GROWTH CONTEXT DEFAULTS (Section 10)", SEC)
+put(df, "A53", "Eminence Independent, 2014 to 2024 enrollment, and its growth"); put(df, "B53", 733, BLUE, NUM); put(df, "C53", 991, BLUE, NUM); put(df, "D53", "=C53/B53-1", BLK, PCT)
+put(df, "A54", "Bourbon County Schools, 2014 to 2023 enrollment, and its decline"); put(df, "B54", 2912, BLUE, NUM); put(df, "C54", 2616, BLUE, NUM); put(df, "D54", "=C54/B54-1", BLK, PCT)
+put(df, "F53", "Published: grew 35 percent in the decade Bourbon Schools shrank 10", NOTE)
+put(df, "A55", "Leakage pool pricing: see Redistricting rows 136-140 (documented floor 483; gross $2.1-$2.5M at the full base; net $1.9-$2.3M at $4,226)", NOTE, wrap=True)
+put(df, "A56", "Rate menu: see Tax_History rows 70-89 ($166,189 per real cent; the four options and the sequencing)", NOTE, wrap=True)
+
+put(df, "A58", "BREAKEVEN TABLE, LEDGER-CODED VIEW (Section 4; the all-in view is on School_Costs)", SEC)
+put(df, "A59", "Revenue per member (all-funds spending of about $41.8M across about 2,615 members)"); put(df, "B59", 15983, BLUE, CUR)
+put(df, "A60", "School / coded by the district / enrolled / breakeven / clears by", bold=True)
+for i, (nm, cost, enr) in enumerate([("North Middletown", 1285310, 128), ("Bourbon Central", 4033689, 459),
+                                      ("Cane Ridge", 4326733, 453), ("Bourbon County Middle", 3868106, 590),
+                                      ("Bourbon County High", 5515105, 766)]):
+    rr = 61 + i
+    put(df, f"A{rr}", nm); put(df, f"B{rr}", cost, BLUE, CUR); put(df, f"C{rr}", enr, BLUE, NUM)
+    put(df, f"D{rr}", f"=ROUND(B{rr}/$B$59,0)", BLK, NUM); put(df, f"E{rr}", f"=C{rr}-D{rr}", BLK, NUM)
+put(df, "F60", "Every school clears on the ledger-coded definition; the all-in report-card definition fails every school. The swing is the definitions, which is why they should be chosen and published before any vote.", NOTE, wrap=True)
 
 # ================= GF_SUMMARY =================
 g = sheet("GF_Summary", [46, 15, 15, 15])
