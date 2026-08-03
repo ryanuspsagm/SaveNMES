@@ -115,7 +115,7 @@ A(Paragraph("Prepared for the North Middletown community and the members of the<
 A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
             ParagraphStyle("pf2", fontName="Helvetica", fontSize=9.5, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=6)))
-A(Paragraph("Written by a former NMES King and Bourbon County Colonel; the analysis and report writing were accelerated with the use of an AI research assistant.<br/>Built from public records and Open Records Requests only.",
+A(Paragraph("Written by a group of volunteers from the NMES community (past and present), including Dr. Ryan Bradley, a former NMES King and Bourbon County Colonel; the analysis and report writing were accelerated with the use of an AI research assistant.<br/>Built from public records and Open Records Requests only.",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
 A(Paragraph("Version 4.5 &nbsp;\u2022&nbsp; August 2, 2026",
@@ -130,7 +130,7 @@ scope = ("This review is built from public records and Open Records Requests onl
          "as an estimate and its assumptions are stated. This document is not an audit, and it alleges no misconduct "
          "by any person; both years of the district's financial statements received clean opinions from its independent "
          "auditors. Its purpose is narrower and simpler: to lay out what the public record shows, and what it does not "
-         "yet show, before an irreversible decision is made about a community's school. I am an alumnus of this school. "
+         "yet show, before an irreversible decision is made about a community's school. We write as volunteers from the NMES community, past and present. "
          "The analysis and report writing were accelerated with the use of Claude, an AI research assistant from Anthropic; every figure "
          "should be re-verified against the cited primary sources before formal submission or republication.")
 st = Table([[Paragraph(scope, ParagraphStyle("scope", fontName="Times-Roman", fontSize=9.3,
@@ -187,7 +187,7 @@ P("On July 15, 2026, the Local Planning Committee of Bourbon County Schools vote
   "Elementary “transitional” in the district's draft four-year facility plan. That is the first step toward "
   "closing the school. The vote is advisory: the elected Board of Education decides, and under state regulation "
   "nothing takes effect without further committee action, a public hearing, and approval by the Kentucky Board "
-  "of Education. Superintendent Larry Begley has said publicly that “the decision is not final.” I checked "
+  "of Education. Superintendent Larry Begley has said publicly that “the decision is not final.” We checked "
   "the public records so the Board and the public can see the whole picture before any vote. This opening "
   "mirrors the executive summary published at SaveNMES.org; every figure below is sourced in the numbered "
   "sections that follow and runs as a live formula in the companion workbook. Where the record forces an "
@@ -333,7 +333,7 @@ P("The repository also archives the federal EDFacts series, an independent feder
   "state numbers that reaches back into the era of the 2011 Blue Ribbon, where North Middletown prints "
   "89.5 and 94.8 on the old KCCT scale. Kentucky replaced its test in 2011-12, so federal values before "
   "and after that line are different scales, and the file reports small-school values as range midpoints.")
-P("I keep the SchoolDigger index in Figure 1's lower panel and in Figure 2 only as outside context, with "
+P("We keep the SchoolDigger index in Figure 1's lower panel and in Figure 2 only as outside context, with "
   "its limits printed: it tracks the county's larger schools closely but is unreliable year to year for a "
   "school North Middletown's size, and it named the wrong county leader in three of the ten years both "
   "sources cover. Wherever the index and the official record disagree, the official record governs in this "
@@ -647,12 +647,12 @@ fig("chart_millersburg.png",
     "from 2000 to 2020. Millersburg Elementary's final enrollment was 119 students; North Middletown enrolls "
     "128 today.")
 H2("Has this ever worked in Kentucky? We checked all thirty years")
-P("From the federal Common Core of Data, every Kentucky public school, every year, 1994 through 2023, I built the "
+P("From the federal Common Core of Data, every Kentucky public school, every year, 1994 through 2023, we built the "
   "complete record: <b>339 rural and small-town school closures since 1995</b>, after screening out renames, "
   "rebuilds under new federal IDs, and non-community programs, and <b>72 towns that lost their last public school "
   "entirely</b>. Millersburg 2006 is one of them, which independently validates the method. The full lists and "
   "inputs are archived in this repository. Three findings follow.")
-P("<b>First, the money.</b> For the 163 closure events with clean finance data, I compared each district's "
+P("<b>First, the money.</b> For the 163 closure events with clean finance data, we compared each district's "
   "spending from the year before closure to three years after against the statewide trend, credited the "
   "ENTIRE gap to the closure, the most generous reading, and priced it per displaced student. Figure 7 shows "
   "the whole distribution. The median closure produced <b>$1,102 per displaced student</b> ($818 among the "
@@ -668,7 +668,7 @@ P("<b>First, the money.</b> For the 163 closure events with clean finance data, 
   "bottom-up model prices only the levers a closure moves and now reads $169 per displaced student. The "
   "plan's requirement is eight times the first and thirty-seven times the second.")
 
-P("<b>Second, the classrooms.</b> Test scores can only be compared within one accountability system, so I tested "
+P("<b>Second, the classrooms.</b> Test scores can only be compared within one accountability system, so we tested "
   "the 42 closure events measurable inside the 2012 to 2019 window on the uniform federal proficiency series. "
   "Eleven districts improved three or more points against the state, ten declined, twenty-one were flat: a wash, "
   "median half a point down. The pattern inside the wash points one way: the more children a closure "
@@ -686,7 +686,7 @@ P("<b>Third, the two best cases, disclosed by us so no one has to discover them.
   "percent share of the district, our own model's median arriving on schedule. Neither resembles what this "
   "plan promises. Two honest limits belong here too: closures before 2012 and after 2016 cannot be "
   "score-tested across Kentucky's assessment-system changes, and small towns that kept their schools also "
-  "declined at nearly the same rate as towns that lost them, so I make no claim that closure causes "
+  "declined at nearly the same rate as towns that lost them, so we make no claim that closure causes "
   "population decline. What the record does show is narrower and harder: no measurable precedent for the "
   "savings this plan requires, and none for academic improvement from a closure like this one. If the board "
   "believes it will be the first in thirty years, show us the data.")
@@ -731,7 +731,7 @@ P("The costs to children pile on top of the costs to the budget: a 2024 national
 P("When the district shows its numbers in public, watch four ways it can frame them, because each can make "
   "closure look better than it is: gross site cost presented as savings; restricted building dollars presented as "
   "operating relief; per-pupil cost cited without noting that state funding follows the student; and district- "
-  "wide cost growth attributed to one small school. I flag my own judgment calls where they occur.")
+  "wide cost growth attributed to one small school. We flag our own judgment calls where they occur.")
 P("Whatever the true net number proves to be, one comparison frames the decision, and it holds on either honest "
   "yardstick. Against the $2.6 million structural deficit before transfers, closing North Middletown addresses at "
   "best a small fraction; against the roughly $1.15 million the district actually draws from reserves each year, "
@@ -781,7 +781,7 @@ P("The people closest to this school have already said what the studies measure.
   "savings worksheet. All of it should appear in the Board's deliberation, because a decision that counts only "
   "what is easy to count is not a complete accounting.")
 A(Spacer(1, 6))
-H2("My own personal note")
+H2("A personal note from Dr. Ryan Bradley")
 ptext = ("I grew up in this school and in this town, and I cannot overstate what they made of me. Our academic "
          "team won a regional championship in that building. I played basketball as an NMES King and kickball on "
          "that playground. I learned from teachers like Mrs. Craycraft, Mrs. Johnson, and Mrs. Mitchell, the kind "
@@ -795,7 +795,7 @@ ptext = ("I grew up in this school and in this town, and I cannot overstate what
          "<br/><br/>Bourbon County is no longer my home, or my family's. But the grit and perseverance it and "
          "NMES gave me still remain. Some things are worth fighting for wherever life takes you, and this school "
          "is one of them."
-         "<br/><font size=8.6 color='#555555'>A former NMES King and Bourbon County Colonel</font>")
+         "<br/><font size=8.6 color='#555555'>Dr. Ryan Bradley, a former NMES King and Bourbon County Colonel</font>")
 pbox = Table([[Paragraph(ptext, ParagraphStyle(
     "pnote", fontName="Times-Roman", fontSize=10.6, leading=14.6, textColor=colors.HexColor("#1A1A1A")))]],
     colWidths=[W])
@@ -818,7 +818,7 @@ P("The district has a real money problem. It is district-wide, North Middletown 
 
 # ================= 3. FINANCES =================
 H("7. The District's Finances: A Real Problem With Clear Causes")
-P("I do not dispute that Bourbon County Schools faces genuine budget pressure. The district's own "
+P("We do not dispute that Bourbon County Schools faces genuine budget pressure. The district's own "
   "audited statements, prepared by Summers, McCrary and Sparks, PSC and posted by the Kentucky Department of "
   "Education, show it plainly.")
 tbl(["General Fund (audited)", "FY2023", "FY2024", "FY2025"],
@@ -1053,7 +1053,7 @@ P("So the ask changes shape. The right question is not who was hired. It is that
   "services, and the district has never published a position-by-position administrative roster with titles, FTE "
   "and salary that would let anyone check the rest.</b> Until it exists, nobody outside the central office can "
   "answer this question.")
-P("I deliberately rely on the audited totals rather than individual salaries, because individual figures "
+P("We deliberately rely on the audited totals rather than individual salaries, because individual figures "
   "should come from official records: the KDE superintendent salary file and the board-adopted administrator "
   "salary schedule, both produced in the district's July 2026 records response.")
 
@@ -1089,7 +1089,7 @@ P("Honesty requires naming the headwind first. Bourbon County has hovered near t
   "celebrated horse-farm land base, the second largest stock of conserved farmland in Kentucky, structurally "
   "limits new subdivisions. The regional boom passed to the west: neighboring Scott County is projected to grow "
   "46 percent by 2050 and Fayette nearly ten, while Bourbon sits outside that corridor. The district's enrollment "
-  "decline is real and structural, and I will not pretend otherwise. North Middletown Elementary itself "
+  "decline is real and structural, and we will not pretend otherwise. North Middletown Elementary itself "
   "tells the story: it held 261 children in 1988-89, about double today's 128 (Figure 14).")
 P("But a school's enrollment does not have to wait on a county's birth rate, because the board controls two "
   "levers that demographics do not. The first is redistricting: attendance boundaries are the board's to "
@@ -1302,7 +1302,7 @@ P("Where the money lands is equally clear. Of the $9.9 million the property tax 
   "in the audits, $387,840 in fiscal 2024 and $239,126 in fiscal 2025, are ordinary "
   "delinquencies of roughly two to four percent of certified yield, the kind every Kentucky district carries, "
   "not revenue the board declined to levy. The Figure 21 menu counts only a partial recovery of them for exactly "
-  "that reason: honest numbers cut both ways, and I built this report to take the cut.")
+  "that reason: honest numbers cut both ways, and we built this report to take the cut.")
 P("What remains is the choice the board controls every August: the rate itself. The anchor of this report's "
   "revenue lever is the rate this board levied in 2018, 61.3 cents, whose restoration raises about $1.7 "
   "million a year on the General Fund levy of $7,829,060, the part that can actually pay teachers, with "
@@ -1521,7 +1521,7 @@ B("A working threshold for the Board: if documented net recurring General Fund s
 B("Face the levy each August with the rate on the table, not just the revenue formula: restoring the "
   "board's own 2018 rate raises about $1.7 million a year, and Bourbon would still tax below five of its "
   "eight neighbors. Adopt it or reject it, but decide on the record, alongside the spending decisions, "
-  "because standing idle is the one answer I rule out.")
+  "because standing idle is the one answer we rule out.")
 H2("Over the next twelve months")
 B("Pursue the low-harm levers first: the collections-gap reconciliation, the levy decision at the "
   "September tax setting with the 2018 restore priced on the table, transportation routing, attrition-based staffing, and "
@@ -1551,7 +1551,7 @@ P("The district holds about $4.3 million in General Fund balance and is drawing 
 
 # ================= NOTES =================
 H("Notes on the Data")
-P("I built this report from public records and Open Records Requests only, and I want it held to that "
+P("We built this report from public records and Open Records Requests only, and we want it held to that "
   "standard. The audited figures come from the district's financial statements for the years ended June 30, "
   "2024 and June 30, 2025, both of which carry clean opinions. The multi-year score series in Figure 1 is "
   "SchoolDigger's normalized 0-100 rendering of state test data, a consistent yardstick across years but "
@@ -1560,13 +1560,13 @@ P("I built this report from public records and Open Records Requests only, and I
   "2012 and again in 2021-22. Demographic figures come from the U.S. Census Bureau, the Kentucky State "
   "Data Center, and the county's Envision 2040 plan. Enrollment counts from 1989 through 2014 are compiled "
   "from federal data by PublicSchoolReview; the 2015 through 2025 counts match the federal figures "
-  "directly. Every dollar range labeled an estimate is mine, its assumptions are stated where it appears, "
+  "directly. Every dollar range labeled an estimate is ours, its assumptions are stated where it appears, "
   "and every one of them is adjustable in the companion workbook. The boundary rebalancing scenario in the "
   "appendix is simple math on the cited enrollment counts, not a routing study; the transportation "
   "estimates beside it use the official federal zone boundaries (SABS, 2015-16), a highway distance, and "
   "labeled cost-per-mile bands, and the district's annual T-1 transportation report would replace the cost "
   "inputs.", note)
-P("A few items in the record need the district, not me, to resolve. The real-estate tax rate appears three "
+P("A few items in the record need the district, not us, to resolve. The real-estate tax rate appears three "
   "ways in public records, as 52.4, 54.2, and 54.7 cents; that confusion is resolved in Section 10: 52.4 "
   "cents is the levied rate, 54.2 a transposition typo, 54.7 the "
   "motor vehicle rate. The cent split (41.0 General Fund plus two 5.7 nickels) and the levied rate type by "
@@ -1577,14 +1577,15 @@ P("A few items in the record need the district, not me, to resolve. The real-est
   "issue's project detail and both years' BG-1 applications are still open. The school-level climate and safety "
   "survey results were not publicly retrievable. "
   "And the enrollment count itself: federal data show 128, public statements have said around 100, and a 118 "
-  "figure appears in no official record I could find. Reported free and reduced-price meal shares for the school "
-  "range from roughly 76 to 93 percent across federal and state sources. My recollection in Section 6 of an "
-  "earlier transitional episode comes from personal discussions with my father, who served as mayor of North "
-  "Middletown; it is offered as memory, and the pre-2021 planning records that would confirm it remain "
+  "figure appears in no official record we could find. Reported free and reduced-price meal shares for the school "
+  "range from roughly 76 to 93 percent across federal and state sources. The recollection in Section 6 of an "
+  "earlier transitional episode is Dr. Bradley's, from personal discussions with Dr. Bradley's father, who served "
+  "as mayor of North Middletown; it is offered as memory, and the pre-2021 planning records that would confirm it remain "
   "a public-records request away. One more for the record: the fiscal 2025 audit misprints the prior year's attendance as "
   "2,278.527; the correct figure, 2,278.537, comes from the fiscal 2024 audit itself.", note)
-P("I prepared this report myself, with Claude, an AI research assistant from Anthropic, doing the digging "
-  "alongside me, and I disclose that on purpose: check my work. Every figure traces to a source below, and every "
+P("We prepared this report ourselves, a group of volunteers from the NMES community, with Claude, an AI research "
+  "assistant from Anthropic, doing the digging alongside us, and we disclose that on purpose: check our work. "
+  "Every figure traces to a source below, and every "
   "school and district named is the Kentucky one. Cautions on pension allocations inside expense lines, one-time "
   "swings, single-year score noise, and the tax cost of the levy option sit beside the numbers they qualify. The "
   "Kings mascot and the blue and white of these pages are the school's own. This report criticizes decisions and "
@@ -2238,7 +2239,7 @@ P("The July 2026 records response settled the central question of this report's 
   "outside its classrooms, so the exits are open and in use. The district's published math carries "
   "no leakage line at all. <b>Second, assessment erosion.</b> What does the loss of the town's only school "
   "do to property values inside the North Middletown attendance area, and therefore to the assessment base "
-  "that funds every school in the county? The limits of my own evidence belong in the question: the "
+  "that funds every school in the county? The limits of our own evidence belong in the question: the "
   "thirty-year Kentucky corpus in Section 5 does <i>not</i> establish that closure causes decline, because "
   "small towns that kept their schools declined at nearly the same rate. So this is not a claim. It is a "
   "risk, it runs in one direction only, and the revenue at stake is the district's own, which makes "

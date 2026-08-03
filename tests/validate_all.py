@@ -735,6 +735,12 @@ def main():
     for name, txt in (("site", html), ("report", t), ("summary", es)):
         chk("openly so it can be challenged" in txt,
             f"upfront assumptions disclosure on the {name}: stated, published, open to challenge")
+    chk("group of volunteers" in t and "Dr. Ryan Bradley" in t
+        and "A personal note from Dr. Ryan Bradley" in t,
+        "report cover carries the group byline; personal note attributed by name")
+    for solo in ["I checked", "I built", "I prepared this report myself",
+                 "I am an alumnus", "check my work", "My recollection"]:
+        chk(solo not in t, f"no single-author voice left in the report: {solo!r}")
     chk("Amazon Future Engineer" in html.lower().replace("amazon future engineer", "Amazon Future Engineer")
         or "Amazon Future Engineer" in html,
         "ask 2 carries the differentiation tools (Amazon Future Engineer)")
