@@ -100,7 +100,7 @@ def tbl(header, rows, widths, caption=None, bold_first_col=False, align_right_fr
 
 # ================= COVER =================
 A(Spacer(1, 1.35 * inch))
-A(Paragraph("AN INDEPENDENT REVIEW OF PUBLIC RECORDS", ParagraphStyle(
+A(Paragraph("A COMMUNITY REVIEW OF PUBLIC RECORDS", ParagraphStyle(
     "kick", fontName="Helvetica-Bold", fontSize=9, textColor=GOLD, alignment=TA_CENTER, spaceAfter=18)))
 A(Paragraph("Saving North Middletown<br/>Elementary School", ParagraphStyle(
     "title", fontName="Helvetica-Bold", fontSize=27, leading=32, textColor=NAVY,
