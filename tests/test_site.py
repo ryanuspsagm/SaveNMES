@@ -225,18 +225,16 @@ def main():
         else: bad(f"plan shortfall: {pg.text_content('#rPlanVerdict')[:90]}")
         pg.fill("#sPr", "100"); pg.dispatch_event("#sPr", "input")
 
-        # --- School Choice Survey: Google Form embedded, hero button links out ---
+        # --- School Choice Survey: Jotform embedded, hero button links out ---
         sv = pg.evaluate("(() => { const f = document.getElementById('famSurvey');"
                          " const b = [...document.querySelectorAll('.hero-cta a')]"
                          "   .find(a => a.textContent.trim() === 'School Choice Survey');"
                          " return { tag: f ? f.tagName : null, src: f ? f.getAttribute('src') : '',"
                          "          href: b ? b.getAttribute('href') : '', target: b ? b.getAttribute('target') : '' }; })()")
-        if (sv["tag"] == "IFRAME" and "1FAIpQLSc7XylyQ-tpz6jWPN6GXVFOezVTIVZNb5OxeHjK8Nke7mEfjQ" in sv["src"]
-                and "embedded=true" in sv["src"]):
-            ok("School Choice Survey embedded as the Google Form iframe")
+        if sv["tag"] == "IFRAME" and "form.jotform.com/262137656784064" in sv["src"]:
+            ok("School Choice Survey embedded as the Jotform iframe")
         else: bad(f"survey iframe: {sv}")
-        if ("1FAIpQLSc7XylyQ-tpz6jWPN6GXVFOezVTIVZNb5OxeHjK8Nke7mEfjQ" in sv["href"]
-                and sv["target"] == "_blank"):
+        if "form.jotform.com/262137656784064" in sv["href"] and sv["target"] == "_blank":
             ok("hero School Choice Survey button links to the form in a new tab")
         else: bad(f"survey hero button: {sv}")
 

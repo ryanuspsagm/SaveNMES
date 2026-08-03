@@ -564,13 +564,15 @@ def main():
     chk("$72 million of capacity" in html and "about $72 million of capacity" in t
         and "$72 million" in es,
         "the high-case plan scenario mirrored across site, report, and summary")
-    _gform = "docs.google.com/forms/d/e/1FAIpQLSc7XylyQ-tpz6jWPN6GXVFOezVTIVZNb5OxeHjK8Nke7mEfjQ/viewform"
-    for needle in ['id="famSurvey"', f'src="https://{_gform}?embedded=true"',
-                   f'href="https://{_gform}?usp=header"',
+    _jform = "form.jotform.com/262137656784064"
+    for needle in ['id="famSurvey"', f'src="https://{_jform}"',
+                   f'href="https://{_jform}"',
                    ">School Choice Survey</a>",
                    "open the School Choice Survey in a new tab",
                    "if the school closes, what would you actually do?"]:
         chk(needle in html, f"School Choice Survey embedded and linked: {needle}")
+    chk("docs.google.com/forms" not in html,
+        "the Google Form is fully replaced by the Jotform")
     chk(html.index(">School Choice Survey</a>") < html.index('<section id="part1"'),
         "the School Choice Survey button sits in the hero, above Part One")
     chk(html.index('href="SaveNMES_Executive_Summary.pdf">Executive Summary (PDF)</a>') < html.index('<section id="part1"'),
