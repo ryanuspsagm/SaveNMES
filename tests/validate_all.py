@@ -172,7 +172,7 @@ def main():
     for needle in ["$144,000", "$287,000", "$420,000", "$713,000",
                    "Per year, full effect", "Total by grade 12",
                    "$1.5M", "$3.1M", "$4.6M", "$7.7M",
-                   "first lost kindergarten class reaches grade 12"]:
+                   "the oldest lost class, the fifth graders, reaches grade 12"]:
         chk(needle in html, f"leaving escalation on the site: {needle}")
     for needle in ["$144,000, $287,000 and $420,000", "more than double the first hit",
                    "$1.5 million at 10 percent, $3.1 million at 20 and $4.6 million at 30"]:
