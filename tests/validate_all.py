@@ -762,6 +762,33 @@ def main():
         and abs(128*0.30*(4626+500)*23.5 - 4625702.4) < 1
         and 1339*4626 == 6194214 and 1339*5126 == 6863714,
         "model Defaults tab: every published scenario default lives as inputs and formulas, and the conventions recompute")
+    # Fayette peer yardstick: Weaver audit carried consistently (v4.6, no version bump)
+    chk((REPO / "build" / "fcps_weaver_audit_2026_08.pdf").exists()
+        and (REPO / "build" / "fcps_audit_fy2025.pdf").exists(),
+        "Fayette's FY2025 audit and the Weaver budget-process audit are both archived")
+    chk(round(6902403 / 690460223 * 100, 2) == 1.0
+        and 28361786 - 6902403 == 21459383
+        and 43291115 - 6902403 == 36388712
+        and abs(36388712 / 690460223 * 100 - 5.27) < 0.01
+        and abs(1225465 / 29097404 * 100 - 4.21) < 0.01
+        and abs(4290840 / 1225465 - 3.50) < 0.01,
+        "Fayette adjusted reserve recomputes to 1.0 percent; $21.5M restatement; $36.4M drawdown (5.3 cents); Bourbon burns 4.2 cents with 3.5 years of runway")
+    for name, txt in (("site", html), ("report", t)):
+        for needle in ["$6,902,403", "$21.5 million", "$36.4 million",
+                       "KRS 160.470(6)(a)", "Weaver"]:
+            chk(needle in txt, f"Weaver comparison on the {name}: {needle}")
+    chk("1 percent" in es and "$95 million" in es and "close a school" in es,
+        "executive summary carries the Fayette runway note consistently")
+    chk("not one of them is to close a school" in t
+        and "Not one of them is to close a school" in html,
+        "the 70-plus recommendations point is published on the site and in the report")
+    chk("unaudited" in t and "subject to change" in t,
+        "Weaver's unaudited caveat is carried, not dropped")
+    dfy = wb["Defaults"]
+    chk(dfy["D73"].value == 6902403 and dfy["D69"].value == 690460223
+        and dfy["C78"].value == "=C73-D73" and dfy["D74"].value == "=D73/D69"
+        and dfy["B77"].value == "=B73/B75",
+        "model Defaults tab carries the Fayette peer yardstick as live formulas")
     chk("group of volunteers" in t and "Dr. Ryan Bradley" in t
         and "A personal note from Dr. Ryan Bradley" in t,
         "report cover carries the group byline; personal note attributed by name")

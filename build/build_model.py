@@ -252,6 +252,31 @@ for i, (nm, cost, enr) in enumerate([("North Middletown", 1285310, 128), ("Bourb
     put(df, f"D{rr}", f"=ROUND(B{rr}/$B$59,0)", BLK, NUM); put(df, f"E{rr}", f"=C{rr}-D{rr}", BLK, NUM)
 put(df, "F60", "Every school clears on the ledger-coded definition; the all-in report-card definition fails every school. The swing is the definitions, which is why they should be chosen and published before any vote.", NOTE, wrap=True)
 
+
+put(df, "A67", "PEER YARDSTICK: FAYETTE COUNTY, SAME FISCAL YEAR (Section 7)", SEC)
+put(df, "A68", ""); put(df, "B68", "Bourbon", BOLD); put(df, "C68", "Fayette (audited)", BOLD); put(df, "D68", "Fayette (adjusted)", BOLD)
+put(df, "A69", "General Fund expenditures, FY2025"); put(df, "B69", 29097404, BLUE, CUR); put(df, "C69", 685348803, BLUE, CUR); put(df, "D69", 690460223, BLUE, CUR)
+put(df, "A70", "Operating gap before transfers"); put(df, "B70", 2648086, BLUE, CUR); put(df, "C70", 38907376, BLUE, CUR); put(df, "D70", "", BLK)
+put(df, "A71", "Gap per dollar spent"); 
+for col in "BC": put(df, f"{col}71", f"={col}70/{col}69", BLK, PCT)
+put(df, "A72", "Fund balance, beginning of year"); put(df, "B72", 5516305, BLUE, CUR); put(df, "C72", 43291115, BLUE, CUR); put(df, "D72", "=C72", BLK, CUR)
+put(df, "A73", "Fund balance, end of year"); put(df, "B73", 4290840, BLUE, CUR); put(df, "C73", 28361786, BLUE, CUR); put(df, "D73", 6902403, BLUE, CUR)
+put(df, "A74", "Reserve per dollar spent (the published cushion)", bold=True)
+for col in "BCD": put(df, f"{col}74", f"={col}73/{col}69", BLK, PCT, bold=True)
+put(df, "A75", "Drawdown during the year")
+for col in "BCD": put(df, f"{col}75", f"={col}72-{col}73", BLK, CUR)
+put(df, "A76", "Drawdown per dollar spent (the burn rate)", bold=True)
+for col in "BCD": put(df, f"{col}76", f"={col}75/{col}69", BLK, PCT, bold=True)
+put(df, "A77", "Years of cushion at that burn rate", bold=True)
+for col in "BCD": put(df, f"{col}77", f"={col}73/{col}75", BLK, '0.0', bold=True)
+put(df, "A78", "Restatement: audited ending balance less the adjusted ending balance"); put(df, "C78", "=C73-D73", BLK, CUR, bold=True)
+put(df, "A79", "KRS 160.470(6)(a) 2 percent minimum reserve, on Fayette's adjusted spending"); put(df, "D79", "=D69*0.02", BLK, CUR)
+put(df, "A80", "Fayette's own 6 percent administrative threshold"); put(df, "D80", "=D69*0.06", BLK, CUR)
+put(df, "F69", "Bourbon and Fayette FY2025 audits, both archived under build/. The Fayette 'adjusted' column is Weaver, L.L.P.'s Audit of Budget Processes and Expenditures, presented to the Fayette board August 3, 2026 (build/fcps_weaver_audit_2026_08.pdf, Finding A.4): after unaudited corrections the district made to its own FY2025 ledger in June 2026, the ending balance was about $6,902,403, roughly 1 percent of $690,460,223. Weaver labels those figures unaudited and subject to change; they are carried here the same way.", NOTE, wrap=True)
+put(df, "F74", "Published: Bourbon 14.7 cents of reserve per dollar, Fayette 4.1 on its audit and about 1.0 after its own adjustments", NOTE)
+put(df, "F77", "Published: Bourbon roughly three and a half years of cushion at its current burn; Fayette essentially none, which is why it approved borrowing up to $95 million to reach fall tax collections", NOTE)
+put(df, "F79", "Weaver: the adjusted balance sits below both the statutory minimum every Kentucky district must budget and Fayette's own 6 percent policy. Weaver's 70-plus recommendations and 10 priority actions concern budget controls, forecasting, reconciliation, reporting and reserve replenishment; none is a school closure.", NOTE, wrap=True)
+
 # ================= GF_SUMMARY =================
 g = sheet("GF_Summary", [46, 15, 15, 15])
 put(g, "A1", "General Fund, Three-Year Summary (audited)", TITLE)

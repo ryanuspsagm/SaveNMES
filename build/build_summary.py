@@ -109,7 +109,7 @@ A(Paragraph(
   "Capital Funds Request; on operations alone the year trends about $1.74 million in the red: better, still "
   "red. The causes are plain. Pandemic aid ended. Funded attendance fell by about 247 once "
   "the pandemic hold-harmless ended, and the state's 2026-27 forecast puts it at 2,174, down again. And the "
-  "transfer spends the very stream that should pay for buildings. The revenue posture is also unique in the region: the county's tax "
+  "transfer spends the very stream that should pay for buildings. Bourbon still holds a real cushion, 14.7 cents of reserve per dollar spent, and is burning about 4.2 cents of it a year: roughly three and a half years of runway. Fayette County shows what running out looks like. An independent audit presented to its board on August 3, 2026 puts its fiscal 2025 reserve at about 1 percent of spending after the district's own unaudited corrections, below the 2 percent Kentucky law requires every district to budget, and it is borrowing up to $95 million to reach fall tax collections. That audit's seventy-plus recommendations are about budget controls, forecasting and reporting; not one is to close a school. The revenue posture is also unique in the region: the county's tax "
   "base grew 107.5 percent since 2012, second fastest of eight area counties, while the school levy fell "
   "5.4 percent, the only drop among nine districts. Every neighbor's base grew too. Their boards raised "
   "rates anyway.", body))
@@ -162,7 +162,7 @@ A(Paragraph(
   "misconduct by anyone. Estimates are labeled, and every figure can be tested in the model at SaveNMES.org.",
   ParagraphStyle("d", parent=body, fontSize=9.4, textColor=GRAY)))
 A(Paragraph(
-  "The full 52-page report, the financial model with every calculation as live formulas, all archived "
+  "The full 53-page report, the financial model with every calculation as live formulas, all archived "
   "district documents, and every prior version with its corrections are free at SaveNMES.org and in the "
   "public repository.", ParagraphStyle("f", parent=body, fontSize=9.4, textColor=GRAY)))
 
