@@ -499,8 +499,8 @@ def main():
     chk(abs((646441427 - 685348803) - (-38907376)) == 0
         and abs((43291115 - 14929329) - 28361786) == 0,
         "Fayette audit figures recompute: revenues minus expenditures, and the fund-balance walk")
-    for needle in ['id="chartFay"', "9.1 cents in the red", "5.7 cents in the red",
-                   "same fiscal year, 2025", "$43.3 million to $28.4 million",
+    for needle in ['id="chartFay"', "9.1 cents per General Fund dollar spent", "<b>5.7 cents</b>",
+                   "same year and the same two measures", "$43.3 million to $28.4 million",
                    "$38,907,376", "$685,348,803", "clean opinions"]:
         chk(needle in html, f"Fayette case study card: {needle}")
     chk("held flat" not in html and "$82.5 million to $42 million" not in html,
@@ -565,7 +565,11 @@ def main():
         "leakage dollars in the report: gross $2.1-$2.5M headline with the net $1.9-$2.3M beside it")
     for name, txt in (("site", html), ("report", t)):
         chk("9.1 cents" in txt and "a year and a half" in txt and "$1,320,939" in txt,
-            f"the {name} leads the runway on operations alone, disclosing the sweep that flatters the net burn")
+            f"the {name} leads the runway on operations alone, disclosing the sweep behind the net burn")
+        for loaded in ["chosen for it", "lesson is runway", "not virtue", "far worse",
+                       "the flattering one", "That is the warning"]:
+            chk(loaded not in txt,
+                f"Fayette comparison stays factual on the {name}: no {loaded!r}")
     chk("9.1 cents in the red" in es and "a year and a half" in es,
         "executive summary carries the same operations-alone runway basis")
     chk("$2.1 to $2.5 million" in es and "full $4,626 SEEK base" in es,
@@ -791,10 +795,10 @@ def main():
     for name, txt in (("site", html), ("report", t)):
         chk("does not reconcile" in txt or "not reconciled" in txt,
             f"the {name} states that Weaver's figure and the audited balance are not reconciled")
-    chk("1 percent" in es and "$95 million" in es and "close a school" in es,
+    chk("1 percent" in es and "$95 million" in es and "school closure" in es,
         "executive summary carries the Fayette runway note consistently")
-    chk("not one of them is to close a school" in t
-        and "Not one of them is to close a school" in html,
+    chk("none of them is a school closure" in t
+        and "None of them is a school closure" in html,
         "the 70-plus recommendations point is published on the site and in the report")
     chk("unaudited" in t and "subject to change" in t,
         "Weaver's unaudited caveat is carried, not dropped")
