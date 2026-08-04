@@ -563,6 +563,11 @@ def main():
     chk("$2.1 to $2.5 million" in t and "$1.9 to $2.3 million" in t
         and "236 students in this district's own homeschool files" in t,
         "leakage dollars in the report: gross $2.1-$2.5M headline with the net $1.9-$2.3M beside it")
+    for name, txt in (("site", html), ("report", t)):
+        chk("9.1 cents" in txt and "a year and a half" in txt and "$1,320,939" in txt,
+            f"the {name} leads the runway on operations alone, disclosing the sweep that flatters the net burn")
+    chk("9.1 cents in the red" in es and "a year and a half" in es,
+        "executive summary carries the same operations-alone runway basis")
     chk("$2.1 to $2.5 million" in es and "full $4,626 SEEK base" in es,
         "summary carries the gross pool pricing at the full SEEK base")
     chk("$17,903" in t and "7 percent below" in t and "$19,299" in t,
@@ -769,10 +774,11 @@ def main():
     chk(round(6902403 / 690460223 * 100, 2) == 1.0
         and 28361786 - 6902403 == 21459383
         and abs(1225465 / 29097404 * 100 - 4.21) < 0.01
-        and abs(4290840 / 1225465 - 3.50) < 0.01
-        and abs(14929329 / 685348803 * 100 - 2.18) < 0.01
-        and abs(28361786 / 14929329 - 1.90) < 0.01,
-        "Fayette adjusted reserve recomputes to 1.0 percent and sits $21.5M below the audited balance; runway on audited books: Bourbon 3.5 years at 4.2 cents, Fayette 1.9 at 2.2")
+        and 2648086 - 1225465 == 1422621
+        and abs(2648086 / 29097404 * 100 - 9.10) < 0.01
+        and abs(4290840 / 2648086 - 1.62) < 0.01
+        and abs(28361786 / 38907376 - 0.73) < 0.01,
+        "the burn bases reconcile: Bourbon's 4.2-cent net change follows $1,422,621 of transfers in; on operations alone 9.1 cents gives about 1.6 years of runway against Fayette's 0.7")
     for name, txt in (("site", html), ("report", t)):
         for needle in ["$6,902,403", "$21.5 million", "$28,361,786",
                        "KRS 160.470(6)(a)", "Weaver"]:
@@ -796,6 +802,8 @@ def main():
     chk(dfy["D73"].value == 6902403 and dfy["D69"].value == 690460223
         and dfy["C78"].value == "=C73-D73" and dfy["D74"].value == "=D73/D69"
         and dfy["B77"].value == "=B73/B75" and dfy["D77"].value is None
+        and dfy["B83"].value == "=B73/B70" and dfy["B82"].value == 1320939
+        and dfy["B81"].value == "=B70-B75"
         and dfy["D75"].value is None and dfy["D72"].value == "n/a",
         "model Defaults tab: Fayette yardstick live, with no drawdown or runway computed on the mixed basis")
     chk("group of volunteers" in t and "Dr. Ryan Bradley" in t
