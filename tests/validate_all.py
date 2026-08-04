@@ -768,15 +768,23 @@ def main():
         "Fayette's FY2025 audit and the Weaver budget-process audit are both archived")
     chk(round(6902403 / 690460223 * 100, 2) == 1.0
         and 28361786 - 6902403 == 21459383
-        and 43291115 - 6902403 == 36388712
-        and abs(36388712 / 690460223 * 100 - 5.27) < 0.01
         and abs(1225465 / 29097404 * 100 - 4.21) < 0.01
-        and abs(4290840 / 1225465 - 3.50) < 0.01,
-        "Fayette adjusted reserve recomputes to 1.0 percent; $21.5M restatement; $36.4M drawdown (5.3 cents); Bourbon burns 4.2 cents with 3.5 years of runway")
+        and abs(4290840 / 1225465 - 3.50) < 0.01
+        and abs(14929329 / 685348803 * 100 - 2.18) < 0.01
+        and abs(28361786 / 14929329 - 1.90) < 0.01,
+        "Fayette adjusted reserve recomputes to 1.0 percent and sits $21.5M below the audited balance; runway on audited books: Bourbon 3.5 years at 4.2 cents, Fayette 1.9 at 2.2")
     for name, txt in (("site", html), ("report", t)):
-        for needle in ["$6,902,403", "$21.5 million", "$36.4 million",
+        for needle in ["$6,902,403", "$21.5 million", "$28,361,786",
                        "KRS 160.470(6)(a)", "Weaver"]:
             chk(needle in txt, f"Weaver comparison on the {name}: {needle}")
+    chk("restatement" not in html and "$36.4 million" not in html,
+        "the mixed-basis restatement and $36.4M drawdown framing is off the site")
+    chk("Weaver never uses the word restatement" in t
+        and t.count("restatement") == 2,
+        "the report keeps the restatement wording only inside its published withdrawal of that framing")
+    for name, txt in (("site", html), ("report", t)):
+        chk("does not reconcile" in txt or "not reconciled" in txt,
+            f"the {name} states that Weaver's figure and the audited balance are not reconciled")
     chk("1 percent" in es and "$95 million" in es and "close a school" in es,
         "executive summary carries the Fayette runway note consistently")
     chk("not one of them is to close a school" in t
@@ -787,8 +795,9 @@ def main():
     dfy = wb["Defaults"]
     chk(dfy["D73"].value == 6902403 and dfy["D69"].value == 690460223
         and dfy["C78"].value == "=C73-D73" and dfy["D74"].value == "=D73/D69"
-        and dfy["B77"].value == "=B73/B75",
-        "model Defaults tab carries the Fayette peer yardstick as live formulas")
+        and dfy["B77"].value == "=B73/B75" and dfy["D77"].value is None
+        and dfy["D75"].value is None and dfy["D72"].value == "n/a",
+        "model Defaults tab: Fayette yardstick live, with no drawdown or runway computed on the mixed basis")
     chk("group of volunteers" in t and "Dr. Ryan Bradley" in t
         and "A personal note from Dr. Ryan Bradley" in t,
         "report cover carries the group byline; personal note attributed by name")

@@ -502,14 +502,14 @@ fay_ok = (DFT["D73"].value == 6902403 and DFT["D69"].value == 690460223
           and DFT["C73"].value == 28361786 and DFT["B73"].value == 4290840
           and round(6902403 / 690460223 * 100, 2) == 1.0
           and 28361786 - 6902403 == 21459383
-          and 43291115 - 6902403 == 36388712
+          and DFT["D75"].value is None and DFT["D77"].value is None
           and "$6,902,403" in html and "$6,902,403" in pdf_flat
           and "$21.5 million" in html and "$21.5 million" in pdf_flat
-          and "$36.4 million" in html and "$36.4 million" in pdf_flat
+          and "$28,361,786" in html and "restatement" not in html
           and "KRS 160.470(6)(a)" in html and "KRS 160.470(6)(a)" in pdf_flat
           and (REPO / "build" / "fcps_weaver_audit_2026_08.pdf").exists())
 if fay_ok:
-    match("Fayette yardstick: Weaver's adjusted $6,902,403 (1.0%), the $21.5M restatement and $36.4M drawdown agree across model, site and PDF; the deck is archived")
+    match("Fayette yardstick: Weaver's adjusted $6,902,403 (1.0%) and its $21.5M difference from the audited balance agree across model, site and PDF; no drawdown or runway is computed on the mixed basis; the deck is archived")
 else:
     diff("Fayette/Weaver comparison out of sync across model, site and PDF")
 
