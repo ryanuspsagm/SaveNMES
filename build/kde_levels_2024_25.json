@@ -1,0 +1,380 @@
+{
+ "source": "Kentucky Department of Education, School Report Card 2024-25: KYRC25_ASMT_Kentucky_Summative_Assessment.csv (achievement levels, all students) and KYRC25_OVW_Student_Enrollment.csv (grade counts), downloaded 2026-08-04 from education.ky.gov/Open-House/data/HistoricalDatasets. Rows trimmed to the three Bourbon County Schools elementaries plus the district and state totals. Values are percentages as published by KDE, including its own rounded Proficient/Distinguished column; nulls are state-suppressed small groups.",
+ "levels": {
+  "Mathematics": {
+   "3rd": {
+    "BCES": [
+     41,
+     28,
+     27,
+     3,
+     30
+    ],
+    "CRES": [
+     34,
+     42,
+     19,
+     4,
+     23
+    ],
+    "NMES": null,
+    "District": [
+     41,
+     34,
+     21,
+     3,
+     25
+    ],
+    "Kentucky": [
+     24,
+     33,
+     31,
+     12,
+     43
+    ]
+   },
+   "4th": {
+    "BCES": [
+     49,
+     23,
+     23,
+     5,
+     28
+    ],
+    "CRES": null,
+    "NMES": [
+     29,
+     29,
+     29,
+     12,
+     41
+    ],
+    "District": [
+     38,
+     32,
+     26,
+     4,
+     30
+    ],
+    "Kentucky": [
+     29,
+     26,
+     32,
+     12,
+     44
+    ]
+   },
+   "5th": {
+    "BCES": [
+     25,
+     48,
+     24,
+     3,
+     27
+    ],
+    "CRES": [
+     40,
+     34,
+     19,
+     6,
+     26
+    ],
+    "NMES": [
+     19,
+     35,
+     35,
+     12,
+     46
+    ],
+    "District": [
+     31,
+     39,
+     24,
+     6,
+     29
+    ],
+    "Kentucky": [
+     26,
+     31,
+     31,
+     12,
+     43
+    ]
+   }
+  },
+  "Reading": {
+   "3rd": {
+    "BCES": [
+     30,
+     30,
+     28,
+     11,
+     39
+    ],
+    "CRES": [
+     28,
+     38,
+     26,
+     9,
+     34
+    ],
+    "NMES": null,
+    "District": [
+     31,
+     33,
+     27,
+     9,
+     36
+    ],
+    "Kentucky": [
+     25,
+     28,
+     28,
+     19,
+     47
+    ]
+   },
+   "4th": {
+    "BCES": [
+     43,
+     16,
+     27,
+     14,
+     41
+    ],
+    "CRES": [
+     24,
+     32,
+     31,
+     13,
+     44
+    ],
+    "NMES": [
+     24,
+     29,
+     35,
+     12,
+     47
+    ],
+    "District": [
+     33,
+     25,
+     30,
+     13,
+     43
+    ],
+    "Kentucky": [
+     23,
+     27,
+     32,
+     18,
+     50
+    ]
+   },
+   "5th": {
+    "BCES": [
+     24,
+     39,
+     30,
+     7,
+     37
+    ],
+    "CRES": [
+     42,
+     26,
+     22,
+     10,
+     32
+    ],
+    "NMES": [
+     23,
+     23,
+     23,
+     31,
+     54
+    ],
+    "District": [
+     32,
+     31,
+     25,
+     12,
+     38
+    ],
+    "Kentucky": [
+     21,
+     29,
+     31,
+     19,
+     50
+    ]
+   }
+  },
+  "Science": {
+   "4th": {
+    "BCES": [
+     15,
+     58,
+     19,
+     8,
+     27
+    ],
+    "CRES": null,
+    "NMES": [
+     6,
+     41,
+     47,
+     6,
+     53
+    ],
+    "District": [
+     10,
+     58,
+     27,
+     4,
+     31
+    ],
+    "Kentucky": [
+     9,
+     54,
+     29,
+     8,
+     37
+    ]
+   }
+  },
+  "Editing and Mechanics": {
+   "5th": {
+    "BCES": [
+     33,
+     30,
+     15,
+     22,
+     37
+    ],
+    "CRES": [
+     36,
+     36,
+     14,
+     13,
+     27
+    ],
+    "NMES": [
+     23,
+     27,
+     27,
+     23,
+     50
+    ],
+    "District": [
+     33,
+     32,
+     16,
+     18,
+     35
+    ],
+    "Kentucky": [
+     24,
+     29,
+     23,
+     24,
+     47
+    ]
+   }
+  },
+  "On Demand Writing": {
+   "5th": {
+    "BCES": [
+     24,
+     36,
+     24,
+     16,
+     40
+    ],
+    "CRES": [
+     36,
+     40,
+     13,
+     10,
+     23
+    ],
+    "NMES": [
+     12,
+     31,
+     35,
+     23,
+     58
+    ],
+    "District": [
+     28,
+     37,
+     21,
+     15,
+     35
+    ],
+    "Kentucky": [
+     22,
+     39,
+     23,
+     15,
+     38
+    ]
+   }
+  },
+  "Social Studies": {
+   "5th": {
+    "BCES": [
+     45,
+     24,
+     27,
+     4,
+     31
+    ],
+    "CRES": [
+     52,
+     19,
+     19,
+     9,
+     29
+    ],
+    "NMES": [
+     46,
+     19,
+     23,
+     12,
+     35
+    ],
+    "District": [
+     48,
+     21,
+     23,
+     8,
+     31
+    ],
+    "Kentucky": [
+     34,
+     28,
+     24,
+     15,
+     38
+    ]
+   }
+  }
+ },
+ "tested_by_grade": {
+  "BCES": {
+   "3rd": 109,
+   "4th": 82,
+   "5th": 74
+  },
+  "CRES": {
+   "3rd": 97,
+   "4th": 71,
+   "5th": 80
+  },
+  "NMES": {
+   "3rd": 26,
+   "4th": 19,
+   "5th": 28
+  }
+ }
+}

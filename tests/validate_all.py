@@ -771,6 +771,33 @@ def main():
         and abs(128*0.30*(4626+500)*23.5 - 4625702.4) < 1
         and 1339*4626 == 6194214 and 1339*5126 == 6863714,
         "model Defaults tab: every published scenario default lives as inputs and formulas, and the conventions recompute")
+    # achievement-level breakout (KDE 2024-25), published under the scores detail
+    chk((REPO / "build" / "kde_levels_2024_25.json").exists(),
+        "KDE achievement-level extract archived in build/")
+    import json as _json
+    _lv = _json.loads((REPO / "build" / "kde_levels_2024_25.json").read_text())
+    _L = _lv["levels"]; _T = _lv["tested_by_grade"]
+    chk(_T["NMES"] == {"3rd": 26, "4th": 19, "5th": 28}
+        and _T["BCES"]["3rd"] == 109 and _T["CRES"]["5th"] == 80,
+        "archived grade counts: NMES 26/19/28 against 109 and 80 at the larger schools")
+    chk(_L["Science"]["4th"]["NMES"][:4] == [6, 41, 47, 6]
+        and _L["Reading"]["5th"]["NMES"][3] == 31
+        and _L["Reading"]["3rd"]["NMES"] is None
+        and _L["Mathematics"]["3rd"]["NMES"] is None,
+        "archived levels: NMES science 6/41/47/6, 31 percent distinguished in 5th reading, third grade suppressed")
+    _cells = [(sub, g) for sub in _L for g in _L[sub] if _L[sub][g].get("NMES")]
+    _lead = [(sub, g) for sub, g in _cells
+             if all(_L[sub][g]["NMES"][4] >= _L[sub][g][o][4]
+                    for o in ("BCES", "CRES") if _L[sub][g].get(o))]
+    chk(len(_cells) == 8 and len(_lead) == 8,
+        "NMES leads all eight published subject-and-grade cells on the state's own P/D column")
+    for needle in ['id="lvCharts"', "Every grade, every subject, every level",
+                   "Why the two views differ", "state-suppressed", "one child moves an NMES subject score"]:
+        chk(needle in html, f"site achievement-level breakout: {needle}")
+    chk(html.count('class="lvbar') >= 1 and '"Editing and Mechanics"' in html
+        and '"On Demand Writing"' in html,
+        "site breakout carries all six tested subjects with bar markup")
+
     # Fayette peer yardstick: Weaver audit carried consistently (v4.6, no version bump)
     chk((REPO / "build" / "fcps_weaver_audit_2026_08.pdf").exists()
         and (REPO / "build" / "fcps_audit_fy2025.pdf").exists(),
