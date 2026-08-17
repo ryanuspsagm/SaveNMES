@@ -235,9 +235,9 @@ def main():
                    "Appendix B: Other Supporting Data", "KRS 157.370",
                    "Boston Public Schools"]:
         chk(needle in t, f"PDF claim intact: {needle}")
-    chk("-$726,873" in html and "all staff retained" in html
-        and "superintendent's written statement" in html,
-        "all-staff-retained figure shown at the calculator default and attributed to the superintendent")
+    chk("-$456,383" in html and "superintendent's written statement" in html
+        and "more generous than the district's own stance" in html,
+        "savings-granted default shown at the calculator and contrasted with the superintendent's stance")
     for needle in ["$523,830", "99 percent", "losing $1,247,265",
                    "saving $171,118", "Millersburg"]:
         chk(needle in html, f"site v5.0 two-tailed range intact: {needle}")
@@ -253,8 +253,8 @@ def main():
                    "$681,643", "$314,250", "$94,720", "$183,354",
                    "The bottom line: your two scenarios, live from the calculators above", 'class="bline"',
                    '<div class="n" id="blGrow">+$142,080</div>',
-                   '<div class="n" id="blClose">&minus;$726,873</div>',
-                   "the superintendent's staffing stance (all staff retained) at the statistical median of 167 students leaving, and the weighted median across all scenarios loses $523,830",
+                   '<div class="n" id="blClose">&minus;$456,383</div>',
+                   "the default grants the savings that scale with students, teachers included, plus half the fixed overhead, at the statistical median of 167 students leaving; the weighted median across all scenarios loses $523,830",
                    "getElementById('blClose')", "getElementById('blGrow')"]:
         chk(needle in html, f"consolidated range card: {needle}")
     chk(html.count('class="iqr"') == 2, "IQR band on both bars")
@@ -429,7 +429,7 @@ def main():
     # leaving-escalation chart
     for needle in ['id="chartLeave"', "The loss grows until year eight",
                    "This scenario lands at about the", "19,683 weighted scenarios",
-                   "The default reflects the superintendent's written statement",
+                   "The default grants closure every saving that scales with students",
                    "within $140 of the weighted median",
                    'value="140"', "Grow the district", "+$3.4M",
                    'class="forksvg"', ">SHRINK TO FIT</text>", ">GROW AND THRIVE</text>",
@@ -763,7 +763,7 @@ def main():
             f"upfront assumptions disclosure on the {name}: stated, published, open to challenge")
     dfw = wb["Defaults"]
     chk(dfw["B5"].value == 17903 and dfw["B13"].value == 1285310
-        and dfw["B34"].value == "=B17+C17-63000-167*(Assumptions!B6+500-Assumptions!B62)"
+        and dfw["B34"].value == "=B17+C17+Closure_Model!C40+3*54479.4-63000-167*(Assumptions!B6+500-Assumptions!B62)"
         and dfw["B35"].value == "=30*(Assumptions!B6+500-400)"
         and dfw["C39"].value == 275 and dfw["B42"].value == "=Tax_History!D79"
         and dfw["B31"].value == "=SUMPRODUCT(B30:G30,{13,12,11,10,9,8})"
@@ -1009,10 +1009,10 @@ def main():
     _out = _sp.run([sys.executable, str(REPO / "build" / "closure_grid.py")],
                    capture_output=True, text=True)
     chk(_out.returncode == 0 and "median $-523,830" in _out.stdout
-        and "99% lose money" in _out.stdout and "$-726,873" in _out.stdout,
-        "closure_grid.py asserts its own v5 statistics (median -$523,830, 99 percent, default -$726,873)")
-    chk("-$726,873" in html and "19th percentile" in html,
-        "site default -$726,873 at the 19th percentile")
+        and "99% lose money" in _out.stdout and "$-456,383" in _out.stdout,
+        "closure_grid.py asserts its own v5 statistics (median -$523,830, 99 percent, default -$456,383)")
+    chk("-$456,383" in html and "59th percentile" in html,
+        "site default -$456,383 at the 59th percentile")
     chk("fewer than three students" in html and "fewer than 3 at a level" in html,
         "suppression notes state KDE's written fewer-than-three rule")
     chk("kindergarten enrolled 12" in html or "kindergarten enrolled <b>12" in t

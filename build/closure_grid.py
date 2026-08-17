@@ -74,10 +74,11 @@ net = capture + fixed_positions_cut + teachers_cut x $54,479.40
 Run:  python build/closure_grid.py
 Asserts the published statistics: 3,888 scenarios; weighted median
 -$523,830; 99 percent lose money; middle half -$681,643 to -$314,250; range
--$1,247,265 to +$171,118; the all-staff-retained site default (-$726,873,
-capture at full stop, median leavers) sits at the 19th percentile: pricing
-the statistical middle of the exodus while honoring the district's own
-all-staff-retained stance lands harsher than four fifths of the grid.
+-$1,247,265 to +$171,118; the site default (-$456,383: building sold, half
+the fixed positions cut over time, three teachers cut with the emptied
+classrooms, median leavers) sits at the 59th percentile: it grants closure
+every saving that scales with students, more than the district's own
+all-staff-retained stance, and the median exodus still sinks it.
 Unweighted median -$562,162 kept as a cross-check.
 """
 import statistics
@@ -119,21 +120,25 @@ n = len(pairs)
 med = wpct(0.50)
 p25, p75 = wpct(0.25), wpct(0.75)
 neg = sum(w for v, w in pairs if v < 0) / total_w
-default = 127_039 - 63_000 - 167 * (SEEK + 500 - SUPPLIES)  # all staff retained,
-                                                            # median leavers
-default_rank = sum(w for v, w in pairs if v <= default) / total_w
+default = (127_039 + FIXED_POS / 2 + 3 * TEACH - 63_000
+           - 167 * (SEEK + 500 - SUPPLIES))  # scaled savings granted,
+                                             # median leavers
+default_rank = (sum(w for v, w in pairs if v < default - 0.005)
+                + sum(w for v, w in pairs if abs(v - default) <= 0.005) / 2
+                ) / total_w                  # ties half-weighted, the site
+                                             # JS convention
 
 assert n == 3_888, n
 assert round(med) == -523_830, med
 assert round(p25) == -681_643 and round(p75) == -314_250, (p25, p75)
 assert round(neg * 100) == 99, neg
 assert round(nets[0]) == -1_247_265 and round(nets[-1]) == 171_118, (nets[0], nets[-1])
-assert round(default) == -726_873, default
-assert 0.17 < default_rank < 0.21, default_rank
+assert round(default) == -456_383, default
+assert 0.57 < default_rank < 0.62, default_rank
 assert round(statistics.median(nets)) == -562_162
 
 print(f"{n:,} scenarios | weighted median ${med:,.0f} | {neg * 100:.0f}% lose money")
 print(f"range ${nets[0]:,.0f} to ${nets[-1]:,.0f} | middle half "
       f"${p25:,.0f} to ${p75:,.0f}")
-print(f"site default (all staff retained) ${default:,.0f} | rank {default_rank * 100:.0f}%")
+print(f"site default (scaled savings granted) ${default:,.0f} | rank {default_rank * 100:.0f}%")
 print(f"unweighted median ${statistics.median(nets):,.0f} (cross-check)")
