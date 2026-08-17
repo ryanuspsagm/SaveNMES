@@ -49,7 +49,7 @@ site_fixv = re.search(r"FIXV=\[(\d+),(\d+),(\d+)\]", html)
 site_teach = re.search(r"TEACH=108958\.80/2", html)
 site_default = (127039 + 0 + 0*54479.4 - 63000 - 167*(A["B6"].value+500-400) - 0)
 if round(central) == -463042 and round(site_default) == -726873 and "-$726,873" in html:
-    match("model central case -$463,042 (v5 grid); site calculator opens at the district staffing stance, all staff retained, median leavers (-$726,873, 16th weighted percentile)")
+    match("model central case -$463,042 (v5 grid); site calculator opens at the district staffing stance, all staff retained, median leavers (-$726,873, 19th weighted percentile)")
 else:
     diff(f"closure defaults: model central {central:.0f}, site district-stance {site_default:.0f} shown: {'-$726,873' in html}")
 # growth calculator default (v4.5 review): the weighted median scenario itself.
@@ -86,14 +86,14 @@ else:
     diff("site leaver pricing formula not found")
 
 # two-tailed range strings consistent
-if "losing $1,247,265 and saving $323,614" in pdf_flat and "losing $1,247,265" in html \
-        and "saving $323,614" in html:
-    match("two-tailed range (-$1,247,265 to +$323,614, v5 survey-anchored grid) consistent on site and in PDF")
+if "losing $1,247,265 and saving $171,118" in pdf_flat and "losing $1,247,265" in html \
+        and "saving $171,118" in html:
+    match("two-tailed range (-$1,247,265 to +$171,118, v5 survey-anchored grid) consistent on site and in PDF")
 else:
     diff("v4.2 two-tailed range strings missing on site or PDF")
-if "loses $474,042" in html and "percentile of the 4,860 weighted scenarios" in html \
-        and "LOSES $474,042" in pdf_flat and CM["B47"].value.startswith("="):
-    match("v5.0 weighted median ($474,042 yearly loss) in site prose and JS readout and in PDF; central case live in model")
+if "loses $523,830" in html and "percentile of the 3,888 weighted scenarios" in html \
+        and "LOSES $523,830" in pdf_flat and CM["B47"].value.startswith("="):
+    match("v5.0 weighted median ($523,830 yearly loss) in site prose and JS readout and in PDF; central case live in model")
 else:
     diff("v4.5 weighted median strings missing")
 
@@ -108,7 +108,7 @@ _cl = sorted(
     for c, wc in ((53519, 1), (80279, 2), (127039, 1))
     for f, wf in ((0, 1), (107052.2, 2), (214104.4, 1))
     for t in (0, 1, 2, 3)
-    for l, wl in ((38, 1), (74, 2), (137, 2), (167, 2), (194, 1))
+    for l, wl in ((74, 2), (137, 2), (167, 2), (194, 1))
     for ad, wa in ((0, 1), (500, 2), (1000, 1))
     for pr, wp in ((0, 1), (47500, 2), (95000, 1))
     for b, wb in ((20000, 1), (63000, 2), (190000, 1)))
@@ -135,12 +135,12 @@ _gr = sorted(
     for c, w7 in ((400, 1), (700, 2), (1000, 1))
     for ad, w8 in ((0, 1), (500, 2), (1000, 1)))
 _gtw = sum(w for _, w in _gr)
-ok_w = (round(_wp(_cl, _tw, 0.5)) == -474042 and round(_wp(_cl, _tw, 0.25)) == -657341
-        and round(_wp(_cl, _tw, 0.75)) == -217247 and round(_neg * 100) == 94
+ok_w = (round(_wp(_cl, _tw, 0.5)) == -523830 and round(_wp(_cl, _tw, 0.25)) == -681643
+        and round(_wp(_cl, _tw, 0.75)) == -314250 and round(_neg * 100) == 99
         and _wp(_gr, _gtw, 0.5) == 142220 and _wp(_gr, _gtw, 0.25) == 94720
         and _wp(_gr, _gtw, 0.75) == 183354)
-site_w = all(s in html for s in ("$474,042", "$657,341", "$217,247", "$142,080",
-                                 "$94,720", "$183,354", "94 percent"))
+site_w = all(s in html for s in ("$523,830", "$681,643", "$314,250", "$142,080",
+                                 "$94,720", "$183,354", "99 percent"))
 if ok_w and site_w:
     match("v5.0 weighted stats recompute (closure median/IQR/share, growth median/IQR) and all seven appear on the site")
 else:
@@ -609,7 +609,7 @@ else:
     diff("EDFacts toggle still present after retirement")
 
 # site text spot checks
-for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $1,247,265 a year at the left end to saving $323,614 a year", "closure range prose"),
+for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $1,247,265 a year at the left end to saving $171,118 a year", "closure range prose"),
                  ("$166,189 per cent", "certified real-estate yield in the levy note"), ("$2.65 million", "deficit figure in prose"),
                  ("holds 128 today", "enrollment in prose"), ("a 174 rating", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")

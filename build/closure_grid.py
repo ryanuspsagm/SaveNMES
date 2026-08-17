@@ -39,18 +39,22 @@ grid's true extremes and do not depend on weights.
                              Appendix A.1 prices 2; its Appendix B classroom
                              count supports 3; year one is 0 by its own
                              retention note.
-  students lost (steady state): 38 / 74 / 137 / 167 / 194 students missing
+  students lost (steady state): 74 / 137 / 167 / 194 students missing
                              from the district's rolls in a year, WEIGHTED
-                             1-2-2-2-1. From the August 2026 school-choice
+                             2-2-2-1. From the August 2026 school-choice
                              survey (31 leaving households, 70 children,
                              anonymized in this folder) and the selection-
                              corrected estimate built on it (exodus_model.py):
                              74 = the survey floor, named respondents only,
-                             5.83 leavers per class x 12.62 effective years;
+                             5.83 leavers per class x 12.62 effective years,
+                             the grid's LOW END: fewer leavers than the
+                             signed households themselves account for is
+                             not a priced scenario (an interim draft carried
+                             a skeptic's leg below the floor; removed);
                              137 / 167 / 194 = the posterior 25th / 50th /
-                             75th percentile at the class-size midpoint;
-                             38 = roughly half the floor, kept as the skeptic's leg
-                             for intent that never becomes action. The state's
+                             75th percentile at the class-size midpoint,
+                             each surviving leg keeping the weight it
+                             already carried. The state's
                              own SAAR file corroborates the band from outside
                              the survey: the 2025-26 kindergarten enrolled 12
                              children against a 21-31 norm, and the school
@@ -68,13 +72,13 @@ net = capture + fixed_positions_cut + teachers_cut x $54,479.40
       - busing - leavers x (4,636 + add_ons - 400) - property_loss
 
 Run:  python build/closure_grid.py
-Asserts the published statistics: 4,860 scenarios; weighted median
--$474,042; 94 percent lose money; middle half -$657,341 to -$217,247; range
--$1,247,265 to +$323,614; the all-staff-retained site default (-$726,873,
-capture at full stop, median leavers) sits at the 16th percentile: pricing
+Asserts the published statistics: 3,888 scenarios; weighted median
+-$523,830; 99 percent lose money; middle half -$681,643 to -$314,250; range
+-$1,247,265 to +$171,118; the all-staff-retained site default (-$726,873,
+capture at full stop, median leavers) sits at the 19th percentile: pricing
 the statistical middle of the exodus while honoring the district's own
-all-staff-retained stance lands harsher than five sixths of the grid.
-Unweighted median -$469,905 kept as a cross-check.
+all-staff-retained stance lands harsher than four fifths of the grid.
+Unweighted median -$562,162 kept as a cross-check.
 """
 import statistics
 from itertools import product
@@ -88,7 +92,7 @@ FIXED_POS = 115397.25 + 49655.38 + 49051.77  # 214,104.40: MUNIS FY2026 actuals
 CAPTURE = [(53_519, 1), (80_279, 2), (127_039, 1)]           # triangular
 FIXED = [(0, 1), (FIXED_POS / 2, 2), (FIXED_POS, 1)]         # triangular
 TEACHERS = [(t, 1) for t in (0, 1, 2, 3)]                    # uniform
-LEAVERS = [(38, 1), (74, 2), (137, 2), (167, 2), (194, 1)]   # survey-anchored
+LEAVERS = [(74, 2), (137, 2), (167, 2), (194, 1)]   # survey-anchored; floor = low end
 ADDONS = [(0, 1), (500, 2), (1000, 1)]                       # triangular
 PROP = [(0, 1), (47_500, 2), (95_000, 1)]                    # triangular
 BUS = [(20_000, 1), (63_000, 2), (190_000, 1)]               # triangular
@@ -119,14 +123,14 @@ default = 127_039 - 63_000 - 167 * (SEEK + 500 - SUPPLIES)  # all staff retained
                                                             # median leavers
 default_rank = sum(w for v, w in pairs if v <= default) / total_w
 
-assert n == 4_860, n
-assert round(med) == -474_042, med
-assert round(p25) == -657_341 and round(p75) == -217_247, (p25, p75)
-assert round(neg * 100) == 94, neg
-assert round(nets[0]) == -1_247_265 and round(nets[-1]) == 323_614, (nets[0], nets[-1])
+assert n == 3_888, n
+assert round(med) == -523_830, med
+assert round(p25) == -681_643 and round(p75) == -314_250, (p25, p75)
+assert round(neg * 100) == 99, neg
+assert round(nets[0]) == -1_247_265 and round(nets[-1]) == 171_118, (nets[0], nets[-1])
 assert round(default) == -726_873, default
-assert 0.14 < default_rank < 0.19, default_rank
-assert round(statistics.median(nets)) == -469_905
+assert 0.17 < default_rank < 0.21, default_rank
+assert round(statistics.median(nets)) == -562_162
 
 print(f"{n:,} scenarios | weighted median ${med:,.0f} | {neg * 100:.0f}% lose money")
 print(f"range ${nets[0]:,.0f} to ${nets[-1]:,.0f} | middle half "

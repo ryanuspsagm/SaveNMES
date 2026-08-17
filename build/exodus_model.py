@@ -16,8 +16,14 @@ Method, in order:
     2020-2025) the survey holds 20 leavers and 4 stayers. A response-bias
     model corrects for leavers answering more readily than stayers:
     observed odds = true odds x k, with k ~ LogNormal(ln 3, 0.5) (95% of
-    prior mass between about 1.1x and 8x). Posterior quartiles of the
-    true leave share come from numeric integration over (p, k).
+    prior mass between about 1.1x and 8x). The prior is anchored to
+    published measurements of this bias: Groves/Presser/Dipko 2004
+    (interested groups answer 1.4x more readily), Abraham/Helms/Presser
+    2009 (engaged respondents 1.35x, directly measured), Pew 2012/2017
+    (engaged people over-represented at implied ratios of 3-4x); the
+    measured 1.4-4x band sits inside the prior's 1.1-8x. Posterior
+    quartiles of the true leave share come from numeric integration
+    over (p, k).
  3. SURVIVAL. A lost child is counted only for years they would actually
     have been enrolled. District cohort data (SAAR school files: each
     2025-26 secondary grade vs its own combined 5th-grade class) gives

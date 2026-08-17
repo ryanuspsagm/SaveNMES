@@ -238,11 +238,11 @@ def main():
     chk("-$726,873" in html and "all staff retained" in html
         and "superintendent's written statement" in html,
         "all-staff-retained figure shown at the calculator default and attributed to the superintendent")
-    for needle in ["$474,042", "94 percent", "losing $1,247,265",
-                   "saving $323,614", "Millersburg"]:
+    for needle in ["$523,830", "99 percent", "losing $1,247,265",
+                   "saving $171,118", "Millersburg"]:
         chk(needle in html, f"site v5.0 two-tailed range intact: {needle}")
-    for needle in ["Figure 7.", "Figure 8.", "losing $1,247,265", "saving $323,614",
-                   "$474,042", "94 percent", "Millersburg", "119 students",
+    for needle in ["Figure 7.", "Figure 8.", "losing $1,247,265", "saving $171,118",
+                   "$523,830", "99 percent", "Millersburg", "119 students",
                    "$54,479.40", "$41,718", "747"]:
         chk(needle in t, f"PDF v5.0 two-tailed range intact: {needle}")
     # v4.5 consolidated card: both bars, IQR bands, weighting disclosed, bottom line
@@ -250,11 +250,11 @@ def main():
         and "percentile scale</b>" not in html,
         "the weighting method lives in the report; the side-by-side card stays simple")
     for needle in ["Every scenario, side by side", "middle half", 'class="iqr"',
-                   "$657,341", "$217,247", "$94,720", "$183,354",
+                   "$681,643", "$314,250", "$94,720", "$183,354",
                    "The bottom line: your two scenarios, live from the calculators above", 'class="bline"',
                    '<div class="n" id="blGrow">+$142,080</div>',
                    '<div class="n" id="blClose">&minus;$726,873</div>',
-                   "the superintendent's staffing stance (all staff retained) at the statistical median of 167 students leaving, and the weighted median across all scenarios loses $474,042",
+                   "the superintendent's staffing stance (all staff retained) at the statistical median of 167 students leaving, and the weighted median across all scenarios loses $523,830",
                    "getElementById('blClose')", "getElementById('blGrow')"]:
         chk(needle in html, f"consolidated range card: {needle}")
     chk(html.count('class="iqr"') == 2, "IQR band on both bars")
@@ -381,7 +381,7 @@ def main():
     es_path = REPO / "SaveNMES_Executive_Summary.pdf"
     chk(es_path.exists(), "executive summary PDF exists")
     es = " ".join(pg.extract_text() for pg in PdfReader(es_path).pages).replace("\n", " ")
-    for needle in ["$19,080", "$474,042", "54,479.40", "Permanent", "2,412", "4,860",
+    for needle in ["$19,080", "$523,830", "54,479.40", "Permanent", "2,412", "3,888",
                    "$378,090", "$622,828 to $1,113,400", "$756,445 to $955,509",
                    "$6.2 to $6.9 million"]:
         chk(needle in es, f"executive summary intact: {needle}")
@@ -420,7 +420,7 @@ def main():
     for lever in ['id="sGro"', 'id="sRat"', 'id="sTc"', 'id="sSp"',
                   'id="sGb"', 'id="sCps"', 'id="sGad"']:
         chk(lever in html, f"growth-model slider present: {lever}")
-    chk("4,860 weighted scenarios" in html and 'id="rRank"' in html,
+    chk("3,888 weighted scenarios" in html and 'id="rRank"' in html,
         "calculator presented as the live weighted scenario model with a grid-rank readout")
     chk("$142,080" in html and "every scenario in which students arrive pays" in html and "19,683" in html
         and "$4,131" in html,
@@ -881,10 +881,10 @@ def main():
     chk("$938,690" in t, "the working-budget cross-check ($938,690) lives in the report")
     chk("one in three" not in html or "an earlier version of this page said one in three" in html,
         "site: the retracted one-in-three share is corrected, not merely repeated")
-    chk('id="sTea" min="0" max="3"' in html and 'id="sLeav" min="38" max="194"' in html
+    chk('id="sTea" min="0" max="3"' in html and 'id="sLeav" min="74" max="194"' in html
         and 'id="sBus" min="20000" max="190000"' in html
         and 'id="sGro" min="110" max="200" value="140" step="5"' in html,
-        "site calculator sliders span exactly the published grids: missing students 38 to 194 with "
+        "site calculator sliders span exactly the published grids: missing students 74 to 194 with "
         "the shed lever's three settings, growth target in five-student steps, so no reachable "
         "setting prices outside the published floors and ceilings")
     chk("Version 5.0" in t and "August 17" in t and "Version 4.6" in t
@@ -959,7 +959,7 @@ def main():
         "levy base disclosed as GF-only in PDF and site")
     chk("over four fifths of the annual reserve drawdown" in t,
         "PDF scores the levy against both deficit and drawdown")
-    chk("reserve drawdown" in t and "percentile of the 4,860 weighted scenarios" in html,
+    chk("reserve drawdown" in t and "percentile of the 3,888 weighted scenarios" in html,
         "PDF keeps both denominators; site calculators simplified to percentile readouts (v4.5 review)")
     chk("net change across all seven" in t,
         "PDF clarifies the $430K is the net debt-service step, not the bond's payment alone")
@@ -976,7 +976,7 @@ def main():
         and "withdrawn with the lever correction" in t,
         "the 10-percent-raise / $52 million claims are withdrawn (lever correction)")
     for claim, section in [("$32 million of building capacity", 'id="grow"'),
-                           ("LOSES $474,042", 'id="model"'),
+                           ("LOSES $523,830", 'id="model"'),
                            ("$622,828 to $1,113,400 a year", 'id="risks"')]:
         chk(html.index(claim) > html.index(section)
             and html.index(claim) < html.index("<details", html.index(section)),
@@ -1008,11 +1008,11 @@ def main():
     import subprocess as _sp
     _out = _sp.run([sys.executable, str(REPO / "build" / "closure_grid.py")],
                    capture_output=True, text=True)
-    chk(_out.returncode == 0 and "median $-474,042" in _out.stdout
-        and "94% lose money" in _out.stdout and "$-726,873" in _out.stdout,
-        "closure_grid.py asserts its own v5 statistics (median -$474,042, 94 percent, default -$726,873)")
-    chk("-$726,873" in html and "16th percentile" in html,
-        "site default -$726,873 at the 16th percentile")
+    chk(_out.returncode == 0 and "median $-523,830" in _out.stdout
+        and "99% lose money" in _out.stdout and "$-726,873" in _out.stdout,
+        "closure_grid.py asserts its own v5 statistics (median -$523,830, 99 percent, default -$726,873)")
+    chk("-$726,873" in html and "19th percentile" in html,
+        "site default -$726,873 at the 19th percentile")
     chk("fewer than three students" in html and "fewer than 3 at a level" in html,
         "suppression notes state KDE's written fewer-than-three rule")
     chk("kindergarten enrolled 12" in html or "kindergarten enrolled <b>12" in t

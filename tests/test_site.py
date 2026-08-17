@@ -71,7 +71,7 @@ def main():
         else: bad(f"only {nmore} section expanders found")
         strip = pg.query_selector(".range-bar")
         labs = pg.text_content(".range-labs") if pg.query_selector(".range-labs") else ""
-        if strip and "loses $1,247,265" in labs and "saves $323,614" in labs and "loses $474,042" in labs:
+        if strip and "loses $1,247,265" in labs and "saves $171,118" in labs and "loses $523,830" in labs:
             ok("nontechnical range strip shows worst / middle / best in plain words")
         else: bad(f"range strip missing or labels wrong: {labs[:80]}")
         nbars = pg.evaluate("document.querySelectorAll('.range-bar').length")
@@ -82,8 +82,8 @@ def main():
         else: bad(f"consolidated range card wrong: bars={nbars} iqr={niqr} growth labs: {glabs[:80]}")
         you_c = pg.evaluate("document.getElementById('youClose').style.left")
         you_g = pg.evaluate("document.getElementById('youGrow').style.left")
-        if you_c == "16%" and you_g == "49%":
-            ok("percentile-scale bars: gold markers at the calculator defaults (16th / 49th)")
+        if you_c == "19%" and you_g == "49%":
+            ok("percentile-scale bars: gold markers at the calculator defaults (19th / 49th)")
         else: bad(f"percentile markers at defaults: close={you_c} grow={you_g}")
 
         # --- Closure calculator: opens at the median scenario ---
@@ -92,8 +92,8 @@ def main():
         else: bad("calculator details not open by default")
         net = pg.text_content("#rNet").strip()
         rank = pg.text_content("#rRank").strip()
-        if net == "-$726,873" and "16th percentile" in rank and "4,860 weighted scenarios" in rank:
-            ok("closure default -$726,873 (all staff retained, median leavers); percentile-only readout: 16th")
+        if net == "-$726,873" and "19th percentile" in rank and "3,888 weighted scenarios" in rank:
+            ok("closure default -$726,873 (all staff retained, median leavers); percentile-only readout: 19th")
         else: bad(f"closure defaults: {net} / {rank}")
         bl0 = (pg.text_content("#blClose").strip(), pg.text_content("#blGrow").strip())
         if bl0 == ("−$726,873", "+$142,080"):
@@ -113,15 +113,15 @@ def main():
         pg.fill("#sCap", "2"); pg.dispatch_event("#sCap", "input")
         pg.fill("#sFix", "2"); pg.dispatch_event("#sFix", "input")
         pg.fill("#sTea", "3"); pg.dispatch_event("#sTea", "input")
-        pg.fill("#sLeav", "38"); pg.dispatch_event("#sLeav", "input")
+        pg.fill("#sLeav", "74"); pg.dispatch_event("#sLeav", "input")
         pg.fill("#sAdd", "0"); pg.dispatch_event("#sAdd", "input")
         pg.fill("#sProp", "0"); pg.dispatch_event("#sProp", "input")
         pg.fill("#sBus", "20000"); pg.dispatch_event("#sBus", "input")
-        if pg.text_content("#rNet").strip() == "$323,614":
-            ok("closure ceiling $323,614 = grid max (survey-anchored grid)")
+        if pg.text_content("#rNet").strip() == "$171,118":
+            ok("closure ceiling $171,118 = grid max (survey-anchored grid)")
         else: bad(f"closure best case: {pg.text_content('#rNet')}")
-        if pg.text_content("#blClose").strip() == "+$323,614":
-            ok("bottom-line close tile follows the calculator (+$323,614 at the ceiling)")
+        if pg.text_content("#blClose").strip() == "+$171,118":
+            ok("bottom-line close tile follows the calculator (+$171,118 at the ceiling)")
         else: bad(f"bottom-line close tile at ceiling: {pg.text_content('#blClose')}")
         if pg.text_content("#rTax").strip() == "":
             ok("tax-compensation line empty when the scenario saves money")

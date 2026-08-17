@@ -436,28 +436,28 @@ print("capacity scenarios done")
 # ---- V3: two-tailed closure spectrum + tornado (v5.0 grid, 7 levers) ----
 fig, (a1, a2) = plt.subplots(2, 1, figsize=(6.9, 5.8), height_ratios=[1, 1.5])
 a1.axvspan(-1247, 0, color="#F3E4E0", zorder=0)
-a1.axvspan(0, 324, color="#EAF0E7", zorder=0)
-a1.axvspan(-657, -217, color="#C9D6EA", zorder=1, alpha=0.9)
-a1.plot([-1247, 324], [0.5, 0.5], color="#666666", lw=1.2, zorder=2)
-for v, lab in [(-1247, "worst case\n\$1,247K lost"), (324, "best case\n\$324K saved")]:
+a1.axvspan(0, 171, color="#EAF0E7", zorder=0)
+a1.axvspan(-682, -314, color="#C9D6EA", zorder=1, alpha=0.9)
+a1.plot([-1247, 171], [0.5, 0.5], color="#666666", lw=1.2, zorder=2)
+for v, lab in [(-1247, "worst case\n\$1,247K lost"), (171, "best case\n\$171K saved")]:
     a1.plot([v], [0.5], marker="|", markersize=16, color="#444444", zorder=3)
     a1.annotate(lab, xy=(v, 0.5), xytext=(v, 0.16), ha="center", fontsize=7.8)
-a1.plot([-474], [0.5], marker="D", markersize=9, color=NAVY, zorder=4)
-a1.annotate("median: \$474K LOST", xy=(-474, 0.5), xytext=(-474, 0.68), ha="center", fontsize=8.2, fontweight="bold", color=NAVY)
-a1.annotate("middle half:\n\$657K to \$217K lost", xy=(-474, 0.5), xytext=(140, 0.06), ha="center", fontsize=7.4, color="#39506e")
+a1.plot([-524], [0.5], marker="D", markersize=9, color=NAVY, zorder=4)
+a1.annotate("median: \$524K LOST", xy=(-524, 0.5), xytext=(-524, 0.68), ha="center", fontsize=8.2, fontweight="bold", color=NAVY)
+a1.annotate("middle half:\n\$682K to \$314K lost", xy=(-524, 0.5), xytext=(-500, 0.06), ha="center", fontsize=7.4, color="#39506e")
 a1.annotate("the plan needs \$800K to \$1M\nfrom the closure", xy=(700, 0.5), xytext=(620, 0.78), ha="center",
             fontsize=7.8, color="#8a4a2b", fontweight="bold",
             arrowprops=dict(arrowstyle="->", color="#8a4a2b", lw=0.9))
 a1.plot([700, 900], [0.5, 0.5], color="#8a4a2b", lw=3, solid_capstyle="butt")
-a1.text(-880, 0.86, "closure loses money in\n94% of scenarios", ha="center", fontsize=7.8, color="#7a3b2e", fontweight="bold")
+a1.text(-880, 0.86, "closure loses money in\n99% of scenarios", ha="center", fontsize=7.8, color="#7a3b2e", fontweight="bold")
 a1.set_xlim(-1380, 1000); a1.set_ylim(0, 1)
 a1.axvline(0, color="#888888", lw=0.9, linestyle=(0, (3, 2)))
 a1.set_yticks([])
 a1.set_xticks([-1200, -800, -400, 0, 400, 800])
 a1.set_xticklabels(["-\$1,200K", "-\$800K", "-\$400K", "\$0", "+\$400K", "+\$800K"], fontsize=7.8)
-a1.set_title("Net yearly effect of closing NMES: all 4,860 combinations, on the district's own figures\nand the signed school-choice survey")
+a1.set_title("Net yearly effect of closing NMES: all 3,888 combinations, on the district's own figures\nand the signed school-choice survey")
 for sp in ("top", "right", "left"): a1.spines[sp].set_visible(False)
-levers3 = [("Students missing at steady state\n(38 up to 194, survey-anchored)", -733.0, 5.8),
+levers3 = [("Students missing at steady state\n(74 up to 194, survey-anchored)", -733.0, -164.7),
            ("Fixed positions\n(all kept vs all cut over time)", -570.1, -356.0),
            ("Added busing (\$190K down to \$20K)", -590.0, -420.0),
            ("Teachers cut (0 up to 3,\nat their \$54,479.40 each)", -572.0, -408.6),
