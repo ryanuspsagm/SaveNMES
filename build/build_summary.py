@@ -35,7 +35,7 @@ def B(t):
 
 A(Paragraph("Saving North Middletown Elementary", title))
 A(Paragraph("Executive Summary • The Case Against Closure, the Case for Growth, and the Choice", sub))
-A(Paragraph("Version 4.6 • August 3, 2026 • Built from public records and Open Records Requests only • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
+A(Paragraph("Version 5.0 • August 17, 2026 • Built from public records and Open Records Requests only • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
 A(HRFlowable(width="100%", thickness=1.1, color=NAVY, spaceAfter=10))
 
 A(Paragraph("WHAT HAPPENED", kick))
@@ -65,23 +65,24 @@ B("<b>Fact three: closing it frees very little.</b> Start from everything the di
   "those staff at its own $54,479.40 loaded cost. The district's $661,139 figure includes $493,407 of staffing "
   "savings that, by the same response's own terms, arrive only if and when staff leave by attrition; in year "
   "one, with staff retained and supplies moving with the kids, only "
-  "$127,039 of it remains. We priced 5,832 closure scenarios on the district's own "
-  "figures. The middle case LOSES $20,007 a year, and 55 percent of the scenarios lose money.")
+  "$127,039 of it remains. We priced 14,580 closure scenarios on the district's own figures, with family "
+  "departures measured by the signed school-choice survey instead of guessed. The middle case LOSES "
+  "$292,348 a year, and 88 percent of the scenarios lose money.")
 B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state money follows each child to "
   "whichever district wins the family. Registered homeschooling in this county grew from 170 to 259 in five "
   "years. The statewide virtual academy grew from 937 to 2,412 students in two years, on the enrollment counts "
   "of Cloverport Independent, its host district. Every family that leaves "
-  "takes about $5,100 a year of state money with it, and the loss grows as the missing kids reach every "
-  "grade:")
+  "takes about $5,100 a year of state money with it, and in August 2026 the school-choice survey measured "
+  "the departures directly: 37 households answered for 84 children, and after removing duplicates, 30 "
+  "households with 69 children say they would leave.")
 
 step = Table(
-    [[Paragraph(c, thead) for c in ["Share who leave", "Students (of 128)",
-      "Year one", "Per year, full effect", "Total by grade 12"]],
-     [Paragraph(c, tcell) for c in ["10 percent", "13", "$67,000", "$144,000", "<b>$1.5 million</b>"]],
-     [Paragraph(c, tcell) for c in ["20 percent", "26", "$133,000", "$287,000", "<b>$3.1 million</b>"]],
-     [Paragraph(c, tcell) for c in ["30 percent", "38", "$195,000", "$420,000", "<b>$4.6 million</b>"]],
-     [Paragraph(c, tcell) for c in ["50 percent", "64", "$328,000", "$713,000", "<b>$7.7 million</b>"]]],
-    colWidths=[1.15*inch, 1.15*inch, 1.15*inch, 1.5*inch, 1.65*inch], hAlign="LEFT")
+    [[Paragraph(c, thead) for c in ["Estimate", "Basis",
+      "Students missing each year", "SEEK lost each year", "13-year window"]],
+     [Paragraph(c, tcell) for c in ["Floor", "the 30 signed households alone", "73", "$371,963", "<b>about $4.0 million</b>"]],
+     [Paragraph(c, tcell) for c in ["Likely band", "statistical middle half", "121 to 217", "$621,615 to $1,111,232", "<b>$6.7 to $12.0 million</b>"]],
+     [Paragraph(c, tcell) for c in ["Middle", "statistical median", "147 to 186", "$754,972 to $953,649", "<b>$8.2 to $10.4 million</b>"]]],
+    colWidths=[0.8*inch, 1.7*inch, 1.25*inch, 1.55*inch, 1.3*inch], hAlign="LEFT")
 step.setStyle(TableStyle([
     ("BACKGROUND", (0, 0), (-1, 0), HEADBG), ("LINEBELOW", (0, 0), (-1, 0), 0.9, NAVY),
     ("LINEBELOW", (0, -1), (-1, -1), 0.6, LINE), ("TOPPADDING", (0, 0), (-1, -1), 3.5),
@@ -90,15 +91,18 @@ step.setStyle(TableStyle([
 A(step)
 A(Spacer(1, 6))
 A(Paragraph(
-  "The first wave is only the start: the missing kids climb one grade a year, so by year eight every grade "
-  "is short and the yearly loss is more than double the first hit. The children in the building carry "
+  "The floor row involves no statistics: named families, signed responses. The statistical rows correct "
+  "the survey for response bias, and the state's own files corroborate them: this year's kindergarten "
+  "enrolled 12 children against a norm of 21 to 31. A child who leaves is missing for every remaining "
+  "grade (12.62 effective years on the district's own grade-to-grade survival), and losses build until "
+  "every grade from kindergarten through 12th is short. The children in the building carry "
   "about $6.2 to $6.9 million of remaining state funding through grade 12. About one in eight students at the "
   "middle and high school came through North Middletown, its share of the county's elementary seats carried "
   "up the grades. A family lost at kindergarten is lost for thirteen years.", body))
 A(Paragraph(
   "<b>The bottom line, from the two priced models:</b> grow the school and the middle case GAINS $141,780 "
   "a year, with not one losing scenario in 19,683 (every scenario prices students who actually arrive). Close "
-  "it and the middle case LOSES $20,007 a year.", body))
+  "it and the middle case LOSES $292,348 a year.", body))
 
 A(Paragraph("PART TWO", kick))
 A(Paragraph("The district needs growth, not closures: three levers the board already owns", h1))
@@ -173,7 +177,7 @@ def footer(canvas, doc):
     canvas.line(0.9*inch, 0.62*inch, 7.6*inch, 0.62*inch)
     canvas.setFont("Helvetica", 7.6); canvas.setFillColor(GRAY)
     canvas.drawString(0.9*inch, 0.47*inch,
-        "Saving North Middletown Elementary School • Executive Summary • Version 4.6, August 3, 2026")
+        "Saving North Middletown Elementary School • Executive Summary • Version 5.0, August 17, 2026")
     canvas.drawRightString(7.6*inch, 0.47*inch, f"Page {doc.page}")
     canvas.restoreState()
 

@@ -169,14 +169,14 @@ def main():
         "provenance cite on the site, top disclosure and footer")
     chk("Open Records Requests only" in t,
         "provenance cite in the report")
-    for needle in ["$144,000", "$287,000", "$420,000", "$713,000",
-                   "Per year, full effect", "Total by grade 12",
-                   "$1.5M", "$3.1M", "$4.6M", "$7.7M",
-                   "the oldest lost class, the fifth graders, reaches grade 12"]:
-        chk(needle in html, f"leaving escalation on the site: {needle}")
-    for needle in ["$144,000, $287,000 and $420,000", "more than double the first hit",
-                   "$1.5 million at 10 percent, $3.1 million at 20 and $4.6 million at 30"]:
-        chk(needle in t, f"leaving escalation in the report: {needle}")
+    for needle in ["$371,963", "$621,615 to $1,111,232", "$754,972 to $953,649",
+                   "Students missing each year", "SEEK lost each year", "13-year window",
+                   "about $4.0M", "$6.7 to $12.0M", "$8.2 to $10.4M",
+                   "the oldest lost class reaches grade 12"]:
+        chk(needle in html, f"exodus ladder on the site: {needle}")
+    for needle in ["$371,963 a year", "the 30 signed survey households alone",
+                   "$621,615 to $1,111,232"]:
+        chk(needle in t, f"exodus ladder in the report: {needle}")
     chk('name:"Lynne"' in html and "859-707" not in html,
         "Lynne's story published by first name, phone number kept private")
 
@@ -234,26 +234,26 @@ def main():
                    "Appendix B: Other Supporting Data", "KRS 157.370",
                    "Boston Public Schools"]:
         chk(needle in t, f"PDF claim intact: {needle}")
-    chk("-$130,749" in html and "all staff retained" in html
+    chk("-$310,159" in html and "all staff retained" in html
         and "superintendent's written statement" in html,
         "all-staff-retained figure shown at the calculator default and attributed to the superintendent")
-    for needle in ["$20,007", "55 percent", "losing $591,545",
-                   "saving $484,582", "Millersburg"]:
-        chk(needle in html, f"site v4.5 two-tailed range intact: {needle}")
-    for needle in ["Figure 7.", "Figure 8.", "losing $591,545", "saving $484,582",
-                   "$20,007", "55 percent", "Millersburg", "119 students",
+    for needle in ["$292,348", "88 percent", "losing $1,322,925",
+                   "saving $409,190", "Millersburg"]:
+        chk(needle in html, f"site v5.0 two-tailed range intact: {needle}")
+    for needle in ["Figure 7.", "Figure 8.", "losing $1,322,925", "saving $409,190",
+                   "$292,348", "88 percent", "Millersburg", "119 students",
                    "$54,479.40", "$41,718", "747"]:
-        chk(needle in t, f"PDF v4.5 two-tailed range intact: {needle}")
+        chk(needle in t, f"PDF v5.0 two-tailed range intact: {needle}")
     # v4.5 consolidated card: both bars, IQR bands, weighting disclosed, bottom line
     chk("triangular 1-2-1 weight" in t and "counts double (a triangular weight)" not in html
         and "percentile scale</b>" not in html,
         "the weighting method lives in the report; the side-by-side card stays simple")
     for needle in ["Every scenario, side by side", "middle half", 'class="iqr"',
-                   "$137,095", "$98,603", "$94,520", "$182,654",
+                   "$488,920", "$111,080", "$94,520", "$182,654",
                    "The bottom line: your two scenarios, live from the calculators above", 'class="bline"',
                    '<div class="n" id="blGrow">+$141,780</div>',
-                   '<div class="n" id="blClose">&minus;$130,749</div>',
-                   "the superintendent's stance (all staff retained), and the weighted median loses $20,007",
+                   '<div class="n" id="blClose">&minus;$310,159</div>',
+                   "the superintendent's stance (all staff retained, survey-floor leavers only), and the weighted median loses $292,348",
                    "getElementById('blClose')", "getElementById('blGrow')"]:
         chk(needle in html, f"consolidated range card: {needle}")
     chk(html.count('class="iqr"') == 2, "IQR band on both bars")
@@ -380,12 +380,13 @@ def main():
     es_path = REPO / "SaveNMES_Executive_Summary.pdf"
     chk(es_path.exists(), "executive summary PDF exists")
     es = " ".join(pg.extract_text() for pg in PdfReader(es_path).pages).replace("\n", " ")
-    for needle in ["$19,080", "$20,007", "54,479.40", "Permanent", "2,412", "5,832",
-                   "$144,000", "$287,000", "$420,000", "$713,000",
-                   "$1.5 million", "$4.6 million", "$7.7 million", "$6.2 to $6.9 million"]:
+    for needle in ["$19,080", "$292,348", "54,479.40", "Permanent", "2,412", "14,580",
+                   "$371,963", "$621,615 to $1,111,232", "$754,972 to $953,649",
+                   "about $4.0 million", "$6.7 to $12.0 million", "$6.2 to $6.9 million"]:
         chk(needle in es, f"executive summary intact: {needle}")
-    for needle in ["$144,000", "$287,000", "$420,000", "$713,000", "$7.7M", "$6.2 to $6.9 million"]:
-        chk(needle in html, f"leave-table basis mirrored on the site: {needle}")
+    for needle in ["$371,963", "$621,615 to $1,111,232", "$754,972 to $953,649",
+                   "about $4.0M", "$6.7 to $12.0M", "$6.2 to $6.9 million"]:
+        chk(needle in html, f"exodus-ladder basis mirrored on the site: {needle}")
     chk("SaveNMES_Executive_Summary.pdf" in html, "site links the executive summary")
     for gone in ['id="tldr"', 'id="questions"', 'id="roadahead"']:
         chk(gone not in html, f"off-layout section removed: {gone}")
@@ -413,19 +414,19 @@ def main():
         "four-asks framing consistent across hero, section, and report")
     # v4.2: the closure calculator exposes all seven grid levers, plus the growth calculator
     for lever in ['id="sCap"', 'id="sFix"', 'id="sTea"', 'id="sLeav"',
-                  'id="sAdd"', 'id="sProp"', 'id="sBus"']:
+                  'id="sAdd"', 'id="sShed"', 'id="sProp"', 'id="sBus"']:
         chk(lever in html, f"closure-model slider present: {lever}")
     for lever in ['id="sGro"', 'id="sRat"', 'id="sTc"', 'id="sSp"',
                   'id="sGb"', 'id="sCps"', 'id="sGad"']:
         chk(lever in html, f"growth-model slider present: {lever}")
-    chk("5,832 weighted scenarios" in html and 'id="rRank"' in html,
+    chk("14,580 weighted scenarios" in html and 'id="rRank"' in html,
         "calculator presented as the live weighted scenario model with a grid-rank readout")
     chk("$141,780" in html and "every scenario in which students arrive pays" in html and "19,683" in html
         and "$3,331" in html,
         "growth calculator carries the published classroom-indexed grid stats")
     # v4.5 review round: median default, percentile-only readouts, three roads,
     # leaving-escalation chart
-    for needle in ['id="chartLeave"', "penetrates all the way through the high school",
+    for needle in ['id="chartLeave"', "The loss grows until year eight",
                    "This scenario lands at about the", "19,683 weighted scenarios",
                    "The default reflects the superintendent's written statement",
                    "the median of the 19,683 weighted scenarios: 30 added students",
@@ -585,17 +586,17 @@ def main():
     chk("$69 million" in html and "about $69 million of capacity" in t
         and "$69 million" in es,
         "the high-case plan scenario mirrored across site, report, and summary")
-    _jform = "form.jotform.com/262137656784064"
-    for needle in ['id="famSurvey"', f'src="https://{_jform}"',
-                   f'href="https://{_jform}"',
-                   ">School Choice Survey</a>",
-                   "open the School Choice Survey in a new tab",
-                   "if the school closes, what would you actually do?"]:
-        chk(needle in html, f"School Choice Survey embedded and linked: {needle}")
+    chk("form.jotform.com" not in html and 'id="famSurvey"' not in html,
+        "the Jotform embed and links are fully retired")
+    for needle in ['id="survey"', ">Survey Results</a>",
+                   "School choice survey: the results",
+                   "survey_school_choice_2026_08_anonymized.csv",
+                   "Personal information is never published"]:
+        chk(needle in html, f"survey results published: {needle}")
     chk("docs.google.com/forms" not in html,
-        "the Google Form is fully replaced by the Jotform")
-    chk(html.index(">School Choice Survey</a>") < html.index('<section id="part1"'),
-        "the School Choice Survey button sits in the hero, above Part One")
+        "no Google Form either")
+    chk(html.index(">Survey Results</a>") < html.index('<section id="part1"'),
+        "the Survey Results button sits in the hero, above Part One")
     chk(html.index('href="SaveNMES_Executive_Summary.pdf">Executive Summary (PDF)</a>') < html.index('<section id="part1"'),
         "the executive summary download sits in the hero action row")
     chk(html.index('<section id="act"') < html.index('id="survey"') < html.index('<section id="voices"'),
@@ -677,8 +678,8 @@ def main():
                    "Supporting Data and Appendices"]:
         chk(needle in t, f"report opening mirrors the exec summary doc: {needle}")
     chk("Decision in Brief" not in t, "the duplicative Decision in Brief section is retired")
-    chk("every 10 percent" in t and "Who leaves" in html,
-        "stepped losses published as scenarios in report and site")
+    chk("the 30 signed households alone" in html and "Likely band" in html,
+        "the survey floor and band published as the leaving scenarios on the site")
     chk("28 homerooms" not in html,
         "site does not adopt the district capacity claims uncritically")
     chk("12 percent of displaced" not in t and "12 percent of the displaced" not in html
@@ -761,7 +762,7 @@ def main():
             f"upfront assumptions disclosure on the {name}: stated, published, open to challenge")
     dfw = wb["Defaults"]
     chk(dfw["B5"].value == 17903 and dfw["B13"].value == 1285310
-        and dfw["B34"].value == "=B17+C17-63000-38*(Assumptions!B6+500)"
+        and dfw["B34"].value == "=B17+C17-63000-73*(Assumptions!B6+500)"
         and dfw["B35"].value == "=30*(Assumptions!B6+500-400)"
         and dfw["C39"].value == 275 and dfw["B42"].value == "=Tax_History!D79"
         and dfw["B31"].value == "=SUMPRODUCT(B30:G30,{13,12,11,10,9,8})"
@@ -879,14 +880,16 @@ def main():
     chk("$938,690" in t, "the working-budget cross-check ($938,690) lives in the report")
     chk("one in three" not in html or "an earlier version of this page said one in three" in html,
         "site: the retracted one-in-three share is corrected, not merely repeated")
-    chk('id="sTea" min="0" max="3"' in html and 'id="sLeav" min="0" max="50"' in html
+    chk('id="sTea" min="0" max="3"' in html and 'id="sLeav" min="38" max="194"' in html
+        and 'id="sShed" min="0" max="2"' in html
         and 'id="sBus" min="20000" max="190000"' in html
         and 'id="sGro" min="110" max="200" value="140" step="5"' in html,
-        "site calculator sliders span exactly the published grids: leakage capped at the grid's 50 "
-        "percent, growth target in five-student steps, so no reachable setting prices outside the "
-        "published floors and ceilings")
-    chk("Version 4.6" in t and "August 3, 2026" in t and "Version 4.5" in t and "Version 4.2" in t,
-        "PDF carries the v4.6 correction block and the v4.5 and v4.2 history entries")
+        "site calculator sliders span exactly the published grids: missing students 38 to 194 with "
+        "the shed lever's three settings, growth target in five-student steps, so no reachable "
+        "setting prices outside the published floors and ceilings")
+    chk("Version 5.0" in t and "August 17" in t and "Version 4.6" in t
+        and "Version 4.5" in t and "Version 4.2" in t,
+        "PDF carries the v5.0 release block and the v4.6, v4.5 and v4.2 history entries")
     chk("Saving_NMES_v4.5_2026-08-02.pdf" in html
         and (REPO / "reports" / "Saving_NMES_v4.5_2026-08-02.pdf").exists(),
         "v4.5 archived in reports/ and linked from the version history")
@@ -956,7 +959,7 @@ def main():
         "levy base disclosed as GF-only in PDF and site")
     chk("over four fifths of the annual reserve drawdown" in t,
         "PDF scores the levy against both deficit and drawdown")
-    chk("reserve drawdown" in t and "percentile of the 5,832 weighted scenarios" in html,
+    chk("reserve drawdown" in t and "percentile of the 14,580 weighted scenarios" in html,
         "PDF keeps both denominators; site calculators simplified to percentile readouts (v4.5 review)")
     chk("net change across all seven" in t,
         "PDF clarifies the $430K is the net debt-service step, not the bond's payment alone")
@@ -973,13 +976,58 @@ def main():
         and "withdrawn with the lever correction" in t,
         "the 10-percent-raise / $52 million claims are withdrawn (lever correction)")
     for claim, section in [("$32 million of building capacity", 'id="grow"'),
-                           ("LOSES $20,007", 'id="model"'),
-                           ("$4.6 million lifetime revenue loss", 'id="risks"')]:
+                           ("LOSES $292,348", 'id="model"'),
+                           ("$4.0 to $12.0 million lifetime revenue loss", 'id="risks"')]:
         chk(html.index(claim) > html.index(section)
             and html.index(claim) < html.index("<details", html.index(section)),
         f"strongest claim rides the always-visible header: {claim}")
     chk("$2.2 to $2.8 million" in t and "the counted-once cost package and the 2018 restore" in t,
         "alternatives raw sums intact in the report (Medicaid removed; site quote retired)")
+
+    # ---- v5.0: the exodus model recomputes from the anonymized survey ----
+    import importlib.util as _ilu
+    _spec = _ilu.spec_from_file_location("exodus_model", REPO / "build" / "exodus_model.py")
+    _em = _ilu.module_from_spec(_spec)
+    _spec.loader.exec_module(_em)
+    R = _em.RESULT
+    chk(R["leaving_households"] == 30 and R["leaving_children"] == 69
+        and R["enrolled_sample"] == 24 and R["enrolled_leavers"] == 20,
+        "exodus model: survey cleanup reproduces 30 households / 69 children and the 20-of-24 enrolled split")
+    L = R["ladder"]
+    chk(L["floor"]["kids_lo"] == 73 and L["floor"]["dollars_lo"] == 371963,
+        "exodus floor recomputes: 73 students / $371,963 a year")
+    chk(L["iqr_low"]["dollars_lo"] == 621615 and L["iqr_high"]["dollars_hi"] == 1111232
+        and L["median"]["dollars_lo"] == 754972 and L["median"]["dollars_hi"] == 953649,
+        "exodus band recomputes: IQR $621,615 to $1,111,232, median $754,972 to $953,649")
+    chk(abs(R["eff_years"] - 12.62) < 0.01 and R["var_full"] == 2642,
+        "effective years 12.62 and full variable shed $2,642 recompute")
+    for s in ("$371,963", "$621,615", "$1,111,232", "73 students: the survey floor"):
+        chk(s in html, f"exodus figure on the site: {s}")
+    for s in ("$371,963", "$621,615", "12.62", "response-propensity"):
+        chk(s in t, f"exodus figure in the report: {s}")
+    import subprocess as _sp
+    _out = _sp.run([sys.executable, str(REPO / "build" / "closure_grid.py")],
+                   capture_output=True, text=True)
+    chk(_out.returncode == 0 and "median $-292,348" in _out.stdout
+        and "88% lose money" in _out.stdout and "$-310,159" in _out.stdout,
+        "closure_grid.py asserts its own v5 statistics (median -$292,348, 88 percent, default -$310,159)")
+    chk("-$310,159" in html and "47th percentile" in html,
+        "site default -$310,159 at the 47th percentile")
+    chk("fewer than three students" in html and "fewer than 3 at a level" in html,
+        "suppression notes state KDE's written fewer-than-three rule")
+    chk("kindergarten enrolled 12" in html or "kindergarten enrolled <b>12" in t
+        or "12 children against a norm of 21 to 31" in html,
+        "the kindergarten-of-12 corroboration is published with the survey")
+    for f in ("survey_school_choice_2026_08_anonymized.csv", "saar_enrollment_2025_26.xls",
+              "saar_enrollment_2024_25.xls", "saar_enrollment_1999_2019.xlsx",
+              "saar_definitions_kde.pdf", "kde_hb6_suppression_rule_2025.pdf",
+              "kde_suppressed_data_guidance_2022.pdf", "exodus_model_v5.json",
+              "exodus_model.py"):
+        chk((REPO / "build" / f).exists(), f"v5 source archived: build/{f}")
+    chk("2024-25 SAAR end-of-year" in t and "the state's 2023-24 file shows 141" in t,
+        "the facility-plan 128 label correction is disclosed in the report")
+    chk("v5.0, August 17" in html and "Saving_NMES_v5.0_2026-08-17.pdf" in html,
+        "site version history carries v5.0 with the report file linked")
 
     print(f"PASS {len(ok)}")
     print(f"FAIL {len(bad)}")

@@ -42,15 +42,16 @@ if "4,290,840" in html: match("fund balance $4,290,840 also on site")
 # closure central case (v4.2 grid, rebuilt on the district's own response)
 CM = wb["Closure_Model"]
 central = (CM["C39"].value + CM["C40"].value + CM["C41"].value * 54479.4
-           - CM["C42"].value - CM["C43"].value * (A["B6"].value + CM["C44"].value) - CM["C45"].value)
+           - CM["C42"].value - CM["C43"].value * (A["B6"].value + CM["C44"].value - CM["C45"].value)
+           - CM["C46"].value)
 site_capv = re.search(r"var CAPV=\[(\d+),(\d+),(\d+)\]", html)
 site_fixv = re.search(r"FIXV=\[(\d+),(\d+),(\d+)\]", html)
 site_teach = re.search(r"TEACH=108958\.80/2", html)
-site_default = (127039 + 0 + 0*54479.4 - 63000 - 38*(A["B6"].value+500) - 0)
-if round(central) == 52514 and round(site_default) == -130749 and "-$130,749" in html:
-    match("model central case $52,514 (MUNIS fixed base); site calculator opens at the district stance, all staff retained (-$130,749, weighted rank 26%)")
+site_default = (127039 + 0 + 0*54479.4 - 63000 - 73*(A["B6"].value+500-0) - 0)
+if round(central) == -299327 and round(site_default) == -310159 and "-$310,159" in html:
+    match("model central case -$299,327 (v5 grid); site calculator opens at the district stance, all staff retained, survey-floor leavers (-$310,159, weighted rank 47%)")
 else:
-    diff(f"closure defaults: model central {central:.0f}, site district-stance {site_default:.0f} shown: {'-$130,749' in html}")
+    diff(f"closure defaults: model central {central:.0f}, site district-stance {site_default:.0f} shown: {'-$310,159' in html}")
 # growth calculator default (v4.5 review): the weighted median scenario itself.
 # 30 added students (target 140): inside the 25-seat headroom plus a partial
 # class at 1 per 21, so zero teachers and zero support trigger; $0 bus, $400
@@ -79,20 +80,20 @@ if site_teach and "$54,479.40" in pdf_flat and "108,958.80" in cm_teach_note:
     match("teacher basis $54,479.40 = district Appendix A.1 price, in site JS, PDF, and the model lever note")
 else:
     diff("teacher basis $54,479.40 missing on site, in PDF, or in the model note")
-if re.search(r"l\*\(SEEK\+ad\)", html) and "SEEK=4626" in html:
-    match("calculator prices each leaver at $4,626 + the add-ons lever (matches build/closure_grid.py)")
+if re.search(r"l\*\(SEEK\+ad-SHEDV\[sh\]\)", html) and "SEEK=4626" in html:
+    match("calculator prices each missing student at $4,626 + add-ons net of the shed lever (matches build/closure_grid.py)")
 else:
     diff("site leaver pricing formula not found")
 
 # two-tailed range strings consistent
-if "losing $591,545 and saving $484,582" in pdf_flat and "losing $591,545" in html \
-        and "saving $484,582" in html:
-    match("two-tailed range (-$591,545 to +$484,582, MUNIS fixed base) consistent on site and in PDF")
+if "losing $1,322,925 and saving $409,190" in pdf_flat and "losing $1,322,925" in html \
+        and "saving $409,190" in html:
+    match("two-tailed range (-$1,322,925 to +$409,190, v5 survey-anchored grid) consistent on site and in PDF")
 else:
     diff("v4.2 two-tailed range strings missing on site or PDF")
-if "loses $20,007 a year" in html and "percentile of the 5,832 weighted scenarios" in html \
-        and "LOSES $20,007" in pdf_flat and CM["B47"].value.startswith("="):
-    match("v4.5 weighted median ($20,007 yearly loss) in site prose and JS readout and in PDF; central case live in model")
+if "loses $292,348" in html and "percentile of the 14,580 weighted scenarios" in html \
+        and "LOSES $292,348" in pdf_flat and CM["B47"].value.startswith("="):
+    match("v5.0 weighted median ($292,348 yearly loss) in site prose and JS readout and in PDF; central case live in model")
 else:
     diff("v4.5 weighted median strings missing")
 
@@ -102,13 +103,14 @@ from itertools import product as _prod
 import math as _math
 _T = 108958.80 / 2
 _cl = sorted(
-    (c + f + t * _T - b - l * (4626 + ad) - pr,
-     wc * wf * wa * wp * wb)
+    (c + f + t * _T - b - l * (4626 + ad - sh) - pr,
+     wc * wf * wl * wa * ws * wp * wb)
     for c, wc in ((53519, 1), (80279, 2), (127039, 1))
     for f, wf in ((0, 1), (107052.2, 2), (214104.4, 1))
     for t in (0, 1, 2, 3)
-    for l in (0, 13, 26, 38, 51, 64)
+    for l, wl in ((38, 1), (73, 2), (137, 2), (167, 2), (194, 1))
     for ad, wa in ((0, 1), (500, 2), (1000, 1))
+    for sh, ws in ((0, 1), (1585, 2), (2642, 1))
     for pr, wp in ((0, 1), (47500, 2), (95000, 1))
     for b, wb in ((20000, 1), (63000, 2), (190000, 1)))
 _tw = sum(w for _, w in _cl)
@@ -134,16 +136,16 @@ _gr = sorted(
     for c, w7 in ((400, 1), (700, 2), (1000, 1))
     for ad, w8 in ((0, 1), (500, 2), (1000, 1)))
 _gtw = sum(w for _, w in _gr)
-ok_w = (round(_wp(_cl, _tw, 0.5)) == -20007 and round(_wp(_cl, _tw, 0.25)) == -137095
-        and round(_wp(_cl, _tw, 0.75)) == 98603 and round(_neg * 100) == 55
+ok_w = (round(_wp(_cl, _tw, 0.5)) == -292348 and round(_wp(_cl, _tw, 0.25)) == -488920
+        and round(_wp(_cl, _tw, 0.75)) == -111080 and round(_neg * 100) == 88
         and _wp(_gr, _gtw, 0.5) == 141780 and _wp(_gr, _gtw, 0.25) == 94520
         and _wp(_gr, _gtw, 0.75) == 182654)
-site_w = all(s in html for s in ("$20,007", "$137,095", "$98,603", "$141,780",
-                                 "$94,520", "$182,654", "55 percent"))
+site_w = all(s in html for s in ("$292,348", "$488,920", "$111,080", "$141,780",
+                                 "$94,520", "$182,654", "88 percent"))
 if ok_w and site_w:
-    match("v4.5 weighted stats recompute (closure median/IQR/share, growth median/IQR) and all seven appear on the site")
+    match("v5.0 weighted stats recompute (closure median/IQR/share, growth median/IQR) and all seven appear on the site")
 else:
-    diff(f"v4.5 weighted stats: recompute ok={ok_w}, site tokens ok={site_w}")
+    diff(f"v5.0 weighted stats: recompute ok={ok_w}, site tokens ok={site_w}")
 
 # levy path: 4 percent framing retired from the site (review round 2); path stays model+PDF
 levy_base = TH["B32"].value  # General Fund property tax
@@ -608,7 +610,7 @@ else:
     diff("EDFacts toggle still present after retirement")
 
 # site text spot checks
-for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $591,545 a year at the left end to saving $484,582 a year", "closure range prose"),
+for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $1,322,925 a year at the left end to saving $409,190 a year", "closure range prose"),
                  ("$166,189 per cent", "certified real-estate yield in the levy note"), ("$2.65 million", "deficit figure in prose"),
                  ("holds 128 today", "enrollment in prose"), ("a 174 rating", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")

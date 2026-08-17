@@ -71,7 +71,7 @@ def main():
         else: bad(f"only {nmore} section expanders found")
         strip = pg.query_selector(".range-bar")
         labs = pg.text_content(".range-labs") if pg.query_selector(".range-labs") else ""
-        if strip and "loses $591,545" in labs and "saves $484,582" in labs and "loses $20,007" in labs:
+        if strip and "loses $1,322,925" in labs and "saves $409,190" in labs and "loses $292,348" in labs:
             ok("nontechnical range strip shows worst / middle / best in plain words")
         else: bad(f"range strip missing or labels wrong: {labs[:80]}")
         nbars = pg.evaluate("document.querySelectorAll('.range-bar').length")
@@ -82,8 +82,8 @@ def main():
         else: bad(f"consolidated range card wrong: bars={nbars} iqr={niqr} growth labs: {glabs[:80]}")
         you_c = pg.evaluate("document.getElementById('youClose').style.left")
         you_g = pg.evaluate("document.getElementById('youGrow').style.left")
-        if you_c == "26%" and you_g == "50%":
-            ok("percentile-scale bars: gold markers at the calculator defaults (26th / 50th)")
+        if you_c == "47%" and you_g == "50%":
+            ok("percentile-scale bars: gold markers at the calculator defaults (47th / 50th)")
         else: bad(f"percentile markers at defaults: close={you_c} grow={you_g}")
 
         # --- Closure calculator: opens at the median scenario ---
@@ -92,12 +92,12 @@ def main():
         else: bad("calculator details not open by default")
         net = pg.text_content("#rNet").strip()
         rank = pg.text_content("#rRank").strip()
-        if net == "-$130,749" and "26th percentile" in rank and "5,832 weighted scenarios" in rank:
-            ok("closure default -$130,749 (all staff retained); percentile-only readout: 26th")
+        if net == "-$310,159" and "47th percentile" in rank and "14,580 weighted scenarios" in rank:
+            ok("closure default -$310,159 (all staff retained, survey-floor leavers); percentile-only readout: 47th")
         else: bad(f"closure defaults: {net} / {rank}")
         bl0 = (pg.text_content("#blClose").strip(), pg.text_content("#blGrow").strip())
-        if bl0 == ("−$130,749", "+$141,780"):
-            ok("bottom-line tiles open at the default scenarios (-$130,749 close, +$141,780 grow)")
+        if bl0 == ("−$310,159", "+$141,780"):
+            ok("bottom-line tiles open at the default scenarios (-$310,159 close, +$141,780 grow)")
         else: bad(f"bottom-line defaults: {bl0}")
         gone_verdict = pg.evaluate("['rVerdict','rBar'].filter(i=>document.getElementById(i)).length")
         note_ok = pg.evaluate("document.body.textContent.includes(\"The default reflects the superintendent's written statement\")")
@@ -105,22 +105,24 @@ def main():
             ok("closure verdict text removed; retained-staff default note present")
         else: bad(f"closure readout cleanup: leftover={gone_verdict} note={note_ok}")
         tax = pg.text_content("#rTax").strip()
-        if "0.8 cents" in tax and "a month for the median homeowner" in tax:
-            ok("tax-compensation line at the default loss: 0.8 cents of rate on the certified real base")
+        if "1.9 cents" in tax and "a month for the median homeowner" in tax:
+            ok("tax-compensation line at the default loss: 1.9 cents of rate on the certified real base")
         else: bad(f"tax line at default: {tax[:80]}")
 
         # ceiling: their fullest case
         pg.fill("#sCap", "2"); pg.dispatch_event("#sCap", "input")
         pg.fill("#sFix", "2"); pg.dispatch_event("#sFix", "input")
         pg.fill("#sTea", "3"); pg.dispatch_event("#sTea", "input")
-        pg.fill("#sLeav", "0"); pg.dispatch_event("#sLeav", "input")
+        pg.fill("#sLeav", "38"); pg.dispatch_event("#sLeav", "input")
+        pg.fill("#sAdd", "0"); pg.dispatch_event("#sAdd", "input")
+        pg.fill("#sShed", "2"); pg.dispatch_event("#sShed", "input")
         pg.fill("#sProp", "0"); pg.dispatch_event("#sProp", "input")
         pg.fill("#sBus", "20000"); pg.dispatch_event("#sBus", "input")
-        if pg.text_content("#rNet").strip() == "$484,582":
-            ok("closure ceiling $484,582 = grid max (MUNIS fixed base)")
+        if pg.text_content("#rNet").strip() == "$409,190":
+            ok("closure ceiling $409,190 = grid max (survey-anchored grid)")
         else: bad(f"closure best case: {pg.text_content('#rNet')}")
-        if pg.text_content("#blClose").strip() == "+$484,582":
-            ok("bottom-line close tile follows the calculator (+$484,582 at the ceiling)")
+        if pg.text_content("#blClose").strip() == "+$409,190":
+            ok("bottom-line close tile follows the calculator (+$409,190 at the ceiling)")
         else: bad(f"bottom-line close tile at ceiling: {pg.text_content('#blClose')}")
         if pg.text_content("#rTax").strip() == "":
             ok("tax-compensation line empty when the scenario saves money")
@@ -130,18 +132,19 @@ def main():
         pg.fill("#sCap", "0"); pg.dispatch_event("#sCap", "input")
         pg.fill("#sFix", "0"); pg.dispatch_event("#sFix", "input")
         pg.fill("#sTea", "0"); pg.dispatch_event("#sTea", "input")
-        pg.fill("#sLeav", "50"); pg.dispatch_event("#sLeav", "input")
+        pg.fill("#sLeav", "194"); pg.dispatch_event("#sLeav", "input")
         pg.fill("#sAdd", "1000"); pg.dispatch_event("#sAdd", "input")
+        pg.fill("#sShed", "0"); pg.dispatch_event("#sShed", "input")
         pg.fill("#sProp", "95000"); pg.dispatch_event("#sProp", "input")
         pg.fill("#sBus", "190000"); pg.dispatch_event("#sBus", "input")
-        if pg.text_content("#rNet").strip() == "-$591,545" and "0th percentile" in pg.text_content("#rRank"):
-            ok("closure floor -$591,545 = grid min (calculator spans the whole grid)")
+        if pg.text_content("#rNet").strip() == "-$1,322,925" and "0th percentile" in pg.text_content("#rRank"):
+            ok("closure floor -$1,322,925 = grid min (calculator spans the whole grid)")
         else: bad(f"closure worst case: {pg.text_content('#rNet')} / {pg.text_content('#rRank')[:60]}")
         if pg.evaluate("document.getElementById('youClose').style.left") == "0%":
             ok("closure percentile marker follows the calculator (0% at the floor)")
         else: bad(f"marker at floor: {pg.evaluate('document.getElementById(`youClose`).style.left')}")
-        if "3.6 cents" in pg.text_content("#rTax"):
-            ok("tax-compensation line at the full-loss floor: 3.6 cents of rate")
+        if "8.0 cents" in pg.text_content("#rTax"):
+            ok("tax-compensation line at the full-loss floor: 8.0 cents of rate")
         else: bad(f"tax line at floor: {pg.text_content('#rTax')[:80]}")
 
         # --- Growth calculator ---
@@ -225,18 +228,22 @@ def main():
         else: bad(f"plan shortfall: {pg.text_content('#rPlanVerdict')[:90]}")
         pg.fill("#sPr", "100"); pg.dispatch_event("#sPr", "input")
 
-        # --- School Choice Survey: Jotform embedded, hero button links out ---
-        sv = pg.evaluate("(() => { const f = document.getElementById('famSurvey');"
+        # --- Survey results published; the Jotform is retired ---
+        sv = pg.evaluate("(() => { const card = document.getElementById('survey');"
                          " const b = [...document.querySelectorAll('.hero-cta a')]"
-                         "   .find(a => a.textContent.trim() === 'School Choice Survey');"
-                         " return { tag: f ? f.tagName : null, src: f ? f.getAttribute('src') : '',"
-                         "          href: b ? b.getAttribute('href') : '', target: b ? b.getAttribute('target') : '' }; })()")
-        if sv["tag"] == "IFRAME" and "form.jotform.com/262137656784064" in sv["src"]:
-            ok("School Choice Survey embedded as the Jotform iframe")
-        else: bad(f"survey iframe: {sv}")
-        if "form.jotform.com/262137656784064" in sv["href"] and sv["target"] == "_blank":
-            ok("hero School Choice Survey button links to the form in a new tab")
-        else: bad(f"survey hero button: {sv}")
+                         "   .find(a => a.textContent.trim() === 'Survey Results');"
+                         " return { card: card ? card.textContent : '',"
+                         "          iframe: !!document.getElementById('famSurvey'),"
+                         "          href: b ? b.getAttribute('href') : '' }; })()")
+        if not sv["iframe"] and "form.jotform.com" not in pg.content():
+            ok("the Jotform embed is fully retired")
+        else: bad("Jotform still present")
+        if "30" in sv["card"] and "$371,963" in sv["card"] and "never published" in sv["card"]:
+            ok("survey results card: 30 leaving households, the floor figure, and the privacy note")
+        else: bad(f"survey results card: {sv['card'][:100]}")
+        if sv["href"] == "#survey":
+            ok("hero Survey Results button links to the results card")
+        else: bad(f"survey hero button: {sv['href']}")
 
         # --- 2018-rate restore slider (the only revenue lever on the site) ---
         gone4 = pg.evaluate("['sYrs','rLevy','rLevyVerdict'].filter(i=>document.getElementById(i)).length")

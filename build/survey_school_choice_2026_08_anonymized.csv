@@ -1,0 +1,85 @@
+household,status,child,kindergarten_year,fifth_grade_year,destination,detail_filled
+1,leaving,1,2026,2032,Montgomery County,no
+1,leaving,2,2026,2032,Montgomery County,yes
+2,leaving,1,2023,2027,Montgomery County,no
+3,leaving,1,2028,2032,Other,no
+3,leaving,2,2020,2026,Other,no
+3,leaving,3,2021,2026,Other,no
+3,leaving,4,2022,2028,Other,no
+3,leaving,5,2017,2023,Other,no
+3,leaving,6,2015,2021,Other,no
+4,leaving,1,2026,2030,Homeschool,no
+4,leaving,2,2026,2030,Homeschool,yes
+5,leaving,1,2021,2028,Montgomery County,no
+6,leaving,1,2026,2032,Montgomery County,no
+7,staying_confirmed_by_organizer,1,2026,2032,Other,no
+7,staying_confirmed_by_organizer,2,2026,2032,Other,yes
+8,leaving,1,2027,2033,Public school in district,no
+8,leaving,2,2028,2034,Public school in district,no
+9,leaving,1,2026,2029,Montgomery County,no
+10,leaving,1,2026,2032,Public school in district,no
+10,leaving,2,2026,2032,Public school in district,yes
+10,leaving,3,2026,2032,Public school in district,yes
+11,staying_confirmed_by_organizer,1,2024,2032,Public school in district,no
+11,staying_confirmed_by_organizer,2,2024,2032,Public school in district,yes
+11,staying_confirmed_by_organizer,3,2024,2032,Public school in district,yes
+11,staying_confirmed_by_organizer,4,2024,2032,Public school in district,yes
+12,leaving,1,2027,2032,Montgomery County,no
+12,leaving,2,2031,2037,Montgomery County,no
+13,leaving,1,2027,2033,Homeschool,no
+13,leaving,2,2029,2035,Homeschool,no
+14,leaving,1,2026,2032,Homeschool,no
+15,staying,1,2027,2032,Public school in district,no
+15,staying,2,2028,2033,Public school in district,no
+16,leaving,1,2028,2034,Clark County,no
+17,leaving,1,2020,2025,Homeschool,no
+17,leaving,2,2023,2028,Homeschool,no
+17,leaving,3,2030,2035,Homeschool,no
+18,leaving,1,2026,2032,Public school in district,no
+18,leaving,2,2026,2032,Public school in district,yes
+19,leaving,1,2027,2033,Private school,no
+19,leaving,2,2028,2034,Private school,no
+20,already_left,1,2026,2026,Public school in district,no
+20,already_left,2,2026,2026,Public school in district,yes
+21,leaving,1,2022,2030,Homeschool,no
+21,leaving,2,2022,2030,Homeschool,yes
+21,leaving,3,2022,2030,Homeschool,yes
+21,leaving,4,2022,2030,Homeschool,yes
+22,leaving,1,2026,2040,Montgomery County,no
+22,leaving,2,2026,2040,Montgomery County,yes
+22,leaving,3,2026,2040,Montgomery County,yes
+23,leaving,1,2026,2035,Montgomery County,no
+24,leaving,1,2026,2032,Montgomery County,no
+24,leaving,2,2026,2032,Montgomery County,yes
+25,leaving,1,2027,2040,Montgomery County,no
+25,leaving,2,2030,2040,Montgomery County,no
+26,leaving,1,2023,2035,Private school,no
+26,leaving,2,2023,2035,Private school,yes
+27,leaving,1,2021,2034,Montgomery County,no
+27,leaving,2,2022,2035,Montgomery County,no
+27,leaving,3,2028,2040,Montgomery County,no
+28,leaving,1,2026,2032,Montgomery County,no
+28,leaving,2,2026,2032,Montgomery County,no
+28,leaving,3,2026,2032,Montgomery County,yes
+29,staying,1,2026,2032,Public school in district,no
+30,leaving,1,2026,2032,Other,no
+30,leaving,2,2028,2034,Other,no
+31,leaving,1,2026,2032,Montgomery County,no
+31,leaving,2,2026,2032,Montgomery County,yes
+31,leaving,3,2026,2032,Montgomery County,yes
+32,leaving,1,2026,2032,Homeschool,no
+33,leaving,1,2021,2035,Other,no
+33,leaving,2,2023,2037,Other,no
+33,leaving,3,2027,2040,Other,no
+33,leaving,4,2029,2040,Other,no
+34,leaving,1,2026,2032,Homeschool,no
+34,leaving,2,2028,2032,Homeschool,no
+34,leaving,3,2031,2032,Homeschool,no
+35,staying_confirmed_by_organizer,1,2026,2036,Public school in district,no
+35,staying_confirmed_by_organizer,2,2026,2038,Public school in district,no
+35,staying_confirmed_by_organizer,3,2026,2036,Public school in district,yes
+36,staying,1,2026,2032,Public school in district,no
+37,leaving,1,2021,2027,Private school,no
+37,leaving,2,2022,2028,Private school,no
+37,leaving,3,2022,2028,Private school,no
+37,leaving,4,2028,2032,Private school,no

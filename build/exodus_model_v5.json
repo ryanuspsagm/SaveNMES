@@ -1,0 +1,56 @@
+{
+ "seek": 5126,
+ "class_lo": 19,
+ "class_hi": 24,
+ "per_class": 5.75,
+ "leaving_households": 30,
+ "leaving_children": 69,
+ "enrolled_sample": 24,
+ "enrolled_leavers": 20,
+ "posterior": {
+  "p25": 0.506,
+  "p50": 0.614,
+  "p75": 0.716,
+  "p95": 0.834
+ },
+ "eff_years": 12.62,
+ "ramp": 0.834,
+ "var_full": 2642,
+ "shed": {
+  "full_retention": 0.0,
+  "partial_consolidation": 1585,
+  "full_consolidation": 2642
+ },
+ "ladder": {
+  "floor": {
+   "kids_lo": 73,
+   "kids_hi": 73,
+   "dollars_lo": 371963,
+   "dollars_hi": 371963
+  },
+  "iqr_low": {
+   "kids_lo": 121,
+   "kids_hi": 153,
+   "dollars_lo": 621615,
+   "dollars_hi": 785198
+  },
+  "median": {
+   "kids_lo": 147,
+   "kids_hi": 186,
+   "dollars_lo": 754972,
+   "dollars_hi": 953649
+  },
+  "iqr_high": {
+   "kids_lo": 172,
+   "kids_hi": 217,
+   "dollars_lo": 879725,
+   "dollars_hi": 1111232
+  },
+  "p95": {
+   "kids_lo": 200,
+   "kids_hi": 253,
+   "dollars_lo": 1024758,
+   "dollars_hi": 1294432
+  }
+ }
+}
