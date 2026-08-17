@@ -437,14 +437,14 @@ print("capacity scenarios done")
 fig, (a1, a2) = plt.subplots(2, 1, figsize=(6.9, 5.8), height_ratios=[1, 1.5])
 a1.axvspan(-1323, 0, color="#F3E4E0", zorder=0)
 a1.axvspan(0, 409, color="#EAF0E7", zorder=0)
-a1.axvspan(-489, -111, color="#C9D6EA", zorder=1, alpha=0.9)
+a1.axvspan(-489, -113, color="#C9D6EA", zorder=1, alpha=0.9)
 a1.plot([-1323, 409], [0.5, 0.5], color="#666666", lw=1.2, zorder=2)
 for v, lab in [(-1323, "worst case\n\$1,323K lost"), (409, "best case\n\$409K saved")]:
     a1.plot([v], [0.5], marker="|", markersize=16, color="#444444", zorder=3)
     a1.annotate(lab, xy=(v, 0.5), xytext=(v, 0.16), ha="center", fontsize=7.8)
-a1.plot([-292], [0.5], marker="D", markersize=9, color=NAVY, zorder=4)
-a1.annotate("median: \$292K LOST", xy=(-292, 0.5), xytext=(-292, 0.68), ha="center", fontsize=8.2, fontweight="bold", color=NAVY)
-a1.annotate("middle half:\n\$489K to \$111K lost", xy=(-292, 0.5), xytext=(180, 0.06), ha="center", fontsize=7.4, color="#39506e")
+a1.plot([-294], [0.5], marker="D", markersize=9, color=NAVY, zorder=4)
+a1.annotate("median: \$294K LOST", xy=(-294, 0.5), xytext=(-294, 0.68), ha="center", fontsize=8.2, fontweight="bold", color=NAVY)
+a1.annotate("middle half:\n\$489K to \$113K lost", xy=(-294, 0.5), xytext=(180, 0.06), ha="center", fontsize=7.4, color="#39506e")
 a1.annotate("the plan needs \$800K to \$1M\nfrom the closure", xy=(700, 0.5), xytext=(640, 0.78), ha="center",
             fontsize=7.8, color="#8a4a2b", fontweight="bold",
             arrowprops=dict(arrowstyle="->", color="#8a4a2b", lw=0.9))

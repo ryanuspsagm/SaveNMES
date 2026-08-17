@@ -71,7 +71,7 @@ def main():
         else: bad(f"only {nmore} section expanders found")
         strip = pg.query_selector(".range-bar")
         labs = pg.text_content(".range-labs") if pg.query_selector(".range-labs") else ""
-        if strip and "loses $1,322,925" in labs and "saves $409,190" in labs and "loses $292,348" in labs:
+        if strip and "loses $1,322,925" in labs and "saves $409,190" in labs and "loses $293,756" in labs:
             ok("nontechnical range strip shows worst / middle / best in plain words")
         else: bad(f"range strip missing or labels wrong: {labs[:80]}")
         nbars = pg.evaluate("document.querySelectorAll('.range-bar').length")
@@ -92,12 +92,12 @@ def main():
         else: bad("calculator details not open by default")
         net = pg.text_content("#rNet").strip()
         rank = pg.text_content("#rRank").strip()
-        if net == "-$310,159" and "47th percentile" in rank and "14,580 weighted scenarios" in rank:
-            ok("closure default -$310,159 (all staff retained, survey-floor leavers); percentile-only readout: 47th")
+        if net == "-$315,285" and "47th percentile" in rank and "14,580 weighted scenarios" in rank:
+            ok("closure default -$315,285 (all staff retained, survey-floor leavers); percentile-only readout: 47th")
         else: bad(f"closure defaults: {net} / {rank}")
         bl0 = (pg.text_content("#blClose").strip(), pg.text_content("#blGrow").strip())
-        if bl0 == ("−$310,159", "+$141,780"):
-            ok("bottom-line tiles open at the default scenarios (-$310,159 close, +$141,780 grow)")
+        if bl0 == ("−$315,285", "+$141,780"):
+            ok("bottom-line tiles open at the default scenarios (-$315,285 close, +$141,780 grow)")
         else: bad(f"bottom-line defaults: {bl0}")
         gone_verdict = pg.evaluate("['rVerdict','rBar'].filter(i=>document.getElementById(i)).length")
         note_ok = pg.evaluate("document.body.textContent.includes(\"The default reflects the superintendent's written statement\")")
@@ -238,8 +238,8 @@ def main():
         if not sv["iframe"] and "form.jotform.com" not in pg.content():
             ok("the Jotform embed is fully retired")
         else: bad("Jotform still present")
-        if "30" in sv["card"] and "$371,963" in sv["card"] and "never published" in sv["card"]:
-            ok("survey results card: 30 leaving households, the floor figure, and the privacy note")
+        if "31" in sv["card"] and "$377,354" in sv["card"] and "never published" in sv["card"]:
+            ok("survey results card: 31 leaving households, the floor figure, and the privacy note")
         else: bad(f"survey results card: {sv['card'][:100]}")
         if sv["href"] == "#survey":
             ok("hero Survey Results button links to the results card")

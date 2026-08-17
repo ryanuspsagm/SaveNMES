@@ -204,8 +204,8 @@ put(df, "F31", "Published: 1,339 student-years, $6.2 to $6.9 million", NOTE)
 
 put(df, "A33", "THE TWO CALCULATOR DEFAULTS (the numbers on the site's cards)", SEC)
 put(df, "A34", "Closure default: district staffing stance + the survey floor of missing students")
-put(df, "B34", "=B17+C17-63000-73*(Assumptions!B6+500)", BLK, CUR, bold=True)
-put(df, "F34", "= $127,039 kept, minus $63,000 of busing, minus the survey floor of 73 missing students at $5,126 with nothing shed: the published -$310,159, the 47th percentile of the 14,580-scenario grid; the weighted median is a $292,348 loss (Closure_Model row 50)", NOTE, wrap=True)
+put(df, "B34", "=B17+C17-63000-74*(Assumptions!B6+500)", BLK, CUR, bold=True)
+put(df, "F34", "= $127,039 kept, minus $63,000 of busing, minus the survey floor of 74 missing students at $5,126 with nothing shed: the published -$315,285, the 47th percentile of the 14,580-scenario grid; the weighted median is a $293,756 loss (Closure_Model row 50)", NOTE, wrap=True)
 put(df, "A35", "Growth default: 30 added students at the grid's low busing and supplies")
 put(df, "B35", "=30*(Assumptions!B6+500-400)", BLK, CUR, bold=True)
 put(df, "F35", "The published +$141,780, the weighted median of the 19,683-scenario grid (Growth_Model rows 17-19); at the central $500 busing and $700 supplies the same 30 students net about $118,000", NOTE, wrap=True)
@@ -333,7 +333,7 @@ put(c, "A15", "RECURRING OFFSETS (new costs and lost revenue)", SEC)
 put(c, "A16", "Added busing"); put(c, "B16", "=Assumptions!B54", GRN, CUR)
 put(c, "A17", "SEEK revenue lost to departing students (FY2027 base)"); put(c, "B17", "=Assumptions!B55*Assumptions!B6", GRN, CUR)
 put(c, "A18", "Total offsets", bold=True); put(c, "B18", "=SUM(B16:B17)", BLK, CUR, bold=True)
-put(c, "A20", "NET RECURRING GENERAL FUND SAVING (LEGACY single-point scenario on superseded inputs; the published model is the 14,580-scenario grid at row 37, median a $292,348 LOSS)", bold=True)
+put(c, "A20", "NET RECURRING GENERAL FUND SAVING (LEGACY single-point scenario on superseded inputs; the published model is the 14,580-scenario grid at row 37, median a $293,756 LOSS)", bold=True)
 nc = put(c, "B20", "=B13-B18", BLK, CUR, bold=True); nc.border = TOPLINE
 put(c, "A21", "Share of the structural deficit ($2.65M) | of the reserve drawdown ($1.15M)")
 put(c, "B21", "=B20/(Assumptions!B24-Assumptions!B21)", BLK, PCT)
@@ -358,7 +358,7 @@ v3levers = [
  ("Fixed positions cut over time (school admin + custodial + library)", 0, 107052.2, 214104.4, "MUNIS FY2026 actuals: school administration $115,397 + custodial $49,655 + library $49,052 = $214,104 (the district's own A.1 prices the same four roles at $209,700, within 2 percent, and states all current staff are retained in year one; the full-cut leg is an attrition end state)"),
  ("Teachers cut (grid legs 0/1/2/3) x $54,479.40 each", 0, 2, 3, "Priced at the district's OWN fully loaded 0-years-experience figure, $54,479.40 (Response Appendix A.1: 'Elementary Teachers: 2, $108,958.80'). The top leg credits 3 because Appendix B's own classroom count eliminates three homerooms net."),
  ("Added busing", 20000, 63000, 190000, "Derived bottom-up with uncertainty: 2-4 zone buses terminating in Paris (~9-11 road miles farther one-way), 2 loaded + 0-2 deadhead legs daily, 170 to 175 days, $3.25-$4.75/mile (KDE/NAPT band), high stop adds one $45,000 route split. Per zone student $160/$492/$1,495 vs the $1,032 district average. The July 2026 records response produced the current routes but answered N/A for any routing study or ride-time analysis."),
- ("Students missing from the rolls at steady state (grid legs 38/73/137/167/194)", 38, 137, 194, "From the August 2026 school-choice survey (anonymized in build/) and build/exodus_model.py: 73 = the floor, 30 signed households' 69 children at 5.75 per class x 12.62 effective years of the district's own grade-to-grade survival; 137/167/194 = the response-bias-corrected posterior quartiles at the class midpoint; 38 = half the floor, the skeptic's leg. Exits free and funded under HB 563. The state's SAAR files corroborate: kindergarten 12 in 2025-26 against a 21-31 norm; end-of-year 141/128/115 across 2023-24 to 2025-26."),
+ ("Students missing from the rolls at steady state (grid legs 38/74/137/167/194)", 38, 137, 194, "From the August 2026 school-choice survey (anonymized in build/) and build/exodus_model.py: 74 = the floor, 31 signed households' 70 children at 5.83 per class x 12.62 effective years of the district's own grade-to-grade survival; 137/167/194 = the response-bias-corrected posterior quartiles at the class midpoint; 38 = roughly half the floor, the skeptic's leg. Exits free and funded under HB 563. The state's SAAR files corroborate: kindergarten 12 in 2025-26 against a 21-31 norm; end-of-year 141/128/115 across 2023-24 to 2025-26."),
  ("SEEK add-ons lost per leaver", 0, 500, 1000, "At-risk weight (15% of base on a ~72% FRL school), exceptional-child weights, transportation component, $100 capital outlay"),
  ("Variable cost shed per missing student (grid legs 0/1585/2642)", 0, 1585, 2642, "What the district stops spending when a student leaves, netted against the SEEK loss: $2,642 = one teacher per 25.4 students (SBDM allocation sheet: 463 students / 18.2 teachers) at the district's own $54,479.40, plus $500 non-personnel (assumption, flagged); $1,585 = 60 percent consolidation friction; $0 = the district's own stated stance that all staff are retained"),
  ("Property-value loss (zone tax base)", 0, 47500, 95000, "Roughly 0-10 percent of an estimated zone base; kept as foregone revenue because the board's rate practice does not raise rates to recapture zone valuation losses; PVA records ask pending"),
@@ -375,7 +375,7 @@ put(c, "C48", "-$1,322,925 a year: the closure loses money", NOTE)
 put(c, "A49", "Favorable tail (all levers favorable)")
 put(c, "B49", "=D39+D40+D41*54479.4-B42-B43*(Assumptions!B6+B44-D45)-B46", BLK, CUR)
 put(c, "C49", "+$409,190 a year: the grid's best case (every lever at its closure-friendliest, only the survey's skeptic-leg leavers), still below the plan's $800K-$1M requirement", NOTE)
-put(c, "A50", "Distribution of all 14,580 combinations enumerated by build/closure_grid.py: capture, fixed-position, add-ons, shed, property and busing levers take three values each, teachers four (0/1/2/3) and missing students five (38/73/137/167/194): 3^6 x 4 x 5 = 14,580. v5.0 lever weights: triangular 1-2-1 on the six levers with a documented central setting; uniform on teachers; survey-anchored 1-2-2-2-1 on missing students. Weighted median -$292,348 (the median scenario LOSES money); middle half -$488,920 to -$111,080; 88 percent of weighted scenarios negative; range -$1,322,925 to +$409,190 (unweighted median -$283,934). REBUILT IN v5.0 on the August 2026 school-choice survey: the leaver lever moves from guessed shares of 128 (0-64, year one only) to measured students missing at steady state, and the new shed lever nets the district's cost response against each lost student's SEEK. One-time transition costs $100K-$300K in year one are additional. The v4.5 grid (5,832 scenarios, weighted median -$20,007, 55 percent negative) and the v3.9 grid (2,916, median +$21,571) are retained in the version history.", NOTE, wrap=True)
+put(c, "A50", "Distribution of all 14,580 combinations enumerated by build/closure_grid.py: capture, fixed-position, add-ons, shed, property and busing levers take three values each, teachers four (0/1/2/3) and missing students five (38/74/137/167/194): 3^6 x 4 x 5 = 14,580. v5.0 lever weights: triangular 1-2-1 on the six levers with a documented central setting; uniform on teachers; survey-anchored 1-2-2-2-1 on missing students. Weighted median -$293,756 (the median scenario LOSES money); middle half -$489,057 to -$113,244; 88 percent of weighted scenarios negative; range -$1,322,925 to +$409,190 (unweighted median -$284,962). REBUILT IN v5.0 on the August 2026 school-choice survey: the leaver lever moves from guessed shares of 128 (0-64, year one only) to measured students missing at steady state, and the new shed lever nets the district's cost response against each lost student's SEEK. One-time transition costs $100K-$300K in year one are additional. The v4.5 grid (5,832 scenarios, weighted median -$20,007, 55 percent negative) and the v3.9 grid (2,916, median +$21,571) are retained in the version history.", NOTE, wrap=True)
 put(c, "A52", "HOSTILE PAPER CASE, PUBLISHED WITH ITS REFUTATION", SEC)
 put(c, "A53", "Every absorbed student priced at the $9,848 slope (withdrawn in v3.9; kept for the record)")
 put(c, "B53", "=Assumptions!B14*Assumptions!B11-128*9848-137500-10*Assumptions!B6", BLK, CUR)
@@ -394,11 +394,11 @@ ex = sheet("Exodus_Model", [56, 14, 14, 14, 14, 60])
 put(ex, "A1", "THE EXODUS MODEL: WHAT LEAVING FAMILIES COST, FROM THE AUGUST 2026 SCHOOL-CHOICE SURVEY", SEC)
 put(ex, "A2", "Every figure reproduced by build/exodus_model.py from the anonymized survey (build/survey_school_choice_2026_08_anonymized.csv). Names and dates are never published.", NOTE, wrap=True)
 put(ex, "A4", "THE SURVEY, CLEANED", SEC)
-put(ex, "A5", "Households answering / children covered"); put(ex, "B5", 37, BLUE, NUM); put(ex, "C5", 84, BLUE, NUM)
-put(ex, "A6", "Leaving households / their children"); put(ex, "B6", 30, BLUE, NUM); put(ex, "C6", 69, BLUE, NUM)
+put(ex, "A5", "Households answering / children covered"); put(ex, "B5", 38, BLUE, NUM); put(ex, "C5", 85, BLUE, NUM)
+put(ex, "A6", "Leaving households / their children"); put(ex, "B6", 31, BLUE, NUM); put(ex, "C6", 70, BLUE, NUM)
 put(ex, "A7", "Staying children / already left the district"); put(ex, "B7", 13, BLUE, NUM); put(ex, "C7", 2, BLUE, NUM)
 put(ex, "A8", "Kindergarten class years holding leavers"); put(ex, "B8", 12, BLUE, NUM)
-put(ex, "A9", "Leavers per kindergarten class"); put(ex, "B9", "=C6/B8", BLK, NUM); put(ex, "F9", "5.75 out of every class of 19 to 24 (recent SAAR grade range)", NOTE)
+put(ex, "A9", "Leavers per kindergarten class"); put(ex, "B9", "=C6/B8", BLK, NUM); put(ex, "F9", "5.83 out of every class of 19 to 24 (recent SAAR grade range)", NOTE)
 put(ex, "A11", "EFFECTIVE YEARS PER LOST CHILD (district grade-to-grade survival, SAAR school files)", SEC)
 put(ex, "A12", "Survival vs own 5th-grade class: 6th / 7th / 8th"); put(ex, "B12", 0.972, BLUE, NUM); put(ex, "C12", 0.947, BLUE, NUM); put(ex, "D12", 0.974, BLUE, NUM)
 put(ex, "A13", "9th / 10th / 11th"); put(ex, "B13", 0.980, BLUE, NUM); put(ex, "C13", 0.960, BLUE, NUM); put(ex, "D13", 0.960, BLUE, NUM)
@@ -408,7 +408,7 @@ put(ex, "B15", "=6+SUM(B12:D12)+SUM(B13:D13)+B14", BLK, NUM, bold=True)
 put(ex, "F15", "12.62 instead of a flat 13: the model does not count years a child would not have been enrolled anyway", NOTE, wrap=True)
 put(ex, "A17", "THE LADDER: STUDENTS MISSING FROM THE ROLLS EACH YEAR, AND THE SEEK LOST WITH THEM", SEC)
 put(ex, "A18", "Estimate", BOLDW, fill=HDR); put(ex, "B18", "Leave share", BOLDW, fill=HDR); put(ex, "C18", "Kids/yr (class of 19)", BOLDW, fill=HDR); put(ex, "D18", "Kids/yr (class of 24)", BOLDW, fill=HDR); put(ex, "E18", "$/yr range", BOLDW, fill=HDR); put(ex, "F18", "Basis", BOLDW, fill=HDR)
-put(ex, "A19", "Floor"); put(ex, "B19", "signed only", NOTE); put(ex, "C19", "=ROUND($B$9*$B$15,0)", BLK, NUM); put(ex, "D19", "=C19", BLK, NUM); put(ex, "E19", "=$B$9*$B$15*(Assumptions!B6+500)", BLK, CUR); put(ex, "F19", "The 30 signed households alone: no statistics. $371,963 a year.", NOTE, wrap=True)
+put(ex, "A19", "Floor"); put(ex, "B19", "signed only", NOTE); put(ex, "C19", "=ROUND($B$9*$B$15,0)", BLK, NUM); put(ex, "D19", "=C19", BLK, NUM); put(ex, "E19", "=$B$9*$B$15*(Assumptions!B6+500)", BLK, CUR); put(ex, "F19", "The 31 signed households alone: no statistics. $377,354 a year.", NOTE, wrap=True)
 put(ex, "A20", "Band low (25th pct)"); put(ex, "B20", 0.50575, BLUE, NUM); put(ex, "C20", "=ROUND(B20*19*$B$15,0)", BLK, NUM); put(ex, "D20", "=ROUND(B20*24*$B$15,0)", BLK, NUM); put(ex, "E20", "=B20*19*$B$15*(Assumptions!B6+500)", BLK, CUR); put(ex, "F20", "=B20*24*$B$15*(Assumptions!B6+500)", BLK, CUR)
 put(ex, "A21", "Median"); put(ex, "B21", 0.61425, BLUE, NUM); put(ex, "C21", "=ROUND(B21*19*$B$15,0)", BLK, NUM); put(ex, "D21", "=ROUND(B21*24*$B$15,0)", BLK, NUM); put(ex, "E21", "=B21*19*$B$15*(Assumptions!B6+500)", BLK, CUR); put(ex, "F21", "=B21*24*$B$15*(Assumptions!B6+500)", BLK, CUR)
 put(ex, "A22", "Band high (75th pct)"); put(ex, "B22", 0.71575, BLUE, NUM); put(ex, "C22", "=ROUND(B22*19*$B$15,0)", BLK, NUM); put(ex, "D22", "=ROUND(B22*24*$B$15,0)", BLK, NUM); put(ex, "E22", "=B22*19*$B$15*(Assumptions!B6+500)", BLK, CUR); put(ex, "F22", "=B22*24*$B$15*(Assumptions!B6+500)", BLK, CUR)
@@ -584,7 +584,7 @@ put(rd, "B96", "=(8902321-15*Assumptions!B62-Assumptions!B41)/(491-15)", BLK, CU
 put(rd, "C96", "Bourbon Central; Cane Ridge next row. Consolidation lowers sender per-pupil AND is the source of the district-level saving; do not count it twice", NOTE, wrap=True)
 put(rd, "A97", "Cane Ridge, same treatment")
 put(rd, "B97", "=(8606870-15*Assumptions!B62-Assumptions!B41)/(461-15)", BLK, CUR)
-put(rd, "A98", "The same discipline applies to the closure direction: 128 arriving students trigger the same class caps at the receiving schools, adding sections in several grades, which is exactly why the closure's net effect runs minus $1,322,925 to plus $409,190 with a weighted median of minus $292,348, and not the school's $2.5M gross cost.", NOTE, wrap=True)
+put(rd, "A98", "The same discipline applies to the closure direction: 128 arriving students trigger the same class caps at the receiving schools, adding sections in several grades, which is exactly why the closure's net effect runs minus $1,322,925 to plus $409,190 with a weighted median of minus $293,756, and not the school's $2.5M gross cost.", NOTE, wrap=True)
 
 put(rd, "A100", "FAIR TEST: EVERY SCHOOL FILLED TO ITS RATED CAPACITY, SEVEN CAPACITY SETS (backs Figure 6)", SEC)
 put(rd, "A101", "Step costs: $400 per student added or removed, plus or minus $85,000 per section vs today's staffing (even K-5 mix under KRS 157.360). Section deltas below are precomputed from that rule; capacities from the named documents, all archived in build/.", NOTE, wrap=True)
@@ -750,7 +750,7 @@ put(al, f"A{tot+4}", "Published band, low (raw row sums, no haircut)"); put(al, 
 put(al, f"A{tot+5}", "Published band, high (raw row sums, no haircut; the pre-v4.4 conservative $1.7M high is retired)"); put(al, f"B{tot+5}", f"=C{tot}", BLK, CUR)
 put(al, f"A{tot+6}", "Band midpoint (used in Runway sheet)"); put(al, f"B{tot+6}", f"=(B{tot+4}+B{tot+5})/2", BLK, CUR)
 put(al, f"A{tot+7}", "Average annual GF drawdown (FY2024-25)"); put(al, f"B{tot+7}", "=GF_Summary!D16", GRN, CUR)
-put(al, f"A{tot+8}", "Closure net saving (LEGACY single-point base case, superseded by the grid median of -$292,348 at Closure_Model row 50)"); put(al, f"B{tot+8}", "=Closure_Model!B20", GRN, CUR)
+put(al, f"A{tot+8}", "Closure net saving (LEGACY single-point base case, superseded by the grid median of -$293,756 at Closure_Model row 50)"); put(al, f"B{tot+8}", "=Closure_Model!B20", GRN, CUR)
 put(al, f"A{tot+10}", "Reading: the raw-row band is $1.39M to $2.34M with no haircut (v4.4 review). The published headline is now the 2018 restore plus the counted-once cost package, $2.5M to $3.0M a year (transformative check below). Ranges overlap and are not additive to the penny, and each line carries its own confidence rating in column F. Medicaid and reimbursement recovery were removed from the menu in v4.2 review; shared services with Paris Independent was removed in v4.4 review. Coverage is reported against both yardsticks: the $2.65M structural gap before transfers and the roughly $1.15M net drawdown after transfers (Closure_Model row 21 carries both for closure).", NOTE, wrap=True)
 
 put(al, f"A{tot+12}", "THE GROWTH PATH: THE SAME MENU AS A DISTRICT-WIDE RECOVERY PLAN (v3.8; backs the site card and Section 9)", SEC)
@@ -846,8 +846,8 @@ put(d, f"F{r}", "Payment is approximately the operating amount the plan frees up
 put(d, f"A{r}", "WHAT EACH SAVINGS ESTIMATE COULD ACTUALLY BOND", SEC); r += 1
 put(d, f"A{r}", "Bond principal supported = annual savings x present-value annuity factor at the rate and term above", NOTE); r += 1
 sav_rows = [
- ("District's own KDE-filed excess cost of NMES vs peer elementaries", 121220, "Above the closure model's central case, which is itself negative (-$299,327); the weighted median loses $292,348"),
- ("Closure model median (v5.0 weighted grid)", -292348, "Closure_Model tab, 14,580-combination grid; the median scenario loses money"),
+ ("District's own KDE-filed excess cost of NMES vs peer elementaries", 121220, "Above the closure model's central case, which is itself negative (-$299,327); the weighted median loses $293,756"),
+ ("Closure model median (v5.0 weighted grid)", -293756, "Closure_Model tab, 14,580-combination grid; the median scenario loses money"),
  ("Closure model best case (favorable tail)", 484582, "Closure_Model tab B49"),
  ("Administration's claim, July 15, 2026", 900000, "Unpublished derivation; reconcile with KDE-filed school-level spending"),
 ]
@@ -977,7 +977,7 @@ put(rw, "A7", "Closure only (central case, $52,514, from FY2027)")
 put(rw, "B7", "=GF_Summary!D9-GF_Summary!$D$16", BLK, CUR)
 for col, prev in zip("CDE", "BCD"):
     put(rw, f"{col}7", f"={prev}7-GF_Summary!$D$16+Closure_Model!$B$47", BLK, CUR)
-put(rw, "A9", "Closure range check (v5.0): at the +$409,190 best case FY2029 holds a modest cushion; at the -$292,348 weighted median the reserves go MUCH faster than status quo; 88 percent of weighted scenarios lose money and drain reserves faster than doing nothing.", NOTE, wrap=True)
+put(rw, "A9", "Closure range check (v5.0): at the +$409,190 best case FY2029 holds a modest cushion; at the -$293,756 weighted median the reserves go MUCH faster than status quo; 88 percent of weighted scenarios lose money and drain reserves faster than doing nothing.", NOTE, wrap=True)
 put(rw, "A8", "2% contingency floor (approx., FY2025 basis)")
 for col in "BCDE":
     put(rw, f"{col}8", "=GF_Summary!$D$14", GRN, CUR)
@@ -997,10 +997,10 @@ put(sc, "C5", "=Runway!E5", BLK, CUR)
 put(sc, "D5", "None", NOTE)
 put(sc, "E5", "No decisions; the districtwide drawdown, which NMES did not cause, simply continues on the straight line with or without the school", NOTE)
 put(sc, "A6", "2. Close NMES and consolidate")
-put(sc, "B6", -292348, BLUE, CUR)
+put(sc, "B6", -293756, BLUE, CUR)
 put(sc, "C6", "=Runway!E7", BLK, CUR)
 put(sc, "D6", "Unpublished", NOTE)
-put(sc, "E6", "Closure vote; the weighted median LOSES $292,348 a year (B6 is the grid median; the legacy single-point Closure_Model!B20 is superseded); the grid central case itself loses $299,327, and even the +$409,190 best-case tail covers only 15.4% of the $2.65M gap; longer rides; measured enrollment-loss risk", NOTE)
+put(sc, "E6", "Closure vote; the weighted median LOSES $293,756 a year (B6 is the grid median; the legacy single-point Closure_Model!B20 is superseded); the grid central case itself loses $299,327, and even the +$409,190 best-case tail covers only 15.4% of the $2.65M gap; longer rides; measured enrollment-loss risk", NOTE)
 put(sc, "A7", "3. Districtwide recovery plan (menu plus levy; includes rebalancing and growing NMES)")
 put(sc, "B7", "=Alternatives!B19", GRN, CUR)
 put(sc, "C7", "=Runway!E6", BLK, CUR)
@@ -1431,7 +1431,7 @@ put(kc, "A33", "THE YARDSTICK: WHAT THIS PLAN REQUIRES PER DISPLACED STUDENT", S
 put(kc, "A34", "Plan requirement, low / high ($800K-$1M over the 128 students displaced)")
 put(kc, "B34", "=800000/Assumptions!B11", BLK, CUR, bold=True); put(kc, "C34", "=1000000/Assumptions!B11", BLK, CUR, bold=True)
 put(kc, "A35", "This report's own model, per displaced student: median / central / best case")
-put(kc, "B35", "=-292348/Assumptions!B11", BLK, CUR); put(kc, "C35", "=Closure_Model!B47/Assumptions!B11", BLK, CUR); put(kc, "D35", "=Closure_Model!B49/Assumptions!B11", BLK, CUR)
+put(kc, "B35", "=-293756/Assumptions!B11", BLK, CUR); put(kc, "C35", "=Closure_Model!B47/Assumptions!B11", BLK, CUR); put(kc, "D35", "=Closure_Model!B49/Assumptions!B11", BLK, CUR)
 put(kc, "A36", "Reading: among rural ELEMENTARY closures, the one clean no-construction comparable (Webster 2012) paid $3,525 per displaced student; every case at or near the plan's band built a new school (Perry, Adair, Metcalfe) or was a city or county-seat grade reshuffle (Somerset, Montgomery). Gaps beyond roughly a school's own cost per student are flagged in the notes: they prove budget-wide causes, which is why this model prices closure bottom-up (positions, busing, SEEK) rather than from budget trends.", NOTE, wrap=True)
 
 put(kc, "A38", "THE FULL DISTRIBUTION, PER DISPLACED STUDENT (all measurable events; whole budget gap credited to the closure)", SEC)

@@ -2,9 +2,9 @@
  "seek": 5126,
  "class_lo": 19,
  "class_hi": 24,
- "per_class": 5.75,
- "leaving_households": 30,
- "leaving_children": 69,
+ "per_class": 5.83,
+ "leaving_households": 31,
+ "leaving_children": 70,
  "enrolled_sample": 24,
  "enrolled_leavers": 20,
  "posterior": {
@@ -23,10 +23,10 @@
  },
  "ladder": {
   "floor": {
-   "kids_lo": 73,
-   "kids_hi": 73,
-   "dollars_lo": 371963,
-   "dollars_hi": 371963
+   "kids_lo": 74,
+   "kids_hi": 74,
+   "dollars_lo": 377354,
+   "dollars_hi": 377354
   },
   "iqr_low": {
    "kids_lo": 121,

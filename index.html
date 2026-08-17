@@ -360,7 +360,7 @@ footer a{color:var(--ice)}
 <section id="risks"><div class="wrap">
 <div class="kicker">Fact Four</div>
 <h2>Closing it risks a lot, every year, for thirteen years running.</h2>
-<p class="lede">Schools compete for families now, and every family that leaves takes about $5,100 a year of state money with it, permanently. This is no longer a hypothetical: the signed school-choice survey below accounts for <b>$371,963 a year</b> by itself, more than any closure saving in the priced grid's middle half, and the statistically likely band runs <b>$621,615 to $1,111,232 a year</b>. Added up over the thirteen-year window, that is a <b>$4.0 to $12.0 million lifetime revenue loss</b>.</p>
+<p class="lede">Schools compete for families now, and every family that leaves takes about $5,100 a year of state money with it, permanently. This is no longer a hypothetical: the signed school-choice survey below accounts for <b>$377,354 a year</b> by itself, more than any closure saving in the priced grid's middle half, and the statistically likely band runs <b>$621,615 to $1,111,232 a year</b>. Added up over the thirteen-year window, that is a <b>$4.0 to $12.0 million lifetime revenue loss</b>.</p>
 <details class="more"><summary>More detail: the market and the measured exodus</summary>
 <div class="card">
 <h3>Schools compete now. K-5 is where you win or lose families.</h3>
@@ -372,11 +372,11 @@ footer a{color:var(--ice)}
 <p class="note">Every exit is free to the family and funded for the district that wins the child. The August 2026 school-choice survey (results below) replaces the old hypothetical shares: a child who leaves is missing for every remaining grade through 12th, 12.62 effective years on the district's own grade-to-grade survival, priced at the $4,626 base plus $500 of typical add-ons.</p>
 <div style="overflow-x:auto"><table class="alt">
 <tr><th>Estimate</th><th>Basis</th><th>Students missing each year</th><th>SEEK lost each year</th><th>13-year window</th></tr>
-<tr><td><b>Floor</b></td><td>the 30 signed households alone</td><td>73</td><td>$371,963</td><td><b>about $4.0M</b></td></tr>
+<tr><td><b>Floor</b></td><td>the 31 signed households alone</td><td>74</td><td>$377,354</td><td><b>about $4.1M</b></td></tr>
 <tr><td><b>Likely band</b></td><td>statistical middle half</td><td>121 to 217</td><td>$621,615 to $1,111,232</td><td><b>$6.7 to $12.0M</b></td></tr>
 <tr><td><b>Middle</b></td><td>statistical median</td><td>147 to 186</td><td>$754,972 to $953,649</td><td><b>$8.2 to $10.4M</b></td></tr>
 </table></div>
-<div class="chartbox"><canvas id="chartLeave" role="img" aria-label="Line chart of the yearly state funding loss growing over thirteen years for each survey estimate. At the survey floor, the loss grows from about $177,000 in year one to about $383,000 a year from year eight on; at the band's high edge it reaches about $1,024,000 a year."></canvas></div>
+<div class="chartbox"><canvas id="chartLeave" role="img" aria-label="Line chart of the yearly state funding loss growing over thirteen years for each survey estimate. At the survey floor, the loss grows from about $179,000 in year one to about $390,000 a year from year eight on; at the band's high edge it reaches about $1,025,000 a year."></canvas></div>
 <p class="note">The loss grows until year eight, when the oldest lost class reaches grade 12; the <b>13-year window</b> column adds all thirteen years on that ramp. The 128 students in the building carry about $6.2 to $6.9 million of remaining state funding through grade 12 (their actual grade counts are 1,339 student-years, priced at the $4,626 base to $5,126 with add-ons). And by the district's own advisor's June 2026 presentation, every 50 students lost take about $1 million of bonding capacity with them.</p>
 </div>
 </details>
@@ -385,21 +385,21 @@ footer a{color:var(--ice)}
 <section id="model"><div class="wrap">
 <div class="kicker">Run the Numbers</div>
 <h2>Two calculators, closure, and growth.</h2>
-<p class="lede">Built on district data, you can change the assumptions. Close it, and the middle case <b>LOSES $292,348 a year</b>. Grow it, and <b>every scenario in which students arrive pays</b>, middle case <b>+$141,780</b>; if no one comes, the trying costs nothing.</p>
+<p class="lede">Built on district data, you can change the assumptions. Close it, and the middle case <b>LOSES $293,756 a year</b>. Grow it, and <b>every scenario in which students arrive pays</b>, middle case <b>+$141,780</b>; if no one comes, the trying costs nothing.</p>
 <details class="more" open><summary>The calculators and the full range</summary>
 
 <div class="calc-grid">
 <div class="card">
 <h3>Closure: what does it actually net?</h3>
-<p class="note">Eight levers, opening at the district's own stance: the building sold, every position retained (the superintendent's written response says all staff keep their jobs, with savings recovered only as staff across the district leave by attrition), mid-range busing, none of the leavers' costs shed, and only the 73 students a year that the signed school-choice survey already accounts for. Staffing is priced at the district's own $54,479 rate; the fixed-position lines are FY2026 actuals from its own MUNIS ledger.</p>
+<p class="note">Eight levers, opening at the district's own stance: the building sold, every position retained (the superintendent's written response says all staff keep their jobs, with savings recovered only as staff across the district leave by attrition), mid-range busing, none of the leavers' costs shed, and only the 74 students a year that the signed school-choice survey already accounts for. Staffing is priced at the district's own $54,479 rate; the fixed-position lines are FY2026 actuals from its own MUNIS ledger.</p>
 <div class="slider-row"><label>Building costs that stop <output id="oCap">All stops plus $20,000 insurance, building sold: $127,039</output></label>
 <input type="range" id="sCap" min="0" max="2" value="2" step="1"></div>
 <div class="slider-row"><label>Fixed positions cut (principal, custodian, library) <output id="oFix">$0: all four keep their jobs</output></label>
 <input type="range" id="sFix" min="0" max="2" value="0" step="1"></div>
 <div class="slider-row"><label>Teachers cut, at the district's $54,479 each <output id="oTea">0</output></label>
 <input type="range" id="sTea" min="0" max="3" value="0" step="1"></div>
-<div class="slider-row"><label>Students missing from the district's rolls each year (the survey floor is 73; the grid prices 38 to 194) <output id="oLeav">73 students: the survey floor</output></label>
-<input type="range" id="sLeav" min="38" max="194" value="73" step="1"></div>
+<div class="slider-row"><label>Students missing from the district's rolls each year (the survey floor is 74; the grid prices 38 to 194) <output id="oLeav">74 students: the survey floor</output></label>
+<input type="range" id="sLeav" min="38" max="194" value="74" step="1"></div>
 <div class="slider-row"><label>Variable cost the district sheds per missing student <output id="oShed">$0 shed: all staff retained, the district's stance</output></label>
 <input type="range" id="sShed" min="0" max="2" value="0" step="1"></div>
 <div class="slider-row"><label>State add-ons lost per leaver <output id="oAdd">$500</output></label>
@@ -409,12 +409,12 @@ footer a{color:var(--ice)}
 <div class="slider-row"><label>Added busing cost per year <output id="oBus">$63,000</output></label>
 <input type="range" id="sBus" min="20000" max="190000" value="63000" step="1000"></div>
 <div class="result">
-<div class="big" id="rNet">-$310,159</div>
+<div class="big" id="rNet">-$315,285</div>
 <div class="sub">net effect per year at these settings</div>
 <div class="verdict" id="rRank"></div>
 <div class="verdict" id="rTax" style="margin-top:8px"></div>
 </div>
-<p class="note">The default reflects the superintendent's written statement (all staff retained, savings arriving only by attrition, so nothing shed as students leave) and counts only the survey floor: the 73 students a year that 30 named survey households already account for. The tax line prices a loss at the certified real estate roll's $166,189 per cent of rate (the fiscal 2025 audit's own valuation and calculated levy; the restricted building-fund levy is not counted) and the median homeowner's $15.69 a month for 8.9 cents.</p>
+<p class="note">The default reflects the superintendent's written statement (all staff retained, savings arriving only by attrition, so nothing shed as students leave) and counts only the survey floor: the 74 students a year that 31 named survey households already account for. The tax line prices a loss at the certified real estate roll's $166,189 per cent of rate (the fiscal 2025 audit's own valuation and calculated levy; the restricted building-fund levy is not counted) and the median homeowner's $15.69 a month for 8.9 cents.</p>
 </div>
 
 <div class="card">
@@ -449,15 +449,15 @@ footer a{color:var(--ice)}
 <p>Nobody knows exactly how either road plays out. So we priced every reasonable version of both on the district's own numbers: 14,580 closure scenarios, 19,683 growth scenarios. Each bar runs from the worst result to the best. The shaded band is the <b>middle half</b> of outcomes, the navy tick is the middle result, and the <b>gold marker is your scenario</b>: move any slider above and it moves. The weighting and full method are in the report.</p>
 
 <div class="range-title">Close it</div>
-<div class="range-wrap" role="img" aria-label="Percentile scale for closing NMES: outcomes run from losing $1,322,925 a year at the left end to saving $409,190 a year at the right. The middle half is shaded, the median tick loses $292,348, the zero line sits at the 88th percentile because 88 percent of outcomes lose money, and a gold marker shows the calculator scenario, at the 47th percentile by default.">
+<div class="range-wrap" role="img" aria-label="Percentile scale for closing NMES: outcomes run from losing $1,322,925 a year at the left end to saving $409,190 a year at the right. The middle half is shaded, the median tick loses $293,756, the zero line sits at the 88th percentile because 88 percent of outcomes lose money, and a gold marker shows the calculator scenario, at the 47th percentile by default.">
 <div class="range-bar"><i class="iqr" style="left:25%;width:50%"></i><i class="zero" style="left:88%"></i><i class="med" style="left:50%"></i><i class="you" id="youClose" style="left:47%"></i></div>
 <div class="range-labs">
 <div><b>Worst case</b><br>loses $1,322,925 a year</div>
-<div><b>Middle result</b><br>loses $292,348 a year</div>
+<div><b>Middle result</b><br>loses $293,756 a year</div>
 <div><b>Best case</b><br>saves $409,190 a year</div>
 </div>
 </div>
-<p class="note">88 percent of outcomes lose money, so the zero line sits at the 88th percentile; the middle half runs from <b>losing $488,920 to losing $111,080</b>. The families-leaving lever, once the record's biggest unknown, is now anchored to the signed survey below and runs net of the variable costs the district sheds as students leave. <b>Your closure scenario: <span id="youCloseTxt">the 47th percentile</span>.</b></p>
+<p class="note">88 percent of outcomes lose money, so the zero line sits at the 88th percentile; the middle half runs from <b>losing $489,057 to losing $113,244</b>. The families-leaving lever, once the record's biggest unknown, is now anchored to the signed survey below and runs net of the variable costs the district sheds as students leave. <b>Your closure scenario: <span id="youCloseTxt">the 47th percentile</span>.</b></p>
 
 <div class="range-title">Grow it</div>
 <div class="range-wrap" role="img" aria-label="Percentile scale for growing NMES: outcomes run from gaining $3,331 a year at the left end to gaining $386,904 a year at the right. The middle half is shaded, the median tick gains $141,780, no scenario loses money, and a gold marker shows the calculator scenario, at the 50th percentile by default.">
@@ -478,7 +478,7 @@ footer a{color:var(--ice)}
 <p>Each enrolled child brings the district $5,126 a year in state SEEK funding, and a child who leaves is missing from the rolls for every remaining grade through 12th; the district's own grade-to-grade records show 97 to 100 percent of county fifth graders continue into its middle and high school, so we count 12.62 effective years per lost child, not 13. The August 2026 school-choice survey measures the leavers three ways:</p>
 <table class="alt">
 <tr><th>Estimate</th><th>Basis</th><th>Students missing each year</th><th>SEEK lost each year</th></tr>
-<tr><td><b>Floor</b></td><td>the 30 signed households alone</td><td>73</td><td>$371,963</td></tr>
+<tr><td><b>Floor</b></td><td>the 31 signed households alone</td><td>74</td><td>$377,354</td></tr>
 <tr><td><b>Likely band</b></td><td>middle half of the statistical estimate</td><td>121 to 217</td><td>$621,615 to $1,111,232</td></tr>
 <tr><td><b>Middle</b></td><td>the statistical median</td><td>147 to 186</td><td>$754,972 to $953,649</td></tr>
 </table>
@@ -491,7 +491,7 @@ footer a{color:var(--ice)}
 <div class="bl-k">The bottom line: your two scenarios, live from the calculators above</div>
 <div class="bline-grid">
 <div class="bl grow"><div class="t">Grow it</div><div class="n" id="blGrow">+$141,780</div><div class="s">a year at your growth settings; the default is the weighted median, and not one scenario loses</div></div>
-<div class="bl close"><div class="t">Close it</div><div class="n" id="blClose">&minus;$310,159</div><div class="s">a year at your closure settings; the default is the superintendent's stance (all staff retained, survey-floor leavers only), and the weighted median loses $292,348</div></div>
+<div class="bl close"><div class="t">Close it</div><div class="n" id="blClose">&minus;$315,285</div><div class="s">a year at your closure settings; the default is the superintendent's stance (all staff retained, survey-floor leavers only), and the weighted median loses $293,756</div></div>
 </div>
 </div>
 
@@ -622,7 +622,7 @@ footer a{color:var(--ice)}
 </svg>
 <div class="fork-grid">
 <div class="fork-col">
-<div class="road close"><div class="t">Shrink to Fit: close NMES</div><div class="n">-$310,159</div><div class="s">a year: the default closure scenario: the district's staffing stance plus only the leavers the signed survey already accounts for (weighted median: loses $292,348)</div></div>
+<div class="road close"><div class="t">Shrink to Fit: close NMES</div><div class="n">-$315,285</div><div class="s">a year: the default closure scenario: the district's staffing stance plus only the leavers the signed survey already accounts for (weighted median: loses $293,756)</div></div>
 </div>
 <div class="fork-col">
 <div class="road grow"><div class="t">Grow and Thrive: grow NMES</div><div class="n">+$141,780</div><div class="s">a year: the default growth scenario, the median of 19,683 weighted scenarios</div></div>
@@ -672,13 +672,16 @@ footer a{color:var(--ice)}
 <div class="card" id="survey" style="margin-top:22px">
 <div class="kicker">The Families Answered</div>
 <h3>School choice survey: the results</h3>
-<p>In early August 2026 we asked NMES families directly: if the school closes, what would your family actually do? <b>37 households answered for 84 children.</b> After removing duplicate submissions and setting aside two children whose family has already left the district, the cleaned answers are:</p>
-<table class="alt"><tr><th>Response</th><th>Households</th><th>Children</th></tr>
-<tr><td>Would leave Bourbon County Schools</td><td><b>30</b></td><td><b>69</b></td></tr>
+<p>In August 2026 we asked NMES families one question the district's plan never prices: <b>if the school closes, what would your family actually do?</b> Forty-two responses came in. After removing duplicate submissions, and counting one further family with one child received after the form closed, <b>38 households answered for 85 children</b>:</p>
+<table class="alt">
+<tr><th>Response</th><th>Households</th><th>Children</th></tr>
+<tr><td><b>Would leave Bourbon County Schools</b></td><td><b>31</b></td><td><b>70</b></td></tr>
 <tr><td>Would stay</td><td>6</td><td>13</td></tr>
-<tr><td>Already left</td><td>1</td><td>2</td></tr></table>
-<p>Sorted by kindergarten class, the leavers average <b>5.75 children out of every class of 19 to 24</b>, and their named destinations are real and open today: Montgomery County, Clark County, homeschool, and private school. Because a child who leaves is gone for every remaining grade through 12th, the signed responses alone remove about <b>73 students from the district's rolls every year, worth $371,963 a year in state SEEK funding</b>. A statistically conservative reading of the full survey, corrected for the fact that leaving families answer surveys more readily than staying ones, puts the likely annual loss between <b>$621,615 and $1,111,232</b>. The full method is in the report; the closure model above now runs on these measured numbers.</p>
-<p class="note">The state's own enrollment files already corroborate the survey: NMES's 2025-26 kindergarten enrolled 12 children against a norm of 21 to 31, and the school ended 2025-26 with 115 students after ending 2024-25 with 128 (SAAR school files, archived in the repository). Anonymized survey data, with every name removed, is published in the repository as survey_school_choice_2026_08_anonymized.csv. Personal information is never published. The survey form is now closed; results were delivered to the board.</p>
+<tr><td>Already left the district</td><td>1</td><td>2</td></tr>
+</table>
+<p><b>What the answers add up to.</b> Sorted by kindergarten class, the leavers average <b>5.8 children out of every class of 19 to 24</b>, and their named destinations are all real and open today: Montgomery County, Clark County, homeschool, private school. A child who leaves is gone for every remaining grade through 12th, so the signed responses alone keep about <b>74 students a year off the district's rolls: $377,354 a year in state SEEK funding, with no statistics involved</b>. The statistically likely loss runs <b>$621,615 to $1,111,232 a year</b>, and the closure model above now runs on these measured numbers instead of guesses.</p>
+<p class="note"><b>Sampling statistics, for anyone checking the method.</b> Among children enrolled at NMES today the survey covers 24 of roughly 115 to 128, a 19 to 21 percent sample; 20 of the 24 (83 percent) are in leaving households. Families set on leaving answer a survey like this more readily than families staying put, so the published estimate does not use the raw 83 percent: a response-propensity model discounts it across leaver-to-stayer response ratios from 1x to 8x, centered on 3x. The corrected leave share lands at a median of 61 percent, a middle half of 51 to 72 percent, and a 95 percent upper bound of 83 percent; the dollar band above is that middle half across class sizes of 19 to 24. Every figure reproduces from the published data via build/exodus_model.py.</p>
+<p class="note"><b>The state's own files already corroborate the survey.</b> NMES's 2025-26 kindergarten enrolled 12 children against a norm of 21 to 31, and the school ended 2025-26 with 115 students after 128 in 2024-25 and 141 in 2023-24 (SAAR school files, archived). The anonymized data, every name and date removed, is published as survey_school_choice_2026_08_anonymized.csv. Personal information is never published. The survey form is now closed; results were delivered to the board.</p>
 </div>
 <details class="more" open><summary>More ways to help: Frankfort contacts and the QR code</summary>
 <div class="card" style="margin-top:22px">
@@ -794,7 +797,7 @@ list.appendChild(d);
 <h3>Every version stays public</h3>
 <p>The 56-page report and the complete financial model behind every number on this page. The open GitHub repository holds the source for all of it, including every archived district document.</p>
 <p class="note"><b>Version history</b> (each report's corrections section lists what changed and why):
-<a href="reports/Saving_NMES_v5.0_2026-08-17.pdf">v5.0, August 17</a> (the school-choice survey results published anonymized and the closure grid rebuilt on them: survey-anchored leavers at steady state, a variable-cost-shed lever, 14,580 scenarios, median loses $292,348; the facility plan's "128" traced to the 2024-25 SAAR end-of-year file and the label corrected from 2023-24; the score-suppression label corrected to KDE's written fewer-than-three rule) &middot;
+<a href="reports/Saving_NMES_v5.0_2026-08-17.pdf">v5.0, August 17</a> (the school-choice survey results published anonymized and the closure grid rebuilt on them: survey-anchored leavers at steady state, a variable-cost-shed lever, 14,580 scenarios, median loses $293,756; the facility plan's "128" traced to the 2024-25 SAAR end-of-year file and the label corrected from 2023-24; the score-suppression label corrected to KDE's written fewer-than-three rule) &middot;
 <a href="reports/Saving_NMES_v4.6_2026-08-03.pdf">v4.6, August 3</a> (the per-cent-of-rate tax yield corrected to the audit's own real estate roll, $166,189, and every dependent figure re-based; the Fayette same-year comparison added) &middot;
 <a href="reports/Saving_NMES_v4.5_2026-08-02.pdf">v4.5, August 2</a> (explicit lever weights on both grids, triangular where the record pins a center, uniform where it does not; middle halves published; KY average back to 2012 on the cost chart) &middot;
 <a href="reports/Saving_NMES_v4.4_2026-08-01.pdf">v4.4, August 1</a> (growth model on the district's own class caps, all 19,683 scenarios pay; the transformative check; five asks; Blue Ribbon added; version history replaces correction notes) &middot;
@@ -1044,7 +1047,7 @@ x:{ticks:{maxTicksLimit:10},title:{display:true,text:'students enrolled (128 tod
 (function(){
 var LY=[];for(var t=1;t<=13;t++){LY.push('Yr '+t)}
 function esc(steady){var out=[];for(var t=1;t<=13;t++){out.push(Math.round(steady*Math.min(t+5,13)/12.62)*5126)}return out}
-var LSER=[[ 'Survey floor (73 missing)',73,NAVY,3],['Band low (137)',137,LGRAY,1.5],['Median (167)',167,ROYAL,1.5],['Band high (194)',194,'#C0625E',1.5]];
+var LSER=[[ 'Survey floor (74 missing)',74,NAVY,3],['Band low (137)',137,LGRAY,1.5],['Median (167)',167,ROYAL,1.5],['Band high (194)',194,'#C0625E',1.5]];
 new Chart(document.getElementById('chartLeave'),{type:'line',
 data:{labels:LY,datasets:LSER.map(function(s){
 return {label:s[0],data:esc(s[1]),borderColor:s[2],backgroundColor:'transparent',
@@ -1094,7 +1097,7 @@ b=+document.getElementById('sBus').value;
 document.getElementById('oCap').textContent=CAPL[c];
 document.getElementById('oFix').textContent=FIXL[f];
 document.getElementById('oTea').textContent=t;
-document.getElementById('oLeav').textContent=l+(l===73?' students: the survey floor':' students');
+document.getElementById('oLeav').textContent=l+(l===74?' students: the survey floor':' students');
 document.getElementById('oAdd').textContent=money(ad);
 document.getElementById('oShed').textContent=SHEDL[sh];
 document.getElementById('oProp').textContent=money(pr);

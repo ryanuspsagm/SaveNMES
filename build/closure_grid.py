@@ -35,17 +35,17 @@ grid's true extremes and do not depend on weights.
                              Appendix A.1 prices 2; its Appendix B classroom
                              count supports 3; year one is 0 by its own
                              retention note.
-  students lost (steady state): 38 / 73 / 137 / 167 / 194 students missing
+  students lost (steady state): 38 / 74 / 137 / 167 / 194 students missing
                              from the district's rolls in a year, WEIGHTED
                              1-2-2-2-1. From the August 2026 school-choice
-                             survey (30 leaving households, 69 children,
+                             survey (31 leaving households, 70 children,
                              anonymized in this folder) and the selection-
                              corrected estimate built on it (exodus_model.py):
-                             73 = the survey floor, named respondents only,
-                             5.75 leavers per class x 12.62 effective years;
+                             74 = the survey floor, named respondents only,
+                             5.83 leavers per class x 12.62 effective years;
                              137 / 167 / 194 = the posterior 25th / 50th /
                              75th percentile at the class-size midpoint;
-                             38 = half the floor, kept as the skeptic's leg
+                             38 = roughly half the floor, kept as the skeptic's leg
                              for intent that never becomes action. The state's
                              own SAAR file corroborates the band from outside
                              the survey: the 2025-26 kindergarten enrolled 12
@@ -75,10 +75,10 @@ net = capture + fixed_positions_cut + teachers_cut x $54,479.40
 
 Run:  python build/closure_grid.py
 Asserts the published statistics: 14,580 scenarios; weighted median
--$292,348; 88 percent lose money; middle half -$488,920 to -$111,080; range
--$1,322,925 to +$409,190; the all-staff-retained site default (-$310,159,
+-$293,756; 88 percent lose money; middle half -$489,057 to -$113,244; range
+-$1,322,925 to +$409,190; the all-staff-retained site default (-$315,285,
 capture at full stop, floor leavers, nothing shed) sits at the 47th
-percentile. Unweighted median -$283,934 kept as a cross-check.
+percentile. Unweighted median -$284,962 kept as a cross-check.
 """
 import statistics
 from itertools import product
@@ -91,7 +91,7 @@ FIXED_POS = 115397.25 + 49655.38 + 49051.77  # 214,104.40: MUNIS FY2026 actuals
 CAPTURE = [(53_519, 1), (80_279, 2), (127_039, 1)]           # triangular
 FIXED = [(0, 1), (FIXED_POS / 2, 2), (FIXED_POS, 1)]         # triangular
 TEACHERS = [(t, 1) for t in (0, 1, 2, 3)]                    # uniform
-LEAVERS = [(38, 1), (73, 2), (137, 2), (167, 2), (194, 1)]   # survey-anchored
+LEAVERS = [(38, 1), (74, 2), (137, 2), (167, 2), (194, 1)]   # survey-anchored
 ADDONS = [(0, 1), (500, 2), (1000, 1)]                       # triangular
 SHED = [(0, 1), (1585, 2), (2642, 1)]                        # triangular
 PROP = [(0, 1), (47_500, 2), (95_000, 1)]                    # triangular
@@ -119,18 +119,18 @@ n = len(pairs)
 med = wpct(0.50)
 p25, p75 = wpct(0.25), wpct(0.75)
 neg = sum(w for v, w in pairs if v < 0) / total_w
-default = 127_039 - 63_000 - 73 * (SEEK + 500 - 0)  # all staff retained,
+default = 127_039 - 63_000 - 74 * (SEEK + 500 - 0)  # all staff retained,
                                                     # floor leavers, no shed
 default_rank = sum(w for v, w in pairs if v <= default) / total_w
 
 assert n == 14_580, n
-assert round(med) == -292_348, med
-assert round(p25) == -488_920 and round(p75) == -111_080, (p25, p75)
+assert round(med) == -293_756, med
+assert round(p25) == -489_057 and round(p75) == -113_244, (p25, p75)
 assert round(neg * 100) == 88, neg
 assert round(nets[0]) == -1_322_925 and round(nets[-1]) == 409_190, (nets[0], nets[-1])
-assert round(default) == -310_159, default
+assert round(default) == -315_285, default
 assert 0.45 < default_rank < 0.49, default_rank
-assert round(statistics.median(nets)) == -283_934
+assert round(statistics.median(nets)) == -284_962
 
 print(f"{n:,} scenarios | weighted median ${med:,.0f} | {neg * 100:.0f}% lose money")
 print(f"range ${nets[0]:,.0f} to ${nets[-1]:,.0f} | middle half "
