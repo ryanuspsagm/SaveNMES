@@ -203,9 +203,9 @@ put(df, "C31", "=B31*Assumptions!B6", BLK, CUR); put(df, "D31", "=B31*(Assumptio
 put(df, "F31", "Published: 1,339 student-years, $6.2 to $6.9 million", NOTE)
 
 put(df, "A33", "THE TWO CALCULATOR DEFAULTS (the numbers on the site's cards)", SEC)
-put(df, "A34", "Closure default: district staffing stance + the survey floor of missing students")
-put(df, "B34", "=B17+C17-63000-74*(Assumptions!B6+500-Assumptions!B62)", BLK, CUR, bold=True)
-put(df, "F34", "= $127,039 kept, minus $63,000 of busing, minus the survey floor of 74 missing students at $5,136 less the $400 supplies credit: the published -$286,425, the 68th percentile of the 4,860-scenario grid; the weighted median is a $474,042 loss (Closure_Model row 50)", NOTE, wrap=True)
+put(df, "A34", "Closure default: district staffing stance + the statistical median of missing students")
+put(df, "B34", "=B17+C17-63000-167*(Assumptions!B6+500-Assumptions!B62)", BLK, CUR, bold=True)
+put(df, "F34", "= $127,039 kept, minus $63,000 of busing, minus the statistical median of 167 missing students at $5,136 less the $400 supplies credit: the published -$726,873, the 16th percentile of the 4,860-scenario grid; the weighted median is a $474,042 loss (Closure_Model row 50)", NOTE, wrap=True)
 put(df, "A35", "Growth default: 30 added students at the grid's low busing and supplies")
 put(df, "B35", "=30*(Assumptions!B6+500-400)", BLK, CUR, bold=True)
 put(df, "F35", "The published +$142,080, within $140 of the 19,683-scenario grid's weighted median of $142,220 (Growth_Model rows 17-19); at the central $500 busing and $700 supplies the same 30 students net about $118,000", NOTE, wrap=True)

@@ -82,8 +82,8 @@ def main():
         else: bad(f"consolidated range card wrong: bars={nbars} iqr={niqr} growth labs: {glabs[:80]}")
         you_c = pg.evaluate("document.getElementById('youClose').style.left")
         you_g = pg.evaluate("document.getElementById('youGrow').style.left")
-        if you_c == "68%" and you_g == "49%":
-            ok("percentile-scale bars: gold markers at the calculator defaults (68th / 49th)")
+        if you_c == "16%" and you_g == "49%":
+            ok("percentile-scale bars: gold markers at the calculator defaults (16th / 49th)")
         else: bad(f"percentile markers at defaults: close={you_c} grow={you_g}")
 
         # --- Closure calculator: opens at the median scenario ---
@@ -92,12 +92,12 @@ def main():
         else: bad("calculator details not open by default")
         net = pg.text_content("#rNet").strip()
         rank = pg.text_content("#rRank").strip()
-        if net == "-$286,425" and "68th percentile" in rank and "4,860 weighted scenarios" in rank:
-            ok("closure default -$286,425 (all staff retained, survey-floor leavers); percentile-only readout: 68th")
+        if net == "-$726,873" and "16th percentile" in rank and "4,860 weighted scenarios" in rank:
+            ok("closure default -$726,873 (all staff retained, median leavers); percentile-only readout: 16th")
         else: bad(f"closure defaults: {net} / {rank}")
         bl0 = (pg.text_content("#blClose").strip(), pg.text_content("#blGrow").strip())
-        if bl0 == ("−$286,425", "+$142,080"):
-            ok("bottom-line tiles open at the default scenarios (-$286,425 close, +$142,080 grow)")
+        if bl0 == ("−$726,873", "+$142,080"):
+            ok("bottom-line tiles open at the default scenarios (-$726,873 close, +$142,080 grow)")
         else: bad(f"bottom-line defaults: {bl0}")
         gone_verdict = pg.evaluate("['rVerdict','rBar'].filter(i=>document.getElementById(i)).length")
         note_ok = pg.evaluate("document.body.textContent.includes(\"The default reflects the superintendent's written statement\")")
@@ -105,8 +105,8 @@ def main():
             ok("closure verdict text removed; retained-staff default note present")
         else: bad(f"closure readout cleanup: leftover={gone_verdict} note={note_ok}")
         tax = pg.text_content("#rTax").strip()
-        if "1.7 cents" in tax and "a month for the median homeowner" in tax:
-            ok("tax-compensation line at the default loss: 1.7 cents of rate on the certified real base")
+        if "4.4 cents" in tax and "a month for the median homeowner" in tax:
+            ok("tax-compensation line at the default loss: 4.4 cents of rate on the certified real base")
         else: bad(f"tax line at default: {tax[:80]}")
 
         # ceiling: their fullest case

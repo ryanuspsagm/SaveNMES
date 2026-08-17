@@ -1724,7 +1724,7 @@ P("<b>Version 5.0, August 17.</b> The school-choice survey results are published
   "credit scales with students, and teacher savings appear only on the teachers-cut lever, so staffing is "
   "never counted twice). The grid moves from 5,832 to 4,860 scenarios; the median moves from a $20,007 to "
   "a $474,042 yearly loss, the middle half to a $657,341-to-$217,247 loss, 94 percent of scenarios lose "
-  "money, and the website default (all staff retained, floor leavers only) opens at a $286,425 loss. Two "
+  "money, and the website default (all staff retained, median leavers) opens at a $726,873 loss. Two "
   "value corrections in the same release: the SEEK base re-based from $4,626, the House-version figure "
   "used before enactment, to the enacted FY2027 base of $4,636 (2026-28 budget; both grids, the growth "
   "median moves to $142,220), and multi-year loss totals are retired in favor of per-year figures. The "

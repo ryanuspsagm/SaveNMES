@@ -47,11 +47,11 @@ central = (CM["C39"].value + CM["C40"].value + CM["C41"].value * 54479.4
 site_capv = re.search(r"var CAPV=\[(\d+),(\d+),(\d+)\]", html)
 site_fixv = re.search(r"FIXV=\[(\d+),(\d+),(\d+)\]", html)
 site_teach = re.search(r"TEACH=108958\.80/2", html)
-site_default = (127039 + 0 + 0*54479.4 - 63000 - 74*(A["B6"].value+500-400) - 0)
-if round(central) == -463042 and round(site_default) == -286425 and "-$286,425" in html:
-    match("model central case -$463,042 (v5 grid); site calculator opens at the district stance, all staff retained, survey-floor leavers (-$286,425, weighted rank 47%)")
+site_default = (127039 + 0 + 0*54479.4 - 63000 - 167*(A["B6"].value+500-400) - 0)
+if round(central) == -463042 and round(site_default) == -726873 and "-$726,873" in html:
+    match("model central case -$463,042 (v5 grid); site calculator opens at the district staffing stance, all staff retained, median leavers (-$726,873, 16th weighted percentile)")
 else:
-    diff(f"closure defaults: model central {central:.0f}, site district-stance {site_default:.0f} shown: {'-$286,425' in html}")
+    diff(f"closure defaults: model central {central:.0f}, site district-stance {site_default:.0f} shown: {'-$726,873' in html}")
 # growth calculator default (v4.5 review): the weighted median scenario itself.
 # 30 added students (target 140): inside the 25-seat headroom plus a partial
 # class at 1 per 21, so zero teachers and zero support trigger; $0 bus, $400

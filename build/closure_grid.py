@@ -70,9 +70,10 @@ net = capture + fixed_positions_cut + teachers_cut x $54,479.40
 Run:  python build/closure_grid.py
 Asserts the published statistics: 4,860 scenarios; weighted median
 -$474,042; 94 percent lose money; middle half -$657,341 to -$217,247; range
--$1,247,265 to +$323,614; the all-staff-retained site default (-$286,425,
-capture at full stop, floor leavers) sits at the 68th percentile, friendlier
-than two thirds of the grid because it counts only the signed families.
+-$1,247,265 to +$323,614; the all-staff-retained site default (-$726,873,
+capture at full stop, median leavers) sits at the 16th percentile: pricing
+the statistical middle of the exodus while honoring the district's own
+all-staff-retained stance lands harsher than five sixths of the grid.
 Unweighted median -$469,905 kept as a cross-check.
 """
 import statistics
@@ -114,8 +115,8 @@ n = len(pairs)
 med = wpct(0.50)
 p25, p75 = wpct(0.25), wpct(0.75)
 neg = sum(w for v, w in pairs if v < 0) / total_w
-default = 127_039 - 63_000 - 74 * (SEEK + 500 - SUPPLIES)  # all staff retained,
-                                                           # floor leavers
+default = 127_039 - 63_000 - 167 * (SEEK + 500 - SUPPLIES)  # all staff retained,
+                                                            # median leavers
 default_rank = sum(w for v, w in pairs if v <= default) / total_w
 
 assert n == 4_860, n
@@ -123,8 +124,8 @@ assert round(med) == -474_042, med
 assert round(p25) == -657_341 and round(p75) == -217_247, (p25, p75)
 assert round(neg * 100) == 94, neg
 assert round(nets[0]) == -1_247_265 and round(nets[-1]) == 323_614, (nets[0], nets[-1])
-assert round(default) == -286_425, default
-assert 0.66 < default_rank < 0.71, default_rank
+assert round(default) == -726_873, default
+assert 0.14 < default_rank < 0.19, default_rank
 assert round(statistics.median(nets)) == -469_905
 
 print(f"{n:,} scenarios | weighted median ${med:,.0f} | {neg * 100:.0f}% lose money")

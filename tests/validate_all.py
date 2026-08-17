@@ -235,7 +235,7 @@ def main():
                    "Appendix B: Other Supporting Data", "KRS 157.370",
                    "Boston Public Schools"]:
         chk(needle in t, f"PDF claim intact: {needle}")
-    chk("-$286,425" in html and "all staff retained" in html
+    chk("-$726,873" in html and "all staff retained" in html
         and "superintendent's written statement" in html,
         "all-staff-retained figure shown at the calculator default and attributed to the superintendent")
     for needle in ["$474,042", "94 percent", "losing $1,247,265",
@@ -253,8 +253,8 @@ def main():
                    "$657,341", "$217,247", "$94,720", "$183,354",
                    "The bottom line: your two scenarios, live from the calculators above", 'class="bline"',
                    '<div class="n" id="blGrow">+$142,080</div>',
-                   '<div class="n" id="blClose">&minus;$286,425</div>',
-                   "the superintendent's stance (all staff retained, survey-floor leavers only), and the weighted median loses $474,042",
+                   '<div class="n" id="blClose">&minus;$726,873</div>',
+                   "the superintendent's staffing stance (all staff retained) at the statistical median of 167 students leaving, and the weighted median across all scenarios loses $474,042",
                    "getElementById('blClose')", "getElementById('blGrow')"]:
         chk(needle in html, f"consolidated range card: {needle}")
     chk(html.count('class="iqr"') == 2, "IQR band on both bars")
@@ -763,7 +763,7 @@ def main():
             f"upfront assumptions disclosure on the {name}: stated, published, open to challenge")
     dfw = wb["Defaults"]
     chk(dfw["B5"].value == 17903 and dfw["B13"].value == 1285310
-        and dfw["B34"].value == "=B17+C17-63000-74*(Assumptions!B6+500-Assumptions!B62)"
+        and dfw["B34"].value == "=B17+C17-63000-167*(Assumptions!B6+500-Assumptions!B62)"
         and dfw["B35"].value == "=30*(Assumptions!B6+500-400)"
         and dfw["C39"].value == 275 and dfw["B42"].value == "=Tax_History!D79"
         and dfw["B31"].value == "=SUMPRODUCT(B30:G30,{13,12,11,10,9,8})"
@@ -1001,7 +1001,7 @@ def main():
         "exodus band recomputes: IQR $622,828 to $1,113,400, median $756,445 to $955,509")
     chk(abs(R["eff_years"] - 12.62) < 0.01 and R["var_nonteach"] == 400,
         "effective years 12.62 and the $400 supplies credit recompute")
-    for s in ("$378,090", "$622,828", "$1,113,400", "74 students: the survey floor"):
+    for s in ("$378,090", "$622,828", "$1,113,400", "167 students: the statistical median"):
         chk(s in html, f"exodus figure on the site: {s}")
     for s in ("$378,090", "$622,828", "12.62", "response-propensity"):
         chk(s in t, f"exodus figure in the report: {s}")
@@ -1009,10 +1009,10 @@ def main():
     _out = _sp.run([sys.executable, str(REPO / "build" / "closure_grid.py")],
                    capture_output=True, text=True)
     chk(_out.returncode == 0 and "median $-474,042" in _out.stdout
-        and "94% lose money" in _out.stdout and "$-286,425" in _out.stdout,
-        "closure_grid.py asserts its own v5 statistics (median -$474,042, 94 percent, default -$286,425)")
-    chk("-$286,425" in html and "68th percentile" in html,
-        "site default -$286,425 at the 68th percentile")
+        and "94% lose money" in _out.stdout and "$-726,873" in _out.stdout,
+        "closure_grid.py asserts its own v5 statistics (median -$474,042, 94 percent, default -$726,873)")
+    chk("-$726,873" in html and "16th percentile" in html,
+        "site default -$726,873 at the 16th percentile")
     chk("fewer than three students" in html and "fewer than 3 at a level" in html,
         "suppression notes state KDE's written fewer-than-three rule")
     chk("kindergarten enrolled 12" in html or "kindergarten enrolled <b>12" in t
