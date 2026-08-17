@@ -238,11 +238,11 @@ def main():
     chk("-$456,383" in html and "superintendent's written statement" in html
         and "more generous than the district's own stance" in html,
         "savings-granted default shown at the calculator and contrasted with the superintendent's stance")
-    for needle in ["$523,830", "99 percent", "losing $1,247,265",
+    for needle in ["$456,383", "97 percent", "losing $1,057,265",
                    "saving $171,118", "Millersburg"]:
         chk(needle in html, f"site v5.0 two-tailed range intact: {needle}")
-    for needle in ["Figure 7.", "Figure 8.", "losing $1,247,265", "saving $171,118",
-                   "$523,830", "99 percent", "Millersburg", "119 students",
+    for needle in ["Figure 7.", "Figure 8.", "losing $1,057,265", "saving $171,118",
+                   "$456,383", "97 percent", "Millersburg", "119 students",
                    "$54,479.40", "$41,718", "747"]:
         chk(needle in t, f"PDF v5.0 two-tailed range intact: {needle}")
     # v4.5 consolidated card: both bars, IQR bands, weighting disclosed, bottom line
@@ -250,11 +250,11 @@ def main():
         and "percentile scale</b>" not in html,
         "the weighting method lives in the report; the side-by-side card stays simple")
     for needle in ["Every scenario, side by side", "middle half", 'class="iqr"',
-                   "$681,643", "$314,250", "$94,720", "$183,354",
+                   "$606,202", "$241,706", "$94,720", "$183,354",
                    "The bottom line: your two scenarios, live from the calculators above", 'class="bline"',
                    '<div class="n" id="blGrow">+$142,080</div>',
                    '<div class="n" id="blClose">&minus;$456,383</div>',
-                   "the default grants the savings that scale with students, teachers included, plus half the fixed overhead, at the statistical median of 167 students leaving; the weighted median across all scenarios loses $523,830",
+                   "the default grants the savings that scale with students, teachers included, plus half the fixed overhead, at the statistical median of 167 students leaving; that default is also the grid's weighted median scenario",
                    "getElementById('blClose')", "getElementById('blGrow')"]:
         chk(needle in html, f"consolidated range card: {needle}")
     chk(html.count('class="iqr"') == 2, "IQR band on both bars")
@@ -381,7 +381,7 @@ def main():
     es_path = REPO / "SaveNMES_Executive_Summary.pdf"
     chk(es_path.exists(), "executive summary PDF exists")
     es = " ".join(pg.extract_text() for pg in PdfReader(es_path).pages).replace("\n", " ")
-    for needle in ["$19,080", "$523,830", "54,479.40", "Permanent", "2,412", "3,888",
+    for needle in ["$19,080", "$456,383", "54,479.40", "Permanent", "2,412", "1,296",
                    "$378,090", "$622,828 to $1,113,400", "$756,445 to $955,509",
                    "$6.2 to $6.9 million"]:
         chk(needle in es, f"executive summary intact: {needle}")
@@ -415,12 +415,12 @@ def main():
         "four-asks framing consistent across hero, section, and report")
     # v4.2: the closure calculator exposes all seven grid levers, plus the growth calculator
     for lever in ['id="sCap"', 'id="sFix"', 'id="sTea"', 'id="sLeav"',
-                  'id="sAdd"', 'id="sProp"', 'id="sBus"']:
+                  'id="sAdd"', 'id="sBus"']:
         chk(lever in html, f"closure-model slider present: {lever}")
     for lever in ['id="sGro"', 'id="sRat"', 'id="sTc"', 'id="sSp"',
                   'id="sGb"', 'id="sCps"', 'id="sGad"']:
         chk(lever in html, f"growth-model slider present: {lever}")
-    chk("3,888 weighted scenarios" in html and 'id="rRank"' in html,
+    chk("1,296 weighted scenarios" in html and 'id="rRank"' in html,
         "calculator presented as the live weighted scenario model with a grid-rank readout")
     chk("$142,080" in html and "every scenario in which students arrive pays" in html and "19,683" in html
         and "$4,131" in html,
@@ -716,7 +716,8 @@ def main():
         "the Open Records appendix is removed from the report")
     for needle in ["assessment erosion", "$138,780", "$46,260"]:
         chk(needle in t, f"worksheet downside risks preserved in the supporting-data appendix: {needle}")
-    chk("Property-value loss" in html, "site carries the property-loss lever (v4.2 name)")
+    chk("Property-value loss" not in html and 'id="sProp"' not in html,
+        "the property-loss lever is retired (v5.0: removed while the PVA records request is pending)")
     chk("does not establish that closure causes decline" in t.replace("<i>", "").replace("</i>", "")
         or "not establish that closure causes decline" in t,
         "question 1 states the limit of the closure/population evidence")
@@ -882,7 +883,7 @@ def main():
     chk("one in three" not in html or "an earlier version of this page said one in three" in html,
         "site: the retracted one-in-three share is corrected, not merely repeated")
     chk('id="sTea" min="0" max="3"' in html and 'id="sLeav" min="74" max="194"' in html
-        and 'id="sBus" min="20000" max="190000"' in html
+        and 'id="sBus" min="20000" max="95000"' in html
         and 'id="sGro" min="110" max="200" value="140" step="5"' in html,
         "site calculator sliders span exactly the published grids: missing students 74 to 194 with "
         "the shed lever's three settings, growth target in five-student steps, so no reachable "
@@ -959,7 +960,7 @@ def main():
         "levy base disclosed as GF-only in PDF and site")
     chk("over four fifths of the annual reserve drawdown" in t,
         "PDF scores the levy against both deficit and drawdown")
-    chk("reserve drawdown" in t and "percentile of the 3,888 weighted scenarios" in html,
+    chk("reserve drawdown" in t and "percentile of the 1,296 weighted scenarios" in html,
         "PDF keeps both denominators; site calculators simplified to percentile readouts (v4.5 review)")
     chk("net change across all seven" in t,
         "PDF clarifies the $430K is the net debt-service step, not the bond's payment alone")
@@ -976,7 +977,7 @@ def main():
         and "withdrawn with the lever correction" in t,
         "the 10-percent-raise / $52 million claims are withdrawn (lever correction)")
     for claim, section in [("$32 million of building capacity", 'id="grow"'),
-                           ("LOSES $523,830", 'id="model"'),
+                           ("LOSES $456,383", 'id="model"'),
                            ("$622,828 to $1,113,400 a year", 'id="risks"')]:
         chk(html.index(claim) > html.index(section)
             and html.index(claim) < html.index("<details", html.index(section)),
@@ -1008,11 +1009,11 @@ def main():
     import subprocess as _sp
     _out = _sp.run([sys.executable, str(REPO / "build" / "closure_grid.py")],
                    capture_output=True, text=True)
-    chk(_out.returncode == 0 and "median $-523,830" in _out.stdout
-        and "99% lose money" in _out.stdout and "$-456,383" in _out.stdout,
-        "closure_grid.py asserts its own v5 statistics (median -$523,830, 99 percent, default -$456,383)")
-    chk("-$456,383" in html and "59th percentile" in html,
-        "site default -$456,383 at the 59th percentile")
+    chk(_out.returncode == 0 and "median $-456,383" in _out.stdout
+        and "97% lose money" in _out.stdout and "$-456,383" in _out.stdout,
+        "closure_grid.py asserts its own v5 statistics (median -$456,383, 97 percent, default = median)")
+    chk("-$456,383" in html and "50th percentile" in html,
+        "site default -$456,383 at the 50th percentile, the grid's weighted median")
     chk("fewer than three students" in html and "fewer than 3 at a level" in html,
         "suppression notes state KDE's written fewer-than-three rule")
     chk("kindergarten enrolled 12" in html or "kindergarten enrolled <b>12" in t

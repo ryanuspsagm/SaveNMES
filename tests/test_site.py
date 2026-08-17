@@ -71,7 +71,7 @@ def main():
         else: bad(f"only {nmore} section expanders found")
         strip = pg.query_selector(".range-bar")
         labs = pg.text_content(".range-labs") if pg.query_selector(".range-labs") else ""
-        if strip and "loses $1,247,265" in labs and "saves $171,118" in labs and "loses $523,830" in labs:
+        if strip and "loses $1,057,265" in labs and "saves $171,118" in labs and "loses $456,383" in labs:
             ok("nontechnical range strip shows worst / middle / best in plain words")
         else: bad(f"range strip missing or labels wrong: {labs[:80]}")
         nbars = pg.evaluate("document.querySelectorAll('.range-bar').length")
@@ -82,8 +82,8 @@ def main():
         else: bad(f"consolidated range card wrong: bars={nbars} iqr={niqr} growth labs: {glabs[:80]}")
         you_c = pg.evaluate("document.getElementById('youClose').style.left")
         you_g = pg.evaluate("document.getElementById('youGrow').style.left")
-        if you_c == "59%" and you_g == "49%":
-            ok("percentile-scale bars: gold markers at the calculator defaults (59th / 49th)")
+        if you_c == "50%" and you_g == "49%":
+            ok("percentile-scale bars: gold markers at the calculator defaults (50th / 49th)")
         else: bad(f"percentile markers at defaults: close={you_c} grow={you_g}")
 
         # --- Closure calculator: opens at the median scenario ---
@@ -92,8 +92,8 @@ def main():
         else: bad("calculator details not open by default")
         net = pg.text_content("#rNet").strip()
         rank = pg.text_content("#rRank").strip()
-        if net == "-$456,383" and "59th percentile" in rank and "3,888 weighted scenarios" in rank:
-            ok("closure default -$456,383 (savings granted, median leavers); percentile-only readout: 59th")
+        if net == "-$456,383" and "50th percentile" in rank and "1,296 weighted scenarios" in rank:
+            ok("closure default -$456,383 (savings granted, median leavers) = the weighted median; readout: 50th")
         else: bad(f"closure defaults: {net} / {rank}")
         bl0 = (pg.text_content("#blClose").strip(), pg.text_content("#blGrow").strip())
         if bl0 == ("−$456,383", "+$142,080"):
@@ -115,7 +115,6 @@ def main():
         pg.fill("#sTea", "3"); pg.dispatch_event("#sTea", "input")
         pg.fill("#sLeav", "74"); pg.dispatch_event("#sLeav", "input")
         pg.fill("#sAdd", "0"); pg.dispatch_event("#sAdd", "input")
-        pg.fill("#sProp", "0"); pg.dispatch_event("#sProp", "input")
         pg.fill("#sBus", "20000"); pg.dispatch_event("#sBus", "input")
         if pg.text_content("#rNet").strip() == "$171,118":
             ok("closure ceiling $171,118 = grid max (survey-anchored grid)")
@@ -133,16 +132,15 @@ def main():
         pg.fill("#sTea", "0"); pg.dispatch_event("#sTea", "input")
         pg.fill("#sLeav", "194"); pg.dispatch_event("#sLeav", "input")
         pg.fill("#sAdd", "1000"); pg.dispatch_event("#sAdd", "input")
-        pg.fill("#sProp", "95000"); pg.dispatch_event("#sProp", "input")
-        pg.fill("#sBus", "190000"); pg.dispatch_event("#sBus", "input")
-        if pg.text_content("#rNet").strip() == "-$1,247,265" and "0th percentile" in pg.text_content("#rRank"):
-            ok("closure floor -$1,247,265 = grid min (calculator spans the whole grid)")
+        pg.fill("#sBus", "95000"); pg.dispatch_event("#sBus", "input")
+        if pg.text_content("#rNet").strip() == "-$1,057,265" and "0th percentile" in pg.text_content("#rRank"):
+            ok("closure floor -$1,057,265 = grid min (calculator spans the whole grid)")
         else: bad(f"closure worst case: {pg.text_content('#rNet')} / {pg.text_content('#rRank')[:60]}")
         if pg.evaluate("document.getElementById('youClose').style.left") == "0%":
             ok("closure percentile marker follows the calculator (0% at the floor)")
         else: bad(f"marker at floor: {pg.evaluate('document.getElementById(`youClose`).style.left')}")
-        if "7.5 cents" in pg.text_content("#rTax"):
-            ok("tax-compensation line at the full-loss floor: 7.5 cents of rate")
+        if "6.4 cents" in pg.text_content("#rTax"):
+            ok("tax-compensation line at the full-loss floor: 6.4 cents of rate")
         else: bad(f"tax line at floor: {pg.text_content('#rTax')[:80]}")
 
         # --- Growth calculator ---

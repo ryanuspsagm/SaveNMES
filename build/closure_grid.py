@@ -1,6 +1,6 @@
 """Enumerate the v5.0 closure grid and print its published statistics.
 
-Seven levers, every value sourced in the report and the Closure_Model tab.
+Six levers, every value sourced in the report and the Closure_Model tab.
 Staffing is priced the way the district prices it: the "Response to the 10
 Questions" Appendix A.1 fully loaded, 0-years-experience figure, so the model
 and the district's own worksheet argue on the same basis.
@@ -63,23 +63,27 @@ grid's true extremes and do not depend on weights.
                              TRIANGULAR (at-risk weight on a ~72% FRL school,
                              exceptional-child weights, transportation,
                              capital outlay).
-  property-value loss:       $0 / $47,500 / $95,000, TRIANGULAR (0-10% of an
-                             estimated zone tax base; PVA records ask pending).
-  added busing:              $20,000 / $63,000 / $190,000, TRIANGULAR,
-                             derived bottom-up from the produced routes.
+  added busing:              $20,000 / $63,000 / $95,000, TRIANGULAR,
+                             derived bottom-up from the produced routes; the
+                             high leg is capped at half the bottom-up maximum
+                             (v5.0 review). A property-value lever ($0-$95,000)
+                             was priced in an interim draft and removed while
+                             the PVA records request is pending; the community
+                             research on property effects stays in Section 6.
 
 net = capture + fixed_positions_cut + teachers_cut x $54,479.40
-      - busing - leavers x (4,636 + add_ons - 400) - property_loss
+      - busing - leavers x (4,636 + add_ons - 400)
 
 Run:  python build/closure_grid.py
-Asserts the published statistics: 3,888 scenarios; weighted median
--$523,830; 99 percent lose money; middle half -$681,643 to -$314,250; range
--$1,247,265 to +$171,118; the site default (-$456,383: building sold, half
+Asserts the published statistics: 1,296 scenarios; weighted median
+-$456,383; 97 percent lose money; middle half -$606,202 to -$241,706; range
+-$1,057,265 to +$171,118; the site default (-$456,383: building sold, half
 the fixed positions cut over time, three teachers cut with the emptied
-classrooms, median leavers) sits at the 59th percentile: it grants closure
-every saving that scales with students, more than the district's own
-all-staff-retained stance, and the median exodus still sinks it.
-Unweighted median -$562,162 kept as a cross-check.
+classrooms, median leavers) IS the weighted median scenario, the exact
+middle of the grid: it grants closure every saving that scales with
+students, more than the district's own all-staff-retained stance, and the
+median exodus still sinks it.
+Unweighted median -$488,532 kept as a cross-check.
 """
 import statistics
 from itertools import product
@@ -95,14 +99,14 @@ FIXED = [(0, 1), (FIXED_POS / 2, 2), (FIXED_POS, 1)]         # triangular
 TEACHERS = [(t, 1) for t in (0, 1, 2, 3)]                    # uniform
 LEAVERS = [(74, 2), (137, 2), (167, 2), (194, 1)]   # survey-anchored; floor = low end
 ADDONS = [(0, 1), (500, 2), (1000, 1)]                       # triangular
-PROP = [(0, 1), (47_500, 2), (95_000, 1)]                    # triangular
-BUS = [(20_000, 1), (63_000, 2), (190_000, 1)]               # triangular
+BUS = [(20_000, 1), (63_000, 2), (95_000, 1)]                # triangular; high
+                                                             # leg = half the max
 
 pairs = sorted(
-    (c + f + t * TEACH - b - l * (SEEK + ad - SUPPLIES) - pr,
-     wc * wf * wt * wl * wa * wp * wb)
-    for (c, wc), (f, wf), (t, wt), (l, wl), (ad, wa), (pr, wp), (b, wb)
-    in product(CAPTURE, FIXED, TEACHERS, LEAVERS, ADDONS, PROP, BUS)
+    (c + f + t * TEACH - b - l * (SEEK + ad - SUPPLIES),
+     wc * wf * wt * wl * wa * wb)
+    for (c, wc), (f, wf), (t, wt), (l, wl), (ad, wa), (b, wb)
+    in product(CAPTURE, FIXED, TEACHERS, LEAVERS, ADDONS, BUS)
 )
 nets = [v for v, _ in pairs]
 total_w = sum(w for _, w in pairs)
@@ -128,14 +132,14 @@ default_rank = (sum(w for v, w in pairs if v < default - 0.005)
                 ) / total_w                  # ties half-weighted, the site
                                              # JS convention
 
-assert n == 3_888, n
-assert round(med) == -523_830, med
-assert round(p25) == -681_643 and round(p75) == -314_250, (p25, p75)
-assert round(neg * 100) == 99, neg
-assert round(nets[0]) == -1_247_265 and round(nets[-1]) == 171_118, (nets[0], nets[-1])
+assert n == 1_296, n
+assert round(med) == -456_383, med
+assert round(p25) == -606_202 and round(p75) == -241_706, (p25, p75)
+assert round(neg * 100) == 97, neg
+assert round(nets[0]) == -1_057_265 and round(nets[-1]) == 171_118, (nets[0], nets[-1])
 assert round(default) == -456_383, default
-assert 0.57 < default_rank < 0.62, default_rank
-assert round(statistics.median(nets)) == -562_162
+assert 0.48 < default_rank < 0.52, default_rank
+assert round(statistics.median(nets)) == -488_532
 
 print(f"{n:,} scenarios | weighted median ${med:,.0f} | {neg * 100:.0f}% lose money")
 print(f"range ${nets[0]:,.0f} to ${nets[-1]:,.0f} | middle half "
