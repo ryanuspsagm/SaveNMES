@@ -1,6 +1,6 @@
 """Enumerate the v5.0 closure grid and print its published statistics.
 
-Eight levers, every value sourced in the report and the Closure_Model tab.
+Seven levers, every value sourced in the report and the Closure_Model tab.
 Staffing is priced the way the district prices it: the "Response to the 10
 Questions" Appendix A.1 fully loaded, 0-years-experience figure, so the model
 and the district's own worksheet argue on the same basis.
@@ -10,10 +10,14 @@ priced before any family had been asked) is replaced by the school-choice
 survey and the statistics built on it, expressed at steady state: a child
 who leaves is missing from the rolls for every remaining grade, kindergarten
 through 12th, discounted by the district's own measured grade-to-grade
-survival (12.62 effective years, exodus_model.py). A new lever prices the
-variable cost the district sheds as students leave, so the model now runs
-the leaver cost net of cost response instead of assuming the district
-sheds nothing.
+survival (12.62 effective years, exodus_model.py). Each missing student
+is priced at the ENACTED FY2027 SEEK base of $4,636 (2026-28 budget; the
+$4,626 used before v5.0 was the House-version figure and is corrected),
+plus the add-ons lever, minus the $400 of supplies that stop being spent,
+the same low-leg figure the growth model charges each recruit. Supplies
+scale with students inside the leaver term; teacher savings are priced
+ONLY on the teachers-cut lever, so staffing savings are never counted
+twice.
 
 WEIGHTING (unchanged from v4.5). Each lever carries an explicit distribution
 and scenario weights multiply. Triangular (1-2-1) when the record pins a
@@ -51,39 +55,31 @@ grid's true extremes and do not depend on weights.
                              the survey: the 2025-26 kindergarten enrolled 12
                              children against a 21-31 norm, and the school
                              ended 2025-26 at 115 after ending 2024-25 at 128.
-  SEEK add-ons per leaver:   $0 / $500 / $1,000 on top of the $4,626 base,
+  SEEK add-ons per leaver:   $0 / $500 / $1,000 on top of the $4,636 base,
                              TRIANGULAR (at-risk weight on a ~72% FRL school,
                              exceptional-child weights, transportation,
                              capital outlay).
-  variable cost shed per leaver: $0 / $1,585 / $2,642, TRIANGULAR. What the
-                             district stops spending when a student leaves:
-                             $2,642 = one teacher per 25.4 students (SBDM
-                             allocation sheet, 463 students / 18.2 teachers)
-                             at $54,479.40, plus $500 non-personnel
-                             (assumption, flagged), if sections consolidate
-                             perfectly; $1,585 = 60% consolidation friction;
-                             $0 = the district's stated stance that all
-                             staff are retained. The leaver term nets this
-                             against the SEEK loss.
   property-value loss:       $0 / $47,500 / $95,000, TRIANGULAR (0-10% of an
                              estimated zone tax base; PVA records ask pending).
   added busing:              $20,000 / $63,000 / $190,000, TRIANGULAR,
                              derived bottom-up from the produced routes.
 
 net = capture + fixed_positions_cut + teachers_cut x $54,479.40
-      - busing - leavers x (4,626 + add_ons - shed) - property_loss
+      - busing - leavers x (4,636 + add_ons - 400) - property_loss
 
 Run:  python build/closure_grid.py
-Asserts the published statistics: 14,580 scenarios; weighted median
--$293,756; 88 percent lose money; middle half -$489,057 to -$113,244; range
--$1,322,925 to +$409,190; the all-staff-retained site default (-$315,285,
-capture at full stop, floor leavers, nothing shed) sits at the 47th
-percentile. Unweighted median -$284,962 kept as a cross-check.
+Asserts the published statistics: 4,860 scenarios; weighted median
+-$474,042; 94 percent lose money; middle half -$657,341 to -$217,247; range
+-$1,247,265 to +$323,614; the all-staff-retained site default (-$286,425,
+capture at full stop, floor leavers) sits at the 68th percentile, friendlier
+than two thirds of the grid because it counts only the signed families.
+Unweighted median -$469,905 kept as a cross-check.
 """
 import statistics
 from itertools import product
 
-SEEK = 4626
+SEEK = 4636                                 # enacted FY2027 base, 2026-28 budget
+SUPPLIES = 400                              # scales with each missing student
 TEACH = 108_958.80 / 2                      # $54,479.40, the district's own
                                             # fully loaded rookie (Appendix A.1)
 FIXED_POS = 115397.25 + 49655.38 + 49051.77  # 214,104.40: MUNIS FY2026 actuals
@@ -93,15 +89,14 @@ FIXED = [(0, 1), (FIXED_POS / 2, 2), (FIXED_POS, 1)]         # triangular
 TEACHERS = [(t, 1) for t in (0, 1, 2, 3)]                    # uniform
 LEAVERS = [(38, 1), (74, 2), (137, 2), (167, 2), (194, 1)]   # survey-anchored
 ADDONS = [(0, 1), (500, 2), (1000, 1)]                       # triangular
-SHED = [(0, 1), (1585, 2), (2642, 1)]                        # triangular
 PROP = [(0, 1), (47_500, 2), (95_000, 1)]                    # triangular
 BUS = [(20_000, 1), (63_000, 2), (190_000, 1)]               # triangular
 
 pairs = sorted(
-    (c + f + t * TEACH - b - l * (SEEK + ad - sh) - pr,
-     wc * wf * wt * wl * wa * ws * wp * wb)
-    for (c, wc), (f, wf), (t, wt), (l, wl), (ad, wa), (sh, ws), (pr, wp), (b, wb)
-    in product(CAPTURE, FIXED, TEACHERS, LEAVERS, ADDONS, SHED, PROP, BUS)
+    (c + f + t * TEACH - b - l * (SEEK + ad - SUPPLIES) - pr,
+     wc * wf * wt * wl * wa * wp * wb)
+    for (c, wc), (f, wf), (t, wt), (l, wl), (ad, wa), (pr, wp), (b, wb)
+    in product(CAPTURE, FIXED, TEACHERS, LEAVERS, ADDONS, PROP, BUS)
 )
 nets = [v for v, _ in pairs]
 total_w = sum(w for _, w in pairs)
@@ -119,18 +114,18 @@ n = len(pairs)
 med = wpct(0.50)
 p25, p75 = wpct(0.25), wpct(0.75)
 neg = sum(w for v, w in pairs if v < 0) / total_w
-default = 127_039 - 63_000 - 74 * (SEEK + 500 - 0)  # all staff retained,
-                                                    # floor leavers, no shed
+default = 127_039 - 63_000 - 74 * (SEEK + 500 - SUPPLIES)  # all staff retained,
+                                                           # floor leavers
 default_rank = sum(w for v, w in pairs if v <= default) / total_w
 
-assert n == 14_580, n
-assert round(med) == -293_756, med
-assert round(p25) == -489_057 and round(p75) == -113_244, (p25, p75)
-assert round(neg * 100) == 88, neg
-assert round(nets[0]) == -1_322_925 and round(nets[-1]) == 409_190, (nets[0], nets[-1])
-assert round(default) == -315_285, default
-assert 0.45 < default_rank < 0.49, default_rank
-assert round(statistics.median(nets)) == -284_962
+assert n == 4_860, n
+assert round(med) == -474_042, med
+assert round(p25) == -657_341 and round(p75) == -217_247, (p25, p75)
+assert round(neg * 100) == 94, neg
+assert round(nets[0]) == -1_247_265 and round(nets[-1]) == 323_614, (nets[0], nets[-1])
+assert round(default) == -286_425, default
+assert 0.66 < default_rank < 0.71, default_rank
+assert round(statistics.median(nets)) == -469_905
 
 print(f"{n:,} scenarios | weighted median ${med:,.0f} | {neg * 100:.0f}% lose money")
 print(f"range ${nets[0]:,.0f} to ${nets[-1]:,.0f} | middle half "

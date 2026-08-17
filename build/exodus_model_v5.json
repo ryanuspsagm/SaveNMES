@@ -1,5 +1,5 @@
 {
- "seek": 5126,
+ "seek": 5136,
  "class_lo": 19,
  "class_hi": 24,
  "per_class": 5.83,
@@ -15,42 +15,37 @@
  },
  "eff_years": 12.62,
  "ramp": 0.834,
- "var_full": 2642,
- "shed": {
-  "full_retention": 0.0,
-  "partial_consolidation": 1585,
-  "full_consolidation": 2642
- },
+ "var_nonteach": 400,
  "ladder": {
   "floor": {
    "kids_lo": 74,
    "kids_hi": 74,
-   "dollars_lo": 377354,
-   "dollars_hi": 377354
+   "dollars_lo": 378090,
+   "dollars_hi": 378090
   },
   "iqr_low": {
    "kids_lo": 121,
    "kids_hi": 153,
-   "dollars_lo": 621615,
-   "dollars_hi": 785198
+   "dollars_lo": 622828,
+   "dollars_hi": 786730
   },
   "median": {
    "kids_lo": 147,
    "kids_hi": 186,
-   "dollars_lo": 754972,
-   "dollars_hi": 953649
+   "dollars_lo": 756445,
+   "dollars_hi": 955509
   },
   "iqr_high": {
    "kids_lo": 172,
    "kids_hi": 217,
-   "dollars_lo": 879725,
-   "dollars_hi": 1111232
+   "dollars_lo": 881441,
+   "dollars_hi": 1113400
   },
   "p95": {
    "kids_lo": 200,
    "kids_hi": 253,
-   "dollars_lo": 1024758,
-   "dollars_hi": 1294432
+   "dollars_lo": 1026758,
+   "dollars_hi": 1296957
   }
  }
 }

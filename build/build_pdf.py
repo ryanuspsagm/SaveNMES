@@ -210,9 +210,9 @@ B("<b>Fact three: closing it frees very little.</b> Start from everything the di
   "those staff at its own $54,479.40 loaded cost. The district's $661,139 figure includes $493,407 of staffing "
   "savings that, by the same response's own terms, arrive only if and when staff leave by attrition; in year "
   "one, with staff retained and supplies moving with the kids, only "
-  "$127,039 of it remains. This report priced 14,580 closure scenarios on the district's own figures, with "
+  "$127,039 of it remains. This report priced 4,860 closure scenarios on the district's own figures, with "
   "family departures measured by the signed school-choice survey instead of guessed: the range runs from "
-  "losing $1,322,925 a year to saving $409,190, the median LOSES $293,756, and 88 percent "
+  "losing $1,247,265 a year to saving $323,614, the median LOSES $474,042, and 94 percent "
   "lose money (Section 4).")
 B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state money follows each child to "
   "whichever district wins the family. Registered homeschooling in this county grew from 170 to 259 in five "
@@ -220,28 +220,28 @@ B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state mon
   "counts of Cloverport Independent, its host district. Every family that leaves "
   "takes about $5,100 a year of state money with it, and the loss grows as the missing kids reach every "
   "grade (Section 5):")
-tbl(["Estimate", "Basis", "Students missing each year", "SEEK lost each year", "13-year window"],
-    [["Floor", "the 31 signed survey households alone", "74", "$377,354", "<b>about $4.1 million</b>"],
-     ["Likely band", "middle half of the statistical estimate", "121 to 217", "$621,615 to $1,111,232", "<b>$6.7 to $12.0 million</b>"],
-     ["Middle", "the statistical median", "147 to 186", "$754,972 to $953,649", "<b>$8.2 to $10.4 million</b>"]],
-    [0.9 * inch, 2.0 * inch, 1.35 * inch, 1.55 * inch, 1.3 * inch],
+tbl(["Estimate", "Basis", "Students missing each year", "SEEK lost each year"],
+    [["Floor", "the 31 signed survey households alone", "74", "<b>$378,090</b>"],
+     ["Likely band", "middle half of the statistical estimate", "121 to 217", "<b>$622,828 to $1,113,400</b>"],
+     ["Middle", "the statistical median", "147 to 186", "$756,445 to $955,509"]],
+    [0.9 * inch, 2.2 * inch, 1.5 * inch, 1.8 * inch],
     caption="What leaving families cost, measured by the August 2026 school-choice survey (Section 5) and "
-            "priced at $5,126 per student-year, the $4,626 base plus $500 of typical add-ons. A child who "
-            "leaves is missing for every remaining grade through 12th, discounted by the district's own "
-            "grade-to-grade survival (12.62 effective years); losses build from six grade cohorts in year "
-            "one to all thirteen by year eight, and the window totals carry that ramp.")
+            "priced at $5,136 per student-year: the enacted FY2027 SEEK base of $4,636 plus $500 of typical "
+            "add-ons. A child who leaves is missing for every remaining grade through 12th, discounted by "
+            "the district's own grade-to-grade survival (12.62 effective years); losses build from six "
+            "grade cohorts in year one to all thirteen by year eight, then hold.")
 P("Read the table's floor row first, because it involves no statistics at all: thirty-one households put "
   "their names on paper, and their children alone keep about 74 students a year off the district's rolls, "
-  "$377,354 a year, every year. The statistical rows correct the full survey for response bias and land "
-  "the likely loss between $621,615 and $1,111,232 a year. "
+  "$378,090 a year, every year. The statistical rows correct the full survey for response bias and land "
+  "the likely loss between $622,828 and $1,113,400 a year. "
   "The children in the building carry about $6.2 to $6.9 million of remaining state funding through grade 12 "
-  "(their actual grade counts are 1,339 student-years, priced at the $4,626 base to $5,126 with add-ons). "
+  "(their actual grade counts are 1,339 student-years, priced at the $4,636 base to $5,136 with add-ons). "
   "About one in eight middle and high schoolers came through North Middletown, its share of the county's "
   "elementary seats carried up the grades; a family lost at kindergarten is "
   "lost for thirteen years. <b>The bottom line, from the two priced models:</b> grow the "
-  "school and the middle case GAINS $141,780 a year, with not one losing scenario in 19,683 (every "
+  "school and the middle case GAINS $142,080 a year, with not one losing scenario in 19,683 (every "
   "scenario prices students who actually arrive). Close it and "
-  "the middle case LOSES $293,756 a year.")
+  "the middle case LOSES $474,042 a year.")
 
 H2("Part Two. The district needs growth, not closures: three levers the board already owns")
 P("<b>The money problem is real, and it is district-wide.</b> The General Fund ran a $2.65 million deficit "
@@ -253,12 +253,12 @@ P("<b>The money problem is real, and it is district-wide.</b> The General Fund r
   "base grew 107.5 percent since 2012, second fastest of eight area counties, while the school levy fell "
   "5.4 percent, the only drop among nine districts. Every neighbor's base grew too. Their boards raised "
   "rates anyway (Sections 7 and 10).")
-B("<b>Lever one, enrollment.</b> Each recovered student brings about $4,226 of state money after supplies. "
+B("<b>Lever one, enrollment.</b> Each recovered student brings about $4,236 of state money after supplies. "
   "The pool is measured: 236 students sit in Bourbon's own homeschool files, and 450 to 550 Bourbon County "
   "Schools kids are homeschooled, in private school, or enrolled in another district, worth $2.1 to $2.5 "
-  "million a year at the full $4,626 SEEK base. Eminence Independent proved "
+  "million a year at the full $4,636 SEEK base. Eminence Independent proved "
   "the model an hour away: it grew 35 percent in the decade Bourbon Schools shrank 10. Growth pays in every one of "
-  "19,683 priced scenarios, with a middle case of +$141,780 a year.")
+  "19,683 priced scenarios, with a middle case of +$142,080 a year.")
 B("<b>Lever two, fixed costs.</b> Trim every non-teaching position by attrition: $340,000 to $425,000 a "
   "year. Weigh an administrative restructuring: $224,000 to $450,000. Smarter bus routes: $146,000 to "
   "$291,000 on a $2.9 million line no routing study has ever tested. Energy contracts: $50,000 to "
@@ -497,7 +497,7 @@ P("The 128 children would still need teachers, about six homerooms' worth (eight
   "in the district's fastest-growing and worst-reimbursed budget line (families have warned of rides "
   "exceeding two hours a day), staffing or space additions at the receiving schools, transition costs, and "
   "the quiet revenue risk that some families leave the district altogether, each departure taking at least "
-  "$4,626 a year in base state funding with it, permanently (the fiscal 2027 base, the first year a closure "
+  "$4,636 a year in base state funding with it, permanently (the fiscal 2027 base, the first year a closure "
   "could take effect; this report uses the fiscal 2027 figure for anything after a closure).")
 P("First, the staffing price, stated plainly: $85,000 is the right all-in figure for comparing spending "
   "filings, but the wrong figure for the General Fund, because Kentucky pays teacher retirement and health "
@@ -506,7 +506,7 @@ P("First, the staffing price, stated plainly: $85,000 is the right all-in figure
   "further and retires even that band: every staffing lever is priced at the district's own fully loaded "
   "figure, <b>$54,479.40 per position</b>, from Appendix A.1 of its written response. Their number, their "
   "basis.")
-P("The grid is built on the district's own 48-page response and the community's own survey. Eight levers, "
+P("The grid is built on the district's own 48-page response and the community's own survey. Seven levers, "
   "each sourced: "
   "how much of the district's own $107,039 of building-bound expense lines actually stops (50 to 100 "
   "percent, plus its $20,000 insurance figure at the full stop); how many of the four whole fixed positions are "
@@ -514,29 +514,30 @@ P("The grid is built on the district's own 48-page response and the community's 
   "council allocation lists 5.5, and the three half-time lines are left uncut as partial and shared); zero to "
   "three teachers at its own $54,479.40 price (its savings sheet says two, its own classroom-capacity "
   "count supports three); the students missing from the rolls each year, no longer guessed but anchored to "
-  "the signed school-choice survey at steady state (38 to 194, Section 5: the survey floor of 73 and the "
-  "statistical band's quartiles weighted 1-2-2-2-1, with 38, half the floor, kept as the skeptic's leg), each "
-  "missing student costing $4,626 plus up to $1,000 of add-ons; the variable cost the district sheds per "
-  "missing student ($0, its own all-staff-retained stance, $1,585 with consolidation friction, or $2,642 at "
-  "one teacher per 25.4 students plus supplies, netted against the SEEK loss); the zone property effect; and "
+  "the signed school-choice survey at steady state (38 to 194, Section 5: the survey floor of 74 and the "
+  "statistical band's quartiles weighted 1-2-2-2-1, with 38, roughly half the floor, kept as the skeptic's "
+  "leg), each missing student costing the enacted FY2027 SEEK base of $4,636 plus up to $1,000 of add-ons, "
+  "minus the $400 of supplies that stop being spent, the same figure the growth model charges each recruit "
+  "(the supplies credit scales with students; teacher savings appear ONLY on the teachers-cut lever, so "
+  "staffing is never counted twice); the zone property effect; and "
   "the added busing a 110-square-mile zone "
-  "requires. Every combination is enumerated, 14,580 in all, by build/closure_grid.py and published lever "
+  "requires. Every combination is enumerated, 4,860 in all, by build/closure_grid.py and published lever "
   "by lever in the workbook. Each lever carries an explicit distribution: where the record pins a central "
   "setting (the derived $63,000 busing figure, the ~$500 of add-ons, the middle reads of the building, "
-  "property, staffing-path and cost-shed levers), that setting counts double, a triangular 1-2-1 weight; "
+  "property and staffing-path levers), that setting counts double, a triangular 1-2-1 weight; "
   "teachers cut stays uniform, and the survey-anchored leaver weights are stated above. The result "
   "is Figure 5: the net yearly effect falls "
-  "between <b>losing $1,322,925 and saving $409,190</b>, the middle half of weighted scenarios lands between a "
-  "$489,057 and a $113,244 loss, the median outcome <b>LOSES $293,756 a year</b>, and 88 percent of "
+  "between <b>losing $1,247,265 and saving $323,614</b>, the middle half of weighted scenarios lands between a "
+  "$657,341 and a $217,247 loss, the median outcome <b>LOSES $474,042 a year</b>, and 94 percent of "
   "scenarios lose money outright, before $100,000 to $300,000 of one-time transition costs in the first "
-  "year (unweighted, the median is a $284,962 loss; the weighting changes no "
+  "year (unweighted, the median is a $469,905 loss; the weighting changes no "
   "conclusion). The plan's own requirement, the superintendent's stated need to free up $800,000 to $1,000,000 a year of operating money to bond a $14 million renovation, sits entirely outside the range. "
   "One more thing closure does not buy: borrowing room. Bonding capacity is built from restricted revenue "
   "streams that do not grow when a school closes (Section 8).")
 fig("chart_closure_spectrum.png",
-    "Figure 5. The honest range. Top: the net yearly effect of closure across all 14,580 combinations of the "
-    "eight sourced inputs, from losing $1,322,925 to saving $409,190, with the middle half of weighted scenarios "
-    "between a $489,057 and a $113,244 loss and the median at a $293,756 loss. The plan's own $800,000 to "
+    "Figure 5. The honest range. Top: the net yearly effect of closure across all 4,860 combinations of the "
+    "seven sourced inputs, from losing $1,247,265 to saving $323,614, with the middle half of weighted scenarios "
+    "between a $657,341 and a $217,247 loss and the median at a $474,042 loss. The plan's own $800,000 to "
     "$1,000,000 requirement lies entirely outside the defensible range. Bottom: how far each input moves the "
     "central case by itself. Inputs: the district's own response worksheet and staffing appendix (Appendix "
     "A and A.1), its capacity appendix, its KDE filings, the federal attendance-zone map, and the exit "
@@ -558,15 +559,15 @@ P("Sorted by kindergarten class, the leavers average <b>5.83 children out of eve
   "grade records show 97 to 100 percent of county fifth graders enter its middle school and stay through "
   "11th grade, with senior-year survival at 83 percent, so each lost child is counted for 12.62 effective "
   "years rather than a flat 13. The signed households alone therefore keep about <b>74 students a year off "
-  "the district's rolls, $377,354 a year</b> at the $5,126 SEEK basis: that is the floor, and it involves "
+  "the district's rolls, $378,090 a year</b> at the $5,136 SEEK basis: that is the floor, and it involves "
   "no statistics at all.")
 P("The statistical estimate corrects the full survey for the obvious bias: families set on leaving answer "
   "a survey like this more readily than families staying put. Among currently enrolled surveyed children "
   "the raw split is 20 leavers to 4 stayers, about a fifth of the school; a response-propensity model "
   "discounts that split across leaver-to-stayer response ratios from 1x to 8x, centered on 3x, and the "
   "resulting distribution puts the true leave share at a median of 61 percent with a middle half of 51 to "
-  "72 percent. Across class sizes of 19 to 24 that is <b>121 to 217 students missing each year, $621,615 "
-  "to $1,111,232 a year</b>, with a 95th-percentile bound near $1.3 million. Losses build from six grade "
+  "72 percent. Across class sizes of 19 to 24 that is <b>121 to 217 students missing each year, $622,828 "
+  "to $1,113,400 a year</b>, with a 95th-percentile bound near $1.3 million. Losses build from six grade "
   "cohorts in year one to all thirteen by year eight. Every number is reproduced by build/exodus_model.py "
   "from the published anonymized data.")
 P("The state's own files corroborate the band from outside the survey. The SAAR school-level enrollment "
@@ -577,14 +578,20 @@ P("The state's own files corroborate the band from outside the survey. The SAAR 
   "described here as the district's 2023-24 SAAR figure, matches the state's 2024-25 SAAR end-of-year "
   "membership file exactly (as does Cane Ridge's 461), and end-of-year enrollment is the planning manual's "
   "own prescribed basis; the state's 2023-24 file shows 141.")
-P("Leaving is not pure loss for the district, and the model says so rather than hiding it. As students "
-  "go, variable costs can go with them: up to $2,642 per student, one teacher per 25.4 students at the "
-  "district's own $54,479.40 fully loaded rate plus $500 of supplies, if sections consolidate perfectly. "
-  "The closure grid's cost-shed lever runs all three responses ($0, the district's stated all-staff-"
-  "retained stance; $1,585 with friction; $2,642 at full consolidation). The stubborn fact survives every "
-  "setting: at most 52 cents of each lost SEEK dollar can be recovered by cutting costs, so even at full "
-  "consolidation, counting only the signed families, closure still nets negative at the savings median; "
-  "and the district's own staffing promise is the setting that recovers nothing.")
+P("Leaving is not pure loss, and the model credits the savings without counting anything twice. Each "
+  "missing student stops costing about $400 in supplies and materials, the same low-leg figure the growth "
+  "model charges each recruit, and that credit scales with every child who goes. Cutting teachers is a "
+  "separate decision, priced only on the grid's teachers-cut lever, the district's own 0 to 3 positions. "
+  "Even with both credits at their friendliest, 94 percent of priced scenarios lose money, because $400 "
+  "of supplies and a few positions cannot outrun $5,136 walking out with every child.")
+P("The research says this dynamic is structural, not local. Georgetown's Edunomics Lab documents how "
+  "per-pupil revenue leaves with each lost student while costs fall only in steps (Financial Impacts of "
+  "Enrollment Decline, 2021), and Bellwether's national data show the same squeeze in districts across "
+  "the country. Georgetown's FutureEd finds kindergartners are the largest entry group in school-choice "
+  "programs, over a third of annual participants: K-5 is where districts win or lose families, and this "
+  "district's own grade-to-grade records show families almost never leave once enrolled. Research for "
+  "Action's 2024 review of the closure literature finds closures rarely save what districts project, with "
+  "enrollment loss to other systems a recurring result. All four are cited in the Sources.")
 H2("What the district's own ledger says this school costs")
 P("In July 2026 the district answered an open records request and produced its books. The answer to what North "
   "Middletown costs moves by about a million dollars depending on which of the district's own documents you open.")
@@ -650,7 +657,7 @@ P("The district's response prices closure savings at “$661,138.94 MINIMUM.” 
   "wherever the children sit; and the $127,039 that remains is the same building money the ledger walk "
   "above already counts. The response prices no added busing and not one leaving family. Those costs are "
   "real, so this report prices them: about $63,000 a year to bus the children to Paris, and one family in "
-  "ten leaving (13 students at $5,126 each is $66,638 a year of state money). And the analysis behind the "
+  "ten leaving (13 students at $5,136 each is $66,768 a year of state money). And the analysis behind the "
   "number? Asked for any cost-benefit analysis of closing the school, the district's July 2026 records "
   "response answered N/A: none exists.")
 P("Two conclusions follow. First, the closure model estimated this school's avoidable fixed base at $230,000 "
@@ -669,7 +676,7 @@ P("Two conclusions follow. First, the closure model estimated this school's avoi
   "lever on the MUNIS ledger's FY2026 actuals ($214,104 against the budget's $218,154), and the published "
   "median is a $20,007 yearly loss, with 55 percent of scenarios losing money. Version 5.0 replaces the "
   "leaver guess with the measured school-choice survey at steady state and adds the variable-cost-shed "
-  "lever: 14,580 scenarios, median a $293,756 yearly loss, 88 percent losing money.")
+  "lever: 4,860 scenarios, median a $474,042 yearly loss, 94 percent losing money.")
 P("There is a limit to what any ledger can settle. The eight inputs that decide a closure's net effect span about "
   "$950,000. The district's books speak to two of them, worth about a third of that spread. The rest, how many "
   "families leave, whether the building is sold or mothballed, whether the receiving schools need capacity work, "
@@ -730,9 +737,9 @@ P("<b>First, the money.</b> For the 163 closure events with clean finance data, 
   "Elementary in 2012, paid $3,525; every case at or near the plan's number came with a new school (Perry "
   "2017, Adair 2006, Metcalfe 2013) or was a city or county-seat grade reshuffle. The record's figure "
   "credits a district's entire budget change to its closure, an upper bound by construction; this report's "
-  "bottom-up model prices only the levers a closure moves, and its current median is a $293,756 yearly LOSS, "
-  "about $2,295 per displaced student below zero. The plan's requirement is eight times the record's median "
-  "and unreachable by this report's own model, whose best case tops out at $3,197 per displaced student.")
+  "bottom-up model prices only the levers a closure moves, and its current median is a $474,042 yearly LOSS, "
+  "about $3,704 per displaced student below zero. The plan's requirement is eight times the record's median "
+  "and unreachable by this report's own model, whose best case tops out at $2,528 per displaced student.")
 
 P("<b>Second, the classrooms.</b> Test scores can only be compared within one accountability system, so we tested "
   "the 42 closure events measurable inside the 2012 to 2019 window on the uniform federal proficiency series. "
@@ -1169,7 +1176,7 @@ P("The strongest alternative is not defensive. Kentucky law already gives the di
   "Bill 563 (2021), codified at KRS 157.350, a district that adopts a nonresident-student policy may, since July "
   "2022, enroll students from other counties and count them in its attendance for state SEEK funding, with no "
   "agreement from the child's home district required and tuition at the board's discretion. Every family North "
-  "Middletown attracts brings at least the $4,626 base guarantee (fiscal 2027), plus applicable add-ons.")
+  "Middletown attracts brings at least the $4,636 base guarantee (fiscal 2027), plus applicable add-ons.")
 P("North Middletown is built to compete for those families. It is a 2011 National Blue Ribbon school with a "
   "gifted-and-talented program, a 13.6-to-1 student-teacher ratio, state results that lead every elementary "
   "school in Bourbon County in every state-reported subject, and a third-party index that also tops every school in "
@@ -1247,7 +1254,7 @@ P("Three cautions belong beside that finding. The Census counts homeschooling in
   "child population, a double-digit enrollment decline, and a district that has not yet organized to compete "
   "for the children who are still here, which is exactly the plan this report prices.")
 P("Every one of those children is a Bourbon County child whose family already chose something else, and the state "
-  "pays $4,626 for each one who returns. Filling North Middletown's 46 open seats requires winning back "
+  "pays $4,636 for each one who returns. Filling North Middletown's 46 open seats requires winning back "
   "about one in ten of them: 46 of the 483 documented.")
 H2("Where the students come from: the pool is measured, and it is large")
 P("The students are not hypothetical, and the public record measures the pool three ways, all archived here. "
@@ -1274,9 +1281,9 @@ P("The students are not hypothetical, and the public record measures the pool th
   "pull families when it competes). The two documented counts alone, 236 homeschool filings and 247 "
   "students enrolled elsewhere, reach 483 before a single private-school student is counted, so the 450 to "
   "550 band is conservative.")
-P("The revenue side is symmetric with the closure math in Section 4, on purpose, using the same $4,626 SEEK "
+P("The revenue side is symmetric with the closure math in Section 4, on purpose, using the same $4,636 SEEK "
   "base cell in the workbook. A homeschool or private-school student generates no state funding for the "
-  "district today, so each one who enrolls is entirely new money: $4,626 of SEEK a year, about $4,226 after "
+  "district today, so each one who enrolls is entirely new money: $4,636 of SEEK a year, about $4,236 after "
   "supplies. At the full check, the 450 to 550 pool, homeschool, private school, and out-of-district "
   "enrollment together, is $2.1 to $2.5 million a year the district is not collecting; net of supplies, "
   "the 236 students in this district's own homeschool files alone carry about $1.0 million a year and "
@@ -1313,11 +1320,11 @@ P("Bourbon County Schools has a structural funding problem: spending has outrun 
   "reaching $0.9 to $2.2 million and delinquency recovery adding $60,000 to $120,000 on top. Together the "
   "counted-once cost package and the 2018 restore alone are worth about $2.2 to $2.8 million a year "
   "(Figure 21; each line's confidence and overlap are disclosed on the Alternatives tab). Any one move "
-  "alone outweighs closure, whose median outcome now loses $293,756 a year. Together they balance the budget, end the sweep, free the "
+  "alone outweighs closure, whose median outcome now loses $474,042 a year. Together they balance the budget, end the sweep, free the "
   "restricted stream to bond the renovation plan, and close nothing. The Alternatives tab prices each move live.")
 P("And the surplus is transformative. The website's plan calculator prices the enrollment lever directly: "
   "recovered leakage students themselves, zero to the full measured "
-  "pool of 550, each at the same $4,226 net-of-supplies cell the closure model uses. The gap the plan must "
+  "pool of 550, each at the same $4,236 net-of-supplies cell the closure model uses. The gap the plan must "
   "close is also the district's own most current number: its June 2026 year-end ledger trends the fiscal "
   "2026 General Fund at <b>$1,738,653</b> in the red before transfers ($20,694,287 of revenue against "
   "$22,432,940 of spending; the on-behalf entries cancel in the gap, the audit will refine it, and the "
@@ -1331,12 +1338,12 @@ P("And the surplus is transformative. The website's plan calculator prices the e
   "within $7,000 of funding the full 5 percent raise for every certified teacher, about "
   "$507,000 a year on the district's own $10.0 million General Fund certified payroll; two recovered "
   "students close the difference, and every dollar of the deeper cost package lands on top. The website calculator opens at the plan's "
-  "central case, half the measured pool recovered: 275 of 550 students at the same $4,226 add $1,162,150 a "
+  "central case, half the measured pool recovered: 275 of 550 students at the same $4,236 add $1,164,900 a "
   "year, the plan runs about $1.66 million ahead of the trending gap, and after the raise about $1.16 "
-  "million services roughly $15.0 million of new bonds, about $47 million of capacity with the advisor's "
+  "million services roughly $15.1 million of new bonds, about $47 million of capacity with the advisor's "
   "$32 million. At the sliders' top, the full 550-student pool with every lever high, the plan runs about "
   "$3.4 million ahead: the raise plus roughly $37 million of new bonds, about $69 million of capacity. "
-  "Every 100 recovered students move the number by $422,600 a year "
+  "Every 100 recovered students move the number by $423,600 a year "
   "in either direction. The building capacity beneath it is no longer this "
   "report's estimate: the district's own advisor rates it at $32 million, capacity that is real only once the "
   "sweep ends, because the sweep spends the very stream the capacity is built on. Together, teachers paid "
@@ -1367,18 +1374,18 @@ P("The growth side is priced with the same discipline as the closure grid, and o
   "school's own classified lines. New teachers are priced at the certified schedule's entry-to-midpoint "
   "rows, $41,718 to $56,583. Busing runs $0 to $1,000 per recruit, marginal costs $400 to $1,000 per "
   "student against a measured $331, and state add-ons run the same $0, $500, and $1,000 legs the closure "
-  "grid prices for each leaver, so the two models treat state add-ons symmetrically. The old supplies "
-  "asymmetry is resolved in version 5.0: the closure grid's cost-shed lever now credits leavers with $0 to "
-  "$2,642 of avoided variable cost, a wider offset than the $400 of supplies recruits are charged, and the "
-  "median still loses $293,756: no sign changes, no conclusion moves.")
+  "grid prices for each leaver, so the two models treat state add-ons symmetrically, and the supplies "
+  "figure is symmetric too: the closure grid credits each missing student with the same $400 of supplies "
+  "the growth grid charges each recruit. No lever double-counts staffing: teacher changes are priced only "
+  "on each grid's own teacher lever.")
 P("The result: across all 19,683 priced scenarios, growth pays in every single one. Under the same lever "
   "weighting as the closure grid (triangular on every cost lever, whose middle legs are the documented "
   "central reads; uniform on the enrollment target, which is the board's choice, not a chance), the median "
-  "gains $141,780 a year and the middle half runs from $94,520 to $182,654; even the worst case, a class "
+  "gains $142,220 a year and the middle half runs from $94,720 to $183,354; even the worst case, a class "
   "of 18 at the top salary with every cost at its maximum, "
-  "still nets $3,331. The website's calculator opens at the weighted median itself: 30 added students (a "
+  "still nets $4,131. The website's calculator opens at 30 added students, $142,080, within $140 of the weighted median (a "
   "target of 140 on the slider's 110 base, the district's own still-unsourced figure; the same 30 added to "
-  "the official 128 count is a target of 158), no new hires needed, $141,780 a year (the district's own "
+  "the official 128 count is a target of 158), no new hires needed, $142,080 a year (the district's own "
   "Appendix B caps leave 25 open seats across the six grades; adding 30 leaves five over unless enrollment "
   "lands unevenly, and the calculator's hiring lever prices the section the caps would force). The same stack drives the cost-per-student "
   "curve: at 160 students the school costs about $14,600 per student with no new hire yet needed, and at "
@@ -1571,14 +1578,14 @@ P("The decision before the Board is often framed as closure versus no closure. T
 tbl(["Plan", "Recurring impact, year 3", "Projected FY2029 balance", "What it requires"],
     [["1. Districtwide status quo (change nothing)", "None", "Fully drawn down",
       "No decisions; the districtwide drawdown simply continues, with or without North Middletown"],
-     ["2. Close NMES and consolidate", "-$1,322,925 to +$409,190 (median: LOSES $293,756)", "Median: gone much sooner than status quo",
+     ["2. Close NMES and consolidate", "-$1,247,265 to +$323,614 (median: LOSES $474,042)", "Median: gone much sooner than status quo",
       "Closure vote; the median scenario loses money; longer rides; enrollment-loss risk"],
      ["3. Districtwide recovery plan (menu plus 2018 restore)", "$2.5-$3.0 million a year", "About $4.3 million or better",
       "Revenue votes, administrative rollback, boundary action and HB 563 recruitment, implementation "
       "discipline; every school stays open"]],
     [1.85 * inch, 1.45 * inch, 1.35 * inch, 2.05 * inch],
     caption="Three complete plans, compared on the same assumptions. At the closure grid's median, Plan 2 drains "
-            "reserves faster than doing nothing; only its best case buys a meaningful cushion, and 88 percent "
+            "reserves faster than doing nothing; only its best case buys a meaningful cushion, and 94 percent "
             "of its scenarios lose money outright. Plan 3 restores balance while keeping every "
             "school open, and rebalancing and growing North Middletown ($56,000 to $116,000 a year, Section 10) "
             "is one line inside its menu. Scenarios and Runway tabs of the companion workbook.",
@@ -1712,11 +1719,18 @@ P("<b>Version 5.0, August 17.</b> The school-choice survey results are published
   "31 households with 70 children say they would leave. The grid's leaver lever moves from guessed shares "
   "of 128 (0 to 64 students) to survey-anchored students missing from the rolls at steady state (38 to "
   "194: the floor of 74 from signed households alone, the statistical band's quartiles, and a skeptic's "
-  "leg at half the floor), and a new cost-shed lever prices the district's own cost response ($0, its "
-  "stated stance, to $2,642 at full consolidation), netted against each lost student's SEEK. The grid "
-  "grows from 5,832 to 14,580 scenarios; the median moves from a $20,007 to a $293,756 yearly loss, the "
-  "middle half to a $489,057-to-$113,244 loss, 88 percent of scenarios lose money, and the website "
-  "default (all staff retained, floor leavers only) opens at a $315,285 loss. A new report section "
+  "leg at roughly half the floor). Each missing student is priced at the SEEK base plus add-ons minus the "
+  "$400 of supplies that stop being spent (the same figure the growth model charges each recruit; the "
+  "credit scales with students, and teacher savings appear only on the teachers-cut lever, so staffing is "
+  "never counted twice). The grid moves from 5,832 to 4,860 scenarios; the median moves from a $20,007 to "
+  "a $474,042 yearly loss, the middle half to a $657,341-to-$217,247 loss, 94 percent of scenarios lose "
+  "money, and the website default (all staff retained, floor leavers only) opens at a $286,425 loss. Two "
+  "value corrections in the same release: the SEEK base re-based from $4,626, the House-version figure "
+  "used before enactment, to the enacted FY2027 base of $4,636 (2026-28 budget; both grids, the growth "
+  "median moves to $142,220), and multi-year loss totals are retired in favor of per-year figures. The "
+  "net closure range now leads the website. The research base is added to Sources: Edunomics Lab and "
+  "Bellwether on enrollment-decline finances, FutureEd on kindergarten as the largest school-choice entry "
+  "group, and Research for Action's 2024 closure-research review. A new report section "
   "documents the method: 12.62 effective years per lost child from the district's own grade-to-grade "
   "survival, a six-to-thirteen cohort ramp, and a response-propensity correction of the raw survey, all "
   "reproduced by build/exodus_model.py from the published data. Two label corrections: the facility "
@@ -1739,7 +1753,7 @@ P("<b>Version 4.5, August 2.</b> Both scenario grids now carry explicit lever di
   "with add-ons counted at both ends. The district's $661,139 claim is now reconciled block by block "
   "against the school's General Fund budget. A review round the same day: both website "
   "calculators now state only the percentile their settings reflect, the growth calculator opens at the "
-  "weighted median itself (30 added students, $141,780), the decision panel shows the three default "
+  "weighted median itself (30 added students, then $141,780), the decision panel shows the three default "
   "scenarios side by side, the leaving-cost escalation is charted year by year, and the website cost "
   "chart starts at 2014 because the 2013 file carries the one-time renovation charge. The growth plan "
   "itself became a calculator (levers, raise, bonds and building capacity, on the model's own bases), the "
@@ -1772,12 +1786,12 @@ P("<b>Version 4.5, August 2.</b> Both scenario grids now carry explicit lever di
   "removed (their requests live on in the asks and the named records gaps), and the process record, the "
   "building assessment, and the transportation and rebalancing analyses moved to an appendix of other "
   "supporting data. A later round re-based the plan calculator twice over: the enrollment lever now prices "
-  "recovered leakage students directly, zero to 550 at $4,226 each, and the plan is measured against the "
+  "recovered leakage students directly, zero to 550 at $4,236 each, and the plan is measured against the "
   "trending fiscal 2026 gap, $1,738,653 on the district's own June 2026 year-end ledger, beside the audited "
   "fiscal 2025 gap of $2,648,086 it improves on. The same round added the family survey to the website, made "
-  "the leakage picture district-specific (236 students in Bourbon's own homeschool files at $4,226 each, "
+  "the leakage picture district-specific (236 students in Bourbon's own homeschool files at $4,236 each, "
   "about $1.0 million a year; a net import of 189 on public-school transfers), re-derived the county leakage "
-  "band at the symmetric $4,226 cell ($1.9 to $2.3 million, from $2.1 to $2.3 million), added the audited "
+  "band at the symmetric $4,236 cell ($1.9 to $2.3 million, from $2.1 to $2.3 million), added the audited "
   "reserve comparison to the Fayette card (Bourbon 14.7 cents of fund balance per dollar spent, Fayette 4.1), "
   "and re-labeled every SEEK figure as funded attendance rather than students, since SEEK pays on attendance, "
   "not enrollment. On review, the plan calculator's default moved from zero recovery to the central case, "
@@ -1791,8 +1805,8 @@ P("<b>Version 4.5, August 2.</b> Both scenario grids now carry explicit lever di
   "and the matching decade decline at Bourbon County Schools is 10 percent, not 13; the bus-route trim "
   "of $146,000 to $291,000 is 5 to 10 percent of the audited $2.9 million fiscal 2025 transportation "
   "line, which the prose had understated as $2.7 million; the carried state funding of the school's 128 "
-  "students is $6.2 to $6.9 million on their actual grade counts (1,339 student-years at $4,626 to "
-  "$5,126), replacing an unreproducible $5.6 to $7.4 million band; the 30-percent-leaving loss is 87 "
+  "students is $6.2 to $6.9 million on their actual grade counts (1,339 student-years at $4,636 to "
+  "$5,136), replacing an unreproducible $5.6 to $7.4 million band; the 30-percent-leaving loss is 87 "
   "percent of the best-case closure saving, not 86; and the site's escalation chart now uses the same "
   "whole-student convention as its table. The supplies asymmetry between the two grids is now disclosed "
   "with its sensitivity (leavers priced net of supplies move the closure median to a $5,305 loss; no "
@@ -1815,10 +1829,10 @@ P("<b>Version 4.5, August 2.</b> Both scenario grids now carry explicit lever di
   "private school; Bourbon Christian Academy in Millersburg (K-12, founded 2002, grown from a homeschool "
   "group) is the second, absent from the voluntary federal survey that sourced the claim, and its "
   "uncounted students only make the 450 to 550 pool more conservative. In the same review round, the "
-  "pool's headline pricing moved to the undiscounted $4,626 SEEK base, $2.1 to $2.5 million a year the "
+  "pool's headline pricing moved to the undiscounted $4,636 SEEK base, $2.1 to $2.5 million a year the "
   "district is not collecting, since forgone revenue is the full check; the net-of-supplies $1.9 to "
   "$2.3 million stays published in Section 10, and the plan calculator still credits recovered students "
-  "only at $4,226.", note)
+  "only at $4,236.", note)
 P("<b>Version 4.4, August 1.</b> The growth model rebuilt on the district's own standards: the first 25 "
   "added students fill seats already open at its own Appendix B class caps, teachers are hired per full "
   "new class at a selectable pace (1 per 18, 21, or 24, each a real classroom count), support staff rides "
@@ -1923,7 +1937,14 @@ srcs = [
  "Kentucky Center for Economic Policy, analyses of the 2026-2028 state budget and SEEK funding: kypolicy.org; "
  "Kentucky Lantern, \u201cSchools get increase but transportation funding still flat,\u201d February 25, 2026",
  "Research for Action, Revisiting Research on School Closings: Key Learnings for District and Community Leaders "
- "(2024)",
+ "(2024): researchforaction.org",
+ "Edunomics Lab, Georgetown University, Financial Impacts of Enrollment Decline (2021): edunomicslab.org "
+ "(per-pupil revenue leaves with each lost student while costs fall only in steps)",
+ "Bellwether, How Student Enrollment Declines Are Affecting Education Budgets, Explained in 10 Figures: "
+ "bellwether.org",
+ "FutureEd, Georgetown University, Directional Signals: A New Analysis of the Evolving Private School Choice "
+ "Landscape: future-ed.org (kindergartners are the largest entry group in choice programs, over a third of "
+ "annual participants)",
  "Howley, C., Johnson, J., and Petrie, J., Consolidation of Schools and Districts: What the Research Says and What "
  "It Means, National Education Policy Center (2011)",
  "Kim, J., The Long Shadow of School Closures, Annenberg Institute EdWorkingPaper 24-963 (2024); analysis of "
@@ -2048,7 +2069,7 @@ gl = [
  ["LPC (Local Planning Committee)", "The citizen-and-staff committee that drafts the facility plan; it recommends, but cannot close a school."],
  ["Official statement", "A bond's public prospectus describing its purpose, projects, and repayment terms."],
  ["On-behalf payments", "Pension and benefit costs the state pays directly for district employees, shown in the audit as both revenue and expense."],
- ["SEEK", "Support Education Excellence in Kentucky, the state's per-student funding formula ($4,586 base in fiscal 2026, rising to $4,626 in fiscal 2027)."],
+ ["SEEK", "Support Education Excellence in Kentucky, the state's per-student funding formula ($4,586 base in fiscal 2026, rising to $4,636 in fiscal 2027)."],
  ["SFCC", "The School Facilities Construction Commission, a state body that pays part of qualifying school-construction debt."],
  ["Tier I", "An optional layer of local tax effort that the state partially matches."],
  ["Title I", "Federal funding for schools serving many low-income students."],
@@ -2373,7 +2394,7 @@ tbl(["Measure", "Estimated annual value", "How it works"],
       "savings pay for the upgrades. No such contract is currently in place district-wide."],
      ["District-wide recruitment beyond North Middletown's seats",
       "$106,000 to $211,000",
-      "Priced in v3.8: 25 to 50 additional students at $4,226 net each. State funding follows students who "
+      "Priced in v3.8: 25 to 50 additional students at $4,236 net each. State funding follows students who "
       "transfer in; the measured pool (450 to 550 Bourbon County Schools children in homeschool, private "
       "school, or another district) is in Section 10, and 62 open seats exist at "
       "Bourbon Central's approved rating. Growth, not shrinkage, is the durable fix for a small-district "
@@ -2402,7 +2423,7 @@ P("The July 2026 records response settled the central question of this report's 
   "added transportation, receiving-school costs, and the carrying or disposal cost of the building, with "
   "the downside beside it, because a worksheet carrying only one side of the ledger is not a worksheet. Two risks belong on that page and neither appears in anything the district has produced. "
   "<b>First, children who leave the district rather than change schools.</b> Each one takes the SEEK base "
-  "with them, $4,626 at the fiscal 2027 rate, every year, permanently; ten students is $46,260 a year and "
+  "with them, $4,636 at the fiscal 2027 rate, every year, permanently; ten students is $46,260 a year and "
   "thirty is $138,780. This report's grid prices that leakage rather than assuming zero, and the risk is "
   "live here specifically: 236 families sit in this district's own homeschool files, 247 residents are "
   "already enrolled in another district, and roughly 450 to 550 Bourbon County Schools children in all sit "
