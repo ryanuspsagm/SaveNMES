@@ -319,7 +319,7 @@ if hist_rates == [61.3, 60.6, 55.9, 54.2, 49.2, 52.4, 52.4, 52.4]:
 # ---------- 5. spot figures in PDF vs model ----------
 checks = [("19,348", A["B14"].value == 19348, "per-pupil spending $19,348"),
           ("4,586", A["B5"].value == 4586, "SEEK base FY2026 $4,586"),
-          ("up 20.3 percent", A["B42"].value == 2913654, "transportation trend (dollar figure lives in model B42)"),
+          ("20.3 percent", A["B42"].value == 2913654, "transportation trend (dollar figure lives in model B42)"),
           ("$1.4 to $2.3 million", True, "alternatives package $1.4-2.3M, no haircut")]
 for needle, mok, label in checks:
     if needle in pdf_flat and mok: match(f"{label}: PDF text and model agree")
@@ -609,7 +609,7 @@ else:
 # site text spot checks
 for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $847,825 a year at the left end to still losing $11,030 a year", "closure range prose"),
                  ("$166,189 per cent", "certified real-estate yield in the levy note"), ("$2.65 million", "deficit figure in prose"),
-                 ("holds 128 today", "enrollment in prose"), ("a 174 rating", "capacity prose")]:
+                 ("128 today", "enrollment in prose"), ("a 174 rating", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")
     else: diff(f"site text missing '{s}' ({label})")
 

@@ -208,17 +208,17 @@ B("<b>Fact three: closing it frees very little.</b> Start from everything the di
   "the response's own terms, arrive only as staff leave by attrition. In year one, with staff retained "
   "and supplies moving with the kids, only $127,039 remains. We priced 972 closure scenarios on the "
   "district's own figures, with departures measured by the signed school-choice survey instead of "
-  "guessed. The range runs from losing $1,020,613 a year to still losing $61,862. The median LOSES "
-  "$534,433. Every one loses money (Section 4).")
+  "guessed. The range runs from losing $847,825 a year to still losing $11,030. The median LOSES "
+  "$428,627. Every one loses money (Section 4).")
 B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state money follows each child to "
   "whichever district wins the family. Registered homeschooling in this county grew from 170 to 259 in five "
   "years. The statewide virtual academy grew from 937 to 2,412 students in two years, on the enrollment "
   "counts of Cloverport Independent, its host district. Every family that leaves takes about $5,100 a year "
   "of state money with it. The loss grows as the missing kids reach every grade (Section 5):")
 tbl(["Estimate", "Basis", "Students missing each year", "SEEK lost each year"],
-    [["Today's students", "47 to 69 percent of the 128 enrolled now", "61 to 88", "$312,104 to $453,447"],
-     ["Steady state", "the same share of the whole feeder stream, middle half", "129 to 187", "<b>$661,579 to $961,189</b>"],
-     ["Steady-state median", "the middle of the band", "159", "$814,868"]],
+    [["Today's students", "43 to 57 percent of the 128 enrolled now", "55 to 73", "$282,480 to $374,928"],
+     ["Steady state", "the same share of the whole feeder stream, middle half", "117 to 154", "<b>$600,912 to $790,944</b>"],
+     ["Steady-state median", "the middle of the band", "136", "$698,496"]],
     [0.9 * inch, 2.2 * inch, 1.5 * inch, 1.8 * inch],
     caption="What leaving families cost, measured by the August 2026 school-choice survey (Section 5), "
             "priced at $5,136 per student-year: the enacted FY2027 SEEK base of $4,636 plus $500 of typical "
@@ -227,16 +227,16 @@ tbl(["Estimate", "Basis", "Students missing each year", "SEEK lost each year"],
             "grade cohorts in year one to all thirteen by year eight, then hold.")
 P("Read the signed evidence first: thirty-one households put their names on paper for seventy children. "
   "The statistical rows read the survey the honest way, as a share of the current student population, "
-  "corrected for response bias. The middle half takes 61 to 88 of the 128 students enrolled today. "
-  "Carried across the whole feeder stream, that keeps 129 to 187 students a year off the district's "
-  "rolls, $661,579 to $961,189 a year. "
+  "corrected for response bias. The middle half takes 55 to 73 of the 128 students enrolled today. "
+  "Carried across the whole feeder stream, that keeps 117 to 154 students a year off the district's "
+  "rolls, $600,912 to $790,944 a year. "
   "The children in the building carry about $6.2 to $6.9 million of remaining state funding through grade "
   "12 (1,339 student-years, priced at the $4,636 base to $5,136 with add-ons). About one in eight middle "
   "and high schoolers came through North Middletown, its elementary-seat share carried up the grades. A "
   "family lost at kindergarten is lost for thirteen years. "
   "<b>The bottom line, from the two priced models:</b> grow the school and the middle case GAINS $142,080 "
   "a year, with not one losing scenario in 19,683 (every scenario prices students who actually arrive). "
-  "Close it and the middle case LOSES $534,433 a year.")
+  "Close it and the middle case LOSES $428,627 a year.")
 
 H2("Part Two. The district needs growth, not closures: three levers the board already owns")
 P("<b>The money problem is real, and it is district-wide.</b> The General Fund ran a $2.65 million deficit "
@@ -506,7 +506,7 @@ P("The grid is built on the district's 48-page response and the community's surv
   "one; the school council allocation lists 5.5; the three half-time lines stay uncut). Three: zero to "
   "three teachers at its own $54,479.40 price (its savings sheet says two, its own classroom-capacity "
   "count supports three). Four: the students missing from the rolls each year, anchored to the signed "
-  "school-choice survey at steady state (129 to 187, Section 5; the signed floor of 74, the 31 "
+  "school-choice survey at steady state (117 to 154, Section 5; the signed floor of 74, the 31 "
   "households alone, sits below every priced leg as hard evidence, not a scenario). Five: each missing "
   "student "
   "costs the enacted FY2027 SEEK base of $4,636 plus up to $1,000 of add-ons, minus the $400 of "
@@ -519,18 +519,18 @@ P("The grid is built on the district's 48-page response and the community's surv
   "(the derived $63,000 busing figure, the ~$500 of add-ons, the middle reads of the building and "
   "staffing-path levers), that setting counts double, a triangular 1-2-1 weight; teachers cut stays "
   "uniform; the leaver lever is triangular on the band's quartiles. The result is Figure 5. The net "
-  "yearly effect falls between <b>losing $1,020,613 and still losing $61,862</b>. The middle half of "
-  "weighted scenarios lands between a $643,405 and a $429,974 loss. The median outcome <b>LOSES "
-  "$534,433 a year</b>, and every priced scenario loses money outright, before $100,000 to $300,000 of "
-  "one-time transition costs in year one (unweighted, the median is a $530,476 loss; no conclusion "
+  "yearly effect falls between <b>losing $847,825 and still losing $11,030</b>. The middle half of "
+  "weighted scenarios lands between a $519,765 and a $340,021 loss. The median outcome <b>LOSES "
+  "$428,627 a year</b>, and every priced scenario loses money outright, before $100,000 to $300,000 of "
+  "one-time transition costs in year one (unweighted, the median is a $426,503 loss; no conclusion "
   "changes). The plan's own requirement, the superintendent's stated need to free up $800,000 to "
   "$1,000,000 a year of operating money to bond a $14 million renovation, sits entirely outside the "
   "range. And closure buys no borrowing room: bonding capacity is built from restricted revenue streams "
   "that do not grow when a school closes (Section 8).")
 fig("chart_closure_spectrum.png",
     "Figure 5. The honest range. Top: the net yearly effect of closure across all 972 combinations of "
-    "the six sourced inputs, from losing $1,020,613 to still losing $61,862, the middle half of "
-    "weighted scenarios between a $643,405 and a $429,974 loss, the median a $534,433 loss. The plan's "
+    "the six sourced inputs, from losing $847,825 to still losing $11,030, the middle half of "
+    "weighted scenarios between a $519,765 and a $340,021 loss, the median a $428,627 loss. The plan's "
     "own $800,000 to $1,000,000 requirement lies entirely outside the range. Bottom: how far each input "
     "moves the central case by itself. Inputs: the district's response worksheet and staffing appendix "
     "(Appendix A and A.1), its capacity appendix, its KDE filings, the federal attendance-zone map, and "
@@ -560,28 +560,31 @@ P("Their named destinations are real and open today: Montgomery County, Clark Co
   "stay through 11th grade, senior-year survival 83 percent, so each lost child counts for 12.62 "
   "effective years rather than a flat 13.")
 P("The statistical estimate corrects the survey for the obvious bias: families set on leaving answer a "
-  "survey like this more readily than families staying put. Among currently enrolled surveyed children "
-  "the raw split is 20 leavers to 4 stayers, about a fifth of the school. A response-propensity model "
-  "discounts that split across leaver-to-stayer response ratios from about 1x to 9x, centered on 3.5x. "
-  "The result: a true leave share with a median of 61 percent, middle half 51 to 72 percent. Applied to "
-  "the 128 students enrolled today, that is <b>61 to 88 children in the building right now</b>. "
+  "survey like this more readily than families staying put. Among surveyed children enrolled now or entering "
+  "within the next three falls, the raw split is 62 leavers to 13 stayers, about two fifths of the "
+  "eligible pool; the three-class window means a miscoded class year cannot move the sample. A "
+  "response-propensity model discounts that split across leaver-to-stayer response ratios from 3.3x "
+  "to about 9x, centered on 3.5x. "
+  "The result: a true leave share with a median of 50 percent, middle half 43 to 57 percent. Applied to "
+  "the 128 students enrolled today, that is <b>55 to 73 children in the building right now</b>. "
   "Extended to the entire NMES feeder stream, each entering class of about 22 (ten-year SAAR "
   "kindergarten average 22.2; recent per-grade range 19 to 24) carried for 12.62 effective years, it is "
-  "<b>129 to 187 students missing from the rolls each year at steady state, $661,579 to $961,189 a "
-  "year</b>, with a 95th-percentile bound near $1.14 million. Losses build from six grade cohorts in "
+  "<b>117 to 154 students missing from the rolls each year at steady state, $600,912 to $790,944 a "
+  "year</b>, with a 95th-percentile bound near $914,000. Losses build from six grade cohorts in "
   "year one to all thirteen by year eight. build/exodus_model.py reproduces every number from the "
   "published data. The correction range is anchored to published measurements of exactly this bias, all "
   "in Sources. Groves, Presser, and Dipko (2004) measured interested groups answering 1.4 times more "
   "readily. Abraham, Helms, and Presser (2009) measured engaged people answering a follow-up survey "
   "1.35 times more readily. Pew's benchmark studies (2012, 2017) find civically engaged people "
-  "over-represented at implied ratios of roughly 3 to 4. That measured band, 1.4x to 4x, sits inside "
-  "the model's 1x to 9x span. The central 3.5x is pitched at the top of the published record on "
+  "over-represented at implied ratios of roughly 3 to 4. The model's 3.3x-to-9x span starts at the top of that "
+  "measured band, 1.4x to 4x, and runs past it: it refuses every ratio below Pew's lower high-salience "
+  "benchmark. The central 3.5x is pitched at the top of the published record on "
   "purpose: a small, emotionally charged pool answering a zero-effort form circulated by the campaign "
   "itself is exactly where this bias runs strongest. The model leans against its own survey.")
 P("The state's own files corroborate the band from outside the survey. The SAAR school-level "
   "enrollment reports, archived here, show NMES ending 2023-24 with 141 students, 2024-25 with 128, "
-  "and 2025-26 with 115. This year's kindergarten enrolled <b>12 children against a norm of 21 to "
-  "31</b>: the front-door defection the survey predicts, already visible in the district's own state "
+  "and 2025-26 with 115. This year's kindergarten enrolled <b>12 children against a ten-year average of "
+  "22</b>: the front-door defection the survey predicts, already visible in the district's own state "
   "filings before any closure vote. One label is corrected in this release: the facility plan's '128', previously "
   "described as the district's 2023-24 SAAR figure, matches the state's 2024-25 SAAR end-of-year "
   "membership file exactly (as does Cane Ridge's 461). End-of-year enrollment is the planning manual's "
@@ -590,7 +593,7 @@ P("Where inter-district choice is already open, the aftermath is on the record. 
   "closed rural Crescent Elementary in 2023: 127 school-age children lived in its zone, only 49 still "
   "attended, and after the closure the town's students scattered to homeschooling, neighboring "
   "districts, and a new charter school founded to replace it. Wisconsin's Palmyra-Eagle district lost "
-  "up to 40 percent of its students to open enrollment and its board voted to dissolve the district. "
+  "up to 40 percent of its students to open enrollment and its board voted to dissolve the district (a state panel later kept it open). "
   "Iowa's Orient-Macksburg watched 53 percent of its certified enrollment open-enroll out and dissolved "
   "in June 2025. Wisconsin's River Valley closed two rural elementaries in 2017 and 2018 for projected "
   "savings; seven years later, still shrinking, it closed its third and last satellite campus and went "
@@ -694,10 +697,10 @@ P("Two conclusions follow. First, the closure model estimated the school's avoid
   "weights above and re-based the fixed-position lever on the ledger's FY2026 actuals ($214,104 against "
   "the budget's $218,154); the published median was a $20,007 yearly loss, 55 percent of scenarios "
   "losing money. Version 5.0 replaces the leaver guess with the measured survey at steady state and "
-  "adds the variable-cost-shed lever: 972 scenarios, median a $534,433 yearly loss, every one losing "
+  "embeds the supplies credit in the leaver term: 972 scenarios, median a $428,627 yearly loss, every one losing "
   "money.")
-P("There is a limit to what any ledger can settle. The eight inputs that decide a closure's net effect "
-  "span about $950,000. The district's books speak to two of them, worth about a third of that spread. "
+P("There is a limit to what any ledger can settle. The six levers that decide a closure's net effect "
+  "span about $837,000. The district's books speak to two of them, worth about a third of that spread. "
   "The rest are decisions, not accounting: how many families leave, whether the building is sold or "
   "mothballed, whether the receiving schools need capacity work, how far the buses go, and whether staff "
   "are cut or moved. The range is wide because the decisions are open.")
@@ -756,9 +759,9 @@ P("<b>First, the money.</b> For the 163 closure events with clean finance data, 
   "2012, paid $3,525; every case at or near the plan's number came with a new school (Perry 2017, "
   "Adair 2006, Metcalfe 2013) or was a city or county-seat grade reshuffle. The record's figure is an "
   "upper bound by construction. Our bottom-up model prices only the levers a closure moves, and its "
-  "median is a $534,433 yearly LOSS, about $4,175 per displaced student below zero. The plan's "
+  "median is a $428,627 yearly LOSS, about $3,349 per displaced student below zero. The plan's "
   "requirement is eight times the record's median and unreachable by our own model, whose best case is "
-  "itself a $483-per-displaced-student loss.")
+  "itself an $86-per-displaced-student loss.")
 
 P("<b>Second, the classrooms.</b> Test scores can only be compared within one accountability system, so "
   "we tested the 42 closure events measurable inside the 2012 to 2019 window on the uniform federal "
@@ -1339,7 +1342,7 @@ P("Bourbon County Schools has a structural funding problem: spending has outrun 
   "$2.2 million, and delinquency recovery adding $60,000 to $120,000. Together the counted-once cost "
   "package and the 2018 restore alone are worth about $2.2 to $2.8 million a year (Figure 21; "
   "confidence and overlap disclosed on the Alternatives tab). Any one move outweighs closure, whose "
-  "median outcome loses $534,433 a year. Together they balance the budget, end the sweep, free the "
+  "median outcome loses $428,627 a year. Together they balance the budget, end the sweep, free the "
   "restricted stream to bond the renovation plan, and close nothing. The Alternatives tab prices each "
   "move live.")
 P("And the surplus is transformative. The website's plan calculator prices the enrollment lever "
@@ -1590,14 +1593,14 @@ P("The decision before the Board is often framed as closure versus no closure. T
 tbl(["Plan", "Recurring impact, year 3", "Projected FY2029 balance", "What it requires"],
     [["1. Districtwide status quo (change nothing)", "None", "Fully drawn down",
       "No decisions; the districtwide drawdown simply continues, with or without North Middletown"],
-     ["2. Close NMES and consolidate", "-$1,020,613 to -$61,862 (median: LOSES $534,433)", "Median: gone much sooner than status quo",
+     ["2. Close NMES and consolidate", "-$847,825 to -$11,030 (median: LOSES $428,627)", "Median: gone much sooner than status quo",
       "Closure vote; the median scenario loses money; longer rides; enrollment-loss risk"],
      ["3. Districtwide recovery plan (menu plus 2018 restore)", "$2.5-$3.0 million a year", "About $4.3 million or better",
       "Revenue votes, administrative rollback, boundary action and HB 563 recruitment, implementation "
       "discipline; every school stays open"]],
     [1.85 * inch, 1.45 * inch, 1.35 * inch, 2.05 * inch],
     caption="Three complete plans, compared on the same assumptions. At the closure grid's median, Plan 2 "
-            "drains reserves faster than doing nothing; even its best case loses $61,862 a year, and every "
+            "drains reserves faster than doing nothing; even its best case loses $11,030 a year, and every "
             "priced scenario loses money outright. Plan 3 restores balance with every school open; "
             "rebalancing and growing North Middletown ($56,000 to $116,000 a year, Section 10) is one line "
             "inside its menu. Scenarios and Runway tabs of the companion workbook.",
@@ -1728,8 +1731,8 @@ P("<b>Version 5.0, August 17.</b> The school-choice survey results are published
   "one child arrived after the form closed and is counted); cleaned by hand "
   "(duplicates removed, three households known to be staying recoded, one family already gone set aside), "
   "31 households with 70 children say they would leave. The grid's leaver lever moves from guessed shares "
-  "of 128 (0 to 64 students) to survey-anchored students missing from the rolls at steady state (129 to "
-  "187: the statistical band's 25th, 50th, and 75th percentiles, triangular; the floor of 74 from signed "
+  "of 128 (0 to 64 students) to survey-anchored students missing from the rolls at steady state (117 to "
+  "154: the statistical band's 25th, 50th, and 75th percentiles, triangular; the floor of 74 from signed "
   "households alone is kept as hard evidence below every priced leg, not as a scenario). "
   "Each missing student is priced at the SEEK base plus add-ons minus the "
   "$400 of supplies that stop being spent (the same figure the growth model charges each recruit; the "
@@ -1737,13 +1740,13 @@ P("<b>Version 5.0, August 17.</b> The school-choice survey results are published
   "never counted twice; the busing high leg is capped at half its bottom-up maximum, $95,000, and a "
   "property-value lever priced in an interim draft is removed while the PVA records request is pending). "
   "The grid moves from 5,832 to 972 scenarios; the median moves from a $20,007 to "
-  "a $534,433 yearly loss, the middle half to a $643,405-to-$429,974 loss, every priced scenario loses "
-  "money (the best case still loses $61,862), and the website default (the savings that scale with "
-  "students granted, teachers included, half the fixed overhead cut, median leavers) opens at a $418,495 "
-  "loss, the 77th percentile. In the same release the exodus estimate is restated as a share of the "
-  "current student population extended to the whole feeder stream (the hand-coded class years now mark "
-  "only enrollment status), open-enrollment case studies are added with sources, and the shrinking "
-  "scenario count is the direct result of inputs the survey and records responses pinned down. The response-bias factor is recentered from 3x to 3.5x, the high end of the published measurements, chosen for a small, emotionally charged respondent pool, and every survey-derived figure is re-based. The "
+  "a $428,627 yearly loss, the middle half to a $519,765-to-$340,021 loss, every priced scenario loses "
+  "money (the best case still loses $11,030), and the website default (the savings that scale with "
+  "students granted, teachers included, half the fixed overhead cut, median leavers) opens at a $309,567 "
+  "loss, the 82nd percentile. In the same release the exodus estimate is restated as a share of the "
+  "current student population extended to the whole feeder stream (the hand-coded class years are not assumed accurate; the evidence window spans current "
+  "enrollment plus the next three entering classes), open-enrollment case studies are added with sources, and the shrinking "
+  "scenario count is the direct result of inputs the survey and records responses pinned down. The response-bias factor is recentered from 3x to 3.5x and floored at 3.3x, Pew's lower high-salience benchmark, chosen for a small, emotionally charged respondent pool, and every survey-derived figure is re-based. The "
   "survey results are expressed as shares of current enrollment with a destination breakdown; leaving "
   "families who marked an in-district school are folded into the other-or-undecided row. Two "
   "value corrections in the same release: the SEEK base re-based from $4,626, the House-version figure "
@@ -2462,8 +2465,8 @@ P("The July 2026 records response settled the central question of our records as
   "the building, with the downside beside it. One-sided worksheets do not count. Two risks belong on that "
   "page, and neither appears in anything the district has produced. "
   "<b>First, children who leave the district rather than change schools.</b> Each one takes the SEEK "
-  "base with them, $4,636 at the fiscal 2027 rate, every year, permanently; ten students is $46,260 a "
-  "year and thirty is $138,780. Our grid prices that leakage rather than assuming zero, and the risk is "
+  "base with them, $4,636 at the fiscal 2027 rate, every year, permanently; ten students is $46,360 a "
+  "year and thirty is $139,080. Our grid prices that leakage rather than assuming zero, and the risk is "
   "live here: 236 families sit in this district's own homeschool files, 247 residents are already "
   "enrolled in another district, and roughly 450 to 550 Bourbon County Schools children in all sit "
   "outside its classrooms. The exits are open and in use. The district's published math carries no "
@@ -2486,7 +2489,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 4.6, August 3, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 5.0, August 17, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 
