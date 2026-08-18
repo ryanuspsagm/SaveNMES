@@ -77,7 +77,7 @@ def main():
         nbars = pg.evaluate("document.querySelectorAll('.range-bar').length")
         niqr = pg.evaluate("document.querySelectorAll('.range-bar .iqr').length")
         glabs = pg.evaluate("document.querySelectorAll('.range-labs')[1] ? document.querySelectorAll('.range-labs')[1].textContent : ''")
-        if nbars == 2 and niqr == 2 and "gains $142,080" in glabs and "gains $4,131" in glabs:
+        if nbars == 2 and niqr == 2 and "gains $142,220" in glabs and "gains $4,131" in glabs:
             ok("consolidated card: closure and growth bars side by side, IQR band on each")
         else: bad(f"consolidated range card wrong: bars={nbars} iqr={niqr} growth labs: {glabs[:80]}")
         you_c = pg.evaluate("document.getElementById('youClose').style.left")

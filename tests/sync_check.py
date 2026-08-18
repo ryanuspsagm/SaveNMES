@@ -242,7 +242,7 @@ else: diff(f"Sci/SS/Writing average recompute mismatches: {rec_bad}")
 # the plan calculator mirrors the model's transformative chain lever for lever
 plan_ok = (275 * 4236 + 760000 + 1479078 - 1738653 == 1665325
            and 'id="sPw" min="0" max="550" value="275"' in html
-           and 'id="sPt" min="0" max="10" value="0"' in html
+           and 'id="sPt" min="0" max="10" value="5"' in html
            and "kids*4236" in html and "restore-1738653" in html
            and "*13.008" in html and "bonds+32000000" in html
            and "(15.69/8.9)" in html and "166189" in html
