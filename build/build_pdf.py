@@ -213,8 +213,8 @@ B("<b>Fact three: closing it frees very little.</b> Start from everything the di
 B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state money follows each child to "
   "whichever district wins the family. Registered homeschooling in this county grew from 170 to 259 in five "
   "years. The statewide virtual academy grew from 937 to 2,412 students in two years, on the enrollment "
-  "counts of Cloverport Independent, its host district. Every family that leaves takes about $5,100 a year "
-  "of state money with it. The loss grows as the missing kids reach every grade (Section 5):")
+  "counts of Cloverport Independent, its host district. Every child who leaves takes about $5,100 a year "
+  "of state money along. The loss grows as the missing kids reach every grade (Section 5):")
 tbl(["Estimate", "Basis", "Students missing each year", "SEEK lost each year"],
     [["Today's students", "43 to 57 percent of the 115 enrolled now", "49 to 65", "$251,174 to $333,190"],
      ["Steady state", "the same share of the whole feeder stream, middle half", "117 to 154", "<b>$599,742 to $789,404</b>"],
@@ -506,7 +506,7 @@ P("The grid is built on the district's 48-page response and the community's surv
   "one; the school council allocation lists 5.5; the three half-time lines stay uncut). Three: zero to "
   "three teachers at its own $54,479.40 price (its savings sheet says two, its own classroom-capacity "
   "count supports three). Four: the students missing from the rolls each year, anchored to the signed "
-  "school-choice survey at steady state (117 to 154, Section 5; the signed floor of 74, the 31 "
+  "school-choice survey at steady state (117 to 154, Section 5; the signed floor of 74 (the 70 signed children spread over their twelve class cohorts, 5.83 per class, carried 12.62 effective years), the 31 "
   "households alone, sits below every priced leg as hard evidence, not a scenario). Five: each missing "
   "student "
   "costs the enacted FY2027 SEEK base of $4,626 plus up to $1,000 of add-ons, minus the $400 of "
@@ -1741,7 +1741,7 @@ P("<b>Version 5.0, August 17.</b> The school-choice survey results are published
   "(duplicates removed, three households known to be staying recoded, one family already gone set aside), "
   "31 households with 70 children say they would leave. The grid's leaver lever moves from guessed shares "
   "of 128 (0 to 64 students) to survey-anchored students missing from the rolls at steady state (117 to "
-  "154: the statistical band's 25th, 50th, and 75th percentiles, triangular; the floor of 74 from signed "
+  "154: the statistical band's 25th, 50th, and 75th percentiles, triangular; the floor of 74 (5.83 signed leavers per class cohort carried 12.62 effective years) from signed "
   "households alone is kept as hard evidence below every priced leg, not as a scenario). "
   "Each missing student is priced at the SEEK base plus add-ons minus the "
   "$400 of supplies that stop being spent (the same figure the growth model charges each recruit; the "

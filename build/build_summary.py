@@ -69,7 +69,7 @@ B("<b>Fact three: closing it frees very little.</b> The district spent $1,285,31
 B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state money follows each child to "
   "whichever district wins the family. Homeschooling here grew from 170 to 259 in five years. The "
   "statewide virtual academy grew from 937 to 2,412 students in two, on its host district's counts. Each "
-  "leaving family takes about $5,100 a year of state money. In August 2026 the survey measured the "
+  "leaving child takes about $5,100 a year of state money. In August 2026 the survey measured the "
   "departures directly: 38 households answered for 85 children; cleaned, 31 households with 70 children "
   "say they would leave.")
 
