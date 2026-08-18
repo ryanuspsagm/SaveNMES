@@ -65,9 +65,9 @@ B("<b>Fact three: closing it frees very little.</b> Start from everything the di
   "those staff at its own $54,479.40 loaded cost. The district's $661,139 figure includes $493,407 of staffing "
   "savings that, by the same response's own terms, arrive only if and when staff leave by attrition; in year "
   "one, with staff retained and supplies moving with the kids, only "
-  "$127,039 of it remains. We priced 1,296 closure scenarios on the district's own figures, with family "
+  "$127,039 of it remains. We priced 972 closure scenarios on the district's own figures, with family "
   "departures measured by the signed school-choice survey instead of guessed. The middle case LOSES "
-  "$456,383 a year, and 97 percent of the scenarios lose money.")
+  "$571,883 a year, and every one of the scenarios loses money.")
 B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state money follows each child to "
   "whichever district wins the family. Registered homeschooling in this county grew from 170 to 259 in five "
   "years. The statewide virtual academy grew from 937 to 2,412 students in two years, on the enrollment counts "
@@ -102,7 +102,7 @@ A(Paragraph(
 A(Paragraph(
   "<b>The bottom line, from the two priced models:</b> grow the school and the middle case GAINS $142,080 "
   "a year, with not one losing scenario in 19,683 (every scenario prices students who actually arrive). Close "
-  "it and the middle case LOSES $456,383 a year.", body))
+  "it and the middle case LOSES $571,883 a year.", body))
 
 A(Paragraph("PART TWO", kick))
 A(Paragraph("The district needs growth, not closures: three levers the board already owns", h1))
