@@ -14,12 +14,12 @@ household,status,child,kindergarten_year,fifth_grade_year,destination,detail_fil
 6,leaving,1,2026,2032,Montgomery County,no
 7,staying_confirmed_by_organizer,1,2026,2032,Other,no
 7,staying_confirmed_by_organizer,2,2026,2032,Other,yes
-8,leaving,1,2027,2033,Public school in district,no
-8,leaving,2,2028,2034,Public school in district,no
+8,leaving,1,2027,2033,Another public school district,no
+8,leaving,2,2028,2034,Another public school district,no
 9,leaving,1,2026,2029,Montgomery County,no
-10,leaving,1,2026,2032,Public school in district,no
-10,leaving,2,2026,2032,Public school in district,yes
-10,leaving,3,2026,2032,Public school in district,yes
+10,leaving,1,2026,2032,Another public school district,no
+10,leaving,2,2026,2032,Another public school district,yes
+10,leaving,3,2026,2032,Another public school district,yes
 11,staying_confirmed_by_organizer,1,2024,2032,Public school in district,no
 11,staying_confirmed_by_organizer,2,2024,2032,Public school in district,yes
 11,staying_confirmed_by_organizer,3,2024,2032,Public school in district,yes
@@ -35,8 +35,8 @@ household,status,child,kindergarten_year,fifth_grade_year,destination,detail_fil
 17,leaving,1,2020,2025,Homeschool,no
 17,leaving,2,2023,2028,Homeschool,no
 17,leaving,3,2030,2035,Homeschool,no
-18,leaving,1,2026,2032,Public school in district,no
-18,leaving,2,2026,2032,Public school in district,yes
+18,leaving,1,2026,2032,Another public school district,no
+18,leaving,2,2026,2032,Another public school district,yes
 19,leaving,1,2027,2033,Private school,no
 19,leaving,2,2028,2034,Private school,no
 20,already_left,1,2026,2026,Public school in district,no

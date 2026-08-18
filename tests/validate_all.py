@@ -1006,6 +1006,21 @@ def main():
         "effective years 12.62 and the $400 supplies credit recompute")
     for s in ("$704,779", "$997,420", "$855,977", "167 students: the statistical median"):
         chk(s in html, f"exodus figure on the site: {s}")
+    for s in ("Where the leaving children would go", "Montgomery County Schools",
+              "Another public school district", "As a share of the 128 enrolled today",
+              "counted as another public school district"):
+        chk(s in html, f"survey destination breakdown on the site: {s}")
+    import csv as _csv
+    _rows = list(_csv.DictReader(open(REPO / "build" / "survey_school_choice_2026_08_anonymized.csv")))
+    _dest = {}
+    for _r in _rows:
+        if _r["status"] == "leaving":
+            _dest[_r["destination"]] = _dest.get(_r["destination"], 0) + 1
+    chk(_dest.get("Montgomery County") == 25 and _dest.get("Homeschool") == 16
+        and _dest.get("Another public school district") == 7 and _dest.get("Private school") == 8
+        and _dest.get("Other") == 12 and _dest.get("Clark County") == 1
+        and _dest.get("Not specified") == 1 and "Public school in district" not in _dest,
+        "destination coding in the anonymized CSV matches the published breakdown (in-district leavers recoded)")
     for s in ("$704,779", "$997,420", "12.62", "response-propensity"):
         chk(s in t, f"exodus figure in the report: {s}")
     import subprocess as _sp
