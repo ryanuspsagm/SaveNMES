@@ -41,11 +41,11 @@ A(HRFlowable(width="100%", thickness=1.1, color=NAVY, spaceAfter=10))
 A(Paragraph("WHAT HAPPENED", kick))
 A(Paragraph(
   "On July 15, 2026, a planning committee voted to label North Middletown Elementary “transitional.” "
-  "That is the first step toward closing the school. The vote is advisory. The elected Board of Education "
-  "decides. We checked the public records so the Board and the public can see the whole picture before any "
-  "vote. Every number below is sourced in the full report and runs as a live formula in the companion "
-  "workbook. Where the record forces an assumption, we make it, state it, and publish it openly so it can "
-  "be challenged: the calculators at SaveNMES.org let anyone replace our assumptions with their own.", body))
+  "That is step one toward closing the school. The vote is advisory; the elected Board decides. "
+  "We checked the public records so the Board can see the whole picture first. Every number below is "
+  "sourced in the full report and runs as a live formula in the workbook. Where the record forces an "
+  "assumption, we make it, state it, and publish it openly so it can "
+  "be challenged: the calculators at SaveNMES.org let anyone swap in their own.", body))
 
 A(Paragraph("PART ONE", kick))
 A(Paragraph("The case against closing NMES: four facts from the district's own documents", h1))
@@ -58,23 +58,20 @@ B("<b>Fact two: it is not expensive.</b> On the newest state spending file (2024
   "state average. The district's own cost table, dated May 21, 2026, agrees: it prices the school at "
   "$19,080 per student against a state average of $19,020 on the same table, a gap of three tenths of one "
   "percent.")
-B("<b>Fact three: closing it frees very little.</b> Start from everything the district spent on the school "
-  "last year: $1,285,310, from its own ledger. Almost all of it moves with the children or pays for itself. "
-  "Only the building's own costs stop: $79,211 a year if staff keep their jobs, up to $127,039 if the "
-  "building is sold. The superintendent's written response says all staff would be retained, and it prices "
-  "those staff at its own $54,479.40 loaded cost. The district's $661,139 figure includes $493,407 of staffing "
-  "savings that, by the same response's own terms, arrive only if and when staff leave by attrition; in year "
-  "one, with staff retained and supplies moving with the kids, only "
-  "$127,039 of it remains. We priced 972 closure scenarios on the district's own figures, with family "
-  "departures measured by the signed school-choice survey instead of guessed. The middle case LOSES "
-  "$534,433 a year, and every one of the scenarios loses money.")
+B("<b>Fact three: closing it frees very little.</b> The district spent $1,285,310 on the school last "
+  "year, by its own ledger. Almost all of it moves with the children or pays for itself. Only the "
+  "building's own costs stop: $79,211 a year if staff keep their jobs, up to $127,039 if the building is "
+  "sold. The superintendent's written response says all staff would be retained, priced at its own "
+  "$54,479.40 loaded cost. The district's $661,139 figure includes $493,407 of staffing savings that, by "
+  "that same response, arrive only by attrition. In year one, only $127,039 remains. We priced 972 "
+  "closure scenarios on the district's own figures, with family departures measured by the signed survey "
+  "instead of guessed. The middle case LOSES $534,433 a year. Every one of them loses money.")
 B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state money follows each child to "
-  "whichever district wins the family. Registered homeschooling in this county grew from 170 to 259 in five "
-  "years. The statewide virtual academy grew from 937 to 2,412 students in two years, on the enrollment counts "
-  "of Cloverport Independent, its host district. Every family that leaves "
-  "takes about $5,100 a year of state money with it, and in August 2026 the school-choice survey measured "
-  "the departures directly: 38 households answered for 85 children, and after removing duplicates, 31 "
-  "households with 70 children say they would leave.")
+  "whichever district wins the family. Homeschooling here grew from 170 to 259 in five years. The "
+  "statewide virtual academy grew from 937 to 2,412 students in two, on its host district's counts. Each "
+  "leaving family takes about $5,100 a year of state money. In August 2026 the survey measured the "
+  "departures directly: 38 households answered for 85 children; cleaned, 31 households with 70 children "
+  "say they would leave.")
 
 step = Table(
     [[Paragraph(c, thead) for c in ["Estimate", "Basis",
@@ -91,14 +88,12 @@ step.setStyle(TableStyle([
 A(step)
 A(Spacer(1, 6))
 A(Paragraph(
-  "The floor row involves no statistics: named families, signed responses. The statistical rows correct "
-  "the survey for response bias, and the state's own files corroborate them: this year's kindergarten "
-  "enrolled 12 children against a norm of 21 to 31. A child who leaves is missing for every remaining "
-  "grade (12.62 effective years on the district's own grade-to-grade survival), and losses build until "
-  "every grade from kindergarten through 12th is short. The children in the building carry "
-  "about $6.2 to $6.9 million of remaining state funding through grade 12. About one in eight students at the "
-  "middle and high school came through North Middletown, its share of the county's elementary seats carried "
-  "up the grades. A family lost at kindergarten is lost for thirteen years.", body))
+  "The survey is read as a share of the school, corrected for response bias, and the state's own files "
+  "corroborate it: this year's kindergarten enrolled 12 children against a norm of 21 to 31. A child who "
+  "leaves is missing for every remaining grade, 12.62 effective years on the district's own records, and "
+  "losses build until every grade is short. The children in the building carry about $6.2 to $6.9 million "
+  "of state funding through grade 12. About one in eight middle and high schoolers came through North "
+  "Middletown. A family lost at kindergarten is lost for thirteen years.", body))
 A(Paragraph(
   "<b>The bottom line, from the two priced models:</b> grow the school and the middle case GAINS $142,080 "
   "a year, with not one losing scenario in 19,683 (every scenario prices students who actually arrive). Close "
@@ -107,16 +102,18 @@ A(Paragraph(
 A(Paragraph("PART TWO", kick))
 A(Paragraph("The district needs growth, not closures: three levers the board already owns", h1))
 A(Paragraph(
-  "<b>The money problem is real, and it is district-wide.</b> The General Fund ran a $2.65 million deficit "
-  "in fiscal 2025. The district's own June 2026 ledger shows fiscal 2026 closing about $374,000 down, but "
-  "only after a lawful $1.32 million transfer of restricted building money into operations through a state "
-  "Capital Funds Request; on operations alone the year trends about $1.74 million in the red: better, still "
-  "red. The causes are plain. Pandemic aid ended. Funded attendance fell by about 247 once "
-  "the pandemic hold-harmless ended, and the state's 2026-27 forecast puts it at 2,174, down again. And the "
-  "transfer spends the very stream that should pay for buildings. Bourbon still holds a real cushion, 14.7 cents of reserve per dollar spent. The balance fell only 4.2 cents last year, but only because the $1.32 million sweep flowed in; on operations alone the district ran 9.1 cents in the red, and this plan ends the sweep. Measured that way the cushion is about a year and a half. For a same-year comparison, Fayette County: an independent audit presented to its board on August 3, 2026 puts its fiscal 2025 reserve at about 1 percent of spending after the district's own unaudited corrections, below the 2 percent Kentucky law requires every district to budget, and it is borrowing up to $95 million to reach fall tax collections. That audit's seventy-plus recommendations cover budget controls, forecasting and reporting; none is a school closure. The revenue posture is also unique in the region: the county's tax "
-  "base grew 107.5 percent since 2012, second fastest of eight area counties, while the school levy fell "
-  "5.4 percent, the only drop among nine districts. Every neighbor's base grew too. Their boards raised "
-  "rates anyway.", body))
+  "<b>The money problem is real, and it is district-wide.</b> The General Fund ran a $2.65 million "
+  "deficit in fiscal 2025. Fiscal 2026 closed about $374,000 down, but only after a lawful $1.32 million "
+  "transfer of restricted building money into operations. On operations alone the year trends about "
+  "$1.74 million in the red. The causes are plain: pandemic aid ended, funded attendance fell about 247, "
+  "and the 2026-27 forecast drops it again. Bourbon still holds a real cushion, 14.7 cents of reserve per "
+  "dollar spent. But strip out the sweep and the district ran 9.1 cents in the red; measured that way the "
+  "cushion is about a year and a half. Same-year comparison: an independent audit puts Fayette County's "
+  "fiscal 2025 reserve near 1 percent of spending, below the 2 percent state law requires, borrowing up "
+  "to $95 million to reach fall collections. Its seventy-plus fixes cover budgets and forecasting; none "
+  "is a school closure. And Bourbon's revenue posture is unique: the tax base grew 107.5 percent since "
+  "2012, second fastest of eight area counties, while the school levy fell 5.4 percent, the only drop "
+  "among nine districts. Every neighbor's base grew too. Their boards raised rates anyway.", body))
 B("<b>Lever one, enrollment.</b> Each recovered student brings about $4,236 of state money after supplies. "
   "The pool is measured: 236 students sit in Bourbon's own homeschool files, and 450 to 550 Bourbon County "
   "Schools kids are homeschooled, in private school, or enrolled in another district, worth $2.1 to $2.5 "
@@ -133,11 +130,11 @@ B("<b>Lever three, revenue.</b> The rate is simply lower while the tax base more
   "rate menu beyond it reaches $0.9 to $2.2 million. The portion above four percent revenue growth is "
   "recallable by petition, the same democratic check every neighboring increase carried.")
 A(Paragraph(
-  "<b>Together, the plan is transformative.</b> With costs at the low end and the full restore, it clears "
-  "the trending gap with about $500,000 a year to spare, within $7,000 of funding a 5 percent raise for every "
-  "certified teacher on its own, on the $32 million of bonding capacity the district's "
-  "own advisor presented in June 2026, before a single leaked student comes back; two recovered students close the difference. Recover half the pool and the surplus reaches "
-  "about $1.7 million a year and about $47 million of capacity; the full pool reaches about $3.4 million and about $69 million. "
+  "<b>Together, the plan is transformative.</b> Costs at the low end plus the full restore clear the "
+  "trending gap with about $500,000 a year to spare, within $7,000 of a 5 percent raise for every "
+  "certified teacher, on the $32 million of bonding capacity the district's own advisor presented, before "
+  "one leaked student comes back; two recovered students close the difference. Half the pool: about $1.7 "
+  "million a year and $47 million of capacity. The full pool: about $3.4 million and about $69 million. "
   "Every school stays open. To run it, the board should create three standing committees, one per lever, "
   "each reporting publicly: enrollment growth, fixed costs, and revenue. NMES volunteers stand ready to "
   "serve on all three.", body))
@@ -166,9 +163,9 @@ A(Paragraph(
   "misconduct by anyone. Estimates are labeled, and every figure can be tested in the model at SaveNMES.org.",
   ParagraphStyle("d", parent=body, fontSize=9.4, textColor=GRAY)))
 A(Paragraph(
-  "The full 53-page report, the financial model with every calculation as live formulas, all archived "
-  "district documents, and every prior version with its corrections are free at SaveNMES.org and in the "
-  "public repository.", ParagraphStyle("f", parent=body, fontSize=9.4, textColor=GRAY)))
+  "The full report, the financial model with every calculation as a live formula, all archived district "
+  "documents, and every prior version with its corrections are free at SaveNMES.org and in the public "
+  "repository.", ParagraphStyle("f", parent=body, fontSize=9.4, textColor=GRAY)))
 
 
 def footer(canvas, doc):
