@@ -55,19 +55,21 @@ the closure case. Teachers increment beyond the 25 seats.
                          the district sets its own busing policy)
   marginal cost/student: $400 / $700 / $1,000 (measured student-scaling
                          spend at location 090 is $331)
-  SEEK add-ons/student:  $0 / $500 / $1,000 above the $4,636 base (at-risk,
-                         exceptional-child, transportation, capital outlay);
+  SEEK add-ons/student:  $0 / $500 / $1,000 above the $4,626 base (the
+                         at-risk weight alone is about $500 per student at a
+                         ~72% FRL school; exceptional-child, language, and
+                         transportation weights sit above it);
                          enumerated in the headline grid, the SAME three legs
                          the closure model prices for each leaver, so the two
                          models treat state add-ons symmetrically
 
-net = gain x (4,636 + add_ons - marginal) - teachers x salary
+net = gain x (4,626 + add_ons - marginal) - teachers x salary
       - staff x classified - busing x gain
 teachers = floor(max(0, gain - 25) / ratio)
 
 Run:  python build/growth_grid.py
 Asserts the published statistics: headline grid (add-ons enumerated, matching
-the closure model) 19,683 scenarios, weighted median +$142,220, middle half
+the closure model) 19,683 scenarios, weighted median +$141,780, middle half
 +$94,720 to +$183,354, floor +$4,131 (a class of 18 at the top salary with
 every cost at maximum and no add-ons), ceiling +$387,804, ZERO negative: with
 the district's own 25 open seats and classroom-indexed hiring, growth pays in
@@ -78,7 +80,7 @@ import math
 import statistics
 from itertools import product
 
-SEEK = 4636  # enacted FY2027 base, 2026-28 budget (the pre-v5 4,626 was the House figure)
+SEEK = 4626  # enacted FY2027 base, 2026 Ky. Acts ch. 168 (HB 500), p. 20
 HEADROOM = 25  # open seats at the district's own Appendix B caps
 
 
@@ -122,13 +124,13 @@ full_nets = [v for v, _ in full]
 assert len(base) == 6_561 and len(full) == 19_683
 med = wpct(full, 0.50)
 p25, p75 = wpct(full, 0.25), wpct(full, 0.75)
-assert med == 142_220, med
-assert p25 == 94_720 and p75 == 183_354, (p25, p75)
-assert full_nets[0] == 4_131 and full_nets[-1] == 387_804
+assert med == 141_780, med
+assert p25 == 94_520 and p75 == 182_654, (p25, p75)
+assert full_nets[0] == 3_331 and full_nets[-1] == 386_904
 neg_full = sum(1 for x in full_nets if x < 0)
 assert neg_full == 0, neg_full
-assert wpct(base, 0.50) == 118_080, wpct(base, 0.50)
-assert round(statistics.median(full_nets)) == 141_084   # unweighted cross-check
+assert wpct(base, 0.50) == 117_780, wpct(base, 0.50)
+assert round(statistics.median(full_nets)) == 140_331   # unweighted cross-check
 
 # the site default (v4.5 review) is the weighted median scenario itself:
 # 30 added students (target 140), inside the 25 open seats plus a partial
@@ -136,7 +138,7 @@ assert round(statistics.median(full_nets)) == 141_084   # unweighted cross-check
 # on class size, teacher cost and add-ons; $0 busing, $400 supplies. The
 # calculator readout states only the percentile the chosen settings reflect.
 site_default = net(30, 21, 50, 49_150, 37_000, 0, 400, 500)
-assert site_default == 142_080, site_default   # 30 kids at the low legs, within $140 of the weighted median
+assert site_default == 141_780, site_default   # 30 kids at the low legs: exactly the weighted median
 tot_w = sum(w for _, w in full)
 rank = sum(w for v, w in full if v < site_default) / tot_w
 assert 0.48 < rank < 0.52, rank

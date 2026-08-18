@@ -11,8 +11,10 @@ survey and the statistics built on it, expressed at steady state: a child
 who leaves is missing from the rolls for every remaining grade, kindergarten
 through 12th, discounted by the district's own measured grade-to-grade
 survival (12.62 effective years, exodus_model.py). Each missing student
-is priced at the ENACTED FY2027 SEEK base of $4,636 (2026-28 budget; the
-$4,626 used before v5.0 was the House-version figure and is corrected),
+is priced at the ENACTED FY2027 SEEK base of $4,626 (2026 Ky. Acts ch. 168,
+HB 500, p. 20; an interim draft of v5.0 wrongly restated the base to $4,636
+on the false premise that $4,626 was only the House figure; that restatement
+is retracted),
 plus the add-ons lever, minus the $400 of supplies that stop being spent,
 the same low-leg figure the growth model charges each recruit. Supplies
 scale with students inside the leaver term; teacher savings are priced
@@ -59,12 +61,16 @@ grid's true extremes and do not depend on weights.
                              state's own SAAR file corroborates the band
                              from outside the survey: the 2025-26
                              kindergarten enrolled 12 children against a
-                             21-31 norm, and the school ended 2025-26 at 115
+                             ten-year average of 22, and the school ended 2025-26 at 115
                              after ending 2024-25 at 128.
-  SEEK add-ons per leaver:   $0 / $500 / $1,000 on top of the $4,636 base,
-                             TRIANGULAR (at-risk weight on a ~72% FRL school,
-                             exceptional-child weights, transportation,
-                             capital outlay).
+  SEEK add-ons per leaver:   $0 / $500 / $1,000 on top of the $4,626 base,
+                             TRIANGULAR. The at-risk weight alone carries the
+                             central leg: 15 percent of the base per free-lunch
+                             child, about $500 per student at a ~72% FRL
+                             school. Exceptional-child, language, and (lagged,
+                             prorated) transportation weights sit mostly
+                             uncounted above it, so even the $1,000 leg is
+                             not a ceiling.
   added busing:              $20,000 / $63,000 / $95,000, TRIANGULAR,
                              derived bottom-up from the produced routes; the
                              high leg is capped at half the bottom-up maximum
@@ -74,24 +80,25 @@ grid's true extremes and do not depend on weights.
                              research on property effects stays in Section 6.
 
 net = capture + fixed_positions_cut + teachers_cut x $54,479.40
-      - busing - leavers x (4,636 + add_ons - 400)
+      - busing - leavers x (4,626 + add_ons - 400)
 
 Run:  python build/closure_grid.py
 Asserts the published statistics: 972 scenarios; weighted median
--$428,627; EVERY scenario loses money (the best corner, every lever at
-its friendliest at once, still loses $11,030 a year: $96 per displaced
-student); middle half -$519,765 to -$340,021; range -$847,825 to
--$11,030; the site default (-$309,567: building sold, half the fixed
+-$427,087; EVERY scenario loses money (the best corner, every lever at
+its friendliest at once, still loses $9,860 a year: $86 per displaced
+student); middle half -$518,405 to -$338,727; range -$846,285 to
+-$9,860; the site default (-$308,207: building sold, half the fixed
 positions cut over time, three teachers cut with the emptied
 classrooms, median leavers) sits at the 82nd percentile, friendlier
 than three quarters of the grid, because it grants closure every saving
 that scales with students; the median exodus still sinks it.
-Unweighted median -$426,503 kept as a cross-check.
+Unweighted median -$425,053 kept as a cross-check.
 """
 import statistics
 from itertools import product
 
-SEEK = 4636                                 # enacted FY2027 base, 2026-28 budget
+SEEK = 4626                                 # enacted FY2027 base, 2026 Ky. Acts
+                                            # ch. 168 (HB 500), p. 20
 SUPPLIES = 400                              # scales with each missing student
 TEACH = 108_958.80 / 2                      # $54,479.40, the district's own
                                             # fully loaded rookie (Appendix A.1)
@@ -136,13 +143,13 @@ default_rank = (sum(w for v, w in pairs if v < default - 0.005)
                                              # JS convention
 
 assert n == 972, n
-assert round(med) == -428_627, med
-assert round(p25) == -519_765 and round(p75) == -340_021, (p25, p75)
+assert round(med) == -427_087, med
+assert round(p25) == -518_405 and round(p75) == -338_727, (p25, p75)
 assert neg == 1.0, neg            # every scenario negative
-assert round(nets[0]) == -847_825 and round(nets[-1]) == -11_030, (nets[0], nets[-1])
-assert round(default) == -309_567, default
+assert round(nets[0]) == -846_285 and round(nets[-1]) == -9_860, (nets[0], nets[-1])
+assert round(default) == -308_207, default
 assert 0.80 < default_rank < 0.83, default_rank
-assert round(statistics.median(nets)) == -426_503
+assert round(statistics.median(nets)) == -425_053
 
 print(f"{n:,} scenarios | weighted median ${med:,.0f} | every scenario loses money ({neg * 100:.0f}%)")
 print(f"range ${nets[0]:,.0f} to ${nets[-1]:,.0f} | middle half "

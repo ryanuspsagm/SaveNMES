@@ -64,7 +64,7 @@ a2.set_title("Average Daily Attendance (SEEK basis)")
 for x, v in zip(yrs, ada):
     a2.text(x, v + 26, f"{int(v + 0.5):,}", ha="center", fontsize=9, color=NAVY, fontweight="bold")
 a2.set_ylim(2130, 2610); clean(a2)
-a2.text(0.02, 0.05, "funded attendance down about 248 since the\npandemic hold-harmless ended",
+a2.text(0.02, 0.05, "funded attendance down about 247 since the\npandemic hold-harmless ended",
         transform=a2.transAxes, fontsize=8, color=GRAY)
 fig.tight_layout(w_pad=2.6)
 save(fig, "chart_cliff.png")
@@ -435,16 +435,16 @@ print("capacity scenarios done")
 
 # ---- V3: two-tailed closure spectrum + tornado (v5.0 grid, six levers) ----
 fig, (a1, a2) = plt.subplots(2, 1, figsize=(6.9, 5.8), height_ratios=[1, 1.5])
-a1.axvspan(-848, 0, color="#F3E4E0", zorder=0)
+a1.axvspan(-846, 0, color="#F3E4E0", zorder=0)
 
-a1.axvspan(-520, -340, color="#C9D6EA", zorder=1, alpha=0.9)
-a1.plot([-848, -11], [0.5, 0.5], color="#666666", lw=1.2, zorder=2)
-for v, lab in [(-848, "worst case\n\$848K lost"), (-11, "best case\n\$11K still lost")]:
+a1.axvspan(-518, -339, color="#C9D6EA", zorder=1, alpha=0.9)
+a1.plot([-846, -10], [0.5, 0.5], color="#666666", lw=1.2, zorder=2)
+for v, lab in [(-846, "worst case\n\$846K lost"), (-10, "best case\n\$10K still lost")]:
     a1.plot([v], [0.5], marker="|", markersize=16, color="#444444", zorder=3)
     a1.annotate(lab, xy=(v, 0.5), xytext=(v, 0.16), ha="center", fontsize=7.8)
-a1.plot([-429], [0.5], marker="D", markersize=9, color=NAVY, zorder=4)
-a1.annotate("median: \$429K LOST", xy=(-429, 0.5), xytext=(-429, 0.68), ha="center", fontsize=8.2, fontweight="bold", color=NAVY)
-a1.annotate("middle half:\n\$520K to \$340K lost", xy=(-429, 0.5), xytext=(-431, 0.06), ha="center", fontsize=7.4, color="#39506e")
+a1.plot([-427], [0.5], marker="D", markersize=9, color=NAVY, zorder=4)
+a1.annotate("median: \$427K LOST", xy=(-427, 0.5), xytext=(-427, 0.68), ha="center", fontsize=8.2, fontweight="bold", color=NAVY)
+a1.annotate("middle half:\n\$518K to \$339K lost", xy=(-427, 0.5), xytext=(-429, 0.06), ha="center", fontsize=7.4, color="#39506e")
 a1.annotate("the plan needs \$800K to \$1M\nfrom the closure", xy=(700, 0.5), xytext=(620, 0.78), ha="center",
             fontsize=7.8, color="#8a4a2b", fontweight="bold",
             arrowprops=dict(arrowstyle="->", color="#8a4a2b", lw=0.9))
@@ -457,19 +457,19 @@ a1.set_xticks([-1200, -800, -400, 0, 400, 800])
 a1.set_xticklabels(["-\$1,200K", "-\$800K", "-\$400K", "\$0", "+\$400K", "+\$800K"], fontsize=7.8)
 a1.set_title("Net yearly effect of closing NMES: all 972 combinations, on the district's own figures\nand the signed school-choice survey")
 for sp in ("top", "right", "left"): a1.spines[sp].set_visible(False)
-levers3 = [("Fixed positions\n(all kept vs all cut over time)", -517.9, -303.8),
-           ("Students missing at steady state\n(117 up to 154, survey-anchored)", -496.1, -320.8),
-           ("Teachers cut (0 up to 3,\nat their \$54,479.40 each)", -519.8, -356.3),
-           ("Add-ons per leaver (\$1,000 down to \$0)", -478.8, -342.8),
-           ("Added busing (\$95K down to \$20K)", -442.8, -367.8),
-           ("Building costs stopped (50 to 100%)", -437.6, -364.0)][::-1]
+levers3 = [("Fixed positions\n(all kept vs all cut over time)", -516.5, -302.4),
+           ("Students missing at steady state\n(117 up to 154, survey-anchored)", -494.5, -319.7),
+           ("Teachers cut (0 up to 3,\nat their \$54,479.40 each)", -518.4, -355.0),
+           ("Add-ons per leaver (\$1,000 down to \$0)", -477.4, -341.4),
+           ("Added busing (\$95K down to \$20K)", -441.4, -366.4),
+           ("Building costs stopped (50 to 100%)", -436.2, -362.7)][::-1]
 yy = np.arange(len(levers3))
 for i, (lab, lo, hi) in enumerate(levers3):
     a2.barh(i, hi - lo, left=lo, height=0.55, color="#9DC3E6", edgecolor=BLUE, linewidth=0.8)
     a2.text(lo - 8, i, f"{lo:.0f}", ha="right", va="center", fontsize=7)
     a2.text(hi + 8, i, f"{hi:.0f}", ha="left", va="center", fontsize=7)
-a2.axvline(-410.8, color=NAVY, lw=1.4, linestyle=(0, (4, 2)))
-a2.text(-405, len(levers3) - 0.45, "central case LOSES \$411K", fontsize=7.6, color=NAVY, fontweight="bold")
+a2.axvline(-409.4, color=NAVY, lw=1.4, linestyle=(0, (4, 2)))
+a2.text(-404, len(levers3) - 0.45, "central case LOSES \$409K", fontsize=7.6, color=NAVY, fontweight="bold")
 a2.axvline(0, color="#888888", lw=0.9, linestyle=(0, (3, 2)))
 a2.set_yticks(yy); a2.set_yticklabels([l[0] for l in levers3], fontsize=7.2)
 a2.set_xlabel("Net yearly effect (\$K), central case, moving one lever at a time")
@@ -523,12 +523,12 @@ for b in edges:
     if b < -13 or b >= 13: cols.append("#DDD3CB")
     else: cols.append(MBLUE if b >= 0 else "#C9CDD4")
 axA.bar([e+0.5 for e in edges], bins, width=0.92, color=cols)
-axA.axvspan(6.25, 7.813, color="#F3E4E0", zorder=0)
+axA.axvspan(6.957, 8.696, color="#F3E4E0", zorder=0)
 axA.axvline(1.102, color=NAVY, lw=1.6, linestyle=(0,(4,2)))
 axA.text(1.35, 27.4, "median: \\$1,102 per\ndisplaced student", fontsize=7.4, color=NAVY, fontweight="bold")
 axA.axvline(0, color="#555555", lw=1.0)
 axA.text(-15.6, 27.4, "40% of districts spent\nMORE than trend\nafter closing", fontsize=7.2, color="#7a3b2e", fontweight="bold")
-axA.text(7.03, 21.5, "the plan:\n\\$6,250\nto \\$7,813", ha="center", fontsize=7.2, color="#8a4a2b", fontweight="bold")
+axA.text(7.83, 21.5, "the plan:\n\\$6,957\nto \\$8,696", ha="center", fontsize=7.2, color="#8a4a2b", fontweight="bold")
 axA.text(14.5, 21.5, "beyond \\$13K:\nmore than a school\neven costs per\nstudent; budget\nnoise, both tails", ha="center", fontsize=6.4, color="#77706a")
 axA.set_xlim(-16.6, 17.6); axA.set_ylim(0, 30)
 axA.set_xticks(range(-16, 17, 4))
@@ -539,12 +539,11 @@ axA.set_title("All 163 measurable Kentucky rural closures, 1995-2020: the whole 
 clean(axA)
 # Panel B: rural ELEMENTARY closures only, the district's strongest cases
 kb = [
-    ("Our model, median to best case", 713, 4414, NAVY, True),
     ("Metcalfe 2013 (built 2 new centers;\nscores fell 10.5 vs state)", 0, 2050, MBLUE, False),
     ("Webster 2012 (Slaughters El; NOTHING\nbuilt: the one clean comparable)", 0, 3525, "#5B6B7E", False),
     ("Perry 2017 (3 towns; built NEW\nWest Perry Elementary)", 0, 3643, MBLUE, False),
     ("Adair 2006 (3 schools; built NEW Adair Co\nElementary; spending spike reverting)", 0, 6935, MBLUE, False),
-    ("THE PLAN: no new school,\n\\$800K to \\$1M required", 6250, 7813, "#C0625E", False),
+    ("THE PLAN: no new school,\n\\$800K to \\$1M required", 6957, 8696, "#C0625E", False),
 ]
 yy = np.arange(len(kb))
 for i, (lab, lo, hi, col, isrange) in enumerate(kb):
@@ -553,9 +552,11 @@ for i, (lab, lo, hi, col, isrange) in enumerate(kb):
 axB.set_yticks(yy); axB.set_yticklabels([k[0] for k in kb], fontsize=7.0)
 axB.invert_yaxis()
 axB.set_xlim(0, 10600)
+axB.text(150, len(kb) - 0.92, "Our own model runs the other way: the median\nscenario LOSES \\$3,714 per displaced student a\nyear, and even its best case loses \\$86.",
+         fontsize=7.0, color=NAVY, fontweight="bold", va="top")
 axB.xaxis.set_major_formatter(lambda v, p: f"\\${v:,.0f}")
 axB.set_xlabel("Per displaced student, per year. Rural ELEMENTARY closures only; city and county-seat grade\nreshuffles (Somerset 1999, Montgomery 2018, which opened a new elementary the same year)\nappear in the record above but are not comparisons for closing a rural town's school.", fontsize=7.2)
-axB.set_title("The rural elementary cases: every one at or near the plan's number built a new school", fontsize=9.6)
+axB.set_title("The rural elementary cases: the strongest precedents fall short of the plan's number", fontsize=9.6)
 clean(axB, ygrid=False, xgrid=True)
 fig.tight_layout(h_pad=2.2)
 save(fig, "chart_ky_record.png")

@@ -43,8 +43,8 @@ kindergarten class years are used only to flag who is enrolled now):
     grade-to-grade survival (SAAR school files: each 2025-26 secondary
     grade vs its own combined 5th-grade class), which replaces the flat
     13 years with 12.62 effective years. kids out per year = share x
-    21.5 x 12.62; dollars = kids x $5,136 (the enacted FY2027 SEEK base
-    of $4,636, 2026-28 budget, plus the $500 central add-on, the same
+    21.5 x 12.62; dollars = kids x $5,126 (the enacted FY2027 SEEK base
+    of $4,626 (2026 Ky. Acts ch. 168, HB 500, p. 20) plus the $500 central add-on, the same
     basis as the closure grid's leaver term).
  5. RAMP. Losses cover 6 grade cohorts in year one and deepen by one
     cohort a year until all 13 are hit in year 8; over a 13-year window
@@ -65,7 +65,7 @@ munis_cost_by_org_fy2026.pdf.
 import csv, json, math, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SEEK = 4636 + 500          # enacted FY2027 base + central add-on = 5,136
+SEEK = 4626 + 500          # enacted FY2027 base + central add-on = 5,126
 POP = 115                    # SAAR 2025-26 end-of-year count
 COHORT = 21.5                # entering-class midpoint of the 19-24 SAAR range;
                              # ten-year average kindergarten is 22.2

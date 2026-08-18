@@ -65,7 +65,7 @@ B("<b>Fact three: closing it frees very little.</b> The district spent $1,285,31
   "$54,479.40 loaded cost. The district's $661,139 figure includes $493,407 of staffing savings that, by "
   "that same response, arrive only by attrition. In year one, only $127,039 remains. We priced 972 "
   "closure scenarios on the district's own figures, with family departures measured by the signed survey "
-  "instead of guessed. The middle case LOSES $428,627 a year. Every one of them loses money.")
+  "instead of guessed. The middle case LOSES $427,087 a year. Every one of them loses money.")
 B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state money follows each child to "
   "whichever district wins the family. Homeschooling here grew from 170 to 259 in five years. The "
   "statewide virtual academy grew from 937 to 2,412 students in two, on its host district's counts. Each "
@@ -76,9 +76,9 @@ B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state mon
 step = Table(
     [[Paragraph(c, thead) for c in ["Estimate", "Basis",
       "Students missing each year", "SEEK lost each year"]],
-     [Paragraph(c, tcell) for c in ["Today's students", "43 to 57 percent of the 115 enrolled now", "49 to 65", "$251,664 to $333,840"]],
-     [Paragraph(c, tcell) for c in ["Steady state", "the same share of the whole feeder stream, middle half", "117 to 154", "<b>$600,912 to $790,944</b>"]],
-     [Paragraph(c, tcell) for c in ["Steady-state median", "the middle of the band", "136", "$698,496"]]],
+     [Paragraph(c, tcell) for c in ["Today's students", "43 to 57 percent of the 115 enrolled now", "49 to 65", "$251,174 to $333,190"]],
+     [Paragraph(c, tcell) for c in ["Steady state", "the same share of the whole feeder stream, middle half", "117 to 154", "<b>$599,742 to $789,404</b>"]],
+     [Paragraph(c, tcell) for c in ["Steady-state median", "the middle of the band", "136", "$697,136"]]],
     colWidths=[0.85*inch, 1.9*inch, 1.55*inch, 2.0*inch], hAlign="LEFT")
 step.setStyle(TableStyle([
     ("BACKGROUND", (0, 0), (-1, 0), HEADBG), ("LINEBELOW", (0, 0), (-1, 0), 0.9, NAVY),
@@ -95,9 +95,9 @@ A(Paragraph(
   "of state funding through grade 12. About one in eight middle and high schoolers came through North "
   "Middletown. A family lost at kindergarten is lost for thirteen years.", body))
 A(Paragraph(
-  "<b>The bottom line, from the two priced models:</b> grow the school and the middle case GAINS $142,080 "
+  "<b>The bottom line, from the two priced models:</b> grow the school and the middle case GAINS $141,780 "
   "a year, with not one losing scenario in 19,683 (every scenario prices students who actually arrive). Close "
-  "it and the middle case LOSES $428,627 a year.", body))
+  "it and the middle case LOSES $427,087 a year.", body))
 
 A(Paragraph("PART TWO", kick))
 A(Paragraph("The district needs growth, not closures: three levers the board already owns", h1))
@@ -114,13 +114,13 @@ A(Paragraph(
   "is a school closure. And Bourbon's revenue posture is unique: the tax base grew 107.5 percent since "
   "2012, second fastest of eight area counties, while the school levy fell 5.4 percent, the only drop "
   "among nine districts. Every neighbor's base grew too. Their boards raised rates anyway.", body))
-B("<b>Lever one, enrollment.</b> Each recovered student brings about $4,236 of state money after supplies. "
+B("<b>Lever one, enrollment.</b> Each recovered student brings about $4,226 of state money after supplies. "
   "The pool is measured: 236 students sit in Bourbon's own homeschool files, and 450 to 550 Bourbon County "
   "Schools kids are homeschooled, in private school, or enrolled in another district, worth $2.1 to $2.5 "
-  "million a year at the full $4,636 SEEK base. "
+  "million a year at the full $4,626 SEEK base. "
   "Eminence Independent proved the model an hour away: it grew 35 "
   "percent in the decade Bourbon Schools shrank 10. Growth pays in every one of 19,683 priced scenarios, with a "
-  "middle case of +$142,080 a year.")
+  "middle case of +$141,780 a year.")
 B("<b>Lever two, fixed costs.</b> Trim every non-teaching position by attrition: $340,000 to $425,000 a "
   "year. Weigh an administrative restructuring: $224,000 to $450,000. Smarter bus routes: $146,000 to "
   "$291,000 on a $2.9 million line no routing study has ever tested. Energy contracts: $50,000 to "

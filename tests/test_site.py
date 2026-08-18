@@ -71,19 +71,19 @@ def main():
         else: bad(f"only {nmore} section expanders found")
         strip = pg.query_selector(".range-bar")
         labs = pg.text_content(".range-labs") if pg.query_selector(".range-labs") else ""
-        if strip and "loses $847,825" in labs and "still loses $11,030" in labs and "loses $428,627" in labs:
+        if strip and "loses $846,285" in labs and "still loses $9,860" in labs and "loses $427,087" in labs:
             ok("nontechnical range strip shows worst / middle / best in plain words")
         else: bad(f"range strip missing or labels wrong: {labs[:80]}")
         nbars = pg.evaluate("document.querySelectorAll('.range-bar').length")
         niqr = pg.evaluate("document.querySelectorAll('.range-bar .iqr').length")
         glabs = pg.evaluate("document.querySelectorAll('.range-labs')[1] ? document.querySelectorAll('.range-labs')[1].textContent : ''")
-        if nbars == 2 and niqr == 2 and "gains $142,220" in glabs and "gains $4,131" in glabs:
+        if nbars == 2 and niqr == 2 and "gains $141,780" in glabs and "gains $3,331" in glabs:
             ok("consolidated card: closure and growth bars side by side, IQR band on each")
         else: bad(f"consolidated range card wrong: bars={nbars} iqr={niqr} growth labs: {glabs[:80]}")
         you_c = pg.evaluate("document.getElementById('youClose').style.left")
         you_g = pg.evaluate("document.getElementById('youGrow').style.left")
-        if you_c == "82%" and you_g == "49%":
-            ok("percentile-scale bars: gold markers at the calculator defaults (82nd / 49th)")
+        if you_c == "82%" and you_g == "50%":
+            ok("percentile-scale bars: gold markers at the calculator defaults (82nd / 50th)")
         else: bad(f"percentile markers at defaults: close={you_c} grow={you_g}")
 
         # --- Closure calculator: opens at the median scenario ---
@@ -92,12 +92,12 @@ def main():
         else: bad("calculator details not open by default")
         net = pg.text_content("#rNet").strip()
         rank = pg.text_content("#rRank").strip()
-        if net == "-$309,567" and "82nd percentile" in rank and "972 weighted scenarios" in rank:
-            ok("closure default -$309,567 (savings granted, median leavers); readout: 82nd of the all-loss grid")
+        if net == "-$308,207" and "82nd percentile" in rank and "972 weighted scenarios" in rank:
+            ok("closure default -$308,207 (savings granted, median leavers); readout: 82nd of the all-loss grid")
         else: bad(f"closure defaults: {net} / {rank}")
         bl0 = (pg.text_content("#blClose").strip(), pg.text_content("#blGrow").strip())
-        if bl0 == ("−$309,567", "+$142,080"):
-            ok("bottom-line tiles open at the default scenarios (-$309,567 close, +$142,080 grow)")
+        if bl0 == ("−$308,207", "+$141,780"):
+            ok("bottom-line tiles open at the default scenarios (-$308,207 close, +$141,780 grow)")
         else: bad(f"bottom-line defaults: {bl0}")
         gone_verdict = pg.evaluate("['rVerdict','rBar'].filter(i=>document.getElementById(i)).length")
         note_ok = pg.evaluate("document.body.textContent.includes(\"The default grants closure every saving that scales with students\")")
@@ -116,11 +116,11 @@ def main():
         pg.fill("#sLeav", "117"); pg.dispatch_event("#sLeav", "input")
         pg.fill("#sAdd", "0"); pg.dispatch_event("#sAdd", "input")
         pg.fill("#sBus", "20000"); pg.dispatch_event("#sBus", "input")
-        if pg.text_content("#rNet").strip() == "-$11,030":
-            ok("closure ceiling -$11,030 = grid max: even the best case loses money")
+        if pg.text_content("#rNet").strip() == "-$9,860":
+            ok("closure ceiling -$9,860 = grid max: even the best case loses money")
         else: bad(f"closure best case: {pg.text_content('#rNet')}")
-        if pg.text_content("#blClose").strip() == "\u2212$11,030":
-            ok("bottom-line close tile follows the calculator (-$11,030 at the ceiling)")
+        if pg.text_content("#blClose").strip() == "\u2212$9,860":
+            ok("bottom-line close tile follows the calculator (-$9,860 at the ceiling)")
         else: bad(f"bottom-line close tile at ceiling: {pg.text_content('#blClose')}")
         if "0.1 cents" in pg.text_content("#rTax"):
             ok("tax-compensation line present even at the ceiling: 0.1 cents (every scenario loses)")
@@ -133,8 +133,8 @@ def main():
         pg.fill("#sLeav", "154"); pg.dispatch_event("#sLeav", "input")
         pg.fill("#sAdd", "1000"); pg.dispatch_event("#sAdd", "input")
         pg.fill("#sBus", "95000"); pg.dispatch_event("#sBus", "input")
-        if pg.text_content("#rNet").strip() == "-$847,825" and "0th percentile" in pg.text_content("#rRank"):
-            ok("closure floor -$847,825 = grid min (calculator spans the whole grid)")
+        if pg.text_content("#rNet").strip() == "-$846,285" and "0th percentile" in pg.text_content("#rRank"):
+            ok("closure floor -$846,285 = grid min (calculator spans the whole grid)")
         else: bad(f"closure worst case: {pg.text_content('#rNet')} / {pg.text_content('#rRank')[:60]}")
         if pg.evaluate("document.getElementById('youClose').style.left") == "0%":
             ok("closure percentile marker follows the calculator (0% at the floor)")
@@ -147,8 +147,8 @@ def main():
         gro = pg.text_content("#rGro").strip()
         gverd = pg.text_content("#rGroVerdict").strip()
         gteach = pg.evaluate("document.getElementById('rGro').dataset.teachers")
-        if gro == "$142,080" and "49th percentile" in gverd and "19,683 weighted scenarios" in gverd and gteach == "0":
-            ok("growth default $142,080, within $140 of the weighted median; percentile-only readout")
+        if gro == "$141,780" and "50th percentile" in gverd and "19,683 weighted scenarios" in gverd and gteach == "0":
+            ok("growth default $141,780, the weighted median itself; percentile-only readout")
         else: bad(f"growth defaults: {gro} / {gverd} / teachers={gteach}")
         pg.fill("#sGro", "200"); pg.dispatch_event("#sGro", "input")
         pg.fill("#sRat", "0"); pg.dispatch_event("#sRat", "input")
@@ -157,8 +157,8 @@ def main():
         pg.fill("#sGb", "1000"); pg.dispatch_event("#sGb", "input")
         pg.fill("#sCps", "1000"); pg.dispatch_event("#sCps", "input")
         pg.fill("#sGad", "0"); pg.dispatch_event("#sGad", "input")
-        if pg.text_content("#rGro").strip() == "$30,491":
-            ok("worst reachable corner still pays: $30,491 (90 added, class of 18 at top salary, every cost maxed; grid-wide floor +$4,131)")
+        if pg.text_content("#rGro").strip() == "$29,591":
+            ok("worst reachable corner still pays: $29,591 (90 added, class of 18 at top salary, every cost maxed; grid-wide floor +$3,331)")
         else: bad(f"growth floor: {pg.text_content('#rGro')}")
         if pg.evaluate("document.getElementById('youGrow').style.left") != "50%":
             ok("growth percentile marker follows the calculator (moved off 50% at the corner)")
@@ -189,13 +189,13 @@ def main():
         rplan = pg.text_content("#rPlan").strip()
         pverd = pg.text_content("#rPlanVerdict").strip()
         opw0 = pg.text_content("#oPw").strip()
-        if rplan == "$1,665,325" and "$32 million of bonding capacity" in pverd and opw0 == "275 students ($1,164,900 a year)":
-            ok("plan calculator default: half the pool (275) + low costs + full restore run $1,665,325 ahead of the trending gap")
+        if rplan == "$1,662,575" and "$32 million of bonding capacity" in pverd and opw0 == "275 students ($1,162,150 a year)":
+            ok("plan calculator default: half the pool (275) + low costs + full restore run $1,662,575 ahead of the trending gap")
         else: bad(f"plan defaults: {rplan} / {opw0} / {pverd[:100]}")
         pg.fill("#sPt", "5"); pg.dispatch_event("#sPt", "input")
         pverd5 = pg.text_content("#rPlanVerdict")
-        if "Pays the 5 percent raise" in pverd5 and "$15.1 million of new bonds" in pverd5 and "47.1 million of building capacity" in pverd5:
-            ok("plan default affords the 5% raise: $15.1M bonds, $47.1M advisor-anchored capacity")
+        if "Pays the 5 percent raise" in pverd5 and "$15.0 million of new bonds" in pverd5 and "47.0 million of building capacity" in pverd5:
+            ok("plan default affords the 5% raise: $15.0M bonds, $47.0M advisor-anchored capacity")
         else: bad(f"plan default raise: {pverd5[:110]}")
         pg.fill("#sPw", "0"); pg.dispatch_event("#sPw", "input")
         pverd5f = pg.text_content("#rPlanVerdict")
@@ -211,9 +211,9 @@ def main():
         pg.fill("#sPc", "1300000"); pg.dispatch_event("#sPc", "input")
         pverd2 = pg.text_content("#rPlanVerdict")
         opw = pg.text_content("#oPw").strip()
-        if (pg.text_content("#rPlan").strip() == "$3,370,225" and "$37.2 million of new bonds" in pverd2
-                and "69.2 million of building capacity" in pverd2 and opw == "550 students ($2,329,800 a year)"):
-            ok("plan slider tops: the full 550-student pool prices at $2,329,800; surplus $3,370,225 buys the 5% raise, $37.2M bonds, $69.2M capacity")
+        if (pg.text_content("#rPlan").strip() == "$3,364,725" and "$37.2 million of new bonds" in pverd2
+                and "69.2 million of building capacity" in pverd2 and opw == "550 students ($2,324,300 a year)"):
+            ok("plan slider tops: the full 550-student pool prices at $2,324,300; surplus $3,364,725 buys the 5% raise, $37.2M bonds, $69.2M capacity")
         else: bad(f"plan top ends: {pg.text_content('#rPlan')} / {opw} / {pverd2[:100]}")
         pg.fill("#sPw", "0"); pg.dispatch_event("#sPw", "input")
         pg.fill("#sPc", "760000"); pg.dispatch_event("#sPc", "input")
@@ -234,7 +234,7 @@ def main():
         if not sv["iframe"] and "form.jotform.com" not in pg.content():
             ok("the Jotform embed is fully retired")
         else: bad("Jotform still present")
-        if "31" in sv["card"] and "$600,912" in sv["card"] and "never published" in sv["card"]:
+        if "31" in sv["card"] and "$599,742" in sv["card"] and "never published" in sv["card"]:
             ok("survey results card: 31 leaving households, the floor figure, and the privacy note")
         else: bad(f"survey results card: {sv['card'][:100]}")
         if sv["href"] == "#survey":

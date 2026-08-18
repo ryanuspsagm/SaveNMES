@@ -47,24 +47,24 @@ site_capv = re.search(r"var CAPV=\[(\d+),(\d+),(\d+)\]", html)
 site_fixv = re.search(r"FIXV=\[(\d+),(\d+),(\d+)\]", html)
 site_teach = re.search(r"TEACH=108958\.80/2", html)
 site_default = (127039 + 107052.2 + 3*54479.4 - 63000 - 136*(A["B6"].value+500-400) - 0)
-if round(central) == -410806 and round(site_default) == -309567 and "-$309,567" in html:
-    match("model central case -$410,806 (v5 grid); site calculator opens at the savings-granted case, teachers included, half the fixed overhead, median leavers (-$309,567, 82nd weighted percentile)")
+if round(central) == -409446 and round(site_default) == -308207 and "-$308,207" in html:
+    match("model central case -$409,446 (v5 grid); site calculator opens at the savings-granted case, teachers included, half the fixed overhead, median leavers (-$308,207, 82nd weighted percentile)")
 else:
-    diff(f"closure defaults: model central {central:.0f}, site savings-granted {site_default:.0f} shown: {'-$309,567' in html}")
+    diff(f"closure defaults: model central {central:.0f}, site savings-granted {site_default:.0f} shown: {'-$308,207' in html}")
 # growth calculator default (v4.5 review): the weighted median scenario itself.
 # 30 added students (target 140): inside the 25-seat headroom plus a partial
 # class at 1 per 21, so zero teachers and zero support trigger; $0 bus, $400
 # cps, $500 SEEK add-ons (the SAME default leg the closure leaver lever uses)
-growth_default = 30*(4636+500-400) - ((30-25)//21)*49150 - (30//50)*37000 - 0*30
-if (growth_default == 142080 and "$142,080" in html and "RATV=[18,21,24]" in html
+growth_default = 30*(4626+500-400) - ((30-25)//21)*49150 - (30//50)*37000 - 0*30
+if (growth_default == 141780 and "$141,780" in html and "RATV=[18,21,24]" in html
         and "Math.max(0,gain-25)/ratio" in html and 'id="sGad"' in html
         and 'id="sGro" min="110" max="200" value="140"' in html
         and 'id="sGad" min="0" max="1000" value="500"' in html
         and 'id="sAdd" min="0" max="1000" value="500"' in html):
-    match("growth calculator opens at the site default ($142,080, within $140 of the $142,220 weighted median; target 140, no new hires) with the class-size lever indexed on classroom teachers and SEEK add-ons symmetric to the closure model")
+    match("growth calculator opens at the weighted median ($141,780, target 140, no new hires) with the class-size lever indexed on classroom teachers and SEEK add-ons symmetric to the closure model")
 else:
     has500 = 'value="500"' in html
-    diff(f"growth default mismatch: {growth_default}, shown: {'$142,080' in html}, add-ons defaults equal: {has500}")
+    diff(f"growth default mismatch: {growth_default}, shown: {'$141,780' in html}, add-ons defaults equal: {has500}")
 if site_capv and [int(site_capv.group(i)) for i in (1, 2, 3)] == [CM["B39"].value, CM["C39"].value, CM["D39"].value] == [53519, 80279, 127039]:
     match("capture lever (53,519 / 80,279 / 127,039 = district worksheet + insurance) identical site JS and model")
 else:
@@ -79,8 +79,8 @@ if site_teach and "$54,479.40" in pdf_flat and "108,958.80" in cm_teach_note:
     match("teacher basis $54,479.40 = district Appendix A.1 price, in site JS, PDF, and the model lever note")
 else:
     diff("teacher basis $54,479.40 missing on site, in PDF, or in the model note")
-if re.search(r"l\*\(SEEK\+ad-SUPP\)", html) and "SEEK=4636" in html:
-    match("calculator prices each missing student at $4,636 + add-ons net of the $400 supplies credit (matches build/closure_grid.py)")
+if re.search(r"l\*\(SEEK\+ad-SUPP\)", html) and "SEEK=4626" in html:
+    match("calculator prices each missing student at $4,626 + add-ons net of the $400 supplies credit (matches build/closure_grid.py)")
 else:
     diff("site leaver pricing formula not found")
 
@@ -91,14 +91,14 @@ if "predicts what comparable communities already did" in html \
     match("revealed-preference calibration (corrected band vs realized case-study losses) on site and in PDF")
 else:
     diff("revealed-preference calibration sentence missing on site or in PDF")
-if "still losing $11,030" in pdf_flat and "losing $847,825" in pdf_flat and "losing $847,825" in html \
-        and "still losing $11,030" in html:
-    match("two-tailed range (-$847,825 to -$11,030, v5 survey-anchored grid) consistent on site and in PDF")
+if "still losing $9,860" in pdf_flat and "losing $846,285" in pdf_flat and "losing $846,285" in html \
+        and "still losing $9,860" in html:
+    match("two-tailed range (-$846,285 to -$9,860, v5 survey-anchored grid) consistent on site and in PDF")
 else:
     diff("v4.2 two-tailed range strings missing on site or PDF")
-if "loses $428,627" in html and "percentile of the 972 weighted scenarios" in html \
-        and "LOSES $428,627" in pdf_flat and CM["B47"].value.startswith("="):
-    match("v5.0 weighted median ($428,627 yearly loss) in site prose and JS readout and in PDF; central case live in model")
+if "loses $427,087" in html and "percentile of the 972 weighted scenarios" in html \
+        and "LOSES $427,087" in pdf_flat and CM["B47"].value.startswith("="):
+    match("v5.0 weighted median ($427,087 yearly loss) in site prose and JS readout and in PDF; central case live in model")
 else:
     diff("v4.5 weighted median strings missing")
 
@@ -108,7 +108,7 @@ from itertools import product as _prod
 import math as _math
 _T = 108958.80 / 2
 _cl = sorted(
-    (c + f + t * _T - b - l * (4636 + ad - 400),
+    (c + f + t * _T - b - l * (4626 + ad - 400),
      wc * wf * wl * wa * wb)
     for c, wc in ((53519, 1), (80279, 2), (127039, 1))
     for f, wf in ((0, 1), (107052.2, 2), (214104.4, 1))
@@ -127,7 +127,7 @@ _neg = sum(w for v, w in _cl if v < 0) / _tw
 def _gnet(g, r, sp, tc, sc, b, c, ad):
     te = _math.floor(max(0, g - 25) / r)
     st = 0 if sp == 0 else _math.floor(g / sp)
-    return g * (4636 + ad - c) - te * tc - st * sc - b * g
+    return g * (4626 + ad - c) - te * tc - st * sc - b * g
 _gr = sorted(
     (_gnet(g, r, sp, tc, sc, b, c, ad), w2 * w3 * w4 * w5 * w6 * w7 * w8)
     for g in range(10, 91, 10)
@@ -139,12 +139,12 @@ _gr = sorted(
     for c, w7 in ((400, 1), (700, 2), (1000, 1))
     for ad, w8 in ((0, 1), (500, 2), (1000, 1)))
 _gtw = sum(w for _, w in _gr)
-ok_w = (round(_wp(_cl, _tw, 0.5)) == -428627 and round(_wp(_cl, _tw, 0.25)) == -519765
-        and round(_wp(_cl, _tw, 0.75)) == -340021 and _neg == 1.0
-        and _wp(_gr, _gtw, 0.5) == 142220 and _wp(_gr, _gtw, 0.25) == 94720
-        and _wp(_gr, _gtw, 0.75) == 183354)
-site_w = all(s in html for s in ("$428,627", "$519,765", "$340,021", "$142,080",
-                                 "$94,720", "$183,354", "Every priced scenario loses money"))
+ok_w = (round(_wp(_cl, _tw, 0.5)) == -427087 and round(_wp(_cl, _tw, 0.25)) == -518405
+        and round(_wp(_cl, _tw, 0.75)) == -338727 and _neg == 1.0
+        and _wp(_gr, _gtw, 0.5) == 141780 and _wp(_gr, _gtw, 0.25) == 94520
+        and _wp(_gr, _gtw, 0.75) == 182654)
+site_w = all(s in html for s in ("$427,087", "$518,405", "$338,727", "$141,780",
+                                 "$94,520", "$182,654", "Every priced scenario loses money"))
 if ok_w and site_w:
     match("v5.0 weighted stats recompute (closure median/IQR/share, growth median/IQR) and all seven appear on the site")
 else:
@@ -240,16 +240,16 @@ if not rec_bad: match("archived Sci/SS/Writing averages recompute from the per-s
 else: diff(f"Sci/SS/Writing average recompute mismatches: {rec_bad}")
 
 # the plan calculator mirrors the model's transformative chain lever for lever
-plan_ok = (275 * 4236 + 760000 + 1479078 - 1738653 == 1665325
+plan_ok = (275 * 4226 + 760000 + 1479078 - 1738653 == 1662575
            and 'id="sPw" min="0" max="550" value="275"' in html
            and 'id="sPt" min="0" max="10" value="5"' in html
-           and "kids*4236" in html and "restore-1738653" in html
+           and "kids*4226" in html and "restore-1738653" in html
            and "*13.008" in html and "bonds+32000000" in html
            and "(15.69/8.9)" in html and "166189" in html
            and "$1,738,653" in pdf_flat and "$2,648,086" in pdf_flat
-           and "$1,665,325" in html and "275 of 550" in html and "275 of 550" in pdf_flat)
+           and "$1,662,575" in html and "275 of 550" in html and "275 of 550" in pdf_flat)
 if plan_ok:
-    match("plan calculator: leakage lever (0-550 at $4,236) defaults to half the pool (275), trending FY2026 gap $1,738,653, default surplus $1,665,325 (site+PDF), capacity anchored on the advisor's $32M")
+    match("plan calculator: leakage lever (0-550 at $4,226) defaults to half the pool (275), trending FY2026 gap $1,738,653, default surplus $1,662,575 (site+PDF), capacity anchored on the advisor's $32M")
 else:
     diff("plan calculator bases or defaults out of sync with the re-based chain")
 
@@ -400,7 +400,7 @@ else:
 
 # ---------- 8. recruitment pool (v3.2): fill planner lever, model, PDF ----------
 RD = wb["Redistricting"]
-if not re.search(r"net=\(t\+h\)\*4636", html) and 'id="sRez"' not in html:
+if not re.search(r"net=\(t\+h\)\*4626", html) and 'id="sRez"' not in html:
     match("seat planner retired from the site in v4.4 (duplicative of the growth calculator); the fill package lives in the PDF and the Redistricting tab")
 else:
     diff("seat planner still present on the site after retirement")
@@ -416,8 +416,8 @@ if pool == (76, 131, 54, 189) and "Fayette pulling 54 commuters" in html \
     match("KDE nonresident flows (76 out / 131 in / 54 Fayette; 247 exports counted in the pool) consistent model/site/PDF")
 else:
     diff(f"nonresident flows: model {pool}")
-if seek46 == 213256 and "$213,000" in pdf_flat and RD["B131"].value == "=Assumptions!B6-Assumptions!B62":
-    match("46-seat fill from the pool = 46 x $4,636 = $213,256, quoted as about $213,000 in PDF; per-return net formula in model")
+if seek46 == 212796 and "$213,000" in pdf_flat and RD["B131"].value == "=Assumptions!B6-Assumptions!B62":
+    match("46-seat fill from the pool = 46 x $4,626 = $213,256, quoted as about $213,000 in PDF; per-return net formula in model")
 else:
     diff(f"pool revenue: 46*B6={seek46}, pdf $213,000 {'$213,000' in pdf_flat}")
 
@@ -547,9 +547,9 @@ if c01 == [(595,3360),(312,4053),(193,4414),(145,5200)]:
 else:
     diff(f"2000-01 report card rows mismatch in model: {c01}")
 AL2 = wb["Alternatives"]
-raw_lo = 313162.4 + 60000 + 100000 + 4*85000 + 0.5*(1447164-999727) + 2913654*0.05 + 50000 + (16*4636-46*400+(1-1)*60000) + 25*4236
-raw_hi = 375000 + 120000 + 200000 + 425000 + 450000 + 2913654*0.10 + 150000 + (16*4636-46*400+(2-1)*60000) + 50*4236
-if abs(raw_lo-1394239.6)<5 and abs(raw_hi-2338941.4)<5 and "$1.4 to $2.3 million" in pdf_flat:
+raw_lo = 313162.4 + 60000 + 100000 + 4*85000 + 0.5*(1447164-999727) + 2913654*0.05 + 50000 + (16*4626-46*400+(1-1)*60000) + 25*4226
+raw_hi = 375000 + 120000 + 200000 + 425000 + 450000 + 2913654*0.10 + 150000 + (16*4626-46*400+(2-1)*60000) + 50*4226
+if abs(raw_lo-1393829.6)<5 and abs(raw_hi-2338281.4)<5 and "$1.4 to $2.3 million" in pdf_flat:
     match("growth plan raw sums $1.39M/$2.34M recomputed without Medicaid or shared services; quoted in the PDF")
 else:
     diff(f"growth plan raw sums: {raw_lo:.0f}/{raw_hi:.0f}")
@@ -566,31 +566,31 @@ surplus = 760000 + 1479078 - 1738653
 raise_cost = 10000388 * 0.05 * 1.0145
 debt_room = surplus - raise_cost
 bonds = debt_room * (1 - 1.045 ** -20) / 0.045
-default_bonds = (1665325 - raise_cost) * (1 - 1.045 ** -20) / 0.045
+default_bonds = (1662575 - raise_cost) * (1 - 1.045 ** -20) / 0.045
 if (surplus == 500425 and abs(raise_cost - 507270) < 2 and surplus < raise_cost
         and raise_cost - surplus < 7000
-        and abs(default_bonds - 15063910) < 6000
+        and abs(default_bonds - 15028138) < 6000
         and "$507,000" in pdf_flat and "within $7,000" in html and "within $7,000" in pdf_flat
         and "$32 million" in html and "$32 million" in pdf_flat
-        and "$15.1 million" in pdf_flat
+        and "$15.0 million" in pdf_flat
         and "$47 million" in html and "$47 million" in pdf_flat
         and "$69 million" in html and "$69 million" in pdf_flat):
     match("transformative check: floor $500K (within $7K of the raise, advisor's $32M) and central-case default $1.66M (raise + $15.0M bonds, ~$47M), site+PDF")
 else:
     diff(f"transformative check mismatch: surplus {surplus:.0f}, raise {raise_cost:.0f}, default bonds {default_bonds:.0f}")
 # the leakage lever and the withdrawn claims
-top_surplus = 550 * 4236 + 1300000 + 1479078 - 1738653
-if (top_surplus == 3370225 and "$500,000 a year to spare" in html
+top_surplus = 550 * 4226 + 1300000 + 1479078 - 1738653
+if (top_surplus == 3364725 and "$500,000 a year to spare" in html
         and "$500,000 a year to spare" in pdf_flat
-        and "$423,600 a year" in html and "$423,600 a year" in pdf_flat
+        and "$422,600 a year" in html and "$422,600 a year" in pdf_flat
         and "10 percent raise" not in html and "$52 million" not in html
         and "withdrawn with the lever correction" in pdf_flat
         and "$260,000 to $530,000" in html and "$260,000 to $530,000" in pdf_flat):
-    match("leakage lever: 0-550 students at $4,236 on site and in PDF ($423,600 per 100); defaults clear the trending gap by $721K; the 10%-raise/$52M claims stay withdrawn; the Move 2 band survives as the near-term view")
+    match("leakage lever: 0-550 students at $4,226 on site and in PDF ($422,600 per 100); defaults clear the trending gap by $721K; the 10%-raise/$52M claims stay withdrawn; the Move 2 band survives as the near-term view")
 else:
     diff(f"leakage lever incomplete: top surplus {top_surplus}, 10%-claim still on site: {('10 percent raise' in html)}")
-fills = (16*4636-46*400, 55776+60000)
-if fills[0]-0 == 55776+400*0 - 0 and "$56,000 to $116,000" in pdf_flat:
+fills = (16*4626-46*400, 55616+60000)
+if fills[0]-0 == 55616+400*0 - 0 and "$56,000 to $116,000" in pdf_flat:
     match("fill package $56,000-$116,000 in the PDF; the site carries the live planner (prose quote retired in v4.2)")
 else:
     diff("fill package correction incomplete")
@@ -613,7 +613,7 @@ else:
     diff("EDFacts toggle still present after retirement")
 
 # site text spot checks
-for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $847,825 a year at the left end to still losing $11,030 a year", "closure range prose"),
+for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $846,285 a year at the left end to still losing $9,860 a year", "closure range prose"),
                  ("$166,189 per cent", "certified real-estate yield in the levy note"), ("$2.65 million", "deficit figure in prose"),
                  ("115 today", "enrollment in prose"), ("a 174 rating", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")
