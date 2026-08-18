@@ -71,6 +71,12 @@ VAR_NONTEACH = 400           # supplies per student, growth model low leg
 # per-grade survival vs own 5th-grade class (SAAR 2025-26 snapshot)
 SURV_SEC = [172/177, 178/188, 191/196, 193/197, 194/202, 194/202, 176/213]
 EFF_YEARS = 6 + sum(SURV_SEC)                      # 12.62
+# LIMITATION, stated by design: the 24-child "enrolled" sample is the hand-
+# coded floor. Class-year designations are NOT assumed accurate and likely
+# undercount who is enrolled now, so the true enrolled respondent count is
+# probably higher (at a similar leave rate) and the silent pool smaller than
+# the ~104 the correction assumes. Both effects would raise the corrected
+# share; using the floor leans the published band low.
 RAMP = (sum(range(6, 13)) + 13 * 6) / (13 * 13)    # 0.834; internal-only:
 # exported to the JSON for the record. The published artifacts quote steady
 # state, and the site's leaving-families chart computes its own ramp inline.

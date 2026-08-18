@@ -289,18 +289,18 @@ P("These asks put no money at risk: if staff keep their jobs, closing frees only
 
 # ================= PART ONE =================
 H("Part One: The Case Against Closing NMES")
-P("Four facts, in the same order as the website: the school outperforms, it is not expensive, closing it "
-  "frees very little, and the risks land on the revenue side. Every figure is sourced and lives in the "
-  "companion workbook.")
+P("Four facts, in the website's order: the school outperforms, it is not expensive, closing it frees "
+  "very little, and the risks land on the revenue side. Every figure is sourced and lives in the "
+  "workbook.")
 
 # ================= 5. ACADEMICS =================
 H("2. Academic Performance: The District Would Be Closing Its Best Elementary School")
 H2("The state's own numbers, first")
-P("Before any index or ranking, here is the primary record: the Kentucky Department of Education's "
-  "school-level file for the 2024-25 Kentucky Summative Assessments, archived in this repository "
-  "(build/kde_ksa_2024_25.json) so anyone can check it. On the state's own tests, North Middletown is first "
-  "among all four elementary schools in Bourbon County, county district and Paris Independent alike, in "
-  "every tested subject. It beats the <b>statewide</b> elementary average in science and writing.")
+P("Before any index or ranking, here is the primary record: KDE's school-level file for the 2024-25 "
+  "Kentucky Summative Assessments, archived at build/kde_ksa_2024_25.json so anyone can check it. On "
+  "the state's own tests, North Middletown is first among all four elementary schools in Bourbon "
+  "County, county district and Paris Independent alike, in every tested subject. It beats the "
+  "<b>statewide</b> elementary average in science and writing.")
 tbl(["Subject (percent proficient or distinguished)", "NMES", "Bourbon Central", "Cane Ridge", "Paris Elem.", "KY average"],
     [["Reading", "41", "38", "37", "25", "49"],
      ["Mathematics", "31", "28", "27", "29", "43"],
@@ -310,8 +310,9 @@ tbl(["Subject (percent proficient or distinguished)", "NMES", "Bourbon Central",
     [2.35 * inch, 0.85 * inch, 1.15 * inch, 0.95 * inch, 0.85 * inch, 0.9 * inch],
     caption="Kentucky Summative Assessment results, 2024-25, all students, percent scoring proficient or "
             "distinguished. Source: KDE School Report Card assessment dataset, archived in this repository. "
-            "Asterisks are cells the state suppresses (KDE's written rule withholds a row when any achievement level holds fewer than three students); the Kentucky average is the statewide "
-            "elementary level. North Middletown leads all four county schools in every state-reported subject; small-school science results are suppressed for two of the four.",
+            "Asterisks are cells the state suppresses (KDE's written rule withholds a row when any "
+            "achievement level holds fewer than three students); the Kentucky average is the statewide "
+            "elementary level.",
     bold_first_col=True)
 P("Here is the full arc, straight from the state's own files (Figure 1, top panel). Through the Unbridled "
   "Learning era North Middletown's official overall score rose every single year: 62.6 to 68.8 to 71.4 to "
@@ -375,9 +376,9 @@ fig("chart_district.png",
     "comparable eras (Unbridled Learning overall score, 2012-2016; KSA overall indicator rate, 2022-2025). No "
     "composite was issued from 2017 through 2021 (system transition, star-rating years, then COVID), and "
     "CATS-era school files (2006-2011) are available from KDE by data request. Bottom: SchoolDigger's "
-    "third-party 0-100 index of the same tests, retained for context and validated against the official "
-    "record; wherever the two disagree, the official record governs. Sources: KDE historical datasets, "
-    "archived in this repository as build/kde_scores_history.json.")
+    "third-party 0-100 index of the same tests, retained for context; wherever the two disagree, the "
+    "official record governs. Sources: KDE historical datasets, archived in this repository as "
+    "build/kde_scores_history.json.")
 fig("chart_compare.png",
     "Figure 2. SchoolDigger's normalized 0-100 index for 2024-25 across the region's elementary schools, computed from state test data (not KDE's official rating). Montgomery County operates four elementaries; the two with retrieved index values are shown, and Montgomery "
     "County's two elementaries outscore North Middletown; every elementary in Bourbon County, Clark County, and "
@@ -433,10 +434,10 @@ P("North Middletown's $19,348 per student is the highest of the three elementari
   "and district instructional support that no closure removes. And almost none of that total is what a "
   "closure would save, for a simple reason: <b>closing a school does not delete its students.</b>")
 fig("chart_pp.png",
-    "Figure 3. Per-student spending at the district's three elementary schools, 2023-24, as published in the "
-    "Kentucky School Report Card's school-level expenditure data (total of state, local, and federal dollars). "
-    "The newer 2024-25 file, posted since, puts North Middletown at $17,903, 7 percent below the $19,299 "
-    "Kentucky elementary average (Section 3).")
+    "Figure 3. Per-student spending at the district's three elementary schools, 2023-24, as published in "
+    "the Kentucky School Report Card's school-level expenditure data (total of state, local, and federal "
+    "dollars). The newer 2024-25 file puts North Middletown 7 percent below the Kentucky elementary "
+    "average (Section 3).")
 fig("chart_capacity_scenarios.png",
     "Figure 4. Every school filled to its rated capacity, priced with step variable costs ($400 of supplies per "
     "student added or removed, plus or minus an $85,000 loaded section wherever KRS 157.360 class caps require "
@@ -504,9 +505,9 @@ P("The grid is built on the district's 48-page response and the community's surv
   "one; the school council allocation lists 5.5; the three half-time lines stay uncut). Three: zero to "
   "three teachers at its own $54,479.40 price (its savings sheet says two, its own classroom-capacity "
   "count supports three). Four: the students missing from the rolls each year, anchored to the signed "
-  "school-choice survey at steady state (129 to 187, Section 5: the band's 25th, 50th, and 75th "
-  "percentiles, triangular with the median central; the signed-survey floor of 74, the 31 households "
-  "alone, sits below every priced leg as hard evidence, not a scenario). Five: each missing student "
+  "school-choice survey at steady state (129 to 187, Section 5; the signed floor of 74, the 31 "
+  "households alone, sits below every priced leg as hard evidence, not a scenario). Five: each missing "
+  "student "
   "costs the enacted FY2027 SEEK base of $4,636 plus up to $1,000 of add-ons, minus the $400 of "
   "supplies that stop, the same figure the growth model charges each recruit; teacher savings appear "
   "ONLY on the teachers-cut lever, so staffing is never counted twice. Six: the added busing a "
@@ -526,14 +527,14 @@ P("The grid is built on the district's 48-page response and the community's surv
   "range. And closure buys no borrowing room: bonding capacity is built from restricted revenue streams "
   "that do not grow when a school closes (Section 8).")
 fig("chart_closure_spectrum.png",
-    "Figure 5. The honest range. Top: the net yearly effect of closure across all 972 combinations of the "
-    "six sourced inputs, from losing $1,020,613 to still losing $61,862, with the middle half of weighted scenarios "
-    "between a $643,405 and a $429,974 loss and the median at a $534,433 loss. The plan's own $800,000 to "
-    "$1,000,000 requirement lies entirely outside the defensible range. Bottom: how far each input moves the "
-    "central case by itself. Inputs: the district's own response worksheet and staffing appendix (Appendix "
-    "A and A.1), its capacity appendix, its KDE filings, the federal attendance-zone map, and the exit "
-    "routes open under HB 563, homeschooling, and the statewide virtual academy; every lever and formula is "
-    "in the workbook's Closure_Model tab.")
+    "Figure 5. The honest range. Top: the net yearly effect of closure across all 972 combinations of "
+    "the six sourced inputs, from losing $1,020,613 to still losing $61,862, the middle half of "
+    "weighted scenarios between a $643,405 and a $429,974 loss, the median a $534,433 loss. The plan's "
+    "own $800,000 to $1,000,000 requirement lies entirely outside the range. Bottom: how far each input "
+    "moves the central case by itself. Inputs: the district's response worksheet and staffing appendix "
+    "(Appendix A and A.1), its capacity appendix, its KDE filings, the federal attendance-zone map, and "
+    "the exit routes under HB 563, homeschooling, and the statewide virtual academy; every lever and "
+    "formula is in the Closure_Model tab.")
 H2("What the families said: the school-choice survey")
 P("In early August 2026 the community asked NMES families the question the district's plan never prices: "
   "if the school closes, what would your family actually do? Forty-two responses came in. Counting one "
@@ -598,12 +599,10 @@ P("Where inter-district choice is already open, the aftermath is on the record. 
   "transferred out. No Kentucky district has yet closed a rural elementary in the HB 563 "
   "open-enrollment era and published the aftermath; Bourbon County would be the experiment. Sources for "
   "every case are in the back matter.")
-P("Leaving is not pure loss, and the model credits the savings without double counting. Each missing "
-  "student stops costing about $400 in supplies, the same low-leg figure the growth model charges each "
-  "recruit, and the credit scales with every child who goes. Cutting teachers is a separate decision, "
-  "priced only on the teachers-cut lever, the district's own 0 to 3 positions. Even with both credits "
-  "at their friendliest, every priced scenario loses money. $400 of supplies and a few positions cannot "
-  "outrun $5,136 walking out with every child.")
+P("Leaving is not pure loss, and the model credits the savings without double counting: the supplies "
+  "credit scales with every child who goes, and teacher cuts are priced only on their own lever. Even "
+  "with both credits at their friendliest, every priced scenario loses money. $400 of supplies and a "
+  "few positions cannot outrun $5,136 walking out with every child.")
 P("The research says this dynamic is structural, not local. Georgetown's Edunomics Lab documents "
   "per-pupil revenue leaving with each lost student while costs fall only in steps (Financial Impacts "
   "of Enrollment Decline, 2021); Bellwether's national data show the same squeeze. Georgetown's FutureEd "
@@ -634,12 +633,12 @@ tbl(["School", "Coded by the district", "Enrolled", "Breakeven at $15,983", "Cle
      ["Bourbon County Middle", "$3,868,106", "590", "242", "348"],
      ["Bourbon County High", "$5,515,105", "766", "345", "421"]],
     [W * 0.28, W * 0.22, W * 0.14, W * 0.22, W * 0.14],
-    caption="The corrected average-cost test (all-in cost against the district's full $15,983 revenue per member), run on the cost the district's own ledger codes to "
-            "each school rather than the cost the federal report allocates to it. Every school clears, and "
-            "that is the finding rather than a defense of this one: the answer to how many students a school "
-            "needs swings from 300 to 80 on the definitions of cost and revenue used, which is why the definitions "
-            "should be chosen and published before any vote. Source: Overall Cost by ORG, produced July 2026; enrollment as elsewhere in this "
-            "report. Model, School_Costs tab.")
+    caption="The corrected average-cost test (all-in cost against the district's full $15,983 revenue per "
+            "member), run on the cost the district's own ledger codes to each school rather than the cost "
+            "the federal report allocates to it. Every school clears, and that is the finding: the answer "
+            "swings from 300 to 80 students on the definitions of cost and revenue used, so the "
+            "definitions should be chosen and published before any vote. Source: Overall Cost by ORG, "
+            "produced July 2026; enrollment as elsewhere. Model, School_Costs tab.")
 P("The working budget's location view cuts against this report in one place. Measured on all dollars "
   "coded to each school there, including the on-behalf entries this report strips elsewhere, North "
   "Middletown runs <b>$13,332</b> per student against $12,167 at Cane Ridge and $11,882 at Bourbon "
@@ -720,23 +719,22 @@ H("5. What Closure Risks: The Record Where It Has Been Tried")
 H2("Bourbon County has run this play before: Millersburg, 2006")
 P("Millersburg Elementary, about nine road miles from Paris, closed in 2006 with a final enrollment of "
   "119 students, nearly the size of North Middletown today. Its students went to Cane Ridge, whose "
-  "addition the district's own facility plan dates to 2007. What happened next is on the census rolls, "
-  "Figure 6: Millersburg fell from 842 people in 2000 to 792 in 2010 to 747 in 2020, down 11 percent, "
-  "while the county grew 4.6 percent. No single closure did that alone: the private Millersburg Military "
+  "addition the facility plan dates to 2007. What happened next is on the census rolls, Figure 6: "
+  "Millersburg fell from 842 people in 2000 to 792 in 2010 to 747 in 2020, down 11 percent, while the "
+  "county grew 4.6 percent. No single closure did that alone: the private Millersburg Military "
   "Institute shut permanently the same July, and the Joy Global plant followed in 2013, taking 197 jobs "
-  "and, by the town's own accounting, half its operating budget. That is the honest lesson, and it is "
-  "worse, not better: small towns lose their anchors in cascades, each loss making the next more likely. "
-  "Twenty years later the district is over capacity at the school that absorbed Millersburg's children "
-  "and proposes to solve it by closing another small school. North Middletown's attendance zone holds "
-  "2,625 people. The records ask writes itself: produce the savings analysis from the 2006 closure and "
-  "the savings actually realized, before the same projection is made again.")
+  "and, by the town's own accounting, half its operating budget. The honest lesson is worse, not "
+  "better: small towns lose their anchors in cascades, each loss making the next more likely. Twenty "
+  "years later the district is over capacity at the school that absorbed Millersburg's children and "
+  "proposes to solve it by closing another small school. North Middletown's attendance zone holds "
+  "2,625 people. The records ask writes itself: produce the 2006 savings analysis and the savings "
+  "actually realized, before the same projection is made again.")
 fig("chart_millersburg.png",
     "Figure 6. Millersburg and Bourbon County population, indexed to 2000, with the town's three institutional "
     "losses marked. The elementary's 2006 date is its federal record: enrolled through 2005-06, status closed "
     "in the 2006-07 CCD universe file; the military institute is a separate, private school that closed "
-    "permanently in July 2006. Decennial census counts: Millersburg 987, 937, 842, 792, 747; the county grew 4.6 percent "
-    "from 2000 to 2020. Millersburg Elementary's final enrollment was 119 students; North Middletown enrolls "
-    "128 today.")
+    "permanently in July 2006. Decennial census counts: Millersburg 987, 937, 842, 792, 747; the county "
+    "grew 4.6 percent from 2000 to 2020.")
 H2("Has this ever worked in Kentucky? We checked all thirty years")
 P("From the federal Common Core of Data, every Kentucky public school, every year, 1994 through 2023, we built the "
   "complete record: <b>339 rural and small-town school closures since 1995</b>, after screening out renames, "
@@ -787,14 +785,13 @@ P("<b>Third, the two best cases, disclosed by us so no one has to discover them.
   "showing how would make the board's case, and we would welcome being wrong.")
 fig("chart_ky_record.png",
     "Figure 7. Top: all 163 measurable Kentucky rural closures, priced per displaced student with each "
-    "district's entire budget gap against the state trend credited to its closure. The median is $1,102; 40 "
-    "percent of districts spent more than trend after closing; the shaded tails beyond $13,000 per child "
-    "exceed what any school costs to run per student and mark budget-wide noise, not closure effects. "
-    "Bottom: the rural elementary cases only. The one clean no-construction comparable (Webster 2012) paid "
-    "$3,525 per displaced student; Perry, Adair, and Metcalfe built new schools; the plan requires $6,250 to "
-    "$7,813 while building nothing. City and county-seat grade reshuffles (Somerset 1999; Montgomery 2018, "
-    "which opened a new elementary the same year) appear in the top panel but are not comparisons for a "
-    "rural closure. Data: build/ky_closure_events_full.csv (every event, every input), build/ky_rural_closures_1995_2023.csv, and build/ky_closure_dollar_cases.csv.", width=6.0 * inch)
+    "district's entire budget gap against the state trend credited to its closure; the shaded tails "
+    "beyond $13,000 per child exceed what any school costs to run per student and mark budget-wide "
+    "noise, not closure effects. Bottom: the rural elementary cases only. City and county-seat grade "
+    "reshuffles (Somerset 1999; Montgomery 2018, which opened a new elementary the same year) appear in "
+    "the top panel but are not comparisons for a rural closure. Data: build/ky_closure_events_full.csv "
+    "(every event, every input), build/ky_rural_closures_1995_2023.csv, and "
+    "build/ky_closure_dollar_cases.csv.", width=6.0 * inch)
 
 H2("What happened when other districts tried this")
 B("<b>Chicago, 2013.</b> The district closed about fifty schools projecting roughly $1 billion over a decade, "
@@ -910,8 +907,8 @@ A(pbox)
 # ================= PART TWO =================
 H("Part Two: The District Needs Growth, Not Closures")
 P("The district has a real money problem. It is district-wide, North Middletown did not cause it, and "
-  "closing the school does not dent it. The sections that follow size the problem from the audited "
-  "statements, then price the three levers the board already owns.")
+  "closing the school does not dent it. These sections size the problem from the audited statements, "
+  "then price the three levers the board already owns.")
 
 # ================= 3. FINANCES =================
 H("7. The District's Finances: A Real Problem With Clear Causes")
@@ -1003,10 +1000,10 @@ P("How long each cushion lasts depends on the burn rate used. Bourbon's fund bal
   "transfers in $1,630,142, out $207,521). On operations alone the district ran <b>9.1 cents in the "
   "red</b>. Our plan ends the sweep, so the operating gap is the basis: at 9.1 cents a 14.7-cent "
   "cushion covers about <b>a year and a half</b>; at 4.2 cents, about three and a half years. Fayette "
-  "on the operating basis ran 5.7 cents against a 4.1-cent cushion, under a year, and on Weaver's "
-  "unaudited view nearer one cent; it has approved borrowing up to $95 million to reach fall tax "
-  "collections. Both districts' net-change figures are held down by transfers in, so both are restated "
-  "on the operating basis and measured the same way. One more item belongs in the record: Weaver's "
+  "ran 5.7 cents against a 4.1-cent cushion, under a year, nearer one cent on Weaver's unaudited view; "
+  "it has approved borrowing up to $95 million to reach fall tax collections. Both districts' "
+  "net-change figures are held down by transfers in, so both are restated on the operating basis and "
+  "measured the same way. One more item belongs in the record: Weaver's "
   "report contains more than seventy recommendations and ten priority actions, and <b>none of them is "
   "a school closure</b>. Every one concerns budget amendment controls, segregation of duties, "
   "forecasting methodology, reconciliation, accurate reporting to the board and the public, and a "
@@ -1205,10 +1202,10 @@ P("North Middletown is built to compete for those families. It is a 2011 Nationa
   "against 128 enrolled: forty-six open seats. Filled with transfer students at the base guarantee "
   "alone, they represent roughly $213,000 a year of new recurring revenue gross, about $194,000 after "
   "supplies and about $134,000 if they require the added section this version prices, before tuition, "
-  "add-ons, or the further growth a signature program (advanced learners is one natural fit), a "
-  "preschool satellite, and a serious marketing effort could generate along the U.S. 460 corridor, "
-  "within a short drive of five surrounding counties. The question for the administration: why is the "
-  "district's only nationally honored school proposed for reclassification instead of expansion?")
+  "add-ons, or the further growth a signature program, a preschool satellite, and serious marketing "
+  "could pull along the U.S. 460 corridor, a short drive from five surrounding counties. The question "
+  "for the administration: why is the district's only nationally honored school proposed for "
+  "reclassification instead of expansion?")
 P("Honesty requires naming the headwind first. Bourbon County has hovered near twenty thousand "
   "residents for more than fifty years, from 18,476 in 1970 to 20,252 in 2020, and the Kentucky State "
   "Data Center projects a decline of roughly four percent by 2040. The county is aging, its share of "
@@ -1241,10 +1238,9 @@ P("The seats deserve a destination, not just a headcount. One natural path is a 
   "the school enrolled as recently as 2020-21 (166 in 2019-20) takes just 32 children from a district of "
   "2,600 and four neighboring counties.")
 fig("chart_enroll.png",
-    "Figure 14. NMES enrollment from 1989 through 2025 against its current state-rated capacity of 174. The "
-    "school held 261 students at its 1988-89 peak, roughly double today's official count of 128. History "
-    "compiled from federal school-level data. The long decline mirrors the county's flat population, which is "
-    "exactly why this plan relies on boundary decisions and cross-county enrollment rather than demographics.",
+    "Figure 14. NMES enrollment from 1989 through 2025 against its current state-rated capacity of 174. "
+    "The school held 261 students at its 1988-89 peak, roughly double today's official count of 128. "
+    "History compiled from federal school-level data.",
     width=6.1 * inch)
 P("The decline itself deserves questions, not just measurement, because its milestones track the "
   "district's own planning documents: 261 at the 1988-89 peak, 169 in the 2013 facility plan, 161 in "
@@ -1287,9 +1283,9 @@ P("The students are not hypothetical. The public record measures the pool three 
   "district and 23 in Paris Independent</b> in 2022-23, about 259 in all, up roughly half since "
   "2018-19. Compliance with the filing statute is incomplete, so that is a floor. Second, the Census. "
   "The American Community Survey counts private school and homeschooling as one combined answer, and "
-  "shows that group roughly doubling since the 2014-2018 window. An earlier version of this report put "
-  "it at about one in three of the county's school-age children from the survey alone; that was too "
-  "high, inflated by a small-sample weighting artifact in one age band. Reconciling the district "
+  "shows that group roughly doubling since the 2014-2018 window. An earlier version put it at about one "
+  "in three from the survey alone; too high, inflated by a small-sample weighting artifact in one age "
+  "band. Reconciling the district "
   "rosters, the census counts and the state's non-resident file gives <b>about 450 to 550 Bourbon "
   "County Schools children</b> outside this district's classrooms: homeschooled, in private school, or "
   "enrolled in another district (county-wide, roughly 13 to 15 percent of school-age children sit "
@@ -1352,9 +1348,8 @@ P("And the surplus is transformative. The website's plan calculator prices the e
   "net-of-supplies cell the closure model uses. The gap to close is the district's own most current "
   "number: its June 2026 year-end ledger trends the fiscal 2026 General Fund at <b>$1,738,653</b> in "
   "the red before transfers ($20,694,287 of revenue against $22,432,940 of spending; on-behalf entries "
-  "cancel in the gap; the audit will refine it; the audited fiscal 2025 gap was $2,648,086; Section 8 "
-  "walks the packet line by line, and the sequencing discussion uses the related $1,694,928 "
-  "close-plus-sweep requirement). One caution carries over from Section 8: the trend counts the "
+  "cancel in the gap; the audit will refine it; the audited fiscal 2025 gap was $2,648,086; the "
+  "sequencing discussion uses the related $1,694,928 close-plus-sweep requirement). One caution carries over from Section 8: the trend counts the "
   "unidentified $1.4 million June receipt. If that receipt does not recur the gap runs toward $3.1 "
   "million, which the plan's middle and top cases clear and its floor does not. With the cost package "
   "at its low end, the full 2018 restore, and not one student recovered, the plan clears the trending "
@@ -1367,10 +1362,10 @@ P("And the surplus is transformative. The website's plan calculator prices the e
   "with the advisor's $32 million. At the sliders' top, the full 550-student pool with every lever "
   "high, the plan runs about $3.4 million ahead: the raise plus roughly $37 million of new bonds, about "
   "$69 million of capacity. Every 100 recovered students move the number by $423,600 a year in either "
-  "direction. The capacity is the district's own advisor's $32 million rating, real only once the sweep "
-  "ends, because the sweep spends the very stream the capacity is built on. Together: teachers paid "
-  "more, real building capacity, every school open. The earlier 10-percent-raise and $52 million "
-  "top-end claims are withdrawn with the lever correction.")
+  "direction. The capacity is the advisor's own $32 million rating, real only once the sweep ends, "
+  "because the sweep spends the very stream it is built on. Together: teachers paid more, real building "
+  "capacity, every school open. The earlier 10-percent-raise and $52 million top-end claims are "
+  "withdrawn with the lever correction.")
 P("A suggestion for running the plan: the board should create three standing committees, one per lever, "
   "each with a public charge and a progress report at every board meeting. An enrollment growth "
   "committee works to win families back: reach the 236 homeschool households in the district's own "
@@ -1380,8 +1375,8 @@ P("A suggestion for running the plan: the board should create three standing com
   "has never had, review every non-teaching vacancy before it is refilled, and put the energy contracts "
   "out to bid. A revenue committee lays the rate choices in front of the public: what each step on the "
   "menu funds, what it costs the median homeowner per month, and a path back to the board's own 2018 "
-  "rate. Committees commit no new money, and they turn a plan on paper into work with names on it. "
-  "Volunteers from the North Middletown community stand at the ready to serve on all three.")
+  "rate. Committees commit no new money and turn a plan on paper into work with names on it. Volunteers "
+  "from the North Middletown community stand at the ready to serve on all three.")
 
 H2("The growth model, priced like the closure model")
 P("The growth side is priced with the same discipline as the closure grid, on the district's own "
@@ -1395,10 +1390,9 @@ P("The growth side is priced with the same discipline as the closure grid, on th
   "students, at the school's own classified lines. New teachers are priced at the certified schedule's "
   "entry-to-midpoint rows, $41,718 to $56,583. Busing runs $0 to $1,000 per recruit, marginal costs "
   "$400 to $1,000 per student against a measured $331, and state add-ons run the same $0, $500, and "
-  "$1,000 legs the closure grid prices for each leaver, so the two models treat add-ons symmetrically. "
-  "The supplies figure is symmetric too: the closure grid credits each missing student with the same "
-  "$400 of supplies the growth grid charges each recruit. No lever double-counts staffing: teacher "
-  "changes are priced only on each grid's own teacher lever.")
+  "$1,000 legs the closure grid prices for each leaver, so the two models treat add-ons and the $400 "
+  "supplies figure symmetrically. No lever double-counts staffing: teacher changes are priced only on "
+  "each grid's own teacher lever.")
 P("The result: across all 19,683 priced scenarios, growth pays in every single one. Under the same "
   "lever weighting as the closure grid (triangular on every cost lever, whose middle legs are the "
   "documented central reads; uniform on the enrollment target, which is the board's choice, not a "
@@ -1418,12 +1412,12 @@ P("The rate history strengthens the community's hand. Bourbon County Schools lev
   "on real estate, second lowest among nine area districts and roughly 13 cents below the statewide "
   "school average of 65.1. Fayette levies 80.9, Paris Independent, in this same county, 71.5, Clark "
   "65.5, Bath 63.4, Scott 62.9, and Harrison 57.7; only Nicholas County, at 43.1, sits lower, and "
-  "Montgomery is essentially tied at 52.5 (Figure 15). The trend runs the same direction. The levied "
-  "rate has fallen from 61.3 cents in 2018 to 52.4 today, a decline that largely reflects Kentucky's "
-  "rollback mechanics, in which a rising assessment base pushes the cent rate down to hold revenue "
-  "roughly level. KDE's levied-type file, archived in this repository, shows the board took the full "
-  "four percent revenue option in five of the last twelve years and the compensating rate or less in "
-  "the other seven, the exact years the rate slid. The regional contrast is stark: Scott County rode "
+  "Montgomery is essentially tied at 52.5 (Figure 15). The levied rate has fallen from 61.3 cents in "
+  "2018 to 52.4 today, a decline that largely reflects Kentucky's rollback mechanics, in which a rising "
+  "assessment base pushes the cent rate down to hold revenue roughly level. KDE's levied-type file, "
+  "archived here, shows the board took the full four percent revenue option in five of the last twelve "
+  "years and the compensating rate or less in the other seven, the exact years the rate slid. The "
+  "regional contrast is stark: Scott County rode "
   "the same assessment boom, raised its rate 38.9 percent on top, and levies a 0.5 percent occupational "
   "tax besides; eight Kentucky districts levy that tax, Bourbon levies none, though its utility tax is "
   "already at the 3 percent maximum. Merely holding the 2012 rate, three cents higher, would yield "
@@ -1448,14 +1442,13 @@ P("What remains is the choice the board controls every August: the rate itself. 
   "first year, about $639,000 in its second, and about $978,000 a year by its third, over four fifths "
   "of the annual reserve drawdown, and the next subsection walks why a board can take it every year "
   "while the printed rate still falls. (The restricted building-fund levy, which cannot pay operating "
-  "costs, is excluded from this base, the same restricted-funds rule this report applies to closure.) "
-  "Section 11 carries the recommendation and the companion workbook carries the math. The levy is one "
-  "option, not the only one: the Figure 21 menu lists other revenue and cost measures, and deeper "
-  "spending reductions are always available to a board willing to make them. But the math is simple and "
-  "it does not bend. Either spending comes down or revenue goes up. A district drawing down a million "
-  "dollars of reserves a year does not get to choose neither. The board and superintendent owe the "
-  "public a chosen path, in writing, with the work shown. And the board deserves better than a single "
-  "option: a full menu, both columns priced, is what this report puts in its hands.")
+  "costs, is excluded from this base, the same restricted-funds rule we apply to closure.) Section 11 "
+  "carries the recommendation; the workbook carries the math. The levy is one option, not the only one: "
+  "the Figure 21 menu lists other revenue and cost measures, and deeper spending cuts are always "
+  "available to a board willing to make them. But the math does not bend. Either spending comes down or "
+  "revenue goes up. A district drawing down a million dollars of reserves a year does not get to choose "
+  "neither. The board and superintendent owe the public a chosen path, in writing, with the work shown. "
+  "A full menu, both columns priced, is what this report puts in its hands.")
 fig("chart_tax.png",
     "Figure 15. Left: the Bourbon County Schools real estate rate by tax year, from Kentucky Department of "
     "Revenue rate books; years before 2018 could not be retrieved and are not interpolated. Right: current "
@@ -1468,8 +1461,8 @@ P("The fourteen-year record settles how unusual this county's levy path is. KDE 
   "same axis: every neighboring district's levied rate is higher today than fourteen years ago, most by "
   "double-digit percentages, Bath by 72 percent. Bourbon County's is <b>5.4 percent lower</b>, the only "
   "decline in the region, falling from second highest among the nine in 2012 to eighth today, the "
-  "second lowest. Two honesty notes belong in the reading. First, these are levied RATES: under House "
-  "Bill 44 a rate can drift down while collections hold, because the compensating rate falls as "
+  "second lowest. Two honesty notes. First, these are levied RATES: under House Bill 44 a rate can "
+  "drift down while collections hold, because the compensating rate falls as "
   "assessments grow. The chart measures the net of each board's levy choices against its assessment "
   "growth, and by that measure every other board in the region chose to keep or grow its rate while "
   "Bourbon's slid. Second, Bourbon did take the four percent revenue option in five of the last twelve "
@@ -1483,8 +1476,7 @@ fig("chart_levy_history.png",
     "Figure 16. Fourteen years of school levies, nine area districts, from KDE's Local District Tax Levies "
     "files (total real estate column: general fund plus all facilities levies), cross-checked against the "
     "Department of Revenue rate books for 2024 and 2025, where all nine districts reconcile exactly. Top: "
-    "levied rates by tax year. Bottom: percentage change from 2012 to 2025. Bourbon County is the only "
-    "district in the region whose levied rate is lower today than in 2012. Rates are levied rates, not "
+    "levied rates by tax year. Bottom: percentage change from 2012 to 2025. Rates are levied rates, not "
     "revenue effort; see the House Bill 44 note in the text. Data archived as build/ky_levy_history_"
     "2012_2026.csv.", width=5.7 * inch)
 
@@ -1529,8 +1521,8 @@ P("One movement in Figure 16 needs explaining. Bourbon's total levied rate rose 
   "new 5.7-cent restricted levy inside a 3.2-cent net increase means the remainder of the rate fell "
   "about 2.5 cents the same year, roughly $415,000 a year of unrestricted revenue at the district's "
   "certified real-estate yield of about $166,000 per cent. KDE does not publish the year-by-year "
-  "rate-type split, so the 2.5 cents is an inference from the current file rather than a document, and "
-  "the certified split by year is requested for exactly that reason. The direction is not in doubt: the "
+  "rate-type split, so the 2.5 cents is an inference, and the certified split by year is requested for "
+  "exactly that reason. The direction is not in doubt: the "
   "levy that rose in 2023 was money that cannot lawfully pay a teacher, and it rose in the same year "
   "the operating levy appears to have fallen.")
 
@@ -1562,10 +1554,10 @@ P("Restoring the rate this district itself levied in 2018 closes about two third
   "on its own; matching Clark closes nearly all of it. The sequencing is where the plan's own goal "
   "comes within reach. The first call on any new recurring money is closing the operating gap ($373,989 "
   "on the FY2026 trend) and ending the $1,320,939 capital-to-General-Fund sweep, $1,694,928 in all, "
-  "because ending the sweep is what frees the restricted building stream to carry bonds. Restoring the "
-  "2018 rate raises about $1,479,000 (8.9 cents on the certified real base), covering the operating "
-  "close and most of the sweep on its own; the remaining $216,000 a year is well inside the cost "
-  "package's $760,000 floor. An earlier version priced the restore at $1,699,479 by dividing all-class "
+  "because ending the sweep frees the restricted building stream to carry bonds. Restoring the 2018 "
+  "rate raises about $1,479,000 (8.9 cents on the certified real base), covering the operating close "
+  "and most of the sweep; the remaining $216,000 a year is well inside the cost package's $760,000 "
+  "floor. An earlier version priced the restore at $1,699,479 by dividing all-class "
   "property collections by the real-estate cent count; that blended figure overstated a real-only rate "
   "move and is corrected here and in the version history. Once the General Fund stands alone, the "
   "nickel residual carries the $14 million renovation, the restricted capacity becomes genuinely "
@@ -1577,10 +1569,10 @@ P("Restoring the rate this district itself levied in 2018 closes about two third
   "$17.1, $19.2, and $28.3 million at the model's 4.5 percent, 20-year assumption. The Harrison and "
   "median options are honest partial steps; they leave about $814,000 and $382,000 a year still to find "
   "from the alternatives menu before the sweep can end.")
-P("None of this is a recommendation of a particular number, and none of it is counted in the "
-  "alternatives package of Section 10. The point is narrower: a menu of options exists between cut "
-  "nothing and close a school, every one prices out larger than the most generous closure estimate, and "
-  "every one carries a built-in democratic check. <b>A levy above four percent can be recalled by the "
+P("None of this recommends a particular number, and none of it is counted in the alternatives package "
+  "of Section 10. A menu of options exists between cut nothing and close a school, every one prices "
+  "out larger than the most generous closure estimate, and every one carries a built-in democratic "
+  "check. <b>A levy above four percent can be recalled by the "
   "voters it taxes. A closed school cannot be recalled by the children it displaces.</b> This community "
   "was offered that veto twice on the facilities nickels and twice declined to use it. It has never "
   "been offered the same vote on the operating levy that pays teachers. And the recall record next door "
@@ -1608,11 +1600,11 @@ tbl(["Plan", "Recurring impact, year 3", "Projected FY2029 balance", "What it re
       "Revenue votes, administrative rollback, boundary action and HB 563 recruitment, implementation "
       "discipline; every school stays open"]],
     [1.85 * inch, 1.45 * inch, 1.35 * inch, 2.05 * inch],
-    caption="Three complete plans, compared on the same assumptions. At the closure grid's median, Plan 2 drains "
-            "reserves faster than doing nothing; even its best case loses $61,862 a year, and every priced "
-            "of its scenarios lose money outright. Plan 3 restores balance while keeping every "
-            "school open, and rebalancing and growing North Middletown ($56,000 to $116,000 a year, Section 10) "
-            "is one line inside its menu. Scenarios and Runway tabs of the companion workbook.",
+    caption="Three complete plans, compared on the same assumptions. At the closure grid's median, Plan 2 "
+            "drains reserves faster than doing nothing; even its best case loses $61,862 a year, and every "
+            "priced scenario loses money outright. Plan 3 restores balance with every school open; "
+            "rebalancing and growing North Middletown ($56,000 to $116,000 a year, Section 10) is one line "
+            "inside its menu. Scenarios and Runway tabs of the companion workbook.",
     bold_first_col=True)
 H2("The four asks, in full")
 P("<b>One:</b> keep the school Permanent in the facility plan with its capital needs at lower priority; "
@@ -1624,13 +1616,10 @@ P("<b>One:</b> keep the school Permanent in the facility plan with its capital n
   "donor-funded promise scholarship that pays every North Middletown graduate toward college, trade "
   "school, or any certification. <b>Three:</b> let the school and community raise grant-based and "
   "private funds, with donated services, for the building's critical needs, at no cost to the district. "
-  "<b>Four:</b> state publicly that the district will work to grow this school, because uncertainty is "
-  "its own enrollment killer and a sentence of commitment gives families the confidence to enroll. The "
-  "honesty behind these asks is already in the district's books: if staff are reassigned rather than "
-  "cut, a closure frees the $79,211 of building costs in its own ledger, and the restricted renovation "
-  "money is capped by enrollment regardless, a ceiling that rises with every recruited student. A "
-  "closed school cannot be recalled by the children it displaces; a growth plan can be measured, every "
-  "year, by everyone.")
+  "<b>Four:</b> state publicly that the district will work to grow this school; a sentence of "
+  "commitment gives families the confidence to enroll. The honesty behind these asks is already in the "
+  "district's books (the $79,211 building figure, Section 4), and the restricted renovation money is "
+  "capped by enrollment regardless, a ceiling that rises with every recruited student.")
 asktext = ("<b>The ask, plainly stated:</b> the community requests that the Board of Education pause any vote on "
            "the facility plan, or on the future of North Middletown Elementary, until the closure worksheet, "
            "with both sides of the ledger, is published and the four asks are answered in writing and in "
@@ -1705,12 +1694,10 @@ P("We built this report from public records and Open Records Requests only, and 
   "2012 and again in 2021-22. Demographic figures come from the U.S. Census Bureau, the Kentucky State "
   "Data Center, and the county's Envision 2040 plan. Enrollment counts from 1989 through 2014 are "
   "compiled from federal data by PublicSchoolReview; the 2015 through 2025 counts match the federal "
-  "figures directly. Every dollar range labeled an estimate is ours, its assumptions are stated where it "
-  "appears, and every one is adjustable in the companion workbook. The boundary rebalancing scenario in "
-  "the appendix is simple math on the cited enrollment counts, not a routing study; the transportation "
-  "estimates beside it use the official federal zone boundaries (SABS, 2015-16), a highway distance, and "
-  "labeled cost-per-mile bands, and the district's annual T-1 transportation report would replace the "
-  "cost inputs.", note)
+  "figures directly. Every dollar range labeled an estimate is ours, its assumptions are stated where "
+  "it appears, and every one is adjustable in the workbook. The boundary rebalancing scenario in the "
+  "appendix is simple math on the cited enrollment counts, not a routing study; the appendix states the "
+  "transportation inputs beside it.", note)
 P("A few items in the record need the district, not us, to resolve. The real-estate tax rate appears "
   "three ways in public records, as 52.4, 54.2, and 54.7 cents; Section 10 resolves it: 52.4 cents is "
   "the levied rate, 54.2 a transposition typo, 54.7 the motor vehicle rate. The cent split (41.0 General "
@@ -1904,12 +1891,12 @@ P("<b>Versions 2.6 through 3.8, July 20 to 26.</b> The bonding story and transpo
   "report's own adversarial audit (3.5); fourteen years of levies across nine districts (3.6); the "
   "recallable levy options priced (3.7); and the fill package charged for new sections alongside the "
   "25-year cost record (3.8).", note)
-P("Corrections policy: errors identified in this report will be corrected publicly and promptly, and each "
-  "corrected version will carry a new version number and date. Every version, and the line-by-line history of "
-  "every change to the report, model and website, is archived at github.com/ryanuspsagm/SaveNMES. Send "
-  "corrections, with the source that supports them, to ryanuspsagm@gmail.com. The same standard is asked of the "
-  "district: its July 2026 records response answered N/A to any closure analysis, so if this report's numbers "
-  "are wrong, creating and publishing the analysis is the fastest way to show it.", note)
+P("Corrections policy: errors will be corrected publicly and promptly, and each corrected version "
+  "carries a new version number and date. Every version, and the line-by-line history of every change "
+  "to the report, model and website, is archived at github.com/ryanuspsagm/SaveNMES. Send corrections, "
+  "with the source that supports them, to ryanuspsagm@gmail.com. The same standard is asked of the "
+  "district: its July 2026 records response answered N/A to any closure analysis, so if our numbers are "
+  "wrong, creating and publishing the analysis is the fastest way to show it.", note)
 
 # ================= SOURCES =================
 H("Sources")
@@ -2193,17 +2180,17 @@ P("The remaining process is set by state regulation (702 KAR 4:180 and the Kentu
 
 # ================= 7. THE BUILDING =================
 H2("The North Middletown building itself", need=1.2)
-P("If the closure case rests on the building, the record so far does not support it. The school's sections date to "
-  "1948, 1963, and 1964, an older building, like much of the district. The state-approved District Facility Plan "
-  "(adopted with Kentucky Board of Education approval in 2021) classifies North Middletown as a <b>permanent</b> "
-  "kindergarten-through-five center with a capacity of 174, comfortably above its current 128 students. That plan, "
-  "archived in this repository alongside its predecessor, prices the school's needs plainly: $317,660 of "
-  "life-safety work, a $325,000 accessibility ramp and elevator, and a $3.62 million major renovation of the "
-  "building's mechanical, electrical, and plumbing systems, about $4.26 million in all. The life-safety and "
-  "accessibility items, $642,660 together, sit within the 2022-24 biennium schedule; the $3.62 million major "
-  "renovation is scheduled <b>after</b> it. The biennium's headline priority was the $6.66 million high school "
-  "Career and Technical Center. The district-wide capital need it assesses is roughly $43.4 million, concentrated "
-  "at the high school and middle school, not at North Middletown.")
+P("If the closure case rests on the building, the record does not support it. The school's sections "
+  "date to 1948, 1963, and 1964, an older building, like much of the district. The state-approved "
+  "District Facility Plan (KBE approval, 2021) classifies North Middletown as a <b>permanent</b> "
+  "kindergarten-through-five center with a capacity of 174, comfortably above its current 128 students. "
+  "That plan, archived here with its predecessor, prices the school's needs plainly: $317,660 of "
+  "life-safety work, a $325,000 accessibility ramp and elevator, and a $3.62 million major renovation "
+  "of the mechanical, electrical, and plumbing systems, about $4.26 million in all. The life-safety and "
+  "accessibility items, $642,660 together, sit within the 2022-24 biennium schedule; the $3.62 million "
+  "major renovation is scheduled <b>after</b> it. The biennium's headline priority was the $6.66 "
+  "million high school Career and Technical Center. The district-wide capital need it assesses is "
+  "roughly $43.4 million, concentrated at the high school and middle school, not at North Middletown.")
 H2("What the district's own facility plans show")
 P("The prior facility plan, approved by the Kentucky Board of Education in June 2013 and recovered from the "
   "Internet Archive's captures of the state's own posting, settles what earlier versions of this report could "
@@ -2239,14 +2226,14 @@ P("Three facts fall out of that table. First, North Middletown's rated capacity 
   "consecutive state-approved plans, which is exactly why the community is entitled to the analysis "
   "behind it.")
 P("The 2026 planning cycle sharpens the point. The draft presented at the July 15 forum, an annotated "
-  "attendee copy of which is archived in this repository, carries no KDE approval date yet and re-rates the "
-  "same buildings again, on the KFICS basis: Cane Ridge rises from 422 to 547 and Bourbon Central to 640, "
-  "while North Middletown falls again, from 174 to 154. The draft's own new-construction sections read "
-  "<b>None</b>, so the 244 paper seats it adds in Paris come from no brick; ratings that can move 125 seats "
-  "in a single cycle are policy, not walls. Even at its reduced 154 rating, North Middletown stands 83 "
-  "percent full today, and the draft as presented that day, before the committee's amendment, still listed "
-  "the school as <b>permanent</b>; its headline capital priority is an $18.6 million major renovation of "
-  "the high school's 1968 and 1981 sections.")
+  "attendee copy archived here, carries no KDE approval date yet and re-rates the same buildings again, "
+  "on the KFICS basis: Cane Ridge rises from 422 to 547 and Bourbon Central to 640, while North "
+  "Middletown falls again, from 174 to 154. The draft's own new-construction sections read <b>None</b>, "
+  "so the 244 paper seats it adds in Paris come from no brick; ratings that move 125 seats in a single "
+  "cycle are policy, not walls. Even at 154, North Middletown stands 83 percent full today, and the "
+  "draft as presented that day, before the committee's amendment, still listed the school as "
+  "<b>permanent</b>; its headline capital priority is an $18.6 million major renovation of the high "
+  "school's 1968 and 1981 sections.")
 P("The investment record runs alongside. The 2013 plan priced a $1.92 million major renovation for "
   "North Middletown: a security vestibule, enlarged music and computer classrooms, media center and "
   "kitchen, gymnasium upgrades, new flooring, window and door replacement, electrical upgrades, and HVAC "
@@ -2256,22 +2243,23 @@ P("The investment record runs alongside. The 2013 plan priced a $1.92 million ma
   "needs priced in two consecutive plans, eight years apart, while the capital program built elsewhere "
   "both times, raise a forward-looking question: fund the work this cycle, or let the community fund it, "
   "before the building's condition is cited as a reason to close.")
-P("The KFICS Facilities Assessment prepared by RossTarrant Architects, presented in slides at the July "
-  "meeting and produced in full in the July 2026 records response, is archived in this repository. North "
-  "Middletown's total need is <b>$8,530,093</b>, the <b>lowest</b> of the five school buildings the assessment prices. The two "
-  "receiving schools need $23.2 million combined, $8,840,267 at Bourbon Central and $14,387,595 at Cane "
-  "Ridge, a 1992 building needing two thirds more than the 1948 one proposed for closure; the high school "
-  "needs $27.5 million, the middle school $22.4 million, and the districtwide total is <b>$98,441,294</b>, "
-  "more than four times the unused bonding capacity in Section 8. Closing the second-least-needy building "
-  "avoids $8.5 million of restricted-fund need, moves its children into buildings needing $23.2 million, "
-  "and does nothing about a $98 million problem. Two points bound the building question. Any renovation "
-  "would be paid from the restricted facility funds of Section 8, which cannot close the operating deficit "
-  "either way. And the receiving schools have little room: approved ratings are 521 at Bourbon Central and "
-  "422 at Cane Ridge, so at today's 459 and 453 Cane Ridge sits 31 <b>over</b> its rating and there is a "
-  "net 31 uncommitted seats for 128 children; if ratings can be adjusted by room assignment, the same "
-  "adjustment raises North Middletown's capacity instead. An empty building is also not free: it must be "
-  "secured, insured, minimally heated and eventually disposed of, in a town of about 610 people whose "
-  "residents told the planning committee the school is the heartbeat of the town.")
+P("The KFICS Facilities Assessment by RossTarrant Architects, presented in slides at the July meeting "
+  "and produced in full in the July 2026 records response, is archived here. North Middletown's total "
+  "need is <b>$8,530,093</b>, the <b>lowest</b> of the five school buildings the assessment prices. The "
+  "two receiving schools need $23.2 million combined, $8,840,267 at Bourbon Central and $14,387,595 at "
+  "Cane Ridge, a 1992 building needing two thirds more than the 1948 one proposed for closure; the high "
+  "school needs $27.5 million, the middle school $22.4 million, and the districtwide total is "
+  "<b>$98,441,294</b>, more than four times the unused bonding capacity in Section 8. Closing the "
+  "second-least-needy building avoids $8.5 million of restricted-fund need, moves its children into "
+  "buildings needing $23.2 million, and does nothing about a $98 million problem. Two points bound the "
+  "question. Any renovation would be paid from the restricted facility funds of Section 8, which cannot "
+  "close the operating deficit either way. And the receiving schools have little room: approved ratings "
+  "are 521 at Bourbon Central and 422 at Cane Ridge, so at today's 459 and 453 Cane Ridge sits 31 "
+  "<b>over</b> its rating and there is a net 31 uncommitted seats for 128 children; if ratings can move "
+  "by room assignment, the same move raises North Middletown's capacity instead. An empty building is "
+  "not free either: it must be secured, insured, minimally heated and eventually disposed of, in a town "
+  "of about 610 people whose residents told the planning committee the school is the heartbeat of the "
+  "town.")
 
 H2("The state's own condition index: the district's best-trending building")
 P("The architect's slides are one reading of the building. The state publishes its own, and it is "
@@ -2305,12 +2293,10 @@ P("Three findings sit in that figure. First, in the newest KDE-reviewed data, No
   "only one whose condition improved, carries the smallest near-term repair bill of the five, and "
   "scores above a receiving school 44 years its junior.")
 fig("chart_condition.png",
-    "Figure 18. The KFICS Condition Index for Bourbon County's three elementary schools in every statewide "
-    "report the state has published: October 2023 official, October 2025 official, and the July 2, 2026 "
-    "update. The 2023 and 2025 reports rest on the same 2020-21 inspections; the July 2026 report is the "
-    "first with fresh April 2026 inspections. Source: KDE, KFICS State Reports, downloadable from the "
-    "department's facilities pages and archived under build/ in this repository; Bourbon County is "
-    "district 041.", width=5.6 * inch)
+    "Figure 18. The KFICS Condition Index for Bourbon County's three elementary schools in every "
+    "statewide report the state has published: October 2023 official, October 2025 official, and the "
+    "July 2, 2026 update. Source: KDE, KFICS State Reports, archived under build/ in this repository; "
+    "Bourbon County is district 041.", width=5.6 * inch)
 
 H2("A worked example: rebalance the map, fill the school")
 P("One scenario, run in the workbook's Redistricting tab. Rezone 30 students to North Middletown from "
@@ -2349,12 +2335,11 @@ P("The zone geometry here is official: the federal School Attendance Boundary Su
   "Ridge serves the north including Millersburg; Bourbon Central the southwest. The math follows: about "
   "1.2 elementary students per square mile in the NMES zone, against roughly 5.1 across the two "
   "Paris-based schools' zones and 3.6 district-wide. That density gap is the exact variable state law "
-  "funds on. KRS 157.370 sets transportation aid by transported pupils per square mile, paying more "
-  "where density is low because low density costs more to serve. The funding history sharpens the "
-  "point: the formula ran underfunded for two decades, the 2024-2026 state budget restored it to 90 and "
-  "then 100 percent, computed on lagged fiscal 2023 costs, and the 2026-2028 budget froze it again "
-  "below the statute. A district that closes its one eastern school keeps every square mile of that "
-  "coverage area and serves it with longer rides.")
+  "funds on: KRS 157.370 sets transportation aid by transported pupils per square mile, paying more "
+  "where density is low. The funding history: the formula ran underfunded for two decades, the "
+  "2024-2026 state budget restored it to 90 and then 100 percent, computed on lagged fiscal 2023 "
+  "costs, and the 2026-2028 budget froze it again below the statute. A district that closes its one "
+  "eastern school keeps every square mile of that coverage area and serves it with longer rides.")
 tbl(["Zone", "Approx. area (sq mi)", "Elementary students", "Students per sq mi"],
     [["North Middletown zone (southeast)", "110", "128", "~1.2"],
      ["Cane Ridge zone (north)", "120", "453", "~3.8"],
@@ -2381,42 +2366,41 @@ P("Now the closure math, from the bottom up, with the distances measured on the 
   "whole map's point in a single number.")
 fig("chart_map.png",
     "Figure 20. Where the students are: the district's official attendance zones from the federal School "
-    "Attendance Boundary Survey (2015-16 collection), fetched by the repository's build/fetch_sabs.py. Paris "
-    "holds half the county's people and both receiving schools; Millersburg sits in Cane Ridge's northern "
-    "zone; the NMES zone runs about 1.2 students per square mile across 110 square miles of the southeast.", width=5.2 * inch)
-P("Run the same math on the rebalancing scenario and the sign flips. Rezoned students already ride district buses "
-  "today, ten miles west to the Paris schools; rezoning moves them to the school they live closest to, so the "
-  "affected routes shorten, an estimated $10,000 to $18,000 a year saved (each rezoned student cutting about 136 "
-  "bus-miles a year at $2.50 to $4.50 a mile, an estimate the district's T-1 route data would replace). On this "
-  "geometry rebalancing is transport-neutral at worst and modestly positive at best, while closure adds miles. "
-  "District-wide, the optimization lever in the menu below, routing software, tiered bells, and a right-sized "
-  "fleet, remains worth 5 to 10 percent of the $2.9 million line, $146,000 to $291,000 a year, whichever way the "
-  "boundary question is decided.")
-P("The state-revenue side runs the same way. Because the 2026-2028 appropriation is frozen at flat dollars "
-  "computed on old costs, the marginal state reimbursement on any NEW busing mile is zero: every dollar of "
-  "closure's added routes is district money. Rebalancing changes no transported-pupil count, so the KRS "
-  "157.370 allotment and SEEK revenue are untouched, and cross-county transfer students add SEEK revenue "
-  "while adding no required busing at all: under KRS 157.350 the receiving district sets its own "
-  "transportation policy for nonresident students. On this math redistricting does not raise transportation "
+    "Attendance Boundary Survey (2015-16 collection), fetched by the repository's build/fetch_sabs.py. "
+    "Paris holds half the county's people and both receiving schools; Millersburg sits in Cane Ridge's "
+    "northern zone.", width=5.2 * inch)
+P("Run the same math on the rebalancing scenario and the sign flips. Rezoned students already ride "
+  "district buses today, ten miles west to the Paris schools; rezoning moves them to the school they "
+  "live closest to, so the affected routes shorten: an estimated $10,000 to $18,000 a year saved (each "
+  "rezoned student cuts about 136 bus-miles a year at $2.50 to $4.50 a mile; the district's T-1 route "
+  "data would replace the estimate). On this geometry rebalancing is transport-neutral at worst and "
+  "modestly positive at best, while closure adds miles. District-wide, the optimization lever in the "
+  "menu below, routing software, tiered bells, and a right-sized fleet, remains worth 5 to 10 percent "
+  "of the $2.9 million line, $146,000 to $291,000 a year, whichever way the boundary question is "
+  "decided.")
+P("The state-revenue side runs the same way. Because the 2026-2028 appropriation is frozen at flat "
+  "dollars computed on old costs, the marginal state reimbursement on any NEW busing mile is zero: "
+  "every dollar of closure's added routes is district money. Rebalancing changes no transported-pupil "
+  "count, so the KRS 157.370 allotment and SEEK revenue are untouched, and cross-county transfers add "
+  "SEEK revenue with no required busing: under KRS 157.350 the receiving district sets its own "
+  "transportation policy for nonresidents. On this math redistricting does not raise transportation "
   "costs; it trims them, while the revenue side gains.")
 H2("How a real optimization would run, and who already runs them")
 P("None of this requires inventing anything. The method is standard: geocode enrolled students, build a "
-  "travel-time matrix on the actual road network, then assign zones to schools to minimize ride time, "
+  "travel-time matrix on the real road network, then assign zones to schools to minimize ride time, "
   "subject to capacities, statutory class sizes, and keeping neighborhoods together, with routes "
-  "re-optimized afterward. Kentucky districts already do this: Fayette County convenes boundary working "
-  "groups over GIS scenarios and publishes the maps; Jefferson County publishes its assignment documents "
-  "and has contracted route-optimization modeling. Every district files the T-1 annual transportation "
-  "report and keeps the address data the analysis needs. A district facing a closure vote over money owes "
-  "the public this study first, and the workbook's Transport_Geo and Redistricting tabs are built to "
-  "receive its outputs.")
+  "re-optimized afterward. Kentucky districts already do this: Fayette convenes boundary working groups "
+  "over GIS scenarios and publishes the maps; Jefferson publishes its assignment documents and has "
+  "contracted route-optimization modeling. Every district files the annual T-1 transportation report "
+  "and keeps the address data this needs. A district facing a closure vote over money owes the public "
+  "this study first, and the Transport_Geo and Redistricting tabs are built to receive its outputs.")
 P("The savings from doing this well are documented. Boston Public Schools ran the signature version in "
   "2017: an MIT-built routing algorithm produced bus routes 20 percent more efficient, cut 50 buses, and "
   "saved roughly $5 million in the first year. Bourbon County's transportation line is $2.9 million; the "
   "5 to 10 percent captured in the menu below is $146,000 to $291,000 a year, and Boston's 20 percent "
-  "shows the ceiling sits higher than the menu assumes. One more check anyone can run: the federal "
-  "School Attendance Boundary Survey published the district's attendance-zone boundaries as free GIS "
-  "files, and Figure 20 is drawn directly from that file, fetched by the repository's "
-  "build/fetch_sabs.py, so anyone can reproduce it in one step.")
+  "shows the ceiling sits higher than the menu assumes. One more check anyone can run: Figure 20 is "
+  "drawn straight from the free federal SABS GIS file, fetched by the repository's build/fetch_sabs.py, "
+  "so anyone can reproduce it in one step.")
 tbl(["Measure", "Estimated annual value", "How it works"],
     [["Restore the board's own 2018 rate (61.3 cents)",
       "about $1.7 million a year, recurring",
@@ -2462,14 +2446,14 @@ tbl(["Measure", "Estimated annual value", "How it works"],
       "all 46 open seats; the worked example above and the workbook's Redistricting tab show the math. "
       "A preschool or day-care satellite is an additional lever on top."]],
     [1.75 * inch, 1.35 * inch, 3.6 * inch],
-    caption="Figure 21. Measures available without closing a school. The menu deliberately mixes two kinds of lines, "
-            "new recurring revenue and recurring cost reductions, and the workbook's Alternatives tab labels each one "
-            "by type with a confidence rating and what would firm it up. Values are estimates derived from the "
-            "district's audited figures and state data; ranges overlap and are not additive to the penny. The "
-            "2018 restore plus the counted-once cost package alone is $2.2 to $2.8 million a year, against an "
-            "annual reserve drawdown of $1.1 to $1.2 million; the remaining lines overlap the growth plan's "
-            "enrollment lever, and each carries its own confidence rating on the Alternatives tab, which also "
-            "prices the KRS 160.470 four percent revenue mechanics row by row.",
+    caption="Figure 21. Measures available without closing a school. The menu mixes new recurring revenue "
+            "and recurring cost reductions; the workbook's Alternatives tab labels each line by type with a "
+            "confidence rating and what would firm it up. Values are estimates from the district's audited "
+            "figures and state data; ranges overlap and are not additive to the penny. The 2018 restore "
+            "plus the counted-once cost package alone is $2.2 to $2.8 million a year, against an annual "
+            "reserve drawdown of $1.1 to $1.2 million; the remaining lines overlap the growth plan's "
+            "enrollment lever, and the tab also prices the KRS 160.470 four percent revenue mechanics row "
+            "by row.",
     bold_first_col=True)
 
 H2("The closure analysis the district confirms does not exist")
@@ -2478,8 +2462,8 @@ P("The July 2026 records response settled the central question of our records as
   "N/A. None exists. When that analysis is created, and it should exist in writing before any vote, it "
   "should run line by line: the net recurring General Fund saving, meaning costs that truly disappear, "
   "minus added transportation, receiving-school costs, and the carrying or disposal cost of the "
-  "building, with the downside beside it. A worksheet carrying only one side of the ledger is not a "
-  "worksheet. Two risks belong on that page, and neither appears in anything the district has produced. "
+  "building, with the downside beside it. One-sided worksheets do not count. Two risks belong on that "
+  "page, and neither appears in anything the district has produced. "
   "<b>First, children who leave the district rather than change schools.</b> Each one takes the SEEK "
   "base with them, $4,636 at the fiscal 2027 rate, every year, permanently; ten students is $46,260 a "
   "year and thirty is $138,780. Our grid prices that leakage rather than assuming zero, and the risk is "
@@ -2488,9 +2472,9 @@ P("The July 2026 records response settled the central question of our records as
   "outside its classrooms. The exits are open and in use. The district's published math carries no "
   "leakage line at all. <b>Second, assessment erosion.</b> What does losing the town's only school do "
   "to property values inside the North Middletown attendance area, and so to the assessment base that "
-  "funds every school in the county? The limits of our evidence belong in the question: the thirty-year "
-  "Kentucky corpus in Section 5 does not establish that closure causes decline, because small towns "
-  "that kept their schools declined at nearly the same rate. So this is not a claim. It is a risk, it "
+  "funds every school in the county? Our own evidence has limits: the thirty-year Kentucky corpus in "
+  "Section 5 does not establish that closure causes decline, because small towns that kept their "
+  "schools declined at nearly the same rate. So this is not a claim. It is a risk, it "
   "runs one direction only, and the revenue at stake is the district's own, which makes bounding it the "
   "district's job. Both risks are estimable; neither has been estimated. A worksheet that books every "
   "saving at its best case and every risk at zero is incomplete. The board should ask for the second "
