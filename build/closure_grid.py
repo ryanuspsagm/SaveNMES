@@ -79,7 +79,7 @@ net = capture + fixed_positions_cut + teachers_cut x $54,479.40
 Run:  python build/closure_grid.py
 Asserts the published statistics: 972 scenarios; weighted median
 -$428,627; EVERY scenario loses money (the best corner, every lever at
-its friendliest at once, still loses $11,030 a year: $86 per displaced
+its friendliest at once, still loses $11,030 a year: $96 per displaced
 student); middle half -$519,765 to -$340,021; range -$847,825 to
 -$11,030; the site default (-$309,567: building sold, half the fixed
 positions cut over time, three teachers cut with the emptied

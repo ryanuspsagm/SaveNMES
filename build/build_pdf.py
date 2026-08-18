@@ -216,7 +216,7 @@ B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state mon
   "counts of Cloverport Independent, its host district. Every family that leaves takes about $5,100 a year "
   "of state money with it. The loss grows as the missing kids reach every grade (Section 5):")
 tbl(["Estimate", "Basis", "Students missing each year", "SEEK lost each year"],
-    [["Today's students", "43 to 57 percent of the 128 enrolled now", "55 to 73", "$282,480 to $374,928"],
+    [["Today's students", "43 to 57 percent of the 115 enrolled now", "49 to 65", "$251,664 to $333,840"],
      ["Steady state", "the same share of the whole feeder stream, middle half", "117 to 154", "<b>$600,912 to $790,944</b>"],
      ["Steady-state median", "the middle of the band", "136", "$698,496"]],
     [0.9 * inch, 2.2 * inch, 1.5 * inch, 1.8 * inch],
@@ -227,7 +227,7 @@ tbl(["Estimate", "Basis", "Students missing each year", "SEEK lost each year"],
             "grade cohorts in year one to all thirteen by year eight, then hold.")
 P("Read the signed evidence first: thirty-one households put their names on paper for seventy children. "
   "The statistical rows read the survey the honest way, as a share of the current student population, "
-  "corrected for response bias. The middle half takes 55 to 73 of the 128 students enrolled today. "
+  "corrected for response bias. The middle half takes 49 to 65 of the 115 students enrolled today. "
   "Carried across the whole feeder stream, that keeps 117 to 154 students a year off the district's "
   "rolls, $600,912 to $790,944 a year. "
   "The children in the building carry about $6.2 to $6.9 million of remaining state funding through grade "
@@ -481,7 +481,7 @@ P("One symmetry we apply to ourselves: per-student numbers move wherever the stu
   "per student is a utilization measure, not a verdict on a building, and after the move a filled North "
   "Middletown is still the cheapest of the three. Run the other way, closing North Middletown would "
   "improve the receiving schools' per-student optics while saving almost nothing in total.")
-P("The 128 children would still need teachers, about six homerooms' worth (eight to nine certified "
+P("The 115 children would still need teachers, about six homerooms' worth (eight to nine certified "
   "position-equivalents priced by ledger dollars), and Bourbon Central (459 students) and Cane Ridge "
   "(453) would each absorb roughly 64 more children across six grades. Their SEEK funding transfers "
   "with them; food service, self-supporting, follows the meal counts. What is genuinely avoidable is "
@@ -543,7 +543,7 @@ P("In early August 2026 the community asked NMES families the question the distr
   "answered for 85 children.</b> Duplicates were removed by hand, three households known to be staying "
   "were recoded, and one family that already left was set aside. The cleaned result: <b>31 households, "
   "with 70 children, say they would leave Bourbon County Schools</b>; 6 households (13 children) say "
-  "they would stay. The 70 signed-out children equal 55 percent of the current 128-student enrollment "
+  "they would stay. The 70 signed-out children equal 61 percent of the current 115-student enrollment "
   "(surveyed children include current students, younger siblings, and children not yet in school, so "
   "the share expresses scale, not a headcount). Where would they go? Montgomery County Schools 25, "
   "other or undecided 20, homeschool 16, private school 8, Clark County Schools 1. The "
@@ -566,7 +566,7 @@ P("The statistical estimate corrects the survey for the obvious bias: families s
   "response-propensity model discounts that split across leaver-to-stayer response ratios from 3.3x "
   "to about 9x, centered on 3.5x. "
   "The result: a true leave share with a median of 50 percent, middle half 43 to 57 percent. Applied to "
-  "the 128 students enrolled today, that is <b>55 to 73 children in the building right now</b>. "
+  "the 115 students enrolled today, that is <b>49 to 65 children in the building right now</b>. "
   "Extended to the entire NMES feeder stream, each entering class of about 22 (ten-year SAAR "
   "kindergarten average 22.2; recent per-grade range 19 to 24) carried for 12.62 effective years, it is "
   "<b>117 to 154 students missing from the rolls each year at steady state, $600,912 to $790,944 a "
@@ -754,14 +754,14 @@ P("<b>First, the money.</b> For the 163 closure events with clean finance data, 
   "tails hold events beyond $13,000 per child, more than any school costs to run: budget-wide noise, "
   "not closure effects. The raw median for the 27 closures most like this plan prints $8,440; the same "
   "artifact, and inside the plausible window that median is <b>$541</b>. The yardstick: this plan "
-  "needs <b>$6,250 to $7,813 per displaced child</b>, above the record's 75th percentile. The one "
+  "needs <b>$6,957 to $8,696 per displaced child</b>, above the record's 75th percentile. The one "
   "clean rural comparable with nothing built, Webster County's closure of Slaughters Elementary in "
   "2012, paid $3,525; every case at or near the plan's number came with a new school (Perry 2017, "
   "Adair 2006, Metcalfe 2013) or was a city or county-seat grade reshuffle. The record's figure is an "
   "upper bound by construction. Our bottom-up model prices only the levers a closure moves, and its "
-  "median is a $428,627 yearly LOSS, about $3,349 per displaced student below zero. The plan's "
+  "median is a $428,627 yearly LOSS, about $3,727 per displaced student below zero. The plan's "
   "requirement is eight times the record's median and unreachable by our own model, whose best case is "
-  "itself an $86-per-displaced-student loss.")
+  "itself a $96-per-displaced-student loss.")
 
 P("<b>Second, the classrooms.</b> Test scores can only be compared within one accountability system, so "
   "we tested the 42 closure events measurable inside the 2012 to 2019 window on the uniform federal "
@@ -1746,7 +1746,7 @@ P("<b>Version 5.0, August 17.</b> The school-choice survey results are published
   "loss, the 82nd percentile. In the same release the exodus estimate is restated as a share of the "
   "current student population extended to the whole feeder stream (the hand-coded class years are not assumed accurate; the evidence window spans current "
   "enrollment plus the next three entering classes), open-enrollment case studies are added with sources, and the shrinking "
-  "scenario count is the direct result of inputs the survey and records responses pinned down. The response-bias factor is recentered from 3x to 3.5x and floored at 3.3x, Pew's lower high-salience benchmark, chosen for a small, emotionally charged respondent pool, and every survey-derived figure is re-based. The "
+  "scenario count is the direct result of inputs the survey and records responses pinned down. The response-bias factor is recentered from 3x to 3.5x and floored at 3.3x, Pew's lower high-salience benchmark, chosen for a small, emotionally charged respondent pool, and every survey-derived figure is re-based. The current-enrollment baseline is restated on the 2025-26 end-of-year count of 115; capacity and cost comparisons keep the official 2024-25 filings at 128. The "
   "survey results are expressed as shares of current enrollment with a destination breakdown; leaving "
   "families who marked an in-district school are folded into the other-or-undecided row. Two "
   "value corrections in the same release: the SEEK base re-based from $4,626, the House-version figure "

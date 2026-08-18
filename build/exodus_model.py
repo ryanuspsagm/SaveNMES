@@ -35,8 +35,7 @@ kindergarten class years are used only to flag who is enrolled now):
     quartiles of the true leave share come from numeric integration
     over (p, k).
  3. TODAY. The corrected share applied to the current student
-    population: 128, the last official SAAR end-of-year count the site
-    standardizes on.
+    population: 115, the 2025-26 SAAR end-of-year count.
  4. STEADY STATE, FULL FEEDER. The same share applied to the entire
     NMES feeder stream: every entering class (21.5, the midpoint of the
     recent 19-24 per-grade SAAR range; the ten-year average kindergarten
@@ -67,7 +66,7 @@ import csv, json, math, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SEEK = 4636 + 500          # enacted FY2027 base + central add-on = 5,136
-POP = 128                    # last official SAAR end-of-year count (2024-25)
+POP = 115                    # SAAR 2025-26 end-of-year count
 COHORT = 21.5                # entering-class midpoint of the 19-24 SAAR range;
                              # ten-year average kindergarten is 22.2
 VAR_NONTEACH = 400           # supplies per student, growth model low leg
@@ -79,7 +78,7 @@ EFF_YEARS = 6 + sum(SURV_SEC)                      # 12.62
 # enrollment plus the next three entering classes (K-2026 to K-2028), so a
 # miscoded child counts either way; only six younger siblings (K-2029 to
 # K-2031) and two older students sit outside it. The correction still
-# assumes the largest silent pool the coding allows (~120 of the ~193
+# assumes the largest silent pool the coding allows (~105 of the ~180
 # eligible children), which leans the published band low.
 RAMP = (sum(range(6, 13)) + 13 * 6) / (13 * 13)    # 0.834; internal-only:
 # exported to the JSON for the record. The published artifacts quote steady

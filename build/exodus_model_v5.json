@@ -1,6 +1,6 @@
 {
  "seek": 5136,
- "pop": 128,
+ "pop": 115,
  "cohort": 21.5,
  "leaving_households": 31,
  "leaving_children": 70,
@@ -17,14 +17,14 @@
  "var_nonteach": 400,
  "ladder": {
   "today": {
-   "kids_lo": 55,
-   "kids_med": 64,
-   "kids_hi": 73,
-   "dollars_lo": 282480,
-   "dollars_med": 328704,
-   "dollars_hi": 374928,
-   "kids_p95": 84,
-   "dollars_p95": 431424
+   "kids_lo": 49,
+   "kids_med": 58,
+   "kids_hi": 65,
+   "dollars_lo": 251664,
+   "dollars_med": 297888,
+   "dollars_hi": 333840,
+   "kids_p95": 75,
+   "dollars_p95": 385200
   },
   "steady": {
    "kids_lo": 117,

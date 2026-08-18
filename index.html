@@ -296,7 +296,7 @@ footer a{color:var(--ice)}
 <div class="card">
 <h3>More students means a lower cost per student</h3>
 <p>Most of what NMES costs is the building and its fixed staff. Add students and cost per student falls, even counting supplies, busing, and new hires as classes fill. It already beats the five-year Kentucky elementary average; from about 135 students, the county's other elementaries too:</p>
-<div class="chartbox"><canvas id="chartCurve" role="img" aria-label="Line chart: NMES cost per student falls from about $20,600 at 110 students to $17,903 at 128 today and about $12,500 at the 198-seat rating, with steps where new teachers are hired beyond the 25 open seats. Dashed reference lines mark the five-year Kentucky elementary average of $18,051 and the five-year county elementary average of $17,090."></canvas></div>
+<div class="chartbox"><canvas id="chartCurve" role="img" aria-label="Line chart: NMES cost per student falls from about $20,600 at 110 students to $17,903 at the 2024-25 count of 128 and about $12,500 at the 198-seat rating, with steps where new teachers are hired beyond the 25 open seats. Dashed reference lines mark the five-year Kentucky elementary average of $18,051 and the five-year county elementary average of $17,090."></canvas></div>
 <p class="note">Dashed lines are five-year averages from the same files: <b>Kentucky elementary schools $18,051</b>, the <b>county's three elementaries $17,090</b>. At the 198 seats the state approved in 2013 (the current plan rates it 174; the community's targets aim back at 198): about $12,500 per student, cheaper than every school in the county today. One per 21 is today's class size; the upward steps are new hires.</p>
 </div>
 </details>
@@ -359,12 +359,12 @@ footer a{color:var(--ice)}
 <p class="note">Every exit is free to the family and funded for the district that wins the child. The August 2026 survey (results below) replaces hypothetical shares. A leaver is missing through grade 12: 12.62 effective years on the district's own grade-to-grade survival, at the $4,636 base plus $500 of add-ons.</p>
 <div style="overflow-x:auto"><table class="alt">
 <tr><th>Estimate</th><th>Basis</th><th>Students missing each year</th><th>SEEK lost each year</th></tr>
-<tr><td><b>Today's students</b></td><td>43 to 57 percent of the 128 enrolled now</td><td>55 to 73</td><td>$282,480 to $374,928</td></tr>
+<tr><td><b>Today's students</b></td><td>43 to 57 percent of the 115 enrolled now</td><td>49 to 65</td><td>$251,664 to $333,840</td></tr>
 <tr><td><b>Steady state</b></td><td>the same share of the whole feeder stream, middle half</td><td>117 to 154</td><td><b>$600,912 to $790,944</b></td></tr>
 <tr><td><b>Steady-state median</b></td><td>the middle of the band</td><td>140</td><td>$698,496</td></tr>
 </table></div>
 <div class="chartbox"><canvas id="chartLeave" role="img" aria-label="Line chart of the yearly state funding loss growing over thirteen years for each survey estimate. At the band's low edge, the loss grows from about $288,000 in year one to about $601,000 a year from year eight on; the median reaches about $698,000 and the high edge about $791,000 a year."></canvas></div>
-<p class="note">The loss grows until year eight, when the oldest lost class reaches grade 12, then holds. The 128 students in the building carry about $6.2 to $6.9 million of remaining state funding through grade 12 (1,339 student-years, priced at the $4,636 base to $5,136 with add-ons). And per the district's own advisor's June 2026 presentation, every 50 students lost take about $1 million of bonding capacity with them.</p>
+<p class="note">The loss grows until year eight, when the oldest lost class reaches grade 12, then holds. Priced on the official 2024-25 roster of 128, the school's students carry about $6.2 to $6.9 million of remaining state funding through grade 12 (1,339 student-years, at the $4,636 base to $5,136 with add-ons). And per the district's own advisor's June 2026 presentation, every 50 students lost take about $1 million of bonding capacity with them.</p>
 <p><b>Where school choice is open, this is how it goes.</b> Council Bluffs, Iowa closed rural Crescent Elementary in 2023 with 127 school-age children in its zone and 49 attending; students scattered to homeschool, neighboring districts, and a replacement charter. Palmyra-Eagle, Wisconsin lost up to 40 percent to open enrollment; its board voted to dissolve the district (a state panel later kept it open). Orient-Macksburg, Iowa lost 53 percent and dissolved in 2025. River Valley, Wisconsin closed two rural elementaries in 2017 and 2018 to save money. Seven years on, still shrinking, it closed a third and went to referendum to survive. No Kentucky district has closed a rural elementary in the HB 563 era and published what happened next. Bourbon County would be the experiment. Every case is sourced below.</p>
 </div>
 </details>
@@ -403,8 +403,8 @@ footer a{color:var(--ice)}
 
 <div class="card">
 <h3>Growth: what does filling NMES net?</h3>
-<p class="note">The building held 261 children at its peak; 128 today against a 174 rating. The pool is real: 236 in the district's own homeschool files, 450 to 550 Bourbon County Schools kids in homeschool, private school, or another district, 131 driving in already. Each new student brings $4,636, the enacted FY2027 SEEK base. The first 25 added students fill seats open at the district's class caps. Past them, a teacher per full new class.</p>
-<div class="slider-row"><label>Enrollment target (from 110, the district's figure, still unsourced; last official count 128) <output id="oGro">140</output></label>
+<p class="note">The building held 261 children at its peak; 115 today against a 174 rating. The pool is real: 236 in the district's own homeschool files, 450 to 550 Bourbon County Schools kids in homeschool, private school, or another district, 131 driving in already. Each new student brings $4,636, the enacted FY2027 SEEK base. The first 25 added students fill seats open at the district's class caps. Past them, a teacher per full new class.</p>
+<div class="slider-row"><label>Enrollment target (from 110, the district's figure, still unsourced; the 2024-25 count 128; 2025-26 ended at 115) <output id="oGro">140</output></label>
 <input type="range" id="sGro" min="110" max="200" value="140" step="5"></div>
 <div class="slider-row"><label>Class size for new classrooms, past the 25 open seats <output id="oRat">1 teacher per 21: today's class size</output></label>
 <input type="range" id="sRat" min="0" max="2" value="1" step="1"></div>
@@ -423,7 +423,7 @@ footer a{color:var(--ice)}
 <div class="sub">net new dollars per year at these settings</div>
 <div class="verdict" id="rGroVerdict"></div>
 </div>
-<p class="note">The calculator opens at 30 added students, $142,080 a year, within $140 of the weighted median ($142,220). No new hires, low busing and supplies (at the central $500 and $700, 30 students net about $118,000, the 40th percentile). From the official 128 count instead of the district's 110, the 140 target adds 12 students, about $57,000 a year. Added students count as recovered from outside the district; in-district transfers bring no new money. Five-student steps keep every setting inside the grid's floor and ceiling. Full method in the report.</p>
+<p class="note">The calculator opens at 30 added students, $142,080 a year, within $140 of the weighted median ($142,220). No new hires, low busing and supplies (at the central $500 and $700, 30 students net about $118,000, the 40th percentile). From the 2024-25 count of 128 instead of the district's 110, the 140 target adds 12 students, about $57,000 a year. Added students count as recovered from outside the district; in-district transfers bring no new money. Five-student steps keep every setting inside the grid's floor and ceiling. Full method in the report.</p>
 </div>
 </div>
 
@@ -462,11 +462,11 @@ footer a{color:var(--ice)}
 <p>Each enrolled child brings $5,136 a year in state SEEK funding ($4,636 base plus $500 typical add-ons). A leaver is missing for every remaining grade through 12th. With 97 to 100 percent of county fifth graders continuing into the district's middle and high school, that is 12.62 effective years per lost child, not 13. The August 2026 survey measures leavers as a share of the school:</p>
 <table class="alt">
 <tr><th>Estimate</th><th>Basis</th><th>Students missing each year</th><th>SEEK lost each year</th></tr>
-<tr><td><b>Today's students</b></td><td>43 to 57 percent of the 128 enrolled now</td><td>55 to 73</td><td>$282,480 to $374,928</td></tr>
+<tr><td><b>Today's students</b></td><td>43 to 57 percent of the 115 enrolled now</td><td>49 to 65</td><td>$251,664 to $333,840</td></tr>
 <tr><td><b>Steady state</b></td><td>the same share of the whole feeder stream, middle half</td><td>117 to 154</td><td>$600,912 to $790,944</td></tr>
 <tr><td><b>Steady-state median</b></td><td>the middle of the band</td><td>140</td><td>$698,496</td></tr>
 </table>
-<p class="note">The estimate corrects for response bias: leavers answer more readily than stayers, so the sample's 83 percent leave rate is discounted against a response-propensity model. The band is the middle half of the corrected share. It applies to the 128 enrolled today, then to the whole feeder stream: entering classes of about 22 through grade 12 at the district's continuation rates (12.62 effective years). The evidence window spans current enrollment plus the next three entering classes, so hand-coded class years cannot move the sample; no per-class math is used, and correcting against the largest possible silent pool leans the estimate low. The state's SAAR files back the band from outside the survey: this year's kindergarten enrolled 12 children against a ten-year average of 22. Losses build from six grade cohorts in year one to all thirteen by year eight. The closure grid prices the steady state.</p>
+<p class="note">The estimate corrects for response bias: leavers answer more readily than stayers, so the sample's 83 percent leave rate is discounted against a response-propensity model. The band is the middle half of the corrected share. It applies to the 115 enrolled today, then to the whole feeder stream: entering classes of about 22 through grade 12 at the district's continuation rates (12.62 effective years). The evidence window spans current enrollment plus the next three entering classes, so hand-coded class years cannot move the sample; no per-class math is used, and correcting against the largest possible silent pool leans the estimate low. The state's SAAR files back the band from outside the survey: this year's kindergarten enrolled 12 children against a ten-year average of 22. Losses build from six grade cohorts in year one to all thirteen by year eight. The closure grid prices the steady state.</p>
 <p>Leaving is not pure loss, and the model counts nothing twice. Each missing student stops costing about <b>$400 in supplies and materials</b>, the same figure the growth model charges per new student. Cutting teachers is separate, priced only on the teachers-cut lever (the district's own 0 to 3 positions). Even at their friendliest, <b>closure still loses money in every priced scenario</b>: $400 and a few positions cannot outrun $5,136 walking out per child.</p>
 </div>
 </details>
@@ -658,23 +658,23 @@ footer a{color:var(--ice)}
 <h3>School choice survey: the results</h3>
 <p>In August 2026 we asked NMES families the one question the district's plan never prices: <b>if the school closes, what would your family actually do?</b> Forty-two responses came in. Minus duplicates, plus one late family with one child, <b>38 households answered for 85 children</b>:</p>
 <table class="alt">
-<tr><th>Response</th><th>Households</th><th>Children</th><th>As a share of the 128 enrolled today</th></tr>
-<tr><td><b>Would leave Bourbon County Schools</b></td><td><b>31</b></td><td><b>70</b></td><td><b>55 percent</b></td></tr>
-<tr><td>Would stay</td><td>6</td><td>13</td><td>10 percent</td></tr>
+<tr><th>Response</th><th>Households</th><th>Children</th><th>As a share of the 115 enrolled today</th></tr>
+<tr><td><b>Would leave Bourbon County Schools</b></td><td><b>31</b></td><td><b>70</b></td><td><b>61 percent</b></td></tr>
+<tr><td>Would stay</td><td>6</td><td>13</td><td>11 percent</td></tr>
 <tr><td>Already left the district</td><td>1</td><td>2</td><td>2 percent</td></tr>
 </table>
-<p class="note">Shares are scaled to today's 128-student enrollment; surveyed children include current students, younger siblings, and children not yet in school.</p>
+<p class="note">Shares are scaled to today's 115-student enrollment; surveyed children include current students, younger siblings, and children not yet in school.</p>
 <p><b>Where the leaving children would go:</b></p>
 <table class="alt">
-<tr><th>Destination</th><th>Children</th><th>As a share of the 128 enrolled today</th></tr>
-<tr><td>Montgomery County Schools</td><td>25</td><td>20 percent</td></tr>
-<tr><td>Other or undecided</td><td>20</td><td>16 percent</td></tr>
-<tr><td>Homeschool</td><td>16</td><td>13 percent</td></tr>
-<tr><td>Private school</td><td>8</td><td>6 percent</td></tr>
+<tr><th>Destination</th><th>Children</th><th>As a share of the 115 enrolled today</th></tr>
+<tr><td>Montgomery County Schools</td><td>25</td><td>22 percent</td></tr>
+<tr><td>Other or undecided</td><td>20</td><td>17 percent</td></tr>
+<tr><td>Homeschool</td><td>16</td><td>14 percent</td></tr>
+<tr><td>Private school</td><td>8</td><td>7 percent</td></tr>
 <tr><td>Clark County Schools</td><td>1</td><td>1 percent</td></tr>
 </table>
 <p class="note">The other-or-undecided row includes seven children marked with an in-district school; because their families say they would leave Bourbon County Schools, they count here, and the anonymized data carries that coding. The data, names and dates removed, is published as survey_school_choice_2026_08_anonymized.csv. Personal information is never published. The form is closed; results went to the board.</p>
-<p><b>Follow the numbers.</b> Among surveyed children enrolled now or entering by fall 2028, 62 of 75 would leave: 83 percent. Class codes are not assumed accurate; the three-class window means a miscoded child counts either way. We still correct as if the roughly 120 eligible children with no answer lean the other way, the harshest reading the coding allows. That leans the estimate low. Corrected for response bias (method and code: the report and build/exodus_model.py): <b>43 to 57 percent of the school leaves, median 50 percent</b>, or <b>55 to 73 of the 128 children in the building today</b>. The same community feeds every future class. Across the whole feeder stream, about 22 entering children a year through grade 12 (12.6 effective years per child): <b>117 to 154 students missing from the district's rolls every year, $600,912 to $790,944 a year</b>. The closure model prices exactly that band. Their named destinations, tabled above, are open today.</p>
+<p><b>Follow the numbers.</b> Among surveyed children enrolled now or entering by fall 2028, 62 of 75 would leave: 83 percent. Class codes are not assumed accurate; the three-class window means a miscoded child counts either way. We still correct as if the roughly 120 eligible children with no answer lean the other way, the harshest reading the coding allows. That leans the estimate low. Corrected for response bias (method and code: the report and build/exodus_model.py): <b>43 to 57 percent of the school leaves, median 50 percent</b>, or <b>49 to 65 of the 115 children in the building today</b>. The same community feeds every future class. Across the whole feeder stream, about 22 entering children a year through grade 12 (12.6 effective years per child): <b>117 to 154 students missing from the district's rolls every year, $600,912 to $790,944 a year</b>. The closure model prices exactly that band. Their named destinations, tabled above, are open today.</p>
 
 </div>
 <details class="more" open><summary>More ways to help: Frankfort contacts and the QR code</summary>
@@ -791,7 +791,7 @@ list.appendChild(d);
 <h3>Every version stays public</h3>
 <p>The 54-page report and the complete financial model behind every number on this page. The open GitHub repository holds the source for all of it, including every archived district document.</p>
 <p class="note"><b>Version history</b> (each report's corrections section lists what changed and why):
-<a href="reports/Saving_NMES_v5.0_2026-08-17.pdf">v5.0, August 17</a> (the school-choice survey results published anonymized and the closure grid rebuilt on them: survey-anchored leavers at steady state priced at the statistical band's middle half (the signed floor of 74 kept as evidence below every priced leg), the busing high leg capped at $95,000 and the speculative property lever dropped while the PVA records request is pending, 972 scenarios, median loses $428,627, every priced scenario loses money; the evidence window spans current enrollment plus the next three entering classes; the exodus estimate restated as a share of the current student population extended to the whole feeder stream, with the response-bias factor centered at 3.5x and floored at 3.3x, Pew's lower high-salience benchmark, chosen for a small, emotionally charged respondent pool; survey results expressed as shares of current enrollment with a destination breakdown, leaving families who marked an in-district school folded into the other-or-undecided row; open-enrollment case studies added with sources; the SEEK base corrected to the enacted FY2027 figure of $4,636, the pre-enactment House figure of $4,626 had been in use; the supplies credit now scales with each missing student and staffing savings are priced only on the teachers lever, so nothing is counted twice; multi-year totals retired in favor of per-year figures; the facility plan's "128" traced to the 2024-25 SAAR end-of-year file and the label corrected from 2023-24; the score-suppression label corrected to KDE's written fewer-than-three rule; the research base added to Sources, including the published measurements that anchor the survey's response-bias correction) &middot;
+<a href="reports/Saving_NMES_v5.0_2026-08-17.pdf">v5.0, August 17</a> (the school-choice survey results published anonymized and the closure grid rebuilt on them: survey-anchored leavers at steady state priced at the statistical band's middle half (the signed floor of 74 kept as evidence below every priced leg), the busing high leg capped at $95,000 and the speculative property lever dropped while the PVA records request is pending, 972 scenarios, median loses $428,627, every priced scenario loses money; the evidence window spans current enrollment plus the next three entering classes; the exodus estimate restated as a share of the current student population extended to the whole feeder stream, with the response-bias factor centered at 3.5x and floored at 3.3x, Pew's lower high-salience benchmark, chosen for a small, emotionally charged respondent pool; survey results expressed as shares of current enrollment with a destination breakdown, leaving families who marked an in-district school folded into the other-or-undecided row; open-enrollment case studies added with sources; the SEEK base corrected to the enacted FY2027 figure of $4,636, the pre-enactment House figure of $4,626 had been in use; the supplies credit now scales with each missing student and staffing savings are priced only on the teachers lever, so nothing is counted twice; multi-year totals retired in favor of per-year figures; the facility plan's "128" traced to the 2024-25 SAAR end-of-year file and the label corrected from 2023-24; the current-enrollment baseline restated on the 2025-26 end-of-year count of 115, with capacity and cost comparisons kept on the official 2024-25 filings at 128; the score-suppression label corrected to KDE's written fewer-than-three rule; the research base added to Sources, including the published measurements that anchor the survey's response-bias correction) &middot;
 <a href="reports/Saving_NMES_v4.6_2026-08-03.pdf">v4.6, August 3</a> (the per-cent-of-rate tax yield corrected to the audit's own real estate roll, $166,189, and every dependent figure re-based; the Fayette same-year comparison added) &middot;
 <a href="reports/Saving_NMES_v4.5_2026-08-02.pdf">v4.5, August 2</a> (explicit lever weights on both grids, triangular where the record pins a center, uniform where it does not; middle halves published; KY average back to 2012 on the cost chart) &middot;
 <a href="reports/Saving_NMES_v4.4_2026-08-01.pdf">v4.4, August 1</a> (growth model on the district's own class caps, all 19,683 scenarios pay; the transformative check; five asks; Blue Ribbon added; version history replaces correction notes) &middot;
@@ -1046,7 +1046,7 @@ options:{responsive:true,maintainAspectRatio:false,
 plugins:{legend:{display:true,position:'bottom',labels:{boxWidth:14,font:{size:9.5}}},
 tooltip:{callbacks:{label:function(c){return c.parsed.x===9?'':'$'+c.parsed.y.toLocaleString("en-US")+' per student at '+c.label+' students'}}}},
 scales:{y:{grid:{color:'#E3E8F0'},ticks:{callback:function(v){return '$'+(v/1000).toFixed(0)+'K'}},title:{display:true,text:'cost per student',font:{size:10}}},
-x:{ticks:{maxTicksLimit:10},title:{display:true,text:'students enrolled (128 today, 198-seat rating)',font:{size:10}}}}}});
+x:{ticks:{maxTicksLimit:10},title:{display:true,text:'students enrolled (128 at the 2024-25 count, 198-seat rating)',font:{size:10}}}}}});
 })();
 
 /* Leaving families: yearly loss escalation, years 1-13. Same math as the

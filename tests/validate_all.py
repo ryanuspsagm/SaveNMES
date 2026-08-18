@@ -169,13 +169,13 @@ def main():
         "provenance cite on the site, top disclosure and footer")
     chk("Open Records Requests only" in t,
         "provenance cite in the report")
-    for needle in ["$600,912 to $790,944", "55 to 73", "$282,480 to $374,928",
+    for needle in ["$600,912 to $790,944", "49 to 65", "$251,664 to $333,840",
                    "Students missing each year", "SEEK lost each year",
                    "the oldest lost class reaches grade 12"]:
         chk(needle in html, f"exodus ladder on the site: {needle}")
     for gone in ("13-year window", "about $4.1M", "$6.7 to $12.0M", "lifetime revenue loss"):
         chk(gone not in html, f"multi-year totals retired from the site: {gone}")
-    for needle in ["$600,912 to $790,944", "55 to 73",
+    for needle in ["$600,912 to $790,944", "49 to 65",
                    "share of the current student population"]:
         chk(needle in t, f"exodus ladder in the report: {needle}")
     chk('name:"Lynne"' in html and "859-707" not in html,
@@ -333,7 +333,7 @@ def main():
 
     # the Kentucky closure record (v3.3)
     for needle in ["Figure 9.", "339 rural", "72 towns", "$1,102", "$818",
-                   "$8,440", "$541", "$6,250 to $7,813", "West Perry", "Adair",
+                   "$8,440", "$541", "$6,957 to $8,696", "West Perry", "Adair",
                    "Meade Memorial", "Leslie County 2013", "we would welcome being wrong",
                    "nine times", "ky_rural_closures_", "ky_closure_dollar_cases.csv"]:
         chk(needle in t, f"PDF KY closure record intact: {needle}")
@@ -382,10 +382,10 @@ def main():
     chk(es_path.exists(), "executive summary PDF exists")
     es = " ".join(pg.extract_text() for pg in PdfReader(es_path).pages).replace("\n", " ")
     for needle in ["$19,080", "$428,627", "54,479.40", "Permanent", "2,412", "972",
-                   "$600,912 to $790,944", "55 to 73", "$698,496",
+                   "$600,912 to $790,944", "49 to 65", "$698,496",
                    "$6.2 to $6.9 million"]:
         chk(needle in es, f"executive summary intact: {needle}")
-    for needle in ["$600,912 to $790,944", "55 to 73", "$698,496",
+    for needle in ["$600,912 to $790,944", "49 to 65", "$698,496",
                    "$6.2 to $6.9 million"]:
         chk(needle in html, f"exodus-ladder basis mirrored on the site: {needle}")
     chk("SaveNMES_Executive_Summary.pdf" in html, "site links the executive summary")
@@ -679,7 +679,7 @@ def main():
                    "Supporting Data and Appendices"]:
         chk(needle in t, f"report opening mirrors the exec summary doc: {needle}")
     chk("Decision in Brief" not in t, "the duplicative Decision in Brief section is retired")
-    chk("43 to 57 percent of the 128 enrolled now" in html and "Steady-state median" in html,
+    chk("43 to 57 percent of the 115 enrolled now" in html and "Steady-state median" in html,
         "the share-based today and steady-state rows published as the leaving scenarios on the site")
     chk("28 homerooms" not in html,
         "site does not adopt the district capacity claims uncritically")
@@ -995,9 +995,9 @@ def main():
         and R["enrolled_sample"] == 75 and R["enrolled_leavers"] == 62,
         "exodus model: survey cleanup reproduces 31 households / 70 children and the 62-of-75 sampled-window split")
     L = R["ladder"]
-    chk(L["today"]["kids_lo"] == 55 and L["today"]["kids_hi"] == 73
-        and L["today"]["dollars_lo"] == 282480 and L["today"]["dollars_hi"] == 374928,
-        "exodus today-share recomputes: 55 to 73 of the 128 enrolled, $282,480 to $374,928")
+    chk(L["today"]["kids_lo"] == 49 and L["today"]["kids_hi"] == 65
+        and L["today"]["dollars_lo"] == 251664 and L["today"]["dollars_hi"] == 333840,
+        "exodus today-share recomputes: 49 to 65 of the 115 enrolled, $251,664 to $333,840")
     chk(L["steady"]["kids_lo"] == 117 and L["steady"]["kids_med"] == 136
         and L["steady"]["kids_hi"] == 154 and L["steady"]["dollars_lo"] == 600912
         and L["steady"]["dollars_med"] == 698496 and L["steady"]["dollars_hi"] == 790944,
@@ -1007,7 +1007,7 @@ def main():
     for s in ("$600,912", "$790,944", "$698,496", "136 students: the statistical median"):
         chk(s in html, f"exodus figure on the site: {s}")
     for s in ("Where the leaving children would go", "Montgomery County Schools",
-              "Other or undecided", "As a share of the 128 enrolled today",
+              "Other or undecided", "As a share of the 115 enrolled today",
               "because their families say they would leave Bourbon County Schools"):
         chk(s in html, f"survey destination breakdown on the site: {s}")
     import csv as _csv

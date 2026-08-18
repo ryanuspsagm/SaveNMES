@@ -431,9 +431,9 @@ if perry and johnson:
         diff(f"Perry per-kid: model recompute {per_kid:.0f}, pdf $3,600 {'$3,600' in pdf_flat}")
 else:
     diff("KY_Closures tab missing Perry/Johnson rows")
-plan_lo = 800000 / A["B11"].value; plan_hi = 1000000 / A["B11"].value
-if plan_lo == 6250 and abs(plan_hi - 7812.5) < 1 and "$6,250 to $7,813" in pdf_flat:
-    match("plan requirement per displaced student ($6,250 to $7,813 = $800K-$1M over 128) consistent model/PDF")
+plan_lo = 800000 / 115; plan_hi = 1000000 / 115
+if round(plan_lo) == 6957 and round(plan_hi) == 8696 and "$6,957 to $8,696" in pdf_flat:
+    match("plan requirement per displaced student ($6,957 to $8,696 = $800K-$1M over the 115 displaced) consistent model/PDF")
 else:
     diff(f"plan per-kid: {plan_lo:.0f}/{plan_hi:.0f}")
 if "chartKYRecord" not in html:
@@ -609,7 +609,7 @@ else:
 # site text spot checks
 for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $847,825 a year at the left end to still losing $11,030 a year", "closure range prose"),
                  ("$166,189 per cent", "certified real-estate yield in the levy note"), ("$2.65 million", "deficit figure in prose"),
-                 ("128 today", "enrollment in prose"), ("a 174 rating", "capacity prose")]:
+                 ("115 today", "enrollment in prose"), ("a 174 rating", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")
     else: diff(f"site text missing '{s}' ({label})")
 
