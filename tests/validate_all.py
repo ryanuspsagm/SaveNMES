@@ -1007,7 +1007,7 @@ def main():
     for s in ("$600,912", "$790,944", "$698,496", "136 students: the statistical median"):
         chk(s in html, f"exodus figure on the site: {s}")
     for s in ("Where the leaving children would go", "Montgomery County Schools",
-              "Other or undecided", "As a share of the 115 enrolled today",
+              "Other or undecided", "Share of the 85 surveyed children",
               "because their families say they would leave Bourbon County Schools"):
         chk(s in html, f"survey destination breakdown on the site: {s}")
     import csv as _csv
