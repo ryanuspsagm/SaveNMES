@@ -85,6 +85,12 @@ else:
     diff("site leaver pricing formula not found")
 
 # two-tailed range strings consistent
+if "predicts what comparable communities already did" in html \
+        and "predicts what comparable communities already did" in pdf_flat \
+        and "sits between the" in html and "sits between the" in pdf_flat:
+    match("revealed-preference calibration (corrected band vs realized case-study losses) on site and in PDF")
+else:
+    diff("revealed-preference calibration sentence missing on site or in PDF")
 if "still losing $11,030" in pdf_flat and "losing $847,825" in pdf_flat and "losing $847,825" in html \
         and "still losing $11,030" in html:
     match("two-tailed range (-$847,825 to -$11,030, v5 survey-anchored grid) consistent on site and in PDF")

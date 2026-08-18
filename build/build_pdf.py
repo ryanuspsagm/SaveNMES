@@ -601,6 +601,11 @@ P("Where inter-district choice is already open, the aftermath is on the record. 
   "transferred out. No Kentucky district has yet closed a rural elementary in the HB 563 "
   "open-enrollment era and published the aftermath; Bourbon County would be the experiment. Sources for "
   "every case are in the back matter.")
+P("These cases also answer the objection that families say one thing and do another. They are measured "
+  "behavior, not promises. Our corrected band, 43 to 57 percent with a median of 50, sits between the "
+  "40 percent Palmyra-Eagle actually lost and the 53 percent Orient-Macksburg actually lost; 61 percent "
+  "of Crescent's zone had stopped attending before the school closed. The survey, after our discount, "
+  "predicts what comparable communities already did.")
 P("Leaving is not pure loss, and the model credits the savings without double counting: the supplies "
   "credit scales with every child who goes, and teacher cuts are priced only on their own lever. Even "
   "with both credits at their friendliest, every priced scenario loses money. $400 of supplies and a "
