@@ -221,19 +221,20 @@ B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state mon
   "takes about $5,100 a year of state money with it, and the loss grows as the missing kids reach every "
   "grade (Section 5):")
 tbl(["Estimate", "Basis", "Students missing each year", "SEEK lost each year"],
-    [["Floor", "the 31 signed survey households alone", "74", "<b>$378,090</b>"],
-     ["Likely band", "middle half of the statistical estimate", "121 to 217", "<b>$622,828 to $1,113,400</b>"],
-     ["Middle", "the statistical median", "147 to 186", "$756,445 to $955,509"]],
+    [["Today's students", "51 to 72 percent of the 128 enrolled now", "65 to 92", "$332,484 to $470,540"],
+     ["Steady state", "the same share of the whole feeder stream, middle half", "137 to 194", "<b>$704,779 to $997,420</b>"],
+     ["Steady-state median", "the middle of the band", "167", "$855,977"]],
     [0.9 * inch, 2.2 * inch, 1.5 * inch, 1.8 * inch],
     caption="What leaving families cost, measured by the August 2026 school-choice survey (Section 5) and "
             "priced at $5,136 per student-year: the enacted FY2027 SEEK base of $4,636 plus $500 of typical "
             "add-ons. A child who leaves is missing for every remaining grade through 12th, discounted by "
             "the district's own grade-to-grade survival (12.62 effective years); losses build from six "
             "grade cohorts in year one to all thirteen by year eight, then hold.")
-P("Read the table's floor row first, because it involves no statistics at all: thirty-one households put "
-  "their names on paper, and their children alone keep about 74 students a year off the district's rolls, "
-  "$378,090 a year, every year. The statistical rows correct the full survey for response bias and land "
-  "the likely loss between $622,828 and $1,113,400 a year. "
+P("Read the signed evidence first: thirty-one households put their names on paper for seventy children. "
+  "The statistical rows read the survey the honest way, as a share of the current student population, "
+  "corrected for response bias: the middle half takes 65 to 92 of the 128 students enrolled today and, "
+  "carried across the whole feeder stream, keeps 137 to 194 students a year off the district's rolls, "
+  "$704,779 to $997,420 a year. "
   "The children in the building carry about $6.2 to $6.9 million of remaining state funding through grade 12 "
   "(their actual grade counts are 1,339 student-years, priced at the $4,636 base to $5,136 with add-ons). "
   "About one in eight middle and high schoolers came through North Middletown, its share of the county's "
@@ -555,21 +556,24 @@ P("In early August 2026 the community asked NMES families the question the distr
   "children, say they would leave Bourbon County Schools</b>; 6 households (13 children) say they would "
   "stay. The anonymized data, every name and date removed, is published in the repository "
   "(build/survey_school_choice_2026_08_anonymized.csv); personal information is never published.")
-P("Sorted by kindergarten class, the leavers average <b>5.83 children out of every class of 19 to 24</b>, "
-  "and their named destinations are real and open today: Montgomery County, Clark County, homeschool, "
-  "private school. A child who leaves is missing for every remaining grade: the district's own grade-to-"
-  "grade records show 97 to 100 percent of county fifth graders enter its middle school and stay through "
-  "11th grade, with senior-year survival at 83 percent, so each lost child is counted for 12.62 effective "
-  "years rather than a flat 13. The signed households alone therefore keep about <b>74 students a year off "
-  "the district's rolls, $378,090 a year</b> at the $5,136 SEEK basis: that is the floor, and it involves "
-  "no statistics at all.")
+P("Their named destinations are real and open today: Montgomery County, Clark County, homeschool, "
+  "private school. The survey is read as a share of the school, not as per-class counts: the hand-coded "
+  "kindergarten class years mark only which children are enrolled now, and no per-class math is "
+  "published from them (a v5.0 method change, disclosed in the version history; earlier drafts derived a "
+  "per-class floor). A child who "
+  "leaves is missing for every remaining grade: the district's own grade-to-grade records show 97 to 100 "
+  "percent of county fifth graders enter its middle school and stay through 11th grade, with senior-year "
+  "survival at 83 percent, so each lost child is counted for 12.62 effective years rather than a flat 13.")
 P("The statistical estimate corrects the full survey for the obvious bias: families set on leaving answer "
   "a survey like this more readily than families staying put. Among currently enrolled surveyed children "
   "the raw split is 20 leavers to 4 stayers, about a fifth of the school; a response-propensity model "
   "discounts that split across leaver-to-stayer response ratios from 1x to 8x, centered on 3x, and the "
   "resulting distribution puts the true leave share at a median of 61 percent with a middle half of 51 to "
-  "72 percent. Across class sizes of 19 to 24 that is <b>121 to 217 students missing each year, $622,828 "
-  "to $1,113,400 a year</b>, with a 95th-percentile bound near $1.3 million. Losses build from six grade "
+  "72 percent. Applied to the 128 students enrolled today, that is <b>65 to 92 children in the building "
+  "right now</b>. Extended to the entire NMES feeder stream, each entering class of about 22 (the ten-year "
+  "SAAR kindergarten average is 22.2; the recent per-grade range is 19 to 24) carried for 12.62 effective "
+  "years, it is <b>137 to 194 students missing from the rolls each year at steady state, $704,779 to "
+  "$997,420 a year</b>, with a 95th-percentile bound near $1.16 million. Losses build from six grade "
   "cohorts in year one to all thirteen by year eight. Every number is reproduced by build/exodus_model.py "
   "from the published anonymized data. The 1x-to-8x correction range is anchored to published "
   "measurements of exactly this bias, all in Sources: Groves, Presser, and Dipko's topic-interest "
@@ -587,6 +591,19 @@ P("The state's own files corroborate the band from outside the survey. The SAAR 
   "described here as the district's 2023-24 SAAR figure, matches the state's 2024-25 SAAR end-of-year "
   "membership file exactly (as does Cane Ridge's 461), and end-of-year enrollment is the planning manual's "
   "own prescribed basis; the state's 2023-24 file shows 141.")
+P("Where inter-district choice is already open, the aftermath of closing a rural elementary is on the "
+  "record. Council Bluffs, Iowa closed rural Crescent Elementary in 2023: 127 school-age children lived "
+  "in its zone but only 49 still attended, and after the closure the town's students scattered to "
+  "homeschooling, neighboring districts, and a new charter school founded to replace it. Wisconsin's "
+  "Palmyra-Eagle district lost up to 40 percent of its students to open enrollment and its board voted to "
+  "dissolve the entire district. Iowa's Orient-Macksburg district watched 53 percent of its certified "
+  "enrollment open-enroll out, and dissolved in June 2025. Wisconsin's River Valley district closed two "
+  "rural elementaries in 2017 and 2018 for projected savings; seven years later, still shrinking, it "
+  "closed its third and last satellite campus and went to referendum to survive. In Nebraska, Scottsbluff "
+  "administrators conceded in 2026 that closing their last country school was unlikely to save much money "
+  "if a critical mass of its students transferred to nearby districts. No Kentucky district has yet closed "
+  "a rural elementary in the HB 563 open-enrollment era and published the aftermath; Bourbon County would "
+  "be the experiment. Sources for every case are in the back matter.")
 P("Leaving is not pure loss, and the model credits the savings without counting anything twice. Each "
   "missing student stops costing about $400 in supplies and materials, the same low-leg figure the growth "
   "model charges each recruit, and that credit scales with every child who goes. Cutting teachers is a "
@@ -1738,7 +1755,10 @@ P("<b>Version 5.0, August 17.</b> The school-choice survey results are published
   "a $571,883 yearly loss, the middle half to a $679,361-to-$467,862 loss, every priced scenario loses "
   "money (the best case still loses $95,750), and the website default (the savings that scale with "
   "students granted, teachers included, half the fixed overhead cut, median leavers) opens at a $456,383 "
-  "loss, the 77th percentile. Two "
+  "loss, the 77th percentile. In the same release the exodus estimate is restated as a share of the "
+  "current student population extended to the whole feeder stream (the hand-coded class years now mark "
+  "only enrollment status), open-enrollment case studies are added with sources, and the shrinking "
+  "scenario count is the direct result of inputs the survey and records responses pinned down. Two "
   "value corrections in the same release: the SEEK base re-based from $4,626, the House-version figure "
   "used before enactment, to the enacted FY2027 base of $4,636 (2026-28 budget; both grids, the growth "
   "median moves to $142,220), and multi-year loss totals are retired in favor of per-year figures. The "
@@ -1961,6 +1981,17 @@ srcs = [
  "build/abraham_helms_presser_2009_nber_w14076.pdf",
  "Pew Research Center, Assessing the Representativeness of Public Opinion Surveys (2012) and What Low "
  "Response Rates Mean for Telephone Surveys (2017); archived in build/",
+ "KMTV 3 News Now, Council Bluffs school board votes to close Crescent Elementary (2023) and Crescent "
+ "community plans charter school to replace closed elementary (2026): 3newsnow.com",
+ "Education Week, Open Enrollment Has Drained One District; It's Looking to Dissolve (Dec. 2019): "
+ "edweek.org (Palmyra-Eagle, Wisconsin)",
+ "Iowa Starting Line, Orient-Macksburg could be first Iowa school district to shutter since 2015 "
+ "(May 2024): iowastartingline.com; Iowa Public Radio, Orient-Macksburg school district closed "
+ "permanently (June 2025)",
+ "Valley Sentinel, River Valley school board votes to close Early Learning Center, eyes $1M in savings "
+ "(Jan. 2025): valleysentinelnews.com",
+ "Flatwater Free Press, The last country school in Scottsbluff shuts its doors (June 2026): "
+ "flatwaterfreepress.org",
  "Edunomics Lab, Georgetown University, Financial Impacts of Enrollment Decline (2021): edunomicslab.org "
  "(per-pupil revenue leaves with each lost student while costs fall only in steps)",
  "Bellwether, How Student Enrollment Declines Are Affecting Education Budgets, Explained in 10 Figures: "

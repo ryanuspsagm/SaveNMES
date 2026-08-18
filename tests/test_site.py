@@ -234,7 +234,7 @@ def main():
         if not sv["iframe"] and "form.jotform.com" not in pg.content():
             ok("the Jotform embed is fully retired")
         else: bad("Jotform still present")
-        if "31" in sv["card"] and "$378,090" in sv["card"] and "never published" in sv["card"]:
+        if "31" in sv["card"] and "$704,779" in sv["card"] and "never published" in sv["card"]:
             ok("survey results card: 31 leaving households, the floor figure, and the privacy note")
         else: bad(f"survey results card: {sv['card'][:100]}")
         if sv["href"] == "#survey":

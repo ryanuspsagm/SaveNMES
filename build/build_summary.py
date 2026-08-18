@@ -79,9 +79,9 @@ B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state mon
 step = Table(
     [[Paragraph(c, thead) for c in ["Estimate", "Basis",
       "Students missing each year", "SEEK lost each year"]],
-     [Paragraph(c, tcell) for c in ["Floor", "the 31 signed households alone", "74", "<b>$378,090</b>"]],
-     [Paragraph(c, tcell) for c in ["Likely band", "statistical middle half", "121 to 217", "<b>$622,828 to $1,113,400</b>"]],
-     [Paragraph(c, tcell) for c in ["Middle", "statistical median", "147 to 186", "$756,445 to $955,509"]]],
+     [Paragraph(c, tcell) for c in ["Today's students", "51 to 72 percent of the 128 enrolled now", "65 to 92", "$332,484 to $470,540"]],
+     [Paragraph(c, tcell) for c in ["Steady state", "the same share of the whole feeder stream, middle half", "137 to 194", "<b>$704,779 to $997,420</b>"]],
+     [Paragraph(c, tcell) for c in ["Steady-state median", "the middle of the band", "167", "$855,977"]]],
     colWidths=[0.85*inch, 1.9*inch, 1.55*inch, 2.0*inch], hAlign="LEFT")
 step.setStyle(TableStyle([
     ("BACKGROUND", (0, 0), (-1, 0), HEADBG), ("LINEBELOW", (0, 0), (-1, 0), 0.9, NAVY),
