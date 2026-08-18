@@ -64,8 +64,8 @@ def main():
         else: ok("no JS console or page errors")
 
         n = pg.evaluate("Object.keys(Chart.instances).length")
-        if n == 9: ok(f"{n} Chart.js charts instantiated")
-        else: bad(f"expected 9 charts, got {n}")
+        if n == 11: ok(f"{n} Chart.js charts instantiated")
+        else: bad(f"expected 11 charts, got {n}")
         nmore = pg.evaluate("document.querySelectorAll('details.more').length")
         if nmore >= 10: ok(f"{nmore} sections collapse to key points with More detail expanders")
         else: bad(f"only {nmore} section expanders found")

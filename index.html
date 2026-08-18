@@ -657,22 +657,13 @@ footer a{color:var(--ice)}
 <div class="kicker">The Families Answered</div>
 <h3>School choice survey: the results</h3>
 <p>In August 2026 we asked NMES families the one question the district's plan never prices: <b>if the school closes, what would your family actually do?</b> Forty-two responses came in. Minus duplicates, plus one late family with one child, <b>38 households answered for 85 children</b>:</p>
-<table class="alt">
-<tr><th>Response</th><th>Households</th><th>Children</th><th>Share of the 85 surveyed children</th></tr>
-<tr><td><b>Would leave Bourbon County Schools</b></td><td><b>31</b></td><td><b>70</b></td><td><b>82 percent</b></td></tr>
-<tr><td>Would stay</td><td>6</td><td>13</td><td>15 percent</td></tr>
-<tr><td>Already left the district</td><td>1</td><td>2</td><td>2 percent</td></tr>
-</table>
-<p class="note">Shares are of the 85 surveyed children, who include current students, younger siblings, and children not yet in school.</p>
-<p><b>Where the leaving children would go:</b></p>
-<table class="alt">
-<tr><th>Destination</th><th>Children</th><th>Share of the 85 surveyed children</th></tr>
-<tr><td>Montgomery County Schools</td><td>25</td><td>29 percent</td></tr>
-<tr><td>Other or undecided</td><td>20</td><td>24 percent</td></tr>
-<tr><td>Homeschool</td><td>16</td><td>19 percent</td></tr>
-<tr><td>Private school</td><td>8</td><td>9 percent</td></tr>
-<tr><td>Clark County Schools</td><td>1</td><td>1 percent</td></tr>
-</table>
+<div class="grid2">
+<div style="min-width:0"><p><b>The responses:</b></p>
+<div class="chartbox" style="height:270px"><canvas id="chartSurveyResp" role="img" aria-label="Pie chart of the 85 surveyed children: 70 would leave Bourbon County Schools, 82 percent; 13 would stay, 15 percent; 2 already left the district, 2 percent."></canvas></div></div>
+<div style="min-width:0"><p><b>Where the leaving children would go:</b></p>
+<div class="chartbox" style="height:270px"><canvas id="chartSurveyDest" role="img" aria-label="Pie chart of the leaving children's destinations, as shares of the 85 surveyed children: Montgomery County Schools 25 children, 29 percent; other or undecided 20 children, 24 percent; homeschool 16 children, 19 percent; private school 8 children, 9 percent; Clark County Schools 1 child, 1 percent."></canvas></div></div>
+</div>
+<p class="note">Shares are of the 85 surveyed children, who include current students, younger siblings, and children not yet in school. The leaving children come from 31 households; the staying children from 6; the already-left from 1.</p>
 <p class="note">The other-or-undecided row includes seven children marked with an in-district school; because their families say they would leave Bourbon County Schools, they count here, and the anonymized data carries that coding. The data, names and dates removed, is published as survey_school_choice_2026_08_anonymized.csv. Personal information is never published. The form is closed; results went to the board.</p>
 <p><b>Follow the numbers.</b> Among surveyed children enrolled now or entering by fall 2028, 62 of 75 would leave: 83 percent. Class codes are not assumed accurate; the three-class window means a miscoded child counts either way. We still correct as if the roughly 120 eligible children with no answer lean the other way, the harshest reading the coding allows. That leans the estimate low. Corrected for response bias (method and code: the report and build/exodus_model.py): <b>43 to 57 percent of the school leaves, median 50 percent</b>, or <b>49 to 65 of the 115 children in the building today</b>. The same community feeds every future class. Across the whole feeder stream, about 22 entering children a year through grade 12 (12.6 effective years per child): <b>117 to 154 students missing from the district's rolls every year, $600,912 to $790,944 a year</b>. The closure model prices exactly that band. Their named destinations, tabled above, are open today.</p>
 
@@ -1055,6 +1046,14 @@ x:{ticks:{maxTicksLimit:10},title:{display:true,text:'students enrolled (128 at 
 var LY=[];for(var t=1;t<=13;t++){LY.push('Yr '+t)}
 function esc(steady){var out=[];for(var t=1;t<=13;t++){out.push(Math.round(steady*Math.min(t+5,12.62)/12.62)*5136)}return out}
 var LSER=[['Band low (117 missing)',117,LGRAY,1.5],['Median (136)',136,NAVY,3],['Band high (154)',154,'#C0625E',1.5]];
+new Chart(document.getElementById('chartSurveyResp'),{type:'pie',
+data:{labels:['Would leave: 70 kids (82%)','Would stay: 13 (15%)','Already left: 2 (2%)'],
+datasets:[{data:[70,13,2],backgroundColor:['#C0625E','#8FB58C',LGRAY],borderColor:'#FFFFFF',borderWidth:2}]},
+options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:12}}}}});
+new Chart(document.getElementById('chartSurveyDest'),{type:'pie',
+data:{labels:['Montgomery County Schools: 25 (29%)','Other or undecided: 20 (24%)','Homeschool: 16 (19%)','Private school: 8 (9%)','Clark County Schools: 1 (1%)'],
+datasets:[{data:[25,20,16,8,1],backgroundColor:[NAVY,GRAY,'#F5C242','#7A5C9E',ICE],borderColor:'#FFFFFF',borderWidth:2}]},
+options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:12}}}}});
 new Chart(document.getElementById('chartLeave'),{type:'line',
 data:{labels:LY,datasets:LSER.map(function(s){
 return {label:s[0],data:esc(s[1]),borderColor:s[2],backgroundColor:'transparent',
