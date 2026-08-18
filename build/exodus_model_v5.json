@@ -4,37 +4,37 @@
  "cohort": 21.5,
  "leaving_households": 31,
  "leaving_children": 70,
- "enrolled_sample": 24,
- "enrolled_leavers": 20,
+ "enrolled_sample": 75,
+ "enrolled_leavers": 62,
  "posterior": {
-  "p25": 0.42,
-  "p50": 0.516,
-  "p75": 0.614,
-  "p95": 0.745
+  "p25": 0.43,
+  "p50": 0.501,
+  "p75": 0.567,
+  "p95": 0.655
  },
  "eff_years": 12.62,
  "ramp": 0.834,
  "var_nonteach": 400,
  "ladder": {
   "today": {
-   "kids_lo": 54,
-   "kids_med": 66,
-   "kids_hi": 79,
-   "dollars_lo": 277344,
-   "dollars_med": 338976,
-   "dollars_hi": 405744,
-   "kids_p95": 95,
-   "dollars_p95": 487920
+   "kids_lo": 55,
+   "kids_med": 64,
+   "kids_hi": 73,
+   "dollars_lo": 282480,
+   "dollars_med": 328704,
+   "dollars_hi": 374928,
+   "kids_p95": 84,
+   "dollars_p95": 431424
   },
   "steady": {
-   "kids_lo": 114,
-   "kids_med": 140,
-   "kids_hi": 167,
-   "dollars_lo": 585504,
-   "dollars_med": 719040,
-   "dollars_hi": 857712,
-   "kids_p95": 202,
-   "dollars_p95": 1037472
+   "kids_lo": 117,
+   "kids_med": 136,
+   "kids_hi": 154,
+   "dollars_lo": 600912,
+   "dollars_med": 698496,
+   "dollars_hi": 790944,
+   "kids_p95": 178,
+   "dollars_p95": 914208
   }
  }
 }

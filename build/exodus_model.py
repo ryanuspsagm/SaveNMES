@@ -13,8 +13,12 @@ current student population, not as per-class counts; the hand-coded
 kindergarten class years are used only to flag who is enrolled now):
  1. SIGNED EVIDENCE. Cleaned survey: 31 leaving households, 70 children.
     Counts only; no per-class arithmetic is published from them.
- 2. STATISTICAL BAND. Among children enrolled now (kindergarten years
-    2020-2025) the survey holds 20 leavers and 4 stayers. A response-bias
+ 2. STATISTICAL BAND. Among children enrolled now or entering within
+    the next three falls (kindergarten years 2020-2028) the survey
+    holds 62 leavers and 13 stayers. The window spans current
+    enrollment plus the next three entering classes, so hand-coded
+    class years no longer move the sample: a child coded K-2026 who is
+    actually enrolled counts either way. A response-bias
     model corrects for leavers answering more readily than stayers:
     observed odds = true odds x k, with k ~ LogNormal(ln 3.5, 0.5)
     TRUNCATED at k >= 3.3, spanning 3.3x to about 9.5x. The floor and
@@ -71,12 +75,12 @@ VAR_NONTEACH = 400           # supplies per student, growth model low leg
 # per-grade survival vs own 5th-grade class (SAAR 2025-26 snapshot)
 SURV_SEC = [172/177, 178/188, 191/196, 193/197, 194/202, 194/202, 176/213]
 EFF_YEARS = 6 + sum(SURV_SEC)                      # 12.62
-# LIMITATION, stated by design: the 24-child "enrolled" sample is the hand-
-# coded floor. Class-year designations are NOT assumed accurate and likely
-# undercount who is enrolled now, so the true enrolled respondent count is
-# probably higher (at a similar leave rate) and the silent pool smaller than
-# the ~104 the correction assumes. Both effects would raise the corrected
-# share; using the floor leans the published band low.
+# Class-year codes are NOT assumed accurate. The sample window spans current
+# enrollment plus the next three entering classes (K-2026 to K-2028), so a
+# miscoded child counts either way; only six younger siblings (K-2029 to
+# K-2031) and two older students sit outside it. The correction still
+# assumes the largest silent pool the coding allows (~120 of the ~193
+# eligible children), which leans the published band low.
 RAMP = (sum(range(6, 13)) + 13 * 6) / (13 * 13)    # 0.834; internal-only:
 # exported to the JSON for the record. The published artifacts quote steady
 # state, and the site's leaving-families chart computes its own ramp inline.
@@ -87,10 +91,10 @@ kids = list(csv.DictReader(open(os.path.join(
 leave = [r for r in kids if r["status"] == "leaving"]
 
 # ---- 2. Bayesian band (grid integration) ----------------------------------
-enrolled = [r for r in kids if 2020 <= int(r["kindergarten_year"]) <= 2025
+enrolled = [r for r in kids if 2020 <= int(r["kindergarten_year"]) <= 2028
             and r["status"] in ("leaving", "staying", "staying_confirmed_by_organizer")]
 X = sum(r["status"] == "leaving" for r in enrolled)
-S = len(enrolled) - X                              # 20 / 4
+S = len(enrolled) - X                              # 62 / 13
 
 def posterior_quantiles(qs):
     NP, NK = 2000, 400

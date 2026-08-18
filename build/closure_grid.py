@@ -39,14 +39,17 @@ grid's true extremes and do not depend on weights.
                              Appendix A.1 prices 2; its Appendix B classroom
                              count supports 3; year one is 0 by its own
                              retention note.
-  students lost (steady state): 114 / 140 / 167 students missing from the
+  students lost (steady state): 117 / 136 / 154 students missing from the
                              district's rolls in a year, TRIANGULAR like
                              every other centered lever: the posterior 25th /
                              50th / 75th percentile at the class-size
                              midpoint, from the August 2026 school-choice
                              survey (31 leaving households, 70 children,
-                             anonymized in this folder) and the selection-
-                             corrected estimate built on it (exodus_model.py).
+                             anonymized in this folder; evidence window:
+                             current enrollment plus the next three entering
+                             classes, 62 leavers / 13 stayers of 75) and the
+                             selection-corrected estimate built on it
+                             (exodus_model.py).
                              The signed-survey floor, 74 (5.83 leavers per
                              class x 12.62 effective years, named respondents
                              only), sits BELOW every priced leg and is kept
@@ -75,15 +78,15 @@ net = capture + fixed_positions_cut + teachers_cut x $54,479.40
 
 Run:  python build/closure_grid.py
 Asserts the published statistics: 972 scenarios; weighted median
--$447,573; all but ONE of the 972 scenarios lose money (the single best
-corner, every lever at its friendliest at once, nets +$1,678 a year:
-$13 per displaced student); middle half -$552,323 to -$347,374; range
--$915,893 to +$1,678; the site default (-$328,511: building sold, half
-the fixed positions cut over time, three teachers cut with the emptied
-classrooms, median leavers) sits at the 79th percentile, friendlier
+-$428,627; EVERY scenario loses money (the best corner, every lever at
+its friendliest at once, still loses $11,030 a year: $86 per displaced
+student); middle half -$519,765 to -$340,021; range -$847,825 to
+-$11,030; the site default (-$309,567: building sold, half the fixed
+positions cut over time, three teachers cut with the emptied
+classrooms, median leavers) sits at the 82nd percentile, friendlier
 than three quarters of the grid, because it grants closure every saving
 that scales with students; the median exodus still sinks it.
-Unweighted median -$446,722 kept as a cross-check.
+Unweighted median -$426,503 kept as a cross-check.
 """
 import statistics
 from itertools import product
@@ -97,7 +100,7 @@ FIXED_POS = 115397.25 + 49655.38 + 49051.77  # 214,104.40: MUNIS FY2026 actuals
 CAPTURE = [(53_519, 1), (80_279, 2), (127_039, 1)]           # triangular
 FIXED = [(0, 1), (FIXED_POS / 2, 2), (FIXED_POS, 1)]         # triangular
 TEACHERS = [(t, 1) for t in (0, 1, 2, 3)]                    # uniform
-LEAVERS = [(114, 1), (140, 2), (167, 1)]   # triangular on the band's quartiles
+LEAVERS = [(117, 1), (136, 2), (154, 1)]   # triangular on the band's quartiles
 ADDONS = [(0, 1), (500, 2), (1000, 1)]                       # triangular
 BUS = [(20_000, 1), (63_000, 2), (95_000, 1)]                # triangular; high
                                                              # leg = half the max
@@ -125,7 +128,7 @@ med = wpct(0.50)
 p25, p75 = wpct(0.25), wpct(0.75)
 neg = sum(w for v, w in pairs if v < 0) / total_w
 default = (127_039 + FIXED_POS / 2 + 3 * TEACH - 63_000
-           - 140 * (SEEK + 500 - SUPPLIES))  # scaled savings granted,
+           - 136 * (SEEK + 500 - SUPPLIES))  # scaled savings granted,
                                              # median leavers
 default_rank = (sum(w for v, w in pairs if v < default - 0.005)
                 + sum(w for v, w in pairs if abs(v - default) <= 0.005) / 2
@@ -133,15 +136,15 @@ default_rank = (sum(w for v, w in pairs if v < default - 0.005)
                                              # JS convention
 
 assert n == 972, n
-assert round(med) == -447_573, med
-assert round(p25) == -552_323 and round(p75) == -347_374, (p25, p75)
-assert 0.999 < neg < 1.0, neg     # all but one corner cell
-assert round(nets[0]) == -915_893 and round(nets[-1]) == 1_678, (nets[0], nets[-1])
-assert round(default) == -328_511, default
-assert 0.77 < default_rank < 0.81, default_rank
-assert round(statistics.median(nets)) == -446_722
+assert round(med) == -428_627, med
+assert round(p25) == -519_765 and round(p75) == -340_021, (p25, p75)
+assert neg == 1.0, neg            # every scenario negative
+assert round(nets[0]) == -847_825 and round(nets[-1]) == -11_030, (nets[0], nets[-1])
+assert round(default) == -309_567, default
+assert 0.80 < default_rank < 0.83, default_rank
+assert round(statistics.median(nets)) == -426_503
 
-print(f"{n:,} scenarios | weighted median ${med:,.0f} | all but one lose money ({neg * 100:.2f}%)")
+print(f"{n:,} scenarios | weighted median ${med:,.0f} | every scenario loses money ({neg * 100:.0f}%)")
 print(f"range ${nets[0]:,.0f} to ${nets[-1]:,.0f} | middle half "
       f"${p25:,.0f} to ${p75:,.0f}")
 print(f"site default (scaled savings granted) ${default:,.0f} | rank {default_rank * 100:.0f}%")
