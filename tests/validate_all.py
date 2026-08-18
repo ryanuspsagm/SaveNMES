@@ -886,7 +886,7 @@ def main():
         and 'id="sBus" min="20000" max="95000"' in html
         and 'id="sGro" min="110" max="200" value="140" step="5"' in html,
         "site calculator sliders span exactly the published grids: missing students 129 to 187 with "
-        "the shed lever's three settings, growth target in five-student steps, so no reachable "
+        "add-ons at three settings, growth target in five-student steps, so no reachable "
         "setting prices outside the published floors and ceilings")
     chk("Version 5.0" in t and "August 17" in t and "Version 4.6" in t
         and "Version 4.5" in t and "Version 4.2" in t,

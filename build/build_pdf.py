@@ -122,17 +122,16 @@ A(Paragraph("Version 5.0 &nbsp;\u2022&nbsp; August 17, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 1.6 * inch))
-scope = ("This review is built from public records and Open Records Requests only: the district's audited financial statements for the "
-         "fiscal years ending June 30, 2024 and June 30, 2025; documents the district produced in response to Open Records "
-         "Requests under KRS 61.870; Kentucky Department of Education funding, facility, "
-         "and school report card data; federal enrollment records; municipal bond disclosures; state regulations; and "
-         "contemporaneous local reporting. Where a figure is an estimate rather than a published number, it is labeled "
-         "as an estimate and its assumptions are stated. This document is not an audit, and it alleges no misconduct "
-         "by any person; both years of the district's financial statements received clean opinions from its independent "
-         "auditors. Its purpose is narrower and simpler: to lay out what the public record shows, and what it does not "
-         "yet show, before an irreversible decision is made about a community's school. We write as volunteers from the NMES community, past and present. "
-         "The analysis and report writing were accelerated with the use of Claude, an AI research assistant from Anthropic; every figure "
-         "should be re-verified against the cited primary sources before formal submission or republication.")
+scope = ("This review is built from public records and Open Records Requests only: the district's audited financial "
+         "statements for the fiscal years ending June 30, 2024 and June 30, 2025; documents produced under KRS 61.870; "
+         "Kentucky Department of Education funding, facility, and school report card data; federal enrollment records; "
+         "municipal bond disclosures; state regulations; and local reporting. Where a figure is an estimate, we label "
+         "it and state its assumptions. This is not an audit. It alleges no misconduct by any person; both years of "
+         "the district's financial statements received clean opinions from its independent auditors. Its purpose is "
+         "simple: lay out what the public record shows, and what it does not yet show, before an irreversible decision "
+         "is made about a community's school. We write as volunteers from the NMES community, past and present. The "
+         "analysis and report writing were accelerated with the use of Claude, an AI research assistant from Anthropic. "
+         "Re-verify every figure against the cited primary sources before formal submission or republication.")
 st = Table([[Paragraph(scope, ParagraphStyle("scope", fontName="Times-Roman", fontSize=9.3,
                                              leading=12.6, textColor=colors.HexColor("#333333")))]],
            colWidths=[W])
@@ -173,76 +172,71 @@ for part, items in [
     for it in items:
         A(Paragraph(it, toc_style))
 A(Spacer(1, 10))
-P("The order above follows SaveNMES.org section for section: the case against closing, the priced models, "
-  "the district-wide growth plan, and the choice. Figures are numbered in a single sequence through the "
-  "report; supporting tables sit unnumbered beside the text they serve. Every figure traces to an archived "
-  "source document and runs as a live formula in the companion workbook.", note)
+P("The order follows SaveNMES.org section for section: the case against closing, the priced models, the "
+  "district-wide growth plan, and the choice. Figures run in one numbered sequence; supporting tables sit "
+  "unnumbered beside their text. Every figure traces to an archived source document and runs as a live "
+  "formula in the companion workbook.", note)
 A(Spacer(1, 14))
 
 # ================= 1. EXECUTIVE SUMMARY =================
 H("1. Executive Summary: The Case, the Plan, and the Choice")
 P("On July 15, 2026, the Local Planning Committee of Bourbon County Schools voted to label North Middletown "
   "Elementary “transitional” in the district's draft four-year facility plan. That is the first step toward "
-  "closing the school. The vote is advisory: the elected Board of Education decides, and under state regulation "
-  "nothing takes effect without further committee action, a public hearing, and approval by the Kentucky Board "
-  "of Education. Superintendent Larry Begley has said publicly that “the decision is not final.” We checked "
+  "closing the school. The vote is advisory. The elected Board of Education decides, and nothing takes "
+  "effect without further committee action, a public hearing, and approval by the Kentucky Board of "
+  "Education. Superintendent Larry Begley has said publicly that “the decision is not final.” We checked "
   "the public records so the Board and the public can see the whole picture before any vote. This opening "
-  "mirrors the executive summary published at SaveNMES.org; every figure below is sourced in the numbered "
-  "sections that follow and runs as a live formula in the companion workbook. Where the record forces an "
-  "assumption, this report makes one, states it where it is used, and publishes it openly so it can be "
-  "challenged: every assumption is a live input in the workbook and the calculators, and corrections are "
-  "made publicly.", lede)
+  "mirrors the executive summary published at SaveNMES.org. Every figure below is sourced in the numbered "
+  "sections and runs as a live formula in the companion workbook. Where the record forces an assumption, "
+  "we make one, state it where it is used, and publish it openly so it can be challenged. Every assumption "
+  "is a live input in the workbook and the calculators, and corrections are made publicly.", lede)
 
 H2("Part One. The case against closing NMES: four facts from the district's own documents")
 B("<b>Fact one: it is the county's best elementary school.</b> On the state's 2024-25 tests, North "
-  "Middletown ranks first among the county's four elementary schools in every state-reported subject, and it beats "
-  "the state average in science and writing. It was a National Blue Ribbon School in 2011, one of five in "
-  "Kentucky that year (Section 2).")
+  "Middletown ranks first among the county's four elementary schools in every state-reported subject. It "
+  "beats the state average in science and writing. It was a National Blue Ribbon School in 2011, one of "
+  "five in Kentucky that year (Section 2).")
 B("<b>Fact two: it is not expensive.</b> On the newest state spending file (2024-25), NMES costs $17,903 "
   "per student. The average Kentucky elementary school costs $19,299, so NMES runs 7 percent below the "
-  "state average. The district's own cost table, dated May 21, 2026, agrees: it prices the school at "
-  "$19,080 per student against a state average of $19,020 on the same table, a gap of three tenths of one "
-  "percent (Section 3).")
+  "state average. The district's own cost table, dated May 21, 2026, agrees: $19,080 per student against "
+  "a state average of $19,020 on the same table, a gap of three tenths of one percent (Section 3).")
 B("<b>Fact three: closing it frees very little.</b> Start from everything the district spent on the school "
   "last year: $1,285,310, from its own ledger. Almost all of it moves with the children or pays for itself. "
   "Only the building's own costs stop: $79,211 a year if staff keep their jobs, up to $127,039 if the "
-  "building is sold. The superintendent's written response says all staff would be retained, and it prices "
-  "those staff at its own $54,479.40 loaded cost. The district's $661,139 figure includes $493,407 of staffing "
-  "savings that, by the same response's own terms, arrive only if and when staff leave by attrition; in year "
-  "one, with staff retained and supplies moving with the kids, only "
-  "$127,039 of it remains. This report priced 972 closure scenarios on the district's own figures, with "
-  "family departures measured by the signed school-choice survey instead of guessed: the range runs from "
-  "losing $1,020,613 a year to still losing $61,862, the median LOSES $534,433, and every one of "
-  "them loses money (Section 4).")
+  "building is sold. The superintendent's written response says all staff would be retained, priced at its "
+  "own $54,479.40 loaded cost. The district's $661,139 figure includes $493,407 of staffing savings that, "
+  "by the response's own terms, arrive only as staff leave by attrition. In year one, with staff retained "
+  "and supplies moving with the kids, only $127,039 remains. We priced 972 closure scenarios on the "
+  "district's own figures, with family departures measured by the signed school-choice survey instead of "
+  "guessed. The range runs from losing $1,020,613 a year to still losing $61,862. The median LOSES "
+  "$534,433. Every one loses money (Section 4).")
 B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state money follows each child to "
   "whichever district wins the family. Registered homeschooling in this county grew from 170 to 259 in five "
   "years. The statewide virtual academy grew from 937 to 2,412 students in two years, on the enrollment "
-  "counts of Cloverport Independent, its host district. Every family that leaves "
-  "takes about $5,100 a year of state money with it, and the loss grows as the missing kids reach every "
-  "grade (Section 5):")
+  "counts of Cloverport Independent, its host district. Every family that leaves takes about $5,100 a year "
+  "of state money with it. The loss grows as the missing kids reach every grade (Section 5):")
 tbl(["Estimate", "Basis", "Students missing each year", "SEEK lost each year"],
     [["Today's students", "47 to 69 percent of the 128 enrolled now", "61 to 88", "$312,104 to $453,447"],
      ["Steady state", "the same share of the whole feeder stream, middle half", "129 to 187", "<b>$661,579 to $961,189</b>"],
      ["Steady-state median", "the middle of the band", "159", "$814,868"]],
     [0.9 * inch, 2.2 * inch, 1.5 * inch, 1.8 * inch],
-    caption="What leaving families cost, measured by the August 2026 school-choice survey (Section 5) and "
+    caption="What leaving families cost, measured by the August 2026 school-choice survey (Section 5), "
             "priced at $5,136 per student-year: the enacted FY2027 SEEK base of $4,636 plus $500 of typical "
             "add-ons. A child who leaves is missing for every remaining grade through 12th, discounted by "
-            "the district's own grade-to-grade survival (12.62 effective years); losses build from six "
+            "the district's own grade-to-grade survival (12.62 effective years). Losses build from six "
             "grade cohorts in year one to all thirteen by year eight, then hold.")
 P("Read the signed evidence first: thirty-one households put their names on paper for seventy children. "
   "The statistical rows read the survey the honest way, as a share of the current student population, "
-  "corrected for response bias: the middle half takes 61 to 88 of the 128 students enrolled today and, "
-  "carried across the whole feeder stream, keeps 129 to 187 students a year off the district's rolls, "
-  "$661,579 to $961,189 a year. "
+  "corrected for response bias. The middle half takes 61 to 88 of the 128 students enrolled today. "
+  "Carried across the whole feeder stream, that keeps 129 to 187 students a year off the district's "
+  "rolls, $661,579 to $961,189 a year. "
   "The children in the building carry about $6.2 to $6.9 million of remaining state funding through grade 12 "
   "(their actual grade counts are 1,339 student-years, priced at the $4,636 base to $5,136 with add-ons). "
   "About one in eight middle and high schoolers came through North Middletown, its share of the county's "
-  "elementary seats carried up the grades; a family lost at kindergarten is "
-  "lost for thirteen years. <b>The bottom line, from the two priced models:</b> grow the "
-  "school and the middle case GAINS $142,080 a year, with not one losing scenario in 19,683 (every "
-  "scenario prices students who actually arrive). Close it and "
-  "the middle case LOSES $534,433 a year.")
+  "elementary seats carried up the grades. A family lost at kindergarten is lost for thirteen years. "
+  "<b>The bottom line, from the two priced models:</b> grow the school and the middle case GAINS $142,080 "
+  "a year, with not one losing scenario in 19,683 (every scenario prices students who actually arrive). "
+  "Close it and the middle case LOSES $534,433 a year.")
 
 H2("Part Two. The district needs growth, not closures: three levers the board already owns")
 P("<b>The money problem is real, and it is district-wide.</b> The General Fund ran a $2.65 million deficit "
@@ -250,10 +244,10 @@ P("<b>The money problem is real, and it is district-wide.</b> The General Fund r
   "better, still red. The causes are plain. Pandemic aid ended. Funded attendance fell by about 247 once "
   "the pandemic hold-harmless ended, and the state's 2026-27 forecast puts it at 2,174, down again. The "
   "district also sweeps $1.32 million a year of restricted building money into operations, draining the "
-  "fund that should pay for buildings. And the revenue posture is unique in the region: the county's tax "
-  "base grew 107.5 percent since 2012, second fastest of eight area counties, while the school levy fell "
-  "5.4 percent, the only drop among nine districts. Every neighbor's base grew too. Their boards raised "
-  "rates anyway (Sections 7 and 10).")
+  "fund that should pay for buildings. And the revenue posture stands alone in the region: the county's "
+  "tax base grew 107.5 percent since 2012, second fastest of eight area counties, while the school levy "
+  "fell 5.4 percent, the only drop among nine districts. Every neighbor's base grew too. Their boards "
+  "raised rates anyway (Sections 7 and 10).")
 B("<b>Lever one, enrollment.</b> Each recovered student brings about $4,236 of state money after supplies. "
   "The pool is measured: 236 students sit in Bourbon's own homeschool files, and 450 to 550 Bourbon County "
   "Schools kids are homeschooled, in private school, or enrolled in another district, worth $2.1 to $2.5 "
@@ -270,11 +264,12 @@ B("<b>Lever three, revenue.</b> The rate is simply lower while the tax base more
   "recallable by petition, the same democratic check every neighboring increase carried.")
 P("<b>Together, the plan is transformative.</b> With costs at the low end and the full restore, it clears "
   "the trending gap with about $500,000 a year to spare, within $7,000 of funding a 5 percent raise for every "
-  "certified teacher on its own, on the $32 million of bonding capacity the district's "
-  "own advisor presented in June 2026, before a single leaked student comes back; two recovered students close the difference. Recover half the pool and the surplus reaches "
-  "about $1.7 million a year and about $47 million of capacity; the full pool reaches about $3.4 million and about $69 million. "
-  "Every school stays open. To run it, the board should create three standing committees, one per lever, "
-  "each reporting publicly: enrollment growth, fixed costs, and revenue (Section 10).")
+  "certified teacher, on the $32 million of bonding capacity the district's own advisor presented in June "
+  "2026, before a single leaked student comes back. Two recovered students close the difference. Recover "
+  "half the pool and the surplus reaches about $1.7 million a year and about $47 million of capacity; the "
+  "full pool reaches about $3.4 million and about $69 million. Every school stays open. To run it, the "
+  "board should create three standing committees, one per lever, each reporting publicly: enrollment "
+  "growth, fixed costs, and revenue (Section 10).")
 
 H2("The choice: two roads, and four asks that commit no new money")
 P("Shrink to fit, or grow and thrive. On North Middletown, four asks that commit no new money:")
@@ -301,11 +296,11 @@ P("Four facts, in the same order as the website: the school outperforms, it is n
 # ================= 5. ACADEMICS =================
 H("2. Academic Performance: The District Would Be Closing Its Best Elementary School")
 H2("The state's own numbers, first")
-P("Before any index or ranking, here is the primary record: the Kentucky Department of Education's school-level "
-  "assessment file for the 2024-25 Kentucky Summative Assessments, archived in this repository "
+P("Before any index or ranking, here is the primary record: the Kentucky Department of Education's "
+  "school-level file for the 2024-25 Kentucky Summative Assessments, archived in this repository "
   "(build/kde_ksa_2024_25.json) so anyone can check it. On the state's own tests, North Middletown is first "
-  "among all four elementary schools in Bourbon County, county district and Paris Independent alike, in every "
-  "tested subject, and it beats the <b>statewide</b> elementary average in science and writing.")
+  "among all four elementary schools in Bourbon County, county district and Paris Independent alike, in "
+  "every tested subject. It beats the <b>statewide</b> elementary average in science and writing.")
 tbl(["Subject (percent proficient or distinguished)", "NMES", "Bourbon Central", "Cane Ridge", "Paris Elem.", "KY average"],
     [["Reading", "41", "38", "37", "25", "49"],
      ["Mathematics", "31", "28", "27", "29", "43"],
@@ -319,63 +314,63 @@ tbl(["Subject (percent proficient or distinguished)", "NMES", "Bourbon Central",
             "elementary level. North Middletown leads all four county schools in every state-reported subject; small-school science results are suppressed for two of the four.",
     bold_first_col=True)
 P("Here is the full arc, straight from the state's own files (Figure 1, top panel). Through the Unbridled "
-  "Learning era North Middletown's official overall score rose every single year, 62.6 to 68.8 to 71.4 to 72.1 "
-  "to <b>79.1</b>, closing 2015-16 with a formal <b>Distinguished</b> classification, the county's best score "
-  "by nearly ten points. The same files show the school <b>first in the county in elementary mathematics in "
-  "every pre-COVID administration on record</b>, 2011-12 through 2018-19, eight straight. The pandemic "
-  "cratered every school in the county; the recovery is where they separate. North Middletown's overall "
-  "indicator rate climbed 51.9 to 62.2 to <b>74.5</b> in 2023-24, first in the county by fourteen points, with "
-  "reading and math both at 45 percent proficient or better. In 2024-25 a tested cohort of roughly sixty "
-  "children slipped to 41 and 31 while statewide averages ticked up, a real single-year decline worth "
-  "watching, and the school still finished first among all four county elementaries in every subject where the state publishes comparable results (two schools' science scores are state-suppressed under KDE's fewer-than-three rule). "
-  "Small schools swing hard in single years, in both directions; the record above is why one soft year argues "
-  "for attention, not for closure. One reading note, because the official index line crosses in 2024-25: "
-  "Kentucky's overall index blends each year's level with the change from the year before, and on every "
-  "2024-25 status measure the state computed, North Middletown led Bourbon Central. The index crosses only "
-  "because the change formula subtracts North Middletown's own 2023-24 spike and credits Bourbon Central's "
-  "climb off its 50.3; a school is not worse for having been excellent the year before, and the state's "
-  "component file is archived in the repository.")
-P("The repository also archives the federal EDFacts series, an independent federal cross-check of the "
-  "state numbers that reaches back into the era of the 2011 Blue Ribbon, where North Middletown prints "
-  "89.5 and 94.8 on the old KCCT scale. Kentucky replaced its test in 2011-12, so federal values before "
-  "and after that line are different scales, and the file reports small-school values as range midpoints.")
+  "Learning era North Middletown's official overall score rose every single year: 62.6 to 68.8 to 71.4 to "
+  "72.1 to <b>79.1</b>, closing 2015-16 with a formal <b>Distinguished</b> classification, the county's "
+  "best score by nearly ten points. The same files show the school <b>first in the county in elementary "
+  "mathematics in every pre-COVID administration on record</b>, 2011-12 through 2018-19, eight straight. "
+  "The pandemic cratered every school in the county. The recovery is where they separate: North "
+  "Middletown's overall indicator rate climbed 51.9 to 62.2 to <b>74.5</b> in 2023-24, first in the county "
+  "by fourteen points, with reading and math both at 45 percent proficient or better. In 2024-25 a tested "
+  "cohort of roughly sixty children slipped to 41 and 31 while statewide averages ticked up. That is a "
+  "real single-year decline worth watching. The school still finished first among all four county "
+  "elementaries in every subject where the state publishes comparable results (two schools' science scores "
+  "are state-suppressed under KDE's fewer-than-three rule). Small schools swing hard in single years, in "
+  "both directions; one soft year argues for attention, not for closure. One reading note, because the "
+  "official index line crosses in 2024-25: Kentucky's index blends each year's level with the change from "
+  "the year before, and on every 2024-25 status measure the state computed, North Middletown led Bourbon "
+  "Central. The index crosses only because the change formula subtracts North Middletown's own 2023-24 "
+  "spike and credits Bourbon Central's climb off its 50.3. A school is not worse for having been excellent "
+  "the year before. The state's component file is archived in the repository.")
+P("The repository also archives the federal EDFacts series, an independent cross-check that reaches back "
+  "to the era of the 2011 Blue Ribbon, where North Middletown prints 89.5 and 94.8 on the old KCCT scale. "
+  "Kentucky replaced its test in 2011-12, so federal values before and after that line are different "
+  "scales, and the file reports small-school values as range midpoints.")
 P("We keep the SchoolDigger index in Figure 1's lower panel and in Figure 2 only as outside context, with "
   "its limits printed: it tracks the county's larger schools closely but is unreliable year to year for a "
-  "school North Middletown's size, and it named the wrong county leader in three of the ten years both "
-  "sources cover. Wherever the index and the official record disagree, the official record governs in this "
-  "report.")
-P("In 2023-24 North Middletown matched the statewide elementary average in reading (45 percent proficient or "
-  "better against 47) and beat it in mathematics (45 against 42); in 2024-25 it beat the state decisively in "
-  "writing (56 against 43) and science (53 against 37). Most striking for a school where about three-quarters of "
-  "children qualify for free or reduced-price meals: on the third-party index, its economically disadvantaged "
-  "students alone rank in the 62nd percentile of all Kentucky schools, evidence that this environment lifts "
-  "precisely the students the research says are hardest to lift.")
+  "school this size, and it named the wrong county leader in three of the ten years both sources cover. "
+  "Wherever the index and the official record disagree, the official record governs.")
+P("In 2023-24 North Middletown matched the statewide elementary average in reading (45 percent proficient "
+  "or better against 47) and beat it in mathematics (45 against 42). In 2024-25 it beat the state "
+  "decisively in writing (56 against 43) and science (53 against 37). Most striking for a school where "
+  "about three-quarters of children qualify for free or reduced-price meals: on the third-party index, its "
+  "economically disadvantaged students alone rank in the 62nd percentile of all Kentucky schools. This "
+  "environment lifts precisely the students the research says are hardest to lift.")
 P("This is not a new story. In 2011 the U.S. Department of Education named North Middletown Elementary a "
   "<b>National Blue Ribbon School</b>, one of just five Kentucky public schools honored that year, an award "
-  "reserved for schools performing in roughly the top ten percent of their state in reading and mathematics, and "
-  "the state's education department separately gave it an inaugural Distinguished Winners Circle Award. In the "
-  "years around that recognition the school ranked 36th of 683 Kentucky elementary schools (2010) and 51st of 688 "
-  "(2011). The school the district proposes to close is not a school with a history of failure; it is a school "
-  "with a history of excellence, now climbing back toward it.")
+  "reserved for schools performing in roughly the top ten percent of their state in reading and "
+  "mathematics. The state separately gave it an inaugural Distinguished Winners Circle Award. Around that "
+  "recognition the school ranked 36th of 683 Kentucky elementary schools (2010) and 51st of 688 (2011). "
+  "This is not a school with a history of failure. It is a school with a history of excellence, now "
+  "climbing back toward it.")
 P("The record was built by people, and two anchor it: Mrs. Beverly Craycraft and Mrs. Roxanne Mitchell, "
   "whose classrooms set the kindergarten-through-fifth standard for generations of North Middletown "
   "families. The honors around them are documented: Alison Cloyd (2014) and Lydia Austin (2017) each "
   "received Campbellsville University's Excellence in Teaching Award, and the Blue Ribbon culture ran on "
-  "community-powered programs, notably “ArtBurst,” which threaded the performing and creative arts "
-  "through core academics. The present belongs to a new set of educators: under principal Hannah Southall "
-  "the current staff took the school from its COVID-era trough back to the county's best official overall "
-  "rate, 74.5 in 2023-24, and the county's top marks in every state-reported subject in 2024-25, and keeps "
-  "a gifted-and-talented program running. What that faculty needs is not consolidation. It is time, and a "
-  "district willing to back them.")
-P("Two honest caveats belong here. Small schools produce noisier year-to-year scores, and subgroup results "
-  "vary widely: the school's girls (85.7, the 91st percentile) far outpace its boys (28.8), a gap the "
-  "district should be helping the school close rather than closing the school. And no single year should "
-  "define any school, which is why three-year averages matter, and they tell the same story: on the "
-  "third-party index North Middletown averages 48.1 for 2023 through 2025, against 26.4 at Bourbon Central "
-  "and 29.9 at Cane Ridge. Neither caveat changes the central fact: the consolidation on the table would "
-  "move children from the district's strongest elementary environment into its weakest ones. If the "
-  "administration believes those receiving schools can preserve these students' outcomes, that belief "
-  "should be supported in writing, with a transition plan, before any vote, not assumed after one.")
+  "community-powered programs, notably “ArtBurst,” which threaded the arts through core academics. The "
+  "present belongs to a new set of educators. Under principal Hannah Southall the current staff took the "
+  "school from its COVID-era trough back to the county's best official overall rate, 74.5 in 2023-24, and "
+  "the county's top marks in every state-reported subject in 2024-25, and keeps a gifted-and-talented "
+  "program running. That faculty does not need consolidation. It needs time, and a district willing to "
+  "back them.")
+P("Two honest caveats belong here. Small schools produce noisier year-to-year scores, and subgroup "
+  "results vary widely: the school's girls (85.7, the 91st percentile) far outpace its boys (28.8), a gap "
+  "the district should be helping the school close rather than closing the school. And no single year "
+  "should define any school. Three-year averages tell the same story: on the third-party index North "
+  "Middletown averages 48.1 for 2023 through 2025, against 26.4 at Bourbon Central and 29.9 at Cane "
+  "Ridge. Neither caveat changes the central fact: the consolidation on the table would move children "
+  "from the district's strongest elementary environment into its weakest ones. If the administration "
+  "believes the receiving schools can preserve these outcomes, it should say so in writing, with a "
+  "transition plan, before any vote, not after one.")
 
 
 fig("chart_district.png",
@@ -396,28 +391,28 @@ H("3. The School Is Not Expensive: The Cost Record")
 P("The headline belongs first, because it is the newest number in the record. On the state's newest "
   "school spending file, 2024-25, posted after the July committee citation, North Middletown costs "
   "<b>$17,903 per student</b> against a Kentucky elementary average of $19,299: <b>7 percent below the "
-  "state average</b>, and below it in five of the eight modern-era years. The district's own cost-of-delivery "
-  "table, dated May 21, 2026, lands in the same place: $19,080 per student against a $19,020 state average on "
-  "the same sheet, a gap of three tenths of one percent. Every older figure in this "
-  "section, including the 2023-24 numbers the July citation used, should be read with that newest file "
-  "beside it.")
+  "state average</b>, and below it in five of the eight modern-era years. The district's own "
+  "cost-of-delivery table, dated May 21, 2026, lands in the same place: $19,080 per student against a "
+  "$19,020 state average on the same sheet, a gap of three tenths of one percent. Read every older figure "
+  "in this section, including the 2023-24 numbers the July citation used, with that newest file beside "
+  "it.")
 
 H2("What this school has cost, in every year the state has ever measured it")
-P("The cost argument rests on one recent number, so this version assembles every school-level cost figure, "
-  "through the newest 2024-25 file, that exists in any state or federal record: three reporting systems "
-  "reaching back a quarter century, each archived in the repository. The oldest are the 2000-01 state "
-  "report cards, recovered from the Internet Archive, and they show all four of the district's "
-  "then-elementaries on a single scale curve: about $2,851 per student plus a fixed base of about $332,000 "
-  "per building spread over however many children the zone lines assign to it. That one formula predicts "
-  "every school within 4 percent: Bourbon Central $3,360 at 595 students, Cane Ridge $4,053 at 312, North "
-  "Middletown $4,414 at 193, Millersburg $5,200 at 145. No school on that list was mismanaged; the ranking "
-  "is enrollment. In every year measured, the cheapest school in the county has been its biggest.")
-P("The middle years confirm it: KDE's own report-card datasets for 2011-12 through 2016-17 show North "
+P("The cost argument rests on one recent number, so we assembled every school-level cost figure in any "
+  "state or federal record, through the newest 2024-25 file: three reporting systems reaching back a "
+  "quarter century, each archived in the repository. The oldest are the 2000-01 state report cards, "
+  "recovered from the Internet Archive. They show all four of the district's then-elementaries on a "
+  "single scale curve: about $2,851 per student plus a fixed base of about $332,000 per building, spread "
+  "over however many children the zone lines assign to it. That one formula predicts every school within "
+  "4 percent: Bourbon Central $3,360 at 595 students, Cane Ridge $4,053 at 312, North Middletown $4,414 "
+  "at 193, Millersburg $5,200 at 145. No school on that list was mismanaged; the ranking is enrollment. "
+  "In every year measured, the cheapest school in the county has been its biggest.")
+P("The middle years confirm it: KDE's report-card datasets for 2011-12 through 2016-17 show North "
   "Middletown's premium widest exactly when the building was emptiest, and two federal collections that "
   "measured school-level salaries independently show the same pattern. The record even contains a "
-  "controlled experiment: Millersburg's premium over its receiving school was about $166,000 a year on the "
-  "2000-01 report cards; the district closed it in 2006; and the thirty-year record in this report shows "
-  "the district's budget did not measurably bend. North Middletown's premium today is $156,000, the same "
+  "controlled experiment. Millersburg's premium over its receiving school was about $166,000 a year on "
+  "the 2000-01 report cards; the district closed it in 2006; and the thirty-year record here shows the "
+  "district's budget did not measurably bend. North Middletown's premium today is $156,000: the same "
   "experiment at almost the same number, twenty-three years apart. Provenance notes: CATS-era cards may "
   "report prior-year spending, which does not affect the within-year comparison; the 2012-13 file prints "
   "North Middletown at $19,635 in a renovation year, an obvious capital charge excluded from operating "
@@ -426,20 +421,22 @@ P("The middle years confirm it: KDE's own report-card datasets for 2011-12 throu
 
 # ================= 4. MILLION DOLLAR QUESTION =================
 H("4. The Million-Dollar Question: What Closing the School Would Actually Save")
-P("The case for closure rests on a single public statement: that keeping North Middletown Elementary open \u201ccost "
-  "over a million dollars last school year.\u201d No worksheet for that figure has ever been released; the "
-  "district's later 48-page response prices a different, smaller number, $661,138.94, which this section "
-  "takes apart below. The state's own school spending data put the million-dollar figure in context.")
-P("North Middletown's $19,348 per student is the highest of the three elementaries, and that is exactly what "
-  "the math predicts for a small school, because one principal, one office, one kitchen, and one heated building "
-  "divide across 128 children instead of 450. Multiplied out, the federal report puts about $2.5 "
-  "million against this school, of which roughly $1.8 million is state and local money. That is an allocated "
-  "figure rather than a site ledger. On the same 2023-24 basis the report showed $2,611,980 for North "
-  "Middletown (its $19,348 rate at the 135 students then reported; at today's 128 the same rate gives the "
-  "$2,476,544 the cost case rests on), while the district's own working budget coded $1,593,309 to the school that year, about $1.0 "
-  "million less, and the difference is central office, district transportation and district instructional "
-  "support that the report spreads across buildings and that no closure removes. But almost none of that total "
-  "is what a closure would save, for a simple reason: <b>closing a school does not delete its students.</b>")
+P("The case for closure rests on a single public statement: that keeping North Middletown Elementary open "
+  "\u201ccost over a million dollars last school year.\u201d No worksheet for that figure has ever been "
+  "released. The district's later 48-page response prices a different, smaller number, $661,138.94, which "
+  "this section takes apart below. The state's own spending data put the million-dollar figure in "
+  "context.")
+P("North Middletown's $19,348 per student is the highest of the three elementaries. That is exactly what "
+  "the math predicts for a small school: one principal, one office, one kitchen, and one heated building "
+  "divide across 128 children instead of 450. Multiplied out, the federal report puts about $2.5 million "
+  "against this school, of which roughly $1.8 million is state and local money. That is an allocated "
+  "figure, not a site ledger. On the same 2023-24 basis the report showed $2,611,980 for North Middletown "
+  "(its $19,348 rate at the 135 students then reported; at today's 128 the same rate gives the $2,476,544 "
+  "the cost case rests on), while the district's own working budget coded $1,593,309 to the school that "
+  "year, about $1.0 million less. The difference is central office, district transportation and district "
+  "instructional support that the report spreads across buildings and that no closure removes. And almost "
+  "none of that total is what a closure would save, for a simple reason: <b>closing a school does not "
+  "delete its students.</b>")
 fig("chart_pp.png",
     "Figure 3. Per-student spending at the district's three elementary schools, 2023-24, as published in the "
     "Kentucky School Report Card's school-level expenditure data (total of state, local, and federal dollars). "
@@ -456,56 +453,56 @@ fig("chart_capacity_scenarios.png",
     "and the draft table. The 2017 plan, recovered from the Internet Archive and corroborated by the June 7, "
     "2017 state board minutes, rated North Middletown at 152 seats with 154 enrolled: the school now described "
     "as half empty was listed OVER capacity nine years ago.")
-P("Five years of the district's own filings say the same thing in time series: North Middletown's total site "
-  "spending grew the <b>least</b> of the three elementaries, up about 16 percent since 2019-20, against 35 to 37 "
-  "percent at Bourbon Central and 46 to 47 percent at Cane Ridge, under either base-year count the record "
-  "offers. Priced per student, the same filings put all three schools up 49 to 53 percent since 2019-20, "
-  "within four points of each other, with North Middletown in the middle: a district-wide cost trend, not "
-  "one building's. What grew at North Middletown is the empty space around each student as enrollment slid "
-  "from 166 to 128. Divide a nearly flat cost by a shrinking class and the per-student figure climbs; that "
-  "is division, not an expensive school. Fill the seats and the same division runs in reverse: at 174 "
-  "students the school's per-student cost drops to between $14,339 and $15,316 depending on staffing, about "
-  "$14,827 at the one-added-section default this version prices, $3,300 to $3,800 under either receiving "
-  "school, and the students who fill it come from the exact schools that are over or near their rated "
-  "capacity today.")
-P("The capacity ratings themselves deserve the scrutiny they have never gotten: the same three unchanged "
-  "buildings have been rated wildly differently by four consecutive plans, North Middletown 198, then 152, "
-  "then 174, then the draft's 154; Bourbon Central 564, 611, 521, 640; Cane Ridge 500, 550, 422, 547, with "
-  "no major construction at any of the three after 2009. Ratings that swing by up to 128 seats between "
-  "cycles are policy choices, not walls. The cost conclusion is validated against actuals two ways. At bare "
-  "supplies ($400), the filled school runs $14,339 at the approved 174 rating and $16,149 at the draft's "
-  "154; with class-cap staffing added, $15,316 and $16,701. All four land below both receiving schools. The "
-  "bound that matters is where the result would turn: North Middletown stops being cheaper than Bourbon "
-  "Central only if each added student costs more than $14,745 at 174, or more than $12,140 at 154, and "
-  "priced the way this report prices everything else, an added student costs between about $2,250 and "
-  "$4,100. This version withdraws the earlier third validation, a two-school cost slope whose sign depended "
-  "on a membership pair the district has not published. In the pandemic-aid years the filled school would "
-  "have run within 1 to 3 percent of the others, a tie; in the district's current cost structure the result "
-  "is not close.")
-P("One symmetry this report applies to itself: per-student numbers move wherever the students move. Send "
-  "students out of Bourbon Central and Cane Ridge and their per-student costs rise for the same denominator "
-  "reason. A pure shuffle leaves total district spending nearly unchanged in either direction; cost per "
-  "student is a utilization measure, not a verdict on a building, and on the post-move comparison a filled "
-  "North Middletown is still the cheapest of the three. The same symmetry runs the other way: closing North "
-  "Middletown would improve the receiving schools' per-student optics while saving almost nothing in total, "
-  "which is this report's Section 4 finding restated in one sentence.")
+P("Five years of the district's own filings say the same thing in time series. North Middletown's total "
+  "site spending grew the <b>least</b> of the three elementaries: up about 16 percent since 2019-20, "
+  "against 35 to 37 percent at Bourbon Central and 46 to 47 percent at Cane Ridge, under either base-year "
+  "count the record offers. Priced per student, the same filings put all three schools up 49 to 53 "
+  "percent since 2019-20, within four points of each other, with North Middletown in the middle: a "
+  "district-wide cost trend, not one building's. What grew at North Middletown is the empty space around "
+  "each student as enrollment slid from 166 to 128. Divide a nearly flat cost by a shrinking class and "
+  "the per-student figure climbs. That is division, not an expensive school. Fill the seats and the same "
+  "division runs in reverse: at 174 students the per-student cost drops to between $14,339 and $15,316 "
+  "depending on staffing, about $14,827 at the one-added-section default this version prices, $3,300 to "
+  "$3,800 under either receiving school. And the students who fill it come from the exact schools that "
+  "are over or near their rated capacity today.")
+P("The capacity ratings deserve scrutiny they have never gotten. The same three unchanged buildings have "
+  "been rated wildly differently by four consecutive plans: North Middletown 198, then 152, then 174, "
+  "then the draft's 154; Bourbon Central 564, 611, 521, 640; Cane Ridge 500, 550, 422, 547, with no major "
+  "construction at any of the three after 2009. Ratings that swing by up to 128 seats between cycles are "
+  "policy choices, not walls. The cost conclusion is validated against actuals two ways. At bare supplies "
+  "($400), the filled school runs $14,339 at the approved 174 rating and $16,149 at the draft's 154; with "
+  "class-cap staffing added, $15,316 and $16,701. All four land below both receiving schools. The bound "
+  "that matters is where the result would turn: North Middletown stops being cheaper than Bourbon Central "
+  "only if each added student costs more than $14,745 at 174, or more than $12,140 at 154. Priced the way "
+  "this report prices everything else, an added student costs between about $2,250 and $4,100. This "
+  "version withdraws the earlier third validation, a two-school cost slope whose sign depended on a "
+  "membership pair the district has not published. In the pandemic-aid years the filled school would have "
+  "run within 1 to 3 percent of the others, a tie; in the district's current cost structure the result is "
+  "not close.")
+P("One symmetry we apply to ourselves: per-student numbers move wherever the students move. Send students "
+  "out of Bourbon Central and Cane Ridge and their per-student costs rise for the same denominator "
+  "reason. A pure shuffle leaves total district spending nearly unchanged in either direction. Cost per "
+  "student is a utilization measure, not a verdict on a building, and on the post-move comparison a "
+  "filled North Middletown is still the cheapest of the three. Run the other way, the same symmetry means "
+  "closing North Middletown would improve the receiving schools' per-student optics while saving almost "
+  "nothing in total.")
 P("The 128 children would still need teachers, about six homerooms' worth (eight to nine certified "
-  "position-equivalents priced by ledger dollars), and Bourbon Central "
-  "(459 students) and Cane Ridge (453) would each absorb roughly 64 more children across six grade levels. "
-  "The children's SEEK funding transfers with them; food service, self-supporting, follows the meal counts. "
-  "What is genuinely avoidable is the fixed cost of running the building, and only if the building is sold "
-  "or fully repurposed rather than mothballed. Against those savings run the new costs: longer bus routes "
-  "in the district's fastest-growing and worst-reimbursed budget line (families have warned of rides "
-  "exceeding two hours a day), staffing or space additions at the receiving schools, transition costs, and "
-  "the quiet revenue risk that some families leave the district altogether, each departure taking at least "
-  "$4,636 a year in base state funding with it, permanently (the fiscal 2027 base, the first year a closure "
-  "could take effect; this report uses the fiscal 2027 figure for anything after a closure).")
-P("First, the staffing price, stated plainly: $85,000 is the right all-in figure for comparing spending "
-  "filings, but the wrong figure for the General Fund, because Kentucky pays teacher retirement and health "
-  "insurance on behalf of districts, and the General Fund keeps only salary plus roughly five percent when "
-  "a position goes away: <b>$50,000 to $75,000 per position, not $85,000</b>. This report goes one step "
-  "further and retires even that band: every staffing lever is priced at the district's own fully loaded "
-  "figure, <b>$54,479.40 per position</b>, from Appendix A.1 of its written response. Their number, their "
+  "position-equivalents priced by ledger dollars), and Bourbon Central (459 students) and Cane Ridge "
+  "(453) would each absorb roughly 64 more children across six grade levels. The children's SEEK funding "
+  "transfers with them; food service, self-supporting, follows the meal counts. What is genuinely "
+  "avoidable is the fixed cost of running the building, and only if the building is sold or fully "
+  "repurposed rather than mothballed. Against those savings run the new costs: longer bus routes in the "
+  "district's fastest-growing and worst-reimbursed budget line (families have warned of rides over two "
+  "hours a day), staffing or space additions at the receiving schools, transition costs, and the quiet "
+  "risk that some families leave the district altogether. Each departure takes at least $4,636 a year in "
+  "base state funding with it, permanently (the fiscal 2027 base, the first year a closure could take "
+  "effect; this report uses the fiscal 2027 figure for anything after a closure).")
+P("First, the staffing price, stated plainly. $85,000 is the right all-in figure for comparing spending "
+  "filings, but the wrong figure for the General Fund: Kentucky pays teacher retirement and health "
+  "insurance on behalf of districts, so the General Fund keeps only salary plus roughly five percent when "
+  "a position goes away: <b>$50,000 to $75,000 per position, not $85,000</b>. This report goes further "
+  "and retires even that band. Every staffing lever is priced at the district's own fully loaded figure, "
+  "<b>$54,479.40 per position</b>, from Appendix A.1 of its written response. Their number, their "
   "basis.")
 P("The grid is built on the district's own 48-page response and the community's own survey. Six levers, "
   "each sourced: "

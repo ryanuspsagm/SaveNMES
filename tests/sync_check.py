@@ -80,7 +80,7 @@ if site_teach and "$54,479.40" in pdf_flat and "108,958.80" in cm_teach_note:
 else:
     diff("teacher basis $54,479.40 missing on site, in PDF, or in the model note")
 if re.search(r"l\*\(SEEK\+ad-SUPP\)", html) and "SEEK=4636" in html:
-    match("calculator prices each missing student at $4,636 + add-ons net of the shed lever (matches build/closure_grid.py)")
+    match("calculator prices each missing student at $4,636 + add-ons net of the $400 supplies credit (matches build/closure_grid.py)")
 else:
     diff("site leaver pricing formula not found")
 

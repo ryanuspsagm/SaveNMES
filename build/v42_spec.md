@@ -1,5 +1,9 @@
 # SaveNMES v5 Outline (user-edited, numbers filled) - working spec
 
+SUPERSEDED: this is the v4.2-era working spec, kept for the record. Its
+numbers (5,832 scenarios, the old thesis) are retired; the published model
+is the v5.0 grid in `closure_grid.py` and the current report.
+
 THESIS (Key Points): The case against closing NMES is clear. Across 5,832 scenarios
 built on the district's own worksheet and its own fully loaded staffing prices, the
 median closure outcome LOSES $21,971 a year, and 55 percent of scenarios lose money

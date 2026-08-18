@@ -55,7 +55,7 @@ the closure case. Teachers increment beyond the 25 seats.
                          the district sets its own busing policy)
   marginal cost/student: $400 / $700 / $1,000 (measured student-scaling
                          spend at location 090 is $331)
-  SEEK add-ons/student:  $0 / $500 / $1,000 above the $4,626 base (at-risk,
+  SEEK add-ons/student:  $0 / $500 / $1,000 above the $4,636 base (at-risk,
                          exceptional-child, transportation, capital outlay);
                          enumerated in the headline grid, the SAME three legs
                          the closure model prices for each leaver, so the two

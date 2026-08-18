@@ -10,12 +10,15 @@ public source cited in the report and on the site.
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
 - `Saving_North_Middletown_Elementary.pdf` - the 57-page report.
-- `SaveNMES_Executive_Summary.pdf` - the two-page executive summary (built by `build/build_summary.py`).
+- `SaveNMES_Executive_Summary.pdf` - the three-page executive summary (built by `build/build_summary.py`).
 - `NMES_Financial_Model.xlsx` - the 19-tab financial model (558 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
   Requires: `pip install reportlab openpyxl matplotlib`. Run
   `python build/make_charts.py`, then `python build/build_pdf.py`,
-  and `python build/build_model.py`. `python build/fetch_sabs.py` pulls the
+  and `python build/build_model.py`. Note: these three scripts read and write
+  chart and PDF artifacts under `/home/claude/nmes/`, the authoring machine's
+  working directory; create that directory (or adjust the paths at the top of
+  each script) before running elsewhere. `python build/fetch_sabs.py` pulls the
   official 2015-16 federal attendance boundaries (NCES SABS) into
   `build/sabs_zones.json`, already committed here; the map figure redraws from
   them automatically; `python build/zone_distances.py` then computes the
@@ -65,7 +68,10 @@ it attributes no motive and alleges no wrongdoing to anyone.
 
 ## Report version history
 Every published version stays available under `reports/`; each report's
-corrections section lists what changed and why.
+corrections section lists what changed and why. The canonical, complete
+history (through the current v5.0) is the "Version history" section of the
+report itself and the site's History page; the entries below stop at v3.9
+and are kept as a snapshot of the correction-heavy early releases.
 - v3.9 (July 29, 2026): the district's own ledger, plus nine corrections,
   four of which run against this project's own case.
   (1) THE LEDGER. An open records request produced the district's

@@ -16,16 +16,18 @@ kindergarten class years are used only to flag who is enrolled now):
  2. STATISTICAL BAND. Among children enrolled now (kindergarten years
     2020-2025) the survey holds 20 leavers and 4 stayers. A response-bias
     model corrects for leavers answering more readily than stayers:
-    observed odds = true odds x k, with k ~ LogNormal(ln 3.5, 0.5) (95%
-    of prior mass between about 1.3x and 9.5x). The center, 3.5x, is
-    chosen for this survey's specific character: a small, emotionally
-    charged respondent pool answering a zero-effort form circulated by
-    the campaign itself, which matches the high-salience end of the
-    published measurements of this bias: Groves/Presser/Dipko 2004
-    (interested groups answer 1.4x more readily), Abraham/Helms/Presser
-    2009 (engaged respondents 1.35x, directly measured), Pew 2012/2017
-    (engaged people over-represented at implied ratios of 3.3-4x); the
-    measured 1.4-4x band sits inside the prior's 1.3-9.5x. Posterior
+    observed odds = true odds x k, with k ~ LogNormal(ln 3.5, 0.5)
+    TRUNCATED at k >= 3.3, spanning 3.3x to about 9.5x. The floor and
+    center are chosen for this survey's specific character: a small,
+    emotionally charged respondent pool answering a zero-effort form
+    circulated by the campaign itself. Published measurements of this
+    bias run 1.4x to 4x (Groves/Presser/Dipko 2004: 1.4x;
+    Abraham/Helms/Presser 2009: 1.35x directly measured; Pew 2012/2017:
+    implied 3.3-4x for the civically engaged). The model refuses every
+    k below 3.3, Pew's lower high-salience benchmark: it assumes the
+    bias is AT LEAST as strong as the strongest published setting, and
+    prices tails beyond anything ever measured. This deliberately leans
+    against the campaign's own survey. Posterior
     quartiles of the true leave share come from numeric integration
     over (p, k).
  3. TODAY. The corrected share applied to the current student
@@ -69,7 +71,9 @@ VAR_NONTEACH = 400           # supplies per student, growth model low leg
 # per-grade survival vs own 5th-grade class (SAAR 2025-26 snapshot)
 SURV_SEC = [172/177, 178/188, 191/196, 193/197, 194/202, 194/202, 176/213]
 EFF_YEARS = 6 + sum(SURV_SEC)                      # 12.62
-RAMP = (sum(range(6, 13)) + 13 * 6) / (13 * 13)    # 0.834
+RAMP = (sum(range(6, 13)) + 13 * 6) / (13 * 13)    # 0.834; internal-only:
+# exported to the JSON for the record. The published artifacts quote steady
+# state, and the site's leaving-families chart computes its own ramp inline.
 
 # ---- 1. signed evidence ----------------------------------------------------
 kids = list(csv.DictReader(open(os.path.join(
@@ -84,9 +88,10 @@ S = len(enrolled) - X                              # 20 / 4
 
 def posterior_quantiles(qs):
     NP, NK = 2000, 400
-    mu, sig = math.log(3.5), 0.5
+    mu, sig, kmin = math.log(3.5), 0.5, 3.3
     ks = [math.exp(mu + sig * (-4 + 8 * (j + 0.5) / NK)) for j in range(NK)]
-    kw = [math.exp(-0.5 * ((math.log(k) - mu) / sig) ** 2) for k in ks]
+    kw = [math.exp(-0.5 * ((math.log(k) - mu) / sig) ** 2) if k >= kmin
+          else 0.0 for k in ks]
     dens = []
     for i in range(NP):
         p = (i + 0.5) / NP
@@ -108,8 +113,8 @@ P25, P50, P75, P95 = posterior_quantiles([0.25, 0.50, 0.75, 0.95])
 # ---- 3-4. today and steady state -------------------------------------------
 def rung(scale):
     def one(p):
-        k = p * scale
-        return round(k), round(k * SEEK)
+        k = round(p * scale)          # whole students, then dollars, so the
+        return k, k * SEEK            # table reproduces as kids x $5,136
     (klo, dlo), (kmed, dmed), (khi, dhi) = one(P25), one(P50), one(P75)
     k95, d95 = one(P95)
     return dict(kids_lo=klo, kids_med=kmed, kids_hi=khi,

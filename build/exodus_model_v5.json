@@ -7,34 +7,34 @@
  "enrolled_sample": 24,
  "enrolled_leavers": 20,
  "posterior": {
-  "p25": 0.475,
-  "p50": 0.585,
-  "p75": 0.69,
-  "p95": 0.816
+  "p25": 0.42,
+  "p50": 0.516,
+  "p75": 0.614,
+  "p95": 0.745
  },
  "eff_years": 12.62,
  "ramp": 0.834,
  "var_nonteach": 400,
  "ladder": {
   "today": {
-   "kids_lo": 61,
-   "kids_med": 75,
-   "kids_hi": 88,
-   "dollars_lo": 312104,
-   "dollars_med": 384419,
-   "dollars_hi": 453447,
-   "kids_p95": 104,
-   "dollars_p95": 536609
+   "kids_lo": 54,
+   "kids_med": 66,
+   "kids_hi": 79,
+   "dollars_lo": 277344,
+   "dollars_med": 338976,
+   "dollars_hi": 405744,
+   "kids_p95": 95,
+   "dollars_p95": 487920
   },
   "steady": {
-   "kids_lo": 129,
-   "kids_med": 159,
-   "kids_hi": 187,
-   "dollars_lo": 661579,
-   "dollars_med": 814868,
-   "dollars_hi": 961189,
-   "kids_p95": 221,
-   "dollars_p95": 1137470
+   "kids_lo": 114,
+   "kids_med": 140,
+   "kids_hi": 167,
+   "dollars_lo": 585504,
+   "dollars_med": 719040,
+   "dollars_hi": 857712,
+   "kids_p95": 202,
+   "dollars_p95": 1037472
   }
  }
 }
