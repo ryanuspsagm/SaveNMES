@@ -67,7 +67,7 @@ B("<b>Fact three: closing it frees very little.</b> Start from everything the di
   "one, with staff retained and supplies moving with the kids, only "
   "$127,039 of it remains. We priced 972 closure scenarios on the district's own figures, with family "
   "departures measured by the signed school-choice survey instead of guessed. The middle case LOSES "
-  "$571,883 a year, and every one of the scenarios loses money.")
+  "$534,433 a year, and every one of the scenarios loses money.")
 B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state money follows each child to "
   "whichever district wins the family. Registered homeschooling in this county grew from 170 to 259 in five "
   "years. The statewide virtual academy grew from 937 to 2,412 students in two years, on the enrollment counts "
@@ -79,9 +79,9 @@ B("<b>Fact four: closing it risks a lot, every year.</b> Under HB 563, state mon
 step = Table(
     [[Paragraph(c, thead) for c in ["Estimate", "Basis",
       "Students missing each year", "SEEK lost each year"]],
-     [Paragraph(c, tcell) for c in ["Today's students", "51 to 72 percent of the 128 enrolled now", "65 to 92", "$332,484 to $470,540"]],
-     [Paragraph(c, tcell) for c in ["Steady state", "the same share of the whole feeder stream, middle half", "137 to 194", "<b>$704,779 to $997,420</b>"]],
-     [Paragraph(c, tcell) for c in ["Steady-state median", "the middle of the band", "167", "$855,977"]]],
+     [Paragraph(c, tcell) for c in ["Today's students", "47 to 69 percent of the 128 enrolled now", "61 to 88", "$312,104 to $453,447"]],
+     [Paragraph(c, tcell) for c in ["Steady state", "the same share of the whole feeder stream, middle half", "129 to 187", "<b>$661,579 to $961,189</b>"]],
+     [Paragraph(c, tcell) for c in ["Steady-state median", "the middle of the band", "167", "$814,868"]]],
     colWidths=[0.85*inch, 1.9*inch, 1.55*inch, 2.0*inch], hAlign="LEFT")
 step.setStyle(TableStyle([
     ("BACKGROUND", (0, 0), (-1, 0), HEADBG), ("LINEBELOW", (0, 0), (-1, 0), 0.9, NAVY),
@@ -102,7 +102,7 @@ A(Paragraph(
 A(Paragraph(
   "<b>The bottom line, from the two priced models:</b> grow the school and the middle case GAINS $142,080 "
   "a year, with not one losing scenario in 19,683 (every scenario prices students who actually arrive). Close "
-  "it and the middle case LOSES $571,883 a year.", body))
+  "it and the middle case LOSES $534,433 a year.", body))
 
 A(Paragraph("PART TWO", kick))
 A(Paragraph("The district needs growth, not closures: three levers the board already owns", h1))

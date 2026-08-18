@@ -169,13 +169,13 @@ def main():
         "provenance cite on the site, top disclosure and footer")
     chk("Open Records Requests only" in t,
         "provenance cite in the report")
-    for needle in ["$704,779 to $997,420", "65 to 92", "$332,484 to $470,540",
+    for needle in ["$661,579 to $961,189", "61 to 88", "$312,104 to $453,447",
                    "Students missing each year", "SEEK lost each year",
                    "the oldest lost class reaches grade 12"]:
         chk(needle in html, f"exodus ladder on the site: {needle}")
     for gone in ("13-year window", "about $4.1M", "$6.7 to $12.0M", "lifetime revenue loss"):
         chk(gone not in html, f"multi-year totals retired from the site: {gone}")
-    for needle in ["$704,779 to $997,420", "65 to 92",
+    for needle in ["$661,579 to $961,189", "61 to 88",
                    "share of the current student population"]:
         chk(needle in t, f"exodus ladder in the report: {needle}")
     chk('name:"Lynne"' in html and "859-707" not in html,
@@ -235,14 +235,14 @@ def main():
                    "Appendix B: Other Supporting Data", "KRS 157.370",
                    "Boston Public Schools"]:
         chk(needle in t, f"PDF claim intact: {needle}")
-    chk("-$456,383" in html and "superintendent's written statement" in html
+    chk("-$418,495" in html and "superintendent's written statement" in html
         and "more generous than the district's own stance" in html,
         "savings-granted default shown at the calculator and contrasted with the superintendent's stance")
-    for needle in ["$571,883", "Every priced scenario loses money", "losing $1,057,265",
-                   "still loses $95,750", "Millersburg"]:
+    for needle in ["$534,433", "Every priced scenario loses money", "losing $1,020,613",
+                   "still loses $61,862", "Millersburg"]:
         chk(needle in html, f"site v5.0 two-tailed range intact: {needle}")
-    for needle in ["Figure 7.", "Figure 8.", "losing $1,057,265", "still losing $95,750",
-                   "$571,883", "Millersburg", "119 students",
+    for needle in ["Figure 7.", "Figure 8.", "losing $1,020,613", "still losing $61,862",
+                   "$534,433", "Millersburg", "119 students",
                    "$54,479.40", "$41,718", "747"]:
         chk(needle in t, f"PDF v5.0 two-tailed range intact: {needle}")
     # v4.5 consolidated card: both bars, IQR bands, weighting disclosed, bottom line
@@ -250,11 +250,11 @@ def main():
         and "percentile scale</b>" not in html,
         "the weighting method lives in the report; the side-by-side card stays simple")
     for needle in ["Every scenario, side by side", "middle half", 'class="iqr"',
-                   "$679,361", "$467,862", "$94,720", "$183,354",
+                   "$643,405", "$429,974", "$94,720", "$183,354",
                    "The bottom line: your two scenarios, live from the calculators above", 'class="bline"',
                    '<div class="n" id="blGrow">+$142,080</div>',
-                   '<div class="n" id="blClose">&minus;$456,383</div>',
-                   "the default grants the savings that scale with students, teachers included, plus half the fixed overhead, at the statistical median of 167 students leaving; the weighted median across all scenarios loses $571,883",
+                   '<div class="n" id="blClose">&minus;$418,495</div>',
+                   "the default grants the savings that scale with students, teachers included, plus half the fixed overhead, at the statistical median of 159 students leaving; the weighted median across all scenarios loses $534,433",
                    "getElementById('blClose')", "getElementById('blGrow')"]:
         chk(needle in html, f"consolidated range card: {needle}")
     chk(html.count('class="iqr"') == 2, "IQR band on both bars")
@@ -381,11 +381,11 @@ def main():
     es_path = REPO / "SaveNMES_Executive_Summary.pdf"
     chk(es_path.exists(), "executive summary PDF exists")
     es = " ".join(pg.extract_text() for pg in PdfReader(es_path).pages).replace("\n", " ")
-    for needle in ["$19,080", "$571,883", "54,479.40", "Permanent", "2,412", "972",
-                   "$704,779 to $997,420", "65 to 92", "$855,977",
+    for needle in ["$19,080", "$534,433", "54,479.40", "Permanent", "2,412", "972",
+                   "$661,579 to $961,189", "61 to 88", "$814,868",
                    "$6.2 to $6.9 million"]:
         chk(needle in es, f"executive summary intact: {needle}")
-    for needle in ["$704,779 to $997,420", "65 to 92", "$855,977",
+    for needle in ["$661,579 to $961,189", "61 to 88", "$814,868",
                    "$6.2 to $6.9 million"]:
         chk(needle in html, f"exodus-ladder basis mirrored on the site: {needle}")
     chk("SaveNMES_Executive_Summary.pdf" in html, "site links the executive summary")
@@ -679,7 +679,7 @@ def main():
                    "Supporting Data and Appendices"]:
         chk(needle in t, f"report opening mirrors the exec summary doc: {needle}")
     chk("Decision in Brief" not in t, "the duplicative Decision in Brief section is retired")
-    chk("51 to 72 percent of the 128 enrolled now" in html and "Steady-state median" in html,
+    chk("47 to 69 percent of the 128 enrolled now" in html and "Steady-state median" in html,
         "the share-based today and steady-state rows published as the leaving scenarios on the site")
     chk("28 homerooms" not in html,
         "site does not adopt the district capacity claims uncritically")
@@ -764,7 +764,7 @@ def main():
             f"upfront assumptions disclosure on the {name}: stated, published, open to challenge")
     dfw = wb["Defaults"]
     chk(dfw["B5"].value == 17903 and dfw["B13"].value == 1285310
-        and dfw["B34"].value == "=B17+C17+Closure_Model!C40+3*54479.4-63000-167*(Assumptions!B6+500-Assumptions!B62)"
+        and dfw["B34"].value == "=B17+C17+Closure_Model!C40+3*54479.4-63000-159*(Assumptions!B6+500-Assumptions!B62)"
         and dfw["B35"].value == "=30*(Assumptions!B6+500-400)"
         and dfw["C39"].value == 275 and dfw["B42"].value == "=Tax_History!D79"
         and dfw["B31"].value == "=SUMPRODUCT(B30:G30,{13,12,11,10,9,8})"
@@ -882,10 +882,10 @@ def main():
     chk("$938,690" in t, "the working-budget cross-check ($938,690) lives in the report")
     chk("one in three" not in html or "an earlier version of this page said one in three" in html,
         "site: the retracted one-in-three share is corrected, not merely repeated")
-    chk('id="sTea" min="0" max="3"' in html and 'id="sLeav" min="137" max="194"' in html
+    chk('id="sTea" min="0" max="3"' in html and 'id="sLeav" min="129" max="187"' in html
         and 'id="sBus" min="20000" max="95000"' in html
         and 'id="sGro" min="110" max="200" value="140" step="5"' in html,
-        "site calculator sliders span exactly the published grids: missing students 137 to 194 with "
+        "site calculator sliders span exactly the published grids: missing students 129 to 187 with "
         "the shed lever's three settings, growth target in five-student steps, so no reachable "
         "setting prices outside the published floors and ceilings")
     chk("Version 5.0" in t and "August 17" in t and "Version 4.6" in t
@@ -977,8 +977,8 @@ def main():
         and "withdrawn with the lever correction" in t,
         "the 10-percent-raise / $52 million claims are withdrawn (lever correction)")
     for claim, section in [("$32 million of building capacity", 'id="grow"'),
-                           ("LOSES $571,883", 'id="model"'),
-                           ("$704,779 to $997,420 a year", 'id="risks"')]:
+                           ("LOSES $534,433", 'id="model"'),
+                           ("$661,579 to $961,189 a year", 'id="risks"')]:
         chk(html.index(claim) > html.index(section)
             and html.index(claim) < html.index("<details", html.index(section)),
         f"strongest claim rides the always-visible header: {claim}")
@@ -995,16 +995,16 @@ def main():
         and R["enrolled_sample"] == 24 and R["enrolled_leavers"] == 20,
         "exodus model: survey cleanup reproduces 31 households / 70 children and the 20-of-24 enrolled split")
     L = R["ladder"]
-    chk(L["today"]["kids_lo"] == 65 and L["today"]["kids_hi"] == 92
-        and L["today"]["dollars_lo"] == 332484 and L["today"]["dollars_hi"] == 470540,
-        "exodus today-share recomputes: 65 to 92 of the 128 enrolled, $332,484 to $470,540")
-    chk(L["steady"]["kids_lo"] == 137 and L["steady"]["kids_med"] == 167
-        and L["steady"]["kids_hi"] == 194 and L["steady"]["dollars_lo"] == 704779
-        and L["steady"]["dollars_med"] == 855977 and L["steady"]["dollars_hi"] == 997420,
-        "exodus steady-state recomputes: 137/167/194 kids, $704,779/$855,977/$997,420 (the grid legs)")
+    chk(L["today"]["kids_lo"] == 61 and L["today"]["kids_hi"] == 88
+        and L["today"]["dollars_lo"] == 312104 and L["today"]["dollars_hi"] == 453447,
+        "exodus today-share recomputes: 61 to 88 of the 128 enrolled, $312,104 to $453,447")
+    chk(L["steady"]["kids_lo"] == 129 and L["steady"]["kids_med"] == 159
+        and L["steady"]["kids_hi"] == 187 and L["steady"]["dollars_lo"] == 661579
+        and L["steady"]["dollars_med"] == 814868 and L["steady"]["dollars_hi"] == 961189,
+        "exodus steady-state recomputes: 129/159/187 kids, $661,579/$814,868/$961,189 (the grid legs)")
     chk(abs(R["eff_years"] - 12.62) < 0.01 and R["var_nonteach"] == 400,
         "effective years 12.62 and the $400 supplies credit recompute")
-    for s in ("$704,779", "$997,420", "$855,977", "167 students: the statistical median"):
+    for s in ("$661,579", "$961,189", "$814,868", "159 students: the statistical median"):
         chk(s in html, f"exodus figure on the site: {s}")
     for s in ("Where the leaving children would go", "Montgomery County Schools",
               "Other or undecided", "As a share of the 128 enrolled today",
@@ -1021,16 +1021,16 @@ def main():
         and _dest.get("Clark County") == 1 and "Public school in district" not in _dest
         and "Not specified" not in _dest and "Another public school district" not in _dest,
         "destination coding in the anonymized CSV matches the published breakdown (in-district and unspecified leavers folded into other-or-undecided)")
-    for s in ("$704,779", "$997,420", "12.62", "response-propensity"):
+    for s in ("$661,579", "$961,189", "12.62", "response-propensity"):
         chk(s in t, f"exodus figure in the report: {s}")
     import subprocess as _sp
     _out = _sp.run([sys.executable, str(REPO / "build" / "closure_grid.py")],
                    capture_output=True, text=True)
-    chk(_out.returncode == 0 and "median $-571,883" in _out.stdout
-        and "100% lose money" in _out.stdout and "$-456,383" in _out.stdout,
-        "closure_grid.py asserts its own v5 statistics (median -$571,883, every scenario loses, default -$456,383)")
-    chk("-$456,383" in html and "77th percentile" in html,
-        "site default -$456,383 at the 77th percentile of the all-loss grid")
+    chk(_out.returncode == 0 and "median $-534,433" in _out.stdout
+        and "100% lose money" in _out.stdout and "$-418,495" in _out.stdout,
+        "closure_grid.py asserts its own v5 statistics (median -$534,433, every scenario loses, default -$418,495)")
+    chk("-$418,495" in html and "77th percentile" in html,
+        "site default -$418,495 at the 77th percentile of the all-loss grid")
     chk("fewer than three students" in html and "fewer than 3 at a level" in html,
         "suppression notes state KDE's written fewer-than-three rule")
     chk("kindergarten enrolled 12" in html or "kindergarten enrolled <b>12" in t

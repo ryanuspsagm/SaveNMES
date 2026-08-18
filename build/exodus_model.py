@@ -16,13 +16,16 @@ kindergarten class years are used only to flag who is enrolled now):
  2. STATISTICAL BAND. Among children enrolled now (kindergarten years
     2020-2025) the survey holds 20 leavers and 4 stayers. A response-bias
     model corrects for leavers answering more readily than stayers:
-    observed odds = true odds x k, with k ~ LogNormal(ln 3, 0.5) (95% of
-    prior mass between about 1.1x and 8x). The prior is anchored to
+    observed odds = true odds x k, with k ~ LogNormal(ln 3.5, 0.5) (95%
+    of prior mass between about 1.3x and 9.5x). The center, 3.5x, is
+    chosen for this survey's specific character: a small, emotionally
+    charged respondent pool answering a zero-effort form circulated by
+    the campaign itself, which matches the high-salience end of the
     published measurements of this bias: Groves/Presser/Dipko 2004
     (interested groups answer 1.4x more readily), Abraham/Helms/Presser
     2009 (engaged respondents 1.35x, directly measured), Pew 2012/2017
-    (engaged people over-represented at implied ratios of 3-4x); the
-    measured 1.4-4x band sits inside the prior's 1.1-8x. Posterior
+    (engaged people over-represented at implied ratios of 3.3-4x); the
+    measured 1.4-4x band sits inside the prior's 1.3-9.5x. Posterior
     quartiles of the true leave share come from numeric integration
     over (p, k).
  3. TODAY. The corrected share applied to the current student
@@ -81,7 +84,7 @@ S = len(enrolled) - X                              # 20 / 4
 
 def posterior_quantiles(qs):
     NP, NK = 2000, 400
-    mu, sig = math.log(3), 0.5
+    mu, sig = math.log(3.5), 0.5
     ks = [math.exp(mu + sig * (-4 + 8 * (j + 0.5) / NK)) for j in range(NK)]
     kw = [math.exp(-0.5 * ((math.log(k) - mu) / sig) ** 2) for k in ks]
     dens = []

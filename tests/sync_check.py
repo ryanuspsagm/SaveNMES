@@ -46,11 +46,11 @@ central = (CM["C39"].value + CM["C40"].value + CM["C41"].value * 54479.4
 site_capv = re.search(r"var CAPV=\[(\d+),(\d+),(\d+)\]", html)
 site_fixv = re.search(r"FIXV=\[(\d+),(\d+),(\d+)\]", html)
 site_teach = re.search(r"TEACH=108958\.80/2", html)
-site_default = (127039 + 107052.2 + 3*54479.4 - 63000 - 167*(A["B6"].value+500-400) - 0)
-if round(central) == -557622 and round(site_default) == -456383 and "-$456,383" in html:
-    match("model central case -$557,622 (v5 grid); site calculator opens at the savings-granted case, teachers included, half the fixed overhead, median leavers (-$456,383, 77th weighted percentile)")
+site_default = (127039 + 107052.2 + 3*54479.4 - 63000 - 159*(A["B6"].value+500-400) - 0)
+if round(central) == -519734 and round(site_default) == -418495 and "-$418,495" in html:
+    match("model central case -$519,734 (v5 grid); site calculator opens at the savings-granted case, teachers included, half the fixed overhead, median leavers (-$418,495, 77th weighted percentile)")
 else:
-    diff(f"closure defaults: model central {central:.0f}, site savings-granted {site_default:.0f} shown: {'-$456,383' in html}")
+    diff(f"closure defaults: model central {central:.0f}, site savings-granted {site_default:.0f} shown: {'-$418,495' in html}")
 # growth calculator default (v4.5 review): the weighted median scenario itself.
 # 30 added students (target 140): inside the 25-seat headroom plus a partial
 # class at 1 per 21, so zero teachers and zero support trigger; $0 bus, $400
@@ -85,14 +85,14 @@ else:
     diff("site leaver pricing formula not found")
 
 # two-tailed range strings consistent
-if "still losing $95,750" in pdf_flat and "losing $1,057,265" in pdf_flat and "losing $1,057,265" in html \
-        and "losing $95,750" in html:
-    match("two-tailed range (-$1,057,265 to -$95,750, v5 survey-anchored grid) consistent on site and in PDF")
+if "still losing $61,862" in pdf_flat and "losing $1,020,613" in pdf_flat and "losing $1,020,613" in html \
+        and "losing $61,862" in html:
+    match("two-tailed range (-$1,020,613 to -$61,862, v5 survey-anchored grid) consistent on site and in PDF")
 else:
     diff("v4.2 two-tailed range strings missing on site or PDF")
-if "loses $571,883" in html and "percentile of the 972 weighted scenarios" in html \
-        and "LOSES $571,883" in pdf_flat and CM["B47"].value.startswith("="):
-    match("v5.0 weighted median ($571,883 yearly loss) in site prose and JS readout and in PDF; central case live in model")
+if "loses $534,433" in html and "percentile of the 972 weighted scenarios" in html \
+        and "LOSES $534,433" in pdf_flat and CM["B47"].value.startswith("="):
+    match("v5.0 weighted median ($534,433 yearly loss) in site prose and JS readout and in PDF; central case live in model")
 else:
     diff("v4.5 weighted median strings missing")
 
@@ -107,7 +107,7 @@ _cl = sorted(
     for c, wc in ((53519, 1), (80279, 2), (127039, 1))
     for f, wf in ((0, 1), (107052.2, 2), (214104.4, 1))
     for t in (0, 1, 2, 3)
-    for l, wl in ((137, 1), (167, 2), (194, 1))
+    for l, wl in ((129, 1), (159, 2), (187, 1))
     for ad, wa in ((0, 1), (500, 2), (1000, 1))
     for b, wb in ((20000, 1), (63000, 2), (95000, 1)))
 _tw = sum(w for _, w in _cl)
@@ -133,11 +133,11 @@ _gr = sorted(
     for c, w7 in ((400, 1), (700, 2), (1000, 1))
     for ad, w8 in ((0, 1), (500, 2), (1000, 1)))
 _gtw = sum(w for _, w in _gr)
-ok_w = (round(_wp(_cl, _tw, 0.5)) == -571883 and round(_wp(_cl, _tw, 0.25)) == -679361
-        and round(_wp(_cl, _tw, 0.75)) == -467862 and round(_neg * 100) == 100
+ok_w = (round(_wp(_cl, _tw, 0.5)) == -534433 and round(_wp(_cl, _tw, 0.25)) == -643405
+        and round(_wp(_cl, _tw, 0.75)) == -429974 and round(_neg * 100) == 100
         and _wp(_gr, _gtw, 0.5) == 142220 and _wp(_gr, _gtw, 0.25) == 94720
         and _wp(_gr, _gtw, 0.75) == 183354)
-site_w = all(s in html for s in ("$571,883", "$679,361", "$467,862", "$142,080",
+site_w = all(s in html for s in ("$534,433", "$643,405", "$429,974", "$142,080",
                                  "$94,720", "$183,354", "Every priced scenario loses money"))
 if ok_w and site_w:
     match("v5.0 weighted stats recompute (closure median/IQR/share, growth median/IQR) and all seven appear on the site")
@@ -607,7 +607,7 @@ else:
     diff("EDFacts toggle still present after retirement")
 
 # site text spot checks
-for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $1,057,265 a year at the left end to still losing $95,750 a year", "closure range prose"),
+for s, label in [("first in the county in every subject", "first-in-county claim"), ("losing $1,020,613 a year at the left end to still losing $61,862 a year", "closure range prose"),
                  ("$166,189 per cent", "certified real-estate yield in the levy note"), ("$2.65 million", "deficit figure in prose"),
                  ("holds 128 today", "enrollment in prose"), ("a 174 rating", "capacity prose")]:
     if s in html: match(f"site text: '{s}' present ({label})")

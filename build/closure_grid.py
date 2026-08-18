@@ -39,7 +39,7 @@ grid's true extremes and do not depend on weights.
                              Appendix A.1 prices 2; its Appendix B classroom
                              count supports 3; year one is 0 by its own
                              retention note.
-  students lost (steady state): 137 / 167 / 194 students missing from the
+  students lost (steady state): 129 / 159 / 187 students missing from the
                              district's rolls in a year, TRIANGULAR like
                              every other centered lever: the posterior 25th /
                              50th / 75th percentile at the class-size
@@ -75,14 +75,14 @@ net = capture + fixed_positions_cut + teachers_cut x $54,479.40
 
 Run:  python build/closure_grid.py
 Asserts the published statistics: 972 scenarios; weighted median
--$571,883; EVERY priced scenario loses money (the best case still loses
-$95,750); middle half -$679,361 to -$467,862; range -$1,057,265 to
--$95,750; the site default (-$456,383: building sold, half the fixed
+-$534,433; EVERY priced scenario loses money (the best case still loses
+$61,862); middle half -$643,405 to -$429,974; range -$1,020,613 to
+-$61,862; the site default (-$418,495: building sold, half the fixed
 positions cut over time, three teachers cut with the emptied classrooms,
 median leavers) sits at the 77th percentile, friendlier than three
 quarters of the grid, because it grants closure every saving that scales
 with students; the median exodus still sinks it.
-Unweighted median -$566,628 kept as a cross-check.
+Unweighted median -$530,476 kept as a cross-check.
 """
 import statistics
 from itertools import product
@@ -96,7 +96,7 @@ FIXED_POS = 115397.25 + 49655.38 + 49051.77  # 214,104.40: MUNIS FY2026 actuals
 CAPTURE = [(53_519, 1), (80_279, 2), (127_039, 1)]           # triangular
 FIXED = [(0, 1), (FIXED_POS / 2, 2), (FIXED_POS, 1)]         # triangular
 TEACHERS = [(t, 1) for t in (0, 1, 2, 3)]                    # uniform
-LEAVERS = [(137, 1), (167, 2), (194, 1)]   # triangular on the band's quartiles
+LEAVERS = [(129, 1), (159, 2), (187, 1)]   # triangular on the band's quartiles
 ADDONS = [(0, 1), (500, 2), (1000, 1)]                       # triangular
 BUS = [(20_000, 1), (63_000, 2), (95_000, 1)]                # triangular; high
                                                              # leg = half the max
@@ -124,7 +124,7 @@ med = wpct(0.50)
 p25, p75 = wpct(0.25), wpct(0.75)
 neg = sum(w for v, w in pairs if v < 0) / total_w
 default = (127_039 + FIXED_POS / 2 + 3 * TEACH - 63_000
-           - 167 * (SEEK + 500 - SUPPLIES))  # scaled savings granted,
+           - 159 * (SEEK + 500 - SUPPLIES))  # scaled savings granted,
                                              # median leavers
 default_rank = (sum(w for v, w in pairs if v < default - 0.005)
                 + sum(w for v, w in pairs if abs(v - default) <= 0.005) / 2
@@ -132,13 +132,13 @@ default_rank = (sum(w for v, w in pairs if v < default - 0.005)
                                              # JS convention
 
 assert n == 972, n
-assert round(med) == -571_883, med
-assert round(p25) == -679_361 and round(p75) == -467_862, (p25, p75)
+assert round(med) == -534_433, med
+assert round(p25) == -643_405 and round(p75) == -429_974, (p25, p75)
 assert round(neg * 100) == 100, neg
-assert round(nets[0]) == -1_057_265 and round(nets[-1]) == -95_750, (nets[0], nets[-1])
-assert round(default) == -456_383, default
+assert round(nets[0]) == -1_020_613 and round(nets[-1]) == -61_862, (nets[0], nets[-1])
+assert round(default) == -418_495, default
 assert 0.75 < default_rank < 0.79, default_rank
-assert round(statistics.median(nets)) == -566_628
+assert round(statistics.median(nets)) == -530_476
 
 print(f"{n:,} scenarios | weighted median ${med:,.0f} | {neg * 100:.0f}% lose money")
 print(f"range ${nets[0]:,.0f} to ${nets[-1]:,.0f} | middle half "
