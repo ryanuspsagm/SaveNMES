@@ -69,6 +69,10 @@ jobs:
         if: ${{ hashFiles('tests/verify_sources.py') != '' }}
         run: python tests/verify_sources.py
 
+      - name: Source verification (verify_charts)
+        if: ${{ hashFiles('tests/verify_charts.py') != '' }}
+        run: python tests/verify_charts.py
+
       - name: Model verification (verify_model)
         if: ${{ hashFiles('tests/verify_model.py') != '' }}
         run: python tests/verify_model.py

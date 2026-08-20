@@ -1,0 +1,99 @@
+[
+ {
+  "id": "per_cent_yield",
+  "old": ["190,953", "190953"],
+  "new": ["166,189", "166189"],
+  "scope": "both",
+  "history_evidence": ["to get $190,953 per cent", "about $166,189 per real cent"],
+  "note": "v4.6: the per-cent-of-rate tax yield restated from the blended $190,953 (all-class collections over real-estate cents) to the audit's real-estate-only $166,189"
+ },
+ {
+  "id": "restore_yield",
+  "old": ["1,699,479", "1699479"],
+  "new": ["1,479,078", "1,479,000", "1479078"],
+  "scope": "both",
+  "allow_context": ["corrected here and in the version history"],
+  "history_evidence": ["The restore restates from $1,699,479 to about $1,479,000"],
+  "note": "v4.6: the 8.9-cent restore restated from $1,699,479 to $1,479,078 (about $1,479,000 in the report prose); the report keeps one in-body mention of the old figure explicitly labeled as corrected, allowed by context"
+ },
+ {
+  "id": "package_band",
+  "old": ["2.5-$3.0", "$2.5 to $3.0", "2.5 to 3.0 million"],
+  "new": ["$2.2 to $2.8", "2.2-$2.8"],
+  "scope": "report",
+  "history_evidence": ["the package-plus-restore band from $2.5-$3.0 to $2.2-$2.8 million"],
+  "note": "v4.6: the package-plus-restore band restated from $2.5-$3.0 million to $2.2-$2.8 million"
+ },
+ {
+  "id": "hold_2012_rate",
+  "old": ["573,000", "573000"],
+  "new": ["499,000"],
+  "scope": "report",
+  "history_evidence": ["the hold-the-2012-rate figure from $573,000 to $499,000"],
+  "note": "v4.6: the hold-the-2012-rate figure restated from $573,000 to $499,000 (re-based on the $166,189 real-estate cent)"
+ },
+ {
+  "id": "nickel_2023_inference",
+  "old": ["477,000", "477000"],
+  "new": ["415,000"],
+  "scope": "report",
+  "history_evidence": ["the 2023 inference from $477,000 to $415,000"],
+  "note": "v4.6: the 2023 rate-move revenue inference restated from $477,000 to $415,000"
+ },
+ {
+  "id": "attendance_decline",
+  "old": ["248"],
+  "new": ["247"],
+  "scope": "both",
+  "history_evidence": ["the attendance decline restated 248 to 247"],
+  "note": "v4.6: the count of Bourbon County Schools residents attending elsewhere restated from 248 to 247"
+ },
+ {
+  "id": "seek_4636_retraction",
+  "old": ["4,636", "4636"],
+  "new": ["4,626"],
+  "scope": "both",
+  "history_evidence": ["an interim draft of this release wrongly moved it to $4,636"],
+  "note": "v5.0: an interim draft moved the SEEK base to $4,636; retracted, the enacted FY2027 base is $4,626 (2026 Ky. Acts ch. 168, HB 500)"
+ },
+ {
+  "id": "house_figure_premise",
+  "old": ["only the House figure"],
+  "new": ["4,626"],
+  "scope": "both",
+  "history_evidence": ["on the false premise that $4,626 was only the House figure"],
+  "note": "v5.0: the premise that $4,626 was merely the House figure was false; it is the enacted figure, so no artifact may repeat the premise outside history"
+ },
+ {
+  "id": "rank_eighth",
+  "old": ["seventh"],
+  "new": ["eighth"],
+  "scope": "report",
+  "history_evidence": ["Bourbon ranks eighth of nine area districts, not seventh"],
+  "note": "v4.6: Bourbon's area rate rank corrected to eighth of nine districts, not seventh"
+ },
+ {
+  "id": "kfics_lowest_need",
+  "old": ["second-lowest need", "second lowest need", "second-lowest-need", "second lowest in the KFICS"],
+  "new": ["smallest four-year repair bill"],
+  "scope": "report",
+  "history_evidence": ["the lowest-need school building in the KFICS assessment, not second lowest"],
+  "note": "v4.6: NMES restated as the lowest-need building in the KFICS assessment, not second lowest; 'second lowest' still legitimately describes the tax-rate rank and the draft-plan slides' total-need column, so matching here is need-specific"
+ },
+ {
+  "id": "all_funds_scale",
+  "old": ["$44 million", "$44M", "from $44 to"],
+  "new": ["41.8"],
+  "scope": "report",
+  "history_evidence": ["the all-funds scale corrected from $44 to $41.8 million"],
+  "note": "v4.6: the district's all-funds spending scale corrected from $44 million to $41.8 million"
+ },
+ {
+  "id": "enrollment_2019_20",
+  "old": ["as recently as 2019-20", "160 in 2019-20"],
+  "new": ["166 in 2019-20"],
+  "scope": "report",
+  "history_evidence": ["the 2019-20 enrollment corrected to 166 (160 was 2020-21)"],
+  "note": "v4.6: the 2019-20 enrollment corrected to 166; the 160 count belongs to 2020-21, so the recent-enrollment sentence now anchors on 2020-21 with 166 in 2019-20 beside it"
+ }
+]
