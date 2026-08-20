@@ -16,11 +16,12 @@
       "retrieved": null,
       "verify": true,
       "code_refs": [
-        {"file": "build/closure_grid.py", "regex": "^SEEK\\s*=\\s*(\\d+)\\b", "group": 1},
-        {"file": "build/growth_grid.py", "regex": "^SEEK\\s*=\\s*(\\d+)\\b", "group": 1},
-        {"file": "build/exodus_model.py", "regex": "^SEEK\\s*=\\s*(\\d+)\\s*\\+\\s*500\\b", "group": 1}
+        {"file": "build/nmes_constants.py", "regex": "^SEEK_BASE\\s*=\\s*(\\d+)\\b", "group": 1},
+        {"file": "build/closure_grid.py", "regex": "^SEEK\\s*=\\s*(\\d+)\\b", "group": 1, "accept_import": "SEEK_BASE"},
+        {"file": "build/growth_grid.py", "regex": "^SEEK\\s*=\\s*(\\d+)\\b", "group": 1, "accept_import": "SEEK_BASE"},
+        {"file": "build/exodus_model.py", "regex": "^SEEK\\s*=\\s*(\\d+)\\s*\\+\\s*500\\b", "group": 1, "accept_import": "SEEK_BASE"}
       ],
-      "note": "The enacted FY2027 base. A prior release shipped $4,636 and passed every internal check; this entry is the guard against that class of error. If build/constants.py exists at run time, the verifier also checks its SEEK assignment against this value."
+      "note": "The enacted FY2027 base. A prior release shipped $4,636 and passed every internal check; this entry is the guard against that class of error. The constants are consolidated in build/nmes_constants.py; each model script must either import SEEK_BASE from it or carry a literal assignment equal to this value, and if a build/constants.py appears later the verifier checks its SEEK assignment too."
     },
     {
       "name": "seek_base_fy2028",
@@ -59,9 +60,10 @@
       "retrieved": null,
       "verify": false,
       "code_refs": [
-        {"file": "build/closure_grid.py", "regex": "^TEACH\\s*=\\s*([\\d_,.]+)\\s*/\\s*2", "group": 1, "transform": "half"}
+        {"file": "build/nmes_constants.py", "regex": "^TEACH\\s*=\\s*([\\d_,.]+)\\s*/\\s*2", "group": 1, "transform": "half"},
+        {"file": "build/closure_grid.py", "regex": "^TEACH\\s*=\\s*([\\d_,.]+)\\s*/\\s*2", "group": 1, "transform": "half", "accept_import": "TEACH"}
       ],
-      "note": "The only archived source is an image (the district's response PDF, build/response_to_the_10_questions.pdf, is a scan with no text layer, and the appendix is archived as a PNG). No OCR in this pipeline, so the source side cannot be machine-extracted; the code side is still asserted: closure_grid.py prices TEACH as 108_958.80 / 2."
+      "note": "The only archived source is an image (the district's response PDF, build/response_to_the_10_questions.pdf, is a scan with no text layer, and the appendix is archived as a PNG). No OCR in this pipeline, so the source side cannot be machine-extracted; the code side is still asserted: nmes_constants.py prices TEACH as 108_958.80 / 2."
     },
     {
       "name": "teacher_loaded_cost_pair",
@@ -73,9 +75,9 @@
       "retrieved": null,
       "verify": false,
       "code_refs": [
-        {"file": "build/closure_grid.py", "regex": "^TEACH\\s*=\\s*([\\d_,.]+)\\s*/\\s*2", "group": 1}
+        {"file": "build/nmes_constants.py", "regex": "^TEACH\\s*=\\s*([\\d_,.]+)\\s*/\\s*2", "group": 1}
       ],
-      "note": "Same image-only source as teacher_loaded_cost. The verifier asserts the pair is exactly twice the single-teacher figure and matches the numerator of the TEACH assignment in closure_grid.py."
+      "note": "Same image-only source as teacher_loaded_cost. The verifier asserts the pair is exactly twice the single-teacher figure and matches the numerator of the TEACH assignment in nmes_constants.py."
     },
     {
       "name": "fixed_pos_school_administration",
@@ -87,7 +89,8 @@
       "retrieved": "2026-08-02",
       "verify": true,
       "code_refs": [
-        {"file": "build/closure_grid.py", "regex": "^FIXED_POS\\s*=\\s*([\\d.]+)\\s*\\+\\s*[\\d.]+\\s*\\+\\s*[\\d.]+", "group": 1}
+        {"file": "build/nmes_constants.py", "regex": "^FIXED_ADMIN\\s*=\\s*([\\d_.,]+)", "group": 1},
+        {"file": "build/closure_grid.py", "regex": "^FIXED_POS\\s*=\\s*([\\d.]+)\\s*\\+\\s*[\\d.]+\\s*\\+\\s*[\\d.]+", "group": 1, "accept_import": "FIXED_POS"}
       ]
     },
     {
@@ -100,7 +103,7 @@
       "retrieved": "2026-08-02",
       "verify": true,
       "code_refs": [
-        {"file": "build/closure_grid.py", "regex": "^FIXED_POS\\s*=\\s*[\\d.]+\\s*\\+\\s*([\\d.]+)\\s*\\+\\s*[\\d.]+", "group": 1}
+        {"file": "build/nmes_constants.py", "regex": "^FIXED_CUSTODIAL\\s*=\\s*([\\d_.,]+)", "group": 1}
       ]
     },
     {
@@ -113,7 +116,7 @@
       "retrieved": "2026-08-02",
       "verify": true,
       "code_refs": [
-        {"file": "build/closure_grid.py", "regex": "^FIXED_POS\\s*=\\s*[\\d.]+\\s*\\+\\s*[\\d.]+\\s*\\+\\s*([\\d.]+)", "group": 1}
+        {"file": "build/nmes_constants.py", "regex": "^FIXED_LIBRARY\\s*=\\s*([\\d_.,]+)", "group": 1}
       ]
     },
     {
@@ -277,7 +280,9 @@
       },
       "retrieved": null,
       "verify": true,
-      "code_refs": []
+      "code_refs": [
+        {"file": "build/nmes_constants.py", "regex": "^POP_OFFICIAL\\s*=\\s*(\\d+)\\b", "group": 1}
+      ]
     },
     {
       "name": "saar_eoy_2025_26",
@@ -293,7 +298,9 @@
       },
       "retrieved": null,
       "verify": true,
-      "code_refs": []
+      "code_refs": [
+        {"file": "build/nmes_constants.py", "regex": "^POP_TODAY\\s*=\\s*(\\d+)\\b", "group": 1}
+      ]
     },
     {
       "name": "saar_kindergarten_series",

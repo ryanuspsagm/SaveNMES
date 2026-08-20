@@ -166,24 +166,25 @@ def extract(entry):
 
 def check_code_ref(entry, ref):
     """The constant as assigned in code must match the manifest value.
-    SEEK may migrate into build/constants.py; if the named file no longer
-    carries the assignment but constants.py does, the check follows it."""
+    A script may either carry the literal assignment or import the symbol
+    from the consolidated build/nmes_constants.py (which has its own ref);
+    accept_import names the symbol whose import satisfies the check."""
     path = REPO / ref["file"]
     text = path.read_text()
     m = re.search(ref["regex"], text, re.MULTILINE)
-    where = ref["file"]
-    if not m and entry["name"].startswith("seek_base") and (REPO / "build" / "constants.py").exists():
-        text = (REPO / "build" / "constants.py").read_text()
-        m = re.search(r"^SEEK\s*=\s*(\d+)\b", text, re.MULTILINE)
-        where = "build/constants.py (assignment moved)"
-    if not m:
-        chk(False, f"{entry['name']}: assignment found in {where}")
+    if m:
+        got = numeric(m.group(ref.get("group", 1)))
+        if ref.get("transform") == "half":
+            got = got / 2
+        chk(close(got, entry["value"]),
+            f"{entry['name']}: code constant in {ref['file']} = {entry['value']}")
         return
-    got = numeric(m.group(ref.get("group", 1)))
-    if ref.get("transform") == "half":
-        got = got / 2
-    chk(close(got, entry["value"]),
-        f"{entry['name']}: code constant in {where} = {entry['value']}")
+    sym = ref.get("accept_import")
+    if sym and re.search(r"from\s+nmes_constants\s+import", text) \
+            and re.search(rf"\b{sym}\b", text):
+        chk(True, f"{entry['name']}: {ref['file']} imports {sym} from nmes_constants")
+        return
+    chk(False, f"{entry['name']}: assignment or import found in {ref['file']}")
 
 
 def main():
@@ -224,12 +225,13 @@ def main():
     chk(close(round(sum(k) / len(k), 2), 22.25),
         "kindergarten series averages 22.25, the ten-year average of 22 cited on the site")
 
-    # if the constants ever consolidate, the consolidated file must agree too
-    cpath = REPO / "build" / "constants.py"
-    if cpath.exists():
-        m = re.search(r"^SEEK\s*=\s*(\d+)\b", cpath.read_text(), re.MULTILINE)
-        chk(m is not None and numeric(m.group(1)) == by_name["seek_base_fy2027"]["value"],
-            "build/constants.py SEEK matches the enacted FY2027 base")
+    # the consolidated constants module, under either name, must agree
+    for cname in ("nmes_constants.py", "constants.py"):
+        cpath = REPO / "build" / cname
+        if cpath.exists():
+            m = re.search(r"^SEEK(?:_BASE)?\s*=\s*(\d+)\b", cpath.read_text(), re.MULTILINE)
+            chk(m is not None and numeric(m.group(1)) == by_name["seek_base_fy2027"]["value"],
+                f"build/{cname} SEEK base matches the enacted FY2027 value")
 
     print(f"PASS {len(ok)}")
     print(f"SKIP {len(skip)}")
