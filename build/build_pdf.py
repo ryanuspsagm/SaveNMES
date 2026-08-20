@@ -551,8 +551,7 @@ P("Closure is cash-positive exactly once, in year one, by $27,339, and the one-t
   "that ever looks close.")
 fig("chart_closure_spectrum.png",
     "Figure 5. The honest range. Top: the net yearly effect of closure across all 972 combinations of "
-    "the six sourced inputs, from losing $846,285 to still losing $9,860, the middle half of "
-    "weighted scenarios between a $518,405 and a $338,727 loss, the median a $427,087 loss. The plan's "
+    "the six sourced inputs, the plan's "
     "own $800,000 to $1,000,000 requirement lies entirely outside the range. Bottom: how far each input "
     "moves the central case by itself. Inputs: the district's response worksheet and staffing appendix "
     "(Appendix A and A.1), its capacity appendix, its KDE filings, the federal attendance-zone map, and "
@@ -784,7 +783,7 @@ P("<b>First, the money.</b> For the 163 closure events with clean finance data, 
   "tails hold events beyond $13,000 per child, more than any school costs to run: budget-wide noise, "
   "not closure effects. The raw median for the 27 closures most like this plan prints $8,440; the same "
   "artifact, and inside the plausible window that median is <b>$541</b>. The yardstick: this plan "
-  "needs <b>$6,957 to $8,696 per displaced child</b>, at the record's 75th percentile and above. The one "
+  "needs <b>$6,957 to $8,696 per displaced child</b>, around the record's 75th percentile and above. The one "
   "clean rural comparable with nothing built, Webster County's closure of Slaughters Elementary in "
   "2012, paid $3,525; the strongest rural-elementary case, Adair County in 2006 at $6,935, still falls "
   "short of the band, and it built a new school. The record's figure is an "
@@ -1380,8 +1379,7 @@ P("And the surplus is transformative. The website's plan calculator prices the e
   "net-of-supplies cell the closure model uses. The gap to close is the district's own most current "
   "number: its June 2026 year-end ledger trends the fiscal 2026 General Fund at <b>$1,738,653</b> in "
   "the red before transfers ($20,694,287 of revenue against $22,432,940 of spending). On-behalf entries "
-  "cancel in the gap; the audit will refine it; the audited fiscal 2025 gap was $2,648,086. The "
-  "sequencing discussion uses the related $1,694,928 close-plus-sweep requirement. One caution carries "
+  "cancel in the gap; the audit will refine it; the audited fiscal 2025 gap was $2,648,086. One caution carries "
   "over from Section 8: the trend counts the unidentified $1.4 million June receipt. If that receipt "
   "does not recur the gap runs toward $3.1 million, which the plan's middle and top cases clear and its "
   "floor does not. With the cost package at its low end, the full 2018 restore, and not one student "
@@ -1578,8 +1576,8 @@ tbl(["Option", "New rate", "Added cents", "Median-home cost", "New recurring rev
     caption="Recallable levy options at Bourbon's own per-cent yield. Rates are 2025-26 levied real estate "
             "rates; the regional median is the median of the eight area districts with Fayette excluded. "
             "Every formula is live in the model's Tax_History tab, rows 70 to 91.")
-P("Restoring the rate this district itself levied in 2018 closes about two thirds of the structural gap "
-  "on its own; matching Clark closes nearly all of it. The sequencing is where the plan's own goal "
+P("Restoring the rate this district itself levied in 2018 covers over half the audited structural gap "
+  "on its own, 85 percent of the fiscal 2026 trend; matching Clark covers about four fifths of it. The sequencing is where the plan's own goal "
   "comes within reach. The first call on any new recurring money is closing the operating gap ($373,989 "
   "on the FY2026 trend) and ending the $1,320,939 capital-to-General-Fund sweep, $1,694,928 in all, "
   "because ending the sweep frees the restricted building stream to carry bonds. Restoring the 2018 "
@@ -1589,8 +1587,9 @@ P("Restoring the rate this district itself levied in 2018 closes about two third
   "collections by the real-estate cent count; that blended figure overstated a real-only rate move and "
   "is corrected here and in the version history. Once the General Fund stands alone, the nickel "
   "residual carries the $14 million renovation, the restricted capacity becomes genuinely pledgeable, "
-  "and the phasing-in nickel equalization adds about $3.6 million on top of the advisor's $32 million: "
-  "roughly $35.6 million of construction capacity. The district's own advisor corroborated the base in "
+  "and the phasing-in nickel equalization adds about $3.6 million to the FY2024 audit's bonding "
+  "potential, which predates it: roughly $35 million of construction capacity built from the "
+  "district's own streams, without leaning on the advisor's figure. The district's own advisor corroborated the base in "
   "June 2026, rating current capacity at $32 million on the same restricted stream. All of it for "
   "$15.69 a month on the median home, without pledging a cent of the new levy to a bond and without "
   "closing anything. Pledged straight to construction instead, the four options carry about $11.5, "
@@ -1624,7 +1623,7 @@ tbl(["Plan", "Recurring impact, year 3", "Projected FY2029 balance", "What it re
       "No decisions; the districtwide drawdown simply continues, with or without North Middletown"],
      ["2. Close NMES and consolidate", "-$846,285 to -$9,860 (median: LOSES $427,087)", "Median: gone much sooner than status quo",
       "Closure vote; the median scenario loses money; longer rides; enrollment-loss risk"],
-     ["3. Districtwide recovery plan (menu plus 2018 restore)", "$2.2-$2.8 million a year", "About $4.3 million or better",
+     ["3. Districtwide recovery plan (menu plus 2018 restore)", "$2.2-$2.8 million a year", "About $4.3 million or better (balance modeled on the menu midpoint, Runway tab)",
       "Revenue votes, administrative rollback, boundary action and HB 563 recruitment, implementation "
       "discipline; every school stays open"]],
     [1.85 * inch, 1.45 * inch, 1.35 * inch, 2.05 * inch],
@@ -1680,10 +1679,9 @@ B("A working threshold for the Board: if documented net recurring General Fund s
   "$400,000 to $500,000 a year, about a third of the $1.48 million that restoring the 2018 rate raises "
   "without closing a school, closure "
   "fails on its own financial terms.")
-B("Face the levy each August with the rate on the table, not just the revenue formula: restoring the "
-  "board's own 2018 rate raises about $1.48 million a year, and Bourbon would still tax below five of its "
-  "eight neighbors. Adopt it or reject it, but decide on the record, alongside the spending decisions, "
-  "because standing still is the one path the numbers close off.")
+B("Face the levy each August with the rate on the table, not just the revenue formula: adopt or "
+  "reject the 2018 restore on the record, alongside the spending decisions, because standing still is "
+  "the one path the numbers close off.")
 H2("Over the next twelve months")
 B("Pursue the low-harm levers first: the collections-gap reconciliation, the levy decision at the "
   "September tax setting with the 2018 restore priced on the table, transportation routing, "

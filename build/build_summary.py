@@ -153,8 +153,8 @@ B("<b>Three:</b> let the community fund the building's needs with grants, privat
 B("<b>Four:</b> say publicly that the district will work to grow this school; uncertainty is its own "
   "enrollment killer.")
 A(Paragraph(
-  "These asks put no money at risk: if staff keep their jobs, closing frees only "
-  "$79,211 of building costs on the district's own ledger. "
+  "These asks put no money at risk: closing frees only the "
+  "$79,211 of building costs in Fact three. "
   "A closed school cannot be recalled by the children it displaces. A growth plan can be measured, every "
   "year, by everyone.", body))
 A(HRFlowable(width="100%", thickness=0.8, color=LINE, spaceBefore=6, spaceAfter=6))

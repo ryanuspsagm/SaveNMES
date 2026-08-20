@@ -21,7 +21,7 @@ kindergarten class years are used only to flag who is enrolled now):
     actually enrolled counts either way. A response-bias
     model corrects for leavers answering more readily than stayers:
     observed odds = true odds x k, with k ~ LogNormal(ln 3.5, 0.5)
-    TRUNCATED at k >= 3.3, spanning 3.3x to about 9.5x. The floor and
+    TRUNCATED at k >= 3.3, spanning 3.3x to about 9x. The floor and
     center are chosen for this survey's specific character: a small,
     emotionally charged respondent pool answering a zero-effort form
     circulated by the campaign itself. Published measurements of this

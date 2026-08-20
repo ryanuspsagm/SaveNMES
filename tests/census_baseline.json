@@ -714,7 +714,8 @@
    "workbook"
   ],
   "6935": [
-   "report"
+   "report",
+   "workbook"
   ],
   "6941": [
    "site"
@@ -1008,7 +1009,9 @@
    "report"
   ],
   "60000": [
-   "report"
+   "report",
+   "site",
+   "workbook"
   ],
   "60988": [
    "report"
@@ -1075,6 +1078,7 @@
   ],
   "85000": [
    "report",
+   "site",
    "workbook"
   ],
   "91240": [
