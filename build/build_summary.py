@@ -61,8 +61,8 @@ B("<b>Fact two: it is not expensive.</b> On the newest state spending file (2024
 B("<b>Fact three: closing it frees very little.</b> The district spent $1,285,310 on the school last "
   "year, by its own ledger. Almost all of it moves with the children or pays for itself. Only the "
   "building's own costs stop: $79,211 a year if staff keep their jobs, up to $127,039 if the building is "
-  "sold. The superintendent's written response says all staff would be retained, priced at its own "
-  "$54,479.40 loaded cost. The district's $661,139 figure includes $493,407 of staffing savings that, by "
+  "sold. The superintendent's written response says all staff keep their jobs; its own worksheet prices "
+  "each teacher at $54,479.40 loaded. The district's $661,139 figure includes $493,407 of staffing savings that, by "
   "that same response, arrive only by attrition. In year one, only $127,039 remains. We priced 972 "
   "closure scenarios on the district's own figures, with family departures measured by the signed survey "
   "instead of guessed. The middle case LOSES $427,087 a year. Every one of them loses money.")
@@ -131,9 +131,10 @@ B("<b>Lever three, revenue.</b> The rate is simply lower while the tax base more
   "recallable by petition, the same democratic check every neighboring increase carried.")
 A(Paragraph(
   "<b>Together, the plan is transformative.</b> Costs at the low end plus the full restore clear the "
-  "trending gap with about $500,000 a year to spare, within $7,000 of a 5 percent raise for every "
-  "certified teacher, on the $32 million of bonding capacity the district's own advisor presented, before "
-  "one leaked student comes back; two recovered students close the difference. Half the pool: about $1.7 "
+  "trending gap with about $500,000 a year to spare before one leaked student comes back, within "
+  "$7,000 of a 5 percent raise for every certified teacher; two recovered students close the "
+  "difference. Clearing the gap also unlocks the $32 million of bonding capacity the district's own "
+  "advisor presented. Half the pool: about $1.7 "
   "million a year and $47 million of capacity. The full pool: about $3.4 million and about $69 million. "
   "Every school stays open. To run it, the board should create three standing committees, one per lever, "
   "each reporting publicly: enrollment growth, fixed costs, and revenue. NMES volunteers stand ready to "
