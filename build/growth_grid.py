@@ -69,12 +69,13 @@ teachers = floor(max(0, gain - 25) / ratio)
 
 Run:  python build/growth_grid.py
 Asserts the published statistics: headline grid (add-ons enumerated, matching
-the closure model) 19,683 scenarios, weighted median +$141,780, middle half
-+$94,720 to +$183,354, floor +$4,131 (a class of 18 at the top salary with
-every cost at maximum and no add-ons), ceiling +$387,804, ZERO negative: with
-the district's own 25 open seats and classroom-indexed hiring, growth pays in
-every scenario. Base-only cut: weighted median +$118,080. Unweighted median
-+$141,084 kept as a cross-check.
+the closure model) 19,683 scenarios, weighted median +$141,780 (which is also
+the site default: 30 students at the low legs), middle half +$94,520 to
++$182,654, floor +$3,331 (a class of 18 at the top salary with every cost at
+maximum and no add-ons), ceiling +$386,904, ZERO negative: with the
+district's own 25 open seats and classroom-indexed hiring, growth pays in
+every scenario. Base-only cut: weighted median +$117,780. Unweighted median
++$140,331 kept as a cross-check.
 """
 import math
 import statistics

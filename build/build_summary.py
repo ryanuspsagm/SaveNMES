@@ -119,7 +119,7 @@ B("<b>Lever one, enrollment.</b> Each recovered student brings about $4,226 of s
   "Schools kids are homeschooled, in private school, or enrolled in another district, worth $2.1 to $2.5 "
   "million a year at the full $4,626 SEEK base. "
   "Eminence Independent proved the model an hour away: it grew 35 "
-  "percent in the decade Bourbon Schools shrank 10. Growth pays in every one of 19,683 priced scenarios, with a "
+  "percent in the decade Bourbon Schools shrank 10. Growth at NMES pays in every one of 19,683 priced scenarios, with a "
   "middle case of +$141,780 a year.")
 B("<b>Lever two, fixed costs.</b> Trim every non-teaching position by attrition: $340,000 to $425,000 a "
   "year. Weigh an administrative restructuring: $224,000 to $450,000. Smarter bus routes: $146,000 to "

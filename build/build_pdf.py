@@ -254,7 +254,7 @@ B("<b>Lever one, enrollment.</b> Each recovered student brings about $4,226 of s
   "The pool is measured: 236 students sit in Bourbon's own homeschool files, and 450 to 550 Bourbon County "
   "Schools kids are homeschooled, in private school, or enrolled in another district, worth $2.1 to $2.5 "
   "million a year at the full $4,626 SEEK base. Eminence Independent proved "
-  "the model an hour away: it grew 35 percent in the decade Bourbon Schools shrank 10. Growth pays in every one of "
+  "the model an hour away: it grew 35 percent in the decade Bourbon Schools shrank 10. Growth at NMES pays in every one of "
   "19,683 priced scenarios, with a middle case of +$141,780 a year.")
 B("<b>Lever two, fixed costs.</b> Trim every non-teaching position by attrition: $340,000 to $425,000 a "
   "year. Weigh an administrative restructuring: $224,000 to $450,000. Smarter bus routes: $146,000 to "
@@ -1432,10 +1432,9 @@ P("The result: across all 19,683 priced scenarios, growth pays in every single o
   "the worst case, a class of 18 at the top salary with every cost at its maximum, still nets $3,331. "
   "The website's calculator opens at 30 added students, no new hires needed: $141,780 a year, the weighted "
   "median itself. (The target reads 140 on the slider's 110 base, the district's "
-  "figure, whose SBDM allocation projects 111; the same 30 added to the official 128 count is a target of 158. The "
-  "district's own Appendix B caps leave 25 open seats across the six grades; adding 30 leaves five "
-  "over unless enrollment lands unevenly, and the calculator's hiring lever prices the section the "
-  "caps would force.) The same stack drives the cost-per-student curve. At 160 students the school "
+  "figure, whose SBDM allocation projects 111; the same 30 added to the official 128 count is a target of 158. "
+  "Adding 30 to the 25 open seats leaves five over unless enrollment lands unevenly; the hiring lever "
+  "prices the section that would force.) The same stack drives the cost-per-student curve. At 160 students the school "
   "costs about $14,600 per student with no new hire yet needed. At the 198 seats the state approved in "
   "2013, with two new teachers paid for, about $12,500: cheaper than every school in the county today. "
   "One script, build/growth_grid.py, reproduces the whole grid.")

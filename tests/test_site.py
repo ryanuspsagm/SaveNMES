@@ -179,7 +179,7 @@ def main():
         pg.fill("#sCps", "1000"); pg.dispatch_event("#sCps", "input")
         pg.fill("#sGad", "0"); pg.dispatch_event("#sGad", "input")
         if pg.text_content("#rGro").strip() == "$29,591":
-            ok("worst reachable corner still pays: $29,591 (90 added, class of 18 at top salary, every cost maxed; grid-wide floor +$3,331)")
+            ok("all-extremes corner (target 200) still pays $29,591; the worst reachable setting is the grid floor +$3,331 at target 190")
         else: bad(f"growth floor: {pg.text_content('#rGro')}")
         if pg.evaluate("document.getElementById('youGrow').style.left") != "50%":
             ok("growth percentile marker follows the calculator (moved off 50% at the corner)")

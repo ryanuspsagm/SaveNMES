@@ -208,7 +208,7 @@ put(df, "B34", "=B17+C17+Closure_Model!C40+3*54479.4-63000-136*(Assumptions!B6+5
 put(df, "F34", "$127,039 kept, plus half the fixed overhead positions ($107,052, Closure_Model C40) and three teachers at $54,479.40, minus $63,000 of busing, minus the statistical median of 136 missing students at $5,126 less the $400 supplies credit: the published -$308,207, the 82nd percentile of the 972-scenario grid; the weighted median is a $427,087 loss (Closure_Model row 50)", NOTE, wrap=True)
 put(df, "A35", "Growth default: 30 added students at the grid's low busing and supplies")
 put(df, "B35", "=30*(Assumptions!B6+500-400)", BLK, CUR, bold=True)
-put(df, "F35", "The published +$141,780 is the grid's weighted median itself (Growth_Model rows 17-19); at the central $500 busing and $700 supplies the same 30 students net about $118,000", NOTE, wrap=True)
+put(df, "F35", "The published +$141,780 is the grid's weighted median itself (Growth_Model rows 17-19); at the central $500 busing and $700 supplies the same 30 students net $117,780", NOTE, wrap=True)
 
 put(df, "A37", "THE PLAN: FLOOR, DEFAULT, AND TOP (the site plan calculator's three published cases)", SEC)
 put(df, "A38", "", ); put(df, "B38", "Floor", BOLD); put(df, "C38", "Default", BOLD); put(df, "D38", "Top", BOLD)
