@@ -1,3 +1,5 @@
+import os
+OUT = os.environ.get("NMES_OUT", "/home/claude/nmes")
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -21,7 +23,7 @@ def clean(ax, ygrid=True, xgrid=False):
         ax.xaxis.grid(True, color="#E4E6EA", linewidth=0.8); ax.set_axisbelow(True)
 
 def save(fig, name):
-    fig.savefig(f"/home/claude/nmes/{name}", dpi=200, bbox_inches="tight", pad_inches=0.08)
+    fig.savefig(f"{OUT}/{name}", dpi=200, bbox_inches="tight", pad_inches=0.08)
     plt.close(fig)
 
 yrs = ["FY2023", "FY2024", "FY2025"]

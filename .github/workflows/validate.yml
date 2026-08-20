@@ -1,0 +1,127 @@
+# Rebuilds every published artifact from the committed sources, runs the
+# full validator suite, and fails if the rebuilt PDFs' text drifts from the
+# committed copies. One job so the rebuilt artifacts feed the validators.
+name: validate
+
+on: [push, pull_request]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      NMES_OUT: ${{ runner.temp }}/nmes
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          # no requirements.txt in the repo; key the pip cache on this file
+          cache-dependency-path: .github/workflows/validate.yml
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # pypdf is required by tests/validate_all.py and tests/sync_check.py
+          pip install reportlab openpyxl matplotlib pypdfium2 xlrd pandas playwright pypdf
+
+      - name: Install Chromium for browser tests
+        run: playwright install --with-deps chromium
+
+      - name: Rebuild all artifacts from source
+        run: |
+          mkdir -p "$NMES_OUT"
+          python build/exodus_model.py
+          python build/closure_grid.py
+          python build/growth_grid.py
+          cd build
+          python make_charts.py
+          python build_pdf.py
+          python build_summary.py
+          python build_model.py
+
+      - name: Snapshot committed artifacts, then install rebuilt copies
+        run: |
+          # keep the committed PDFs for the drift check at the end
+          mkdir -p "$NMES_OUT/committed"
+          cp Saving_North_Middletown_Elementary.pdf "$NMES_OUT/committed/"
+          cp SaveNMES_Executive_Summary.pdf "$NMES_OUT/committed/"
+          # repo convention: report and model from $NMES_OUT, summary from build/
+          cp "$NMES_OUT/Saving_North_Middletown_Elementary.pdf" Saving_North_Middletown_Elementary.pdf
+          cp build/SaveNMES_Executive_Summary.pdf SaveNMES_Executive_Summary.pdf
+          cp "$NMES_OUT/NMES_Financial_Model.xlsx" NMES_Financial_Model.xlsx
+
+      - name: Cross-file validation (validate_all)
+        run: python tests/validate_all.py
+
+      - name: Number sync check (sync_check)
+        run: python tests/sync_check.py
+
+      - name: Browser tests (test_site)
+        # test_site.py uses playwright's own Chromium install by default;
+        # CHROMIUM_PATH is only needed to point at an external binary.
+        run: python tests/test_site.py
+
+      - name: Source verification (verify_sources)
+        if: ${{ hashFiles('tests/verify_sources.py') != '' }}
+        run: python tests/verify_sources.py
+
+      - name: Model verification (verify_model)
+        if: ${{ hashFiles('tests/verify_model.py') != '' }}
+        run: python tests/verify_model.py
+
+      - name: Number census (number_census)
+        if: ${{ hashFiles('tests/number_census.py') != '' }}
+        run: python tests/number_census.py
+
+      - name: Corrections verification (verify_corrections)
+        if: ${{ hashFiles('tests/verify_corrections.py') != '' }}
+        run: python tests/verify_corrections.py
+
+      - name: Privacy check (privacy_check)
+        if: ${{ hashFiles('tests/privacy_check.py') != '' }}
+        run: python tests/privacy_check.py
+
+      - name: Committed artifacts match rebuilt sources (text drift check)
+        run: |
+          python - <<'EOF'
+          import os, re, sys
+          import pypdfium2 as pdfium
+
+          def text(path):
+              doc = pdfium.PdfDocument(path)
+              parts = [page.get_textpage().get_text_range() for page in doc]
+              doc.close()
+              # whitespace-insensitive comparison
+              return re.sub(r"\s+", " ", "".join(parts)).strip()
+
+          out = os.environ["NMES_OUT"]
+          pairs = [
+              ("Saving_North_Middletown_Elementary.pdf",
+               f"{out}/committed/Saving_North_Middletown_Elementary.pdf"),
+              ("SaveNMES_Executive_Summary.pdf",
+               f"{out}/committed/SaveNMES_Executive_Summary.pdf"),
+          ]
+          drifted = False
+          for rebuilt, committed in pairs:
+              a, b = text(rebuilt), text(committed)
+              if a == b:
+                  print(f"OK: {os.path.basename(rebuilt)} text matches committed copy")
+                  continue
+              drifted = True
+              print(f"DRIFT: {os.path.basename(rebuilt)} differs from committed copy")
+              n = min(len(a), len(b))
+              i = next((j for j in range(n) if a[j] != b[j]), n)
+              lo = max(0, i - 80)
+              print(f"  first divergence at char {i}")
+              print(f"  rebuilt:   ...{a[lo:i + 120]!r}")
+              print(f"  committed: ...{b[lo:i + 120]!r}")
+          if drifted:
+              print("committed PDFs no longer match the committed sources; "
+                    "rebuild and recommit the artifacts")
+              sys.exit(1)
+          print("all committed PDFs match the rebuilt sources")
+          EOF

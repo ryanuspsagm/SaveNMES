@@ -80,7 +80,9 @@ import math
 import statistics
 from itertools import product
 
-SEEK = 4626  # enacted FY2027 base, 2026 Ky. Acts ch. 168 (HB 500), p. 20
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+from nmes_constants import SEEK_BASE as SEEK
 HEADROOM = 25  # open seats at the district's own Appendix B caps
 
 

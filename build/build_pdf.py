@@ -7,6 +7,8 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
                                 CondPageBreak, Image, Table, TableStyle, HRFlowable,
                                 KeepTogether)
 from PIL import Image as PILImage
+import os as _nmes_os
+OUT = _nmes_os.environ.get("NMES_OUT", "/home/claude/nmes")
 
 NAVY = colors.HexColor("#1F3864")
 GOLD = colors.HexColor("#2E75B6")
@@ -62,10 +64,10 @@ def H2(t, need=0):
     A(Paragraph(t, h2))
 
 def fig(png, caption, width=W):
-    im = PILImage.open(f"/home/claude/nmes/{png}")
+    im = PILImage.open(f"{OUT}/{png}")
     w, h = im.size
     height = width * h / w
-    A(KeepTogether([Image(f"/home/claude/nmes/{png}", width=width, height=height),
+    A(KeepTogether([Image(f"{OUT}/{png}", width=width, height=height),
                     Paragraph(caption, cap)]))
 
 def tbl(header, rows, widths, caption=None, bold_first_col=False, align_right_from=None):
@@ -532,6 +534,24 @@ P("The grid is built on the district's 48-page response and the community's surv
   "$1,000,000 a year of operating money to bond a $14 million renovation, sits entirely outside the "
   "range. And closure buys no borrowing room: bonding capacity is built from restricted revenue streams "
   "that do not grow when a school closes (Section 8).")
+P("<b>Year by year, not just steady state.</b> The exodus builds: six grade cohorts short in year "
+  "one, all thirteen by year eight. Priced against the calculator's own generous default (building "
+  "sold, three teachers cut, half the fixed positions cut, $63,000 of busing), the ledger runs:")
+tbl(["Year", "Students missing (median path)", "Net yearly effect"],
+    [["Year 1", "65", "+$27,339"],
+     ["Year 2", "75", "-$19,921"],
+     ["Year 3", "86", "-$71,907"],
+     ["Year 4", "97", "-$123,893"],
+     ["Year 5", "108", "-$175,879"],
+     ["Year 6", "119", "-$227,865"],
+     ["Year 7", "129", "-$275,125"],
+     ["Year 8 on", "136", "-$308,207"]],
+    [1.0*inch, 2.6*inch, 2.0*inch])
+P("Closure is cash-positive exactly once, in year one, by $27,339, and the one-time transition cost "
+  "of $100,000 to $300,000 erases that by itself. From year two the closure is under water and "
+  "sinking; from year eight it loses $308,207 every year at the median, and the weighted grid median "
+  "across all lever settings is worse, $427,087. The district's year-one framing prices the only year "
+  "that ever looks close.")
 fig("chart_closure_spectrum.png",
     "Figure 5. The honest range. Top: the net yearly effect of closure across all 972 combinations of "
     "the six sourced inputs, from losing $846,285 to still losing $9,860, the middle half of "
@@ -589,7 +609,9 @@ P("The state's own files corroborate the band from outside the survey. The SAAR 
   "enrollment reports, archived here, show NMES ending 2023-24 with 141 students, 2024-25 with 128, "
   "and 2025-26 with 115. This year's kindergarten enrolled <b>12 children against a ten-year average of "
   "22</b>: the front-door defection the survey predicts, already visible in the district's own state "
-  "filings before any closure vote. One label is corrected in this release: the facility plan's '128', previously "
+  "filings before any closure vote. And if the skeptic's reading is right, that the entering class "
+  "settles near 15 rather than 21.5, the priced pipeline shrinks but the conclusion holds: at a "
+  "15-child class the median exodus is still 95 students, about $487,000 a year. One label is corrected in this release: the facility plan's '128', previously "
   "described as the district's 2023-24 SAAR figure, matches the state's 2024-25 SAAR end-of-year "
   "membership file exactly (as does Cane Ridge's 461). End-of-year enrollment is the planning manual's "
   "own basis; the state's 2023-24 file shows 141.")
@@ -611,6 +633,12 @@ P("These cases also answer the objection that families say one thing and do anot
   "40 percent Palmyra-Eagle actually lost and the 53 percent Orient-Macksburg actually lost; 61 percent "
   "of Crescent's zone had stopped attending before the school closed. The survey, after our discount, "
   "predicts what comparable communities already did.")
+P("<b>What would prove us wrong.</b> We publish the test in advance. If this fall's kindergarten "
+  "returns to the ten-year average of 22 and end-of-year enrollment holds near 115 with the school "
+  "open, the decline story weakens. If the school closes and fewer than 49 students, the band's low "
+  "edge for today's enrollment, leave in the first year, the survey band overpredicted and this "
+  "model's central conclusion fails. The SAAR files we cite will answer either way, and we will "
+  "publish that answer whichever way it falls.")
 P("Leaving is not pure loss, and the model credits the savings without double counting: the supplies "
   "credit scales with every child who goes, and teacher cuts are priced only on their own lever. Even "
   "with both credits at their friendliest, every priced scenario loses money. $400 of supplies and a "
@@ -2507,7 +2535,7 @@ def footer(canvas, doc):
 def cover(canvas, doc):
     pass
 
-doc = SimpleDocTemplate("/home/claude/nmes/Saving_North_Middletown_Elementary.pdf",
+doc = SimpleDocTemplate(f"{OUT}/Saving_North_Middletown_Elementary.pdf",
                         pagesize=letter,
                         leftMargin=0.9 * inch, rightMargin=0.9 * inch,
                         topMargin=0.78 * inch, bottomMargin=0.87 * inch,

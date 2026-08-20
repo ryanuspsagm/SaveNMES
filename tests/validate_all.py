@@ -1048,6 +1048,55 @@ def main():
     chk("v5.0, August 17" in html and "Saving_NMES_v5.0_2026-08-17.pdf" in html,
         "site version history carries v5.0 with the report file linked")
 
+    # ---- percentile-claim audit: every "Nth percentile" on the site recomputes ----
+    sys.path.insert(0, str(REPO / "build"))
+    from nmes_constants import SEEK_BASE as _SB, SUPPLIES as _SU, TEACH as _T, \
+        FIXED_POS as _FP, CAPTURE_LEGS as _CL, BUS_LEGS as _BL, LEAVER_LEGS as _LL
+    _claims = set(re.findall(r"(\d+)(?:st|nd|rd|th) percentile", html))
+    chk(_claims == {"34", "50", "82"},
+        f"site percentile claims are exactly the audited set 34/50/82, found {sorted(_claims)}")
+    _clg = sorted((c + f + t * _T - b - l * (_SB + ad - _SU), wc * wf * wl * wa * wb)
+                  for c, wc in zip(_CL, (1, 2, 1))
+                  for f, wf in zip((0, _FP / 2, _FP), (1, 2, 1))
+                  for t in (0, 1, 2, 3)
+                  for l, wl in zip(_LL, (1, 2, 1))
+                  for ad, wa in zip((0, 500, 1000), (1, 2, 1))
+                  for b, wb in zip(_BL, (1, 2, 1)))
+    def _rank(pairs, net):
+        tw = sum(w for _, w in pairs)
+        below = sum(w for v, w in pairs if v < net - 0.005)
+        eq = sum(w for v, w in pairs if abs(v - net) <= 0.005)
+        return round((below + eq / 2) / tw * 100)
+    _dflt = 127039 + _FP / 2 + 3 * _T - 63000 - 136 * (_SB + 500 - _SU)
+    chk(_rank(_clg, _dflt) == 82, "the 82nd-percentile claim recomputes (closure default)")
+    _W3 = (1, 2, 1)
+    _grg = []
+    for g in (10, 20, 30, 40, 50, 60, 70, 80, 90):
+        for ri, r in enumerate((18, 21, 24)):
+            for si, sper in enumerate((0, 75, 50)):
+                for sci, scost in enumerate((20000, 28500, 37000)):
+                    for ti, tc in enumerate((41718, 49150, 56583)):
+                        for bi, b in enumerate((0, 500, 1000)):
+                            for ci, cc in enumerate((400, 700, 1000)):
+                                for ai, ad in enumerate((0, 500, 1000)):
+                                    te = max(0, g - 25) // r
+                                    st = 0 if sper == 0 else g // sper
+                                    _grg.append((g * (_SB + ad - cc) - te * tc - st * scost - b * g,
+                                                 _W3[ri] * _W3[si] * _W3[sci] * _W3[ti] * _W3[bi] * _W3[ci] * _W3[ai]))
+    _grg.sort()
+    chk(_rank(_grg, 30 * (_SB + 500 - 400)) == 50, "the 50th-percentile claim recomputes (growth default)")
+    chk(_rank(_grg, 30 * (_SB + 500 - 700) - 500 * 30) == 34,
+        "the 34th-percentile claim recomputes (30 students at central busing and supplies)")
+
+    # ---- pre-publish disclosures present ----
+    chk("+$27,339" in t and "-$308,207" in t and "Year by year, not just steady state" in t,
+        "report carries the year-by-year net table (positive only in year one, erased by transition costs)")
+    chk("about $487,000" in t and "settles near 15" in t,
+        "report carries the cohort-15 sensitivity disclosure")
+    for name, txt in (("site", html), ("report", t)):
+        chk("What would prove us wrong" in txt and "49 students" in txt,
+            f"falsifiability statement published in advance on the {name}")
+
     print(f"PASS {len(ok)}")
     print(f"FAIL {len(bad)}")
     for b in bad:

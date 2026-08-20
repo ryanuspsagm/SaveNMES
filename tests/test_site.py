@@ -66,6 +66,27 @@ def main():
         n = pg.evaluate("Object.keys(Chart.instances).length")
         if n == 11: ok(f"{n} Chart.js charts instantiated")
         else: bad(f"expected 11 charts, got {n}")
+        # aria-vs-dataset: every dollar figure a canvas aria-label states must
+        # match a value the chart actually draws, at the aria's own precision
+        aria_data = pg.evaluate(
+            "Object.values(Chart.instances).map(function(ch){return {"
+            "aria: ch.canvas.getAttribute('aria-label') || '',"
+            "vals: ch.data.datasets.map(function(d){return d.data}).flat()"
+            ".filter(function(v){return typeof v === 'number'})}})")
+        import re as _re
+        aria_bad = []
+        for ch in aria_data:
+            for m in _re.finditer(r"\$([\d,]+)", ch["aria"]):
+                nval = int(m.group(1).replace(",", ""))
+                if nval < 10000:
+                    continue
+                prec = 1000 if nval % 1000 == 0 else (100 if nval % 100 == 0 else 1)
+                if not any(abs(round(v / prec) * prec - nval) < 0.5 for v in ch["vals"]):
+                    aria_bad.append((nval, ch["aria"][:70]))
+        if not aria_bad:
+            ok("every canvas aria dollar figure matches a drawn dataset value at its stated precision")
+        else:
+            bad(f"aria figures with no matching drawn value: {aria_bad[:4]}")
         nmore = pg.evaluate("document.querySelectorAll('details.more').length")
         if nmore >= 10: ok(f"{nmore} sections collapse to key points with More detail expanders")
         else: bad(f"only {nmore} section expanders found")

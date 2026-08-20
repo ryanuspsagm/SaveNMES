@@ -1612,5 +1612,6 @@ put(sc, "A63", "NMES students per teacher at its 2007-09 enrollment peak (224 an
 del wb["Sheet"]
 for ws in wb.worksheets:
     ws.sheet_view.showGridLines = True
-wb.save("/home/claude/nmes/NMES_Financial_Model.xlsx")
+import os as _nmes_os
+wb.save(_nmes_os.environ.get("NMES_OUT", "/home/claude/nmes") + "/NMES_Financial_Model.xlsx")
 print("model written")

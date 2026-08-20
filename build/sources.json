@@ -1,0 +1,426 @@
+{
+  "description": "Manifest of load-bearing constants, each tied to a primary source archived in build/. Every entry with verify:true carries a machine-checkable extraction spec; tests/verify_sources.py re-extracts the value from the archived source and asserts it equals the value here, then asserts the value matches where the constant lives in code. This layer exists to kill the internally-consistent-but-wrong failure class: a wrong SEEK base ($4,636) once passed 741 consistency checks because nothing compared constants to primary sources.",
+  "verifier": "tests/verify_sources.py",
+  "entries": [
+    {
+      "name": "seek_base_fy2027",
+      "value": 4626,
+      "units": "USD per student in average daily attendance",
+      "source_file": "build/ky_acts_2026_ch168_hb500.pdf",
+      "locator": "page 20, SEEK base guarantee sentence (2026 Ky. Acts ch. 168, HB 500)",
+      "extraction": {
+        "type": "pdf_regex",
+        "page": 20,
+        "regex": "base guarantee of \\$([\\d,]+) per student in average daily attendance in fiscal year 2026-2027"
+      },
+      "retrieved": null,
+      "verify": true,
+      "code_refs": [
+        {"file": "build/closure_grid.py", "regex": "^SEEK\\s*=\\s*(\\d+)\\b", "group": 1},
+        {"file": "build/growth_grid.py", "regex": "^SEEK\\s*=\\s*(\\d+)\\b", "group": 1},
+        {"file": "build/exodus_model.py", "regex": "^SEEK\\s*=\\s*(\\d+)\\s*\\+\\s*500\\b", "group": 1}
+      ],
+      "note": "The enacted FY2027 base. A prior release shipped $4,636 and passed every internal check; this entry is the guard against that class of error. If build/constants.py exists at run time, the verifier also checks its SEEK assignment against this value."
+    },
+    {
+      "name": "seek_base_fy2028",
+      "value": 4792,
+      "units": "USD per student in average daily attendance",
+      "source_file": "build/ky_acts_2026_ch168_hb500.pdf",
+      "locator": "page 20, same sentence as seek_base_fy2027",
+      "extraction": {
+        "type": "pdf_regex",
+        "page": 20,
+        "regex": "in fiscal year 2026-2027 and \\$([\\d,]+) per student in average daily attendance in fiscal year 2027-\\s*2028"
+      },
+      "retrieved": null,
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "seek_base_fy2026",
+      "value": 4586,
+      "units": "USD per student in average daily attendance",
+      "source_file": "external",
+      "locator": "2024 Ky. Acts ch. 175 (HB 6), the 2024-2026 biennial budget; also KDE SEEK final files",
+      "extraction": {"type": "none"},
+      "retrieved": null,
+      "verify": false,
+      "code_refs": [],
+      "note": "The enacting act is not archived in build/, so there is no local primary source to extract from. Cited in build/build_model.py (Assumptions row: SEEK base, FY2026) and in the report glossary. Archive the act's SEEK section to make this machine-checkable."
+    },
+    {
+      "name": "teacher_loaded_cost",
+      "value": 54479.40,
+      "units": "USD per teacher per year, district fully loaded rookie cost (half of the two-teacher pair)",
+      "source_file": "build/district_savings_response_appendix_a.png",
+      "locator": "district Response, Appendix A.1, certified staffing line (image capture)",
+      "extraction": {"type": "none"},
+      "retrieved": null,
+      "verify": false,
+      "code_refs": [
+        {"file": "build/closure_grid.py", "regex": "^TEACH\\s*=\\s*([\\d_,.]+)\\s*/\\s*2", "group": 1, "transform": "half"}
+      ],
+      "note": "The only archived source is an image (the district's response PDF, build/response_to_the_10_questions.pdf, is a scan with no text layer, and the appendix is archived as a PNG). No OCR in this pipeline, so the source side cannot be machine-extracted; the code side is still asserted: closure_grid.py prices TEACH as 108_958.80 / 2."
+    },
+    {
+      "name": "teacher_loaded_cost_pair",
+      "value": 108958.80,
+      "units": "USD per year for the two-teacher pair as printed by the district",
+      "source_file": "build/district_savings_response_appendix_a.png",
+      "locator": "district Response, Appendix A.1, the $108,958.80 line (image capture)",
+      "extraction": {"type": "none"},
+      "retrieved": null,
+      "verify": false,
+      "code_refs": [
+        {"file": "build/closure_grid.py", "regex": "^TEACH\\s*=\\s*([\\d_,.]+)\\s*/\\s*2", "group": 1}
+      ],
+      "note": "Same image-only source as teacher_loaded_cost. The verifier asserts the pair is exactly twice the single-teacher figure and matches the numerator of the TEACH assignment in closure_grid.py."
+    },
+    {
+      "name": "fixed_pos_school_administration",
+      "value": 115397.25,
+      "units": "USD, FY2026 actuals, functions 2410 plus 2420",
+      "source_file": "build/munis_nmes_fy2026.json",
+      "locator": "derived.school_administration_2410_2420",
+      "extraction": {"type": "json_key", "key": "derived.school_administration_2410_2420"},
+      "retrieved": "2026-08-02",
+      "verify": true,
+      "code_refs": [
+        {"file": "build/closure_grid.py", "regex": "^FIXED_POS\\s*=\\s*([\\d.]+)\\s*\\+\\s*[\\d.]+\\s*\\+\\s*[\\d.]+", "group": 1}
+      ]
+    },
+    {
+      "name": "fixed_pos_custodial",
+      "value": 49655.38,
+      "units": "USD, FY2026 actuals, custodial staff within function 2610",
+      "source_file": "build/munis_nmes_fy2026.json",
+      "locator": "derived.custodial_within_2610",
+      "extraction": {"type": "json_key", "key": "derived.custodial_within_2610"},
+      "retrieved": "2026-08-02",
+      "verify": true,
+      "code_refs": [
+        {"file": "build/closure_grid.py", "regex": "^FIXED_POS\\s*=\\s*[\\d.]+\\s*\\+\\s*([\\d.]+)\\s*\\+\\s*[\\d.]+", "group": 1}
+      ]
+    },
+    {
+      "name": "fixed_pos_library",
+      "value": 49051.77,
+      "units": "USD, FY2026 actuals, function 2222",
+      "source_file": "build/munis_nmes_fy2026.json",
+      "locator": "derived.library_2222 (equals by_function 2222)",
+      "extraction": {"type": "json_key", "key": "derived.library_2222"},
+      "retrieved": "2026-08-02",
+      "verify": true,
+      "code_refs": [
+        {"file": "build/closure_grid.py", "regex": "^FIXED_POS\\s*=\\s*[\\d.]+\\s*\\+\\s*[\\d.]+\\s*\\+\\s*([\\d.]+)", "group": 1}
+      ]
+    },
+    {
+      "name": "fixed_positions_base",
+      "value": 214104.40,
+      "units": "USD, sum of the three fixed-position components",
+      "source_file": "build/munis_nmes_fy2026.json",
+      "locator": "derived.fixed_positions_base",
+      "extraction": {"type": "json_key", "key": "derived.fixed_positions_base"},
+      "retrieved": "2026-08-02",
+      "verify": true,
+      "code_refs": [],
+      "note": "The verifier also asserts this equals the sum of the three components above, matching how tests/validate_all.py uses it."
+    },
+    {
+      "name": "building_only_2610",
+      "value": 79211.17,
+      "units": "USD, FY2026 actuals, building-only block within function 2610 (utilities, insurance, upkeep)",
+      "source_file": "build/munis_nmes_fy2026.json",
+      "locator": "derived.building_within_2610",
+      "extraction": {"type": "json_key", "key": "derived.building_within_2610"},
+      "retrieved": "2026-08-02",
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "org_090_total_all_funds",
+      "value": 1285310.36,
+      "units": "USD, FY2026 all-funds total for org 090 (NMES)",
+      "source_file": "build/munis_cost_by_org_fy2026.pdf",
+      "locator": "page 1, org 090 total; also stated in the source field of build/munis_nmes_fy2026.json",
+      "extraction": {
+        "type": "pdf_regex",
+        "page": 1,
+        "regex": "\\$?(1,285,310\\.36)"
+      },
+      "retrieved": "2026-08-02",
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "nmes_gf_total",
+      "value": 933537.06,
+      "units": "USD, FY2026 org 090 fund 1 (General Fund) total",
+      "source_file": "build/munis_nmes_fy2026.json",
+      "locator": "nmes_gf_total",
+      "extraction": {"type": "json_key", "key": "nmes_gf_total"},
+      "retrieved": "2026-08-02",
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "audit_total_valuation",
+      "value": 1843569625,
+      "units": "USD of certified real estate and personal property assessment",
+      "source_file": "build/bourbon_audit_fy2025.pdf",
+      "locator": "page 7, management's discussion bullet on certified property assessments",
+      "extraction": {
+        "type": "pdf_regex",
+        "page": 7,
+        "regex": "total real estate and personal property valuation of \\$([\\d,]+)"
+      },
+      "retrieved": null,
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "audit_calculated_yield",
+      "value": 9880143,
+      "units": "USD, calculated property tax collection at the levied rates",
+      "source_file": "build/bourbon_audit_fy2025.pdf",
+      "locator": "page 7, same bullet: rates 52.4 real and 64.5 personal cents per $100",
+      "extraction": {
+        "type": "pdf_regex",
+        "page": 7,
+        "regex": "calculated collection should yield \\$([\\d,]+)"
+      },
+      "retrieved": null,
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "audit_real_estate_valuation",
+      "value": 1661885191,
+      "units": "USD of certified real estate assessment",
+      "source_file": "build/bourbon_audit_fy2025.pdf",
+      "locator": "page 7, derived: the split of the printed total that satisfies the printed yield at the printed 52.4/64.5 rates (two equations, two unknowns; not printed as a standalone figure in the audit)",
+      "extraction": {"type": "levy_split", "page": 7, "component": "real_estate"},
+      "retrieved": null,
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "audit_tangible_valuation",
+      "value": 181684434,
+      "units": "USD of certified tangible (personal) property assessment",
+      "source_file": "build/bourbon_audit_fy2025.pdf",
+      "locator": "page 7, derived: same two-equation split as audit_real_estate_valuation",
+      "extraction": {"type": "levy_split", "page": 7, "component": "tangible"},
+      "retrieved": null,
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "audit_gf_deficit",
+      "value": 2648086,
+      "units": "USD, FY2025 General Fund excess of expenditures over revenues (printed in parentheses)",
+      "source_file": "build/bourbon_audit_fy2025.pdf",
+      "locator": "page 11, governmental funds statement, General Fund column; also pages 18 and 20",
+      "extraction": {
+        "type": "pdf_regex",
+        "page": 11,
+        "regex": "Excess \\(Deficit\\) of Revenues over Expenditures \\$ ?\\(([\\d,]+)\\)"
+      },
+      "retrieved": null,
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "audit_gf_fund_balance",
+      "value": 4290840,
+      "units": "USD, FY2025 General Fund ending fund balance",
+      "source_file": "build/bourbon_audit_fy2025.pdf",
+      "locator": "page 7, management's discussion; also pages 16, 18, and 20",
+      "extraction": {
+        "type": "pdf_regex",
+        "page": 7,
+        "regex": "General Fund expenditures with an ending fund balance of \\$([\\d,]+)"
+      },
+      "retrieved": null,
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "saar_eoy_2023_24",
+      "value": 141,
+      "units": "students, NMES end-of-year enrollment",
+      "source_file": "build/saar_enrollment_2023_24.xls",
+      "locator": "sheet SAAR_State_Enrollment_Sum, row 131 (090 - North Middletown Elementary School), Total column",
+      "extraction": {
+        "type": "xls_row_lookup",
+        "sheet": "SAAR_State_Enrollment_Sum",
+        "row_contains": "North Middletown",
+        "column_header": "Total"
+      },
+      "retrieved": null,
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "saar_eoy_2024_25",
+      "value": 128,
+      "units": "students, NMES end-of-year enrollment",
+      "source_file": "build/saar_enrollment_2024_25.xls",
+      "locator": "sheet SAAR_State_Enrollment_Sum, row 131 (090 - North Middletown Elementary School), Total column",
+      "extraction": {
+        "type": "xls_row_lookup",
+        "sheet": "SAAR_State_Enrollment_Sum",
+        "row_contains": "North Middletown",
+        "column_header": "Total"
+      },
+      "retrieved": null,
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "saar_eoy_2025_26",
+      "value": 115,
+      "units": "students, NMES end-of-year enrollment",
+      "source_file": "build/saar_enrollment_2025_26.xls",
+      "locator": "sheet SAAR_State_Enrollment_Sum, row 132 (090 - North Middletown Elementary School), Total column",
+      "extraction": {
+        "type": "xls_row_lookup",
+        "sheet": "SAAR_State_Enrollment_Sum",
+        "row_contains": "North Middletown",
+        "column_header": "Total"
+      },
+      "retrieved": null,
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "saar_kindergarten_series",
+      "value": [25, 21, 28, 31, 19, 19, 23, 12],
+      "units": "students, NMES kindergarten (Grade 00 / EL) by observed season: 2015-16, 2016-17, 2017-18, 2018-19, 2022-23, 2023-24, 2024-25, 2025-26",
+      "source_file": "build/saar_enrollment_1999_2019.xlsx and build/saar_enrollment_20xx_yy.xls",
+      "locator": "each season's NMES school row (090 - North Middletown Elementary School), first grade column (EL / Grade 00). 2019-20 through 2021-22 have no archived school-level file, so the series holds the eight observed seasons; their mean, 22.25, is the ten-year average of 22 cited on the site and in the report.",
+      "extraction": {
+        "type": "saar_k_series",
+        "points": [
+          {"file": "build/saar_enrollment_1999_2019.xlsx", "sheet": "2015-16 Enrollment Report", "season": "2015-16"},
+          {"file": "build/saar_enrollment_1999_2019.xlsx", "sheet": "2016-17 Enrollment Report", "season": "2016-17"},
+          {"file": "build/saar_enrollment_1999_2019.xlsx", "sheet": "2017-18 Enrollment Report", "season": "2017-18"},
+          {"file": "build/saar_enrollment_1999_2019.xlsx", "sheet": "2018-19 Enrollment Report", "season": "2018-19"},
+          {"file": "build/saar_enrollment_2022_23.xls", "sheet": "SAAR_State_Enrollment_Sum", "season": "2022-23"},
+          {"file": "build/saar_enrollment_2023_24.xls", "sheet": "SAAR_State_Enrollment_Sum", "season": "2023-24"},
+          {"file": "build/saar_enrollment_2024_25.xls", "sheet": "SAAR_State_Enrollment_Sum", "season": "2024-25"},
+          {"file": "build/saar_enrollment_2025_26.xls", "sheet": "SAAR_State_Enrollment_Sum", "season": "2025-26"}
+        ]
+      },
+      "retrieved": null,
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "aada_forecast_2026_27",
+      "value": 2174.3,
+      "units": "students, AADA plus growth, KDE SEEK forecast for 2026-27",
+      "source_file": "build/seek_forecast_2026_27_data.xlsx",
+      "locator": "sheet rptSEEKInput, row 24 (041 Bourbon County), column H (AADA Plus Growth)",
+      "extraction": {"type": "xlsx_cell", "sheet": "rptSEEKInput", "cell": "H24", "row_label_cell": "A24", "row_label_contains": "Bourbon"},
+      "retrieved": null,
+      "verify": true,
+      "code_refs": [],
+      "note": "File is the state's own export (generated May 6, 2026 per the header). Cross-checked in build/seek_aada_series.json by tests/validate_all.py."
+    },
+    {
+      "name": "at_risk_adm_2026_27",
+      "value": 1391.6,
+      "units": "students, at-risk ADM, KDE SEEK forecast for 2026-27",
+      "source_file": "build/seek_forecast_2026_27_data.xlsx",
+      "locator": "sheet rptSEEKInput, row 24 (041 Bourbon County), column N (At Risk)",
+      "extraction": {"type": "xlsx_cell", "sheet": "rptSEEKInput", "cell": "N24", "row_label_cell": "A24", "row_label_contains": "Bourbon"},
+      "retrieved": null,
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "homeschool_2022_23",
+      "value": 236,
+      "units": "registered homeschool students, Bourbon County district",
+      "source_file": "build/wapo_home_school_district.csv",
+      "locator": "row where lea_name = Bourbon County, state = KY, year = 2022-23, column homeschool_students",
+      "extraction": {
+        "type": "csv_lookup",
+        "where": {"lea_name": "Bourbon County", "state": "KY", "year": "2022-23"},
+        "column": "homeschool_students"
+      },
+      "retrieved": null,
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "homeschool_2018_19",
+      "value": 156,
+      "units": "registered homeschool students, Bourbon County district",
+      "source_file": "build/wapo_home_school_district.csv",
+      "locator": "row where lea_name = Bourbon County, state = KY, year = 2018-19, column homeschool_students",
+      "extraction": {
+        "type": "csv_lookup",
+        "where": {"lea_name": "Bourbon County", "state": "KY", "year": "2018-19"},
+        "column": "homeschool_students"
+      },
+      "retrieved": null,
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "nonresident_exports_sy24_25",
+      "value": 247,
+      "units": "students, Bourbon County residents enrolled in other public districts, SY 2024-25",
+      "source_file": "build/kde_nonresident_students_sy24_25.xlsx",
+      "locator": "sheet District_NonResident_TO: sum of Count of Non-Resident Enrollment (column C) over every row where Resident District Name (column B) = Bourbon County; 15 receiving districts, including Fayette County 54",
+      "extraction": {
+        "type": "xlsx_filter_sum",
+        "sheet": "District_NonResident_TO",
+        "match_column": 2,
+        "match_value": "Bourbon County",
+        "sum_column": 3
+      },
+      "retrieved": null,
+      "verify": true,
+      "code_refs": [],
+      "note": "tests/validate_all.py carries the same figure as its published decomposition (171 + 76 = 247); this entry re-derives the total from the state file itself."
+    },
+    {
+      "name": "survey_households",
+      "value": 38,
+      "units": "households responding to the August 2026 school-choice survey",
+      "source_file": "build/survey_school_choice_2026_08_anonymized.csv",
+      "locator": "count of distinct values in the household column",
+      "extraction": {"type": "csv_distinct_count", "column": "household"},
+      "retrieved": "2026-08",
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "survey_children",
+      "value": 85,
+      "units": "children covered by the survey (one row per child)",
+      "source_file": "build/survey_school_choice_2026_08_anonymized.csv",
+      "locator": "row count of the CSV body",
+      "extraction": {"type": "csv_row_count"},
+      "retrieved": "2026-08",
+      "verify": true,
+      "code_refs": []
+    },
+    {
+      "name": "survey_leaving_children",
+      "value": 70,
+      "units": "children whose families say they would leave the district",
+      "source_file": "build/survey_school_choice_2026_08_anonymized.csv",
+      "locator": "rows where status = leaving",
+      "extraction": {"type": "csv_count_where", "where": {"status": "leaving"}},
+      "retrieved": "2026-08",
+      "verify": true,
+      "code_refs": []
+    }
+  ]
+}

@@ -96,21 +96,19 @@ Unweighted median -$425,053 kept as a cross-check.
 """
 import statistics
 from itertools import product
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+from nmes_constants import (SEEK_BASE as SEEK, SUPPLIES, TEACH, FIXED_POS,
+                            CAPTURE_LEGS, BUS_LEGS, ADDON_LEGS, LEAVER_LEGS)
 
-SEEK = 4626                                 # enacted FY2027 base, 2026 Ky. Acts
-                                            # ch. 168 (HB 500), p. 20
-SUPPLIES = 400                              # scales with each missing student
-TEACH = 108_958.80 / 2                      # $54,479.40, the district's own
-                                            # fully loaded rookie (Appendix A.1)
-FIXED_POS = 115397.25 + 49655.38 + 49051.77  # 214,104.40: MUNIS FY2026 actuals
-
-CAPTURE = [(53_519, 1), (80_279, 2), (127_039, 1)]           # triangular
-FIXED = [(0, 1), (FIXED_POS / 2, 2), (FIXED_POS, 1)]         # triangular
+W3 = (1, 2, 1)                                               # triangular
+CAPTURE = list(zip(CAPTURE_LEGS, W3))
+FIXED = list(zip((0, FIXED_POS / 2, FIXED_POS), W3))         # triangular
 TEACHERS = [(t, 1) for t in (0, 1, 2, 3)]                    # uniform
-LEAVERS = [(117, 1), (136, 2), (154, 1)]   # triangular on the band's quartiles
-ADDONS = [(0, 1), (500, 2), (1000, 1)]                       # triangular
-BUS = [(20_000, 1), (63_000, 2), (95_000, 1)]                # triangular; high
-                                                             # leg = half the max
+LEAVERS = list(zip(LEAVER_LEGS, W3))       # triangular on the band's quartiles
+ADDONS = list(zip(ADDON_LEGS, W3))                           # triangular
+BUS = list(zip(BUS_LEGS, W3))              # triangular; high leg = half the
+                                           # $190,000 route-split maximum
 
 pairs = sorted(
     (c + f + t * TEACH - b - l * (SEEK + ad - SUPPLIES),

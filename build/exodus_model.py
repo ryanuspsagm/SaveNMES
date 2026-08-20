@@ -65,11 +65,11 @@ munis_cost_by_org_fy2026.pdf.
 import csv, json, math, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SEEK = 4626 + 500          # enacted FY2027 base + central add-on = 5,126
-POP = 115                    # SAAR 2025-26 end-of-year count
-COHORT = 21.5                # entering-class midpoint of the 19-24 SAAR range;
-                             # ten-year average kindergarten is 22.2
-VAR_NONTEACH = 400           # supplies per student, growth model low leg
+import sys as _sys
+_sys.path.insert(0, HERE)
+from nmes_constants import (SEEK_BASE, ADDON_CENTRAL, SUPPLIES as VAR_NONTEACH,
+                            POP_TODAY as POP, COHORT)
+SEEK = SEEK_BASE + ADDON_CENTRAL   # 5,126 per enrolled child
 
 # per-grade survival vs own 5th-grade class (SAAR 2025-26 snapshot)
 SURV_SEC = [172/177, 178/188, 191/196, 193/197, 194/202, 194/202, 176/213]
@@ -123,7 +123,7 @@ P25, P50, P75, P95 = posterior_quantiles([0.25, 0.50, 0.75, 0.95])
 def rung(scale):
     def one(p):
         k = round(p * scale)          # whole students, then dollars, so the
-        return k, k * SEEK            # table reproduces as kids x $5,136
+        return k, k * SEEK            # table reproduces as kids x $5,126
     (klo, dlo), (kmed, dmed), (khi, dhi) = one(P25), one(P50), one(P75)
     k95, d95 = one(P95)
     return dict(kids_lo=klo, kids_med=kmed, kids_hi=khi,
@@ -131,7 +131,7 @@ def rung(scale):
                 kids_p95=k95, dollars_p95=d95)
 
 LADDER = {
-    "today":  rung(POP),                   # share of the 128 enrolled now
+    "today":  rung(POP),                   # share of the 115 enrolled now
     "steady": rung(COHORT * EFF_YEARS),    # full feeder stream, per year
 }
 
