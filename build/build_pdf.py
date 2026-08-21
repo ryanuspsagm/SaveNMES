@@ -518,7 +518,7 @@ P("The grid is built on the district's 48-page response and the community's surv
   "ONLY on the teachers-cut lever, so staffing is never counted twice. Six: the added busing a "
   "110-square-mile zone requires, its high leg capped at half the route-split bottom-up maximum of $190,000. A property-value "
   "lever from an interim draft is removed while the PVA records request is pending; the property "
-  "research stays in Section 6. build/closure_grid.py enumerates every combination, 972 in all, lever "
+  "research stays in Section 6. One script in the open repository enumerates every combination, 972 in all, lever "
   "by lever in the workbook. Each lever carries a distribution: where the record pins a central setting "
   "(the derived $63,000 busing figure, the ~$500 of add-ons, the middle reads of the building and "
   "staffing-path levers), that setting counts double, a triangular 1-2-1 weight; teachers cut stays "
@@ -589,7 +589,7 @@ P("The statistical estimate corrects the survey for the obvious bias: families s
   "kindergarten average 22.2; recent per-grade range 19 to 24) carried for 12.62 effective years, it is "
   "<b>117 to 154 students missing from the rolls each year at steady state, $599,742 to $789,404 a "
   "year</b>, with a 95th-percentile bound near $912,000. Losses build from six grade cohorts in "
-  "year one to all thirteen by year eight. build/exodus_model.py reproduces every number from the "
+  "year one to all thirteen by year eight. One repository script reproduces every number from the "
   "published data. The correction range is anchored to published measurements of exactly this bias, all "
   "in Sources: Groves, Presser, and Dipko (2004) measured interested groups answering 1.4 times more "
   "readily; Abraham, Helms, and Presser (2009) measured 1.35 times on a follow-up survey; Pew's "
@@ -694,7 +694,7 @@ P("Of the $1,706,493 coded to the school, on-behalf payments ($406,333) are not 
   "the same neighborhood by its own route, $107,039 of avoidable lines plus $20,000 of busing; the "
   "$27,828 gap from the ledger's $79,211 is insurance and lines the ledger books district-wide. So we "
   "use $79,211 for the staff-retained case and $127,039 when the building sells. The parse reproduces "
-  "the ledger's own org totals to the penny; build/munis_extract.py reruns it. The same ledger makes "
+  "the ledger's own org totals to the penny; a repository script reruns it. The same ledger makes "
   "the per-position estimate measured: on-behalf payments coded to the school total $406,333 against "
   "$1,497,576 of salary and benefits, a 27.1 percent load, putting the General Fund share of an all-in "
   "$85,000 position at about $66,860. The school's classroom payroll line of $324,550 over 4.9 to 5.8 "
@@ -1435,7 +1435,7 @@ P("The result: across all 19,683 priced scenarios, growth pays in every single o
   "prices the section that would force.) The same stack drives the cost-per-student curve. At 160 students the school "
   "costs about $14,600 per student with no new hire yet needed. At the 198 seats the state approved in "
   "2013, with two new teachers paid for, about $12,500: cheaper than every school in the county today. "
-  "One script, build/growth_grid.py, reproduces the whole grid.")
+  "One script in the open repository reproduces the whole grid.")
 H2("The tax question, faced squarely")
 P("The rate history strengthens the community's hand. Bourbon County Schools levies 52.4 cents per $100 "
   "on real estate, second lowest among nine area districts and roughly 13 cents below the statewide "
@@ -1932,8 +1932,9 @@ P("Corrections policy: errors will be corrected publicly and promptly, and each 
 H("Sources")
 srcs = [
  "School Choice Survey, August 2026, anonymized responses (38 households, 85 children; every name and "
- "submission date removed): build/survey_school_choice_2026_08_anonymized.csv, with the model that "
- "reproduces every published figure at build/exodus_model.py",
+ "submission date removed): build/survey_school_choice_2026_08_anonymized.csv, with the models that "
+ "reproduce every published figure: build/exodus_model.py, build/closure_grid.py, and "
+ "build/growth_grid.py",
  "Kentucky Department of Education, Superintendent's Annual Attendance Report (SAAR), school-level "
  "enrollment summaries: 2022-23 through 2025-26 and the 1999-2019 combined workbook, with KDE's SAAR "
  "Definitions and Explanations: education.ky.gov/districts/enrol; archived in this repository under "
@@ -2047,7 +2048,7 @@ srcs = [
  "Center, 2017): 20 percent route efficiency, 50 buses cut, about $5 million saved in year one; MIT Sloan, "
  "Route Fifty, The 74, and U.S. DOT ITS case documentation",
  "National Center for Education Statistics, School Attendance Boundary Survey 2015-16 (district "
- "attendance-zone GIS files) and EDGE geocoded school locations: nces.ed.gov/programs/edge",
+ "attendance-zone GIS files, fetched by build/fetch_sabs.py) and EDGE geocoded school locations: nces.ed.gov/programs/edge",
  "U.S. Census Bureau, 2020 decennial counts and land area: Bourbon County (289.7 land square miles), Paris "
  "(10,171), Millersburg (747), North Middletown (610); U.S. Route 460 mileage, North Middletown to Paris",
  "Chicago Sun-Times and WBEZ, analysis of the 2013 Chicago school closings, June 2023; University of Chicago "
@@ -2380,7 +2381,7 @@ tbl(["Zone", "Approx. area (sq mi)", "Elementary students", "Students per sq mi"
     bold_first_col=True)
 
 P("Now the closure math, from the bottom up, with the distances measured on the official zone geometry "
-  "(the workbook's Transport_Geo tab and build/zone_distances.py carry the computation). North Middletown "
+  "(the workbook's Transport_Geo tab and a repository script carry the computation). North Middletown "
   "sits ten road miles from the Paris schools on US 460, against 8.9 straight-line, a road factor of 1.13 "
   "on the one pair that can be measured exactly; a conservative 1.2 is applied everywhere else. Roughly 109 "
   "of the school's 128 students ride the bus on an estimated three rural routes. Extend those routes to "
@@ -2395,7 +2396,7 @@ P("Now the closure math, from the bottom up, with the distances measured on the 
   "which is the whole map's point in a single number.")
 fig("chart_map.png",
     "Figure 20. Where the students are: the district's official attendance zones from the federal School "
-    "Attendance Boundary Survey (2015-16 collection), fetched by the repository's build/fetch_sabs.py. "
+    "Attendance Boundary Survey (2015-16 collection), fetched by a repository script. "
     "Paris holds half the county's people and both receiving schools; Millersburg sits in Cane Ridge's "
     "northern zone.", width=5.2 * inch)
 P("Run the same math on the rebalancing scenario and the sign flips. Rezoned students already ride "
@@ -2428,7 +2429,7 @@ P("The savings from doing this well are documented. Boston Public Schools ran th
   "saved roughly $5 million in the first year. Bourbon County's transportation line is $2.9 million; the "
   "5 to 10 percent captured in the menu below is $146,000 to $291,000 a year, and Boston's 20 percent "
   "shows the ceiling sits higher than the menu assumes. One more check anyone can run: Figure 20 is "
-  "drawn straight from the free federal SABS GIS file, fetched by the repository's build/fetch_sabs.py, "
+  "drawn straight from the free federal SABS GIS file, fetched by a repository script, "
   "so anyone can reproduce it in one step.")
 tbl(["Measure", "Estimated annual value", "How it works"],
     [["Restore the board's own 2018 rate (61.3 cents)",
