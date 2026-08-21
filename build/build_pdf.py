@@ -626,12 +626,6 @@ P("These cases also answer the objection that families say one thing and do anot
   "40 percent Palmyra-Eagle actually lost and the 53 percent Orient-Macksburg actually lost; 61 percent "
   "of Crescent's zone had stopped attending before the school closed. The survey, after our discount, "
   "predicts what comparable communities already did.")
-P("<b>What would prove us wrong.</b> We publish the test in advance. If this fall's kindergarten "
-  "returns to the ten-year average of 22 and end-of-year enrollment holds near 115 with the school "
-  "open, the decline story weakens. If the school closes and fewer than 49 students, the band's low "
-  "edge for today's enrollment, leave in the first year, the survey band overpredicted and this "
-  "model's central conclusion fails. The SAAR files we cite will answer either way, and we will "
-  "publish that answer whichever way it falls.")
 P("Leaving is not pure loss: the supplies credit scales with every child who goes, and teacher cuts "
   "are priced on their own lever. Even with both credits at their friendliest, every priced scenario "
   "loses money. $400 of supplies and a few positions cannot outrun $5,126 walking out with every "

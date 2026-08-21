@@ -1095,9 +1095,6 @@ def main():
         "report carries the year-by-year net table (positive only in year one, erased by transition costs)")
     chk("about $487,000" in t and "settles near 15" in t,
         "report carries the cohort-15 sensitivity disclosure")
-    for name, txt in (("site", html), ("report", t)):
-        chk("What would prove us wrong" in txt and "49 students" in txt,
-            f"falsifiability statement published in advance on the {name}")
 
     print(f"PASS {len(ok)}")
     print(f"FAIL {len(bad)}")
