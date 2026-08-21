@@ -9,7 +9,8 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     env:
-      NMES_OUT: ${{ runner.temp }}/nmes
+      # the runner context is not available in job-level env; use the workspace
+      NMES_OUT: ${{ github.workspace }}/nmes-out
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
