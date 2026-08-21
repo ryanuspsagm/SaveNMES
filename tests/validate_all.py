@@ -235,9 +235,9 @@ def main():
                    "Appendix B: Other Supporting Data", "KRS 157.370",
                    "Boston Public Schools"]:
         chk(needle in t, f"PDF claim intact: {needle}")
-    chk("-$308,207" in html and "superintendent's written statement" in html
+    chk("loses $308,207" in html and "superintendent's written statement" in html
         and "more generous than the district's own stance" in html,
-        "savings-granted default shown at the calculator and contrasted with the superintendent's stance")
+        "savings-granted steelman shown beside the calculator and contrasted with the superintendent's stance")
     for needle in ["$427,087", "Every priced scenario loses money", "losing $846,285",
                    "still loses $9,860", "Millersburg"]:
         chk(needle in html, f"site v5.0 two-tailed range intact: {needle}")
@@ -253,8 +253,8 @@ def main():
                    "$518,405", "$338,727", "$94,520", "$182,654",
                    "The bottom line: your two scenarios, live from the calculators above", 'class="bline"',
                    '<div class="n" id="blGrow">+$141,780</div>',
-                   '<div class="n" id="blClose">&minus;$308,207</div>',
-                   "a year at your closure settings: scaled savings granted, teachers included, half the fixed overhead, 136 students leaving; the weighted median across all scenarios loses $427,087",
+                   '<div class="n" id="blClose">&minus;$427,087</div>',
+                   "a year at your closure settings; the calculator opens at the weighted median of all 972 scenarios",
                    "getElementById('blClose')", "getElementById('blGrow')"]:
         chk(needle in html, f"consolidated range card: {needle}")
     chk(html.count('class="iqr"') == 2, "IQR band on both bars")
@@ -429,7 +429,7 @@ def main():
     # leaving-escalation chart
     for needle in ['id="chartLeave"', "The loss grows until year eight",
                    "This scenario lands at about the", "19,683 weighted scenarios",
-                   "The default grants closure every saving that scales with students",
+                   "Grant closure every saving that scales with students",
                    "the weighted "
                    "median itself",
                    'value="140"', "Grow the district", "+$3.4M",
@@ -765,7 +765,7 @@ def main():
             f"upfront assumptions disclosure on the {name}: stated, published, open to challenge")
     dfw = wb["Defaults"]
     chk(dfw["B5"].value == 17903 and dfw["B13"].value == 1285310
-        and dfw["B34"].value == "=B17+C17+Closure_Model!C40+3*54479.4-63000-136*(Assumptions!B6+500-Assumptions!B62)"
+        and dfw["B34"].value == "=Closure_Model!C39+3*54479.4-Closure_Model!B42-Closure_Model!D43*(Assumptions!B6+Closure_Model!B44-Assumptions!B62)"
         and dfw["B35"].value == "=30*(Assumptions!B6+500-400)"
         and dfw["C39"].value == 275 and dfw["B42"].value == "=Tax_History!D79"
         and dfw["B31"].value == "=SUMPRODUCT(B30:G30,{13,12,11,10,9,8})"
@@ -1029,9 +1029,9 @@ def main():
                    capture_output=True, text=True)
     chk(_out.returncode == 0 and "median $-427,087" in _out.stdout
         and "every scenario loses money" in _out.stdout and "$-308,207" in _out.stdout,
-        "closure_grid.py asserts its own v5 statistics (median -$427,087, every scenario loses, default -$308,207)")
-    chk("-$308,207" in html and "82nd percentile" in html,
-        "site default -$308,207 at the 82nd percentile of the all-loss grid")
+        "closure_grid.py asserts its own v5 statistics (median -$427,087, every scenario loses, steelman -$308,207)")
+    chk("-$427,087" in html and "50th percentile" in html and "loses $308,207" in html and "82nd percentile" in html,
+        "site default -$427,087 at the 50th percentile; the -$308,207 steelman kept at the 82nd")
     chk("fewer than three students" in html and "fewer than 3 at a level" in html,
         "suppression notes state KDE's written fewer-than-three rule")
     chk("kindergarten enrolled 12" in html or "kindergarten enrolled <b>12" in t
@@ -1068,7 +1068,9 @@ def main():
         eq = sum(w for v, w in pairs if abs(v - net) <= 0.005)
         return round((below + eq / 2) / tw * 100)
     _dflt = 127039 + _FP / 2 + 3 * _T - 63000 - 136 * (_SB + 500 - _SU)
-    chk(_rank(_clg, _dflt) == 82, "the 82nd-percentile claim recomputes (closure default)")
+    chk(_rank(_clg, _dflt) == 82, "the 82nd-percentile claim recomputes (savings-granted steelman)")
+    _medcell = 80279 + 0 + 3 * _T - 20000 - 154 * (_SB + 0 - _SU)
+    chk(_rank(_clg, _medcell) == 50, "the closure default recomputes to the 50th percentile (the weighted median cell)")
     _W3 = (1, 2, 1)
     _grg = []
     for g in (10, 20, 30, 40, 50, 60, 70, 80, 90):

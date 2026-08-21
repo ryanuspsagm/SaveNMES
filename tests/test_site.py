@@ -103,8 +103,8 @@ def main():
         else: bad(f"consolidated range card wrong: bars={nbars} iqr={niqr} growth labs: {glabs[:80]}")
         you_c = pg.evaluate("document.getElementById('youClose').style.left")
         you_g = pg.evaluate("document.getElementById('youGrow').style.left")
-        if you_c == "82%" and you_g == "50%":
-            ok("percentile-scale bars: gold markers at the calculator defaults (82nd / 50th)")
+        if you_c == "50%" and you_g == "50%":
+            ok("percentile-scale bars: gold markers at the calculator defaults (50th / 50th: both open at their weighted medians)")
         else: bad(f"percentile markers at defaults: close={you_c} grow={you_g}")
 
         # --- Closure calculator: opens at the median scenario ---
@@ -113,21 +113,21 @@ def main():
         else: bad("calculator details not open by default")
         net = pg.text_content("#rNet").strip()
         rank = pg.text_content("#rRank").strip()
-        if net == "-$308,207" and "82nd percentile" in rank and "972 weighted scenarios" in rank:
-            ok("closure default -$308,207 (savings granted, median leavers); readout: 82nd of the all-loss grid")
+        if net == "-$427,087" and "50th percentile" in rank and "972 weighted scenarios" in rank:
+            ok("closure default -$427,087: the weighted median cell, readout at the 50th percentile")
         else: bad(f"closure defaults: {net} / {rank}")
         bl0 = (pg.text_content("#blClose").strip(), pg.text_content("#blGrow").strip())
-        if bl0 == ("−$308,207", "+$141,780"):
-            ok("bottom-line tiles open at the default scenarios (-$308,207 close, +$141,780 grow)")
+        if bl0 == ("−$427,087", "+$141,780"):
+            ok("bottom-line tiles open at the default scenarios (-$427,087 close, +$141,780 grow)")
         else: bad(f"bottom-line defaults: {bl0}")
         gone_verdict = pg.evaluate("['rVerdict','rBar'].filter(i=>document.getElementById(i)).length")
-        note_ok = pg.evaluate("document.body.textContent.includes(\"The default grants closure every saving that scales with students\")")
+        note_ok = pg.evaluate("document.body.textContent.includes(\"Grant closure every saving that scales with students\")")
         if gone_verdict == 0 and note_ok:
             ok("closure verdict text removed; retained-staff default note present")
         else: bad(f"closure readout cleanup: leftover={gone_verdict} note={note_ok}")
         tax = pg.text_content("#rTax").strip()
-        if "1.9 cents" in tax and "a month for the median homeowner" in tax:
-            ok("tax-compensation line at the default loss: 1.9 cents of rate on the certified real base")
+        if "2.6 cents" in tax and "a month for the median homeowner" in tax:
+            ok("tax-compensation line at the default loss: 2.6 cents of rate on the certified real base")
         else: bad(f"tax line at default: {tax[:80]}")
 
         # ceiling: their fullest case

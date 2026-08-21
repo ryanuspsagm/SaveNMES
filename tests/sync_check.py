@@ -46,11 +46,11 @@ central = (CM["C39"].value + CM["C40"].value + CM["C41"].value * 54479.4
 site_capv = re.search(r"var CAPV=\[(\d+),(\d+),(\d+)\]", html)
 site_fixv = re.search(r"FIXV=\[(\d+),(\d+),(\d+)\]", html)
 site_teach = re.search(r"TEACH=108958\.80/2", html)
-site_default = (127039 + 107052.2 + 3*54479.4 - 63000 - 136*(A["B6"].value+500-400) - 0)
-if round(central) == -409446 and round(site_default) == -308207 and "-$308,207" in html:
-    match("model central case -$409,446 (v5 grid); site calculator opens at the savings-granted case, teachers included, half the fixed overhead, median leavers (-$308,207, 82nd weighted percentile)")
+site_default = (80279 + 0 + 3*54479.4 - 20000 - 154*(A["B6"].value+0-400) - 0)
+if round(central) == -409446 and round(site_default) == -427087 and "-$427,087" in html:
+    match("model central case -$409,446 (v5 grid); site calculator opens at the grid's weighted median cell (-$427,087, the 50th percentile by construction)")
 else:
-    diff(f"closure defaults: model central {central:.0f}, site savings-granted {site_default:.0f} shown: {'-$308,207' in html}")
+    diff(f"closure defaults: model central {central:.0f}, site median cell {site_default:.0f} shown: {'-$427,087' in html}")
 # growth calculator default (v4.5 review): the weighted median scenario itself.
 # 30 added students (target 140): inside the 25-seat headroom plus a partial
 # class at 1 per 21, so zero teachers and zero support trigger; $0 bus, $400
@@ -60,8 +60,8 @@ if (growth_default == 141780 and "$141,780" in html and "RATV=[18,21,24]" in htm
         and "Math.max(0,gain-25)/ratio" in html and 'id="sGad"' in html
         and 'id="sGro" min="110" max="200" value="140"' in html
         and 'id="sGad" min="0" max="1000" value="500"' in html
-        and 'id="sAdd" min="0" max="1000" value="500"' in html):
-    match("growth calculator opens at the weighted median ($141,780, target 140, no new hires) with the class-size lever indexed on classroom teachers and SEEK add-ons symmetric to the closure model")
+        and 'id="sAdd" min="0" max="1000" value="0"' in html):
+    match("growth calculator opens at the weighted median ($141,780, target 140, no new hires); both calculators price the same 0/500/1,000 add-ons legs, and the closure default (the median cell) starts its add-ons slider at zero")
 else:
     has500 = 'value="500"' in html
     diff(f"growth default mismatch: {growth_default}, shown: {'$141,780' in html}, add-ons defaults equal: {has500}")

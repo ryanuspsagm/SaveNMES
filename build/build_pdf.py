@@ -532,7 +532,7 @@ P("The grid is built on the district's 48-page response and the community's surv
   "range. And closure buys no borrowing room: bonding capacity is built from restricted revenue streams "
   "that do not grow when a school closes (Section 8).")
 P("<b>Year by year, not just steady state.</b> The exodus builds: six grade cohorts short in year "
-  "one, all thirteen by year eight. Priced against the calculator's own generous default (building "
+  "one, all thirteen by year eight. Priced against the savings-granted case (building "
   "sold, three teachers cut, half the fixed positions cut, $63,000 of busing), the ledger runs:")
 tbl(["Year", "Students missing (median path)", "Net yearly effect"],
     [["Year 1", "65", "+$27,339"],
@@ -1768,9 +1768,10 @@ P("<b>Version 5.0, August 17.</b> The school-choice survey results are published
   "property-value lever priced in an interim draft is removed while the PVA records request is pending). "
   "The grid moves from 5,832 to 972 scenarios; the median moves from a $20,007 to "
   "a $427,087 yearly loss, the middle half to a $518,405-to-$338,727 loss, every priced scenario loses "
-  "money (the best case still loses $9,860), and the website default (the savings that scale with "
-  "students granted, teachers included, half the fixed overhead cut, median leavers) opens at a $308,207 "
-  "loss, the 82nd percentile. In the same release the exodus estimate is restated as a share of the "
+  "money (the best case still loses $9,860), and the website calculator opens at the cell at the grid's weighted "
+  "median, a $427,087 loss, the 50th percentile; the savings-granted case (teachers included, half the "
+  "fixed overhead cut, median leavers) prices a $308,207 loss at the 82nd percentile and is kept as the "
+  "steelman. In the same release the exodus estimate is restated as a share of the "
   "current student population extended to the whole feeder stream (the hand-coded class years are not assumed accurate; the evidence window spans current "
   "enrollment plus the next three entering classes), open-enrollment case studies are added with sources, and the shrinking "
   "scenario count is the direct result of inputs the survey and records responses pinned down. The response-bias factor is recentered from 3x to 3.5x and floored at 3.3x, Pew's lower high-salience benchmark, chosen for a small, emotionally charged respondent pool, and every survey-derived figure is re-based. The current-enrollment baseline is restated on the 2025-26 end-of-year count of 115; capacity and cost comparisons keep the official 2024-25 filings at 128. The "

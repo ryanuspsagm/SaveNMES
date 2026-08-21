@@ -87,11 +87,14 @@ Asserts the published statistics: 972 scenarios; weighted median
 -$427,087; EVERY scenario loses money (the best corner, every lever at
 its friendliest at once, still loses $9,860 a year: $86 per displaced
 student); middle half -$518,405 to -$338,727; range -$846,285 to
--$9,860; the site default (-$308,207: building sold, half the fixed
-positions cut over time, three teachers cut with the emptied
-classrooms, median leavers) sits at the 82nd percentile, friendlier
-than three quarters of the grid, because it grants closure every saving
-that scales with students; the median exodus still sinks it.
+-$9,860; the site calculator opens at the grid's weighted median cell
+($80,279 captured, no fixed positions cut, three teachers, 154 leavers
+with zero add-ons, $20,000 busing = -$427,087, the 50th percentile by
+construction); the savings-granted steelman (-$308,207: building sold,
+half the fixed positions cut over time, three teachers, median leavers)
+sits at the 82nd percentile, friendlier than three quarters of the
+grid, because it grants closure every saving that scales with students;
+the median exodus still sinks it.
 Unweighted median -$425,053 kept as a cross-check.
 """
 import statistics
@@ -133,8 +136,10 @@ med = wpct(0.50)
 p25, p75 = wpct(0.25), wpct(0.75)
 neg = sum(w for v, w in pairs if v < 0) / total_w
 default = (127_039 + FIXED_POS / 2 + 3 * TEACH - 63_000
-           - 136 * (SEEK + 500 - SUPPLIES))  # scaled savings granted,
-                                             # median leavers
+           - 136 * (SEEK + 500 - SUPPLIES))  # savings-granted steelman
+median_cell = (80_279 + 0 + 3 * TEACH - 20_000
+               - 154 * (SEEK + 0 - SUPPLIES))  # the site default: the grid
+                                               # cell AT the weighted median
 default_rank = (sum(w for v, w in pairs if v < default - 0.005)
                 + sum(w for v, w in pairs if abs(v - default) <= 0.005) / 2
                 ) / total_w                  # ties half-weighted, the site
@@ -146,11 +151,17 @@ assert round(p25) == -518_405 and round(p75) == -338_727, (p25, p75)
 assert neg == 1.0, neg            # every scenario negative
 assert round(nets[0]) == -846_285 and round(nets[-1]) == -9_860, (nets[0], nets[-1])
 assert round(default) == -308_207, default
+assert round(median_cell) == round(med) == -427_087, median_cell
+median_rank = (sum(w for v, w in pairs if v < median_cell - 0.005)
+               + sum(w for v, w in pairs if abs(v - median_cell) <= 0.005) / 2
+               ) / total_w
+assert 0.48 < median_rank < 0.52, median_rank
 assert 0.80 < default_rank < 0.83, default_rank
 assert round(statistics.median(nets)) == -425_053
 
 print(f"{n:,} scenarios | weighted median ${med:,.0f} | every scenario loses money ({neg * 100:.0f}%)")
 print(f"range ${nets[0]:,.0f} to ${nets[-1]:,.0f} | middle half "
       f"${p25:,.0f} to ${p75:,.0f}")
-print(f"site default (scaled savings granted) ${default:,.0f} | rank {default_rank * 100:.0f}%")
+print(f"site default: the weighted median cell ${median_cell:,.0f} | rank {median_rank * 100:.0f}%")
+print(f"savings-granted steelman ${default:,.0f} | rank {default_rank * 100:.0f}%")
 print(f"unweighted median ${statistics.median(nets):,.0f} (cross-check)")

@@ -380,26 +380,26 @@ footer a{color:var(--ice)}
 <div class="calc-grid">
 <div class="card">
 <h3>Closure: what does it actually net?</h3>
-<p class="note">Six levers, opening at a savings-granted middle case: building sold, three teachers cut, half the fixed overhead cut over time, mid-range busing, and 136 students a year missing, the survey band's middle. Each missing student takes $4,626 plus add-ons and stops costing $400 in supplies. Teacher cuts sit on their own lever. Staffing uses the district's own $54,479 rate. Fixed-position lines are FY2026 actuals from its MUNIS ledger.</p>
+<p class="note">Six levers, opening at the grid's weighted median scenario, the middle result of all 972: three quarters of the building costs captured, no fixed positions cut, three teachers cut, the band's high 154 leavers with no add-ons, minimal busing. A middle result, not a middle setting; drag any lever to test your own read. Each missing student takes $4,626 plus add-ons and stops costing $400 in supplies. Teacher cuts sit on their own lever. Staffing uses the district's own $54,479 rate. Fixed-position lines are FY2026 actuals from its MUNIS ledger.</p>
 <div class="slider-row"><label>Building costs that stop <output id="oCap">All stops plus $20,000 insurance, building sold: $127,039</output></label>
-<input type="range" id="sCap" min="0" max="2" value="2" step="1"></div>
+<input type="range" id="sCap" min="0" max="2" value="1" step="1"></div>
 <div class="slider-row"><label>Fixed positions cut (principal, custodian, library) <output id="oFix">Half cut over time: $107,052</output></label>
-<input type="range" id="sFix" min="0" max="2" value="1" step="1"></div>
+<input type="range" id="sFix" min="0" max="2" value="0" step="1"></div>
 <div class="slider-row"><label>Teachers cut, at the district's $54,479 each <output id="oTea">3</output></label>
 <input type="range" id="sTea" min="0" max="3" value="3" step="1"></div>
 <div class="slider-row"><label>Students missing from the district's rolls each year (the statistical band's middle half: 117 to 154, median 136; the signed floor of 74 sits below every priced leg) <output id="oLeav">136 students: the statistical median</output></label>
-<input type="range" id="sLeav" min="117" max="154" value="136" step="1"></div>
+<input type="range" id="sLeav" min="117" max="154" value="154" step="1"></div>
 <div class="slider-row"><label>State add-ons lost per leaver <output id="oAdd">$500</output></label>
-<input type="range" id="sAdd" min="0" max="1000" value="500" step="50"></div>
+<input type="range" id="sAdd" min="0" max="1000" value="0" step="50"></div>
 <div class="slider-row"><label>Added busing cost per year <output id="oBus">$63,000</output></label>
-<input type="range" id="sBus" min="20000" max="95000" value="63000" step="1000"></div>
+<input type="range" id="sBus" min="20000" max="95000" value="20000" step="1000"></div>
 <div class="result">
-<div class="big" id="rNet">-$308,207</div>
+<div class="big" id="rNet">-$427,087</div>
 <div class="sub">net effect per year at these settings</div>
 <div class="verdict" id="rRank"></div>
 <div class="verdict" id="rTax" style="margin-top:8px"></div>
 </div>
-<p class="note">The default grants closure every saving that scales with students: $400 of supplies per child, three teachers cut (the most the district's own count supports), and half the fixed overhead cut over time. That is more generous than the district's own stance; the superintendent's written statement says all staff keep their jobs. At the statistical median of 136 students a year leaving, from the 31 signed households' band below, it still loses $308,207 a year. The tax line uses the certified real estate roll's $166,189 per cent of rate (the fiscal 2025 audit's valuation and levy; the restricted building-fund levy not counted) and the median homeowner's $15.69 a month for 8.9 cents.</p>
+<p class="note">Grant closure every saving that scales with students, building sold, three teachers cut, half the fixed overhead cut over time, at the median 136 leavers, and it still loses $308,207 a year, the 82nd percentile. That is more generous than the district's own stance; the superintendent's written statement says all staff keep their jobs. The tax line uses the certified real estate roll's $166,189 per cent of rate (the fiscal 2025 audit's valuation and levy; the restricted building-fund levy not counted) and the median homeowner's $15.69 a month for 8.9 cents.</p>
 </div>
 
 <div class="card">
@@ -434,15 +434,15 @@ footer a{color:var(--ice)}
 <p>Nobody knows exactly how either road plays out. So we priced every reasonable version of both on the district's own numbers: 972 closure scenarios, 19,683 growth scenarios. Each bar runs worst to best: the shaded band is the <b>middle half</b>, the navy tick the middle result, and the <b>gold marker is your scenario</b>, live from the sliders. Weighting and method are in the report.</p>
 
 <div class="range-title">Close it</div>
-<div class="range-wrap" role="img" aria-label="Percentile scale for closing NMES: outcomes run from losing $846,285 a year at the left end to still losing $9,860 a year at the right. The middle half is shaded, the median tick loses $427,087, every priced outcome loses money, and a gold marker shows the calculator scenario, at the 82nd percentile by default.">
-<div class="range-bar"><i class="iqr" style="left:25%;width:50%"></i><i class="med" style="left:50%"></i><i class="you" id="youClose" style="left:82%"></i></div>
+<div class="range-wrap" role="img" aria-label="Percentile scale for closing NMES: outcomes run from losing $846,285 a year at the left end to still losing $9,860 a year at the right. The middle half is shaded, the median tick loses $427,087, every priced outcome loses money, and a gold marker shows the calculator scenario, at the 50th percentile by default: the calculator opens at the weighted median.">
+<div class="range-bar"><i class="iqr" style="left:25%;width:50%"></i><i class="med" style="left:50%"></i><i class="you" id="youClose" style="left:50%"></i></div>
 <div class="range-labs">
 <div><b>Worst case</b><br>loses $846,285 a year</div>
 <div><b>Middle result</b><br>loses $427,087 a year</div>
 <div><b>Best case</b><br>still loses $9,860 a year</div>
 </div>
 </div>
-<p class="note">Every priced outcome loses money; the middle half runs from <b>losing $518,405 to losing $338,727</b>. The families-leaving lever, once the biggest unknown, is now anchored to the signed survey below. <b>Your closure scenario: <span id="youCloseTxt">the 82nd percentile</span>.</b></p>
+<p class="note">Every priced outcome loses money; the middle half runs from <b>losing $518,405 to losing $338,727</b>. The families-leaving lever, once the biggest unknown, is now anchored to the signed survey below. <b>Your closure scenario: <span id="youCloseTxt">the 50th percentile</span>.</b></p>
 
 <div class="range-title">Grow it</div>
 <div class="range-wrap" role="img" aria-label="Percentile scale for growing NMES: outcomes run from gaining $3,331 a year at the left end to gaining $386,904 a year at the right. The middle half is shaded, the median tick gains $141,780, no scenario loses money, and a gold marker shows the calculator scenario, at the 50th percentile by default.">
@@ -470,7 +470,7 @@ footer a{color:var(--ice)}
 <div class="bl-k">The bottom line: your two scenarios, live from the calculators above</div>
 <div class="bline-grid">
 <div class="bl grow"><div class="t">Grow it</div><div class="n" id="blGrow">+$141,780</div><div class="s">a year at your growth settings; the default sits at the weighted median. Not one scenario loses</div></div>
-<div class="bl close"><div class="t">Close it</div><div class="n" id="blClose">&minus;$308,207</div><div class="s">a year at your closure settings: scaled savings granted, teachers included, half the fixed overhead, 136 students leaving; the weighted median across all scenarios loses $427,087</div></div>
+<div class="bl close"><div class="t">Close it</div><div class="n" id="blClose">&minus;$427,087</div><div class="s">a year at your closure settings; the calculator opens at the weighted median of all 972 scenarios</div></div>
 </div>
 </div>
 
@@ -601,7 +601,7 @@ footer a{color:var(--ice)}
 </svg>
 <div class="fork-grid">
 <div class="fork-col">
-<div class="road close"><div class="t">Shrink to Fit: close NMES</div><div class="n">-$308,207</div><div class="s">a year: the default closure scenario, scaled savings granted, teachers included, half fixed overhead cut, at the median of families leaving (weighted median of all scenarios: loses $427,087)</div></div>
+<div class="road close"><div class="t">Shrink to Fit: close NMES</div><div class="n">-$427,087</div><div class="s">a year: the weighted median of all 972 closure scenarios</div></div>
 </div>
 <div class="fork-col">
 <div class="road grow"><div class="t">Grow and Thrive: grow NMES</div><div class="n">+$141,780</div><div class="s">a year: the default growth scenario, the median of 19,683 weighted scenarios</div></div>

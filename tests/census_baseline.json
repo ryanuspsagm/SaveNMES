@@ -1073,6 +1073,9 @@
    "summary",
    "workbook"
   ],
+  "80279": [
+   "workbook"
+  ],
   "82866": [
    "workbook"
   ],
@@ -1115,8 +1118,7 @@
    "workbook"
   ],
   "107052": [
-   "site",
-   "workbook"
+   "site"
   ],
   "108958.80": [
    "workbook"
@@ -1158,8 +1160,7 @@
   "127039": [
    "report",
    "site",
-   "summary",
-   "workbook"
+   "summary"
   ],
   "128036": [
    "report",
