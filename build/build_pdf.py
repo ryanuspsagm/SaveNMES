@@ -1080,8 +1080,7 @@ B("<b>No bond issue on record names North Middletown Elementary.</b> The capital
   "elsewhere for years, and the 2021 facility plan shows where: its in-biennium priority was the $6.66 "
   "million high school Career and Technical Center, while North Middletown's $3.62 million renovation "
   "sat scheduled after the biennium. The fairness question: how much has been invested in this building "
-  "against the district's other schools over the past decade? The records are a public-records request "
-  "away, and we will publish whatever comes back.")
+  "against the district's other schools over the past decade? The records are a public-records request away.")
 B("<b>The construction fund ran a negative $1.43 million restricted balance at June 30, 2024</b>: "
   "project spending ran ahead of the borrowing that later covered it, a capital program prioritized and "
   "paid out of cash flow in the same years the operating budget went into deficit.")
