@@ -672,8 +672,7 @@ def main():
                    "107.5 percent", "Eminence", "149 last fall", "occupational",
                    "Marion County voters", "$6.2 to $6.9 million of remaining", "$499,000"]:
         chk(needle in t, f"PDF v4 opening and relocated brief facts intact: {needle}")
-    for needle in ["mirrors the executive summary published at SaveNMES.org",
-                   "Fact one: it is the county's best elementary school",
+    for needle in ["Fact one: it is the county's best elementary school",
                    "Fact four: closing it risks a lot",
                    "Lever one, enrollment", "Lever three, revenue",
                    "Shrink to fit, or grow and thrive",
@@ -760,8 +759,11 @@ def main():
         "report Section 10 mirrors the expanded committee charges")
     chk("three standing committees" in es and "enrollment growth, fixed costs, and revenue" in es,
         "executive summary carries the committee suggestion")
-    for name, txt in (("site", html), ("report", t), ("summary", es)):
-        chk("openly so it can be challenged" in txt,
+    for name, txt, needle in (("site", html, "openly so it can be challenged"),
+                              ("report", t, "state it where it is used and publish it as a "
+                                            "live input in the workbook and calculators"),
+                              ("summary", es, "openly so it can be challenged")):
+        chk(needle in txt,
             f"upfront assumptions disclosure on the {name}: stated, published, open to challenge")
     dfw = wb["Defaults"]
     chk(dfw["B5"].value == 17903 and dfw["B13"].value == 1285310

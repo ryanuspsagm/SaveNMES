@@ -5,7 +5,7 @@ from reportlab.lib.units import inch
 from reportlab.lib import colors
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, Table,
-                                TableStyle, HRFlowable)
+                                TableStyle, HRFlowable, KeepTogether)
 
 NAVY = colors.HexColor("#1F3864")
 GOLD = colors.HexColor("#F5C242")
@@ -85,7 +85,7 @@ step.setStyle(TableStyle([
     ("LINEBELOW", (0, -1), (-1, -1), 0.6, LINE), ("TOPPADDING", (0, 0), (-1, -1), 3.5),
     ("BOTTOMPADDING", (0, 0), (-1, -1), 3.5), ("LEFTPADDING", (0, 0), (-1, -1), 5),
     ("RIGHTPADDING", (0, 0), (-1, -1), 5)]))
-A(step)
+A(KeepTogether([step]))
 A(Spacer(1, 6))
 A(Paragraph(
   "The survey is read as a share of the school, corrected for response bias, and the state's own files "
