@@ -35,7 +35,7 @@ def B(t):
 
 A(Paragraph("Saving North Middletown Elementary", title))
 A(Paragraph("Executive Summary • The Case Against Closure, the Case for Growth, and the Choice", sub))
-A(Paragraph("Version 5.0 • August 17, 2026 • Built from public records and Open Records Requests only • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
+A(Paragraph("Version 5.1 • October 15, 2026 • Built from public records and Open Records Requests only • Every figure sourced in the full report and reproduced as live formulas in the companion workbook at SaveNMES.org", sub))
 A(HRFlowable(width="100%", thickness=1.1, color=NAVY, spaceAfter=10))
 
 A(Paragraph("WHAT HAPPENED", kick))
@@ -49,10 +49,11 @@ A(Paragraph(
 
 A(Paragraph("PART ONE", kick))
 A(Paragraph("The case against closing NMES: four facts from the district's own documents", h1))
-B("<b>Fact one: it is the county's best elementary school.</b> On the state's 2024-25 tests, North "
-  "Middletown ranks first among the county's four elementary schools in every state-reported subject, and it beats "
-  "the state average in science and writing. It was a "
-  "National Blue Ribbon School in 2011, one of five in Kentucky that year.")
+B("<b>Fact one: a strong record, and a bad year.</b> On the state's 2024-25 tests, North Middletown ranked "
+  "first among the county's four elementary schools in every state-reported subject and beat the state average "
+  "in science and writing. On the 2025-26 tests, released October 14, it ranked last in every subject (tied in "
+  "science), and Kentucky has named it a Comprehensive Support and Improvement school. It was a National Blue "
+  "Ribbon School in 2011, one of five in Kentucky that year.")
 B("<b>Fact two: it is not expensive.</b> On the newest state spending file (2024-25), NMES costs $17,903 "
   "per student. The average Kentucky elementary school costs $19,299, so NMES runs 7 percent below the "
   "state average. The district's own cost table, dated May 21, 2026, agrees: it prices the school at "
@@ -175,7 +176,7 @@ def footer(canvas, doc):
     canvas.line(0.9*inch, 0.62*inch, 7.6*inch, 0.62*inch)
     canvas.setFont("Helvetica", 7.6); canvas.setFillColor(GRAY)
     canvas.drawString(0.9*inch, 0.47*inch,
-        "Saving North Middletown Elementary School • Executive Summary • Version 5.0, August 17, 2026")
+        "Saving North Middletown Elementary School • Executive Summary • Version 5.1, October 15, 2026")
     canvas.drawRightString(7.6*inch, 0.47*inch, f"Page {doc.page}")
     canvas.restoreState()
 

@@ -38,7 +38,7 @@ def put(ws, cell, val, font=BLK, fmt=None, fill=None, bold=False, wrap=False):
 # ================= README =================
 rm = sheet("ReadMe", [110])
 put(rm, "A1", "Saving North Middletown Elementary School: Financial Model", TITLE)
-put(rm, "A2", "Companion workbook to the report 'Saving North Middletown Elementary School: A Close Look at Bourbon County Schools' (v5.0, August 2026)", NOTE)
+put(rm, "A2", "Companion workbook to the report 'Saving North Middletown Elementary School: A Close Look at Bourbon County Schools' (v5.1, October 2026)", NOTE)
 rows = [
  "",
  "PURPOSE",
@@ -1215,24 +1215,24 @@ for row in kde_rows:
     for i, v in enumerate(row):
         put(sd, f"{get_column_letter(i+1)}{rr}", v, NOTE if i == 0 else BLUE, None if isinstance(v, str) else NUM)
     rr += 1
-put(sd, "A41", "NMES is first among all four county elementary schools in every subject and beats the statewide elementary average in science and writing. Asterisks = state-suppressed cells.", NOTE, wrap=True)
+put(sd, "A41", "In 2024-25 NMES was first among all four county elementary schools in every subject and beat the statewide elementary average in science and writing; the 2025-26 tables at rows 64 to 88 show it last in every subject. Asterisks = state-suppressed cells.", NOTE, wrap=True)
 
-put(sd, "A43", "KDE OFFICIAL HISTORY, 2011-12 TO 2024-25 (build/kde_scores_history.json)", SEC)
+put(sd, "A43", "KDE OFFICIAL HISTORY, 2011-12 TO 2025-26 (build/kde_scores_history.json)", SEC)
 kh_years = ["'11-12", "'12-13", "'13-14", "'14-15", "'15-16", "'16-17", "'17-18",
-            "'18-19", "'20-21", "'21-22", "'22-23", "'23-24", "'24-25"]
+            "'18-19", "'20-21", "'21-22", "'22-23", "'23-24", "'24-25", "'25-26"]
 put(sd, "A44", "Percent proficient or distinguished", bold=True)
 for i, y in enumerate(kh_years):
     put(sd, f"{get_column_letter(2 + i)}44", y, BOLD)
 put(sd, "T44", "KDE historical accountability files (all students, elementary level); 2017-19 recovered from Wayback captures of KDE's retired download endpoint. 2019-20 canceled statewide; 2020-21 was a limited COVID administration. CATS-era files (2006-2011) are available from KDE by data request.", NOTE, wrap=True)
 kh_rows = [
- ("Reading: North Middletown", [51.9, 59.7, 63.2, 53.2, 56.1, 55.6, 42.3, 48.4, 21.4, 32, 43, 45, 41]),
- ("Reading: Bourbon Central", [62.1, 56.6, 61.2, 55.7, 47.9, 47.9, 49.3, 49.1, 27.1, 43, 37, 36, 38]),
- ("Reading: Cane Ridge", [42.9, 47.2, 54.5, 55.3, 59.3, 57.1, 52.0, 49.6, 26.5, 44, 40, 40, 37]),
- ("Reading: Paris Elementary", [31.0, 34.1, 42.9, 38.9, 41.2, 34.3, 34.4, 35.3, 25.0, 28, 25, 30, 25]),
- ("Mathematics: North Middletown", [53.2, 49.4, 55.3, 59.5, 62.1, 50.8, 47.9, 48.4, 17.9, 31, 30, 45, 31]),
- ("Mathematics: Bourbon Central", [47.1, 47.4, 43.0, 43.6, 40.0, 43.5, 41.8, 45.1, 31.7, 27, 28, 23, 28]),
- ("Mathematics: Cane Ridge", [33.3, 37.7, 43.1, 46.1, 54.4, 45.9, 41.5, 39.0, 25.2, 33, 35, 30, 27]),
- ("Mathematics: Paris Elementary", [29.7, 25.0, 26.8, 22.9, 41.9, 28.7, 30.0, 32.0, 15.3, 23, 32, 27, 29]),
+ ("Reading: North Middletown", [51.9, 59.7, 63.2, 53.2, 56.1, 55.6, 42.3, 48.4, 21.4, 32, 43, 45, 41, 21]),
+ ("Reading: Bourbon Central", [62.1, 56.6, 61.2, 55.7, 47.9, 47.9, 49.3, 49.1, 27.1, 43, 37, 36, 38, 46]),
+ ("Reading: Cane Ridge", [42.9, 47.2, 54.5, 55.3, 59.3, 57.1, 52.0, 49.6, 26.5, 44, 40, 40, 37, 40]),
+ ("Reading: Paris Elementary", [31.0, 34.1, 42.9, 38.9, 41.2, 34.3, 34.4, 35.3, 25.0, 28, 25, 30, 25, 31]),
+ ("Mathematics: North Middletown", [53.2, 49.4, 55.3, 59.5, 62.1, 50.8, 47.9, 48.4, 17.9, 31, 30, 45, 31, 23]),
+ ("Mathematics: Bourbon Central", [47.1, 47.4, 43.0, 43.6, 40.0, 43.5, 41.8, 45.1, 31.7, 27, 28, 23, 28, 34]),
+ ("Mathematics: Cane Ridge", [33.3, 37.7, 43.1, 46.1, 54.4, 45.9, 41.5, 39.0, 25.2, 33, 35, 30, 27, 25]),
+ ("Mathematics: Paris Elementary", [29.7, 25.0, 26.8, 22.9, 41.9, 28.7, 30.0, 32.0, 15.3, 23, 32, 27, 29, 31]),
 ]
 rr = 45
 for name, vals in kh_rows:
@@ -1245,12 +1245,12 @@ put(sd, "A53", "NMES led the county in mathematics in every pre-COVID administra
 put(sd, "A55", "Official overall score", bold=True)
 for i, y in enumerate(kh_years):
     put(sd, f"{get_column_letter(2 + i)}55", y, BOLD)
-put(sd, "T55", "Unbridled Learning overall score 2011-12 to 2015-16 (state classifications noted below); KSA overall indicator rate 2021-22 to 2024-25. The two scales are not comparable to each other. No overall score was issued 2016-17 through 2020-21 by design.", NOTE, wrap=True)
+put(sd, "T55", "Unbridled Learning overall score 2011-12 to 2015-16 (state classifications noted below); KSA overall indicator rate 2021-22 to 2025-26. The two scales are not comparable to each other. No overall score was issued 2016-17 through 2020-21 by design.", NOTE, wrap=True)
 kc_rows = [
- ("North Middletown", [62.6, 68.8, 71.4, 72.1, 79.1, None, None, None, None, 51.9, 62.2, 74.5, 54.0]),
- ("Bourbon Central", [63.2, 63.0, 69.8, 67.8, 56.8, None, None, None, None, 52.8, 56.7, 50.3, 55.4]),
- ("Cane Ridge", [53.3, 58.9, 69.2, 68.5, 65.5, None, None, None, None, 54.3, 51.8, 60.7, 47.8]),
- ("Paris Elementary", [48.0, 49.9, 59.4, 54.8, 69.6, None, None, None, None, 46.1, 45.9, 40.7, 41.9]),
+ ("North Middletown", [62.6, 68.8, 71.4, 72.1, 79.1, None, None, None, None, 51.9, 62.2, 74.5, 54.0, 18.2]),
+ ("Bourbon Central", [63.2, 63.0, 69.8, 67.8, 56.8, None, None, None, None, 52.8, 56.7, 50.3, 55.4, 54.1]),
+ ("Cane Ridge", [53.3, 58.9, 69.2, 68.5, 65.5, None, None, None, None, 54.3, 51.8, 60.7, 47.8, 55.9]),
+ ("Paris Elementary", [48.0, 49.9, 59.4, 54.8, 69.6, None, None, None, None, 46.1, 45.9, 40.7, 41.9, 52.6]),
 ]
 rr = 56
 for name, vals in kc_rows:
@@ -1259,8 +1259,47 @@ for name, vals in kc_rows:
         if v is not None:
             put(sd, f"{get_column_letter(2 + i)}{rr}", v, BLUE, "0.0")
     rr += 1
-put(sd, "A60", "Classifications: NMES rated Proficient 2012-2015 and Distinguished in 2015-16 at 79.1, the county's only Distinguished elementary rating in the files retrieved. In 2023-24 NMES posted 74.5, first in the county by 14 points.", NOTE, wrap=True)
+put(sd, "A60", "Classifications: NMES rated Proficient 2012-2015 and Distinguished in 2015-16 at 79.1, the county's only Distinguished elementary rating in the files retrieved. In 2023-24 NMES posted 74.5, first in the county by 14 points; in 2025-26 it posted 18.2, the official status-plus-change figure, against a status-only 39.1 (rows 81 to 88).", NOTE, wrap=True)
 put(sd, "A62", "Third-party check: the SchoolDigger index above correlates about 0.9 with these official results for Bourbon Central and Cane Ridge but only weakly for NMES, and it names the wrong county leader in three of the ten overlapping years. The official record governs.", NOTE, wrap=True)
+
+
+put(sd, "A64", "KDE 2025-26 KSA, PERCENT PROFICIENT OR DISTINGUISHED, ALL STUDENTS (build/kde_ksa_2025_26.json; KDE release of October 14, 2026)", SEC)
+for i, h in enumerate(kde_hdrs):
+    put(sd, f"{get_column_letter(i+1)}65", h, BOLDW, fill=HDR)
+k26_rows = [("Reading", 21, 46, 40, 31, 50), ("Mathematics", 23, 34, 25, 31, 43),
+            ("Science", "*", 31, 32, 23, 40), ("Social Studies", "*", 30, 32, 18, 38),
+            ("Combined Writing", "*", 27, 29, 12, 41)]
+rr = 66
+for row in k26_rows:
+    for i, v in enumerate(row):
+        put(sd, f"{get_column_letter(i+1)}{rr}", v, NOTE if i == 0 else BLUE, None if isinstance(v, str) else NUM)
+    rr += 1
+put(sd, "A71", "NMES is last among the four county elementaries in every subject in 2025-26, tied with Bourbon Central in science on the content index. Asterisks = state-suppressed cells (fewer than three students at a level); KDE still publishes the index below for them.", NOTE, wrap=True)
+put(sd, "A73", "KDE 2025-26 CONTENT INDEX BY SUBJECT (status; novice 0, apprentice 50, proficient 100, distinguished 125)", SEC)
+for i, h in enumerate(kde_hdrs):
+    put(sd, f"{get_column_letter(i+1)}74", h, BOLDW, fill=HDR)
+ci_rows = [("Reading", 36.5, 60.1, 57.7, 49.6, 68.7), ("Mathematics", 41.8, 47.9, 43.8, 48.9, 61.0),
+           ("Science", 58.7, 58.7, 64.5, 60.1, 67.7), ("Social Studies", 22.2, 42.1, 53.0, 31.0, 54.9),
+           ("Combined Writing", 25.0, 49.4, 50.4, 35.5, 63.5)]
+rr = 75
+for row in ci_rows:
+    for i, v in enumerate(row):
+        put(sd, f"{get_column_letter(i+1)}{rr}", v, NOTE if i == 0 else BLUE, None if isinstance(v, str) else "0.0")
+    rr += 1
+put(sd, "A81", "KDE 2025-26 ACCOUNTABILITY STATUS, ELEMENTARY LEVEL (build/kde_acct_2026_profile_bourbon.csv)", SEC)
+for i, h in enumerate(["Measure", "NMES", "Bourbon Central", "Cane Ridge", "Paris Elem.", "KY elementary"]):
+    put(sd, f"{get_column_letter(i+1)}82", h, BOLDW, fill=HDR)
+st_rows = [("Reading and mathematics status", 39.2, 54.0, 50.8, 49.3, 64.9),
+           ("Science, social studies and writing status", 35.3, 50.1, 56.0, 42.2, 62.0),
+           ("Climate and safety survey status", 74.8, 76.1, 77.8, 80.4, 77.4),
+           ("Status-only overall (KDE weights 51/40/5/4)", 39.1, 54.0, 54.1, 47.6, 64.3),
+           ("Official overall score (status plus change)", 18.2, 54.1, 55.9, 52.6, 64.7)]
+rr = 83
+for row in st_rows:
+    for i, v in enumerate(row):
+        put(sd, f"{get_column_letter(i+1)}{rr}", v, NOTE if i == 0 else BLUE, None if isinstance(v, str) else "0.0")
+    rr += 1
+put(sd, "A88", "Levels on KDE's elementary cut scores: NMES low, low, medium; official rating red; federal classification Comprehensive Support and Improvement (bottom five percent by level; federal score 33.0 against an elementary cut between 37.6 and 38.2). The status-only overall applies the state's published weights to status instead of status plus change; the same weights reproduce every published overall score in the state file to within a tenth. Rank on status alone: 35th lowest of 715 elementary schools; on the official figure, second lowest.", NOTE, wrap=True)
 
 # ================= FACILITY_PLANS =================
 fp = sheet("Facility_Plans", [42, 12, 12, 12, 12, 50])

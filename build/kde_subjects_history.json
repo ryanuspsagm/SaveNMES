@@ -1,5 +1,5 @@
 {
- "source": "School-level percent proficient or distinguished in the three non-reading/math tested subjects (science, social studies, writing), all students / all tested students, elementary level, for the four Bourbon County elementary schools. 2017-18 and 2018-19 from KDE ACCOUNTABILITY_PROFICIENCY_LEVEL files (Wayback Machine captures of education.ky.gov, demographic TST); 2020-21 from the KDE assessment file (social studies was not tested that year); 2021-22 and 2022-23 from KDE accountable_assessment_performance files (subject CW = Combined Writing); 2023-24 and 2024-25 from the Kentucky Report Card ACCT Kentucky Summative Assessment datasets (kyschoolreportcard.com). Asterisk-suppressed cells stored as null.",
+ "source": "School-level percent proficient or distinguished in the three non-reading/math tested subjects (science, social studies, writing), all students / all tested students, elementary level, for the four Bourbon County elementary schools. 2017-18 and 2018-19 from KDE ACCOUNTABILITY_PROFICIENCY_LEVEL files (Wayback Machine captures of education.ky.gov, demographic TST); 2020-21 from the KDE assessment file (social studies was not tested that year); 2021-22 and 2022-23 from KDE accountable_assessment_performance files (subject CW = Combined Writing); 2023-24 and 2024-25 from the Kentucky Report Card ACCT Kentucky Summative Assessment datasets (kyschoolreportcard.com); 2025-26 from KDE's October 14, 2026 release (build/kde_ksa_2025_26.json). Asterisk-suppressed cells stored as null.",
  "method_note": "avg = mean over the subjects the state published for that school and year (suppressed cells excluded); null when nothing was published. 2019-20 has no data: state testing was cancelled.",
  "retrieved": "2026-08-02",
  "per_subject": {
@@ -152,6 +152,28 @@
     "Social Studies": 22.0,
     "Writing": 4.0
    }
+  },
+  "2025-26": {
+   "NMES": {
+    "Science": null,
+    "Social Studies": null,
+    "Writing": null
+   },
+   "BC": {
+    "Science": 31.0,
+    "Social Studies": 30.0,
+    "Writing": 27.0
+   },
+   "CR": {
+    "Science": 32.0,
+    "Social Studies": 32.0,
+    "Writing": 29.0
+   },
+   "PE": {
+    "Science": 23.0,
+    "Social Studies": 18.0,
+    "Writing": 12.0
+   }
   }
  },
  "avg": {
@@ -196,6 +218,12 @@
    "BC": 32.3,
    "CR": 27.0,
    "PE": 13.0
+  },
+  "2025-26": {
+   "NMES": null,
+   "BC": 29.3,
+   "CR": 31.0,
+   "PE": 17.7
   }
  }
 }

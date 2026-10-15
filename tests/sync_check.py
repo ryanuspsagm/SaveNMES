@@ -255,7 +255,7 @@ else:
 
 # model School_Data KDE history block vs the same source file
 kh_years_keys = ["2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17",
-                 "2017-18", "2018-19", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25"]
+                 "2017-18", "2018-19", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26"]
 mh_bad = []
 for subj, base in (("reading_pd", 45), ("math_pd", 49)):
     for j, key in enumerate(("NMES", "BC", "CR", "PE")):
@@ -270,7 +270,7 @@ for j, key in enumerate(("NMES", "BC", "CR", "PE")):
         got = SD.cell(row=56 + j, column=2 + i).value
         if (got is None) != (want is None) or (want is not None and abs(got - want) > 0.001):
             mh_bad.append(("composite", key, yk, got))
-if not mh_bad: match("model School_Data KDE history block matches build/kde_scores_history.json (104 P/D cells + composites)")
+if not mh_bad: match("model School_Data KDE history block matches build/kde_scores_history.json (112 P/D cells + composites)")
 else: diff(f"model KDE history mismatches: {mh_bad}")
 rowmap = {"NMES": 15, "BC": 16, "CR": 17, "PE": 18}
 for key, row in rowmap.items():

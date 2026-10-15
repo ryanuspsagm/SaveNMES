@@ -1,5 +1,5 @@
 {
- "source": "Kentucky Department of Education official files, retrieved 2026-07-20 directly from education.ky.gov/Open-House/data/HistoricalDatasets (ACCOUNTABILITY_ACHIEVEMENT_LEVEL and ACCOUNTABILITY_PROFILE 2011-12 through 2016-17; accountable_assessment_performance and accountability_profile 2021-22, 2022-23; KYRC24/KYRC25 accountability files) and, for 2017-18 and 2018-19, Wayback Machine captures of KDE's retired openhouse download endpoint (ACCOUNTABILITY_PROFICIENCY_LEVEL.xlsx, captures 2020-09-27/28). All-students rows, elementary level. 2019-20 canceled statewide; 2020-21 was a limited COVID administration; no official composite issued 2017 through 2021. CATS-era files (2006-2011) are no longer published online and are available from KDE by data request.",
+ "source": "Kentucky Department of Education official files, retrieved 2026-07-20 directly from education.ky.gov/Open-House/data/HistoricalDatasets (ACCOUNTABILITY_ACHIEVEMENT_LEVEL and ACCOUNTABILITY_PROFILE 2011-12 through 2016-17; accountable_assessment_performance and accountability_profile 2021-22, 2022-23; KYRC24/KYRC25 accountability files; Accountable_Assessment_Performance_2026 and Accountable_Profile_2026 from KDE's October 14, 2026 release for 2025-26) and, for 2017-18 and 2018-19, Wayback Machine captures of KDE's retired openhouse download endpoint (ACCOUNTABILITY_PROFICIENCY_LEVEL.xlsx, captures 2020-09-27/28). All-students rows, elementary level. 2019-20 canceled statewide; 2020-21 was a limited COVID administration; no official composite issued 2017 through 2021. CATS-era files (2006-2011) are no longer published online and are available from KDE by data request.",
  "reading_pd": {
   "2011-12": {
    "NMES": 51.9,
@@ -78,6 +78,12 @@
    "BC": 38,
    "CR": 37,
    "PE": 25
+  },
+  "2025-26": {
+   "NMES": 21.0,
+   "BC": 46.0,
+   "CR": 40.0,
+   "PE": 31.0
   }
  },
  "math_pd": {
@@ -158,10 +164,16 @@
    "BC": 28,
    "CR": 27,
    "PE": 29
+  },
+  "2025-26": {
+   "NMES": 23.0,
+   "BC": 34.0,
+   "CR": 25.0,
+   "PE": 31.0
   }
  },
  "official_composite": {
-  "note": "Unbridled Learning overall score 2011-12 to 2015-16 (with state classification); KSA overall indicator rate 2021-22 to 2024-25. 2016-17 issued no scores by design.",
+  "note": "Unbridled Learning overall score 2011-12 to 2015-16 (with state classification); KSA overall indicator rate 2021-22 to 2025-26. 2016-17 issued no scores by design.",
   "2011-12": {
    "NMES": [
     62.6,
@@ -323,6 +335,24 @@
     41.9,
     null
    ]
+  },
+  "2025-26": {
+   "NMES": [
+    18.2,
+    null
+   ],
+   "BC": [
+    54.1,
+    null
+   ],
+   "CR": [
+    55.9,
+    null
+   ],
+   "PE": [
+    52.6,
+    null
+   ]
   }
  },
  "state_elementary_pd": {
@@ -332,6 +362,10 @@
   },
   "2024-25": {
    "Reading": 49,
+   "Mathematics": 43
+  },
+  "2025-26": {
+   "Reading": 50,
    "Mathematics": 43
   }
  },

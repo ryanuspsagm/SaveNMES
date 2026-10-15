@@ -672,7 +672,7 @@ def main():
                    "107.5 percent", "Eminence", "149 last fall", "occupational",
                    "Marion County voters", "$6.2 to $6.9 million of remaining", "$499,000"]:
         chk(needle in t, f"PDF v4 opening and relocated brief facts intact: {needle}")
-    for needle in ["Fact one: it is the county's best elementary school",
+    for needle in ["Fact one: a strong record, and a bad year",
                    "Fact four: closing it risks a lot",
                    "Lever one, enrollment", "Lever three, revenue",
                    "Shrink to fit, or grow and thrive",
@@ -891,9 +891,9 @@ def main():
         "site calculator sliders span exactly the published grids: missing students 117 to 154 with "
         "add-ons at three settings, growth target in five-student steps, so no reachable "
         "setting prices outside the published floors and ceilings")
-    chk("Version 5.0" in t and "August 17" in t and "Version 4.6" in t
+    chk("Version 5.1" in t and "October 15" in t and "Version 5.0" in t and "August 17" in t and "Version 4.6" in t
         and "Version 4.5" in t and "Version 4.2" in t,
-        "PDF carries the v5.0 release block and the v4.6, v4.5 and v4.2 history entries")
+        "PDF carries the v5.1 and v5.0 release blocks and the v4.6, v4.5 and v4.2 history entries")
     chk("Saving_NMES_v4.5_2026-08-02.pdf" in html
         and (REPO / "reports" / "Saving_NMES_v4.5_2026-08-02.pdf").exists(),
         "v4.5 archived in reports/ and linked from the version history")
@@ -1049,6 +1049,9 @@ def main():
         "the facility-plan 128 label correction is disclosed in the report")
     chk("v5.0, August 17" in html and "Saving_NMES_v5.0_2026-08-17.pdf" in html,
         "site version history carries v5.0 with the report file linked")
+    chk("v5.1, October 15" in html and "Saving_NMES_v5.1_2026-10-15.pdf" in html
+        and (REPO / "reports" / "Saving_NMES_v5.1_2026-10-15.pdf").exists(),
+        "site version history carries v5.1 with the report file linked and archived")
 
     # ---- percentile-claim audit: every "Nth percentile" on the site recomputes ----
     sys.path.insert(0, str(REPO / "build"))

@@ -9,7 +9,7 @@ public source cited in the report and on the site.
 
 - `index.html` - the interactive community website (single file, no build step;
   charts via Chart.js CDN). Edit text directly; sections are labeled.
-- `Saving_North_Middletown_Elementary.pdf` - the 55-page report.
+- `Saving_North_Middletown_Elementary.pdf` - the 56-page report.
 - `SaveNMES_Executive_Summary.pdf` - the three-page executive summary (built by `build/build_summary.py`).
 - `NMES_Financial_Model.xlsx` - the 19-tab financial model (557 formulas).
 - `build/` - Python scripts that regenerate the PDF, model, and report charts.
@@ -36,9 +36,10 @@ public source cited in the report and on the site.
   Independent and state rows to `build/kde_acct_2026_*.csv`, the 2025-26
   score files `build/kde_ksa_2025_26.json` and `build/kde_levels_2025_26.json`,
   and the working comparison `build/ksa_2025_26_comparison.md`. The site's Fact
-  One carries the 2025-26 results (status view, status chart, CSI explainer;
+  One carries the 2025-26 results beside 2024-25 (one two-year table, the
+  status table and chart, the 2026 points on the two-decades chart;
   `tests/verify_kde_2026.py` ties every number on the page to the archived
-  rows); the report (v5.0) and model still show 2024-25. `python
+  rows); the report, summary and workbook carry the same 2025-26 figures (v5.1). `python
   build/cohort_analysis_2026.py` follows each NMES cohort through the 2023-24
   and 2024-25 School Report Card files (Bourbon County rows archived as
   `build/kde_kyrc24_*` and `build/kde_kyrc25_*`) and the 2025-26 release, and
@@ -87,7 +88,7 @@ it attributes no motive and alleges no wrongdoing to anyone.
 ## Report version history
 Every published version stays available under `reports/`; each report's
 corrections section lists what changed and why. The canonical, complete
-history (through the current v5.0) is the "Version history" section of the
+history (through the current v5.1) is the "Version history" section of the
 report itself and the site's History page; the entries below stop at v3.9
 and are kept as a snapshot of the correction-heavy early releases.
 - v3.9 (July 29, 2026): the district's own ledger, plus nine corrections,

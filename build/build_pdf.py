@@ -117,7 +117,7 @@ A(Paragraph("Paris and North Middletown, Kentucky &nbsp;\u2022&nbsp; July 2026",
 A(Paragraph("Written by a group of volunteers from the NMES community (past and present), including Dr. Ryan Bradley, a former NMES King and Bourbon County Colonel; the analysis and report writing were accelerated with the use of an AI research assistant.<br/>Built from public records and Open Records Requests only.",
             ParagraphStyle("pf3", fontName="Helvetica-Oblique", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=5)))
-A(Paragraph("Version 5.0 &nbsp;\u2022&nbsp; August 17, 2026",
+A(Paragraph("Version 5.1 &nbsp;\u2022&nbsp; October 15, 2026",
             ParagraphStyle("pf4", fontName="Helvetica", fontSize=9, alignment=TA_CENTER,
                            textColor=GRAY, spaceAfter=0)))
 A(Spacer(1, 1.6 * inch))
@@ -152,7 +152,7 @@ toc_part = ParagraphStyle("tocp", fontName="Helvetica-Bold", fontSize=10.2, lead
 for part, items in [
     ("Opening", ["1. Executive Summary: The Case, the Plan, and the Choice"]),
     ("Part One: The Case Against Closing NMES",
-     ["2. Academic Performance: The District Would Be Closing Its Best Elementary School",
+     ["2. Academic Performance: A Strong Record, and a Bad Year",
       "3. The School Is Not Expensive: The Cost Record",
       "4. The Million-Dollar Question: What Closing the School Would Actually Save",
       "5. What Closure Risks: The Record Where It Has Been Tried",
@@ -190,10 +190,11 @@ P("On July 15, 2026, the Local Planning Committee of Bourbon County Schools vote
   "live input in the workbook and calculators. Corrections are made publicly.", lede)
 
 H2("Part One. The case against closing NMES: four facts from the district's own documents")
-B("<b>Fact one: it is the county's best elementary school.</b> On the state's 2024-25 tests, North "
-  "Middletown ranks first among the county's four elementary schools in every state-reported subject. It "
-  "beats the state average in science and writing. It was a National Blue Ribbon School in 2011, one of "
-  "five in Kentucky that year (Section 2).")
+B("<b>Fact one: a strong record, and a bad year.</b> On the state's 2024-25 tests, North Middletown "
+  "ranked first among the county's four elementary schools in every state-reported subject and beat the "
+  "state average in science and writing. On the 2025-26 tests, released October 14, it ranked last in every "
+  "subject (tied in science), and Kentucky has named it a Comprehensive Support and Improvement school. It "
+  "was a National Blue Ribbon School in 2011, one of five in Kentucky that year (Section 2).")
 B("<b>Fact two: it is not expensive.</b> On the newest state spending file (2024-25), NMES costs $17,903 "
   "per student. The average Kentucky elementary school costs $19,299, so NMES runs 7 percent below the "
   "state average. The district's own cost table, dated May 21, 2026, agrees: $19,080 per student against "
@@ -293,44 +294,98 @@ P("Four facts, in the website's order: the school outperforms, it is not expensi
   "workbook.")
 
 # ================= 5. ACADEMICS =================
-H("2. Academic Performance: The District Would Be Closing Its Best Elementary School")
+H("2. Academic Performance: A Strong Record, and a Bad Year")
 H2("The state's own numbers, first")
-P("Before any index or ranking, here is the primary record: KDE's school-level file for the 2024-25 "
-  "Kentucky Summative Assessments, archived at build/kde_ksa_2024_25.json so anyone can check it. On "
-  "the state's own tests, North Middletown is first among all four elementary schools in Bourbon "
-  "County, county district and Paris Independent alike, in every tested subject. It beats the "
-  "<b>statewide</b> elementary average in science and writing.")
-tbl(["Subject (percent proficient or distinguished)", "NMES", "Bourbon Central", "Cane Ridge", "Paris Elem.", "KY average"],
+P("Before any index or ranking, here is the primary record: KDE's school-level files for the 2024-25 and "
+  "2025-26 Kentucky Summative Assessments, archived at build/kde_ksa_2024_25.json and "
+  "build/kde_ksa_2025_26.json so anyone can check them. The two years tell opposite stories. In 2024-25 "
+  "North Middletown was first among all four elementary schools in Bourbon County, county district and "
+  "Paris Independent alike, in every tested subject, and beat the <b>statewide</b> elementary average in "
+  "science and writing. On the 2025-26 tests, released October 14, 2026, it was last among the four in "
+  "every subject, tied with Bourbon Central in science on the state's content index, and Kentucky has "
+  "identified it for Comprehensive Support and Improvement, the federal label for the lowest five percent "
+  "of schools at each level: one of 53 schools statewide, 19 of them newly identified this year, and the "
+  "only one in Bourbon County.")
+tbl(["Subject, 2025-26 (percent proficient or distinguished; content index)", "NMES", "Bourbon Central", "Cane Ridge", "Paris Elem.", "KY average"],
+    [["Reading", "21 (36.5)", "46 (60.1)", "40 (57.7)", "31 (49.6)", "50 (68.7)"],
+     ["Mathematics", "23 (41.8)", "34 (47.9)", "25 (43.8)", "31 (48.9)", "43 (61.0)"],
+     ["Science", "* (58.7)", "31 (58.7)", "32 (64.5)", "23 (60.1)", "40 (67.7)"],
+     ["Social Studies", "* (22.2)", "30 (42.1)", "32 (53.0)", "18 (31.0)", "38 (54.9)"],
+     ["Combined Writing", "* (25.0)", "27 (49.4)", "29 (50.4)", "12 (35.5)", "41 (63.5)"]],
+    [2.35 * inch, 0.85 * inch, 1.15 * inch, 0.95 * inch, 0.85 * inch, 0.9 * inch],
+    caption="Kentucky Summative Assessment results, 2025-26, all students: percent scoring proficient or "
+            "distinguished, and in parentheses KDE's content index, the status score the state builds its "
+            "ratings from (novice 0, apprentice 50, proficient 100, distinguished 125). Source: KDE "
+            "Assessment and Accountability Data 2025-2026, released October 14, 2026, archived in this "
+            "repository with checksums. Asterisks are cells the state suppresses under its written "
+            "fewer-than-three rule; KDE still publishes the index for them. The Kentucky average is the "
+            "statewide elementary level.",
+    bold_first_col=True)
+tbl(["Subject, 2024-25 (percent proficient or distinguished)", "NMES", "Bourbon Central", "Cane Ridge", "Paris Elem.", "KY average"],
     [["Reading", "41", "38", "37", "25", "49"],
      ["Mathematics", "31", "28", "27", "29", "43"],
      ["Science", "53", "26", "*", "*", "37"],
      ["Social Studies", "36", "31", "27", "22", "38"],
      ["Combined Writing", "56", "40", "27", "4", "43"]],
     [2.35 * inch, 0.85 * inch, 1.15 * inch, 0.95 * inch, 0.85 * inch, 0.9 * inch],
-    caption="Kentucky Summative Assessment results, 2024-25, all students, percent scoring proficient or "
-            "distinguished. Source: KDE School Report Card assessment dataset, archived in this repository. "
-            "Asterisks are cells the state suppresses (KDE's written rule withholds a row when any "
-            "achievement level holds fewer than three students); the Kentucky average is the statewide "
-            "elementary level.",
+    caption="The year before: Kentucky Summative Assessment results, 2024-25, all students, percent scoring "
+            "proficient or distinguished. Source: KDE School Report Card assessment dataset, archived in this "
+            "repository. Asterisks as above.",
+    bold_first_col=True)
+P("Kentucky scores each accountability indicator two ways. Status is the year's own result; change is "
+  "the year minus the year before, and the state adds the two before it assigns a color, so a school "
+  "that falls hard is scored low for where it landed and again for the fall. The table below shows "
+  "status alone, with the state's own level for each score, and the status-only overall on the state's "
+  "published weights beside the official figure.")
+tbl(["Status score, 2025-26 (state level)", "NMES", "Bourbon Central", "Cane Ridge", "Paris Elem.", "KY average"],
+    [["Reading and mathematics", "39.2 (low)", "54.0 (medium)", "50.8 (low)", "49.3 (low)", "64.9 (medium)"],
+     ["Science, social studies, writing", "35.3 (low)", "50.1 (medium)", "56.0 (medium)", "42.2 (low)", "62.0 (medium)"],
+     ["Climate and safety survey", "74.8 (medium)", "76.1 (medium)", "77.8 (high)", "80.4 (high)", "77.4 (high)"],
+     ["Status-only overall, KDE weights", "39.1", "54.0", "54.1", "47.6", "64.3"],
+     ["Official overall, with change", "18.2 (red)", "54.1 (orange)", "55.9 (yellow)", "52.6 (orange)", "64.7 (yellow)"]],
+    [2.35 * inch, 0.85 * inch, 1.15 * inch, 0.95 * inch, 0.85 * inch, 0.9 * inch],
+    caption="KDE Accountable_Profile_2026, elementary level, all students, archived in this repository. Levels "
+            "and colors are KDE's published elementary cut scores. The status-only overall applies the state's "
+            "indicator weights (reading and mathematics 51, science, social studies and writing 40, English "
+            "learner progress 5, climate survey 4, redistributed where an indicator is missing) to status "
+            "instead of status plus change; the same weights reproduce every published overall score in the "
+            "state file to within a tenth. On status alone North Middletown ranks 35th lowest of Kentucky's "
+            "715 elementary schools, at the state's five percent line; on the official figure it ranks "
+            "second lowest.",
     bold_first_col=True)
 P("Here is the full arc, straight from the state's own files (Figure 1, top panel). Through the Unbridled "
   "Learning era North Middletown's official overall score rose every single year: 62.6 to 68.8 to 71.4 to "
   "72.1 to <b>79.1</b>, closing 2015-16 with a formal <b>Distinguished</b> classification, the county's "
   "best score by nearly ten points. The same files show the school <b>first in the county in elementary "
   "mathematics in every pre-COVID administration on record</b>, 2011-12 through 2018-19, eight straight. "
-  "The pandemic cratered every school in the county. The recovery is where they separate: North "
+  "The pandemic cratered every school in the county. The recovery is where they separated: North "
   "Middletown's overall indicator rate climbed 51.9 to 62.2 to <b>74.5</b> in 2023-24, first in the county "
   "by fourteen points, with reading and math both at 45 percent proficient or better. In 2024-25 a tested "
-  "cohort of roughly sixty children slipped to 41 and 31 while statewide averages ticked up: a real "
-  "single-year decline worth watching. The school still finished first among all four county elementaries "
-  "in every subject where the state publishes comparable results (two schools' science scores are "
-  "state-suppressed under KDE's fewer-than-three rule). Small schools swing hard in single years, in both "
-  "directions; one soft year argues for attention, not for closure. Kentucky's index blends each "
-  "year's level with the change from "
-  "the year before. On every 2024-25 status measure the state computed, North Middletown led Bourbon "
-  "Central; the index crosses only because the change formula subtracts North Middletown's own 2023-24 "
-  "spike and credits Bourbon Central's climb off its 50.3. A school is not worse for having been "
-  "excellent the year before.")
+  "cohort of roughly seventy children slipped to 41 and 31 while statewide averages ticked up, and still "
+  "finished first among all four county elementaries in every subject where the state publishes "
+  "comparable results. In 2025-26 the slip became a fall: 21 percent proficient in reading and 23 in "
+  "mathematics, the three single-grade subjects suppressed, and their content indexes down 16, 25 and 52 "
+  "points. Small schools swing hard in single years, in both directions: about 70 tested children across "
+  "three grades, one fourth-grade class carrying science and one fifth-grade class carrying social studies "
+  "and writing, where one child moves a subject score four to five points. That is a reason to read the "
+  "numbers carefully, not a reason to ignore them. Kentucky's index blends each year's level with the change "
+  "from the year before. On every 2024-25 status measure the state computed, North Middletown led Bourbon "
+  "Central; the index crossed only because the change formula subtracts North Middletown's own 2023-24 "
+  "spike and credits Bourbon Central's climb off its 50.3. In 2025-26 the same formula counts the fall on "
+  "top of the level, which is how a status of 39.1 reads as an official 18.2. A school is not worse for "
+  "having been excellent the year before, and it is not better for the formula either; the status table "
+  "above shows where each school stands this year on its own.")
+P("What the label means. Under KRS 160.346 Kentucky identifies CSI schools every year: the lowest five "
+  "percent of schools at each level on the overall score, with the cut set by the Title I schools and a "
+  "three-year average of change used for this test; North Middletown's federal score is 33.0 against a "
+  "2025-26 elementary cut between 37.6 and 38.2. KDE's process documents, archived in this repository, "
+  "describe what follows: a KDE audit of the school and the district within 45 days, a three-year "
+  "turnaround plan written by a turnaround team and running by the first day of 2027-28, eligibility for "
+  "federal school improvement funds, the school council's authority transferring to the superintendent "
+  "for the turnaround, and exit once the school is no longer at or below the cut and its overall score "
+  "has improved. It is not a closure finding; the statute assumes the school stays open under a "
+  "district-run, state-monitored plan. The district is now weighing whether to close a school the state "
+  "has just placed on that track.")
 P("The repository also archives the federal EDFacts series, an independent cross-check that reaches back "
   "to the era of the 2011 Blue Ribbon, where North Middletown prints 89.5 and 94.8 on the old KCCT scale. "
   "Kentucky replaced its test in 2011-12, so federal values before and after that line are different "
@@ -341,38 +396,43 @@ P("We keep the SchoolDigger index in Figure 1's lower panel and in Figure 2 only
   "sources cover. Wherever the index and the official record disagree, the official record governs.")
 P("In 2023-24 North Middletown matched the statewide elementary average in reading (45 percent proficient "
   "or better against 47) and beat it in mathematics (45 against 42). In 2024-25 it beat the state "
-  "decisively in writing (56 against 43) and science (53 against 37). Most striking for a school where "
+  "decisively in writing (56 against 43) and science (53 against 37). In 2025-26 it trails the state in "
+  "every subject, as every county elementary does. Most striking for a school where "
   "about three-quarters of children qualify for free or reduced-price meals: on the third-party index, its "
-  "economically disadvantaged students alone rank in the 62nd percentile of all Kentucky schools. This "
-  "environment lifts precisely the students the research says are hardest to lift.")
+  "economically disadvantaged students alone ranked in the 62nd percentile of all Kentucky schools in "
+  "2024-25. This environment lifted precisely the students the research says are hardest to lift, and the "
+  "question the district owes the Board is what changed in one year.")
 P("This is not a new story. In 2011 the U.S. Department of Education named North Middletown Elementary a "
   "<b>National Blue Ribbon School</b>, one of just five Kentucky public schools honored that year, an "
   "award for schools in roughly the top ten percent of their state in reading and mathematics. The state "
   "separately gave it an inaugural Distinguished Winners Circle Award. Around then the school ranked 36th "
   "of 683 Kentucky elementary schools (2010) and 51st of 688 (2011). This is not a school with a history "
-  "of failure. It is a school with a history of excellence, climbing back toward it.")
+  "of failure. It is a school with a history of excellence, and one bad year.")
 P("The record was built by people, and two anchor it: Mrs. Beverly Craycraft and Mrs. Roxanne Mitchell, "
   "whose classrooms set the kindergarten-through-fifth standard for generations. The honors around them "
   "are documented: Alison Cloyd (2014) and Lydia Austin (2017) each received Campbellsville University's "
   "Excellence in Teaching Award, and the Blue Ribbon culture ran on community-powered programs, notably "
-  "“ArtBurst,” which threaded the arts through core academics. The present belongs to a new set of "
-  "educators. Under principal Hannah Southall the staff took the school from its COVID-era trough back to "
-  "the county's best official overall rate, 74.5 in 2023-24, and the county's top marks in every "
-  "state-reported subject in 2024-25, and keeps a gifted-and-talented program running. That faculty does "
-  "not need consolidation. It needs time, and a district willing to back them.")
+  "“ArtBurst,” which threaded the arts through core academics. Under principal Hannah Southall the "
+  "staff took the school from its COVID-era trough back to the county's best official overall rate, 74.5 "
+  "in 2023-24, and the county's top marks in every state-reported subject in 2024-25, and kept a "
+  "gifted-and-talented program running. A faculty with that record does not need consolidation. It needs "
+  "time, and a district willing to back it.")
 P("Two honest caveats. Small schools produce noisier year-to-year scores, and subgroup results vary "
-  "widely: the school's girls (85.7, the 91st percentile) far outpace its boys (28.8), a gap the "
-  "district should be helping the school close rather than closing the school. And no single year should "
-  "define any school. Three-year averages tell the same story: on the third-party index North Middletown "
-  "averages 48.1 for 2023 through 2025, against 26.4 at Bourbon Central and 29.9 at Cane Ridge. Neither "
-  "caveat changes the central fact: this consolidation would move children from the district's strongest "
-  "elementary environment into its weakest ones. If the administration believes the receiving schools "
-  "can preserve these outcomes, it should say so in writing, with a transition plan, before any vote.")
+  "widely: the school's girls (85.7, the 91st percentile) far outpaced its boys (28.8) on the 2024-25 "
+  "third-party index, a gap the district should be helping the school close rather than closing the "
+  "school. And no single year should define any school. Three-year averages tell the longer story: on "
+  "the third-party index North Middletown averages 48.1 for 2023 through 2025, against 26.4 at Bourbon "
+  "Central and 29.9 at Cane Ridge. Neither caveat changes the central fact: over the decade in the state's "
+  "files this was the county's strongest elementary environment, and one bad year, now under a "
+  "state-monitored improvement process, is an argument for a transition plan and public targets, not for "
+  "closure. If the administration believes the receiving schools would preserve or improve these outcomes, "
+  "it should say so in writing, with a transition plan, before any vote.")
 
 
 fig("chart_district.png",
     "Figure 1. Top: the official state record, Kentucky's overall accountability composite in its two "
-    "comparable eras (Unbridled Learning overall score, 2012-2016; KSA overall indicator rate, 2022-2025). No "
+    "comparable eras (Unbridled Learning overall score, 2012-2016; KSA overall indicator rate, 2022-2026; the 2026 "
+    "North Middletown point is the official 18.2, against a status-only 39.1 on the state's weights). No "
     "composite was issued from 2017 through 2021 (system transition, star-rating years, then COVID), and "
     "CATS-era school files (2006-2011) are available from KDE by data request. Bottom: SchoolDigger's "
     "third-party 0-100 index of the same tests, retained for context; wherever the two disagree, the "
@@ -1234,8 +1294,8 @@ P("Honesty requires naming the headwind first. Bourbon County has hovered near t
   "today's 128 (Figure 14).")
 P("But a school's enrollment does not have to wait on a county's birth rate, because the board controls "
   "two levers that demographics do not. The first is redistricting. Attendance boundaries are the "
-  "board's to draw. With Bourbon Central at 459 students and Cane Ridge at 453 while the district's "
-  "best elementary sits at 128 of a rated 174, redrawing the eastern edges, closest families first, "
+  "board's to draw. With Bourbon Central at 459 students and Cane Ridge at 453 while North Middletown "
+  "sits at 128 of a rated 174, redrawing the eastern edges, closest families first, "
   "would fill open seats with children the district already educates, relieve the crowded Paris "
   "schools, and shorten rides. The second is the county's edges. Under House Bill 563, families just across the "
   "line in Clark, Nicholas, Montgomery, and Harrison counties can enroll at North Middletown and bring "
@@ -1384,7 +1444,7 @@ P("And the surplus is transformative. The website's plan calculator prices the e
 P("A suggestion for running the plan: the board should create three standing committees, one per lever, "
   "each with a public charge and a progress report at every board meeting. An enrollment growth "
   "committee works to win families back: reach the 236 homeschool households in the district's own "
-  "files, market the county's top-scoring elementary to the 450 to 550 Bourbon County Schools children "
+  "files, market the county's Blue Ribbon elementary to the 450 to 550 Bourbon County Schools children "
   "now outside its classrooms, and own the public enrollment targets. A fixed-cost committee drives the "
   "$760,000 to $1.3 million package: commission the routing study the $2.9 million transportation line "
   "has never had, review every non-teaching vacancy before it is refilled, and put the energy contracts "
@@ -1685,7 +1745,7 @@ B("Require an independent review of the savings estimate, a receiving-school cap
   "explicit alternative to outright closure.")
 P("The district holds about $4.3 million in General Fund balance and is drawing it down at $1.1 to $1.2 "
   "million a year: a serious problem, and roughly three budget cycles to fix it properly. Closing the "
-  "county's best elementary school, in the town that would lose the most, on the strength of an "
+  "elementary school with the county's best decade-long record, in the town that would lose the most, on the strength of an "
   "unpublished number, would be a permanent answer to a solvable problem. The record is settled by the "
   "district's own July 2026 records response: asked for any cost-benefit analysis, enrollment study, "
   "capacity study, feasibility study, transportation study, or document evaluating the future use of "
@@ -1737,6 +1797,19 @@ P("We prepared this report ourselves, a group of volunteers from the NMES commun
   "or any member of the planning committee, and nothing in it should be read otherwise.", note)
 P("<b>Version history.</b> Every version stays public at github.com/ryanuspsagm/SaveNMES, with the "
   "line-by-line record of every change to the report, model, and website. The changes in each release:", note)
+P("<b>Version 5.1, October 15.</b> The state's 2025-26 assessment and accountability release of October 14, 2026 is "
+  "folded into the report, the executive summary, the workbook and the site. North Middletown fell to last among "
+  "the four county elementaries in every subject (tied with Bourbon Central in science on the content index): "
+  "reading 21 percent proficient or distinguished from 41, mathematics 23 from 31, science, social studies and "
+  "writing suppressed with content indexes of 58.7, 22.2 and 25.0 from 75.0, 47.0 and 77.0. The official overall "
+  "score is 18.2 (red), the status-only overall 39.1 on the state's published weights, and Kentucky has identified "
+  "the school for Comprehensive Support and Improvement (bottom five percent by level; federal score 33.0 against "
+  "an elementary cut between 37.6 and 38.2). Section 2 is rewritten around the two years and its heading changed "
+  "from the district closing its best elementary school; Fact one is restated in the opening brief and the "
+  "executive summary; the best-elementary and top-scoring phrasing is retired from the growth and conclusion "
+  "passages; Figure 1 runs to 2026; the School_Data tab carries the 2025-26 tables and a fourteenth history "
+  "column; and every 2025-26 figure on the site is machine-checked against the archived state rows by "
+  "tests/verify_kde_2026.py.", note)
 P("<b>Version 5.0, August 17.</b> The school-choice survey results are published, anonymized, and the "
   "closure grid is rebuilt on them. The survey: 38 households answered for 85 children (one family with "
   "one child arrived after the form closed and is counted); cleaned by hand "
@@ -1944,7 +2017,13 @@ srcs = [
  "Kentucky Department of Education, School Report Card assessment dataset, 2024-25 Kentucky Summative "
  "Assessments, school-level, all students: kyschoolreportcard.com datasets; the rows for the four Bourbon "
  "County elementary schools and the statewide elementary averages are archived in this repository as "
- "build/kde_ksa_2024_25.json",
+ "build/kde_ksa_2024_25.json; the 2025-26 rows, from KDE's Assessment and Accountability Data 2025-2026 "
+ "(education.ky.gov/Open-House/data, released October 14, 2026), as build/kde_ksa_2025_26.json with the raw "
+ "state rows and checksums in build/kde_acct_2026_*",
+ "Kentucky Department of Education, Comprehensive Support and Improvement process documents (CSI Process; "
+ "Entrance and Exit Criteria; School-Based Decision Making Council Implications, fall 2025; School Identification "
+ "Timeline, June 2025) and Kentucky's Accountability System overview, November 2025: archived in this repository "
+ "as build/kde_csi_*.pdf and build/kde_accountability_system_overview_2025_11.pdf",
  "Kentucky Department of Education, historical School Report Card datasets, 2011-12 through 2023-24: "
  "accountability achievement and profile files (education.ky.gov/Open-House/data/HistoricalDatasets) and, "
  "for 2017-18 and 2018-19, Wayback Machine captures of KDE's retired openhouse download endpoint; the "
@@ -2096,7 +2175,7 @@ srcs = [
  "(SPENDING_PER_STUDENT and Kentucky Report Card financial transparency files; statewide elementary averages in "
  "build/ky_elem_spending_2012_2017.json), with the reproducible extractor build/cost_history.py",
  "Kentucky Department of Education assessment files behind the science, social studies and writing score series, 2017-18 "
- "through 2024-25, extracted with sources and suppression flags to build/kde_subjects_history.json",
+ "through 2025-26, extracted with sources and suppression flags to build/kde_subjects_history.json",
  "Bourbon County Schools, index of records fulfilled in response to the July 2026 open records requests (received July 20-21, "
  "2026; N/A answers for any cost-benefit, enrollment, capacity, feasibility, or transportation analysis and any document "
  "evaluating the future use of NMES), archived in this repository as build/records_fulfilled_2026_07.pdf",
@@ -2501,7 +2580,7 @@ def footer(canvas, doc):
     canvas.setFont("Helvetica", 7.6)
     canvas.setFillColor(GRAY)
     canvas.drawString(0.9 * inch, 0.5 * inch,
-                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 5.0, August 17, 2026")
+                      "Saving North Middletown Elementary School  \u2022  A Close Look at Bourbon County Schools  \u2022  Version 5.1, October 15, 2026")
     canvas.drawRightString(7.6 * inch, 0.5 * inch, f"Page {doc.page - 1}")
     canvas.restoreState()
 

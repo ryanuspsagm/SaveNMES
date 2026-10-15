@@ -99,7 +99,7 @@ Statewide: CSI 53, TSI 77, ATSI 81. CSI years identified: 19 schools in year 1, 
 
 ## 8. Where the site carries 2025-26, and what still shows 2024-25
 
-- `index.html`, Fact One: the lede, the 2025-26 table (percent proficient or distinguished with the content index), the status table (status only, with the status-only overall from KDE's 51/40/5/4 weights), the status chart (`chartStatus`), the CSI explainer, the 2026 points on the two-decades chart, and a 2025-26 / 2024-25 toggle on the grade-level breakout. `tests/verify_kde_2026.py` ties each of those numbers to the archived rows.
+- `index.html`, Fact One: the lede, one two-year table (2024-25 and 2025-26 percent proficient or distinguished with the content index), the status table (status only, with the status-only overall from KDE's 51/40/5/4 weights), the status chart (`chartStatus`), the 2026 points on the two-decades chart, and a 2025-26 / 2024-25 toggle on the grade-level breakout. `tests/verify_kde_2026.py` ties each of those numbers to the archived rows.
 - The report builder still carries the 2024-25 claim at `build/build_pdf.py` lines 319 to 326 and the model at `build/build_model.py` lines 1218, 1243 and 1262; the committed report (v5.0, August 17) predates the release and the site says so. A report revision is a separate job.
 - `build/kde_scores_history.json` and `build/kde_subjects_history.json`, which feed the report's charts, were left at 2024-25 for the same reason; the entries to append are in section 9.
 
