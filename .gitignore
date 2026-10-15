@@ -1,3 +1,4 @@
 build/SaveNMES_Executive_Summary.pdf
 preview.html
 build/__pycache__/
+tests/__pycache__/
