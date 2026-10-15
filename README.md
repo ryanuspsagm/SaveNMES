@@ -44,7 +44,9 @@ public source cited in the report and on the site.
   `build/kde_kyrc24_*` and `build/kde_kyrc25_*`) and the 2025-26 release, and
   writes `build/cohort_analysis_2025_26.md`: how much of the 2025-26 fall is a
   cohort swap, how much is the fifth grade, and what enrollment says about
-  children leaving. The SABS fetch script uses a saved
+  children leaving. `python build/district_trend_2024_2026.py` writes
+  `build/district_trend_2024_2026.md`, the middle and high school results and
+  accountability profiles for the same three years. The SABS fetch script uses a saved
   `sabs_zones_raw.json` if present, then tries the NCES REST endpoint, and falls
   back to the EDGE bulk download (`SABS_1516_SchoolLevels.zip` in `~/Downloads`,
   or set `SABS_ZIP`), so it works without a reachable NCES server - which
