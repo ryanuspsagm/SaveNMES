@@ -31,7 +31,12 @@ public source cited in the report and on the site.
   prior plan (KBE June 2013, from the Wayback Machine) are archived as
   `build/dfp_current.pdf`, `build/dfp_2013_excerpt.png`, and
   `build/dfp_2021_excerpt.png`, with provenance in `build/dfp_manifest.json`;
-  they back the capacity analysis and the model's Facility_Plans tab. The SABS fetch script uses a saved
+  they back the capacity analysis and the model's Facility_Plans tab. `python build/fetch_kde_acct_2026.py` pulls KDE's 2025-26 accountability
+  datasets (published October 14, 2026) and writes the Bourbon County, Paris
+  Independent and state rows to `build/kde_acct_2026_*.csv`, the 2025-26
+  score files `build/kde_ksa_2025_26.json` and `build/kde_levels_2025_26.json`,
+  and the working comparison `build/ksa_2025_26_comparison.md`; the site and
+  report still show 2024-25 and do not read these files yet. The SABS fetch script uses a saved
   `sabs_zones_raw.json` if present, then tries the NCES REST endpoint, and falls
   back to the EDGE bulk download (`SABS_1516_SchoolLevels.zip` in `~/Downloads`,
   or set `SABS_ZIP`), so it works without a reachable NCES server - which

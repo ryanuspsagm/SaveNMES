@@ -1,0 +1,36 @@
+{
+ "page": "https://www.education.ky.gov/Open-House/data/Pages/Assessment_Accountability_Datasets_2025-2026.aspx",
+ "page_published": "10/14/2026 3:55 PM (as shown on the page)",
+ "retrieved": "2026-10-15",
+ "note": "Downloaded with a browser User-Agent; education.ky.gov answers plain curl with HTTP 403. Accountable_Summary_2026.CSV and All_Datasets_Archive.Zip were served with Content-Length 0 (origin last-modified 2026-10-15 04:42 UTC) on three attempts and are not archived.",
+ "files": [
+  {
+   "name": "Accountable_Profile_2026.CSV",
+   "url": "https://www.education.ky.gov/Open-House/data/OAA Temporary Datasets/Accountable_Profile_2026.CSV",
+   "bytes": 331210,
+   "md5": "d18c1c4bb49196166c54ea29592d6e27",
+   "role": "profile"
+  },
+  {
+   "name": "Accountable_Assessment_Performance_2026.CSV",
+   "url": "https://www.education.ky.gov/Open-House/data/OAA Temporary Datasets/Accountable_Assessment_Performance_2026.CSV",
+   "bytes": 27448141,
+   "md5": "5abaa03fa278b26add3c9f166c3ccb05",
+   "role": "assessment"
+  },
+  {
+   "name": "Assessment_Performance_by_Grade_2026.CSV",
+   "url": "https://www.education.ky.gov/Open-House/data/OAA Temporary Datasets/Assessment_Performance_by_Grade_2026.CSV",
+   "bytes": 55715316,
+   "md5": "6980cc09fcb7ebf2e7cffe86fa4be770",
+   "role": "by_grade"
+  },
+  {
+   "name": "ACCT_CSI_TSI_ATSI_2026.xlsx",
+   "url": "https://www.education.ky.gov/Open-House/data/OAA Temporary Datasets/ACCT_CSI_TSI_ATSI_2026.xlsx",
+   "bytes": 35000,
+   "md5": "637bb50a07c02a42035729dd3a03d87d",
+   "role": "csi"
+  }
+ ]
+}

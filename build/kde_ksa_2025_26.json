@@ -1,0 +1,533 @@
+{
+ "source": "Kentucky Department of Education, Assessment and Accountability Data 2025-2026 (page published 10/14/2026): Accountable_Assessment_Performance_2026.CSV (performance levels and content index, all students, elementary level) and Accountable_Profile_2026.CSV (indicator status, change, combined rates, ratings and federal classification). Downloaded 2026-10-15 from https://www.education.ky.gov/Open-House/data/Pages/Assessment_Accountability_Datasets_2025-2026.aspx. Percentages as published by KDE; suppressed cells marked *; KDE still publishes the content index for most suppressed cells.",
+ "retrieved": "2026-10-15",
+ "schools": {
+  "Bourbon Central Elementary School": {
+   "Reading": {
+    "P": "33",
+    "D": "12",
+    "PD": "46",
+    "CI": "60.1",
+    "suppressed": "N"
+   },
+   "Mathematics": {
+    "P": "28",
+    "D": "6",
+    "PD": "34",
+    "CI": "47.9",
+    "suppressed": "N"
+   },
+   "Science": {
+    "P": "25",
+    "D": "5",
+    "PD": "31",
+    "CI": "58.7",
+    "suppressed": "N"
+   },
+   "Social Studies": {
+    "P": "22",
+    "D": "9",
+    "PD": "30",
+    "CI": "42.1",
+    "suppressed": "N"
+   },
+   "Combined Writing": {
+    "P": "16",
+    "D": "10",
+    "PD": "27",
+    "CI": "49.4",
+    "suppressed": "N"
+   }
+  },
+  "Cane Ridge Elementary School": {
+   "Reading": {
+    "P": "29",
+    "D": "11",
+    "PD": "40",
+    "CI": "57.7",
+    "suppressed": "N"
+   },
+   "Mathematics": {
+    "P": "21",
+    "D": "3",
+    "PD": "25",
+    "CI": "43.8",
+    "suppressed": "N"
+   },
+   "Science": {
+    "P": "24",
+    "D": "7",
+    "PD": "32",
+    "CI": "64.5",
+    "suppressed": "N"
+   },
+   "Social Studies": {
+    "P": "23",
+    "D": "9",
+    "PD": "32",
+    "CI": "53.0",
+    "suppressed": "N"
+   },
+   "Combined Writing": {
+    "P": "27",
+    "D": "2",
+    "PD": "29",
+    "CI": "50.4",
+    "suppressed": "N"
+   }
+  },
+  "North Middletown Elementary School": {
+   "Reading": {
+    "P": "20",
+    "D": "2",
+    "PD": "21",
+    "CI": "36.5",
+    "suppressed": "N"
+   },
+   "Mathematics": {
+    "P": "20",
+    "D": "3",
+    "PD": "23",
+    "CI": "41.8",
+    "suppressed": "N"
+   },
+   "Science": {
+    "P": "*",
+    "D": "*",
+    "PD": "*",
+    "CI": "58.7",
+    "suppressed": "Y"
+   },
+   "Social Studies": {
+    "P": "*",
+    "D": "*",
+    "PD": "*",
+    "CI": "22.2",
+    "suppressed": "Y"
+   },
+   "Combined Writing": {
+    "P": "*",
+    "D": "*",
+    "PD": "*",
+    "CI": "25.0",
+    "suppressed": "Y"
+   }
+  },
+  "Paris Elementary School": {
+   "Reading": {
+    "P": "25",
+    "D": "6",
+    "PD": "31",
+    "CI": "49.6",
+    "suppressed": "N"
+   },
+   "Mathematics": {
+    "P": "28",
+    "D": "3",
+    "PD": "31",
+    "CI": "48.9",
+    "suppressed": "N"
+   },
+   "Science": {
+    "P": "21",
+    "D": "2",
+    "PD": "23",
+    "CI": "60.1",
+    "suppressed": "N"
+   },
+   "Social Studies": {
+    "P": "14",
+    "D": "4",
+    "PD": "18",
+    "CI": "31.0",
+    "suppressed": "N"
+   },
+   "Combined Writing": {
+    "P": "10",
+    "D": "2",
+    "PD": "12",
+    "CI": "35.5",
+    "suppressed": "N"
+   }
+  }
+ },
+ "district_elementary": {
+  "Reading": {
+   "P": "30",
+   "D": "11",
+   "PD": "40",
+   "CI": "56.4",
+   "suppressed": "N"
+  },
+  "Mathematics": {
+   "P": "24",
+   "D": "5",
+   "PD": "29",
+   "CI": "45.5",
+   "suppressed": "N"
+  },
+  "Science": {
+   "P": "24",
+   "D": "6",
+   "PD": "30",
+   "CI": "61.3",
+   "suppressed": "N"
+  },
+  "Social Studies": {
+   "P": "21",
+   "D": "8",
+   "PD": "29",
+   "CI": "44.3",
+   "suppressed": "N"
+  },
+  "Combined Writing": {
+   "P": "20",
+   "D": "6",
+   "PD": "26",
+   "CI": "47.1",
+   "suppressed": "N"
+  }
+ },
+ "paris_independent_elementary": {
+  "Reading": {
+   "P": "25",
+   "D": "6",
+   "PD": "31",
+   "CI": "49.6",
+   "suppressed": "N"
+  },
+  "Mathematics": {
+   "P": "28",
+   "D": "3",
+   "PD": "31",
+   "CI": "48.9",
+   "suppressed": "N"
+  },
+  "Science": {
+   "P": "21",
+   "D": "2",
+   "PD": "23",
+   "CI": "60.1",
+   "suppressed": "N"
+  },
+  "Social Studies": {
+   "P": "14",
+   "D": "4",
+   "PD": "18",
+   "CI": "31.0",
+   "suppressed": "N"
+  },
+  "Combined Writing": {
+   "P": "10",
+   "D": "2",
+   "PD": "12",
+   "CI": "35.5",
+   "suppressed": "N"
+  }
+ },
+ "state_elementary": {
+  "Reading": {
+   "P": "31",
+   "D": "20",
+   "PD": "50",
+   "CI": "68.7",
+   "suppressed": "N"
+  },
+  "Mathematics": {
+   "P": "31",
+   "D": "12",
+   "PD": "43",
+   "CI": "61.0",
+   "suppressed": "N"
+  },
+  "Science": {
+   "P": "29",
+   "D": "11",
+   "PD": "40",
+   "CI": "67.7",
+   "suppressed": "N"
+  },
+  "Social Studies": {
+   "P": "23",
+   "D": "14",
+   "PD": "38",
+   "CI": "54.9",
+   "suppressed": "N"
+  },
+  "Combined Writing": {
+   "P": "27",
+   "D": "14",
+   "PD": "41",
+   "CI": "63.5",
+   "suppressed": "N"
+  }
+ },
+ "profile": {
+  "Bourbon Central Elementary School": {
+   "federal_classification": "TSI",
+   "federal_reason": "Disability",
+   "overall_combined_indicator_rate": "54.1",
+   "overall_indicator_rating": "2",
+   "overall_combined_federal_rate": "53.8",
+   "reading_math": {
+    "status": "54.0",
+    "status_rating": "3",
+    "change": "3.5",
+    "change_rating": "4",
+    "combined_rate": "57.5",
+    "combined_rating": "4"
+   },
+   "science_social_studies_writing": {
+    "status": "50.1",
+    "status_rating": "3",
+    "change": "-4.2",
+    "change_rating": "2",
+    "combined_rate": "45.9",
+    "combined_rating": "2"
+   },
+   "english_learner_progress": {
+    "status": "67.8",
+    "change": "-2.5",
+    "combined_rate": "65.3",
+    "combined_rating": "4"
+   },
+   "quality_of_school_climate_and_safety": {
+    "status": "76.1",
+    "status_rating": "3",
+    "change": "1.7",
+    "change_rating": "4",
+    "combined_rate": "77.8",
+    "combined_rating": "4"
+   }
+  },
+  "Cane Ridge Elementary School": {
+   "federal_classification": "",
+   "federal_reason": "",
+   "overall_combined_indicator_rate": "55.9",
+   "overall_indicator_rating": "3",
+   "overall_combined_federal_rate": "54.5",
+   "reading_math": {
+    "status": "50.8",
+    "status_rating": "2",
+    "change": "-1.4",
+    "change_rating": "3",
+    "combined_rate": "49.4",
+    "combined_rating": "2"
+   },
+   "science_social_studies_writing": {
+    "status": "56.0",
+    "status_rating": "3",
+    "change": "5.9",
+    "change_rating": "4",
+    "combined_rate": "61.9",
+    "combined_rating": "4"
+   },
+   "english_learner_progress": {
+    "status": "",
+    "change": "",
+    "combined_rate": "",
+    "combined_rating": ""
+   },
+   "quality_of_school_climate_and_safety": {
+    "status": "77.8",
+    "status_rating": "4",
+    "change": "1.0",
+    "change_rating": "4",
+    "combined_rate": "78.8",
+    "combined_rating": "4"
+   }
+  },
+  "North Middletown Elementary School": {
+   "federal_classification": "CSI",
+   "federal_reason": "Bottom 5%",
+   "overall_combined_indicator_rate": "18.2",
+   "overall_indicator_rating": "1",
+   "overall_combined_federal_rate": "33.0",
+   "reading_math": {
+    "status": "39.2",
+    "status_rating": "2",
+    "change": "-14.4",
+    "change_rating": "1",
+    "combined_rate": "24.8",
+    "combined_rating": "1"
+   },
+   "science_social_studies_writing": {
+    "status": "35.3",
+    "status_rating": "2",
+    "change": "-31.0",
+    "change_rating": "1",
+    "combined_rate": "4.3",
+    "combined_rating": "1"
+   },
+   "english_learner_progress": {
+    "status": "",
+    "change": "",
+    "combined_rate": "",
+    "combined_rating": ""
+   },
+   "quality_of_school_climate_and_safety": {
+    "status": "74.8",
+    "status_rating": "3",
+    "change": "-1.0",
+    "change_rating": "3",
+    "combined_rate": "73.8",
+    "combined_rating": "3"
+   }
+  },
+  "Paris Elementary School": {
+   "federal_classification": "",
+   "federal_reason": "",
+   "overall_combined_indicator_rate": "52.6",
+   "overall_indicator_rating": "2",
+   "overall_combined_federal_rate": "48.1",
+   "reading_math": {
+    "status": "49.3",
+    "status_rating": "2",
+    "change": "4.5",
+    "change_rating": "4",
+    "combined_rate": "53.8",
+    "combined_rating": "3"
+   },
+   "science_social_studies_writing": {
+    "status": "42.2",
+    "status_rating": "2",
+    "change": "6.1",
+    "change_rating": "4",
+    "combined_rate": "48.3",
+    "combined_rating": "3"
+   },
+   "english_learner_progress": {
+    "status": "",
+    "change": "",
+    "combined_rate": "",
+    "combined_rating": ""
+   },
+   "quality_of_school_climate_and_safety": {
+    "status": "80.4",
+    "status_rating": "4",
+    "change": "0.9",
+    "change_rating": "4",
+    "combined_rate": "81.3",
+    "combined_rating": "4"
+   }
+  },
+  "Bourbon County (district, ES)": {
+   "federal_classification": "",
+   "federal_reason": "",
+   "overall_combined_indicator_rate": "51.0",
+   "overall_indicator_rating": "2",
+   "overall_combined_federal_rate": "51.8",
+   "reading_math": {
+    "status": "51.0",
+    "status_rating": "2",
+    "change": "-0.5",
+    "change_rating": "3",
+    "combined_rate": "50.5",
+    "combined_rating": "2"
+   },
+   "science_social_studies_writing": {
+    "status": "50.9",
+    "status_rating": "3",
+    "change": "-3.0",
+    "change_rating": "2",
+    "combined_rate": "47.9",
+    "combined_rating": "2"
+   },
+   "english_learner_progress": {
+    "status": "61.4",
+    "change": "-2.4",
+    "combined_rate": "59.0",
+    "combined_rating": "3"
+   },
+   "quality_of_school_climate_and_safety": {
+    "status": "76.7",
+    "status_rating": "3",
+    "change": "1.1",
+    "change_rating": "4",
+    "combined_rate": "77.8",
+    "combined_rating": "4"
+   }
+  },
+  "Paris Independent (district, ES)": {
+   "federal_classification": "",
+   "federal_reason": "",
+   "overall_combined_indicator_rate": "52.6",
+   "overall_indicator_rating": "2",
+   "overall_combined_federal_rate": "48.1",
+   "reading_math": {
+    "status": "49.3",
+    "status_rating": "2",
+    "change": "4.5",
+    "change_rating": "4",
+    "combined_rate": "53.8",
+    "combined_rating": "3"
+   },
+   "science_social_studies_writing": {
+    "status": "42.2",
+    "status_rating": "2",
+    "change": "6.1",
+    "change_rating": "4",
+    "combined_rate": "48.3",
+    "combined_rating": "3"
+   },
+   "english_learner_progress": {
+    "status": "",
+    "change": "",
+    "combined_rate": "",
+    "combined_rating": ""
+   },
+   "quality_of_school_climate_and_safety": {
+    "status": "80.4",
+    "status_rating": "4",
+    "change": "0.9",
+    "change_rating": "4",
+    "combined_rate": "81.3",
+    "combined_rating": "4"
+   }
+  },
+  "Kentucky (ES)": {
+   "federal_classification": "",
+   "federal_reason": "",
+   "overall_combined_indicator_rate": "64.7",
+   "overall_indicator_rating": "3",
+   "overall_combined_federal_rate": "64.7",
+   "reading_math": {
+    "status": "64.9",
+    "status_rating": "3",
+    "change": "0.3",
+    "change_rating": "4",
+    "combined_rate": "65.2",
+    "combined_rating": "4"
+   },
+   "science_social_studies_writing": {
+    "status": "62.0",
+    "status_rating": "3",
+    "change": "0.0",
+    "change_rating": "3",
+    "combined_rate": "62.0",
+    "combined_rating": "3"
+   },
+   "english_learner_progress": {
+    "status": "66.8",
+    "change": "4.6",
+    "combined_rate": "71.4",
+    "combined_rating": "5"
+   },
+   "quality_of_school_climate_and_safety": {
+    "status": "77.4",
+    "status_rating": "4",
+    "change": "0.0",
+    "change_rating": "3",
+    "combined_rate": "77.4",
+    "combined_rating": "4"
+   }
+  }
+ },
+ "rating_colors": {
+  "1": "red (lowest)",
+  "2": "orange",
+  "3": "yellow",
+  "4": "green",
+  "5": "blue (highest)"
+ }
+}

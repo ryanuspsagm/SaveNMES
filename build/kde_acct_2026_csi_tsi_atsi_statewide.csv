@@ -1,0 +1,212 @@
+List,Code,District,School,Type,School Level,Title 1,Federal Classification,Number of years identified,Reason for Federal Classification
+CSI,41090,Bourbon County,North Middletown Elementary School,A1,ES,Y,CSI,1,Bottom 5%
+CSI,111026,Casey County,Jones Park Elementary,A1,ES,Y,CSI,1,Bottom 5%
+CSI,132030,Cloverport Independent,Cloverport Independent School,A1,ES,Y,CSI,2,Bottom 5%
+CSI,132030,Cloverport Independent,Cloverport Independent School,A1,MS,Y,CSI,1,Bottom 5%
+CSI,134017,Covington Independent,Holmes Middle School,A1,MS,Y,CSI,1,Bottom 5%
+CSI,155275,Elliott County,Elliott County Middle School,A1,MS,N,CSI,1,Bottom 5%
+CSI,157010,Erlanger-Elsmere Independent,Howell Elementary School,A1,ES,Y,CSI,1,Bottom 5%
+CSI,186018,Fulton Independent,Fulton Independent School,A1,ES,Y,CSI,1,Bottom 5%
+CSI,201020,Grant County,Crittenden-Mt. Zion Elementary,A1,ES,Y,CSI,1,Bottom 5%
+CSI,275005,Jefferson County,Cane Run Elementary,A1,ES,Y,CSI,2,Bottom 5%
+CSI,275014,Jefferson County,Greenwood Elementary,A1,ES,Y,CSI,2,Bottom 5%
+CSI,275045,Jefferson County,Butler Traditional High,A1,HS,Y,CSI,1,Bottom 5%
+CSI,275066,Jefferson County,Wilkerson Elementary School,A1,ES,Y,CSI,1,Bottom 5%
+CSI,275075,Jefferson County,Pleasure Ridge Park High,A1,HS,Y,CSI,1,Bottom 5%
+CSI,275081,Jefferson County,Rangeland Elementary,A1,ES,Y,CSI,2,Bottom 5%
+CSI,275090,Jefferson County,Thomas Jefferson Middle,A1,MS,Y,CSI,6,Bottom 5%
+CSI,275092,Jefferson County,Crums Lane Elementary,A1,ES,Y,CSI,2,Bottom 5%
+CSI,275100,Jefferson County,Doss High,A1,HS,Y,CSI,2,Bottom 5%
+CSI,275103,Jefferson County,Slaughter Elementary,A1,ES,Y,CSI,1,Bottom 5%
+CSI,275104,Jefferson County,Trunnell Elementary,A1,ES,Y,CSI,2,Bottom 5%
+CSI,275116,Jefferson County,Wellington Elementary,A1,ES,Y,CSI,1,Bottom 5%
+CSI,275121,Jefferson County,Hartstern Elementary,A1,ES,Y,CSI,2,Bottom 5%
+CSI,275133,Jefferson County,Lassiter Middle,A1,MS,Y,CSI,1,Bottom 5%
+CSI,275144,Jefferson County,Stuart Middle School,A1,MS,Y,CSI,6,Bottom 5%
+CSI,275147,Jefferson County,Mill Creek Elementary,A1,ES,Y,CSI,6,Bottom 5%
+CSI,275149,Jefferson County,Blake Elementary,A1,ES,Y,CSI,2,Bottom 5%
+CSI,275155,Jefferson County,Marion C. Moore School,A1,HS,Y,CSI,5,Bottom 5%
+CSI,275164,Jefferson County,Conway Middle,A1,MS,Y,CSI,6,Bottom 5%
+CSI,275182,Jefferson County,Dr. William H. Perry Elementary School,A1,ES,Y,CSI,6,Bottom 5%
+CSI,275185,Jefferson County,Atkinson Academy,A1,ES,Y,CSI,2,Bottom 5%
+CSI,275240,Jefferson County,Whitney Young Elementary At Engelhard,A1,ES,Y,CSI,6,Bottom 5%
+CSI,275243,Jefferson County,Byck Elementary,A1,ES,Y,CSI,2,Bottom 5%
+CSI,275323,Jefferson County,Cochran Elementary,A1,ES,Y,CSI,2,Bottom 5%
+CSI,275325,Jefferson County,Jacob Elementary,A1,ES,Y,CSI,6,Bottom 5%
+CSI,275335,Jefferson County,Iroquois High,A1,HS,Y,CSI,6,Bottom 5%
+CSI,275406,Jefferson County,Dr. J. Blaine Hudson Middle School,A1,MS,Y,CSI,2,Bottom 5%
+CSI,275432,Jefferson County,King Elementary,A1,ES,Y,CSI,6,Bottom 5%
+CSI,275440,Jefferson County,Mcferran Preparatory Academy,A1,ES,Y,CSI,6,Bottom 5%
+CSI,275470,Jefferson County,Johnson Traditional Middle,A1,MS,Y,CSI,2,Bottom 5%
+CSI,275480,Jefferson County,Maupin Elementary,A1,ES,Y,CSI,6,Bottom 5%
+CSI,275560,Jefferson County,Rutherford Elementary,A1,ES,Y,CSI,2,Bottom 5%
+CSI,275590,Jefferson County,The Academy @ Shawnee,A1,HS,Y,CSI,6,Bottom 5%
+CSI,275590,Jefferson County,The Academy @ Shawnee,A1,MS,Y,CSI,5,Bottom 5%
+CSI,275620,Jefferson County,Frederick Law Olmsted Academy North,A1,MS,Y,CSI,6,Bottom 5%
+CSI,275660,Jefferson County,Coleridge-Taylor Montessori Elementary,A1,ES,Y,CSI,6,Bottom 5%
+CSI,275720,Jefferson County,Kennedy Elementary,A1,ES,Y,CSI,6,Bottom 5%
+CSI,275730,Jefferson County,Frederick Law Olmsted Academy South,A1,MS,Y,CSI,5,Bottom 5%
+CSI,415090,Menifee County,Menifee County High School,A1,MS,N,CSI,2,Bottom 5%
+CSI,452020,Newport Independent,Newport Primary School,A1,ES,Y,CSI,1,Bottom 5%
+CSI,452040,Newport Independent,Newport Intermediate School,A1,ES,Y,CSI,1,Bottom 5%
+CSI,475020,Owsley County,Owsley County Elementary School,A1,ES,Y,CSI,1,Bottom 5%
+CSI,565020,Union County,Morganfield Elementary School,A1,ES,Y,CSI,1,Bottom 5%
+CSI,581051,Wayne County,Wayne County Middle School,A1,MS,Y,CSI,1,Bottom 5%
+TSI,11050,Anderson County,Saffell Street Elementary School,A1,ES,Y,TSI,,Disability
+TSI,21050,Barren County,Barren County Middle School,A1,MS,N,TSI,,Disability
+TSI,35015,Boone County,Randall K. Cooper High School,A1,HS,N,TSI,,Disability
+TSI,35050,Boone County,Florence Elementary School,A1,ES,Y,TSI,,Disability
+TSI,35071,Boone County,Larry A. Ryle High School,A1,HS,N,TSI,,English Learners plus Monitored; Disability
+TSI,41010,Bourbon County,Bourbon Central Elementary School,A1,ES,Y,TSI,,Disability
+TSI,71018,Bullitt County,Bullitt Lick Middle School,A1,MS,Y,TSI,,Disability
+TSI,75030,Butler County,Butler County High School,A1,HS,N,TSI,,English Learners plus Monitored
+TSI,105505,Carter County,West Carter Middle School,A1,MS,Y,TSI,,Disability
+TSI,121008,Clark County,William G. Conkwright Elementary,A1,ES,Y,TSI,,Disability
+TSI,121023,Clark County,Robert D. Campbell Jr. High,A1,MS,Y,TSI,,English Learners plus Monitored
+TSI,121026,Clark County,Rev. Henry E. Baker Sr. Interm. School,A1,MS,Y,TSI,,Disability
+TSI,121030,Clark County,George Rogers Clark High School,A1,HS,N,TSI,,Disability
+TSI,145008,Daviess County,F T Burns Middle School,A1,MS,N,TSI,,Disability
+TSI,145010,Daviess County,Daviess County High School,A1,HS,N,TSI,,English Learners plus Monitored; Disability
+TSI,152035,Elizabethtown Independent,Talton K Stone Middle School,A1,MS,Y,TSI,,Disability
+TSI,156020,Eminence Independent,Eminence Elementary School,A1,ES,Y,TSI,,Disability
+TSI,161085,Estill County,Estill County Middle School,A1,MS,Y,TSI,,Disability
+TSI,161280,Estill County,West Irvine Elementary,A1,ES,Y,TSI,,Disability
+TSI,171040,Fleming County,Flemingsburg Elementary School,A1,ES,Y,TSI,,Disability
+TSI,185015,Fulton County,Fulton County Middle School,A1,MS,Y,TSI,,African American
+TSI,201016,Grant County,Sherman Elementary,A1,ES,Y,TSI,,Disability
+TSI,231168,Hardin County,West Hardin Middle School,A1,MS,Y,TSI,,Disability
+TSI,241040,Harrison County,Harrison County High School,A1,HS,N,TSI,,Disability
+TSI,241043,Harrison County,Harrison County Middle School,A1,MS,N,TSI,,Disability
+TSI,255040,Henry County,New Castle Elementary School,A1,ES,Y,TSI,,Disability
+TSI,265130,Hopkins County,Hopkins County Central High School,A1,HS,Y,TSI,,Disability
+TSI,271025,Jackson County,Jackson County Middle School,A1,MS,Y,TSI,,Disability
+TSI,275010,Jefferson County,Fairdale Elementary,A1,ES,Y,TSI,,Disability
+TSI,275046,Jefferson County,Chenoweth Elementary,A1,ES,Y,TSI,,African American; Disability
+TSI,275057,Jefferson County,Fairdale High,A1,HS,Y,TSI,,African American; English Learners plus Monitored; Disability
+TSI,275065,Jefferson County,Jeffersontown High,A1,HS,Y,TSI,,English Learners plus Monitored
+TSI,275071,Jefferson County,Stonestreet Elementary,A1,ES,Y,TSI,,Disability
+TSI,275073,Jefferson County,Seneca High,A1,HS,Y,TSI,,English Learners plus Monitored
+TSI,275076,Jefferson County,Indian Trail Elementary,A1,ES,Y,TSI,,English Learners plus Monitored; Economically Disadvantaged; Disability
+TSI,275079,Jefferson County,Kerrick Elementary,A1,ES,Y,TSI,,African American
+TSI,275083,Jefferson County,Cochrane Elementary,A1,ES,Y,TSI,,Disability
+TSI,275097,Jefferson County,Shacklette Elementary,A1,ES,Y,TSI,,Hispanic; Disability
+TSI,275099,Jefferson County,Minors Lane Elementary,A1,ES,Y,TSI,,Disability
+TSI,275102,Jefferson County,Chancey Elementary,A1,ES,Y,TSI,,Disability
+TSI,275105,Jefferson County,Ballard High,A1,HS,N,TSI,,Disability
+TSI,275115,Jefferson County,Gutermuth Elementary,A1,ES,Y,TSI,,African American
+TSI,275145,Jefferson County,Laukhuf Elementary,A1,ES,Y,TSI,,Disability
+TSI,275155,Jefferson County,Marion C. Moore School,A1,MS,Y,TSI,,African American; English Learners plus Monitored; Disability
+TSI,275163,Jefferson County,Knight Middle,A1,MS,Y,TSI,,African American; English Learners plus Monitored; Disability
+TSI,275260,Jefferson County,Brandeis Elementary,A1,ES,N,TSI,,Disability
+TSI,275396,Jefferson County,Jefferson County Traditional Middle,A1,MS,N,TSI,,Disability
+TSI,275520,Jefferson County,Lincoln Elementary Performing Arts,A1,ES,N,TSI,,African American; Economically Disadvantaged
+TSI,275580,Jefferson County,Semple Elementary,A1,ES,Y,TSI,,Disability
+TSI,275610,Jefferson County,Shelby Academy,A1,ES,Y,TSI,,African American; Economically Disadvantaged
+TSI,281019,Jessamine County,West Jessamine High School,A1,HS,N,TSI,,Disability
+TSI,281040,Jessamine County,Red Oak Elementary School,A1,ES,Y,TSI,,Disability
+TSI,281050,Jessamine County,Nicholasville Elementary School,A1,ES,Y,TSI,,Disability
+TSI,291090,Kenton County,Simon Kenton High School,A1,HS,N,TSI,,Disability
+TSI,315200,Lawrence County,Louisa Middle School,A1,MS,Y,TSI,,Disability
+TSI,381111,Marshall County,South Marshall Middle,A1,MS,Y,TSI,,Disability
+TSI,411015,Meade County,Stuart Pepper Middle School,A1,MS,N,TSI,,Disability
+TSI,411050,Meade County,Flaherty Elementary School,A1,ES,Y,TSI,,Disability
+TSI,411070,Meade County,Meade County High School,A1,HS,N,TSI,,Disability
+TSI,421035,Mercer County,Kenneth D. King Middle School,A1,MS,Y,TSI,,Disability
+TSI,425010,Metcalfe County,Metcalfe County Middle School,A1,MS,Y,TSI,,Disability
+TSI,445150,Muhlenberg County,Muhlenberg County Middle School,A1,MS,N,TSI,,Disability
+TSI,465060,Oldham County,Oldham County High School,A1,HS,N,TSI,,Disability
+TSI,501380,Pulaski County,Pulaski County High School,A1,HS,N,TSI,,Disability
+TSI,531130,Shelby County,Wright Elementary,A1,ES,Y,TSI,,Disability
+TSI,536090,Somerset Independent,Meece Middle School,A1,MS,N,TSI,,Disability
+TSI,545040,Taylor County,Taylor County Middle School,A1,MS,Y,TSI,,Disability
+TSI,551080,Todd County,Todd County Middle School,A1,MS,N,TSI,,African American; Disability
+TSI,555013,Trigg County,Trigg County Primary School,A1,ES,Y,TSI,,Disability
+TSI,555014,Trigg County,Trigg County Intermediate School,A1,ES,Y,TSI,,Disability
+TSI,571210,Warren County,Warren Central High School,A1,HS,Y,TSI,,English Learners plus Monitored
+TSI,581190,Wayne County,Monticello Elementary School,A1,ES,Y,TSI,,Disability
+TSI,581200,Wayne County,Wayne County High School,A1,HS,N,TSI,,English Learners plus Monitored
+TSI,581437,Wayne County,Bell Elementary School,A1,ES,Y,TSI,,Disability
+TSI,585125,Webster County,Webster County Middle School,A1,MS,N,TSI,,English Learners plus Monitored
+TSI,593010,Williamstown Independent,Williamstown Elementary,A1,ES,Y,TSI,,Disability
+TSI,601085,Woodford County,Woodford County Middle School,A1,MS,N,TSI,,Disability
+ATSI,12050,Ashland Independent,Ashland Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,17030,Bardstown Independent,Bardstown Middle School,A1,MS,N,ATSI,5,Disability
+ATSI,35005,Boone County,A M Yealey Elementary School,A1,ES,Y,ATSI,5,Disability
+ATSI,35020,Boone County,Rector A. Jones Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,35030,Boone County,Boone County High School,A1,HS,N,ATSI,5,English Learners plus Monitored; Disability
+ATSI,35045,Boone County,Conner High School,A1,HS,N,ATSI,5,Disability
+ATSI,35081,Boone County,Ockerman Elementary School,A1,ES,Y,ATSI,5,Disability
+ATSI,41120,Bourbon County,Bourbon County Middle School,A1,MS,N,ATSI,5,Disability
+ATSI,42065,Bowling Green Independent,Bowling Green Junior High,A1,MS,Y,ATSI,5,Disability
+ATSI,42070,Bowling Green Independent,Bowling Green High School,A1,HS,Y,ATSI,5,English Learners plus Monitored
+ATSI,71008,Bullitt County,Shepherdsville Elementary,A1,ES,Y,ATSI,5,Disability
+ATSI,71025,Bullitt County,Hebron Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,71050,Bullitt County,Mt. Washington Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,91011,Campbell County,Campbell County Middle School,A1,MS,N,ATSI,5,Disability
+ATSI,115026,Christian County,Freedom Elementary School,A1,ES,Y,ATSI,4,Disability
+ATSI,115035,Christian County,Christian County Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,115058,Christian County,Hopkinsville Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,115130,Christian County,Pembroke Elementary School,A1,ES,Y,ATSI,5,Disability
+ATSI,143003,Danville Independent,Mary G. Hogsett Primary School,A1,ES,Y,ATSI,5,Disability
+ATSI,143010,Danville Independent,Edna L. Toliver Intermediate School,A1,ES,Y,ATSI,5,Disability
+ATSI,157060,Erlanger-Elsmere Independent,Tichenor Middle School,A1,MS,N,ATSI,5,Disability
+ATSI,165030,Fayette County,Bryan Station Middle School,A1,MS,Y,ATSI,3,Disability
+ATSI,165039,Fayette County,Henry Clay High School,A1,HS,Y,ATSI,5,English Learners plus Monitored; Disability
+ATSI,165065,Fayette County,Leestown Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,165067,Fayette County,Lexington Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,165100,Fayette County,Tates Creek Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,165170,Fayette County,Bryan Station High School,A1,HS,Y,ATSI,5,English Learners plus Monitored
+ATSI,165200,Fayette County,Paul Laurence Dunbar High School,A1,HS,Y,ATSI,5,English Learners plus Monitored
+ATSI,165245,Fayette County,Winburn Middle School,A1,MS,Y,ATSI,5,English Learners plus Monitored; Disability
+ATSI,165255,Fayette County,Millcreek Elementary School,A1,ES,Y,ATSI,5,Disability
+ATSI,165525,Fayette County,Southern Middle School,A1,MS,Y,ATSI,5,English Learners plus Monitored; Disability
+ATSI,175440,Floyd County,James D. Adams Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,181015,Franklin County,Bondurant Middle School,A1,MS,N,ATSI,5,Disability
+ATSI,181030,Franklin County,Elkhorn Middle School,A1,MS,N,ATSI,5,English Learners plus Monitored; Disability
+ATSI,191006,Gallatin County,Gallatin County Upper Elementary,A1,ES,Y,ATSI,5,Disability
+ATSI,191010,Gallatin County,Gallatin County Lower Elementary,A1,ES,Y,ATSI,5,Disability
+ATSI,221015,Greenup County,Greenup County School Of Innovation,A1,MS,N,ATSI,5,Disability
+ATSI,231080,Hardin County,North Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,275007,Jefferson County,Eastern High,A1,HS,N,ATSI,5,English Learners plus Monitored; Disability
+ATSI,275011,Jefferson County,Fern Creek Elementary,A1,ES,Y,ATSI,5,Disability
+ATSI,275012,Jefferson County,Fern Creek High,A1,HS,Y,ATSI,5,Disability
+ATSI,275031,Jefferson County,Southern High,A1,HS,Y,ATSI,5,Disability
+ATSI,275041,Jefferson County,Newburg Middle,A1,MS,Y,ATSI,5,African American; English Learners plus Monitored; Economically Disadvantaged; Disability
+ATSI,275049,Jefferson County,Farnsley Middle,A1,MS,Y,ATSI,5,Disability
+ATSI,275072,Jefferson County,Watterson Elementary,A1,ES,Y,ATSI,5,Disability
+ATSI,275077,Jefferson County,Westport Middle,A1,MS,Y,ATSI,5,Disability
+ATSI,275119,Jefferson County,Crosby Middle,A1,MS,N,ATSI,5,Disability
+ATSI,275128,Jefferson County,Price Elementary,A1,ES,Y,ATSI,5,Disability
+ATSI,275162,Jefferson County,Kammerer Middle,A1,MS,N,ATSI,5,Disability
+ATSI,275166,Jefferson County,Jeffersontown Elementary,A1,ES,Y,ATSI,5,Disability
+ATSI,275167,Jefferson County,Carrithers Middle,A1,MS,Y,ATSI,5,English Learners plus Monitored; Disability
+ATSI,275219,Jefferson County,Ramsey Middle,A1,MS,Y,ATSI,5,Disability
+ATSI,275320,Jefferson County,Highland Middle,A1,MS,Y,ATSI,5,Disability
+ATSI,275340,Jefferson County,Meyzeek Middle,A1,MS,N,ATSI,5,African American; Disability
+ATSI,281026,Jessamine County,West Jessamine Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,281070,Jessamine County,Brookside Elementary School,A1,ES,Y,ATSI,5,Disability
+ATSI,335100,Lewis County,Lewis County Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,341065,Lincoln County,Lincoln County Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,365020,Madison County,Madison Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,435040,Montgomery County,Montgomery County High School,A1,HS,N,ATSI,5,Disability
+ATSI,435070,Montgomery County,Mcnabb Middle School,A1,MS,N,ATSI,5,Disability
+ATSI,451010,Nelson County,Bloomfield Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,451090,Nelson County,Old Kentucky Home Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,461155,Ohio County,Ohio County High School,A1,HS,N,ATSI,5,English Learners plus Monitored
+ATSI,471078,Owen County,Maurice Bowling Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,472108,Owensboro Independent,Owensboro Middle School,A1,MS,Y,ATSI,5,English Learners plus Monitored
+ATSI,476010,Paducah Independent,Paducah Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,481061,Pendleton County,Phillip Sharp Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,523025,Russellville Independent,R E Stevenson Elementary School,A1,ES,Y,ATSI,5,Disability
+ATSI,525012,Scott County,Anne Mason Elementary School,A1,ES,Y,ATSI,5,Disability
+ATSI,525018,Scott County,Georgetown Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,525040,Scott County,Scott County High School,A1,HS,N,ATSI,5,Disability
+ATSI,525070,Scott County,Southern Elementary School,A1,ES,Y,ATSI,5,Disability
+ATSI,531014,Shelby County,Painted Stone Elementary,A1,ES,Y,ATSI,5,English Learners plus Monitored
+ATSI,531040,Shelby County,Martha Layne Collins High School,A1,HS,N,ATSI,5,English Learners plus Monitored
+ATSI,531054,Shelby County,Marnel C. Moorman School,A1,MS,Y,ATSI,5,English Learners plus Monitored; Disability
+ATSI,531080,Shelby County,Shelby County West Middle School,A1,MS,N,ATSI,5,Hispanic; English Learners plus Monitored; Disability
+ATSI,531110,Shelby County,Shelby County East Middle School,A1,MS,N,ATSI,5,English Learners plus Monitored; Disability
+ATSI,535030,Simpson County,Franklin-Simpson Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,565055,Union County,Union County Middle School,A1,MS,Y,ATSI,5,Disability
+ATSI,571175,Warren County,Henry F. Moss Middle School,A1,MS,Y,ATSI,5,English Learners plus Monitored; Disability
