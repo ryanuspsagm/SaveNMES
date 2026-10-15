@@ -1,4 +1,4 @@
-"""Run the full test suite: cross-file validation, number sync, browser tests.
+"""Run the full test suite: cross-file validation, number sync, 2025-26 score verification, browser tests.
 
 Run:  python tests/run_all.py
 Exits nonzero if any suite fails. See each script's docstring for its
@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-SUITES = ["validate_all.py", "sync_check.py", "test_site.py"]
+SUITES = ["validate_all.py", "sync_check.py", "verify_kde_2026.py", "test_site.py"]
 
 
 def main():

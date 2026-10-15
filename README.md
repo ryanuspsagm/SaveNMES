@@ -35,8 +35,10 @@ public source cited in the report and on the site.
   datasets (published October 14, 2026) and writes the Bourbon County, Paris
   Independent and state rows to `build/kde_acct_2026_*.csv`, the 2025-26
   score files `build/kde_ksa_2025_26.json` and `build/kde_levels_2025_26.json`,
-  and the working comparison `build/ksa_2025_26_comparison.md`; the site and
-  report still show 2024-25 and do not read these files yet. The SABS fetch script uses a saved
+  and the working comparison `build/ksa_2025_26_comparison.md`. The site's Fact
+  One carries the 2025-26 results (status view, status chart, CSI explainer;
+  `tests/verify_kde_2026.py` ties every number on the page to the archived
+  rows); the report (v5.0) and model still show 2024-25. The SABS fetch script uses a saved
   `sabs_zones_raw.json` if present, then tries the NCES REST endpoint, and falls
   back to the EDGE bulk download (`SABS_1516_SchoolLevels.zip` in `~/Downloads`,
   or set `SABS_ZIP`), so it works without a reachable NCES server - which
@@ -51,6 +53,9 @@ public source cited in the report and on the site.
   the no-dash rule; pagination quality; headline claims.
 - `tests/sync_check.py` - every shared number checked three ways: site
   JavaScript vs workbook cells vs report text.
+- `tests/verify_kde_2026.py` - the 2025-26 KDE scores: JSON re-derived from the
+  archived state rows, KDE's own arithmetic (levels, content index, status,
+  change, weights) rechecked, and every 2025-26 number on the site matched.
 - `tests/test_site.py` - browser tests for the calculators, charts,
   toggles, anchors, and mobile layout (needs `pip install playwright`
   and a Chromium; Chart.js is vendored so no internet is needed).

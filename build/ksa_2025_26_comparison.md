@@ -97,14 +97,13 @@ Statewide: CSI 53, TSI 77, ATSI 81. CSI years identified: 19 schools in year 1, 
 - What CSI brings. For the schools identified in 2025, KDE described the process (Kentucky Teacher, December 2025, https://www.kentuckyteacher.org/news/2025/12/kentucky-board-of-education-discusses-recent-assessment-and-accountability-results-focuses-on-student-achievement/): an education recovery support team works with the school, KDE and Cognia run a diagnostic review, a turnaround team of school and community leaders writes an improvement plan, and the school becomes eligible to apply for federal school improvement funds. The same article gives the identification rule (bottom 5 percent of schools by level, graduation rate under 80 percent, or three years of ATSI) and says identification is now annual under House Bill 298 (2025). Kentucky's exit rules are worth reading in KDE's CSI guidance before the site says anything. Note the tension: the district is weighing closure of a school the state has just placed in a required improvement process.
 - Not yet available. KDE served the Accountable_Summary_2026.CSV (subgroup indicator rates) and the all-datasets zip as empty files on three tries (content-length 0, origin last-modified this morning); the School Report Card suite with grade enrollment counts comes later in the fall. Re-pull both before any publication.
 
-## 8. What this does to the site's current claims (nothing changed here)
+## 8. Where the site carries 2025-26, and what still shows 2024-25
 
-- `index.html` line 245, Fact One: "On the state's 2024-25 tests, NMES is first in the county in every subject. It beats the state average in science and writing." True as dated, now the opposite on the current tests. The 2024-25 table at lines 247 to 257 and the composite chart series at lines 931 to 933 (NMES 74.5, 54.0) would take the 2025-26 points.
-- The report builder repeats it at `build/build_pdf.py` lines 319 to 326 and the model at `build/build_model.py` lines 1218, 1243 and 1262.
-- The tests pin the sentence: `tests/validate_all.py` lines 121 and 357 and `tests/sync_check.py` line 616 fail if "first in the county in every subject" leaves the page, so site, report, model and tests have to move together.
-- The SchoolDigger validation and the Blue Ribbon and pre-COVID math claims are unaffected.
+- `index.html`, Fact One: the lede, the 2025-26 table (percent proficient or distinguished with the content index), the status table (status only, with the status-only overall from KDE's 51/40/5/4 weights), the status chart (`chartStatus`), the CSI explainer, the 2026 points on the two-decades chart, and a 2025-26 / 2024-25 toggle on the grade-level breakout. `tests/verify_kde_2026.py` ties each of those numbers to the archived rows.
+- The report builder still carries the 2024-25 claim at `build/build_pdf.py` lines 319 to 326 and the model at `build/build_model.py` lines 1218, 1243 and 1262; the committed report (v5.0, August 17) predates the release and the site says so. A report revision is a separate job.
+- `build/kde_scores_history.json` and `build/kde_subjects_history.json`, which feed the report's charts, were left at 2024-25 for the same reason; the entries to append are in section 9.
 
-## 9. Series entries to append when the site is updated
+## 9. Series entries to append to the history files with the next report revision
 
 ```
 kde_scores_history.json  reading_pd 2025-26: NMES 21, BC 46, CR 40, PE 31

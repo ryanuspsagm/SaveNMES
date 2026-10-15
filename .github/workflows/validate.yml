@@ -70,6 +70,10 @@ jobs:
         if: ${{ hashFiles('tests/verify_sources.py') != '' }}
         run: python tests/verify_sources.py
 
+      - name: 2025-26 score verification (verify_kde_2026)
+        if: ${{ hashFiles('tests/verify_kde_2026.py') != '' }}
+        run: python tests/verify_kde_2026.py
+
       - name: Source verification (verify_charts)
         if: ${{ hashFiles('tests/verify_charts.py') != '' }}
         run: python tests/verify_charts.py

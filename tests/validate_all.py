@@ -943,8 +943,8 @@ def main():
         "EDFacts extract archived")
     chk("range midpoints" in t and "different scales" in t,
         "EDFacts midpoint and KCCT/KPREP scale caveats disclosed in the report")
-    chk("crosses NMES in the newest year" in html,
-        "site keeps the 2024-25 crossover explanation (status table retired to the report in v4.2)")
+    chk("crossed NMES in 2024-25" in html and "status-only 39.1" in html,
+        "site keeps the 2024-25 crossover explanation and states the 2025-26 status-only figure")
 
     chk("unaudited" in t,
         "FY2026 figures labeled unaudited in the PDF (site block retired in v4.2)")

@@ -8,7 +8,8 @@ raw_dir (default ~/Downloads/kde_acct_2026) receives the four KDE files, about
 83 MB, downloaded with a browser User-Agent because education.ky.gov answers
 plain clients with HTTP 403; files already present and non-empty are reused.
 Outputs, all under build/: kde_acct_2026_*.csv (raw KDE rows for the two
-districts and the state, plus the statewide CSI/TSI/ATSI lists),
+districts and the state, every elementary school's overall and status columns,
+plus the statewide CSI/TSI/ATSI lists),
 kde_ksa_2025_26.json and kde_levels_2025_26.json (same shapes as the 2024-25
 files), kde_acct_2026_manifest.json (URLs, sizes, MD5s) and
 ksa_2025_26_comparison.md (the comparison note). Companion to
@@ -83,6 +84,16 @@ def extract(DL, BUILD):
     a_hdr, a_rows = read_filtered(FILES["assessment"], 0)
     g_hdr, g_rows = read_filtered(FILES["by_grade"], 0)
     write_csv(os.path.join(BUILD, "kde_acct_2026_profile_bourbon.csv"), p_hdr, p_rows)
+    # every elementary school in the state, overall and status columns only: backs the
+    # bottom-5-percent cut and the statewide rank claims on the site (tests/verify_kde_2026.py)
+    ES_COLS = ["School Code", "District Name", "School Name", "Federal Classification", "Reason for Federal Classifcation",
+               "Overall Combined Indicator Rate", "Overall Indicator Rating", "Overall Combined Federal Rate",
+               "Reading_Mathematics Status", "Science_Social Studies_Combined Writing Status",
+               "English Learners Progress Status", "Quality Of School Climate and Safety Status"]
+    with open(os.path.join(DL, FILES["profile"]), newline="", encoding="utf-8-sig") as fh:
+        rd = csv.DictReader(fh)
+        es_rows = [[d[c] for c in ES_COLS] for d in rd if d["Level"] == "ES" and d["School Name"]]
+    write_csv(os.path.join(BUILD, "kde_acct_2026_profile_es_statewide.csv"), ES_COLS, es_rows)
     write_csv(os.path.join(BUILD, "kde_acct_2026_assessment_performance_bourbon.csv"), a_hdr, a_rows)
     write_csv(os.path.join(BUILD, "kde_acct_2026_by_grade_bourbon.csv"), g_hdr, g_rows)
 
@@ -354,13 +365,11 @@ def note(BUILD, MD):
     L.append("- What CSI brings. For the schools identified in 2025, KDE described the process (Kentucky Teacher, December 2025, https://www.kentuckyteacher.org/news/2025/12/kentucky-board-of-education-discusses-recent-assessment-and-accountability-results-focuses-on-student-achievement/): an education recovery support team works with the school, KDE and Cognia run a diagnostic review, a turnaround team of school and community leaders writes an improvement plan, and the school becomes eligible to apply for federal school improvement funds. The same article gives the identification rule (bottom 5 percent of schools by level, graduation rate under 80 percent, or three years of ATSI) and says identification is now annual under House Bill 298 (2025). Kentucky's exit rules are worth reading in KDE's CSI guidance before the site says anything. Note the tension: the district is weighing closure of a school the state has just placed in a required improvement process.")
     L.append("- Not yet available. KDE served the Accountable_Summary_2026.CSV (subgroup indicator rates) and the all-datasets zip as empty files on three tries (content-length 0, origin last-modified this morning); the School Report Card suite with grade enrollment counts comes later in the fall. Re-pull both before any publication.\n")
 
-    L.append("## 8. What this does to the site's current claims (nothing changed here)\n")
-    L.append("- `index.html` line 245, Fact One: \"On the state's 2024-25 tests, NMES is first in the county in every subject. It beats the state average in science and writing.\" True as dated, now the opposite on the current tests. The 2024-25 table at lines 247 to 257 and the composite chart series at lines 931 to 933 (NMES 74.5, 54.0) would take the 2025-26 points.")
-    L.append("- The report builder repeats it at `build/build_pdf.py` lines 319 to 326 and the model at `build/build_model.py` lines 1218, 1243 and 1262.")
-    L.append("- The tests pin the sentence: `tests/validate_all.py` lines 121 and 357 and `tests/sync_check.py` line 616 fail if \"first in the county in every subject\" leaves the page, so site, report, model and tests have to move together.")
-    L.append("- The SchoolDigger validation and the Blue Ribbon and pre-COVID math claims are unaffected.\n")
-
-    L.append("## 9. Series entries to append when the site is updated\n")
+    L.append("## 8. Where the site carries 2025-26, and what still shows 2024-25\n")
+    L.append("- `index.html`, Fact One: the lede, the 2025-26 table (percent proficient or distinguished with the content index), the status table (status only, with the status-only overall from KDE's 51/40/5/4 weights), the status chart (`chartStatus`), the CSI explainer, the 2026 points on the two-decades chart, and a 2025-26 / 2024-25 toggle on the grade-level breakout. `tests/verify_kde_2026.py` ties each of those numbers to the archived rows.")
+    L.append("- The report builder still carries the 2024-25 claim at `build/build_pdf.py` lines 319 to 326 and the model at `build/build_model.py` lines 1218, 1243 and 1262; the committed report (v5.0, August 17) predates the release and the site says so. A report revision is a separate job.")
+    L.append("- `build/kde_scores_history.json` and `build/kde_subjects_history.json`, which feed the report's charts, were left at 2024-25 for the same reason; the entries to append are in section 9.\n")
+    L.append("## 9. Series entries to append to the history files with the next report revision\n")
     L.append("```")
     L.append('kde_scores_history.json  reading_pd 2025-26: NMES 21, BC 46, CR 40, PE 31')
     L.append('                         math_pd    2025-26: NMES 23, BC 34, CR 25, PE 31')

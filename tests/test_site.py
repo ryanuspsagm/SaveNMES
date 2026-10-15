@@ -64,8 +64,8 @@ def main():
         else: ok("no JS console or page errors")
 
         n = pg.evaluate("Object.keys(Chart.instances).length")
-        if n == 11: ok(f"{n} Chart.js charts instantiated")
-        else: bad(f"expected 11 charts, got {n}")
+        if n == 12: ok(f"{n} Chart.js charts instantiated")
+        else: bad(f"expected 12 charts, got {n}")
         # aria-vs-dataset: every dollar figure a canvas aria-label states must
         # match a value the chart actually draws, at the aria's own precision
         aria_data = pg.evaluate(
