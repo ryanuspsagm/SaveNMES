@@ -1,6 +1,6 @@
 # Facebook post: the 2025-26 scores and the CSI label
 
-Attach `build/ksa_2025_26_status_chart.png` (1600 x 1200). Plain text below is ready to paste; Facebook ignores markdown.
+Attach `build/ksa_2025_26_status_chart.png` (1600 x 1200). A second image, `build/ksa_history_trend_chart.png` (1600 x 1984), carries the full 2012 to 2026 trend in three panels for anyone who asks how this year compares. Plain text below is ready to paste; Facebook ignores markdown.
 
 ---
 
