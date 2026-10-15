@@ -185,6 +185,45 @@ others = [[f(ksa["schools"][CODES[c]][s]["CI"]) for s in SUBJ] for c in ("041010
 chk(all(nmes_ci[i] <= min(o[i] for o in others) for i in range(5)), "NMES's content index is lowest of the four county elementaries in every subject (backs 'last in the county')")
 chk(status_only["041090"] == 39.1 and f(PR[("041090", "ES")]["Overall Combined Indicator Rate"]) == 18.2, "NMES status-only overall 39.1 against the official 18.2")
 
+# ---------- 4. the "Where the fall came from" card against the archived grade rows
+import xlrd
+G = json.load(open(B / "kde_grade_rows_2024_2026.json"))
+g = lambda y, sch, gr, s: G[str(y)].get(f"{sch}|{gr}|{s}|All Students")
+card = html[html.index("Where the fall came from"):html.index('What "Comprehensive Support and Improvement" means')]
+def saar(yr):
+    sh = xlrd.open_workbook(B / f"saar_enrollment_{yr}.xls").sheet_by_index(0)
+    for r in range(sh.nrows):
+        if str(sh.cell_value(r, 0)).startswith("090 - North Mi"):
+            return [int(float(sh.cell_value(r, c) or 0)) for c in range(1, 7)]
+n25, n26 = saar("2024_25")[3:6], saar("2025_26")[3:6]
+def rng(p, n): return (max(0.0, (p - 0.5) / 100 * n), (p + 0.5) / 100 * n)
+def swap_room(all25, g4_25, g5_25, all26, g3_26):
+    t25 = rng(all25, sum(n25)); c4 = rng(g4_25, n25[1]); c5 = rng(g5_25, n25[2])
+    g3 = ((max(0, t25[0] - c4[1] - c5[1]) + (t25[1] - c4[0] - c5[0])) / 2) / n25[0]
+    c3 = rng(g3_26, n26[0]); cf = (c3[0] + c3[1]) / 2 + g4_25 / 100 * n26[2] + g3 * n26[1]
+    cfp = round(cf / sum(n26) * 100); return all25 - cfp, cfp - all26
+chk(g(2025, "NMES", "5", "Reading")[4] == 54 and g(2026, "NMES", "3", "Reading")[4] == 18 and "was 54 percent proficient in reading; the third grade that arrived is 18 percent" in card,
+    "card: departing fifth grade 54, arriving third grade 18 (archived grade rows)")
+sw, rm = swap_room(41, 47, 54, 21, 18)
+chk((sw, rm) == (13, 7) and "about 13 of the 20 reading points" in card, f"card: reading fall splits 13 swap / 7 continuing cohorts (recomputed {sw}/{rm})")
+chk(g(2025, "NMES", "4", "Reading")[4] == 47 and g(2025, "NMES", "4", "Math")[4] == 41 and g(2025, "NMES", "4", "Science")[4] == 53
+    and "47 percent proficient in reading, 41 in math, 53 in science" in card, "card: this year's fifth graders as fourth graders, 47/41/53")
+chk(g(2026, "NMES", "5", "EM")[4] == 16 and g(2025, "NMES", "5", "EM")[4] == 50 and g(2024, "NMES", "5", "EM")[4] == 52
+    and "16 percent against 50 and 52" in card, "card: editing and mechanics 16 against 50 and 52")
+chk(g(2026, "NMES", "4", "Math")[4] == 26 and "6 percent proficient to 26" in card, "card: fourth-grade math reached 26")
+chk(g(2024, "NMES", "3", "Reading")[4] == 29 and g(2026, "NMES", "3", "Reading")[4] == 18 and g(2024, "District", "3", "Reading")[4] == 30 and g(2026, "District", "3", "Reading")[4] == 38
+    and "29 percent proficient in reading in 2024" in card and "rose from 30 to 38" in card, "card: third-grade entry 29 to 18 against the district's 30 to 38")
+ci26 = lambda s: f(ksa["schools"][CODES["041090"]][s]["CI"]); ci25 = json.load(open(B / "kde_ksa_2024_25.json"))["schools"][CODES["041090"]]
+chk(ci26("Combined Writing") == 25.0 and ci26("Social Studies") == 22.2 and f(ci25["Combined Writing"]["CI"]) == 77.0 and f(ci25["Social Studies"]["CI"]) == 47.0
+    and "went to 25 and 22 from 77 and 47" in card, "card: writing and social studies indexes 25 and 22 from 77 and 47")
+with open(B / "kde_kyrc25_enrollment_bourbon.csv", newline="", encoding="utf-8-sig") as fh:
+    oct24 = next(d for d in csv.DictReader(fh) if d["School Code"] == "041090" and d["Demographic"] == "All Students")
+chk([int(oct24["Grade 2"]), int(oct24["Grade 3"]), int(oct24["Grade 4"])] == [20, 26, 19] and n26 == [19, 24, 19] and int(oct24["All Grades"]) - sum(saar("2024_25")) == 17
+    and "20, 26 and 19 children in October 2024, 19, 24 and 19" in card and "lose 17 children during 2024-25" in card, "card: cohorts 20/26/19 to 19/24/19 and the 17 who left in 2024-25")
+chk("swap of a strong fifth grade for a weak third grade; the rest sits in one classroom" in html, "lede points at the swap and the classroom")
+for needle in ["had the county's best test scores for a decade", "close the county's smallest school", "one bad year explained grade by grade"]:
+    chk(needle in html, f"stale best-school claim replaced: {needle}")
+
 print(f"PASS {len(ok)}")
 print(f"FAIL {len(bad)}")
 for b in bad:
