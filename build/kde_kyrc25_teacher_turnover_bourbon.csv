@@ -1,0 +1,7 @@
+School Year,County Number,County Name,District Number,District Name,School Number,School Name,School Code,State School Id,NCES ID,CO-OP,CO-OP Code,School Type,Teacher Count,Teacher Turnover Count,Turnover Percent
+20242025,,,999,All Districts,,All Schools,999000,,,,,,"48,755","10,612",21.8
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,192,46,24.0
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,32,7,21.9
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,35,10,28.6
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,9,2,22.2
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,23,10,43.5

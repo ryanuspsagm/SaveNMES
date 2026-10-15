@@ -1,0 +1,61 @@
+School Year,County Number,County Name,District Number,District Name,School Number,School Name,School Code,State School Id,NCES ID,CO-OP,CO-OP Code,School Type,Level,Subject,Demographic,Participation Rate,Medical Exemption,First Year English Learner
+20232024,,,999,All Districts,,All Schools,999000,,,,,,Elementary School,Reading,All Students,99.8,277,"1,724"
+20232024,,,999,All Districts,,All Schools,999000,,,,,,Elementary School,Mathematics,All Students,99.9,290,"1,725"
+20232024,,,999,All Districts,,All Schools,999000,,,,,,Elementary School,Science,All Students,99.8,99,575
+20232024,,,999,All Districts,,All Schools,999000,,,,,,Elementary School,Social Studies,All Students,99.8,115,555
+20232024,,,999,All Districts,,All Schools,999000,,,,,,Elementary School,Editing and Mechanics,All Students,99.8,115,555
+20232024,,,999,All Districts,,All Schools,999000,,,,,,Elementary School,On Demand Writing,All Students,99.7,116,555
+20232024,,,999,All Districts,,All Schools,999000,,,,,,Middle School,Reading,All Students,99.5,445,"1,489"
+20232024,,,999,All Districts,,All Schools,999000,,,,,,Middle School,Mathematics,All Students,99.4,454,"1,489"
+20232024,,,999,All Districts,,All Schools,999000,,,,,,Middle School,Science,All Students,99.4,169,483
+20232024,,,999,All Districts,,All Schools,999000,,,,,,Middle School,Social Studies,All Students,99.3,186,485
+20232024,,,999,All Districts,,All Schools,999000,,,,,,Middle School,Editing and Mechanics,All Students,99.2,191,485
+20232024,,,999,All Districts,,All Schools,999000,,,,,,Middle School,On Demand Writing,All Students,99.0,193,485
+20232024,,,999,All Districts,,All Schools,999000,,,,,,High School,Reading,All Students,97.9,201,481
+20232024,,,999,All Districts,,All Schools,999000,,,,,,High School,Mathematics,All Students,97.8,207,481
+20232024,,,999,All Districts,,All Schools,999000,,,,,,High School,Science,All Students,97.8,169,253
+20232024,,,999,All Districts,,All Schools,999000,,,,,,High School,Social Studies,All Students,97.7,168,252
+20232024,,,999,All Districts,,All Schools,999000,,,,,,High School,Editing and Mechanics,All Students,97.5,169,252
+20232024,,,999,All Districts,,All Schools,999000,,,,,,High School,On Demand Writing,All Students,96.9,169,252
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,Elementary School,Reading,All Students,100.0,,6
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,Elementary School,Mathematics,All Students,100.0,,6
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,Elementary School,Science,All Students,100.0,,2
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,Elementary School,Social Studies,All Students,100.0,,1
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,Elementary School,Editing and Mechanics,All Students,100.0,,1
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,Elementary School,On Demand Writing,All Students,100.0,,1
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,Middle School,Reading,All Students,99.8,11,5
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,Middle School,Mathematics,All Students,100.0,11,5
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,Middle School,Science,All Students,100.0,4,3
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,Middle School,Social Studies,All Students,100.0,5,2
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,Middle School,Editing and Mechanics,All Students,100.0,5,2
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,Middle School,On Demand Writing,All Students,100.0,5,2
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,High School,Reading,All Students,98.5,,2
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,High School,Mathematics,All Students,98.5,,2
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,High School,Science,All Students,98.9,,
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,High School,Social Studies,All Students,98.9,,
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,High School,Editing and Mechanics,All Students,98.3,,
+20232024,009,BOURBON,041,Bourbon County,,All Schools,041000,,,CKEC,901,,High School,On Demand Writing,All Students,96.6,,
+20232024,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054001576,CKEC,901,A1,Elementary School,Reading,All Students,100.0,,4
+20232024,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054001576,CKEC,901,A1,Elementary School,Mathematics,All Students,100.0,,4
+20232024,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054001576,CKEC,901,A1,Elementary School,Science,All Students,100.0,,1
+20232024,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054001576,CKEC,901,A1,Elementary School,Social Studies,All Students,100.0,,
+20232024,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054001576,CKEC,901,A1,Elementary School,Editing and Mechanics,All Students,100.0,,
+20232024,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054001576,CKEC,901,A1,Elementary School,On Demand Writing,All Students,100.0,,
+20232024,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000024,CKEC,901,A1,Elementary School,Reading,All Students,100.0,,2
+20232024,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000024,CKEC,901,A1,Elementary School,Mathematics,All Students,100.0,,2
+20232024,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000024,CKEC,901,A1,Elementary School,Science,All Students,100.0,,1
+20232024,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000024,CKEC,901,A1,Elementary School,Social Studies,All Students,100.0,,1
+20232024,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000024,CKEC,901,A1,Elementary School,Editing and Mechanics,All Students,100.0,,1
+20232024,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000024,CKEC,901,A1,Elementary School,On Demand Writing,All Students,100.0,,1
+20232024,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000096,CKEC,901,A1,Elementary School,Reading,All Students,100.0,,
+20232024,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000096,CKEC,901,A1,Elementary School,Mathematics,All Students,100.0,,
+20232024,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000096,CKEC,901,A1,Elementary School,Science,All Students,100.0,,
+20232024,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000096,CKEC,901,A1,Elementary School,Social Studies,All Students,100.0,,
+20232024,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000096,CKEC,901,A1,Elementary School,Editing and Mechanics,All Students,100.0,,
+20232024,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000096,CKEC,901,A1,Elementary School,On Demand Writing,All Students,100.0,,
+20232024,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471001157,CKEC,901,A1,Elementary School,Reading,All Students,97.1,,
+20232024,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471001157,CKEC,901,A1,Elementary School,Mathematics,All Students,100.0,,
+20232024,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471001157,CKEC,901,A1,Elementary School,Science,All Students,100.0,,
+20232024,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471001157,CKEC,901,A1,Elementary School,Social Studies,All Students,95.8,,
+20232024,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471001157,CKEC,901,A1,Elementary School,Editing and Mechanics,All Students,95.8,,
+20232024,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471001157,CKEC,901,A1,Elementary School,On Demand Writing,All Students,95.8,,

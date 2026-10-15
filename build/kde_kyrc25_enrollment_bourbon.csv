@@ -1,0 +1,92 @@
+School Year,County Number,County Name,District Number,District Name,School Number,School Name,School Code,State School Id,NCES ID,CO-OP,CO-OP Code,School Type,Demographic,All Grades,Preschool,K,Grade 1,Grade 2,Grade 3,Grade 4,Grade 5,Grade 6,Grade 7,Grade 8,Grade 9,Grade 10,Grade 11,Grade 12,Grade 14
+20242025,,,999,All Districts,,All Schools,999000,,,,,,All Students,"682,013","30,754","48,202","49,841","50,364","52,070","48,738","49,560","49,769","46,432","49,550","53,534","52,960","50,359","49,243",637
+20242025,,,999,All Districts,,All Schools,999000,,,,,,Female,"329,446","13,622","23,350","24,128","24,665","25,282","23,756","23,962","24,123","22,344","23,977","25,521","25,714","24,749","24,036",217
+20242025,,,999,All Districts,,All Schools,999000,,,,,,Male,"352,567","17,132","24,852","25,713","25,699","26,788","24,982","25,598","25,646","24,088","25,573","28,013","27,246","25,610","25,207",420
+20242025,,,999,All Districts,,All Schools,999000,,,,,,African American,"74,518","3,372","5,248","5,308","5,330","5,435","5,271","5,275","5,364","4,799","5,480","6,238","6,143","5,663","5,493",99
+20242025,,,999,All Districts,,All Schools,999000,,,,,,American Indian or Alaska Native,932,49,64,81,61,71,47,83,64,60,60,67,79,68,76,2
+20242025,,,999,All Districts,,All Schools,999000,,,,,,Asian,"14,906",601,"1,034","1,117","1,204","1,209","1,157","1,163","1,159","1,123","1,079","1,093","1,006",976,964,21
+20242025,,,999,All Districts,,All Schools,999000,,,,,,Hispanic or Latino,"72,739","3,215","5,421","5,542","5,382","5,580","5,158","5,252","5,208","4,821","5,254","6,025","5,721","5,214","4,892",54
+20242025,,,999,All Districts,,All Schools,999000,,,,,,Native Hawaiian or Pacific Islander,"1,362",35,120,109,105,127,83,104,89,94,106,117,95,98,78,2
+20242025,,,999,All Districts,,All Schools,999000,,,,,,Two or More Races,"37,714","2,043","3,095","3,152","3,060","3,087","2,826","2,803","2,746","2,480","2,546","2,748","2,603","2,290","2,211",24
+20242025,,,999,All Districts,,All Schools,999000,,,,,,White (non-Hispanic),"479,842","21,439","33,220","34,532","35,222","36,561","34,196","34,880","35,139","33,055","35,025","37,246","37,313","36,050","35,529",435
+20242025,,,999,All Districts,,All Schools,999000,,,,,,Economically Disadvantaged,"420,976","22,090","32,075","32,565","32,642","33,687","30,824","31,040","30,683","28,080","29,727","32,215","30,716","27,918","26,326",388
+20242025,,,999,All Districts,,All Schools,999000,,,,,,Students with Disabilities (IEP),"122,118","14,722","11,606","11,296","10,566","10,098","9,243","8,704","7,859","6,686","6,738","6,912","6,340","5,649","5,069",630
+20242025,,,999,All Districts,,All Schools,999000,,,,,,English Learner,"54,175",1,"5,811","5,852","5,714","5,548","4,774","3,867","3,221","3,179","3,390","4,009","3,526","2,720","2,517",46
+20242025,,,999,All Districts,,All Schools,999000,,,,,,Foster Care,"7,798",506,533,540,538,474,423,441,472,479,613,743,802,689,522,23
+20242025,,,999,All Districts,,All Schools,999000,,,,,,Gifted and Talented,"91,753",,"2,803","6,188","8,225","9,396","5,373","7,084","7,524","7,039","7,387","7,489","7,988","7,705","7,551",1
+20242025,,,999,All Districts,,All Schools,999000,,,,,,Homeless,"21,451",799,"1,790","1,876","1,831","1,889","1,592","1,650","1,535","1,394","1,399","1,563","1,457","1,269","1,394",13
+20242025,,,999,All Districts,,All Schools,999000,,,,,,Migrant,"4,050",249,322,349,334,349,292,264,313,280,289,323,286,197,203,
+20242025,,,999,All Districts,,All Schools,999000,,,,,,Military Dependent,"3,430",109,264,316,299,307,258,265,249,236,229,234,244,232,188,
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,All Students,"2,847",225,163,191,181,229,172,182,190,207,232,243,225,202,204,1
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,Female,"1,389",120,80,89,89,120,74,84,96,95,113,102,112,111,104,
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,Male,"1,458",105,83,102,92,109,98,98,94,112,119,141,113,91,100,1
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,African American,86,7,3,6,4,8,6,6,3,3,3,11,10,12,4,
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,Asian,2,,,,,1,,1,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,Hispanic or Latino,491,48,16,29,23,32,23,37,25,37,52,52,40,33,44,
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,Two or More Races,125,17,9,9,9,11,7,6,6,10,6,11,7,12,5,
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,White (non-Hispanic),"2,143",153,135,147,145,177,136,132,156,157,171,169,168,145,151,1
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,Economically Disadvantaged,"1,823",179,112,128,124,142,114,124,113,132,137,157,134,107,120,
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,Students with Disabilities (IEP),488,77,34,41,48,45,38,35,35,30,22,28,25,18,11,1
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,English Learner,172,,9,20,12,24,18,14,7,9,19,15,9,6,10,
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,Foster Care,33,4,2,3,1,3,,1,1,4,1,1,6,5,1,
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,Gifted and Talented,252,,1,24,19,26,9,19,31,22,20,19,17,21,24,
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,Homeless,236,23,11,26,12,22,16,16,14,16,17,20,16,12,15,
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,Migrant,112,16,7,13,3,8,8,9,7,5,10,11,4,8,3,
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,Military Dependent,4,,,,,,,,2,,,,,2,,
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,All Students,494,,66,83,80,109,82,74,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,Female,244,,41,39,42,59,32,31,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,Male,250,,25,44,38,50,50,43,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,African American,26,,3,5,3,7,4,4,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,Hispanic or Latino,80,,9,13,9,19,11,19,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,Two or More Races,24,,3,4,5,6,4,2,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,White (non-Hispanic),364,,51,61,63,77,63,49,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,Economically Disadvantaged,349,,47,60,55,69,63,55,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,Students with Disabilities (IEP),91,,12,12,18,18,18,13,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,English Learner,49,,5,9,5,13,11,6,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,Foster Care,7,,,3,1,2,,1,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,Gifted and Talented,43,,,8,11,13,3,8,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,Homeless,41,,4,12,5,6,6,8,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,Migrant,21,,1,6,1,4,5,4,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,All Students,487,,72,85,82,97,71,80,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,Female,233,,31,40,38,51,33,40,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,Male,254,,41,45,44,46,38,40,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,African American,6,,,1,1,1,2,1,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,Asian,2,,,,,1,,1,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,Hispanic or Latino,66,,7,14,13,10,9,13,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,Two or More Races,24,,6,5,4,3,2,4,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,White (non-Hispanic),389,,59,65,64,82,58,61,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,Economically Disadvantaged,291,,43,52,54,53,39,50,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,Students with Disabilities (IEP),123,,19,24,24,21,17,18,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,English Learner,40,,3,10,7,8,6,6,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,Foster Care,2,,2,,,,,,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,Gifted and Talented,47,,1,14,5,13,6,8,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,Homeless,49,,2,13,5,13,9,7,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,Migrant,21,,3,7,2,3,3,3,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,All Students,145,,27,25,20,26,19,28,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,Female,63,,9,11,10,11,9,13,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,Male,82,,18,14,10,15,10,15,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,African American,1,,,,,,,1,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,Hispanic or Latino,16,,1,3,1,3,3,5,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,Two or More Races,3,,,,,2,1,,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,White (non-Hispanic),125,,26,22,19,21,15,22,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,Economically Disadvantaged,112,,24,18,16,23,12,19,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,Students with Disabilities (IEP),28,,3,5,6,7,3,4,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,English Learner,9,,1,2,,3,1,2,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,Foster Care,1,,,,,1,,,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,Gifted and Talented,8,,,2,3,,,3,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,Homeless,15,,5,2,2,4,1,1,,,,,,,,
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,Migrant,7,,3,1,,1,,2,,,,,,,,
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,All Students,387,,68,70,48,69,57,75,,,,,,,,
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,Female,167,,35,33,18,35,14,32,,,,,,,,
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,Male,220,,33,37,30,34,43,43,,,,,,,,
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,African American,70,,12,6,8,18,8,18,,,,,,,,
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,American Indian or Alaska Native,1,,,,,,,1,,,,,,,,
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,Hispanic or Latino,60,,9,12,6,12,5,16,,,,,,,,
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,Two or More Races,47,,7,7,5,7,11,10,,,,,,,,
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,White (non-Hispanic),209,,40,45,29,32,33,30,,,,,,,,
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,Economically Disadvantaged,293,,55,47,37,57,38,59,,,,,,,,
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,Students with Disabilities (IEP),89,,10,18,14,14,17,16,,,,,,,,
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,English Learner,29,,5,5,4,6,2,7,,,,,,,,
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,Foster Care,2,,,1,1,,,,,,,,,,,
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,Gifted and Talented,4,,,1,2,,,1,,,,,,,,
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,Migrant,12,,2,1,4,1,,4,,,,,,,,

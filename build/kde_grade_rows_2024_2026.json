@@ -1,0 +1,1760 @@
+{
+"2024": {
+"BCES|3|Math|All Students": [
+53,
+27,
+16,
+4,
+19
+],
+"BCES|3|Reading|All Students": [
+48,
+25,
+19,
+8,
+27
+],
+"BCES|4|Math|All Students": [
+40,
+40,
+14,
+6,
+20
+],
+"BCES|4|Reading|All Students": [
+31,
+23,
+30,
+16,
+46
+],
+"BCES|4|Science|All Students": [
+13,
+64,
+21,
+1,
+23
+],
+"BCES|5|EM|All Students": [
+31,
+41,
+12,
+16,
+28
+],
+"BCES|5|Math|All Students": [
+37,
+35,
+20,
+9,
+28
+],
+"BCES|5|ODW|All Students": [
+17,
+26,
+36,
+21,
+57
+],
+"BCES|5|Reading|All Students": [
+42,
+25,
+22,
+11,
+33
+],
+"BCES|5|SS|All Students": [
+48,
+23,
+20,
+9,
+28
+],
+"CRES|3|Math|All Students": [
+36,
+44,
+16,
+3,
+20
+],
+"CRES|3|Reading|All Students": [
+38,
+28,
+30,
+5,
+34
+],
+"CRES|4|Math|All Students": [
+44,
+27,
+21,
+8,
+29
+],
+"CRES|4|Reading|All Students": [
+32,
+36,
+21,
+12,
+33
+],
+"CRES|4|Science|All Students": [
+18,
+64,
+15,
+3,
+18
+],
+"CRES|5|EM|All Students": [
+19,
+26,
+26,
+28,
+54
+],
+"CRES|5|Math|All Students": [
+29,
+32,
+21,
+18,
+39
+],
+"CRES|5|ODW|All Students": [
+24,
+32,
+32,
+13,
+44
+],
+"CRES|5|Reading|All Students": [
+26,
+21,
+26,
+26,
+53
+],
+"CRES|5|SS|All Students": [
+32,
+26,
+24,
+18,
+42
+],
+"NMES|3|Math|All Students": null,
+"NMES|3|Reading|All Students": [
+14,
+57,
+21,
+7,
+29
+],
+"NMES|4|Math|All Students": [
+39,
+18,
+29,
+14,
+43
+],
+"NMES|4|Reading|All Students": [
+36,
+14,
+29,
+21,
+50
+],
+"NMES|4|Science|All Students": [
+14,
+54,
+18,
+14,
+32
+],
+"NMES|5|EM|All Students": [
+9,
+39,
+30,
+22,
+52
+],
+"NMES|5|Math|All Students": [
+22,
+22,
+52,
+4,
+57
+],
+"NMES|5|ODW|All Students": [
+4,
+48,
+26,
+22,
+48
+],
+"NMES|5|Reading|All Students": [
+17,
+35,
+30,
+17,
+48
+],
+"NMES|5|SS|All Students": [
+4,
+43,
+43,
+9,
+52
+],
+"District|3|Math|All Students": [
+45,
+34,
+17,
+3,
+20
+],
+"District|3|Reading|All Students": [
+41,
+29,
+24,
+7,
+30
+],
+"District|4|Math|All Students": [
+42,
+31,
+19,
+8,
+27
+],
+"District|4|Reading|All Students": [
+32,
+27,
+26,
+15,
+41
+],
+"District|4|Science|All Students": [
+15,
+63,
+18,
+4,
+22
+],
+"District|5|EM|All Students": [
+23,
+35,
+20,
+22,
+42
+],
+"District|5|Math|All Students": [
+32,
+32,
+24,
+12,
+36
+],
+"District|5|ODW|All Students": [
+18,
+31,
+33,
+18,
+51
+],
+"District|5|Reading|All Students": [
+32,
+24,
+25,
+18,
+43
+],
+"District|5|SS|All Students": [
+36,
+27,
+24,
+13,
+37
+],
+"PES|3|Math|All Students": [
+29,
+31,
+27,
+13,
+40
+],
+"PES|3|Reading|All Students": [
+37,
+20,
+30,
+13,
+43
+],
+"PES|4|Math|All Students": [
+54,
+24,
+18,
+4,
+22
+],
+"PES|4|Reading|All Students": [
+39,
+36,
+18,
+6,
+24
+],
+"PES|4|Science|All Students": null,
+"PES|5|EM|All Students": [
+39,
+39,
+17,
+4,
+22
+],
+"PES|5|Math|All Students": [
+46,
+38,
+15,
+2,
+17
+],
+"PES|5|ODW|All Students": null,
+"PES|5|Reading|All Students": null,
+"PES|5|SS|All Students": [
+50,
+35,
+13,
+2,
+15
+],
+"State|3|Math|All Students": [
+24,
+33,
+31,
+12,
+43
+],
+"State|3|Reading|All Students": [
+25,
+29,
+29,
+18,
+47
+],
+"State|4|Math|All Students": [
+30,
+27,
+31,
+12,
+43
+],
+"State|4|Reading|All Students": [
+23,
+27,
+31,
+19,
+50
+],
+"State|4|Science|All Students": [
+13,
+53,
+28,
+6,
+34
+],
+"State|5|EM|All Students": [
+22,
+31,
+25,
+22,
+47
+],
+"State|5|Math|All Students": [
+25,
+33,
+29,
+12,
+41
+],
+"State|5|ODW|All Students": [
+21,
+40,
+25,
+14,
+39
+],
+"State|5|Reading|All Students": [
+27,
+27,
+30,
+16,
+46
+],
+"State|5|SS|All Students": [
+32,
+29,
+25,
+14,
+39
+],
+"District|all|Math|All Students": [
+40,
+32,
+20,
+8,
+28
+],
+"District|all|Reading|All Students": [
+35,
+26,
+25,
+14,
+39
+],
+"District|all|Science|All Students": [
+16,
+62,
+18,
+4,
+22
+],
+"District|all|SS|All Students": [
+36,
+26,
+25,
+13,
+37
+],
+"District|all|CW|All Students": [
+17,
+32,
+37,
+14,
+51
+],
+"BCES|all|Math|All Students": [
+43,
+34,
+17,
+6,
+23
+],
+"BCES|all|Reading|All Students": [
+41,
+24,
+24,
+12,
+36
+],
+"BCES|all|Science|All Students": [
+12,
+65,
+22,
+1,
+24
+],
+"BCES|all|SS|All Students": [
+49,
+23,
+20,
+9,
+29
+],
+"BCES|all|CW|All Students": [
+16,
+33,
+35,
+16,
+51
+],
+"CRES|all|Math|All Students": [
+37,
+33,
+20,
+10,
+30
+],
+"CRES|all|Reading|All Students": [
+32,
+28,
+25,
+15,
+40
+],
+"CRES|all|Science|All Students": [
+19,
+64,
+15,
+3,
+18
+],
+"CRES|all|SS|All Students": [
+31,
+26,
+24,
+19,
+43
+],
+"CRES|all|CW|All Students": [
+21,
+26,
+40,
+13,
+53
+],
+"NMES|all|Math|All Students": [
+33,
+22,
+38,
+8,
+45
+],
+"NMES|all|Reading|All Students": [
+23,
+31,
+28,
+17,
+45
+],
+"NMES|all|Science|All Students": [
+11,
+56,
+19,
+15,
+33
+],
+"NMES|all|SS|All Students": [
+8,
+42,
+42,
+8,
+50
+],
+"NMES|all|CW|All Students": [
+8,
+46,
+33,
+13,
+46
+],
+"PES|all|Math|All Students": [
+43,
+29,
+21,
+7,
+27
+],
+"PES|all|Reading|All Students": [
+42,
+27,
+24,
+7,
+30
+],
+"PES|all|Science|All Students": null,
+"PES|all|SS|All Students": [
+49,
+35,
+14,
+2,
+16
+],
+"PES|all|CW|All Students": null,
+"State|all|Math|All Students": [
+27,
+31,
+30,
+12,
+42
+],
+"State|all|Reading|All Students": [
+25,
+27,
+30,
+18,
+47
+],
+"State|all|Science|All Students": [
+13,
+53,
+28,
+6,
+34
+],
+"State|all|SS|All Students": [
+32,
+29,
+25,
+14,
+39
+],
+"State|all|CW|All Students": [
+19,
+38,
+31,
+12,
+43
+]
+},
+"2025": {
+"BCES|3|Math|All Students": [
+41,
+28,
+27,
+3,
+30
+],
+"BCES|3|Reading|All Students": [
+30,
+30,
+28,
+11,
+39
+],
+"BCES|4|Math|All Students": [
+49,
+23,
+23,
+5,
+28
+],
+"BCES|4|Reading|All Students": [
+43,
+16,
+27,
+14,
+41
+],
+"BCES|4|Science|All Students": [
+15,
+58,
+19,
+8,
+27
+],
+"BCES|5|EM|All Students": [
+33,
+30,
+15,
+22,
+37
+],
+"BCES|5|Math|All Students": [
+25,
+48,
+24,
+3,
+27
+],
+"BCES|5|ODW|All Students": [
+24,
+36,
+24,
+16,
+40
+],
+"BCES|5|Reading|All Students": [
+24,
+39,
+30,
+7,
+37
+],
+"BCES|5|SS|All Students": [
+45,
+24,
+27,
+4,
+31
+],
+"CRES|3|Math|All Students": [
+34,
+42,
+19,
+4,
+23
+],
+"CRES|3|Reading|All Students": [
+28,
+38,
+26,
+9,
+34
+],
+"CRES|4|Math|All Students": null,
+"CRES|4|Reading|All Students": [
+24,
+32,
+31,
+13,
+44
+],
+"CRES|4|Science|All Students": null,
+"CRES|5|EM|All Students": [
+36,
+36,
+14,
+13,
+27
+],
+"CRES|5|Math|All Students": [
+40,
+34,
+19,
+6,
+26
+],
+"CRES|5|ODW|All Students": [
+36,
+40,
+13,
+10,
+23
+],
+"CRES|5|Reading|All Students": [
+42,
+26,
+22,
+10,
+32
+],
+"CRES|5|SS|All Students": [
+52,
+19,
+19,
+9,
+29
+],
+"NMES|3|Math|All Students": null,
+"NMES|3|Reading|All Students": null,
+"NMES|4|Math|All Students": [
+29,
+29,
+29,
+12,
+41
+],
+"NMES|4|Reading|All Students": [
+24,
+29,
+35,
+12,
+47
+],
+"NMES|4|Science|All Students": [
+6,
+41,
+47,
+6,
+53
+],
+"NMES|5|EM|All Students": [
+23,
+27,
+27,
+23,
+50
+],
+"NMES|5|Math|All Students": [
+19,
+35,
+35,
+12,
+46
+],
+"NMES|5|ODW|All Students": [
+12,
+31,
+35,
+23,
+58
+],
+"NMES|5|Reading|All Students": [
+23,
+23,
+23,
+31,
+54
+],
+"NMES|5|SS|All Students": [
+46,
+19,
+23,
+12,
+35
+],
+"District|3|Math|All Students": [
+41,
+34,
+21,
+3,
+25
+],
+"District|3|Reading|All Students": [
+31,
+33,
+27,
+9,
+36
+],
+"District|4|Math|All Students": [
+38,
+32,
+26,
+4,
+30
+],
+"District|4|Reading|All Students": [
+33,
+25,
+30,
+13,
+43
+],
+"District|4|Science|All Students": [
+10,
+58,
+27,
+4,
+31
+],
+"District|5|EM|All Students": [
+33,
+32,
+16,
+18,
+35
+],
+"District|5|Math|All Students": [
+31,
+39,
+24,
+6,
+29
+],
+"District|5|ODW|All Students": [
+28,
+37,
+21,
+15,
+35
+],
+"District|5|Reading|All Students": [
+32,
+31,
+25,
+12,
+38
+],
+"District|5|SS|All Students": [
+48,
+21,
+23,
+8,
+31
+],
+"PES|3|Math|All Students": [
+31,
+34,
+28,
+7,
+34
+],
+"PES|3|Reading|All Students": [
+51,
+23,
+15,
+11,
+26
+],
+"PES|4|Math|All Students": [
+38,
+25,
+26,
+11,
+38
+],
+"PES|4|Reading|All Students": [
+36,
+40,
+17,
+8,
+25
+],
+"PES|4|Science|All Students": null,
+"PES|5|EM|All Students": [
+57,
+28,
+13,
+1,
+15
+],
+"PES|5|Math|All Students": [
+45,
+37,
+15,
+3,
+18
+],
+"PES|5|ODW|All Students": [
+58,
+36,
+4,
+1,
+6
+],
+"PES|5|Reading|All Students": [
+43,
+33,
+21,
+3,
+24
+],
+"PES|5|SS|All Students": [
+58,
+19,
+16,
+6,
+22
+],
+"State|3|Math|All Students": [
+24,
+33,
+31,
+12,
+43
+],
+"State|3|Reading|All Students": [
+25,
+28,
+28,
+19,
+47
+],
+"State|4|Math|All Students": [
+29,
+26,
+32,
+12,
+44
+],
+"State|4|Reading|All Students": [
+23,
+27,
+32,
+18,
+50
+],
+"State|4|Science|All Students": [
+9,
+54,
+29,
+8,
+37
+],
+"State|5|EM|All Students": [
+24,
+29,
+23,
+24,
+47
+],
+"State|5|Math|All Students": [
+26,
+31,
+31,
+12,
+43
+],
+"State|5|ODW|All Students": [
+22,
+39,
+23,
+15,
+38
+],
+"State|5|Reading|All Students": [
+21,
+29,
+31,
+19,
+50
+],
+"State|5|SS|All Students": [
+34,
+28,
+24,
+15,
+38
+],
+"State|all|Reading|All Students": [
+23,
+28,
+30,
+19,
+49
+],
+"State|all|Math|All Students": [
+26,
+30,
+31,
+12,
+43
+],
+"State|all|Science|All Students": [
+9,
+53,
+29,
+8,
+37
+],
+"State|all|SS|All Students": [
+34,
+28,
+24,
+15,
+38
+],
+"State|all|CW|All Students": [
+20,
+37,
+30,
+13,
+43
+],
+"District|all|Reading|All Students": [
+31,
+30,
+27,
+11,
+38
+],
+"District|all|Math|All Students": [
+36,
+36,
+24,
+4,
+28
+],
+"District|all|Science|All Students": [
+10,
+58,
+27,
+5,
+31
+],
+"District|all|SS|All Students": [
+48,
+22,
+23,
+7,
+30
+],
+"District|all|CW|All Students": [
+27,
+36,
+24,
+13,
+36
+],
+"BCES|all|Reading|All Students": [
+33,
+29,
+28,
+10,
+38
+],
+"BCES|all|Math|All Students": [
+39,
+33,
+25,
+3,
+28
+],
+"BCES|all|Science|All Students": [
+15,
+58,
+18,
+8,
+26
+],
+"BCES|all|SS|All Students": [
+43,
+26,
+28,
+3,
+31
+],
+"BCES|all|CW|All Students": [
+25,
+35,
+28,
+12,
+40
+],
+"CRES|all|Reading|All Students": [
+30,
+33,
+26,
+11,
+37
+],
+"CRES|all|Math|All Students": [
+33,
+40,
+23,
+4,
+27
+],
+"CRES|all|Science|All Students": null,
+"CRES|all|SS|All Students": [
+53,
+20,
+19,
+8,
+27
+],
+"CRES|all|CW|All Students": [
+35,
+39,
+16,
+11,
+27
+],
+"NMES|all|Reading|All Students": [
+32,
+27,
+24,
+17,
+41
+],
+"NMES|all|Math|All Students": [
+37,
+32,
+22,
+8,
+31
+],
+"NMES|all|Science|All Students": [
+7,
+40,
+47,
+7,
+53
+],
+"NMES|all|SS|All Students": [
+48,
+16,
+24,
+12,
+36
+],
+"NMES|all|CW|All Students": [
+12,
+32,
+36,
+20,
+56
+],
+"PES|all|Reading|All Students": [
+43,
+32,
+17,
+7,
+25
+],
+"PES|all|Math|All Students": [
+39,
+32,
+22,
+7,
+29
+],
+"PES|all|Science|All Students": null,
+"PES|all|SS|All Students": [
+59,
+19,
+16,
+6,
+22
+],
+"PES|all|CW|All Students": [
+54,
+42,
+3,
+1,
+4
+]
+},
+"2026": {
+"District|3|Reading|All Students": [
+37,
+25,
+28,
+10,
+38
+],
+"District|3|Math|All Students": [
+38,
+38,
+21,
+3,
+24
+],
+"District|4|Reading|All Students": [
+31,
+25,
+33,
+10,
+43
+],
+"District|4|Math|All Students": [
+41,
+27,
+25,
+6,
+32
+],
+"District|4|Science|All Students": [
+10,
+61,
+24,
+5,
+29
+],
+"District|5|Reading|All Students": [
+32,
+29,
+28,
+11,
+39
+],
+"District|5|Math|All Students": [
+41,
+31,
+25,
+4,
+28
+],
+"District|5|SS|All Students": [
+45,
+27,
+20,
+8,
+28
+],
+"District|5|ODW|All Students": [
+41,
+43,
+10,
+7,
+16
+],
+"District|5|EM|All Students": [
+29,
+28,
+25,
+19,
+44
+],
+"BCES|3|Reading|All Students": [
+33,
+22,
+29,
+16,
+45
+],
+"BCES|3|Math|All Students": [
+38,
+32,
+28,
+3,
+30
+],
+"BCES|4|Reading|All Students": [
+29,
+24,
+36,
+10,
+46
+],
+"BCES|4|Math|All Students": [
+37,
+23,
+31,
+8,
+39
+],
+"BCES|4|Science|All Students": [
+15,
+57,
+23,
+5,
+28
+],
+"BCES|5|Reading|All Students": [
+36,
+21,
+32,
+11,
+43
+],
+"BCES|5|Math|All Students": [
+48,
+23,
+22,
+6,
+28
+],
+"BCES|5|SS|All Students": [
+51,
+20,
+21,
+9,
+30
+],
+"BCES|5|ODW|All Students": [
+36,
+41,
+11,
+12,
+23
+],
+"BCES|5|EM|All Students": [
+31,
+28,
+23,
+17,
+41
+],
+"CRES|3|Reading|All Students": [
+33,
+31,
+31,
+5,
+36
+],
+"CRES|3|Math|All Students": [
+37,
+41,
+19,
+3,
+21
+],
+"CRES|4|Reading|All Students": [
+30,
+27,
+31,
+13,
+44
+],
+"CRES|4|Math|All Students": [
+42,
+33,
+20,
+5,
+26
+],
+"CRES|4|Science|All Students": [
+6,
+62,
+24,
+7,
+32
+],
+"CRES|5|Reading|All Students": [
+28,
+33,
+24,
+15,
+39
+],
+"CRES|5|Math|All Students": [
+37,
+36,
+25,
+1,
+27
+],
+"CRES|5|SS|All Students": [
+31,
+37,
+22,
+9,
+31
+],
+"CRES|5|ODW|All Students": [
+42,
+48,
+9,
+1,
+10
+],
+"CRES|5|EM|All Students": [
+21,
+24,
+31,
+24,
+55
+],
+"NMES|3|Reading|All Students": [
+64,
+18,
+14,
+5,
+18
+],
+"NMES|3|Math|All Students": [
+36,
+50,
+9,
+5,
+14
+],
+"NMES|4|Reading|All Students": null,
+"NMES|4|Math|All Students": [
+52,
+22,
+22,
+4,
+26
+],
+"NMES|4|Science|All Students": null,
+"NMES|5|Reading|All Students": null,
+"NMES|5|Math|All Students": null,
+"NMES|5|SS|All Students": null,
+"NMES|5|ODW|All Students": null,
+"NMES|5|EM|All Students": [
+47,
+37,
+11,
+5,
+16
+],
+"PES|3|Reading|All Students": [
+45,
+29,
+21,
+5,
+26
+],
+"PES|3|Math|All Students": null,
+"PES|4|Reading|All Students": [
+29,
+35,
+29,
+8,
+37
+],
+"PES|4|Math|All Students": [
+35,
+35,
+27,
+4,
+31
+],
+"PES|4|Science|All Students": [
+6,
+71,
+21,
+2,
+23
+],
+"PES|5|Reading|All Students": [
+33,
+37,
+27,
+4,
+31
+],
+"PES|5|Math|All Students": [
+47,
+22,
+27,
+4,
+31
+],
+"PES|5|SS|All Students": [
+57,
+24,
+14,
+4,
+18
+],
+"PES|5|ODW|All Students": [
+43,
+51,
+4,
+2,
+6
+],
+"PES|5|EM|All Students": [
+33,
+41,
+16,
+10,
+27
+],
+"State|3|Reading|All Students": [
+23,
+28,
+28,
+22,
+49
+],
+"State|3|Math|All Students": [
+24,
+33,
+31,
+12,
+43
+],
+"State|4|Reading|All Students": [
+22,
+28,
+32,
+18,
+50
+],
+"State|4|Math|All Students": [
+30,
+26,
+32,
+11,
+43
+],
+"State|4|Science|All Students": [
+9,
+51,
+29,
+11,
+40
+],
+"State|5|Reading|All Students": [
+22,
+27,
+32,
+19,
+51
+],
+"State|5|Math|All Students": [
+27,
+30,
+29,
+13,
+43
+],
+"State|5|SS|All Students": [
+35,
+28,
+23,
+14,
+38
+],
+"State|5|ODW|All Students": [
+23,
+41,
+19,
+16,
+35
+],
+"State|5|EM|All Students": [
+23,
+28,
+25,
+24,
+48
+],
+"District|all|Reading|All Students": [
+33,
+27,
+30,
+11,
+40
+],
+"District|all|Math|All Students": [
+40,
+31,
+24,
+5,
+29
+],
+"District|all|Science|All Students": [
+10,
+60,
+24,
+6,
+30
+],
+"District|all|SS|All Students": [
+44,
+27,
+21,
+8,
+29
+],
+"District|all|CW|All Students": [
+34,
+40,
+20,
+6,
+26
+],
+"BCES|all|Reading|All Students": [
+32,
+22,
+33,
+12,
+46
+],
+"BCES|all|Math|All Students": [
+41,
+25,
+28,
+6,
+34
+],
+"BCES|all|Science|All Students": [
+16,
+54,
+25,
+5,
+31
+],
+"BCES|all|SS|All Students": [
+51,
+19,
+22,
+9,
+30
+],
+"BCES|all|CW|All Students": [
+33,
+41,
+16,
+10,
+27
+],
+"CRES|all|Reading|All Students": [
+30,
+30,
+29,
+11,
+40
+],
+"CRES|all|Math|All Students": [
+39,
+36,
+21,
+3,
+25
+],
+"CRES|all|Science|All Students": [
+6,
+62,
+24,
+7,
+32
+],
+"CRES|all|SS|All Students": [
+30,
+38,
+23,
+9,
+32
+],
+"CRES|all|CW|All Students": [
+29,
+42,
+27,
+2,
+29
+],
+"NMES|all|Reading|All Students": [
+49,
+30,
+20,
+2,
+21
+],
+"NMES|all|Math|All Students": [
+41,
+36,
+20,
+3,
+23
+],
+"NMES|all|Science|All Students": null,
+"NMES|all|SS|All Students": null,
+"NMES|all|CW|All Students": null,
+"PES|all|Reading|All Students": [
+35,
+34,
+25,
+6,
+31
+],
+"PES|all|Math|All Students": [
+35,
+34,
+28,
+3,
+31
+],
+"PES|all|Science|All Students": [
+4,
+73,
+21,
+2,
+23
+],
+"PES|all|SS|All Students": [
+58,
+24,
+14,
+4,
+18
+],
+"PES|all|CW|All Students": [
+42,
+46,
+10,
+2,
+12
+],
+"State|all|Reading|All Students": [
+23,
+27,
+31,
+20,
+50
+],
+"State|all|Math|All Students": [
+27,
+30,
+31,
+12,
+43
+],
+"State|all|Science|All Students": [
+9,
+51,
+29,
+11,
+40
+],
+"State|all|SS|All Students": [
+35,
+28,
+23,
+14,
+38
+],
+"State|all|CW|All Students": [
+21,
+38,
+27,
+14,
+41
+]
+}
+}

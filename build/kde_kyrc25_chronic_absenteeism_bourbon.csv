@@ -1,0 +1,97 @@
+School Year,County Number,County Name,District Number,District Name,School Number,School Name,School Code,State School Id,NCES ID,CO-OP,CO-OP Code,School Type,Grade,Demographic,Suppressed,Chronically Absent Students,Students Enrolled 10 or More Days,Chronic Absenteeism Rate
+20242025,,,999,All Districts,,All Schools,999000,,,,,,All Grades,All Students,No,"163,177","651,776",25.0
+20242025,,,999,All Districts,,All Schools,999000,,,,,,PS,All Students,Yes,*,*,*
+20242025,,,999,All Districts,,All Schools,999000,,,,,,K,All Students,No,"12,402", , 
+20242025,,,999,All Districts,,All Schools,999000,,,,,,1st,All Students,No,"10,298", , 
+20242025,,,999,All Districts,,All Schools,999000,,,,,,2nd,All Students,No,"9,438", , 
+20242025,,,999,All Districts,,All Schools,999000,,,,,,3rd,All Students,No,"9,401", , 
+20242025,,,999,All Districts,,All Schools,999000,,,,,,4th,All Students,No,"8,678", , 
+20242025,,,999,All Districts,,All Schools,999000,,,,,,5th,All Students,No,"9,082", , 
+20242025,,,999,All Districts,,All Schools,999000,,,,,,6th,All Students,No,"11,390", , 
+20242025,,,999,All Districts,,All Schools,999000,,,,,,7th,All Students,No,"11,997", , 
+20242025,,,999,All Districts,,All Schools,999000,,,,,,8th,All Students,No,"13,634", , 
+20242025,,,999,All Districts,,All Schools,999000,,,,,,9th,All Students,No,"16,361", , 
+20242025,,,999,All Districts,,All Schools,999000,,,,,,10th,All Students,No,"16,463", , 
+20242025,,,999,All Districts,,All Schools,999000,,,,,,11th,All Students,No,"16,368", , 
+20242025,,,999,All Districts,,All Schools,999000,,,,,,12th,All Students,No,"17,469", , 
+20242025,,,999,All Districts,,All Schools,999000,,,,,,14th,All Students,No,196, , 
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,All Grades,All Students,No,597,"2,382",25.1
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,PS,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,K,All Students,No,43, , 
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,1st,All Students,No,47, , 
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,2nd,All Students,No,37, , 
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,3rd,All Students,No,37, , 
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,4th,All Students,No,41, , 
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,5th,All Students,No,37, , 
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,6th,All Students,No,40, , 
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,7th,All Students,No,36, , 
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,8th,All Students,No,55, , 
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,9th,All Students,No,58, , 
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,10th,All Students,No,53, , 
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,11th,All Students,No,57, , 
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,12th,All Students,No,56, , 
+20242025,009,BOURBON,041,Bourbon County,,All Schools,041000,,2100540,CKEC,901,,14th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,All Grades,All Students,No,114,488,23.4
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,PS,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,K,All Students,No,17, , 
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,1st,All Students,No,22, , 
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,2nd,All Students,No,16, , 
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,3rd,All Students,No,14, , 
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,4th,All Students,No,26, , 
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,5th,All Students,No,19, , 
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,6th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,7th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,8th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,9th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,10th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,11th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,12th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,010,Bourbon Central Elementary School,041010,009041010,210054000000,CKEC,901,A1,14th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,All Grades,All Students,No,99,484,20.5
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,PS,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,K,All Students,No,16, , 
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,1st,All Students,No,19, , 
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,2nd,All Students,No,20, , 
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,3rd,All Students,No,19, , 
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,4th,All Students,No,12, , 
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,5th,All Students,No,13, , 
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,6th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,7th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,8th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,9th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,10th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,11th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,12th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,030,Cane Ridge Elementary School,041030,009041030,210054000000,CKEC,901,A1,14th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,All Grades,All Students,No,32,144,22.2
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,PS,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,K,All Students,No,11, , 
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,1st,All Students,No,6, , 
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,2nd,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,3rd,All Students,No,6, , 
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,4th,All Students,No,3, , 
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,5th,All Students,No,5, , 
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,6th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,7th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,8th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,9th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,10th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,11th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,12th,All Students,Yes,*,*,*
+20242025,009,BOURBON,041,Bourbon County,090,North Middletown Elementary School,041090,009041090,210054000000,CKEC,901,A1,14th,All Students,Yes,*,*,*
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,All Grades,All Students,No,100,385,26.0
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,PS,All Students,Yes,*,*,*
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,K,All Students,No,22, , 
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,1st,All Students,No,14, , 
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,2nd,All Students,No,12, , 
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,3rd,All Students,No,21, , 
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,4th,All Students,No,14, , 
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,5th,All Students,No,17, , 
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,6th,All Students,Yes,*,*,*
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,7th,All Students,Yes,*,*,*
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,8th,All Students,Yes,*,*,*
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,9th,All Students,Yes,*,*,*
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,10th,All Students,Yes,*,*,*
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,11th,All Students,Yes,*,*,*
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,12th,All Students,Yes,*,*,*
+20242025,009,BOURBON,478,Paris Independent,010,Paris Elementary School,478010,009478010,210471000000,CKEC,901,A1,14th,All Students,Yes,*,*,*

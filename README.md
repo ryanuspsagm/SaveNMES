@@ -38,7 +38,13 @@ public source cited in the report and on the site.
   and the working comparison `build/ksa_2025_26_comparison.md`. The site's Fact
   One carries the 2025-26 results (status view, status chart, CSI explainer;
   `tests/verify_kde_2026.py` ties every number on the page to the archived
-  rows); the report (v5.0) and model still show 2024-25. The SABS fetch script uses a saved
+  rows); the report (v5.0) and model still show 2024-25. `python
+  build/cohort_analysis_2026.py` follows each NMES cohort through the 2023-24
+  and 2024-25 School Report Card files (Bourbon County rows archived as
+  `build/kde_kyrc24_*` and `build/kde_kyrc25_*`) and the 2025-26 release, and
+  writes `build/cohort_analysis_2025_26.md`: how much of the 2025-26 fall is a
+  cohort swap, how much is the fifth grade, and what enrollment says about
+  children leaving. The SABS fetch script uses a saved
   `sabs_zones_raw.json` if present, then tries the NCES REST endpoint, and falls
   back to the EDGE bulk download (`SABS_1516_SchoolLevels.zip` in `~/Downloads`,
   or set `SABS_ZIP`), so it works without a reachable NCES server - which
