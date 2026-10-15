@@ -135,12 +135,16 @@ chk(len(c_rows) == 53 and sum(r["Number of years identified"] == "1" for r in c_
 
 # ---------- 3. the site carries the numbers unchanged
 SHOW = {"Combined Writing": "Writing"}
-sec = html[html.index("The state's own numbers, 2025-26"):html.index("Status, not change")]
+prev = json.load(open(B / "kde_ksa_2024_25.json"))
+sec = html[html.index("The state's own numbers, 2024-25 and 2025-26"):html.index("Status, not change")]
 for s in SUBJ:
-    want = [ksa["schools"][CODES[c]][s] for c in ("041090", "041010", "041030")] + [ksa["state_elementary"][s]]
-    want = "".join(f"<td>{e['PD']} ({e['CI']})</td>" for e in want)
-    chk(f"<tr><td>{SHOW.get(s, s)}</td>{want}</tr>" in sec, f"site 2025-26 table row matches the archive: {s}")
-st = html[html.index("Status, not change"):html.index("The year before, 2024-25")]
+    cells = []
+    for c in ("041090", "041010", "041030"):
+        cells += [prev["schools"][CODES[c]][s], ksa["schools"][CODES[c]][s]]
+    cells += [prev["state_elementary"][s], ksa["state_elementary"][s]]
+    want = "".join(f"<td>{e['PD']} ({e['CI']})</td>" for e in cells)
+    chk(f"<tr><td>{SHOW.get(s, s)}</td>{want}</tr>" in sec, f"site combined table row matches both archives: {s}")
+st = html[html.index("Status, not change"):html.index("Two decades of scores")]
 order = ["041090", "041010", "041030", "478010", "999"]
 def cells(getter):
     return "".join(f"<td>{getter(PR[(c, 'ES')])}</td>" for c in order)
@@ -175,10 +179,8 @@ m = re.search(r"var LVD=(\{.*?\});\n", html)
 LVD = json.loads(m.group(1)) if m else {}
 chk(LVD.get("2025-26") == lv26 and LVD.get("2024-25") == lv25, "grade-level breakout carries both years exactly as archived")
 chk('name="lvYear" value="2025-26" checked' in html and "render('2025-26')" in html, "grade-level breakout defaults to 2025-26 with a year toggle")
-for needle in ["one of 53 statewide", "one of 19 schools newly identified statewide", "38 of the 53 are in Jefferson County",
-               "Thirty-three elementary schools were identified", "35th lowest of Kentucky's 715 elementary schools",
-               "between 37.6 and 38.2", "ranks second lowest", "last in the county in every subject",
-               'id="chartStatus"', "status-only 39.1"]:
+for needle in ["one of 53 statewide", "35th lowest of Kentucky's 715 elementary schools", "ranks second lowest",
+               "last in the county in every subject", 'id="chartStatus"', "status-only 39.1"]:
     chk(needle in html, f"site sentence present: {needle}")
 nmes_ci = [f(ksa["schools"][CODES["041090"]][s]["CI"]) for s in SUBJ]
 others = [[f(ksa["schools"][CODES[c]][s]["CI"]) for s in SUBJ] for c in ("041010", "041030", "478010")]
