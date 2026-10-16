@@ -3,7 +3,8 @@
 
 Reads build/kde_district_status_2025_26.csv (written by build/district_status_2025_26.py)
 and draws one square image with three rank tracks: elementary, middle and high school
-reading and mathematics status, the year's own result before the state's change formula.
+overall accountability score, the state's official rating, with its color. Set MEASURE to
+"status_only" for the status-only overall (KDE weights on status alone) instead.
 
 Usage: python3 build/chart_rank_social_2025_26.py
 Writes: build/bourbon_rank_social_2025_26.png (1200 x 1200)
@@ -22,6 +23,7 @@ OUT = os.path.join(HERE, "bourbon_rank_social_2025_26.png")
 
 NAVY, INK, MUTED, TRACK = "#1F3864", "#1C2230", "#6B7486", "#D9DFE8"
 LEVELS = [("ES", "Elementary"), ("MS", "Middle school"), ("HS", "High school")]
+MEASURE = "overall"  # "overall" (published score, status plus change) or "status_only"
 
 
 def ordinal(n):
@@ -36,7 +38,7 @@ def main():
     rows = {}
     with open(SRC, encoding="utf-8") as f:
         for r in csv.DictReader(f):
-            if r["district_number"] == "041" and r["measure"] == "rm" and r["year"] == "2025-26":
+            if r["district_number"] == "041" and r["measure"] == MEASURE and r["year"] == "2025-26":
                 rows[r["level"]] = r
     assert all(code in rows for code, _ in LEVELS), "Bourbon County rows missing"
 
@@ -50,8 +52,10 @@ def main():
 
     ax.text(5, 92.0, "Where Bourbon County Schools rank", fontsize=16.5, fontweight="bold", color=NAVY, va="top")
     ax.text(5, 86.0, "among Kentucky's school districts", fontsize=16.5, fontweight="bold", color=NAVY, va="top")
-    ax.text(5, 78.5, "2025-26 state tests, reading and mathematics. All students, every district in Kentucky.",
-            fontsize=8.4, color=MUTED, va="top")
+    sub = ("2025-26 overall accountability score, the state's official rating.\nAll students, every district in Kentucky."
+           if MEASURE == "overall" else
+           "2025-26 overall accountability status, before the state's change formula.\nAll students, every district in Kentucky.")
+    ax.text(5, 78.5, sub, fontsize=8.4, color=MUTED, va="top", linespacing=1.45)
 
     x0, x1 = 24.0, 56.0
     ys = [62.0, 45.0, 28.0]
@@ -65,7 +69,10 @@ def main():
         ax.text(x0 - 2.5, y, label, fontsize=12, color=INK, ha="right", va="center")
         ax.text(x1 + 3.0, y + 2.2, f"{ordinal(rank)} of {n} districts", fontsize=12.5, fontweight="bold",
                 color=NAVY, ha="left", va="center")
-        ax.text(x1 + 3.0, y - 2.6, f"bottom {pr:.0f} percent", fontsize=9, color=MUTED, ha="left", va="center")
+        sub_line = f"bottom {pr:.0f} percent"
+        if MEASURE == "overall" and r["state_rating"]:
+            sub_line += f", rated {r['state_rating']}"
+        ax.text(x1 + 3.0, y - 2.6, sub_line, fontsize=9, color=MUTED, ha="left", va="center")
     ax.text(x0, ys[-1] - 5.6, "lowest", fontsize=7.4, color=MUTED, ha="left", va="top")
     ax.text((x0 + x1) / 2, ys[-1] - 5.6, "state median", fontsize=7.4, color=MUTED, ha="center", va="top")
     ax.text(x1, ys[-1] - 5.6, "highest", fontsize=7.4, color=MUTED, ha="right", va="top")
