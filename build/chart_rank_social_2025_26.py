@@ -20,7 +20,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "kde_district_status_2025_26.csv")
 OUT = os.path.join(HERE, "bourbon_rank_social_2025_26.png")
 
-NAVY, ROYAL, INK, MUTED, TRACK, LINE = "#1F3864", "#2E75B6", "#1C2230", "#6B7486", "#D9DFE8", "#E3E8F0"
+NAVY, INK, MUTED, TRACK = "#1F3864", "#1C2230", "#6B7486", "#D9DFE8"
 LEVELS = [("ES", "Elementary"), ("MS", "Middle school"), ("HS", "High school")]
 
 
@@ -48,43 +48,30 @@ def main():
     ax.set_ylim(0, 100)
     ax.axis("off")
 
-    # Title block
-    ax.text(5, 94.5, "Where Bourbon County Schools rank", fontsize=16.5, fontweight="bold", color=NAVY, va="top")
-    ax.text(5, 88.5, "among Kentucky's school districts", fontsize=16.5, fontweight="bold", color=NAVY, va="top")
-    ax.text(5, 81.5, "2025-26 state tests, reading and mathematics. Status is the year's own result,\n"
-                     "before the state's change formula. All students, every district in Kentucky.",
-            fontsize=8.2, color=MUTED, va="top", linespacing=1.45)
+    ax.text(5, 92.0, "Where Bourbon County Schools rank", fontsize=16.5, fontweight="bold", color=NAVY, va="top")
+    ax.text(5, 86.0, "among Kentucky's school districts", fontsize=16.5, fontweight="bold", color=NAVY, va="top")
+    ax.text(5, 78.5, "2025-26 state tests, reading and mathematics. All students, every district in Kentucky.",
+            fontsize=8.4, color=MUTED, va="top")
 
-    # Tracks
     x0, x1 = 24.0, 56.0
-    ys = [66.0, 52.0, 38.0]
+    ys = [62.0, 45.0, 28.0]
     for (code, label), y in zip(LEVELS, ys):
         r = rows[code]
         rank, n, pr = int(r["rank_from_top"]), int(r["districts"]), float(r["percentile"])
         x = x0 + (x1 - x0) * pr / 100.0
-        ax.plot([x0, x1], [y, y], color=TRACK, lw=7, solid_capstyle="round", zorder=1)
-        ax.plot([(x0 + x1) / 2] * 2, [y - 2.2, y + 2.2], color=MUTED, lw=0.9, zorder=2)
-        ax.scatter([x], [y], s=240, color=NAVY, edgecolor="white", linewidth=2, zorder=3)
-        ax.text(x0 - 2.5, y, label, fontsize=11.5, color=INK, ha="right", va="center")
-        ax.text(x1 + 3.0, y + 2.0, f"{ordinal(rank)} of {n} districts", fontsize=12, fontweight="bold",
+        ax.plot([x0, x1], [y, y], color=TRACK, lw=8, solid_capstyle="round", zorder=1)
+        ax.plot([(x0 + x1) / 2] * 2, [y - 2.4, y + 2.4], color=MUTED, lw=0.9, zorder=2)
+        ax.scatter([x], [y], s=300, color=NAVY, edgecolor="white", linewidth=2, zorder=3)
+        ax.text(x0 - 2.5, y, label, fontsize=12, color=INK, ha="right", va="center")
+        ax.text(x1 + 3.0, y + 2.2, f"{ordinal(rank)} of {n} districts", fontsize=12.5, fontweight="bold",
                 color=NAVY, ha="left", va="center")
-        ax.text(x1 + 3.0, y - 2.4, f"bottom {pr:.0f} percent; state rating \"{r['state_rating']}\"",
-                fontsize=7.4, color=MUTED, ha="left", va="center")
-    ax.text(x0, ys[-1] - 5.2, "lowest", fontsize=7.2, color=MUTED, ha="left", va="top")
-    ax.text((x0 + x1) / 2, ys[-1] - 5.2, "state median", fontsize=7.2, color=MUTED, ha="center", va="top")
-    ax.text(x1, ys[-1] - 5.2, "highest", fontsize=7.2, color=MUTED, ha="right", va="top")
+        ax.text(x1 + 3.0, y - 2.6, f"bottom {pr:.0f} percent", fontsize=9, color=MUTED, ha="left", va="center")
+    ax.text(x0, ys[-1] - 5.6, "lowest", fontsize=7.4, color=MUTED, ha="left", va="top")
+    ax.text((x0 + x1) / 2, ys[-1] - 5.6, "state median", fontsize=7.4, color=MUTED, ha="center", va="top")
+    ax.text(x1, ys[-1] - 5.6, "highest", fontsize=7.4, color=MUTED, ha="right", va="top")
 
-    # Takeaway
-    ax.plot([5, 95], [26.0, 26.0], color=LINE, lw=0.8)
-    ax.text(5, 23.0, "This is not one school's bad year.", fontsize=11, fontweight="bold", color=INK, va="top")
-    ax.text(5, 18.3, "Elementary and middle school were already in the bottom 15 percent of districts\n"
-                     "last year. The high school stood at the 42nd percentile last year and fell to the 9th.\n"
-                     "Every level is rated \"low\" by the state on its own scale.",
-            fontsize=8.2, color=INK, va="top", linespacing=1.5)
-    ax.text(5, 2.6, "Source: Kentucky Department of Education, Accountable Profile 2025-2026 (released Oct. 14, 2026),\n"
-                    "district rows, all students; the prior year from the 2024-25 School Report Card profile.\n"
-                    "Rank 1 is the highest status in the state. Full tables and code: SaveNMES.org",
-            fontsize=6.3, color=MUTED, va="bottom", linespacing=1.45)
+    ax.text(5, 4.5, "Source: Kentucky Department of Education, Accountable Profile 2025-2026, district rows.  SaveNMES.org",
+            fontsize=6.4, color=MUTED, va="bottom")
     fig.savefig(OUT, dpi=200, facecolor="white")
     print("wrote", OUT)
 
