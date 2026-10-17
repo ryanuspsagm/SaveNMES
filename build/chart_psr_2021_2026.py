@@ -14,7 +14,7 @@ supply the official status used for the ranks):
       KYRC24_ACCT_Postsecondary_Readiness.csv KYRC25_ACCT_Postsecondary_Readiness.csv Postsecondary_Readiness_2026.CSV \
       accountability_profile_2022.csv accountability_profile_2023.csv KYRC24_ACCT_Profile.csv KYRC25_ACCT_Profile.csv \
       Accountable_Profile_2026.CSV
-Writes: build/psr_2021_2026_chart.png, build/psr_2021_2026.md, build/kde_psr_2021_2026.csv
+Writes: build/psr_2021_2026_chart.png, build/psr_2021_2026_percentile_chart.png, build/psr_2021_2026.md, build/kde_psr_2021_2026.csv
 """
 import csv
 import os
@@ -225,7 +225,53 @@ def main(paths):
     fig.subplots_adjust(left=0.06, right=0.985, top=0.80, bottom=0.2, wspace=0.12)
     out_png = os.path.join(HERE, "psr_2021_2026_chart.png")
     fig.savefig(out_png, dpi=200)
-    print("wrote", out_png)
+
+    # percentile version: the same five years as Bourbon's place among districts
+    fig2, axes2 = plt.subplots(1, 2, figsize=(12.0, 4.9), sharey=True)
+    panels2 = [(("rate_rank", "rate_n", "rate_pct"), "Share of seniors meeting a readiness measure: percentile among districts"),
+               (("rank", "n", "pct"), "Readiness status as scored: percentile among districts")]
+    for ax, ((rk_key, n_key, pct_key), title) in zip(axes2, panels2):
+        ax.axhspan(0, 25, color="#F3F5F8", zorder=0)
+        ax.axhline(50, color=GRAY, lw=1.2, ls=(0, (4, 3)), zorder=1)
+        ys = [series[y][pct_key] for y in YEARS]
+        ax.plot(xs, ys, color=NAVY, lw=2.2, marker="o", ms=7.5, markeredgecolor="white", markeredgewidth=1.2, zorder=3)
+        for x, y in enumerate(YEARS):
+            v = series[y]
+            if v[rk_key] is None:
+                continue
+            ax.text(x, v[pct_key] + 3.2, f"{ordinal(int(round(v[pct_key])))} pct", ha="center", va="bottom", color=NAVY,
+                    fontsize=8.6, fontweight="bold", zorder=6, bbox=box)
+            ry, rva = (v[pct_key] - 3.2, "top") if v[pct_key] >= 14 else (v[pct_key] + 11.0, "bottom")
+            ax.text(x, ry, f"{ordinal(v[rk_key])} of {v[n_key]}", ha="center", va=rva, color=MUTED,
+                    fontsize=7.6, zorder=6, bbox=box)
+        ax.text(len(YEARS) - 1 + 0.62, 50, "median\ndistrict", color=MUTED, fontsize=7.4, ha="left", va="center")
+        ax.text(len(YEARS) - 1 + 0.62, 12.5, "bottom\nquarter", color=MUTED, fontsize=7.4, ha="left", va="center")
+        ax.set_ylim(0, 100)
+        ax.set_yticks([0, 25, 50, 75, 100])
+        ax.set_xlim(-0.45, len(YEARS) - 1 + 1.2)
+        ax.set_xticks(xs)
+        ax.set_xticklabels(YEARS, fontsize=8.6)
+        ax.set_title(title, color=INK, fontsize=10.2, loc="left", pad=8)
+        for sp in ("top", "right"):
+            ax.spines[sp].set_visible(False)
+        for sp in ("left", "bottom"):
+            ax.spines[sp].set_color(LINE)
+        ax.tick_params(colors=MUTED, labelsize=8.6, length=0)
+        ax.yaxis.grid(True, color=LINE, lw=0.8)
+        ax.set_axisbelow(True)
+    axes2[0].set_ylabel("Percentile among Kentucky districts", color=INK, fontsize=9.5, labelpad=8)
+    fig2.suptitle("Where Bourbon County High's postsecondary readiness ranks among Kentucky districts, 2021-22 to 2025-26",
+                  x=0.04, ha="left", fontsize=12.0, color=INK, fontweight="bold", y=0.985)
+    fig2.text(0.04, 0.015,
+              "Source: KDE postsecondary readiness files and accountability profiles, district rows, all students. Percentile is the share "
+              "of Kentucky districts at or below Bourbon County that year; the label under each point is the rank, 1 = highest. The left "
+              "panel ranks the share of seniors meeting at least one readiness measure, the right panel the status the state scores, which "
+              "counts a high-demand industry credential as 1.25.",
+              fontsize=7.3, color=MUTED, ha="left", va="bottom", wrap=True)
+    fig2.subplots_adjust(left=0.06, right=0.985, top=0.86, bottom=0.2, wspace=0.12)
+    out_png2 = os.path.join(HERE, "psr_2021_2026_percentile_chart.png")
+    fig2.savefig(out_png2, dpi=200)
+    print("wrote", out_png, out_png2)
     for y in YEARS:
         print(y, series[y])
 

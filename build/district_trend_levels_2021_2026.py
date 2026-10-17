@@ -13,6 +13,7 @@ and writes:
   build/district_trend_levels_2021_2026.md
   build/kde_district_trend_levels_2021_2026.csv
   build/district_trend_levels_2021_2026_overall_chart.png   overall score, five years, by level
+  build/district_trend_levels_2021_2026_overall_percentile_chart.png   the same years as a percentile among districts
   build/district_trend_levels_2021_2026_pd_chart.png        reading and math percent proficient, six years
 
 Usage (all paths are KDE files, downloaded with a browser user agent):
@@ -372,6 +373,60 @@ def main(a):
     out_png = os.path.join(HERE, "district_trend_levels_2021_2026_overall_chart.png")
     fig.savefig(out_png, dpi=200)
 
+    # chart 1b: the same five years as a percentile among Kentucky districts
+    def percentile_panel(ax, years, rank_tuples, ratings, title, first_label=True):
+        """rank_tuples: list of (rank, n, pct) per year; ratings: color word per year or None."""
+        xs = list(range(len(years)))
+        ax.axhspan(0, 25, color="#F3F5F8", zorder=0)
+        ax.axhline(50, color=GRAY, lw=1.2, ls=(0, (4, 3)), zorder=1)
+        ys = [rk[2] if rk and rk[0] else None for rk in rank_tuples]
+        ax.plot(xs, ys, color=NAVY, lw=2.2, zorder=3)
+        for x, (rk, rating) in enumerate(zip(rank_tuples, ratings)):
+            if not rk or not rk[0]:
+                continue
+            fill = FILL.get(rating or "", NAVY)
+            ax.scatter([x], [rk[2]], s=80, color=fill, edgecolor=NAVY, linewidth=1.6, zorder=4)
+            ax.text(x, rk[2] + 3.2, f"{ordinal(int(round(rk[2])))} pct", ha="center", va="bottom", color=NAVY,
+                    fontsize=8.6, fontweight="bold", zorder=6, bbox=box)
+            # the rank goes under the point unless the point is too low for it to clear the axis
+            ry, rva = (rk[2] - 3.2, "top") if rk[2] >= 14 else (rk[2] + 11.0, "bottom")
+            ax.text(x, ry, f"{ordinal(rk[0])} of {rk[1]}", ha="center", va=rva, color=MUTED,
+                    fontsize=7.6, zorder=6, bbox=box)
+        ax.text(len(years) - 1 + 0.62, 50, "median\ndistrict", color=MUTED, fontsize=7.4, ha="left", va="center")
+        ax.text(len(years) - 1 + 0.62, 12.5, "bottom\nquarter", color=MUTED, fontsize=7.4, ha="left", va="center")
+        ax.set_ylim(0, 100)
+        ax.set_yticks([0, 25, 50, 75, 100])
+        ax.set_xlim(-0.45, len(years) - 1 + 1.2)
+        ax.set_xticks(xs)
+        ax.set_xticklabels(years, fontsize=8.4)
+        ax.set_title(title, color=INK, fontsize=11, loc="left", pad=8)
+        for sp in ("top", "right"):
+            ax.spines[sp].set_visible(False)
+        for sp in ("left", "bottom"):
+            ax.spines[sp].set_color(LINE)
+        ax.tick_params(colors=MUTED, labelsize=8.6, length=0)
+        ax.yaxis.grid(True, color=LINE, lw=0.8)
+        ax.set_axisbelow(True)
+
+    fig3, axes3 = plt.subplots(1, 3, figsize=(12.5, 5.0), sharey=True)
+    for i, (lv, short) in enumerate(LEVELS):
+        percentile_panel(axes3[i], YEARS,
+                         [data.get((y, lv, "Bourbon County", "overall_rank")) for y in YEARS],
+                         [data.get((y, lv, "Bourbon County", "overall_rating")) for y in YEARS],
+                         f"{short} school level")
+    axes3[0].set_ylabel("Percentile among Kentucky districts", color=INK, fontsize=10, labelpad=8)
+    fig3.suptitle("Where Bourbon County's overall index ranks among Kentucky districts, by level, 2021-22 to 2025-26",
+                  x=0.04, ha="left", fontsize=12.2, color=INK, fontweight="bold", y=0.985)
+    fig3.text(0.04, 0.015,
+              "Source: KDE accountability profiles, district rows, all students (accountability_profile_2022 and 2023; KYRC24 and KYRC25; "
+              "Accountable_Profile_2026, October 14, 2026). Percentile is the share of Kentucky districts scoring at or below Bourbon County "
+              "on the overall score that year; the label under each point is the rank, 1 = highest. Marker fill is the state's color for "
+              "Bourbon's score that year.",
+              fontsize=7.4, color=MUTED, ha="left", va="bottom", wrap=True)
+    fig3.subplots_adjust(left=0.06, right=0.985, top=0.86, bottom=0.19, wspace=0.14)
+    out_png3 = os.path.join(HERE, "district_trend_levels_2021_2026_overall_percentile_chart.png")
+    fig3.savefig(out_png3, dpi=200)
+
     # chart 2: percent proficient or distinguished, reading and math, six years
     fig2, axes2 = plt.subplots(3, 2, figsize=(12.5, 9.4), sharex=True)
     for j, subj in enumerate(("Reading", "Mathematics")):
@@ -399,7 +454,7 @@ def main(a):
     fig2.subplots_adjust(left=0.065, right=0.985, top=0.905, bottom=0.075, hspace=0.28, wspace=0.14)
     out_png2 = os.path.join(HERE, "district_trend_levels_2021_2026_pd_chart.png")
     fig2.savefig(out_png2, dpi=200)
-    print("wrote", out_csv, out_md, out_png, out_png2)
+    print("wrote", out_csv, out_md, out_png, out_png2, out_png3)
 
 
 if __name__ == "__main__":
