@@ -1,11 +1,11 @@
-year,district,postsecondary_rate,rate_with_bonus,rank_from_top,districts,district_median_with_bonus
-2021-22,Bourbon County,68.8,72.1,131,168,80.8
-2021-22,Kentucky,72.4,76.1,,,80.8
-2022-23,Bourbon County,75.7,78.5,144,166,89.8
-2022-23,Kentucky,79.1,83.5,,,89.8
-2023-24,Bourbon County,75.6,78.8,143,164,91.0
-2023-24,Kentucky,81.0,86.0,,,91.0
-2024-25,Bourbon County,72.3,75.0,161,167,94.5
-2024-25,Kentucky,83.3,89.1,,,94.5
-2025-26,Bourbon County,77.9,86.5,149,167,99.0
-2025-26,Kentucky,85.3,93.9,,,99.0
+year,district,postsecondary_rate,rate_with_bonus,status_rank_from_top,status_districts,status_percentile,rate_rank_from_top,rate_districts,rate_percentile,district_median_with_bonus
+2021-22,Bourbon County,68.8,72.1,130,168,22.6,129,168,22.6,80.8
+2021-22,Kentucky,72.4,76.1,,,,,,,80.8
+2022-23,Bourbon County,75.7,78.5,144,166,13.6,139,168,17.6,89.8
+2022-23,Kentucky,79.1,83.5,,,,,,,89.8
+2023-24,Bourbon County,75.6,78.8,143,164,13.1,148,168,12.2,91.0
+2023-24,Kentucky,81.0,86.0,,,,,,,91.0
+2024-25,Bourbon County,72.3,75.0,161,167,3.9,161,168,4.5,94.5
+2024-25,Kentucky,83.3,89.1,,,,,,,94.5
+2025-26,Bourbon County,77.9,86.5,148,167,11.4,158,168,6.2,99.0
+2025-26,Kentucky,85.3,93.9,,,,,,,99.0

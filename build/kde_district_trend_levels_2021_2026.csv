@@ -1,163 +1,163 @@
-year,level,district,measure,value,rating,rank_from_top,districts
-2021-22,ES,Bourbon County,overall,53.1,yellow,112,172
-2021-22,ES,Bourbon County,rm,53.0,low,116,172
-2021-22,ES,Bourbon County,ssw,51.4,,116,171
-2021-22,ES,Kentucky,overall,59.1,yellow,,
-2021-22,ES,Kentucky,rm,59.4,medium,,
-2021-22,ES,Kentucky,ssw,57.7,,,
-2021-22,MS,Bourbon County,overall,52.1,yellow,110,172
-2021-22,MS,Bourbon County,rm,48.8,low,136,172
-2021-22,MS,Bourbon County,ssw,54.4,,59,172
-2021-22,MS,Kentucky,overall,53.3,yellow,,
-2021-22,MS,Kentucky,rm,57.0,medium,,
-2021-22,MS,Kentucky,ssw,51.5,,,
-2021-22,HS,Bourbon County,overall,61.9,yellow,87,168
-2021-22,HS,Bourbon County,rm,62.1,medium,49,168
-2021-22,HS,Bourbon County,ssw,41.4,,139,168
-2021-22,HS,Kentucky,overall,59.6,yellow,,
-2021-22,HS,Kentucky,rm,56.7,medium,,
-2021-22,HS,Kentucky,ssw,48.0,,,
-2022-23,ES,Bourbon County,overall,56.3,yellow,132,172
-2022-23,ES,Bourbon County,rm,54.0,medium,122,172
-2022-23,ES,Bourbon County,ssw,52.9,,130,172
-2022-23,ES,Kentucky,overall,67.1,yellow,,
-2022-23,ES,Kentucky,rm,62.7,medium,,
-2022-23,ES,Kentucky,ssw,61.8,,,
-2022-23,MS,Bourbon County,overall,37.3,orange,162,172
-2022-23,MS,Bourbon County,rm,41.3,low,160,172
-2022-23,MS,Bourbon County,ssw,47.9,,123,172
-2022-23,MS,Kentucky,overall,56.1,yellow,,
-2022-23,MS,Kentucky,rm,58.5,medium,,
-2022-23,MS,Kentucky,ssw,53.3,,,
-2022-23,HS,Bourbon County,overall,62.5,yellow,111,168
-2022-23,HS,Bourbon County,rm,56.5,medium,92,168
-2022-23,HS,Bourbon County,ssw,49.3,,90,165
-2022-23,HS,Kentucky,overall,63.1,yellow,,
-2022-23,HS,Kentucky,rm,56.5,medium,,
-2022-23,HS,Kentucky,ssw,49.2,,,
-2023-24,ES,Bourbon County,overall,57.1,yellow,119,172
-2023-24,ES,Bourbon County,rm,50.9,low,146,172
-2023-24,ES,Bourbon County,ssw,59.5,,101,172
-2023-24,ES,Kentucky,overall,62.9,yellow,,
-2023-24,ES,Kentucky,rm,63.2,medium,,
-2023-24,ES,Kentucky,ssw,61.3,,,
-2023-24,MS,Bourbon County,overall,49.7,orange,141,172
-2023-24,MS,Bourbon County,rm,44.5,low,156,172
-2023-24,MS,Bourbon County,ssw,50.8,,113,171
-2023-24,MS,Kentucky,overall,56.6,yellow,,
-2023-24,MS,Kentucky,rm,59.3,medium,,
-2023-24,MS,Kentucky,ssw,54.2,,,
-2023-24,HS,Bourbon County,overall,52.5,orange,159,168
-2023-24,HS,Bourbon County,rm,49.7,low,135,168
-2023-24,HS,Bourbon County,ssw,41.5,,135,168
-2023-24,HS,Kentucky,overall,63.1,yellow,,
-2023-24,HS,Kentucky,rm,57.1,medium,,
-2023-24,HS,Kentucky,ssw,48.5,,,
-2024-25,ES,Bourbon County,overall,52.2,orange,154,172
-2024-25,ES,Bourbon County,rm,51.5,low,152,172
-2024-25,ES,Bourbon County,ssw,53.9,,132,172
-2024-25,ES,Kentucky,overall,65.0,yellow,,
-2024-25,ES,Kentucky,rm,64.6,medium,,
-2024-25,ES,Kentucky,ssw,62.0,,,
-2024-25,MS,Bourbon County,overall,57.8,yellow,104,172
-2024-25,MS,Bourbon County,rm,50.1,low,147,172
-2024-25,MS,Bourbon County,ssw,54.9,,99,171
-2024-25,MS,Kentucky,overall,60.8,yellow,,
-2024-25,MS,Kentucky,rm,61.6,medium,,
-2024-25,MS,Kentucky,ssw,56.9,,,
-2024-25,HS,Bourbon County,overall,67.2,yellow,121,168
-2024-25,HS,Bourbon County,rm,60.2,medium,97,168
-2024-25,HS,Bourbon County,ssw,49.6,,107,167
-2024-25,HS,Kentucky,overall,68.3,yellow,,
-2024-25,HS,Kentucky,rm,60.6,medium,,
-2024-25,HS,Kentucky,ssw,51.4,,,
-2025-26,ES,Bourbon County,overall,51.0,orange,138,172
-2025-26,ES,Bourbon County,rm,51.0,low,151,172
-2025-26,ES,Bourbon County,ssw,50.9,,137,172
-2025-26,ES,Kentucky,overall,64.7,yellow,,
-2025-26,ES,Kentucky,rm,64.9,medium,,
-2025-26,ES,Kentucky,ssw,62.0,,,
-2025-26,MS,Bourbon County,overall,49.1,orange,139,172
-2025-26,MS,Bourbon County,rm,48.2,low,148,172
-2025-26,MS,Bourbon County,ssw,52.9,,114,171
-2025-26,MS,Kentucky,overall,59.1,yellow,,
-2025-26,MS,Kentucky,rm,61.6,medium,,
-2025-26,MS,Kentucky,ssw,57.2,,,
-2025-26,HS,Bourbon County,overall,53.7,orange,163,168
-2025-26,HS,Bourbon County,rm,48.6,low,154,168
-2025-26,HS,Bourbon County,ssw,46.8,,121,168
-2025-26,HS,Kentucky,overall,67.5,yellow,,
-2025-26,HS,Kentucky,rm,61.0,medium,,
-2025-26,HS,Kentucky,ssw,51.8,,,
-2020-21,ES,Bourbon County,pd:Reading,26.0,,,
-2020-21,ES,Bourbon County,pd:Mathematics,27.2,,,
-2020-21,ES,Kentucky,pd:Reading,39.5,,,
-2020-21,ES,Kentucky,pd:Mathematics,31.4,,,
-2020-21,MS,Bourbon County,pd:Reading,37.8,,,
-2020-21,MS,Bourbon County,pd:Mathematics,25.2,,,
-2020-21,MS,Kentucky,pd:Reading,44.0,,,
-2020-21,MS,Kentucky,pd:Mathematics,27.8,,,
-2020-21,HS,Bourbon County,pd:Reading,32.8,,,
-2020-21,HS,Bourbon County,pd:Mathematics,27.3,,,
-2020-21,HS,Kentucky,pd:Reading,37.9,,,
-2020-21,HS,Kentucky,pd:Mathematics,30.3,,,
-2021-22,ES,Bourbon County,pd:Reading,42.0,,,
-2021-22,ES,Bourbon County,pd:Mathematics,30.0,,,
-2021-22,ES,Kentucky,pd:Reading,45.0,,,
-2021-22,ES,Kentucky,pd:Mathematics,38.0,,,
-2021-22,MS,Bourbon County,pd:Reading,36.0,,,
-2021-22,MS,Bourbon County,pd:Mathematics,29.0,,,
-2021-22,MS,Kentucky,pd:Reading,44.0,,,
-2021-22,MS,Kentucky,pd:Mathematics,37.0,,,
-2021-22,HS,Bourbon County,pd:Reading,49.0,,,
-2021-22,HS,Bourbon County,pd:Mathematics,42.0,,,
-2021-22,HS,Kentucky,pd:Reading,44.0,,,
-2021-22,HS,Kentucky,pd:Mathematics,36.0,,,
-2022-23,ES,Bourbon County,pd:Reading,39.0,,,
-2022-23,ES,Bourbon County,pd:Mathematics,31.0,,,
-2022-23,ES,Kentucky,pd:Reading,47.0,,,
-2022-23,ES,Kentucky,pd:Mathematics,42.0,,,
-2022-23,MS,Bourbon County,pd:Reading,31.0,,,
-2022-23,MS,Bourbon County,pd:Mathematics,19.0,,,
-2022-23,MS,Kentucky,pd:Reading,45.0,,,
-2022-23,MS,Kentucky,pd:Mathematics,37.0,,,
-2022-23,HS,Bourbon County,pd:Reading,48.0,,,
-2022-23,HS,Bourbon County,pd:Mathematics,29.0,,,
-2022-23,HS,Kentucky,pd:Reading,44.0,,,
-2022-23,HS,Kentucky,pd:Mathematics,33.0,,,
-2023-24,ES,Bourbon County,pd:Reading,39.0,,,
-2023-24,ES,Bourbon County,pd:Mathematics,28.0,,,
-2023-24,ES,Kentucky,pd:Reading,47.0,,,
-2023-24,ES,Kentucky,pd:Mathematics,42.0,,,
-2023-24,MS,Bourbon County,pd:Reading,31.0,,,
-2023-24,MS,Bourbon County,pd:Mathematics,24.0,,,
-2023-24,MS,Kentucky,pd:Reading,45.0,,,
-2023-24,MS,Kentucky,pd:Mathematics,39.0,,,
-2023-24,HS,Bourbon County,pd:Reading,42.0,,,
-2023-24,HS,Bourbon County,pd:Mathematics,23.0,,,
-2023-24,HS,Kentucky,pd:Reading,45.0,,,
-2023-24,HS,Kentucky,pd:Mathematics,35.0,,,
-2024-25,ES,Bourbon County,pd:Reading,38.0,,,
-2024-25,ES,Bourbon County,pd:Mathematics,28.0,,,
-2024-25,ES,Kentucky,pd:Reading,49.0,,,
-2024-25,ES,Kentucky,pd:Mathematics,43.0,,,
-2024-25,MS,Bourbon County,pd:Reading,36.0,,,
-2024-25,MS,Bourbon County,pd:Mathematics,31.0,,,
-2024-25,MS,Kentucky,pd:Reading,47.0,,,
-2024-25,MS,Kentucky,pd:Mathematics,41.0,,,
-2024-25,HS,Bourbon County,pd:Reading,50.0,,,
-2024-25,HS,Bourbon County,pd:Mathematics,35.0,,,
-2024-25,HS,Kentucky,pd:Reading,46.0,,,
-2024-25,HS,Kentucky,pd:Mathematics,40.0,,,
-2025-26,ES,Bourbon County,pd:Reading,40.0,,,
-2025-26,ES,Bourbon County,pd:Mathematics,29.0,,,
-2025-26,ES,Kentucky,pd:Reading,50.0,,,
-2025-26,ES,Kentucky,pd:Mathematics,43.0,,,
-2025-26,MS,Bourbon County,pd:Reading,37.0,,,
-2025-26,MS,Bourbon County,pd:Mathematics,25.0,,,
-2025-26,MS,Kentucky,pd:Reading,48.0,,,
-2025-26,MS,Kentucky,pd:Mathematics,40.0,,,
-2025-26,HS,Bourbon County,pd:Reading,39.0,,,
-2025-26,HS,Bourbon County,pd:Mathematics,26.0,,,
-2025-26,HS,Kentucky,pd:Reading,49.0,,,
-2025-26,HS,Kentucky,pd:Mathematics,39.0,,,
+year,level,district,measure,value,rating,rank_from_top,districts,percentile
+2021-22,ES,Bourbon County,overall,53.1,yellow,112,172,35.2
+2021-22,ES,Bourbon County,rm,53.0,low,116,172,32.8
+2021-22,ES,Bourbon County,ssw,51.4,,116,171,32.2
+2021-22,ES,Kentucky,overall,59.1,yellow,,,
+2021-22,ES,Kentucky,rm,59.4,medium,,,
+2021-22,ES,Kentucky,ssw,57.7,,,,
+2021-22,MS,Bourbon County,overall,52.1,yellow,110,172,36.3
+2021-22,MS,Bourbon County,rm,48.8,low,136,172,21.2
+2021-22,MS,Bourbon County,ssw,54.4,,59,172,66.0
+2021-22,MS,Kentucky,overall,53.3,yellow,,,
+2021-22,MS,Kentucky,rm,57.0,medium,,,
+2021-22,MS,Kentucky,ssw,51.5,,,,
+2021-22,HS,Bourbon County,overall,61.9,yellow,87,168,48.5
+2021-22,HS,Bourbon County,rm,62.1,medium,49,168,70.8
+2021-22,HS,Bourbon County,ssw,41.4,,139,168,17.6
+2021-22,HS,Kentucky,overall,59.6,yellow,,,
+2021-22,HS,Kentucky,rm,56.7,medium,,,
+2021-22,HS,Kentucky,ssw,48.0,,,,
+2022-23,ES,Bourbon County,overall,56.3,yellow,132,172,23.3
+2022-23,ES,Bourbon County,rm,54.0,medium,122,172,29.4
+2022-23,ES,Bourbon County,ssw,52.9,,130,172,24.7
+2022-23,ES,Kentucky,overall,67.1,yellow,,,
+2022-23,ES,Kentucky,rm,62.7,medium,,,
+2022-23,ES,Kentucky,ssw,61.8,,,,
+2022-23,MS,Bourbon County,overall,37.3,orange,162,172,6.1
+2022-23,MS,Bourbon County,rm,41.3,low,160,172,7.0
+2022-23,MS,Bourbon County,ssw,47.9,,123,172,28.8
+2022-23,MS,Kentucky,overall,56.1,yellow,,,
+2022-23,MS,Kentucky,rm,58.5,medium,,,
+2022-23,MS,Kentucky,ssw,53.3,,,,
+2022-23,HS,Bourbon County,overall,62.5,yellow,111,168,33.6
+2022-23,HS,Bourbon County,rm,56.5,medium,92,168,45.2
+2022-23,HS,Bourbon County,ssw,49.3,,90,165,45.5
+2022-23,HS,Kentucky,overall,63.1,yellow,,,
+2022-23,HS,Kentucky,rm,56.5,medium,,,
+2022-23,HS,Kentucky,ssw,49.2,,,,
+2023-24,ES,Bourbon County,overall,57.1,yellow,119,172,30.5
+2023-24,ES,Bourbon County,rm,50.9,low,146,172,15.4
+2023-24,ES,Bourbon County,ssw,59.5,,101,172,41.6
+2023-24,ES,Kentucky,overall,62.9,yellow,,,
+2023-24,ES,Kentucky,rm,63.2,medium,,,
+2023-24,ES,Kentucky,ssw,61.3,,,,
+2023-24,MS,Bourbon County,overall,49.7,orange,141,172,18.3
+2023-24,MS,Bourbon County,rm,44.5,low,156,172,9.6
+2023-24,MS,Bourbon County,ssw,50.8,,113,171,34.2
+2023-24,MS,Kentucky,overall,56.6,yellow,,,
+2023-24,MS,Kentucky,rm,59.3,medium,,,
+2023-24,MS,Kentucky,ssw,54.2,,,,
+2023-24,HS,Bourbon County,overall,52.5,orange,159,168,5.7
+2023-24,HS,Bourbon County,rm,49.7,low,135,168,19.6
+2023-24,HS,Bourbon County,ssw,41.5,,135,168,19.6
+2023-24,HS,Kentucky,overall,63.1,yellow,,,
+2023-24,HS,Kentucky,rm,57.1,medium,,,
+2023-24,HS,Kentucky,ssw,48.5,,,,
+2024-25,ES,Bourbon County,overall,52.2,orange,154,172,10.8
+2024-25,ES,Bourbon County,rm,51.5,low,152,172,11.9
+2024-25,ES,Bourbon County,ssw,53.9,,132,172,23.5
+2024-25,ES,Kentucky,overall,65.0,yellow,,,
+2024-25,ES,Kentucky,rm,64.6,medium,,,
+2024-25,ES,Kentucky,ssw,62.0,,,,
+2024-25,MS,Bourbon County,overall,57.8,yellow,104,172,39.5
+2024-25,MS,Bourbon County,rm,50.1,low,147,172,14.8
+2024-25,MS,Bourbon County,ssw,54.9,,99,171,42.1
+2024-25,MS,Kentucky,overall,60.8,yellow,,,
+2024-25,MS,Kentucky,rm,61.6,medium,,,
+2024-25,MS,Kentucky,ssw,56.9,,,,
+2024-25,HS,Bourbon County,overall,67.2,yellow,121,168,28.3
+2024-25,HS,Bourbon County,rm,60.2,medium,97,168,42.3
+2024-25,HS,Bourbon County,ssw,49.6,,107,167,36.2
+2024-25,HS,Kentucky,overall,68.3,yellow,,,
+2024-25,HS,Kentucky,rm,60.6,medium,,,
+2024-25,HS,Kentucky,ssw,51.4,,,,
+2025-26,ES,Bourbon County,overall,51.0,orange,138,172,20.1
+2025-26,ES,Bourbon County,rm,51.0,low,151,172,12.5
+2025-26,ES,Bourbon County,ssw,50.9,,137,172,20.6
+2025-26,ES,Kentucky,overall,64.7,yellow,,,
+2025-26,ES,Kentucky,rm,64.9,medium,,,
+2025-26,ES,Kentucky,ssw,62.0,,,,
+2025-26,MS,Bourbon County,overall,49.1,orange,139,172,19.2
+2025-26,MS,Bourbon County,rm,48.2,low,148,172,14.2
+2025-26,MS,Bourbon County,ssw,52.9,,114,171,33.6
+2025-26,MS,Kentucky,overall,59.1,yellow,,,
+2025-26,MS,Kentucky,rm,61.6,medium,,,
+2025-26,MS,Kentucky,ssw,57.2,,,,
+2025-26,HS,Bourbon County,overall,53.7,orange,163,168,3.3
+2025-26,HS,Bourbon County,rm,48.6,low,154,168,8.6
+2025-26,HS,Bourbon County,ssw,46.8,,121,168,28.3
+2025-26,HS,Kentucky,overall,67.5,yellow,,,
+2025-26,HS,Kentucky,rm,61.0,medium,,,
+2025-26,HS,Kentucky,ssw,51.8,,,,
+2020-21,ES,Bourbon County,pd:Reading,26.0,,,,
+2020-21,ES,Bourbon County,pd:Mathematics,27.2,,,,
+2020-21,ES,Kentucky,pd:Reading,39.5,,,,
+2020-21,ES,Kentucky,pd:Mathematics,31.4,,,,
+2020-21,MS,Bourbon County,pd:Reading,37.8,,,,
+2020-21,MS,Bourbon County,pd:Mathematics,25.2,,,,
+2020-21,MS,Kentucky,pd:Reading,44.0,,,,
+2020-21,MS,Kentucky,pd:Mathematics,27.8,,,,
+2020-21,HS,Bourbon County,pd:Reading,32.8,,,,
+2020-21,HS,Bourbon County,pd:Mathematics,27.3,,,,
+2020-21,HS,Kentucky,pd:Reading,37.9,,,,
+2020-21,HS,Kentucky,pd:Mathematics,30.3,,,,
+2021-22,ES,Bourbon County,pd:Reading,42.0,,,,
+2021-22,ES,Bourbon County,pd:Mathematics,30.0,,,,
+2021-22,ES,Kentucky,pd:Reading,45.0,,,,
+2021-22,ES,Kentucky,pd:Mathematics,38.0,,,,
+2021-22,MS,Bourbon County,pd:Reading,36.0,,,,
+2021-22,MS,Bourbon County,pd:Mathematics,29.0,,,,
+2021-22,MS,Kentucky,pd:Reading,44.0,,,,
+2021-22,MS,Kentucky,pd:Mathematics,37.0,,,,
+2021-22,HS,Bourbon County,pd:Reading,49.0,,,,
+2021-22,HS,Bourbon County,pd:Mathematics,42.0,,,,
+2021-22,HS,Kentucky,pd:Reading,44.0,,,,
+2021-22,HS,Kentucky,pd:Mathematics,36.0,,,,
+2022-23,ES,Bourbon County,pd:Reading,39.0,,,,
+2022-23,ES,Bourbon County,pd:Mathematics,31.0,,,,
+2022-23,ES,Kentucky,pd:Reading,47.0,,,,
+2022-23,ES,Kentucky,pd:Mathematics,42.0,,,,
+2022-23,MS,Bourbon County,pd:Reading,31.0,,,,
+2022-23,MS,Bourbon County,pd:Mathematics,19.0,,,,
+2022-23,MS,Kentucky,pd:Reading,45.0,,,,
+2022-23,MS,Kentucky,pd:Mathematics,37.0,,,,
+2022-23,HS,Bourbon County,pd:Reading,48.0,,,,
+2022-23,HS,Bourbon County,pd:Mathematics,29.0,,,,
+2022-23,HS,Kentucky,pd:Reading,44.0,,,,
+2022-23,HS,Kentucky,pd:Mathematics,33.0,,,,
+2023-24,ES,Bourbon County,pd:Reading,39.0,,,,
+2023-24,ES,Bourbon County,pd:Mathematics,28.0,,,,
+2023-24,ES,Kentucky,pd:Reading,47.0,,,,
+2023-24,ES,Kentucky,pd:Mathematics,42.0,,,,
+2023-24,MS,Bourbon County,pd:Reading,31.0,,,,
+2023-24,MS,Bourbon County,pd:Mathematics,24.0,,,,
+2023-24,MS,Kentucky,pd:Reading,45.0,,,,
+2023-24,MS,Kentucky,pd:Mathematics,39.0,,,,
+2023-24,HS,Bourbon County,pd:Reading,42.0,,,,
+2023-24,HS,Bourbon County,pd:Mathematics,23.0,,,,
+2023-24,HS,Kentucky,pd:Reading,45.0,,,,
+2023-24,HS,Kentucky,pd:Mathematics,35.0,,,,
+2024-25,ES,Bourbon County,pd:Reading,38.0,,,,
+2024-25,ES,Bourbon County,pd:Mathematics,28.0,,,,
+2024-25,ES,Kentucky,pd:Reading,49.0,,,,
+2024-25,ES,Kentucky,pd:Mathematics,43.0,,,,
+2024-25,MS,Bourbon County,pd:Reading,36.0,,,,
+2024-25,MS,Bourbon County,pd:Mathematics,31.0,,,,
+2024-25,MS,Kentucky,pd:Reading,47.0,,,,
+2024-25,MS,Kentucky,pd:Mathematics,41.0,,,,
+2024-25,HS,Bourbon County,pd:Reading,50.0,,,,
+2024-25,HS,Bourbon County,pd:Mathematics,35.0,,,,
+2024-25,HS,Kentucky,pd:Reading,46.0,,,,
+2024-25,HS,Kentucky,pd:Mathematics,40.0,,,,
+2025-26,ES,Bourbon County,pd:Reading,40.0,,,,
+2025-26,ES,Bourbon County,pd:Mathematics,29.0,,,,
+2025-26,ES,Kentucky,pd:Reading,50.0,,,,
+2025-26,ES,Kentucky,pd:Mathematics,43.0,,,,
+2025-26,MS,Bourbon County,pd:Reading,37.0,,,,
+2025-26,MS,Bourbon County,pd:Mathematics,25.0,,,,
+2025-26,MS,Kentucky,pd:Reading,48.0,,,,
+2025-26,MS,Kentucky,pd:Mathematics,40.0,,,,
+2025-26,HS,Bourbon County,pd:Reading,39.0,,,,
+2025-26,HS,Bourbon County,pd:Mathematics,26.0,,,,
+2025-26,HS,Kentucky,pd:Reading,49.0,,,,
+2025-26,HS,Kentucky,pd:Mathematics,39.0,,,,

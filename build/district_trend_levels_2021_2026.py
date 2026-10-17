@@ -170,9 +170,13 @@ def rank_of(rows, col, dn, lv):
         if d == dn:
             mine = v
     if mine is None:
-        return None, len(vals)
+        return None, len(vals), None
+    n = len(vals)
+    below = sum(1 for x in vals if x < mine)
+    equal = sum(1 for x in vals if x == mine)
+    pct = 100.0 * (below + 0.5 * equal) / n
     vals.sort(reverse=True)
-    return vals.index(mine) + 1, len(vals)
+    return vals.index(mine) + 1, n, pct
 
 
 def main(a):
@@ -204,11 +208,12 @@ def main(a):
                     if rt is not None:
                         lab = COLOR.get(int(rt), "") if key == "overall" else LEVEL_NAME.get(int(rt), "")
                         data[(year, lv, who, key + "_rating")] = lab
-                    rank, n = (rank_of(rows, cols[key], dn, lv) if dn == BOURBON else (None, None))
+                    rank, n, pct = (rank_of(rows, cols[key], dn, lv) if dn == BOURBON else (None, None, None))
                     if dn == BOURBON:
-                        data[(year, lv, who, key + "_rank")] = (rank, n)
+                        data[(year, lv, who, key + "_rank")] = (rank, n, pct)
                     recs.append({"year": year, "level": lv, "district": who, "measure": key, "value": v,
-                                 "rating": lab, "rank_from_top": rank or "", "districts": n or ""})
+                                 "rating": lab, "rank_from_top": rank or "", "districts": n or "",
+                                 "percentile": round(pct, 1) if pct is not None else ""})
     for year in PD_YEARS:
         for lv, short in LEVELS:
             for who, dn in (("Bourbon County", BOURBON), ("Kentucky", STATE)):
@@ -218,7 +223,7 @@ def main(a):
                         continue
                     data[(year, lv, who, "pd:" + subj)] = t[0]
                     recs.append({"year": year, "level": lv, "district": who, "measure": "pd:" + subj,
-                                 "value": t[0], "rating": "", "rank_from_top": "", "districts": ""})
+                                 "value": t[0], "rating": "", "rank_from_top": "", "districts": "", "percentile": ""})
 
     out_csv = os.path.join(HERE, "kde_district_trend_levels_2021_2026.csv")
     with open(out_csv, "w", newline="", encoding="utf-8") as f:
@@ -254,8 +259,8 @@ def main(a):
         cells = []
         for y in YEARS:
             rk = data.get((y, lv, "Bourbon County", "overall_rank"))
-            cells.append(f"{rk[0]} of {rk[1]}" if rk and rk[0] else "n/a")
-        L.append("| Bourbon rank, overall score | " + " | ".join(cells) + " |")
+            cells.append(f"{rk[0]} of {rk[1]} ({ordinal(int(round(rk[2])))} pct)" if rk and rk[0] else "n/a")
+        L.append("| Bourbon rank and percentile, overall score | " + " | ".join(cells) + " |")
         for who in ("Bourbon County", "Kentucky"):
             cells = []
             for y in YEARS:
@@ -266,8 +271,8 @@ def main(a):
         cells = []
         for y in YEARS:
             rk = data.get((y, lv, "Bourbon County", "rm_rank"))
-            cells.append(f"{rk[0]} of {rk[1]}" if rk and rk[0] else "n/a")
-        L.append("| Bourbon rank, reading and mathematics status | " + " | ".join(cells) + " |")
+            cells.append(f"{rk[0]} of {rk[1]} ({ordinal(int(round(rk[2])))} pct)" if rk and rk[0] else "n/a")
+        L.append("| Bourbon rank and percentile, reading and mathematics status | " + " | ".join(cells) + " |")
         for who in ("Bourbon County", "Kentucky"):
             cells = [fmt(data.get((y, lv, who, "ssw"))) for y in YEARS]
             L.append(f"| Science, social studies and writing status, {who} | " + " | ".join(cells) + " |")
@@ -291,8 +296,10 @@ def main(a):
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 9.5})
     box = dict(boxstyle="round,pad=0.12", fc="white", ec="none", alpha=0.85)
 
-    def draw_panel(ax, years, series, key, lv, value_fmt, show_rating, rank_key):
+    def draw_panel(ax, years, series, key, lv, value_fmt, show_rating, rank_key, ylim=None):
         xs = list(range(len(years)))
+        if ylim:
+            ax.set_ylim(*ylim)
         for who, color, ls, mk, z in (("Kentucky", GRAY, (0, (4, 3)), "s", 2), ("Bourbon County", NAVY, "-", "o", 3)):
             ys = [data.get((y, lv, who, key)) for y in years]
             ax.plot(xs, ys, color=color, lw=2.0, ls=ls, zorder=z, label=who)
@@ -317,11 +324,15 @@ def main(a):
                     # keep the first point's label inside the axes
                     xt, ha = (x - 0.28, "left") if x == 0 else (x, "center")
                     ax.text(xt, v + dy, label, ha=ha, va="bottom" if dy > 0 else "top", **style)
-            if who == "Bourbon County" and rank_key:
-                rk = data.get((years[-1], lv, "Bourbon County", rank_key))
-                if rk and rk[0] and ys[-1] is not None:
-                    ax.text(len(years) - 1 + 0.16, ys[-1], f"{ordinal(rk[0])}\nof {rk[1]}\ndistricts", color=NAVY,
-                            fontsize=7.6, ha="left", va="center", zorder=6)
+            if who == "Bourbon County" and rank_key and ylim:
+                ybot = ylim[0] + (ylim[1] - ylim[0]) * 0.02
+                for x, y in enumerate(years):
+                    rk = data.get((y, lv, "Bourbon County", rank_key))
+                    if rk and rk[0]:
+                        ax.text(x, ybot, f"{ordinal(rk[0])}/{rk[1]}\n{ordinal(int(round(rk[2])))} pct", ha="center",
+                                va="bottom", color=MUTED, fontsize=7.3, linespacing=1.3, zorder=6)
+                import math as _m
+                ax.set_yticks(list(range(int(_m.ceil((ylim[0] + 9) / 10.0)) * 10, int(ylim[1]) + 1, 10)))
         ax.set_xlim(-0.45, len(years) - 1 + 0.78)
         ax.set_xticks(xs)
         ax.set_xticklabels(years, fontsize=8.4)
@@ -339,8 +350,8 @@ def main(a):
     allv = [v for v in allv if v is not None]
     for i, (lv, short) in enumerate(LEVELS):
         ax = axes[i]
-        draw_panel(ax, YEARS, None, "overall", lv, lambda v: f"{v:.1f}", True, "overall_rank")
-        ax.set_ylim(min(allv) - 7, max(allv) + 7)
+        draw_panel(ax, YEARS, None, "overall", lv, lambda v: f"{v:.1f}", True, "overall_rank",
+                   ylim=(min(allv) - 12, max(allv) + 7))
         ax.set_title(f"{short} school level", color=INK, fontsize=11, loc="left", pad=8)
         if i == 0:
             ax.set_ylabel("Overall score", color=INK, fontsize=10, labelpad=8)
@@ -348,13 +359,14 @@ def main(a):
     order = [lab.index("Bourbon County"), lab.index("Kentucky")]
     fig.legend([h[k] for k in order], [lab[k] for k in order], loc="upper right", bbox_to_anchor=(0.985, 0.925),
                ncol=2, frameon=False, fontsize=9.5)
-    fig.suptitle("Bourbon County against Kentucky, every year of the current accountability system: overall score by level",
+    fig.suptitle("Bourbon County against Kentucky, every year of the current accountability system: overall index by level",
                  x=0.04, ha="left", fontsize=12.2, color=INK, fontweight="bold", y=0.985)
     fig.text(0.04, 0.015,
              "Source: KDE accountability profiles, district rows, all students (accountability_profile_2022 and 2023; KYRC24 and "
              "KYRC25 School Report Card files; Accountable_Profile_2026, October 14, 2026). The overall score is the state's published "
              "figure; 2021-22 was scored on status alone, later years add the change component. Marker fill is the state's color. "
-             "No overall score was issued from 2016-17 through 2020-21 (star ratings only in 2018-19).",
+             "The gray row under each panel is Bourbon's rank among Kentucky districts that year (rank/districts) and its percentile, "
+             "the share of districts at or below it. No overall score was issued from 2016-17 through 2020-21 (star ratings only in 2018-19).",
              fontsize=7.4, color=MUTED, ha="left", va="bottom", wrap=True)
     fig.subplots_adjust(left=0.06, right=0.985, top=0.80, bottom=0.19, wspace=0.14)
     out_png = os.path.join(HERE, "district_trend_levels_2021_2026_overall_chart.png")

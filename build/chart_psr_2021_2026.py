@@ -110,18 +110,36 @@ def main(paths):
     for year, p, pp in zip(YEARS, paths[:5], profiles):
         d = read(p)
         official = read_profile_status(pp)
+
+        def place(pairs, dn):
+            """pairs: list of (value, district). -> rank from the top, n, percentile (share at or below)."""
+            pairs = [(v, k) for v, k in pairs if v is not None]
+            mine = next((v for v, k in pairs if k == dn), None)
+            n = len(pairs)
+            if mine is None or n == 0:
+                return None, n, None
+            vals = [v for v, _ in pairs]
+            below = sum(1 for x in vals if x < mine)
+            equal = sum(1 for x in vals if x == mine)
+            return sorted(vals, reverse=True).index(mine) + 1, n, 100.0 * (below + 0.5 * equal) / n
+
         districts = [(v, dn) for dn, v in official.items() if dn.isdigit() and int(dn) < 900]
-        districts.sort(reverse=True)
-        n = len(districts)
-        ranks = {dn: i + 1 for i, (v, dn) in enumerate(districts)}
+        rank, n, pct = place(districts, BOURBON)
+        rate_pairs = [(v[0], dn) for dn, v in d.items() if dn.isdigit() and int(dn) < 900]
+        rate_rank, rate_n, rate_pct = place(rate_pairs, BOURBON)
         vals = sorted(v for v, _ in districts)
         median = vals[n // 2] if n % 2 else (vals[n // 2 - 1] + vals[n // 2]) / 2
         b, s = d.get(BOURBON, (None, None)), d.get(STATE, (None, None))
         series[year] = {"b_rate": b[0], "b_bonus": b[1], "s_rate": s[0], "s_bonus": s[1],
-                        "rank": ranks.get(BOURBON), "n": n, "median": median}
+                        "rank": rank, "n": n, "pct": pct, "rate_rank": rate_rank, "rate_n": rate_n,
+                        "rate_pct": rate_pct, "median": median}
         for who, dn, t in (("Bourbon County", BOURBON, b), ("Kentucky", STATE, s)):
+            mine = dn == BOURBON
             recs.append({"year": year, "district": who, "postsecondary_rate": t[0], "rate_with_bonus": t[1],
-                         "rank_from_top": ranks.get(dn, "") if dn == BOURBON else "", "districts": n if dn == BOURBON else "",
+                         "status_rank_from_top": rank if mine else "", "status_districts": n if mine else "",
+                         "status_percentile": round(pct, 1) if mine and pct is not None else "",
+                         "rate_rank_from_top": rate_rank if mine else "", "rate_districts": rate_n if mine else "",
+                         "rate_percentile": round(rate_pct, 1) if mine and rate_pct is not None else "",
                          "district_median_with_bonus": round(median, 1)})
 
     out_csv = os.path.join(HERE, "kde_psr_2021_2026.csv")
@@ -138,11 +156,12 @@ def main(paths):
          "as 1.25 points instead of 1 (703 KAR 5:270, Section 4), so the status can exceed 100. Bourbon County "
          "has one high school, so its district row is Bourbon County High School. Rank is among Kentucky "
          "districts with a high school result, 1 = highest.\n",
-         "| Year | Bourbon rate | Bourbon status (with bonus) | Bourbon rank | District median status | Kentucky rate | Kentucky status |",
-         "|---|---|---|---|---|---|---|"]
+         "| Year | Bourbon rate | Rate rank (percentile) | Bourbon status (with bonus) | Status rank (percentile) | District median status | Kentucky rate | Kentucky status |",
+         "|---|---|---|---|---|---|---|---|"]
     for y in YEARS:
         v = series[y]
-        L.append(f"| {y} | {v['b_rate']:.1f} | {v['b_bonus']:.1f} | {v['rank']} of {v['n']} | {v['median']:.1f} | {v['s_rate']:.1f} | {v['s_bonus']:.1f} |")
+        L.append(f"| {y} | {v['b_rate']:.1f} | {v['rate_rank']} of {v['rate_n']} ({ordinal(int(round(v['rate_pct'])))} pct) | {v['b_bonus']:.1f} | "
+                 f"{v['rank']} of {v['n']} ({ordinal(int(round(v['pct'])))} pct) | {v['median']:.1f} | {v['s_rate']:.1f} | {v['s_bonus']:.1f} |")
     L.append("")
     L.append("Implied share of seniors holding a high-demand industry credential, a quarter point each "
              "(status minus rate, times four): "
@@ -171,15 +190,14 @@ def main(paths):
                 ax.text(xt, v + dy, f"{v:.1f}", ha=ha, va="bottom" if dy > 0 else "top",
                         color=NAVY if who == "Bourbon County" else MUTED, fontsize=8.4,
                         fontweight="bold" if who == "Bourbon County" else "normal", zorder=6, bbox=box)
-        if key == "bonus":
-            v = series[YEARS[-1]]
-            ax.text(len(YEARS) - 1 + 0.16, v["b_bonus"], f"{ordinal(v['rank'])}\nof {v['n']}\ndistricts", color=NAVY,
-                    fontsize=7.8, ha="left", va="center", zorder=6)
-            for x, y in enumerate(YEARS):
-                ax.text(x, 57.5, f"{ordinal(series[y]['rank'])} of {series[y]['n']}", ha="center", va="bottom",
-                        color=MUTED, fontsize=7.6)
-        ax.set_xlim(-0.45, len(YEARS) - 1 + 0.78)
-        ax.set_ylim(55, 102)
+        rk_key, n_key, pct_key = ("rank", "n", "pct") if key == "bonus" else ("rate_rank", "rate_n", "rate_pct")
+        for x, y in enumerate(YEARS):
+            v = series[y]
+            if v[rk_key]:
+                ax.text(x, 52.5, f"{ordinal(v[rk_key])} of {v[n_key]}\n{ordinal(int(round(v[pct_key])))} pct", ha="center",
+                        va="bottom", color=MUTED, fontsize=7.4, linespacing=1.3, zorder=6)
+        ax.set_xlim(-0.45, len(YEARS) - 1 + 0.6)
+        ax.set_ylim(51, 102)
         ax.set_xticks(xs)
         ax.set_xticklabels(YEARS, fontsize=8.6)
         ax.set_title(title, color=INK, fontsize=10.5, loc="left", pad=8)
@@ -202,7 +220,7 @@ def main(paths):
              "KYRC24 and KYRC25; Postsecondary_Readiness_2026, October 14, 2026). Seniors count as ready by meeting one academic measure "
              "(CPE exam benchmark, dual credit, AP, IB or Cambridge) or one career measure (industry certification, CTE end-of-program "
              "assessment, CTE dual credit, apprenticeship, co-op or internship); a credential in a high-demand sector counts 1.25. The gray "
-             "labels under the right panel are Bourbon's rank among districts each year.",
+             "row under each panel is Bourbon's rank among Kentucky districts that year and its percentile, the share of districts at or below it.",
              fontsize=7.3, color=MUTED, ha="left", va="bottom", wrap=True)
     fig.subplots_adjust(left=0.06, right=0.985, top=0.80, bottom=0.2, wspace=0.12)
     out_png = os.path.join(HERE, "psr_2021_2026_chart.png")
