@@ -11,6 +11,7 @@ Writes:
   build/district_trend_levels_2024_2026.md
   build/kde_district_trend_levels_2024_2026.csv
   build/district_trend_levels_2024_2026_chart.png
+  build/district_trend_levels_2024_2026_overall_chart.png
 
 Usage:
   python3 -I build/district_trend_levels_2024_2026.py \
@@ -296,7 +297,72 @@ def main(p24, p25, p26, a24, a25, a26):
     fig.subplots_adjust(left=0.075, right=0.985, top=0.905, bottom=0.085, hspace=0.3, wspace=0.16)
     out_png = os.path.join(HERE, "district_trend_levels_2024_2026_chart.png")
     fig.savefig(out_png, dpi=200)
-    print("wrote", out_csv, out_md, out_png)
+
+    # ---------- second chart: the overall score, with the state's color ----------
+    FILL = {"red": "#C0392B", "orange": "#E67E22", "yellow": "#F1C40F", "green": "#27AE60", "blue": "#2E75B6"}
+    fig2, axes2 = plt.subplots(1, 3, figsize=(11.5, 4.9), sharey=True)
+    allv = [data.get((y, c, w, "overall")) for y in YEARS for c, _, _ in LEVELS for w in ("Bourbon County", "Kentucky")]
+    allv = [v for v in allv if v is not None]
+    lo, hi = min(allv) - 7, max(allv) + 7
+    for i, (code, lname, short) in enumerate(LEVELS):
+        ax = axes2[i]
+        for who, color, ls, mk, z in (("Kentucky", GRAY, (0, (4, 3)), "s", 2), ("Bourbon County", NAVY, "-", "o", 3)):
+            ys = [data.get((y, code, who, "overall")) for y in YEARS]
+            ax.plot(xs, ys, color=color, lw=2.2, ls=ls, zorder=z, label=who)
+            for x, v in zip(xs, ys):
+                if v is None:
+                    continue
+                rating = data.get((YEARS[x], code, who, "overall_rating")) or ""
+                ax.scatter([x], [v], s=80 if who == "Bourbon County" else 55, marker=mk,
+                           color=FILL.get(rating, color), edgecolor=color, linewidth=1.6, zorder=z + 2)
+                other = data.get((YEARS[x], code, "Kentucky" if who == "Bourbon County" else "Bourbon County", "overall"))
+                label = f"{v:.1f} {rating}" if who == "Bourbon County" else f"{v:.1f}"
+                style = dict(color=NAVY if who == "Bourbon County" else MUTED, fontsize=8.6,
+                             fontweight="bold" if who == "Bourbon County" else "normal", zorder=6,
+                             bbox=dict(boxstyle="round,pad=0.12", fc="white", ec="none", alpha=0.85))
+                nbrs = [ys[k] for k in (x - 1, x + 1) if 0 <= k < len(ys) and ys[k] is not None]
+                peak_under = (who == "Bourbon County" and len(nbrs) == 2 and all(v > n for n in nbrs)
+                              and other is not None and other > v)
+                if peak_under:
+                    # a peak sitting under the Kentucky line: label to the right, clear of both slopes
+                    ax.text(x + 0.08, v + 0.5, label, ha="left", va="bottom", **style)
+                else:
+                    dy = 2.2 if (other is None or v >= other) else -2.2
+                    ax.text(x, v + dy, label, ha="center", va="bottom" if dy > 0 else "top", **style)
+            if who == "Bourbon County":
+                rk = data.get((YEARS[-1], code, "Bourbon County", "overall_rank"))
+                if rk and rk[0]:
+                    ax.text(2.14, ys[-1], f"{ordinal(rk[0])}\nof {rk[1]}\ndistricts", color=NAVY, fontsize=7.8,
+                            ha="left", va="center", zorder=6)
+        ax.set_ylim(lo, hi)
+        ax.set_xlim(-0.35, 2.6)
+        ax.set_xticks(xs)
+        ax.set_xticklabels(YEARS)
+        for sp in ("top", "right"):
+            ax.spines[sp].set_visible(False)
+        for sp in ("left", "bottom"):
+            ax.spines[sp].set_color(LINE)
+        ax.tick_params(colors=MUTED, labelsize=8.8, length=0)
+        ax.yaxis.grid(True, color=LINE, lw=0.8)
+        ax.set_axisbelow(True)
+        ax.set_title(f"{short} school level", color=INK, fontsize=11, loc="left", pad=8)
+        if i == 0:
+            ax.set_ylabel("Overall score", color=INK, fontsize=10, labelpad=8)
+    handles, labels = axes2[0].get_legend_handles_labels()
+    order = [labels.index("Bourbon County"), labels.index("Kentucky")]
+    fig2.legend([handles[k] for k in order], [labels[k] for k in order], loc="upper right",
+                bbox_to_anchor=(0.985, 0.925), ncol=2, frameon=False, fontsize=9.5)
+    fig2.suptitle("Bourbon County against Kentucky, 2023-24 to 2025-26: the state's overall score by level",
+                  x=0.045, ha="left", fontsize=12.5, color=INK, fontweight="bold", y=0.985)
+    fig2.text(0.045, 0.015,
+              "Source: KDE accountability profiles, district rows (KYRC24 and KYRC25 School Report Card files; "
+              "Accountable_Profile_2026.CSV, October 14, 2026). The overall score is the state's published figure, status "
+              "plus change, all students; marker fill is the state's color for that score. Rank is among Kentucky districts, 1 = highest.",
+              fontsize=7.6, color=MUTED, ha="left", va="bottom", wrap=True)
+    fig2.subplots_adjust(left=0.065, right=0.985, top=0.80, bottom=0.17, wspace=0.14)
+    out_png2 = os.path.join(HERE, "district_trend_levels_2024_2026_overall_chart.png")
+    fig2.savefig(out_png2, dpi=200)
+    print("wrote", out_csv, out_md, out_png, out_png2)
 
 
 if __name__ == "__main__":
